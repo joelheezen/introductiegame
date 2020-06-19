@@ -1,0 +1,6 @@
+test {
+    background-color: red;
+    background-size: 100%;
+    width: 50vw; height: 50vh;
+    position: absolute;
+}
