@@ -19,7 +19,7 @@ class LocatieSelectie{
 
         let educationSelect = document.createElement('select')
 
-        this.educations = ['CMGT','Informatica','','','','']
+        this.educations = ['CMGT','Informatica','Communicatie','Crossmediale Communicatie','ICT Internet of Things','ICT Service Management']
 
         for (let index = 0; index < this.educations.length; index++) {
             let addToDrop = document.createElement('option')
@@ -45,21 +45,62 @@ class LocatieSelectie{
     }
 
     locationPicker(){
-        console.log('you didnt fuck up')
         this.background.style.backgroundImage = "url(/docs/assets/akte_1_map@0.75x.jpg)"
         this.background.style.backgroundSize = "100% 100%"
         this.educationSet.remove()
 
-        for (let index = 0; index < this.educations.length; index++) {
-            this.locationMarker()
-        }
+       
+        this.locationMarker(5,5,'CMGT')
+        this.locationMarker(5,5,'Informatica')
+        
 
     }
 
-    locationMarker(){
+    locationMarker(x: number,y: number,location: string){
         let marker = document.createElement('locationMarker')
         this.game.appendChild(marker)
+
+        marker.style.transform = `translate(${x}vw,${y}vh)`
+
+        marker.addEventListener('click',() =>{
+
+            let education = localStorage.getItem('education')
+
+            if(location == education){
+                this.popupLoc('correct')
+            }else{
+                this.popupLoc('incorrect')
+            }
+
+        })
+    }
+
+    popupLoc(awnser: String){
+
+        if(document.getElementsByTagName('popupLocation')[0]){
+            document.getElementsByTagName('popupLocation')[0].remove()
+        }
+
+        let popupLocation = document.createElement('popupLocation')
+        let locationImage = document.createElement('locationImage')
+
+        this.game.appendChild(popupLocation)
+        popupLocation.appendChild(locationImage)
+
+        locationImage.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123456.jpg)'
+
+        if(awnser == 'correct'){
+             popupLocation.innerHTML += 'dummy text'
+             let goto = document.createElement('button')
+             
+        }else{
+            popupLocation.innerHTML += 'syke you thought'
+        }
+
+        popupLocation.addEventListener('click',()=>{
+            document.getElementsByTagName('popupLocation')[0].remove()
+        })
+        
     }
 }
 
-//window.addEventListener('load',() => new LocatieSelectie)

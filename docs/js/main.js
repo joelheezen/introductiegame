@@ -282,6 +282,7 @@ var EnterBuilding = (function () {
         this.setBackground();
         this.game.appendChild(this.bge);
         this.bge.addEventListener("mousedown", function () { return _this.setBackground(); });
+        this.game.appendChild(this.bge);
     }
     EnterBuilding.prototype.setBackground = function () {
         if (this.i == 0) {
@@ -292,6 +293,7 @@ var EnterBuilding = (function () {
         }
         else if (this.i == 2) {
             this.bge.remove();
+            console.log('help');
             new Act2();
         }
         this.i++;
@@ -384,7 +386,7 @@ var LocatieSelectie = (function () {
         this.game.appendChild(this.educationSet);
         this.educationSet.innerHTML = "Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding.";
         var educationSelect = document.createElement('select');
-        this.educations = ['CMGT', 'Informatica', '', '', '', ''];
+        this.educations = ['CMGT', 'Informatica', 'Communicatie', 'Crossmediale Communicatie', 'ICT Internet of Things', 'ICT Service Management'];
         for (var index = 0; index < this.educations.length; index++) {
             var addToDrop = document.createElement('option');
             addToDrop.value = this.educations[index];
@@ -403,17 +405,46 @@ var LocatieSelectie = (function () {
         this.locationPicker();
     };
     LocatieSelectie.prototype.locationPicker = function () {
-        console.log('you didnt fuck up');
         this.background.style.backgroundImage = "url(/docs/assets/akte_1_map@0.75x.jpg)";
         this.background.style.backgroundSize = "100% 100%";
         this.educationSet.remove();
-        for (var index = 0; index < this.educations.length; index++) {
-            this.locationMarker();
-        }
+        this.locationMarker(5, 5, 'CMGT');
+        this.locationMarker(5, 5, 'Informatica');
     };
-    LocatieSelectie.prototype.locationMarker = function () {
+    LocatieSelectie.prototype.locationMarker = function (x, y, location) {
+        var _this = this;
         var marker = document.createElement('locationMarker');
         this.game.appendChild(marker);
+        marker.style.transform = "translate(" + x + "vw," + y + "vh)";
+        marker.addEventListener('click', function () {
+            var education = localStorage.getItem('education');
+            if (location == education) {
+                _this.popupLoc('correct');
+            }
+            else {
+                _this.popupLoc('incorrect');
+            }
+        });
+    };
+    LocatieSelectie.prototype.popupLoc = function (awnser) {
+        if (document.getElementsByTagName('popupLocation')[0]) {
+            document.getElementsByTagName('popupLocation')[0].remove();
+        }
+        var popupLocation = document.createElement('popupLocation');
+        var locationImage = document.createElement('locationImage');
+        this.game.appendChild(popupLocation);
+        popupLocation.appendChild(locationImage);
+        locationImage.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123456.jpg)';
+        if (awnser == 'correct') {
+            popupLocation.innerHTML += 'dummy text';
+            var goto = document.createElement('button');
+        }
+        else {
+            popupLocation.innerHTML += 'syke you thought';
+        }
+        popupLocation.addEventListener('click', function () {
+            document.getElementsByTagName('popupLocation')[0].remove();
+        });
     };
     return LocatieSelectie;
 }());

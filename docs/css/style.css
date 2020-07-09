@@ -46,6 +46,7 @@ educationsetter button{
     height:3vw;    
     left:calc(30% - 6px);
     top:40%;
+    cursor: pointer;
 }
 
 educationsetter select{
@@ -59,6 +60,7 @@ educationsetter select{
     box-shadow: 3px 3px gray inset;
     padding-top:3px;
     padding-left:3px;
+    cursor: pointer;
 }
 
 backgroundact1 {
@@ -112,3 +114,34 @@ input {
     position:absolute;
 }
 
+
+locationMarker{
+    background-color:black;
+    width:5vh;
+    height:5vh;
+}
+
+popuplocation{
+    background-color: #ffb911;
+    position: absolute;
+    padding-left:2vw;
+    padding-right:2vw;
+    padding-top:36vh;
+    width:20vw;
+    height:30vh;
+    top:20vh;
+    left:38vw;
+    border-radius: 1vh;
+    box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
+}
+
+locationimage{
+    position:absolute;
+    width: calc(100% - 6px);
+    height:50%;
+    background-size:100% 100%;
+    left:0;
+    top:0;
+    border-radius: 1vh;
+    border:solid 3px#cf0245;
+}
