@@ -272,11 +272,18 @@ var Act2Room3 = (function () {
 var Act2Room4 = (function () {
     function Act2Room4() {
         this.game = document.getElementsByTagName('game')[0];
-        this.bg = document.createElement("act2background");
-        this.video = document.createElement("videoDecaan");
-        console.log("act2 room 4 open");
+        this.bg = document.createElement("videoBackground");
+        this.video = document.createElement("video");
+        this.bg.style.backgroundColor = "black";
         this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(assets/Akte2/filmpjedecaanhorizontaal.mp4)';
+        this.game.appendChild(this.video);
+        this.video.src = 'assets/Akte2/filmpjedecaanhorizontaal.mp4';
+        this.video.autoplay = true;
+        this.video.controls = true;
+        this.video.onended = function () {
+            var vid = document.getElementsByTagName("video")[0];
+            vid.remove();
+        };
     }
     return Act2Room4;
 }());
