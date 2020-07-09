@@ -18,7 +18,7 @@ class EnterBuilding{
             bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123018.jpg)'
         }
         else {
-            new Act1()
+            new Act2()
         }
 
         this.game.appendChild(bge)

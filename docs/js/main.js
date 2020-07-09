@@ -9,6 +9,15 @@ var Act1 = (function () {
     }
     return Act1;
 }());
+var Act2 = (function () {
+    function Act2() {
+        this.game = document.getElementsByTagName("game")[0];
+        var game = document.getElementsByTagName("game")[0];
+        var background = document.createElement("backgroundact2");
+        game.appendChild(background);
+    }
+    return Act2;
+}());
 var EnterBuilding = (function () {
     function EnterBuilding() {
         var _this = this;
@@ -26,7 +35,7 @@ var EnterBuilding = (function () {
             bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123018.jpg)';
         }
         else {
-            new Act1();
+            new Act2();
         }
         this.game.appendChild(bge);
         this.i++;
