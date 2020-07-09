@@ -48,7 +48,7 @@ var Act1 = (function () {
         game.appendChild(button2);
         button2.style.width = "18vw";
         button2.style.height = "3vh";
-        button2.style.transform = "translate(25vw, 60vh)";
+        button2.style.transform = "translate(20vw, 60vh)";
         button2.style.opacity = "80%";
         button2.onclick = this.searchOnline;
     }
