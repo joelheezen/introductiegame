@@ -30,11 +30,6 @@ input:focus{
     outline:none;
 }
 
-body{
-    padding:0;
-    margin:0;
-}
-
 backgroundenter {
     position: absolute;
     width:100vw; height:100vh;
@@ -46,10 +41,6 @@ backgroundenter {
     top:0;
 }
 
-button{
-    position:absolute;
-}
-
 backgroundact1 {
     position: absolute;
     width:100vw; height:100vh;
@@ -58,9 +49,6 @@ backgroundact1 {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     left:0; top:0;
-}
-input:focus{
-    outline:none;
 }
 
 button{

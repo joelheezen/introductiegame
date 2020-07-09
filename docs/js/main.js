@@ -131,6 +131,12 @@ var Game = (function () {
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].remove();
             }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
         }
         new Act1();
     };
