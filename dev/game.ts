@@ -1,7 +1,6 @@
 class Game{
 
     constructor(){
-<<<<<<< HEAD
         let game = document.getElementsByTagName("game")[0]
         let button1 = document.createElement("button")
         game.appendChild(button1)
@@ -53,9 +52,6 @@ class Game{
     }
     buttonPress4(){
 
-=======
-        new Act1()
->>>>>>> a6aa100e759953aad413e69d9f7cc78ccba16d9c
     }
 }
 
