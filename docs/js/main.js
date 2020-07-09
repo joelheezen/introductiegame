@@ -2,6 +2,8 @@
 var Act1 = (function () {
     function Act1() {
         this.input1 = document.createElement("input");
+        this.input2 = document.createElement("input");
+        this.input3 = document.createElement("input");
         var game = document.getElementsByTagName("game")[0];
         var background = document.createElement("backgroundact1");
         game.appendChild(background);
@@ -15,50 +17,78 @@ var Act1 = (function () {
         this.input1.style.paddingLeft = "1vw";
         this.input1.style.fontFamily = "Arial Black";
         this.input1.style.textTransform = "uppercase";
-        var input2 = document.createElement("input");
-        game.appendChild(input2);
-        input2.style.width = "13.7vw";
-        input2.style.height = "5.7vh";
-        input2.style.transform = "translate(42.7vw, 39.2vh)";
-        input2.style.borderRadius = "25px";
-        input2.style.border = "none";
-        input2.style.fontSize = "20px";
-        input2.style.paddingLeft = "1vw";
-        input2.style.fontFamily = "Arial Black";
-        input2.style.textTransform = "uppercase";
-        var input3 = document.createElement("input");
-        game.appendChild(input3);
-        input3.style.width = "13.7vw";
-        input3.style.height = "5.7vh";
-        input3.style.transform = "translate(59.2vw, 39.2vh)";
-        input3.style.borderRadius = "25px";
-        input3.style.border = "none";
-        input3.style.fontSize = "20px";
-        input3.style.paddingLeft = "1vw";
-        input3.style.fontFamily = "Arial Black";
-        input3.style.textTransform = "uppercase";
+        this.input1.id = "input1";
+        game.appendChild(this.input2);
+        this.input2.style.width = "13.7vw";
+        this.input2.style.height = "5.7vh";
+        this.input2.style.transform = "translate(42.7vw, 39.2vh)";
+        this.input2.style.borderRadius = "25px";
+        this.input2.style.border = "none";
+        this.input2.style.fontSize = "20px";
+        this.input2.style.paddingLeft = "1vw";
+        this.input2.style.fontFamily = "Arial Black";
+        this.input2.style.textTransform = "uppercase";
+        this.input2.id = "input2";
+        game.appendChild(this.input3);
+        this.input3.style.width = "13.7vw";
+        this.input3.style.height = "5.7vh";
+        this.input3.style.transform = "translate(59.2vw, 39.2vh)";
+        this.input3.style.borderRadius = "25px";
+        this.input3.style.border = "none";
+        this.input3.style.fontSize = "20px";
+        this.input3.style.paddingLeft = "1vw";
+        this.input3.style.fontFamily = "Arial Black";
+        this.input3.style.textTransform = "uppercase";
+        this.input3.id = "input3";
         var button1 = document.createElement("button");
         game.appendChild(button1);
         button1.style.width = "15.1vw";
         button1.style.height = "7.5vh";
         button1.style.transform = "translate(42.4vw, 47.9vh)";
-        button1.style.opacity = "80%";
+        button1.style.opacity = "0%";
         button1.onclick = this.shapeCheck;
         var button2 = document.createElement("button");
         game.appendChild(button2);
         button2.style.width = "18.5vw";
         button2.style.height = "3vh";
         button2.style.transform = "translate(25.25vw, 61vh)";
-        button2.style.opacity = "80%";
+        button2.style.opacity = "0%";
         button2.onclick = this.searchOnline;
     }
     Act1.prototype.shapeCheck = function () {
         console.log("button 1 is pressed");
-        var shape1 = this.input1;
-        console.log(shape1);
+        var shape1 = document.getElementById("input1").value;
+        var shape2 = document.getElementById("input2").value;
+        var shape3 = document.getElementById("input3").value;
+        if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje") {
+            if (confirm("dit is het goede antwoord, wil je verder? klik op cancel voor een pauze.")) {
+                console.log("je gaat verder");
+            }
+            else {
+                console.log("je neemt een pauze");
+            }
+        }
+        else {
+            alert("helaas dit antwoord is fout.");
+        }
     };
     Act1.prototype.searchOnline = function () {
-        console.log("button 2 is pressed");
+        console.log("gg");
+        var inputs = document.getElementsByTagName("input");
+        var buttons = document.getElementsByTagName("button");
+        var background = document.getElementsByTagName("backgroundact1")[0];
+        if (buttons) {
+            for (var i = (buttons.length - 1); i >= 0; i--) {
+                buttons[i].remove();
+            }
+        }
+        if (inputs) {
+            for (var i = (inputs.length - 1); i >= 0; i--) {
+                inputs[i].remove();
+            }
+        }
+        background.style.backgroundImage = "url(/docs/assets/plattegrond.png)";
+        console.log(background);
     };
     return Act1;
 }());
@@ -232,13 +262,7 @@ var Game = (function () {
     Game.prototype.buttonPress1 = function () {
         var buttons = document.getElementsByTagName("button");
         if (buttons) {
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
+            for (var i = (buttons.length - 1); i >= 0; i--) {
                 buttons[i].remove();
             }
         }
@@ -247,13 +271,7 @@ var Game = (function () {
     Game.prototype.buttonPress2 = function () {
         var buttons = document.getElementsByTagName("button");
         if (buttons) {
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
+            for (var i = (buttons.length - 1); i >= 0; i--) {
                 buttons[i].remove();
             }
         }
@@ -262,13 +280,7 @@ var Game = (function () {
     Game.prototype.buttonPress3 = function () {
         var buttons = document.getElementsByTagName("button");
         if (buttons) {
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
+            for (var i = (buttons.length - 1); i >= 0; i--) {
                 buttons[i].remove();
             }
         }
@@ -277,13 +289,7 @@ var Game = (function () {
     Game.prototype.buttonPress4 = function () {
         var buttons = document.getElementsByTagName("button");
         if (buttons) {
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
+            for (var i = (buttons.length - 1); i >= 0; i--) {
                 buttons[i].remove();
             }
         }
