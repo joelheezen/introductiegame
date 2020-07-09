@@ -72,6 +72,14 @@ class Act1 {
         button2.style.transform = `translate(25.25vw, 61vh)`
         button2.style.opacity = `0%`
         button2.addEventListener("click" , () => this.searchOnline())
+
+        let button3 = document.createElement("button")
+        game.appendChild(button3)
+        button3.style.width = `9vw`
+        button3.style.height = `7.6vh`
+        button3.style.transform = `translate(91vw, 0vh)`
+        button3.style.opacity = `80%`
+        button3.addEventListener("click" , () => this.searchOnline())
     }
 
     shapeCheck() {
