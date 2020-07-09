@@ -1,15 +1,28 @@
 "use strict";
+var Act1 = (function () {
+    function Act1() {
+        var game = document.getElementsByTagName("game")[0];
+        var background = document.createElement("backgroundact1");
+        game.appendChild(background);
+        var button = document.createElement("button");
+        game.appendChild(button);
+    }
+    return Act1;
+}());
 var EnterBuilding = (function () {
     function EnterBuilding() {
-        this.bg1 = document.createElement("backgroundenter1");
-        this.bg2 = document.createElement("backgroundenter2");
-        this.bg3 = document.createElement("backgroundenter3");
     }
     EnterBuilding.prototype.setBackground = function () {
+        var bge = document.createElement("backgroundenter");
+        bge.style.backgroundImage = 'url(ass';
     };
     return EnterBuilding;
 }());
-var test = document.createElement("test");
-var game = document.getElementsByTagName("game")[0];
-game.appendChild(test);
+var Game = (function () {
+    function Game() {
+        new Act1();
+    }
+    return Game;
+}());
+window.addEventListener("load", function () { return new Act1(); });
 //# sourceMappingURL=main.js.map

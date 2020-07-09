@@ -1,3 +1,8 @@
-let test = document.createElement("test")
-let game = document.getElementsByTagName("game")[0]
-game.appendChild(test)
+class Game{
+
+    constructor(){
+        new Act1()
+    }
+}
+
+window.addEventListener("load", () => new Act1())
