@@ -79,6 +79,9 @@ backgroundact2 {
 input:focus{
     outline:none;
 }
+input{
+    position:absolute;
+}
 
 backgroundenter {
     position: absolute;
