@@ -1,5 +1,5 @@
-
-*{
+game *{
+    display:block;
     font-family: Arial;
 }
 
@@ -41,6 +41,7 @@ educationsetter button{
     height:3vw;    
     left:calc(30% - 6px);
     top:40%;
+    cursor: pointer;
 }
 
 educationsetter select{
@@ -54,6 +55,7 @@ educationsetter select{
     box-shadow: 3px 3px gray inset;
     padding-top:3px;
     padding-left:3px;
+    cursor: pointer;
 }
 
 backgroundact1 {
@@ -93,4 +95,14 @@ backgroundenter {
 
 button{
     position: absolute;
+}
+
+input{
+    position: absolute;
+}
+
+locationMarker{
+    background-color:black;
+    width:5vh;
+    height:5vh;
 }

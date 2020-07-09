@@ -191,7 +191,7 @@ var LocatieSelectie = (function () {
         this.game.appendChild(this.educationSet);
         this.educationSet.innerHTML = "Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding.";
         var educationSelect = document.createElement('select');
-        this.educations = ['CMGT', 'Informatica', '', '', '', ''];
+        this.educations = ['CMGT', 'Informatica', 'Communicatie', 'Crossmediale Communicatie', 'ICT Internet of Things', 'ICT Service Management'];
         for (var index = 0; index < this.educations.length; index++) {
             var addToDrop = document.createElement('option');
             addToDrop.value = this.educations[index];
@@ -214,13 +214,12 @@ var LocatieSelectie = (function () {
         this.background.style.backgroundImage = "url(/docs/assets/akte_1_map@0.75x.jpg)";
         this.background.style.backgroundSize = "100% 100%";
         this.educationSet.remove();
-        for (var index = 0; index < this.educations.length; index++) {
-            this.locationMarker();
-        }
+        this.locationMarker(5, 5);
     };
-    LocatieSelectie.prototype.locationMarker = function () {
+    LocatieSelectie.prototype.locationMarker = function (x, y) {
         var marker = document.createElement('locationMarker');
         this.game.appendChild(marker);
+        marker.style.transform = "translate(" + x + "vw," + y + "vh)";
     };
     return LocatieSelectie;
 }());
