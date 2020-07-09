@@ -4,6 +4,10 @@ game *{
     font-family: Arial;
 }
 
+game *{
+    display: block;
+}
+
 body{
     margin:0;
     padding:0;
@@ -74,8 +78,12 @@ backgroundact2 {
     background-image: url(/docs/assets/Akte2/Akte2-overview-startscherm.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: 100% 100%;
     left:0; top:0;
+}
+
+classroom {
+    position: absolute;
 }
 input:focus{
     outline:none;
@@ -90,7 +98,7 @@ backgroundenter {
     z-index: -1;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: 120% 120%;
     left:0;
     top:0;
 }

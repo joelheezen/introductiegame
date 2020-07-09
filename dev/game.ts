@@ -88,6 +88,12 @@ class Game{
             for (let i = 0; i < buttons.length; i++) {
                 buttons[i].remove();
             }
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].remove()
+            }
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].remove()
+            }
         }
         new EnterBuilding()
     }
