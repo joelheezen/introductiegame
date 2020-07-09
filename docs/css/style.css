@@ -1,6 +1,9 @@
-test {
-    background-color: red;
-    background-size: 100%;
-    width: 50vw; height: 50vh;
+locationsetter{
     position: absolute;
+    width:30vw;
+    height:60vh;
+    top:20vh;
+    left:35vw;
+    background-color: orange;
+    border-radius: 1vh;
 }
