@@ -1,10 +1,19 @@
-backgroundact1 {
+*{
+    font-family: Arial;
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+
+backgroundLocation{
     position: absolute;
     width:100vw; height:100vh;
     z-index: -1;
     background-image: url(..//assets/backgroundact1main.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     left:0; top:0;
 }
 backgroundact2 {
@@ -17,13 +26,13 @@ backgroundact2 {
     background-size: 100%;
     left:0; top:0;
 }
+input:focus{
+    outline:none;
+}
+
 body{
     padding:0;
     margin:0;
-}
-
-* {
-    position: absolute;
 }
 
 backgroundenter {
@@ -35,4 +44,25 @@ backgroundenter {
     background-size: 100%;
     left:0;
     top:0;
+}
+
+button{
+    position:absolute;
+}
+
+backgroundact1 {
+    position: absolute;
+    width:100vw; height:100vh;
+    z-index: -1;
+    background-image: url(..//assets/backgroundact1main.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    left:0; top:0;
+}
+input:focus{
+    outline:none;
+}
+
+button{
+    position: absolute;
 }
