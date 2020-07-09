@@ -1,5 +1,6 @@
 
-*{
+game *{
+    display: block;
     font-family: Arial;
 }
 
@@ -93,5 +94,9 @@ backgroundenter {
 
 button{
     position: absolute;
+}
+
+input {
+    position:absolute;
 }
 
