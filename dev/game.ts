@@ -38,13 +38,7 @@ class Game{
     buttonPress1(){
         let buttons = document.getElementsByTagName("button")
         if (buttons){
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].remove()
-            }
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].remove()
-            }
-            for (let i = 0; i < buttons.length; i++) {
+            for (let i = (buttons.length -1); i >= 0; i--) {
                 buttons[i].remove()
             }
         }
@@ -55,13 +49,7 @@ class Game{
     buttonPress2(){
         let buttons = document.getElementsByTagName("button")
         if (buttons){
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].remove()
-            }
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].remove()
-            }
-            for (let i = 0; i < buttons.length; i++) {
+            for (let i = (buttons.length -1); i >= 0; i--) {
                 buttons[i].remove()
             }
         }
@@ -70,13 +58,7 @@ class Game{
     buttonPress3(){
         let buttons = document.getElementsByTagName("button")
         if (buttons){
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].remove()
-            }
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].remove()
-            }
-            for (let i = 0; i < buttons.length; i++) {
+            for (let i = (buttons.length -1); i >= 0; i--) {
                 buttons[i].remove()
             }
         }
@@ -85,13 +67,7 @@ class Game{
     buttonPress4(){
         let buttons = document.getElementsByTagName("button")
         if (buttons){
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].remove()
-            }
-            for (let i = 0; i < buttons.length; i++) {
+            for (let i = (buttons.length -1); i >= 0; i--) {
                 buttons[i].remove()
             }
         }
