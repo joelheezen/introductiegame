@@ -62,7 +62,7 @@ var Act1 = (function () {
         var shape3 = document.getElementById("input3").value;
         if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje") {
             if (confirm("dit is het goede antwoord, wil je verder? klik op cancel voor een pauze.")) {
-                new Act2();
+                new EnterBuilding();
                 var inputs = document.getElementsByTagName("input");
                 var buttons = document.getElementsByTagName("button");
                 if (buttons) {
