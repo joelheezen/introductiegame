@@ -19,7 +19,7 @@ class LocatieSelectie{
 
         let educationSelect = document.createElement('select')
 
-        this.educations = ['CMGT','Informatica']
+        this.educations = ['CMGT','Informatica','','','','']
 
         for (let index = 0; index < this.educations.length; index++) {
             let addToDrop = document.createElement('option')
