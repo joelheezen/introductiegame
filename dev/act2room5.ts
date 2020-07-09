@@ -6,6 +6,6 @@ class Act2Room5{
     constructor(){
         
         this.game.appendChild(this.bg)
-        this.bg.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)'
+        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)'
     }
 }

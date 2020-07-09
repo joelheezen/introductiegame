@@ -8,6 +8,6 @@ class Act2Room4{
         console.log("act2 room 4 open")
         this.game.appendChild(this.bg)
         
-        this.bg.style.backgroundImage = 'url(/docs/assets/Akte2/filmpjedecaanhorizontaal.mp4)'
+        this.bg.style.backgroundImage = 'url(assets/Akte2/filmpjedecaanhorizontaal.mp4)'
     }
 }
