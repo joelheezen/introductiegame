@@ -1,59 +1,61 @@
 "use strict";
 var Act1 = (function () {
     function Act1() {
+        this.input1 = document.createElement("input");
         var game = document.getElementsByTagName("game")[0];
         var background = document.createElement("backgroundact1");
         game.appendChild(background);
-        var input1 = document.createElement("input");
-        game.appendChild(input1);
-        input1.style.width = "13.7vw";
-        input1.style.height = "5.7vh";
-        input1.style.transform = "translate(26vw, 39.3vh)";
-        input1.style.borderRadius = "25px";
-        input1.style.border = "none";
-        input1.style.fontSize = "20px";
-        input1.style.paddingLeft = "20px";
-        input1.style.fontFamily = "Arial Black";
-        input1.style.textTransform = "uppercase";
+        game.appendChild(this.input1);
+        this.input1.style.width = "13.7vw";
+        this.input1.style.height = "5.7vh";
+        this.input1.style.transform = "translate(26vw, 39.2vh)";
+        this.input1.style.borderRadius = "25px";
+        this.input1.style.border = "none";
+        this.input1.style.fontSize = "20px";
+        this.input1.style.paddingLeft = "1vw";
+        this.input1.style.fontFamily = "Arial Black";
+        this.input1.style.textTransform = "uppercase";
         var input2 = document.createElement("input");
         game.appendChild(input2);
         input2.style.width = "13.7vw";
         input2.style.height = "5.7vh";
-        input2.style.transform = "translate(27.8vw, 39.3vh)";
+        input2.style.transform = "translate(42.7vw, 39.2vh)";
         input2.style.borderRadius = "25px";
         input2.style.border = "none";
         input2.style.fontSize = "20px";
-        input2.style.paddingLeft = "20px";
+        input2.style.paddingLeft = "1vw";
         input2.style.fontFamily = "Arial Black";
         input2.style.textTransform = "uppercase";
         var input3 = document.createElement("input");
         game.appendChild(input3);
         input3.style.width = "13.7vw";
         input3.style.height = "5.7vh";
-        input3.style.transform = "translate(29.5vw, 39.3vh)";
+        input3.style.transform = "translate(59.2vw, 39.2vh)";
         input3.style.borderRadius = "25px";
         input3.style.border = "none";
         input3.style.fontSize = "20px";
-        input3.style.paddingLeft = "20px";
+        input3.style.paddingLeft = "1vw";
         input3.style.fontFamily = "Arial Black";
         input3.style.textTransform = "uppercase";
         var button1 = document.createElement("button");
         game.appendChild(button1);
-        button1.style.width = "15vw";
+        button1.style.width = "15.1vw";
         button1.style.height = "7.5vh";
-        button1.style.transform = "translate(42vw, 47vh)";
+        button1.style.transform = "translate(42.4vw, 47.9vh)";
         button1.style.opacity = "80%";
         button1.onclick = this.shapeCheck;
         var button2 = document.createElement("button");
         game.appendChild(button2);
-        button2.style.width = "18vw";
+        button2.style.width = "18.5vw";
         button2.style.height = "3vh";
-        button2.style.transform = "translate(25vw, 60vh)";
+        button2.style.transform = "translate(25.25vw, 61vh)";
         button2.style.opacity = "80%";
         button2.onclick = this.searchOnline;
     }
     Act1.prototype.shapeCheck = function () {
         console.log("button 1 is pressed");
+        var shape1 = this.input1;
+        console.log(shape1);
     };
     Act1.prototype.searchOnline = function () {
         console.log("button 2 is pressed");
@@ -158,10 +160,29 @@ var Game = (function () {
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].remove();
             }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
         }
         new Act1();
     };
     Game.prototype.buttonPress3 = function () {
+        var buttons = document.getElementsByTagName("button");
+        if (buttons) {
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+        }
+        new LocatieSelectie();
     };
     Game.prototype.buttonPress4 = function () {
         var buttons = document.getElementsByTagName("button");
@@ -196,7 +217,7 @@ var LocatieSelectie = (function () {
         this.game.appendChild(this.educationSet);
         this.educationSet.innerHTML = "Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding.";
         var educationSelect = document.createElement('select');
-        this.educations = ['CMGT', 'Informatica'];
+        this.educations = ['CMGT', 'Informatica', '', '', '', ''];
         for (var index = 0; index < this.educations.length; index++) {
             var addToDrop = document.createElement('option');
             addToDrop.value = this.educations[index];
