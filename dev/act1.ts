@@ -115,7 +115,7 @@ class Act1 {
         let background = document.createElement("backgroundact1")
         let game = document.getElementsByTagName("game")[0]
         game.appendChild(background)
-        background.style.backgroundImage = `url(/docs/assets/plattegrond.png)`
+        background.style.backgroundImage = `url(/docs/assets/plattegrond.jpg)`
 
         let button1 = document.createElement("button")
         let button2 = document.createElement("button")
@@ -123,7 +123,6 @@ class Act1 {
         let button4 = document.createElement("button")
         let button5 = document.createElement("button")
         let button6 = document.createElement("button")
-        let button7 = document.createElement("button")
         
         game.appendChild(button1)
         game.appendChild(button2)
@@ -131,49 +130,42 @@ class Act1 {
         game.appendChild(button4)
         game.appendChild(button5)
         game.appendChild(button6)
-        game.appendChild(button7)
 
-        button1.style.width = `13.9vw`
-        button1.style.height = `20.1vh`
-        button1.style.transform = `translate(16.5vw, 41.4vh)`
+        button1.style.width = `19.6vw`
+        button1.style.height = `60.9vh`
+        button1.style.transform = `translate(5.7vw, 20.8vh)`
         button1.style.opacity = `80%`
         button1.addEventListener("click" , () => this.webmail())
 
-        button2.style.width = `6.5vw`
-        button2.style.height = `24.8vh`
-        button2.style.transform = `translate(31.5vw, 31.7vh)`
+        button2.style.width = `27.5vw`
+        button2.style.height = `12.3vh`
+        button2.style.transform = `translate(27.2vw, 69.8vh)`
         button2.style.opacity = `80%`
-        button2.addEventListener("click" , () => this.osiris())
+        button2.addEventListener("click" , () => this.rooster())
 
-        button3.style.width = `9.6vw`
-        button3.style.height = `9.3vh`
-        button3.style.transform = `translate(35.5vw, 63vh)`
+        button3.style.width = `13.2vw`
+        button3.style.height = `27.3vh`
+        button3.style.transform = `translate(56.3vw, 20.7vh)`
         button3.style.opacity = `80%`
-        button3.addEventListener("click" , () => this.rooster())
+        button3.addEventListener("click" , () => this.studentenServiceCenter())
 
-        button4.style.width = `10.9vw`
-        button4.style.height = `14vh`
-        button4.style.transform = `translate(56.8vw, 42.5vh)`
+        button4.style.width = `20.3vw`
+        button4.style.height = `18vh`
+        button4.style.transform = `translate(61.2vw, 63.8vh)`
         button4.style.opacity = `80%`
-        button4.addEventListener("click" , () => this.studentenServiceCenter())
+        button4.addEventListener("click" , () => this.studentenpas())
 
-        button5.style.width = `11.1vw`
-        button5.style.height = `13.6vh`
-        button5.style.transform = `translate(53.2vw, 65.8vh)`
+        button5.style.width = `12.8vw`
+        button5.style.height = `61.3vh`
+        button5.style.transform = `translate(83.7vw, 20.8vh)`
         button5.style.opacity = `80%`
-        button5.addEventListener("click" , () => this.studentenpas())
+        button5.addEventListener("click" , () => this.lms())
 
-        button6.style.width = `10.8vw`
-        button6.style.height = `24.8vh`
-        button6.style.transform = `translate(72.2vw, 42.5vh)`
+        button6.style.width = `9vw`
+        button6.style.height = `7.6vh`
+        button6.style.transform = `translate(91vw, 0vh)`
         button6.style.opacity = `80%`
-        button6.addEventListener("click" , () => this.lms())
-
-        button7.style.width = `4vw`
-        button7.style.height = `4vh`
-        button7.style.transform = `translate(5vw, 5vh)`
-        button7.style.opacity = `80%`
-        button7.addEventListener("click" , () => this.goBack())
+        button6.addEventListener("click" , () => this.goBack())
 
     }
 
