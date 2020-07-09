@@ -8,6 +8,7 @@ class EnterBuilding{
         this.setBackground()
         this.game.appendChild(this.bge)
         this.bge.addEventListener("mousedown", () => this.setBackground())
+        this.game.appendChild(this.bge)
     }
 
     setBackground(){
@@ -20,8 +21,13 @@ class EnterBuilding{
         }
         else if (this.i == 2){
             this.bge.remove()
+            console.log('help')
             new Act2()
         }
+<<<<<<< HEAD
+
+=======
+>>>>>>> f43055bd0530c58e46bc811fa598a2067f655e7f
         this.i++;
     }
 }
