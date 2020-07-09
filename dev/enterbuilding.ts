@@ -24,10 +24,6 @@ class EnterBuilding{
             console.log('help')
             new Act2()
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> f43055bd0530c58e46bc811fa598a2067f655e7f
         this.i++;
     }
 }

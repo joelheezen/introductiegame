@@ -98,7 +98,7 @@ var Act1 = (function () {
                 inputs[i].remove();
             }
         }
-        background.style.backgroundImage = "url(/introductiegame/docs/assets/plattegrond.png)";
+        background.style.backgroundImage = "url(/docs/assets/plattegrond.png)";
         var button1 = document.createElement("button");
         var button2 = document.createElement("button");
         var button3 = document.createElement("button");
@@ -333,39 +333,19 @@ var Game = (function () {
         button4.onclick = this.buttonPress4;
     }
     Game.prototype.buttonPress1 = function () {
-        var buttons = document.getElementsByTagName("button");
-        if (buttons) {
-            for (var i = (buttons.length - 1); i >= 0; i--) {
-                buttons[i].remove();
-            }
-        }
+        document.getElementsByTagName("game")[0].innerHTML = "";
         new Act1();
     };
     Game.prototype.buttonPress2 = function () {
-        var buttons = document.getElementsByTagName("button");
-        if (buttons) {
-            for (var i = (buttons.length - 1); i >= 0; i--) {
-                buttons[i].remove();
-            }
-        }
+        document.getElementsByTagName("game")[0].innerHTML = "";
         new Act1();
     };
     Game.prototype.buttonPress3 = function () {
-        var buttons = document.getElementsByTagName("button");
-        if (buttons) {
-            for (var i = (buttons.length - 1); i >= 0; i--) {
-                buttons[i].remove();
-            }
-        }
+        document.getElementsByTagName("game")[0].innerHTML = "";
         new LocatieSelectie();
     };
     Game.prototype.buttonPress4 = function () {
-        var buttons = document.getElementsByTagName("button");
-        if (buttons) {
-            for (var i = (buttons.length - 1); i >= 0; i--) {
-                buttons[i].remove();
-            }
-        }
+        document.getElementsByTagName("game")[0].innerHTML = "";
         new EnterBuilding();
     };
     return Game;
@@ -408,8 +388,12 @@ var LocatieSelectie = (function () {
         this.background.style.backgroundImage = "url(/docs/assets/akte_1_map@0.75x.jpg)";
         this.background.style.backgroundSize = "100% 100%";
         this.educationSet.remove();
-        this.locationMarker(5, 5, 'CMGT');
-        this.locationMarker(5, 5, 'Informatica');
+        this.locationMarker(30, 40, 'CMGT');
+        this.locationMarker(44, 16, 'Informatica');
+        this.locationMarker(24, 70, 'Communicatie');
+        this.locationMarker(60, 60, 'Crossmediale Communicatie');
+        this.locationMarker(17, 50, 'ICT Internet of Things');
+        this.locationMarker(80, 36, 'ICT Service Management');
     };
     LocatieSelectie.prototype.locationMarker = function (x, y, location) {
         var _this = this;
@@ -434,13 +418,20 @@ var LocatieSelectie = (function () {
         var locationImage = document.createElement('locationImage');
         this.game.appendChild(popupLocation);
         popupLocation.appendChild(locationImage);
-        locationImage.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123456.jpg)';
         if (awnser == 'correct') {
+            locationImage.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123456.jpg)';
             popupLocation.innerHTML += 'dummy text';
             var goto = document.createElement('button');
+            popupLocation.appendChild(goto);
+            goto.innerHTML = "Loop naar binnen";
+            goto.addEventListener('click', function () {
+                document.getElementsByTagName("game")[0].innerHTML = "";
+                new Act1;
+            });
         }
         else {
-            popupLocation.innerHTML += 'syke you thought';
+            locationImage.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123018.jpg)';
+            popupLocation.innerHTML += 'incorrect';
         }
         popupLocation.addEventListener('click', function () {
             document.getElementsByTagName('popupLocation')[0].remove();

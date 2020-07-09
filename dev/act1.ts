@@ -110,7 +110,7 @@ class Act1 {
                 inputs[i].remove()
             }
         }
-        background.style.backgroundImage = `url(/introductiegame/docs/assets/plattegrond.png)`
+        background.style.backgroundImage = `url(/docs/assets/plattegrond.png)`
 
         let button1 = document.createElement("button")
         let button2 = document.createElement("button")

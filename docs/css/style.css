@@ -135,6 +135,18 @@ popuplocation{
     box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
 }
 
+popuplocation button{
+    background-color: #ffb911;
+    border: solid black 3px;
+    font-weight: bolder;
+    border-radius: 3px;
+    width:40%;
+    height:3vw;    
+    left:30%;
+    bottom:5%;
+    cursor: pointer;
+}
+
 locationimage{
     position:absolute;
     width: calc(100% - 6px);
