@@ -71,7 +71,21 @@ class Act1 {
         let shape3 = (<HTMLInputElement>document.getElementById("input3")).value
         if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje"){
             if (confirm("dit is het goede antwoord, wil je verder? klik op cancel voor een pauze.")){
-                console.log("je gaat verder")
+                new Act2()
+                let inputs = document.getElementsByTagName("input")
+                let buttons = document.getElementsByTagName("button")
+
+                if (buttons){
+                    for (let i = (buttons.length -1); i >= 0; i--) {
+                        buttons[i].remove()
+                    }
+                }
+                
+                if (inputs) {
+                    for (let i = (inputs.length -1); i >= 0; i--) {
+                        inputs[i].remove()
+                    }
+                }
             }
             else{
                 console.log("je neemt een pauze")

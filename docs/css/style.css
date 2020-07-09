@@ -65,7 +65,7 @@ backgroundact1 {
     position: absolute;
     width:100vw; height:100vh;
     z-index: -1;
-    background-image: url(/docs/assets/backgroundact1main.jpg);
+    background-image: url(/introductiegame/docs/assets/backgroundact1main.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     left:0; top:0;
@@ -75,7 +75,7 @@ backgroundact2 {
     position: absolute;
     width:100vw; height:100vh;
     z-index: -1;
-    background-image: url(/docs/assets/Akte2/Akte2-overview-startscherm.jpg);
+    background-image: url(/introductiegame/docs/assets/Akte2/Akte2-overview-startscherm.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;

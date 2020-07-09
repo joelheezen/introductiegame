@@ -62,7 +62,19 @@ var Act1 = (function () {
         var shape3 = document.getElementById("input3").value;
         if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje") {
             if (confirm("dit is het goede antwoord, wil je verder? klik op cancel voor een pauze.")) {
-                console.log("je gaat verder");
+                new Act2();
+                var inputs = document.getElementsByTagName("input");
+                var buttons = document.getElementsByTagName("button");
+                if (buttons) {
+                    for (var i = (buttons.length - 1); i >= 0; i--) {
+                        buttons[i].remove();
+                    }
+                }
+                if (inputs) {
+                    for (var i = (inputs.length - 1); i >= 0; i--) {
+                        inputs[i].remove();
+                    }
+                }
             }
             else {
                 console.log("je neemt een pauze");
