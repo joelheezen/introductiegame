@@ -63,32 +63,44 @@ var Act1 = (function () {
 var Act2 = (function () {
     function Act2() {
         this.game = document.getElementsByTagName("game")[0];
-        var game = document.getElementsByTagName("game")[0];
         var background = document.createElement("backgroundact2");
-        game.appendChild(background);
+        this.game.appendChild(background);
+        this.levelSelect();
     }
+    Act2.prototype.makeLevelIcon = function (posX, posY, width, height) {
+        this.classroomIcon = document.createElement('classroom');
+        this.game.appendChild(this.classroomIcon);
+        this.classroomIcon.style.transform = "translate(" + posX + "vw," + posY + "vh)";
+        this.classroomIcon.style.width = width + "vw";
+        this.classroomIcon.style.height = height + "vh";
+        this.classroomIcon.style.backgroundColor = "black";
+    };
+    Act2.prototype.levelSelect = function () {
+        this.makeLevelIcon(8.8, 15.5, 9.5, 32);
+    };
     return Act2;
 }());
 var EnterBuilding = (function () {
     function EnterBuilding() {
         var _this = this;
         this.game = document.getElementsByTagName('game')[0];
+        this.bge = document.createElement("backgroundenter");
         this.i = 0;
         this.setBackground();
-        document.addEventListener("mousedown", function () { return _this.setBackground(); });
+        this.bge.addEventListener("mousedown", function () { return _this.setBackground(); });
     }
     EnterBuilding.prototype.setBackground = function () {
-        var bge = document.createElement("backgroundenter");
         if (this.i == 0) {
-            bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)';
+            this.bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)';
         }
         else if (this.i == 1) {
-            bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123018.jpg)';
+            this.bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123018.jpg)';
         }
-        else {
+        else if (this.i == 2) {
+            this.bge.remove();
             new Act2();
         }
-        this.game.appendChild(bge);
+        this.game.appendChild(this.bge);
         this.i++;
     };
     return EnterBuilding;
@@ -154,6 +166,12 @@ var Game = (function () {
     Game.prototype.buttonPress4 = function () {
         var buttons = document.getElementsByTagName("button");
         if (buttons) {
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].remove();
             }
