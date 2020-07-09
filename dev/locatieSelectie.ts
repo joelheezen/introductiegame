@@ -19,7 +19,7 @@ class LocatieSelectie{
 
         let educationSelect = document.createElement('select')
 
-        this.educations = ['CMGT','Informatica','','','','']
+        this.educations = ['CMGT','Informatica','Communicatie','Crossmediale Communicatie','ICT Internet of Things','ICT Service Management']
 
         for (let index = 0; index < this.educations.length; index++) {
             let addToDrop = document.createElement('option')
@@ -50,15 +50,17 @@ class LocatieSelectie{
         this.background.style.backgroundSize = "100% 100%"
         this.educationSet.remove()
 
-        for (let index = 0; index < this.educations.length; index++) {
-            this.locationMarker()
-        }
+       
+        this.locationMarker(5,5)
+        
 
     }
 
-    locationMarker(){
+    locationMarker(x: number,y: number){
         let marker = document.createElement('locationMarker')
         this.game.appendChild(marker)
+
+        marker.style.transform = `translate(${x}vw,${y}vh)`
     }
 }
 
