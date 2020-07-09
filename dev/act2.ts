@@ -17,7 +17,6 @@ class Act2{
         this.classroomIcon.style.transform = `translate(${posX}vw,${posY}vh)`
         this.classroomIcon.style.width = `${width}vw`
         this.classroomIcon.style.height = `${height}vh`
-        //this.classroomIcon.style.backgroundColor = "black"
     }
 
     levelSelect(){

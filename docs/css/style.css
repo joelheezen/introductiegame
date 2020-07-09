@@ -71,7 +71,7 @@ backgroundact1 {
     left:0; top:0;
 }
 
-backgroundact2 {
+backgroundact2, act2background{
     position: absolute;
     width:100vw; height:100vh;
     z-index: -1;
@@ -92,7 +92,7 @@ input{
     position:absolute;
 }
 
-backgroundenter, act2background {
+backgroundenter{
     position: absolute;
     width:100vw; height:100vh;
     z-index: -1;
@@ -101,6 +101,18 @@ backgroundenter, act2background {
     background-size: 120% 120%;
     left:0;
     top:0;
+}
+
+video{
+    position: absolute;
+    width:100vw; height:100vh;
+}
+videoBackground{
+    position: absolute;
+    width:100vw; height:100vh;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 button{
