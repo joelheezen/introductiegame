@@ -97,6 +97,7 @@ backgroundenter {
 
 button{
     position: absolute;
+    cursor:pointer;
 }
 
 input {
