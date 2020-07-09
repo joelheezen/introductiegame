@@ -87,7 +87,7 @@ var Act1 = (function () {
                 inputs[i].remove();
             }
         }
-        background.style.backgroundImage = "url(../assets/akte_1_map_fout@0.75x.jpg)";
+        background.style.backgroundImage = "url(/docs/assets/plattegrond.png)";
         console.log(background);
     };
     return Act1;
