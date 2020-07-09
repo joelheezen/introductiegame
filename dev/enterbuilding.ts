@@ -6,6 +6,7 @@ class EnterBuilding{
 
     constructor(){
         this.setBackground()
+        this.game.appendChild(this.bge)
         this.bge.addEventListener("mousedown", () => this.setBackground())
     }
 
@@ -21,8 +22,6 @@ class EnterBuilding{
             this.bge.remove()
             new Act2()
         }
-
-        this.game.appendChild(this.bge)
         this.i++;
     }
 }

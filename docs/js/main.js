@@ -75,12 +75,102 @@ var Act2 = (function () {
         this.classroomIcon.style.transform = "translate(" + posX + "vw," + posY + "vh)";
         this.classroomIcon.style.width = width + "vw";
         this.classroomIcon.style.height = height + "vh";
-        this.classroomIcon.style.backgroundColor = "black";
     };
     Act2.prototype.levelSelect = function () {
         this.makeLevelIcon(8.8, 15.5, 9.5, 32);
+        this.classroomIcon.addEventListener("click", function () {
+            console.log("room1");
+            new Act2Room1;
+        });
+        this.makeLevelIcon(28.5, 15.5, 9.5, 32);
+        this.classroomIcon.addEventListener("click", function () {
+            console.log("room2");
+            new Act2Room2;
+        });
+        this.makeLevelIcon(47, 15.5, 9.5, 32);
+        this.classroomIcon.addEventListener("click", function () {
+            console.log("room3");
+            new Act2Room3;
+        });
+        this.makeLevelIcon(65.2, 15.5, 9.5, 32);
+        this.classroomIcon.addEventListener("click", function () {
+            console.log("room4");
+            new Act2Room4;
+        });
+        this.makeLevelIcon(84, 15.5, 9.5, 32);
+        this.classroomIcon.addEventListener("click", function () {
+            console.log("room5");
+            new Act2Room5;
+        });
+        this.makeLevelIcon(28, 75, 5, 4);
+        this.classroomIcon.addEventListener("click", function () {
+            console.log("folder1");
+        });
+        this.makeLevelIcon(25, 82, 7, 12);
+        this.classroomIcon.addEventListener("click", function () {
+            console.log("folder2");
+        });
+        this.makeLevelIcon(35, 93, 5, 5);
+        this.classroomIcon.addEventListener("click", function () {
+            console.log("folder3");
+        });
+        this.makeLevelIcon(33.5, 86, 5, 5);
+        this.classroomIcon.addEventListener("click", function () {
+            console.log("folder4");
+        });
+        this.makeLevelIcon(86.5, 25.3, 5, 15);
+        this.classroomIcon.addEventListener("click", function () {
+            console.log("folder4");
+        });
     };
     return Act2;
+}());
+var Act2Room1 = (function () {
+    function Act2Room1() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("act2background");
+        this.game.appendChild(this.bg);
+        this.bg.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)';
+    }
+    return Act2Room1;
+}());
+var Act2Room2 = (function () {
+    function Act2Room2() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("act2background");
+        this.game.appendChild(this.bg);
+        this.bg.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)';
+    }
+    return Act2Room2;
+}());
+var Act2Room3 = (function () {
+    function Act2Room3() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("act2background");
+        this.game.appendChild(this.bg);
+        this.bg.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)';
+    }
+    return Act2Room3;
+}());
+var Act2Room4 = (function () {
+    function Act2Room4() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("act2background");
+        this.video = document.createElement("videoDecaan");
+        console.log("act2 room 4 open");
+        this.game.appendChild(this.bg);
+        this.bg.style.backgroundImage = 'url(/docs/assets/Akte2/filmpjedecaanhorizontaal.mp4)';
+    }
+    return Act2Room4;
+}());
+var Act2Room5 = (function () {
+    function Act2Room5() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("act2background");
+        this.game.appendChild(this.bg);
+        this.bg.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)';
+    }
+    return Act2Room5;
 }());
 var EnterBuilding = (function () {
     function EnterBuilding() {
@@ -89,6 +179,7 @@ var EnterBuilding = (function () {
         this.bge = document.createElement("backgroundenter");
         this.i = 0;
         this.setBackground();
+        this.game.appendChild(this.bge);
         this.bge.addEventListener("mousedown", function () { return _this.setBackground(); });
     }
     EnterBuilding.prototype.setBackground = function () {
@@ -102,7 +193,6 @@ var EnterBuilding = (function () {
             this.bge.remove();
             new Act2();
         }
-        this.game.appendChild(this.bge);
         this.i++;
     };
     return EnterBuilding;
