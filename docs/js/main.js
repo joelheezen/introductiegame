@@ -9,6 +9,15 @@ var Act1 = (function () {
     }
     return Act1;
 }());
+var EnterBuilding = (function () {
+    function EnterBuilding() {
+    }
+    EnterBuilding.prototype.setBackground = function () {
+        var bge = document.createElement("backgroundenter");
+        bge.style.backgroundImage = 'url(ass';
+    };
+    return EnterBuilding;
+}());
 var Game = (function () {
     function Game() {
         new Act1();
