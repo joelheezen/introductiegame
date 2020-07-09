@@ -27,31 +27,49 @@ var Game = (function () {
 window.addEventListener("load", function () { return new Act1(); });
 var LocatieSelectie = (function () {
     function LocatieSelectie() {
-        this.background = document.createElement('background');
+        this.background = document.createElement('backgroundLocation');
         this.game = document.getElementsByTagName('game')[0];
-        this.background.style.backgroundImage = "";
-        this.locationSetter();
+        this.educations = new Array();
+        this.background.style.backgroundImage = "url(/docs/assets/rotterdam_50.png";
+        this.game.appendChild(this.background);
+        this.educationSetter();
     }
-    LocatieSelectie.prototype.locationSetter = function () {
-        var locationSet = document.createElement('locationsetter');
-        this.game.appendChild(locationSet);
-        var locationSelect = document.createElement('select');
-        var locations = ['CMGT', 'Informatica'];
-        for (var index = 0; index < locations.length; index++) {
+    LocatieSelectie.prototype.educationSetter = function () {
+        var _this = this;
+        this.educationSet = document.createElement('educationsetter');
+        this.game.appendChild(this.educationSet);
+        this.educationSet.innerHTML = "Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding.";
+        var educationSelect = document.createElement('select');
+        this.educations = ['CMGT', 'Informatica'];
+        for (var index = 0; index < this.educations.length; index++) {
             var addToDrop = document.createElement('option');
-            addToDrop.value = locations[index];
-            addToDrop.innerHTML = locations[index];
-            locationSelect.appendChild(addToDrop);
+            addToDrop.value = this.educations[index];
+            addToDrop.innerHTML = this.educations[index];
+            educationSelect.appendChild(addToDrop);
         }
-        locationSet.appendChild(locationSelect);
+        this.educationSet.appendChild(educationSelect);
         var thisLocation = document.createElement('button');
-        thisLocation.id = 'buttonLocation';
         thisLocation.innerHTML = 'Kies opleiding';
-        locationSet.appendChild(thisLocation);
+        thisLocation.addEventListener('click', function () { return _this.saveEducation(); });
+        this.educationSet.appendChild(thisLocation);
+    };
+    LocatieSelectie.prototype.saveEducation = function () {
+        var education = document.getElementsByTagName('select')[0].value;
+        localStorage.setItem('education', education);
+        this.locationPicker();
     };
     LocatieSelectie.prototype.locationPicker = function () {
+        console.log('you didnt fuck up');
+        this.background.style.backgroundImage = "url(/docs/assets/akte_1_map@0.75x.jpg)";
+        this.background.style.backgroundSize = "100% 100%";
+        this.educationSet.remove();
+        for (var index = 0; index < this.educations.length; index++) {
+            this.locationMarker();
+        }
     };
     LocatieSelectie.prototype.locationMarker = function () {
+        var marker = document.createElement('locationMarker');
+        this.game.appendChild(marker);
     };
     return LocatieSelectie;
 }());
