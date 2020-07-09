@@ -150,6 +150,13 @@ var Game = (function () {
         new Act1();
     };
     Game.prototype.buttonPress3 = function () {
+        var buttons = document.getElementsByTagName("button");
+        if (buttons) {
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+        }
+        new LocatieSelectie();
     };
     Game.prototype.buttonPress4 = function () {
         var buttons = document.getElementsByTagName("button");
