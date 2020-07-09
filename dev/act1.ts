@@ -97,7 +97,6 @@ class Act1 {
     }
 
     searchOnline() {
-        console.log("gg")
         let inputs = document.getElementsByTagName("input")
         let buttons = document.getElementsByTagName("button")
         let background = (<HTMLElement>document.getElementsByTagName("backgroundact1")[0])
@@ -111,9 +110,80 @@ class Act1 {
                 inputs[i].remove()
             }
         }
-        
         background.style.backgroundImage = `url(/docs/assets/plattegrond.png)`
-        console.log(background)
+
+        let button1 = document.createElement("button")
+        let button2 = document.createElement("button")
+        let button3 = document.createElement("button")
+        let button4 = document.createElement("button")
+        let button5 = document.createElement("button")
+        let button6 = document.createElement("button")
+        let game = document.getElementsByTagName("game")[0]
+        game.appendChild(button1)
+        game.appendChild(button2)
+        game.appendChild(button3)
+        game.appendChild(button4)
+        game.appendChild(button5)
+        game.appendChild(button6)
+
+        button1.style.width = `13.9vw`
+        button1.style.height = `20.1vh`
+        button1.style.transform = `translate(16.5vw, 41.4vh)`
+        button1.style.opacity = `80%`
+        button1.onclick = this.webmail
+
+        button2.style.width = `6.5vw`
+        button2.style.height = `24.8vh`
+        button2.style.transform = `translate(31.5vw, 31.7vh)`
+        button2.style.opacity = `80%`
+        button2.onclick = this.osiris
+
+        button3.style.width = `9.6vw`
+        button3.style.height = `9.3vh`
+        button3.style.transform = `translate(35.5vw, 63vh)`
+        button3.style.opacity = `80%`
+        button3.onclick = this.rooster
+
+        button4.style.width = `10.9vw`
+        button4.style.height = `14vh`
+        button4.style.transform = `translate(56.8vw, 42.5vh)`
+        button4.style.opacity = `80%`
+        button4.onclick = this.studentenServiceCenter
+
+        button5.style.width = `11.1vw`
+        button5.style.height = `13.6vh`
+        button5.style.transform = `translate(53.2vw, 65.8vh)`
+        button5.style.opacity = `80%`
+        button5.onclick = this.studentenpas
+
+        button6.style.width = `10.8vw`
+        button6.style.height = `24.8vh`
+        button6.style.transform = `translate(72.2vw, 42.5vh)`
+        button6.style.opacity = `80%`
+        button6.onclick = this.lms
     }
 
+    webmail(){
+        console.log("webmail is aangeklikt")
+    }
+
+    osiris(){
+        console.log("osiris is aangeklikt")
+    }
+
+    rooster(){
+        console.log("rooster is aangeklikt")
+    }
+
+    studentenServiceCenter(){
+        console.log("ssc is aangeklikt")
+    }
+
+    studentenpas(){
+        console.log("studentenpas is aangeklikt")
+    }
+
+    lms(){
+        console.log("lms is aangeklikt")
+    }
 }

@@ -85,7 +85,6 @@ var Act1 = (function () {
         }
     };
     Act1.prototype.searchOnline = function () {
-        console.log("gg");
         var inputs = document.getElementsByTagName("input");
         var buttons = document.getElementsByTagName("button");
         var background = document.getElementsByTagName("backgroundact1")[0];
@@ -100,7 +99,67 @@ var Act1 = (function () {
             }
         }
         background.style.backgroundImage = "url(/docs/assets/plattegrond.png)";
-        console.log(background);
+        var button1 = document.createElement("button");
+        var button2 = document.createElement("button");
+        var button3 = document.createElement("button");
+        var button4 = document.createElement("button");
+        var button5 = document.createElement("button");
+        var button6 = document.createElement("button");
+        var game = document.getElementsByTagName("game")[0];
+        game.appendChild(button1);
+        game.appendChild(button2);
+        game.appendChild(button3);
+        game.appendChild(button4);
+        game.appendChild(button5);
+        game.appendChild(button6);
+        button1.style.width = "13.9vw";
+        button1.style.height = "20.1vh";
+        button1.style.transform = "translate(16.5vw, 41.4vh)";
+        button1.style.opacity = "80%";
+        button1.onclick = this.webmail;
+        button2.style.width = "6.5vw";
+        button2.style.height = "24.8vh";
+        button2.style.transform = "translate(31.5vw, 31.7vh)";
+        button2.style.opacity = "80%";
+        button2.onclick = this.osiris;
+        button3.style.width = "9.6vw";
+        button3.style.height = "9.3vh";
+        button3.style.transform = "translate(35.5vw, 63vh)";
+        button3.style.opacity = "80%";
+        button3.onclick = this.rooster;
+        button4.style.width = "10.9vw";
+        button4.style.height = "14vh";
+        button4.style.transform = "translate(56.8vw, 42.5vh)";
+        button4.style.opacity = "80%";
+        button4.onclick = this.studentenServiceCenter;
+        button5.style.width = "11.1vw";
+        button5.style.height = "13.6vh";
+        button5.style.transform = "translate(53.2vw, 65.8vh)";
+        button5.style.opacity = "80%";
+        button5.onclick = this.studentenpas;
+        button6.style.width = "10.8vw";
+        button6.style.height = "24.8vh";
+        button6.style.transform = "translate(72.2vw, 42.5vh)";
+        button6.style.opacity = "80%";
+        button6.onclick = this.lms;
+    };
+    Act1.prototype.webmail = function () {
+        console.log("webmail is aangeklikt");
+    };
+    Act1.prototype.osiris = function () {
+        console.log("osiris is aangeklikt");
+    };
+    Act1.prototype.rooster = function () {
+        console.log("rooster is aangeklikt");
+    };
+    Act1.prototype.studentenServiceCenter = function () {
+        console.log("ssc is aangeklikt");
+    };
+    Act1.prototype.studentenpas = function () {
+        console.log("studentenpas is aangeklikt");
+    };
+    Act1.prototype.lms = function () {
+        console.log("lms is aangeklikt");
     };
     return Act1;
 }());
