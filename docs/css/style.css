@@ -1,3 +1,4 @@
+
 locationsetter{
     position: absolute;
     width:30vw;
@@ -6,4 +7,13 @@ locationsetter{
     left:35vw;
     background-color: orange;
     border-radius: 1vh;
+}
+
+backgroundact1 {
+    position: absolute;
+}
+
+* {
+    position: absolute;
+
 }
