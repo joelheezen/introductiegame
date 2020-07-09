@@ -39,10 +39,18 @@ class Game{
         let buttons = document.getElementsByTagName("button")
         if (buttons){
             for (let i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
+                buttons[i].remove()
+            }
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].remove()
+            }
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].remove()
             }
         }
+
         new Act1()
+        
     }
     buttonPress2(){
         let buttons = document.getElementsByTagName("button")
