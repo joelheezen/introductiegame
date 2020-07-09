@@ -6,9 +6,6 @@ class Act1 {
         let background = document.createElement("backgroundact1")
         game.appendChild(background)
 
-        let button = document.createElement("button")
-        game.appendChild(button)
-
         let input1 = document.createElement("input")
         game.appendChild(input1)
         input1.style.width = `13.7vw`
@@ -44,6 +41,7 @@ class Act1 {
         input3.style.paddingLeft = `20px`
         input3.style.fontFamily = `Arial Black`
         input3.style.textTransform = `uppercase`
+
         let button1 = document.createElement("button")
         game.appendChild(button1)
         button1.style.width = `15vw`
@@ -51,6 +49,7 @@ class Act1 {
         button1.style.transform = `translate(42vw, 47vh)`
         button1.style.opacity = `80%`
         button1.onclick = this.shapeCheck
+
         let button2 = document.createElement("button")
         game.appendChild(button2)
         button2.style.width = `18vw`

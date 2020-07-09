@@ -4,8 +4,6 @@ var Act1 = (function () {
         var game = document.getElementsByTagName("game")[0];
         var background = document.createElement("backgroundact1");
         game.appendChild(background);
-        var button = document.createElement("button");
-        game.appendChild(button);
         var input1 = document.createElement("input");
         game.appendChild(input1);
         input1.style.width = "13.7vw";
