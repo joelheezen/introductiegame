@@ -1,7 +1,5 @@
 class Act1{
 
-
-
     constructor(){
         let game = document.getElementsByTagName("game")[0]
 
