@@ -155,6 +155,12 @@ var Game = (function () {
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].remove();
             }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
         }
         new LocatieSelectie();
     };
@@ -185,7 +191,7 @@ var LocatieSelectie = (function () {
         this.game.appendChild(this.educationSet);
         this.educationSet.innerHTML = "Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding.";
         var educationSelect = document.createElement('select');
-        this.educations = ['CMGT', 'Informatica'];
+        this.educations = ['CMGT', 'Informatica', '', '', '', ''];
         for (var index = 0; index < this.educations.length; index++) {
             var addToDrop = document.createElement('option');
             addToDrop.value = this.educations[index];
