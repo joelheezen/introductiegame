@@ -44,6 +44,7 @@ educationsetter button{
 }
 
 educationsetter select{
+    position:absolute;
     width:40%;
     height:2vw;
     top:30%;    
@@ -77,4 +78,8 @@ backgroundenter {
     background-size: 100%;
     left:0;
     top:0;
+}
+
+button{
+    position: absolute;
 }
