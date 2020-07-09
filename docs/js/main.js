@@ -8,7 +8,7 @@ var Act1 = (function () {
         game.appendChild(input1);
         input1.style.width = "13.7vw";
         input1.style.height = "5.7vh";
-        input1.style.transform = "translate(25.4vw, 39.3vh)";
+        input1.style.transform = "translate(26vw, 39.3vh)";
         input1.style.borderRadius = "25px";
         input1.style.border = "none";
         input1.style.fontSize = "20px";
@@ -19,7 +19,7 @@ var Act1 = (function () {
         game.appendChild(input2);
         input2.style.width = "13.7vw";
         input2.style.height = "5.7vh";
-        input2.style.transform = "translate(27.1vw, 39.3vh)";
+        input2.style.transform = "translate(27.8vw, 39.3vh)";
         input2.style.borderRadius = "25px";
         input2.style.border = "none";
         input2.style.fontSize = "20px";
@@ -30,7 +30,7 @@ var Act1 = (function () {
         game.appendChild(input3);
         input3.style.width = "13.7vw";
         input3.style.height = "5.7vh";
-        input3.style.transform = "translate(28.7vw, 39.3vh)";
+        input3.style.transform = "translate(29.5vw, 39.3vh)";
         input3.style.borderRadius = "25px";
         input3.style.border = "none";
         input3.style.fontSize = "20px";
@@ -60,6 +60,15 @@ var Act1 = (function () {
     };
     return Act1;
 }());
+var Act2 = (function () {
+    function Act2() {
+        this.game = document.getElementsByTagName("game")[0];
+        var game = document.getElementsByTagName("game")[0];
+        var background = document.createElement("backgroundact2");
+        game.appendChild(background);
+    }
+    return Act2;
+}());
 var EnterBuilding = (function () {
     function EnterBuilding() {
         var _this = this;
@@ -77,7 +86,7 @@ var EnterBuilding = (function () {
             bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123018.jpg)';
         }
         else {
-            new Act1();
+            new Act2();
         }
         this.game.appendChild(bge);
         this.i++;
@@ -122,10 +131,23 @@ var Game = (function () {
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].remove();
             }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
         }
         new Act1();
     };
     Game.prototype.buttonPress2 = function () {
+        var buttons = document.getElementsByTagName("button");
+        if (buttons) {
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+        }
+        new Act1();
     };
     Game.prototype.buttonPress3 = function () {
         var buttons = document.getElementsByTagName("button");
@@ -137,6 +159,13 @@ var Game = (function () {
         new LocatieSelectie();
     };
     Game.prototype.buttonPress4 = function () {
+        var buttons = document.getElementsByTagName("button");
+        if (buttons) {
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+        }
+        new EnterBuilding();
     };
     return Game;
 }());
