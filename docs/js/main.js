@@ -103,20 +103,14 @@ var Act1 = (function () {
     };
     Act1.prototype.searchOnline = function () {
         var _this = this;
-        var inputs = document.getElementsByTagName("input");
-        var buttons = document.getElementsByTagName("button");
-        var background = document.getElementsByTagName("backgroundact1")[0];
-        if (buttons) {
-            for (var i = (buttons.length - 1); i >= 0; i--) {
-                buttons[i].remove();
-            }
-        }
-        if (inputs) {
-            for (var i = (inputs.length - 1); i >= 0; i--) {
-                inputs[i].remove();
-            }
-        }
-        background.style.backgroundImage = "url(/docs/assets/plattegrond.png)";
+        this.input1Save = document.getElementById("input1").value;
+        this.input2Save = document.getElementById("input2").value;
+        this.input3Save = document.getElementById("input3").value;
+        document.getElementsByTagName("game")[0].innerHTML = "";
+        var background = document.createElement("backgroundact1");
+        var game = document.getElementsByTagName("game")[0];
+        game.appendChild(background);
+        background.style.backgroundImage = "url(/docs/assets/plattegrond.jpg)";
         var button1 = document.createElement("button");
         var button2 = document.createElement("button");
         var button3 = document.createElement("button");
