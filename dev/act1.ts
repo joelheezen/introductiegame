@@ -78,7 +78,7 @@ class Act1 {
         button3.style.width = `9vw`
         button3.style.height = `7.6vh`
         button3.style.transform = `translate(91vw, 0vh)`
-        button3.style.opacity = `80%`
+        button3.style.opacity = `0%`
         button3.addEventListener("click" , () => this.searchOnline())
     }
 
@@ -142,37 +142,37 @@ class Act1 {
         button1.style.width = `19.6vw`
         button1.style.height = `60.9vh`
         button1.style.transform = `translate(5.7vw, 20.8vh)`
-        button1.style.opacity = `80%`
+        button1.style.opacity = `0%`
         button1.addEventListener("click" , () => this.webmail())
 
         button2.style.width = `27.5vw`
         button2.style.height = `12.3vh`
         button2.style.transform = `translate(27.2vw, 69.8vh)`
-        button2.style.opacity = `80%`
+        button2.style.opacity = `0%`
         button2.addEventListener("click" , () => this.rooster())
 
         button3.style.width = `13.2vw`
         button3.style.height = `27.3vh`
         button3.style.transform = `translate(56.3vw, 20.7vh)`
-        button3.style.opacity = `80%`
+        button3.style.opacity = `0%`
         button3.addEventListener("click" , () => this.studentenServiceCenter())
 
         button4.style.width = `20.3vw`
         button4.style.height = `18vh`
         button4.style.transform = `translate(61.2vw, 63.8vh)`
-        button4.style.opacity = `80%`
+        button4.style.opacity = `0%`
         button4.addEventListener("click" , () => this.studentenpas())
 
         button5.style.width = `12.8vw`
         button5.style.height = `61.3vh`
         button5.style.transform = `translate(83.7vw, 20.8vh)`
-        button5.style.opacity = `80%`
+        button5.style.opacity = `0%`
         button5.addEventListener("click" , () => this.lms())
 
         button6.style.width = `9vw`
         button6.style.height = `7.6vh`
         button6.style.transform = `translate(91vw, 0vh)`
-        button6.style.opacity = `80%`
+        button6.style.opacity = `0%`
         button6.addEventListener("click" , () => this.goBack())
 
     }
