@@ -14,7 +14,7 @@ class Act1 {
         input1.style.borderRadius = `25px`
         input1.style.border = `none`
         input1.style.fontSize = `20px`
-        input1.style.paddingLeft = `20px`
+        input1.style.paddingLeft = `1vw`
         input1.style.fontFamily = `Arial Black`
         input1.style.textTransform = `uppercase`
 
@@ -26,7 +26,7 @@ class Act1 {
         input2.style.borderRadius = `25px`
         input2.style.border = `none`
         input2.style.fontSize = `20px`
-        input2.style.paddingLeft = `20px`
+        input2.style.paddingLeft = `1vw`
         input2.style.fontFamily = `Arial Black`
         input2.style.textTransform = `uppercase`
 
@@ -38,7 +38,7 @@ class Act1 {
         input3.style.borderRadius = `25px`
         input3.style.border = `none`
         input3.style.fontSize = `20px`
-        input3.style.paddingLeft = `20px`
+        input3.style.paddingLeft = `1vw`
         input3.style.fontFamily = `Arial Black`
         input3.style.textTransform = `uppercase`
 

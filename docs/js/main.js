@@ -12,7 +12,7 @@ var Act1 = (function () {
         input1.style.borderRadius = "25px";
         input1.style.border = "none";
         input1.style.fontSize = "20px";
-        input1.style.paddingLeft = "20px";
+        input1.style.paddingLeft = "1vw";
         input1.style.fontFamily = "Arial Black";
         input1.style.textTransform = "uppercase";
         var input2 = document.createElement("input");
@@ -23,7 +23,7 @@ var Act1 = (function () {
         input2.style.borderRadius = "25px";
         input2.style.border = "none";
         input2.style.fontSize = "20px";
-        input2.style.paddingLeft = "20px";
+        input2.style.paddingLeft = "1vw";
         input2.style.fontFamily = "Arial Black";
         input2.style.textTransform = "uppercase";
         var input3 = document.createElement("input");
@@ -34,7 +34,7 @@ var Act1 = (function () {
         input3.style.borderRadius = "25px";
         input3.style.border = "none";
         input3.style.fontSize = "20px";
-        input3.style.paddingLeft = "20px";
+        input3.style.paddingLeft = "1vw";
         input3.style.fontFamily = "Arial Black";
         input3.style.textTransform = "uppercase";
         var button1 = document.createElement("button");
@@ -60,6 +60,15 @@ var Act1 = (function () {
     };
     return Act1;
 }());
+var Act2 = (function () {
+    function Act2() {
+        this.game = document.getElementsByTagName("game")[0];
+        var game = document.getElementsByTagName("game")[0];
+        var background = document.createElement("backgroundact2");
+        game.appendChild(background);
+    }
+    return Act2;
+}());
 var EnterBuilding = (function () {
     function EnterBuilding() {
         var _this = this;
@@ -77,7 +86,7 @@ var EnterBuilding = (function () {
             bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123018.jpg)';
         }
         else {
-            new Act1();
+            new Act2();
         }
         this.game.appendChild(bge);
         this.i++;
@@ -141,8 +150,22 @@ var Game = (function () {
         new Act1();
     };
     Game.prototype.buttonPress3 = function () {
+        var buttons = document.getElementsByTagName("button");
+        if (buttons) {
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+        }
+        new LocatieSelectie();
     };
     Game.prototype.buttonPress4 = function () {
+        var buttons = document.getElementsByTagName("button");
+        if (buttons) {
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+        }
+        new EnterBuilding();
     };
     return Game;
 }());

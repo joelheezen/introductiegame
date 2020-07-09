@@ -1,3 +1,4 @@
+
 *{
     font-family: Arial;
 }
@@ -9,11 +10,69 @@ body{
 
 backgroundLocation{
     position: absolute;
+    top:0px; 
+    left:0;
+    width:100vw; 
+    height:100vh;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+educationsetter{
+    position: absolute;
+    padding-left:2vw;
+    padding-right:2vw;
+    padding-top:2vw;
+    width:30vw;
+    height:60vh;
+    top:20vh;
+    left:33vw;
+    background-color: #ffb911;
+    border-radius: 1vh;
+}
+
+educationsetter button{
+    background-color: #ffb911;
+    border: solid black 3px;
+    font-weight: bolder;
+    border-radius: 3px;
+    width:40%;
+    height:3vw;    
+    left:calc(30% - 6px);
+    top:40%;
+}
+
+educationsetter select{
+    position:absolute;
+    width:40%;
+    height:2vw;
+    top:30%;    
+    left:calc(30% - 6px);
+    border-radius: 10px;
+    border:none;
+    box-shadow: 3px 3px gray inset;
+    padding-top:3px;
+    padding-left:3px;
+}
+
+backgroundact1 {
+    position: absolute;
     width:100vw; height:100vh;
     z-index: -1;
     background-image: url(..//assets/backgroundact1main.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    left:0; top:0;
+}
+backgroundact2 {
+    position: absolute;
+    width:100vw; height:100vh;
+    z-index: -1;
+    background-image: url(/docs/assets/Akte2/Akte2-overview-startscherm.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
     left:0; top:0;
 }
 input:focus{
@@ -35,12 +94,3 @@ button{
     position: absolute;
 }
 
-backgroundact1 {
-    position: absolute;
-    width:100vw; height:100vh;
-    z-index: -1;
-    background-image: url(..//assets/backgroundact1main.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    left:0; top:0;
-}
