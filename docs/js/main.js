@@ -73,7 +73,22 @@ var Act1 = (function () {
         }
     };
     Act1.prototype.searchOnline = function () {
-        window.location.href = 'https://www.youtube.com/watch?v=ub82Xb1C8os';
+        console.log("gg");
+        var inputs = document.getElementsByTagName("input");
+        var buttons = document.getElementsByTagName("button");
+        var background = document.getElementsByTagName("backgroundact1")[0];
+        if (buttons) {
+            for (var i = (buttons.length - 1); i >= 0; i--) {
+                buttons[i].remove();
+            }
+        }
+        if (inputs) {
+            for (var i = (inputs.length - 1); i >= 0; i--) {
+                inputs[i].remove();
+            }
+        }
+        background.style.backgroundImage = "url(../assets/akte_1_map_fout@0.75x.jpg)";
+        console.log(background);
     };
     return Act1;
 }());

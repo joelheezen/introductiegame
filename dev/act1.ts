@@ -83,7 +83,23 @@ class Act1 {
     }
 
     searchOnline() {
-        window.location.href = 'https://www.youtube.com/watch?v=ub82Xb1C8os';
+        console.log("gg")
+        let inputs = document.getElementsByTagName("input")
+        let buttons = document.getElementsByTagName("button")
+        let background = (<HTMLElement>document.getElementsByTagName("backgroundact1")[0])
+        if (buttons){
+            for (let i = (buttons.length -1); i >= 0; i--) {
+                buttons[i].remove()
+            }
+        }
+        if (inputs) {
+            for (let i = (inputs.length -1); i >= 0; i--) {
+                inputs[i].remove()
+            }
+        }
+        
+        background.style.backgroundImage = `url(../assets/akte_1_map_fout@0.75x.jpg)`
+        console.log(background)
     }
 
 }
