@@ -157,13 +157,7 @@ var Game = (function () {
     Game.prototype.buttonPress1 = function () {
         var buttons = document.getElementsByTagName("button");
         if (buttons) {
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
+            for (var i = (buttons.length - 1); i >= 0; i--) {
                 buttons[i].remove();
             }
         }
@@ -172,13 +166,7 @@ var Game = (function () {
     Game.prototype.buttonPress2 = function () {
         var buttons = document.getElementsByTagName("button");
         if (buttons) {
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
+            for (var i = (buttons.length - 1); i >= 0; i--) {
                 buttons[i].remove();
             }
         }
@@ -187,13 +175,7 @@ var Game = (function () {
     Game.prototype.buttonPress3 = function () {
         var buttons = document.getElementsByTagName("button");
         if (buttons) {
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
+            for (var i = (buttons.length - 1); i >= 0; i--) {
                 buttons[i].remove();
             }
         }
@@ -202,13 +184,7 @@ var Game = (function () {
     Game.prototype.buttonPress4 = function () {
         var buttons = document.getElementsByTagName("button");
         if (buttons) {
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].remove();
-            }
-            for (var i = 0; i < buttons.length; i++) {
+            for (var i = (buttons.length - 1); i >= 0; i--) {
                 buttons[i].remove();
             }
         }
