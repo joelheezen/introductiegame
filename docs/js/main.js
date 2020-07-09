@@ -65,32 +65,45 @@ var Act1 = (function () {
 var Act2 = (function () {
     function Act2() {
         this.game = document.getElementsByTagName("game")[0];
-        var game = document.getElementsByTagName("game")[0];
         var background = document.createElement("backgroundact2");
-        game.appendChild(background);
+        this.game.appendChild(background);
+        this.levelSelect();
     }
+    Act2.prototype.makeLevelIcon = function (posX, posY, width, height) {
+        this.classroomIcon = document.createElement('classroom');
+        this.game.appendChild(this.classroomIcon);
+        this.classroomIcon.style.transform = "translate(" + posX + "vw," + posY + "vh)";
+        this.classroomIcon.style.width = width + "vw";
+        this.classroomIcon.style.height = height + "vh";
+        this.classroomIcon.style.backgroundColor = "black";
+    };
+    Act2.prototype.levelSelect = function () {
+        this.makeLevelIcon(8.8, 15.5, 9.5, 32);
+    };
     return Act2;
 }());
 var EnterBuilding = (function () {
     function EnterBuilding() {
         var _this = this;
         this.game = document.getElementsByTagName('game')[0];
+        this.bge = document.createElement("backgroundenter");
         this.i = 0;
         this.setBackground();
-        document.addEventListener("mousedown", function () { return _this.setBackground(); });
+        this.bge.addEventListener("mousedown", function () { return _this.setBackground(); });
+        this.game.appendChild(this.bge);
     }
     EnterBuilding.prototype.setBackground = function () {
-        var bge = document.createElement("backgroundenter");
         if (this.i == 0) {
-            bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)';
+            this.bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)';
         }
         else if (this.i == 1) {
-            bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123018.jpg)';
+            this.bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123018.jpg)';
         }
-        else {
+        else if (this.i == 2) {
+            this.bge.remove();
+            console.log('help');
             new Act2();
         }
-        this.game.appendChild(bge);
         this.i++;
     };
     return EnterBuilding;
@@ -178,6 +191,12 @@ var Game = (function () {
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].remove();
             }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
         }
         new EnterBuilding();
     };
@@ -218,17 +237,46 @@ var LocatieSelectie = (function () {
         this.locationPicker();
     };
     LocatieSelectie.prototype.locationPicker = function () {
-        console.log('you didnt fuck up');
         this.background.style.backgroundImage = "url(/docs/assets/akte_1_map@0.75x.jpg)";
         this.background.style.backgroundSize = "100% 100%";
         this.educationSet.remove();
-        this.locationMarker(5, 5);
-        this.locationMarker(5, 5);
+        this.locationMarker(5, 5, 'CMGT');
+        this.locationMarker(5, 5, 'Informatica');
     };
-    LocatieSelectie.prototype.locationMarker = function (x, y) {
+    LocatieSelectie.prototype.locationMarker = function (x, y, location) {
+        var _this = this;
         var marker = document.createElement('locationMarker');
         this.game.appendChild(marker);
         marker.style.transform = "translate(" + x + "vw," + y + "vh)";
+        marker.addEventListener('click', function () {
+            var education = localStorage.getItem('education');
+            if (location == education) {
+                _this.popupLoc('correct');
+            }
+            else {
+                _this.popupLoc('incorrect');
+            }
+        });
+    };
+    LocatieSelectie.prototype.popupLoc = function (awnser) {
+        if (document.getElementsByTagName('popupLocation')[0]) {
+            document.getElementsByTagName('popupLocation')[0].remove();
+        }
+        var popupLocation = document.createElement('popupLocation');
+        var locationImage = document.createElement('locationImage');
+        this.game.appendChild(popupLocation);
+        popupLocation.appendChild(locationImage);
+        locationImage.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123456.jpg)';
+        if (awnser == 'correct') {
+            popupLocation.innerHTML += 'dummy text';
+            var goto = document.createElement('button');
+        }
+        else {
+            popupLocation.innerHTML += 'syke you thought';
+        }
+        popupLocation.addEventListener('click', function () {
+            document.getElementsByTagName('popupLocation')[0].remove();
+        });
     };
     return LocatieSelectie;
 }());
