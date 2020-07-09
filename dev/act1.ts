@@ -11,16 +11,39 @@ class Act1{
 
         let input1 = document.createElement("input")
         game.appendChild(input1)
-        input1.style.width = `13.8vw`
+        input1.style.width = `13.7vw`
         input1.style.height = `5.7vh`
-        input1.style.transform = `translate(41.2vw, 38.4vh)`
+        input1.style.transform = `translate(25.4vw, 39.3vh)`
         input1.style.borderRadius = `25px`
         input1.style.border = `none`
         input1.style.fontSize = `20px`
         input1.style.paddingLeft = `20px`
         input1.style.fontFamily = `Arial Black`
         input1.style.textTransform = `uppercase`
-    }
 
+        let input2 = document.createElement("input")
+        game.appendChild(input2)
+        input2.style.width = `13.7vw`
+        input2.style.height = `5.7vh`
+        input2.style.transform = `translate(27.1vw, 39.3vh)`
+        input2.style.borderRadius = `25px`
+        input2.style.border = `none`
+        input2.style.fontSize = `20px`
+        input2.style.paddingLeft = `20px`
+        input2.style.fontFamily = `Arial Black`
+        input2.style.textTransform = `uppercase`
+
+        let input3 = document.createElement("input")
+        game.appendChild(input3)
+        input3.style.width = `13.7vw`
+        input3.style.height = `5.7vh`
+        input3.style.transform = `translate(28.7vw, 39.3vh)`
+        input3.style.borderRadius = `25px`
+        input3.style.border = `none`
+        input3.style.fontSize = `20px`
+        input3.style.paddingLeft = `20px`
+        input3.style.fontFamily = `Arial Black`
+        input3.style.textTransform = `uppercase`
+    }
 
 }

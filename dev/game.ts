@@ -1,7 +1,7 @@
 class Game{
 
     constructor(){
-        new EnterBuilding()
+        new Act1()
     }
 }
 
