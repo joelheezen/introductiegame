@@ -52,6 +52,7 @@ class LocatieSelectie{
 
        
         this.locationMarker(5,5)
+        this.locationMarker(5,5)
         
 
     }

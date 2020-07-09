@@ -1,5 +1,6 @@
+
 game *{
-    display:block;
+    display: block;
     font-family: Arial;
 }
 
@@ -81,6 +82,9 @@ backgroundact2 {
 input:focus{
     outline:none;
 }
+input{
+    position:absolute;
+}
 
 backgroundenter {
     position: absolute;
@@ -95,11 +99,13 @@ backgroundenter {
 
 button{
     position: absolute;
+    cursor:pointer;
 }
 
-input{
-    position: absolute;
+input {
+    position:absolute;
 }
+
 
 locationMarker{
     background-color:black;
