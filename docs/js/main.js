@@ -98,7 +98,7 @@ var Act1 = (function () {
                 inputs[i].remove();
             }
         }
-        background.style.backgroundImage = "url(/docs/assets/plattegrond.png)";
+        background.style.backgroundImage = "url(/introductiegame/docs/assets/plattegrond.png)";
         var button1 = document.createElement("button");
         var button2 = document.createElement("button");
         var button3 = document.createElement("button");
