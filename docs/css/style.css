@@ -1,26 +1,28 @@
 backgroundact1 {
     position: absolute;
-<<<<<<< HEAD
     width:100vw; height:100vh;
     z-index: -1;
     background-image: url(..//assets/backgroundact1main.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     left:0; top:0;
-=======
+}
+body{
+    padding:0;
+    margin:0;
 }
 
 * {
     position: absolute;
-<<<<<<< HEAD
 }
 
-#backgroundenter {
-    background-size: 100% 100%;
-    width: 100vw; height: 100vh;
-    position: absolute; top: 0; left: 0;
+backgroundenter {
+    position: absolute;
+    width:100vw; height:100vh;
     z-index: -1;
-=======
->>>>>>> 2e135169887be6050e1cfec0c910518be40f097e
->>>>>>> 227f067d4e65b655d62943867866784c333aa40d
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    left:0;
+    top:0;
 }

@@ -1,8 +1,8 @@
 class Game{
 
     constructor(){
-        new Act1()
+        new EnterBuilding()
     }
 }
 
-window.addEventListener("load", () => new Act1())
+window.addEventListener("load", () => new Game())
