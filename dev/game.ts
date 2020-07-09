@@ -48,10 +48,16 @@ class Game{
         
     }
     buttonPress3(){
-        
+        let buttons = document.getElementsByTagName("button")
+        if (buttons){
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+        }
+        new LocatieSelectie()
     }
     buttonPress4(){
-
+        
     }
 }
 
