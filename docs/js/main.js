@@ -146,6 +146,13 @@ var Game = (function () {
     Game.prototype.buttonPress3 = function () {
     };
     Game.prototype.buttonPress4 = function () {
+        var buttons = document.getElementsByTagName("button");
+        if (buttons) {
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+        }
+        new EnterBuilding();
     };
     return Game;
 }());
