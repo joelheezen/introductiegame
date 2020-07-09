@@ -45,14 +45,14 @@ var Act1 = (function () {
         button1.style.width = "15.1vw";
         button1.style.height = "7.5vh";
         button1.style.transform = "translate(42.4vw, 47.9vh)";
-        button1.style.opacity = "80%";
+        button1.style.opacity = "0%";
         button1.onclick = this.shapeCheck;
         var button2 = document.createElement("button");
         game.appendChild(button2);
         button2.style.width = "18.5vw";
         button2.style.height = "3vh";
         button2.style.transform = "translate(25.25vw, 61vh)";
-        button2.style.opacity = "80%";
+        button2.style.opacity = "0%";
         button2.onclick = this.searchOnline;
     }
     Act1.prototype.shapeCheck = function () {
