@@ -67,7 +67,7 @@ backgroundact1 {
     position: absolute;
     width:100vw; height:100vh;
     z-index: -1;
-    background-image: url(..//assets/backgroundact1main.jpg);
+    background-image: url(/docs/assets/backgroundact1main.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     left:0; top:0;
@@ -94,7 +94,7 @@ input{
     position:absolute;
 }
 
-backgroundenter {
+backgroundenter, act2background {
     position: absolute;
     width:100vw; height:100vh;
     z-index: -1;
