@@ -73,7 +73,7 @@ var Act1 = (function () {
         }
     };
     Act1.prototype.searchOnline = function () {
-        console.log("button 2 is pressed");
+        window.location.href = 'https://www.youtube.com/watch?v=ub82Xb1C8os';
     };
     return Act1;
 }());
