@@ -8,7 +8,7 @@ var Act1 = (function () {
         game.appendChild(input1);
         input1.style.width = "13.7vw";
         input1.style.height = "5.7vh";
-        input1.style.transform = "translate(26vw, 39.3vh)";
+        input1.style.transform = "translate(26vw, 39.2vh)";
         input1.style.borderRadius = "25px";
         input1.style.border = "none";
         input1.style.fontSize = "20px";
@@ -19,7 +19,7 @@ var Act1 = (function () {
         game.appendChild(input2);
         input2.style.width = "13.7vw";
         input2.style.height = "5.7vh";
-        input2.style.transform = "translate(27.8vw, 39.3vh)";
+        input2.style.transform = "translate(42.7vw, 39.2vh)";
         input2.style.borderRadius = "25px";
         input2.style.border = "none";
         input2.style.fontSize = "20px";
@@ -30,7 +30,7 @@ var Act1 = (function () {
         game.appendChild(input3);
         input3.style.width = "13.7vw";
         input3.style.height = "5.7vh";
-        input3.style.transform = "translate(29.5vw, 39.3vh)";
+        input3.style.transform = "translate(59.2vw, 39.2vh)";
         input3.style.borderRadius = "25px";
         input3.style.border = "none";
         input3.style.fontSize = "20px";
@@ -143,6 +143,12 @@ var Game = (function () {
     Game.prototype.buttonPress2 = function () {
         var buttons = document.getElementsByTagName("button");
         if (buttons) {
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].remove();
+            }
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].remove();
             }
