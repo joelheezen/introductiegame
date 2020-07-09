@@ -62,4 +62,4 @@ class LocatieSelectie{
     }
 }
 
-window.addEventListener('load',() => new LocatieSelectie)
+//window.addEventListener('load',() => new LocatieSelectie)
