@@ -1,22 +1,24 @@
 class Act1 {
 
+    private input1 = document.createElement("input")
+
     constructor(){
         let game = document.getElementsByTagName("game")[0]
 
         let background = document.createElement("backgroundact1")
         game.appendChild(background)
 
-        let input1 = document.createElement("input")
-        game.appendChild(input1)
-        input1.style.width = `13.7vw`
-        input1.style.height = `5.7vh`
-        input1.style.transform = `translate(26vw, 39.2vh)`
-        input1.style.borderRadius = `25px`
-        input1.style.border = `none`
-        input1.style.fontSize = `20px`
-        input1.style.paddingLeft = `1vw`
-        input1.style.fontFamily = `Arial Black`
-        input1.style.textTransform = `uppercase`
+        
+        game.appendChild(this.input1)
+        this.input1.style.width = `13.7vw`
+        this.input1.style.height = `5.7vh`
+        this.input1.style.transform = `translate(26vw, 39.2vh)`
+        this.input1.style.borderRadius = `25px`
+        this.input1.style.border = `none`
+        this.input1.style.fontSize = `20px`
+        this.input1.style.paddingLeft = `1vw`
+        this.input1.style.fontFamily = `Arial Black`
+        this.input1.style.textTransform = `uppercase`
 
         let input2 = document.createElement("input")
         game.appendChild(input2)
@@ -61,6 +63,8 @@ class Act1 {
 
     shapeCheck() {
         console.log("button 1 is pressed")
+        let shape1 = this.input1
+        console.log(shape1)
     }
 
     searchOnline() {
