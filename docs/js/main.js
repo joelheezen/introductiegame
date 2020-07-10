@@ -327,14 +327,6 @@ var Act3 = (function () {
             game.innerHTML = "";
             var background = document.createElement("backgroundAct3");
             game.appendChild(background);
-            var button = document.createElement("button");
-            game.appendChild(button);
-            button.style.width = "10vw";
-            button.style.height = "10vh";
-            button.style.transform = "translate(45vw,45vh)";
-            button.innerHTML = "screenshot";
-            button.addEventListener("click", function () {
-            });
         };
     }
     Act3.prototype.togglePlay = function () {

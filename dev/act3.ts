@@ -26,16 +26,7 @@ class Act3{
             let game = document.getElementsByTagName("game")[0]
             game.innerHTML = ""
             let background = document.createElement("backgroundAct3")
-            game.appendChild(background)
-            let button = document.createElement("button")
-            game.appendChild(button)
-            button.style.width = `10vw`
-            button.style.height = `10vh`
-            button.style.transform = `translate(45vw,45vh)`
-            button.innerHTML = "screenshot"
-            button.addEventListener("click", function(){
-                
-            } )
+            game.appendChild(background)            
         }
 
     }
