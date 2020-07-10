@@ -19,7 +19,7 @@ class Locations{
             "Watermanagement",
             "Werktuigbouwkunde"
         ],
-        locatieInfo: ""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
 
     blaak = {
@@ -33,7 +33,7 @@ class Locations{
             "Design",
             "Education in Arts"
         ],
-        locatieinfo: ""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
 
     kralingse_zoom = {
@@ -53,7 +53,7 @@ class Locations{
             "Master in International Supply Chain Management",
             "Commerciële Economie"
         ],
-        locatieinfo:""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
 
     lloyd_straat = {
@@ -63,14 +63,14 @@ class Locations{
             "Maritiem Officier",
             "Maritieme Techniek"
         ],
-        locatieinfo:""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
 
     max_euwelaan = {
         opleidingen:[
             "Commerciële Economie | SportMarketing & Management"
         ],
-        locatieinfo:""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
 
     museumpark_hoogbouw = {
@@ -95,7 +95,7 @@ class Locations{
             "Pedagogiek",
             "Ondernemen"
         ],
-        locatieinfo:""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
 
     museumpark_laagbouw = {
@@ -117,7 +117,7 @@ class Locations{
             "Lerarenopleiding VO/BVE Wiskunde",
             "Social Work"
         ], 
-        locatieinfo:""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
 
     pieter_de_hoogweg = {
@@ -125,14 +125,14 @@ class Locations{
             "Industrieel Product Ontwerpen",
             "Mens en Techniek | Gezondheidszorg Technologie"
         ],
-        locatieinfo:""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     } 
 
     posthumalaan = {
         opleidingen:[
             "International Business"
         ],
-        locatieinfo :""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     } 
 
     rmd_rotterdam = {
@@ -140,7 +140,7 @@ class Locations{
             "Automotive",
             "River Delta Development"
         ], 
-        locatieinfo:""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
 
     rochussenstraat = {
@@ -160,27 +160,27 @@ class Locations{
             "Physician Assistant (algemeen)",
             "Physician Assistant (Klinisch Verloskundige)"
         ],
-        locatieinfo:""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     } 
 
     wijnhaven_61 = {
         opleidingen:[
             "Leisure & Events Management"
         ], 
-        locatieinfo:""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
 
     wijnhaven_99 = {
         opleidingen:[
             "Creative Media and Game Technologies"
         ],
-        locatieinfo:""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
 
     wijnhaven_103 = {
         opleidingen:[
         ],
-        locatieinfo:""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }
 
     wijnhaven_107 = {
@@ -190,7 +190,7 @@ class Locations{
             "Informatica",
             "Technische Informatica"
         ],
-        locatieinfo :""
+        locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     }  
     
 }
