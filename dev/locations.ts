@@ -179,7 +179,6 @@ class Locations{
 
     wijnhaven_103 = {
         opleidingen:[
-            
         ],
         locatieinfo:""
     }

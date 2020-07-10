@@ -53,7 +53,7 @@ educationsetter select{
     position:absolute;
     width:90%;
     height:2vw;
-    top:25%;    
+    top:26%;    
     left:5%;
     border-radius: 10px;
     border:none;
@@ -88,7 +88,7 @@ backgroundact3 {
     position: absolute;
     width: 100vw; height: 100vh;
     z-index:-1;
-    background-image: url(../assets/PRODUCTION/PRODUCTION/ASSETS/act_2_background.png);
+    background-image: url(../assets/akte3/backgroundact3.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     left:0; top:0;
@@ -150,13 +150,33 @@ input {
     position:absolute;
 }
 
+pinPopup {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 16vh;
+    padding-bottom: 1vh;
+    border-radius: 1vh;
+    box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
+    background-color: #ffb911;
+    position: absolute;
+    width: 20vw; height: 13vw;
+}
 
+pinPopupImage{
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    width: 100%; height: 50%;
+    left: 0; top: 0;
+    border-radius: 1vh;
+    position: absolute;
+}
 pin{
     background-image: url(../assets/PRODUCTION/PRODUCTION/ASSETS/locationpin.png);
     background-position: center;
     background-size: 100% 100%;
-    width:5vh;
-    height:5vh;
+    width:3vh;
+    height:3vh;
+    position: absolute;
 }
 
 popuplocation{
@@ -178,8 +198,7 @@ popuplocation button{
     border: solid black 3px;
     font-weight: bolder;
     border-radius: 3px;
-    width:40%;
-    height:3vw;    
+    width:40%;    
     left:30%;
     bottom:5%;
     cursor: pointer;
