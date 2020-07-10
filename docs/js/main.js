@@ -173,23 +173,23 @@ var Act1 = (function () {
     };
     Act1.prototype.rooster = function () {
         console.log("rooster is aangeklikt");
-        var background = document.createElement("backgroundact1");
+        var background = document.getElementsByTagName("backgroundact1")[0];
         var game = document.getElementsByTagName("game")[0];
-        game.appendChild(background);
         var button_next = document.createElement("button");
         game.appendChild(button_next);
         var button_previous = document.createElement("button");
         game.appendChild(button_previous);
         background.style.backgroundImage = "url(assets/rooster_popup.png)";
-        background.style.zIndex = "9";
+        background.style.zIndex = "1";
         button_next.style.width = "9.2vw";
         button_next.style.height = "5vh";
         button_next.style.transform = "translate(59.8vw, 64vh)";
         button_next.style.opacity = "0%";
         button_next.style.zIndex = "999";
         button_next.addEventListener("click", function () {
-            background.style.backgroundImage = "url(assets/plattegrond.png)";
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
             button_next.remove();
+            button_previous.remove();
             background.style.zIndex = "-1";
         });
         button_previous.style.width = "6.2vw";
@@ -198,8 +198,9 @@ var Act1 = (function () {
         button_previous.style.opacity = "0%";
         button_previous.style.zIndex = "999";
         button_previous.addEventListener("click", function () {
-            background.style.backgroundImage = "url(assets/plattegrond.png)";
-            game.removeChild(button_previous);
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+            button_previous.remove();
+            button_next.remove();
             background.style.zIndex = "-1";
         });
     };
@@ -218,16 +219,19 @@ var Act1 = (function () {
         img.addEventListener("click", function () {
             button.style.display = "none";
             game.removeChild(img);
+            button.remove();
         });
+        img.style.position = "absolute";
         var button = document.createElement("button");
         game.appendChild(button);
         button.style.width = "20.3vw";
         button.style.height = "18vh";
-        button.style.transform = "translate(61.2vw, 39vh)";
+        button.style.transform = "translate(61.2vw, 63.8vh)";
         button.style.opacity = "0%";
         button.addEventListener("click", function () {
             button.style.display = "none";
             game.removeChild(img);
+            button.remove();
         });
     };
     Act1.prototype.lms = function () {
