@@ -20,6 +20,7 @@ var Act1 = (function () {
         this.input1Save = "";
         this.input2Save = "";
         this.input3Save = "";
+        this.popupSave = false;
         this.createAnswerScreen();
     }
     Act1.prototype.createAnswerScreen = function () {
@@ -92,19 +93,8 @@ var Act1 = (function () {
         var shape3 = document.getElementById("input3").value;
         if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje") {
             if (confirm("dit is het goede antwoord, wil je verder? klik op cancel voor een pauze.")) {
+                document.getElementsByTagName("game")[0].innerHTML = "";
                 new EnterBuilding();
-                var inputs = document.getElementsByTagName("input");
-                var buttons = document.getElementsByTagName("button");
-                if (buttons) {
-                    for (var i = (buttons.length - 1); i >= 0; i--) {
-                        buttons[i].remove();
-                    }
-                }
-                if (inputs) {
-                    for (var i = (inputs.length - 1); i >= 0; i--) {
-                        inputs[i].remove();
-                    }
-                }
             }
             else {
                 console.log("je neemt een pauze");
@@ -123,7 +113,28 @@ var Act1 = (function () {
         var background = document.createElement("backgroundact1");
         var game = document.getElementsByTagName("game")[0];
         game.appendChild(background);
-        background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+        var button_next = document.createElement("button");
+        game.appendChild(button_next);
+        if (this.popupSave == false) {
+            background.style.backgroundImage = "url(assets/plattegrond_popup.png)";
+            this.popupSave = true;
+            background.style.zIndex = "9";
+        }
+        else {
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+            game.removeChild(button_next);
+            background.style.zIndex = "-1";
+        }
+        button_next.style.width = "9.2vw";
+        button_next.style.height = "5vh";
+        button_next.style.transform = "translate(59.8vw, 64vh)";
+        button_next.style.opacity = "0%";
+        button_next.style.zIndex = "999";
+        button_next.addEventListener("click", function () {
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+            game.removeChild(button_next);
+            background.style.zIndex = "-1";
+        });
         var button1 = document.createElement("button");
         var button2 = document.createElement("button");
         var button3 = document.createElement("button");
@@ -175,12 +186,62 @@ var Act1 = (function () {
     };
     Act1.prototype.rooster = function () {
         console.log("rooster is aangeklikt");
+        var background = document.createElement("backgroundact1");
+        var game = document.getElementsByTagName("game")[0];
+        game.appendChild(background);
+        var button_next = document.createElement("button");
+        game.appendChild(button_next);
+        var button_previous = document.createElement("button");
+        game.appendChild(button_previous);
+        background.style.backgroundImage = "url(assets/rooster_popup.png)";
+        background.style.zIndex = "9";
+        button_next.style.width = "9.2vw";
+        button_next.style.height = "5vh";
+        button_next.style.transform = "translate(59.8vw, 64vh)";
+        button_next.style.opacity = "0%";
+        button_next.style.zIndex = "999";
+        button_next.addEventListener("click", function () {
+            background.style.backgroundImage = "url(assets/plattegrond.png)";
+            button_next.remove();
+            background.style.zIndex = "-1";
+        });
+        button_previous.style.width = "6.2vw";
+        button_previous.style.height = "5vh";
+        button_previous.style.transform = "translate(52.6vw, 64vh)";
+        button_previous.style.opacity = "0%";
+        button_previous.style.zIndex = "999";
+        button_previous.addEventListener("click", function () {
+            background.style.backgroundImage = "url(assets/plattegrond.png)";
+            game.removeChild(button_previous);
+            background.style.zIndex = "-1";
+        });
     };
     Act1.prototype.studentenServiceCenter = function () {
         console.log("ssc is aangeklikt");
     };
     Act1.prototype.studentenpas = function () {
         console.log("studentenpas is aangeklikt");
+        var game = document.getElementsByTagName("game")[0];
+        var myloc = new Image();
+        myloc.useMap = "/docs/assets/studentenpas.png";
+        var img = document.createElement('img');
+        img.setAttribute('src', myloc.useMap);
+        img.setAttribute('style', "height:25vh;width:25vw;transform:translate(28.3vw, 26.5vh);cursor:pointer;");
+        game.appendChild(img);
+        img.addEventListener("click", function () {
+            button.style.display = "none";
+            game.removeChild(img);
+        });
+        var button = document.createElement("button");
+        game.appendChild(button);
+        button.style.width = "20.3vw";
+        button.style.height = "18vh";
+        button.style.transform = "translate(61.2vw, 39vh)";
+        button.style.opacity = "0%";
+        button.addEventListener("click", function () {
+            button.style.display = "none";
+            game.removeChild(img);
+        });
     };
     Act1.prototype.lms = function () {
         console.log("lms is aangeklikt");
@@ -439,6 +500,24 @@ var Act2Room5 = (function () {
     }
     return Act2Room5;
 }());
+var Act3 = (function () {
+    function Act3() {
+        this.game = document.getElementsByTagName("game")[0];
+        this.bg = document.createElement("videoBackground");
+        this.video = document.createElement("video");
+        this.bg.style.backgroundColor = "black";
+        this.game.appendChild(this.bg);
+        this.game.appendChild(this.video);
+        this.video.src = 'assets/Akte2/filmpjedecaanhorizontaal.mp4';
+        this.video.autoplay = true;
+        this.video.controls = false;
+        this.video.onended = function () {
+            var vid = document.getElementsByTagName("video")[0];
+            vid.remove();
+        };
+    }
+    return Act3;
+}());
 var EnterBuilding = (function () {
     function EnterBuilding() {
         var _this = this;
@@ -499,7 +578,7 @@ var Game = (function () {
     }
     Game.prototype.buttonPress1 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
-        new Act1();
+        new Act3();
     };
     Game.prototype.buttonPress2 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
