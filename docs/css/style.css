@@ -53,7 +53,7 @@ educationsetter select{
     position:absolute;
     width:90%;
     height:2vw;
-    top:25%;    
+    top:26%;    
     left:5%;
     border-radius: 10px;
     border:none;
@@ -97,7 +97,7 @@ backgroundact3 {
 classroom {
     position: absolute;
 }
-openfolder {
+openfolder, testbutton {
     position: absolute;
     z-index: 3;
     background-repeat: no-repeat;
@@ -199,8 +199,7 @@ popuplocation button{
     border: solid black 3px;
     font-weight: bolder;
     border-radius: 3px;
-    width:40%;
-    height:3vw;    
+    width:40%;    
     left:30%;
     bottom:5%;
     cursor: pointer;

@@ -301,38 +301,39 @@ var Act2 = (function () {
         this.game.appendChild(this.doorName5);
         this.doorName1.style.width = '11.77vw';
         this.doorName1.style.height = '3.65vh';
-        this.doorName1.style.transform = "translate(4.75vw, 26.6vh)";
+        this.doorName1.style.transform = "translate(4.75vw, 27.5vh)";
         this.doorName1.style.textAlign = 'center';
-        this.doorName1.style.fontSize = "1vw";
+        this.doorName2.style.paddingTop = '1.5vh';
+        this.doorName1.style.fontSize = "2vh";
         this.doorName1.style.fontFamily = "Arial Black";
-        this.doorName1.innerHTML = "Vertrouwens- persoon";
+        this.doorName1.innerHTML = "Vertrouwenspersoon";
         this.doorName2.style.width = '11.77vw';
         this.doorName2.style.height = '3.65vh';
         this.doorName2.style.transform = "translate(24.65vw, 26.6vh)";
         this.doorName2.style.textAlign = 'center';
-        this.doorName2.style.paddingTop = '0.3vh';
-        this.doorName2.style.fontSize = "1.5vw";
+        this.doorName2.style.paddingTop = '0.4vh';
+        this.doorName2.style.fontSize = "2.5vh";
         this.doorName2.innerHTML = "Peercoach";
         this.doorName3.style.width = '11.77vw';
         this.doorName3.style.height = '3.65vh';
         this.doorName3.style.transform = "translate(44.36vw, 26.6vh)";
         this.doorName3.style.textAlign = 'center';
         this.doorName3.style.paddingTop = '0vh';
-        this.doorName3.style.fontSize = "2vw";
+        this.doorName3.style.fontSize = "3vh";
         this.doorName3.innerHTML = "SLC";
         this.doorName4.style.width = '11.77vw';
         this.doorName4.style.height = '3.65vh';
         this.doorName4.style.transform = "translate(64.26vw, 26.6vh)";
         this.doorName4.style.textAlign = 'center';
         this.doorName4.style.paddingTop = '0vh';
-        this.doorName4.style.fontSize = "2vw";
+        this.doorName4.style.fontSize = "3vh";
         this.doorName4.innerHTML = "Decaan";
         this.doorName5.style.width = '11.77vw';
         this.doorName5.style.height = '3.65vh';
-        this.doorName5.style.transform = "translate(84vw, 26.6vh)";
+        this.doorName5.style.transform = "translate(84vw, 26.1vh)";
         this.doorName5.style.textAlign = 'center';
         this.doorName5.style.paddingTop = '0.9vh';
-        this.doorName5.style.fontSize = "1.3vw";
+        this.doorName5.style.fontSize = "2.6vh";
         this.doorName5.innerHTML = "Student aan zet";
     };
     Act2.prototype.codeInput = function () {
@@ -1193,21 +1194,21 @@ var LocatieSelectie = (function () {
         this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.jpg)";
         this.background.style.backgroundSize = "100% 100%";
         this.educationSet.remove();
-        this.locationMarker(30, 40, 'academieplein');
-        this.locationMarker(30, 40, 'blaak');
-        this.locationMarker(30, 40, 'kralingse_zoom');
-        this.locationMarker(30, 40, 'lloyd_straat');
-        this.locationMarker(30, 40, 'max_euwelaan');
-        this.locationMarker(30, 40, 'museumpark_hoogbouw');
-        this.locationMarker(30, 40, 'museumpark_laagbouw');
-        this.locationMarker(30, 40, 'pieter_de_hoogweg');
-        this.locationMarker(30, 40, 'posthumalaan');
-        this.locationMarker(30, 40, 'rmd_rotterdam');
-        this.locationMarker(30, 40, 'rochussenstraat');
-        this.locationMarker(30, 40, 'wijnhaven_61');
-        this.locationMarker(30, 40, 'wijnhaven_99');
-        this.locationMarker(30, 40, 'wijnhaven_103');
-        this.locationMarker(30, 40, 'wijnhaven_107');
+        this.locationMarker(34.3, 67.9, 'academieplein');
+        this.locationMarker(46.3, 57, 'blaak');
+        this.locationMarker(62.7, 61.5, 'kralingse_zoom');
+        this.locationMarker(33.9, 78.5, 'lloyd_straat');
+        this.locationMarker(64, 60, 'max_euwelaan');
+        this.locationMarker(37, 65, 'museumpark_hoogbouw');
+        this.locationMarker(38, 63, 'museumpark_laagbouw');
+        this.locationMarker(33, 72.5, 'pieter_de_hoogweg');
+        this.locationMarker(49, 73, 'posthumalaan');
+        this.locationMarker(15.7, 82, 'rmd_rotterdam');
+        this.locationMarker(35, 67, 'rochussenstraat');
+        this.locationMarker(46, 58, 'wijnhaven_61');
+        this.locationMarker(45, 58.4, 'wijnhaven_99');
+        this.locationMarker(44.4, 58.7, 'wijnhaven_103');
+        this.locationMarker(43.8, 59, 'wijnhaven_107');
     };
     LocatieSelectie.prototype.locationMarker = function (x, y, location) {
         var _this = this;
@@ -1368,6 +1369,7 @@ var LocatieSelectie = (function () {
         locationImage.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/" + location + ".png)";
         if (awnser == 'correct') {
             popupLocation.innerHTML += 'correct';
+            popupLocation.innerHTML += location;
             var goto = document.createElement('button');
             popupLocation.appendChild(goto);
             goto.innerHTML = "Loop naar binnen";
@@ -1380,10 +1382,14 @@ var LocatieSelectie = (function () {
         }
         else {
             popupLocation.innerHTML += 'incorrect';
+            popupLocation.innerHTML += location;
+            var goto = document.createElement('button');
+            popupLocation.appendChild(goto);
+            goto.innerHTML = "Probeer opnieuw";
+            goto.addEventListener('click', function () {
+                document.getElementsByTagName('popupLocation')[0].remove();
+            });
         }
-        popupLocation.innerHTML += info;
-        popupLocation.addEventListener('click', function () {
-        });
     };
     return LocatieSelectie;
 }());
