@@ -247,7 +247,7 @@ var Act2Room1 = (function () {
         this.game = document.getElementsByTagName('game')[0];
         this.bg = document.createElement("act2background");
         this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)';
+        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
     }
     return Act2Room1;
 }());
@@ -256,7 +256,7 @@ var Act2Room2 = (function () {
         this.game = document.getElementsByTagName('game')[0];
         this.bg = document.createElement("act2background");
         this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)';
+        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
     }
     return Act2Room2;
 }());
@@ -265,18 +265,25 @@ var Act2Room3 = (function () {
         this.game = document.getElementsByTagName('game')[0];
         this.bg = document.createElement("act2background");
         this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)';
+        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
     }
     return Act2Room3;
 }());
 var Act2Room4 = (function () {
     function Act2Room4() {
         this.game = document.getElementsByTagName('game')[0];
-        this.bg = document.createElement("act2background");
-        this.video = document.createElement("videoDecaan");
-        console.log("act2 room 4 open");
+        this.bg = document.createElement("videoBackground");
+        this.video = document.createElement("video");
+        this.bg.style.backgroundColor = "black";
         this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(/docs/assets/Akte2/filmpjedecaanhorizontaal.mp4)';
+        this.game.appendChild(this.video);
+        this.video.src = 'assets/Akte2/filmpjedecaanhorizontaal.mp4';
+        this.video.autoplay = true;
+        this.video.controls = true;
+        this.video.onended = function () {
+            var vid = document.getElementsByTagName("video")[0];
+            vid.remove();
+        };
     }
     return Act2Room4;
 }());
@@ -285,7 +292,7 @@ var Act2Room5 = (function () {
         this.game = document.getElementsByTagName('game')[0];
         this.bg = document.createElement("act2background");
         this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)';
+        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
     }
     return Act2Room5;
 }());
@@ -302,10 +309,10 @@ var EnterBuilding = (function () {
     }
     EnterBuilding.prototype.setBackground = function () {
         if (this.i == 0) {
-            this.bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123510.jpg)';
+            this.bge.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
         }
         else if (this.i == 1) {
-            this.bge.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123018.jpg)';
+            this.bge.style.backgroundImage = 'url(assets/IMG_20200708_123018.jpg)';
         }
         else if (this.i == 2) {
             this.bge.remove();
@@ -349,39 +356,19 @@ var Game = (function () {
         button4.onclick = this.buttonPress4;
     }
     Game.prototype.buttonPress1 = function () {
-        var buttons = document.getElementsByTagName("button");
-        if (buttons) {
-            for (var i = (buttons.length - 1); i >= 0; i--) {
-                buttons[i].remove();
-            }
-        }
+        document.getElementsByTagName("game")[0].innerHTML = "";
         new Act1();
     };
     Game.prototype.buttonPress2 = function () {
-        var buttons = document.getElementsByTagName("button");
-        if (buttons) {
-            for (var i = (buttons.length - 1); i >= 0; i--) {
-                buttons[i].remove();
-            }
-        }
+        document.getElementsByTagName("game")[0].innerHTML = "";
         new Act1();
     };
     Game.prototype.buttonPress3 = function () {
-        var buttons = document.getElementsByTagName("button");
-        if (buttons) {
-            for (var i = (buttons.length - 1); i >= 0; i--) {
-                buttons[i].remove();
-            }
-        }
+        document.getElementsByTagName("game")[0].innerHTML = "";
         new LocatieSelectie();
     };
     Game.prototype.buttonPress4 = function () {
-        var buttons = document.getElementsByTagName("button");
-        if (buttons) {
-            for (var i = (buttons.length - 1); i >= 0; i--) {
-                buttons[i].remove();
-            }
-        }
+        document.getElementsByTagName("game")[0].innerHTML = "";
         new EnterBuilding();
     };
     return Game;
@@ -392,7 +379,7 @@ var LocatieSelectie = (function () {
         this.background = document.createElement('backgroundLocation');
         this.game = document.getElementsByTagName('game')[0];
         this.educations = new Array();
-        this.background.style.backgroundImage = "url(/docs/assets/rotterdam_50.png";
+        this.background.style.backgroundImage = "url(assets/rotterdam_50.png";
         this.game.appendChild(this.background);
         this.educationSetter();
     }
@@ -421,11 +408,15 @@ var LocatieSelectie = (function () {
         this.locationPicker();
     };
     LocatieSelectie.prototype.locationPicker = function () {
-        this.background.style.backgroundImage = "url(/docs/assets/akte_1_map@0.75x.jpg)";
+        this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.jpg)";
         this.background.style.backgroundSize = "100% 100%";
         this.educationSet.remove();
-        this.locationMarker(5, 5, 'CMGT');
-        this.locationMarker(5, 5, 'Informatica');
+        this.locationMarker(30, 40, 'CMGT');
+        this.locationMarker(44, 16, 'Informatica');
+        this.locationMarker(24, 70, 'Communicatie');
+        this.locationMarker(60, 60, 'Crossmediale Communicatie');
+        this.locationMarker(17, 50, 'ICT Internet of Things');
+        this.locationMarker(80, 36, 'ICT Service Management');
     };
     LocatieSelectie.prototype.locationMarker = function (x, y, location) {
         var _this = this;
@@ -450,13 +441,20 @@ var LocatieSelectie = (function () {
         var locationImage = document.createElement('locationImage');
         this.game.appendChild(popupLocation);
         popupLocation.appendChild(locationImage);
-        locationImage.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123456.jpg)';
         if (awnser == 'correct') {
+            locationImage.style.backgroundImage = 'url(assets/IMG_20200708_123456.jpg)';
             popupLocation.innerHTML += 'dummy text';
             var goto = document.createElement('button');
+            popupLocation.appendChild(goto);
+            goto.innerHTML = "Loop naar binnen";
+            goto.addEventListener('click', function () {
+                document.getElementsByTagName("game")[0].innerHTML = "";
+                new Act1;
+            });
         }
         else {
-            popupLocation.innerHTML += 'syke you thought';
+            locationImage.style.backgroundImage = 'url(assets/IMG_20200708_123018.jpg)';
+            popupLocation.innerHTML += 'incorrect';
         }
         popupLocation.addEventListener('click', function () {
             document.getElementsByTagName('popupLocation')[0].remove();

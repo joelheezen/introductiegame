@@ -73,7 +73,7 @@ backgroundact1 {
     left:0; top:0;
 }
 
-backgroundact2 {
+backgroundact2, act2background{
     position: absolute;
     width:100vw; height:100vh;
     z-index: -1;
@@ -94,7 +94,7 @@ input{
     position:absolute;
 }
 
-backgroundenter, act2background {
+backgroundenter{
     position: absolute;
     width:100vw; height:100vh;
     z-index: -1;
@@ -103,6 +103,18 @@ backgroundenter, act2background {
     background-size: 120% 120%;
     left:0;
     top:0;
+}
+
+video{
+    position: absolute;
+    width:100vw; height:100vh;
+}
+videoBackground{
+    position: absolute;
+    width:100vw; height:100vh;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 button{
@@ -133,6 +145,18 @@ popuplocation{
     left:38vw;
     border-radius: 1vh;
     box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
+}
+
+popuplocation button{
+    background-color: #ffb911;
+    border: solid black 3px;
+    font-weight: bolder;
+    border-radius: 3px;
+    width:40%;
+    height:3vw;    
+    left:30%;
+    bottom:5%;
+    cursor: pointer;
 }
 
 locationimage{

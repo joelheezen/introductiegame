@@ -6,7 +6,7 @@ class LocatieSelectie{
     educationSet: HTMLElement
 
     constructor(){
-        this.background.style.backgroundImage = "url(/docs/assets/rotterdam_50.png"
+        this.background.style.backgroundImage = "url(assets/rotterdam_50.png"
         this.game.appendChild(this.background)
         this.educationSetter()
     }
@@ -45,14 +45,16 @@ class LocatieSelectie{
     }
 
     locationPicker(){
-        this.background.style.backgroundImage = "url(/docs/assets/akte_1_map@0.75x.jpg)"
+        this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.jpg)"
         this.background.style.backgroundSize = "100% 100%"
         this.educationSet.remove()
 
-       
-        this.locationMarker(5,5,'CMGT')
-        this.locationMarker(5,5,'Informatica')
-        
+        this.locationMarker(30,40,'CMGT')
+        this.locationMarker(44,16,'Informatica')
+        this.locationMarker(24,70,'Communicatie')
+        this.locationMarker(60,60,'Crossmediale Communicatie')
+        this.locationMarker(17,50,'ICT Internet of Things')
+        this.locationMarker(80,36,'ICT Service Management')
 
     }
 
@@ -87,14 +89,20 @@ class LocatieSelectie{
         this.game.appendChild(popupLocation)
         popupLocation.appendChild(locationImage)
 
-        locationImage.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123456.jpg)'
+        
 
         if(awnser == 'correct'){
-             popupLocation.innerHTML += 'dummy text'
-             let goto = document.createElement('button')
-             
+            locationImage.style.backgroundImage = 'url(assets/IMG_20200708_123456.jpg)'
+            popupLocation.innerHTML += 'dummy text'
+            let goto = document.createElement('button')
+            popupLocation.appendChild(goto)
+            goto.innerHTML = "Loop naar binnen"
+            goto.addEventListener('click', () =>{ 
+                document.getElementsByTagName("game")[0].innerHTML = ""
+                new Act1}) 
         }else{
-            popupLocation.innerHTML += 'syke you thought'
+            locationImage.style.backgroundImage = 'url(assets/IMG_20200708_123018.jpg)'
+            popupLocation.innerHTML += 'incorrect'
         }
 
         popupLocation.addEventListener('click',()=>{

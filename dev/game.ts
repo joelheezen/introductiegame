@@ -36,41 +36,20 @@ class Game{
     }
 
     buttonPress1(){
-        let buttons = document.getElementsByTagName("button")
-        if (buttons){
-            for (let i = (buttons.length -1); i >= 0; i--) {
-                buttons[i].remove()
-            }
-        }
-
+        document.getElementsByTagName("game")[0].innerHTML = ""
         new Act1()
         
     }
     buttonPress2(){
-        let buttons = document.getElementsByTagName("button")
-        if (buttons){
-            for (let i = (buttons.length -1); i >= 0; i--) {
-                buttons[i].remove()
-            }
-        }
+        document.getElementsByTagName("game")[0].innerHTML = ""
         new Act1()
     }
     buttonPress3(){
-        let buttons = document.getElementsByTagName("button")
-        if (buttons){
-            for (let i = (buttons.length -1); i >= 0; i--) {
-                buttons[i].remove()
-            }
-        }
+        document.getElementsByTagName("game")[0].innerHTML = ""
         new LocatieSelectie()
     }
     buttonPress4(){
-        let buttons = document.getElementsByTagName("button")
-        if (buttons){
-            for (let i = (buttons.length -1); i >= 0; i--) {
-                buttons[i].remove()
-            }
-        }
+        document.getElementsByTagName("game")[0].innerHTML = ""
         new EnterBuilding()
     }
 
