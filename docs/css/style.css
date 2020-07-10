@@ -1,7 +1,7 @@
 
 game *{
     display: block;
-    font-family: Arial;
+    font-family: Arial Black;
 }
 
 game *{
@@ -104,7 +104,7 @@ openfolder {
     background-position: center;
 
 }
-folderitem {
+folderitem, doorName {
     position: absolute;
     z-index: 1;
     background-repeat: no-repeat;
