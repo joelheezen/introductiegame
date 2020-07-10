@@ -123,7 +123,7 @@ class Act1 {
         let background = document.createElement("backgroundact1")
         let game = document.getElementsByTagName("game")[0]
         game.appendChild(background)
-        background.style.backgroundImage = `url(/docs/assets/plattegrond.jpg)`
+        background.style.backgroundImage = `url(assets/plattegrond.jpg)`
 
         let button1 = document.createElement("button")
         let button2 = document.createElement("button")

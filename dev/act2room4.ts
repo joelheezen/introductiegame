@@ -1,13 +1,20 @@
 class Act2Room4{
 
     game = document.getElementsByTagName('game')[0]
-    bg: HTMLElement = document.createElement("act2background")
-    video = document.createElement("videoDecaan")
+    bg: HTMLElement = document.createElement("videoBackground")
+    video = (<HTMLAudioElement>document.createElement("video"))
 
     constructor(){
-        console.log("act2 room 4 open")
+        this.bg.style.backgroundColor = "black"
         this.game.appendChild(this.bg)
-        
-        this.bg.style.backgroundImage = 'url(/docs/assets/Akte2/filmpjedecaanhorizontaal.mp4)'
+        this.game.appendChild(this.video)
+
+        this.video.src = 'assets/Akte2/filmpjedecaanhorizontaal.mp4'
+        this.video.autoplay = true
+        this.video.controls = true
+        this.video.onended = function() {
+             let vid = document.getElementsByTagName("video")[0]
+             vid.remove()
+          };
     }
 }

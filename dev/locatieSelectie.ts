@@ -6,7 +6,7 @@ class LocatieSelectie{
     educationSet: HTMLElement
 
     constructor(){
-        this.background.style.backgroundImage = "url(/docs/assets/rotterdam_50.png"
+        this.background.style.backgroundImage = "url(assets/rotterdam_50.png"
         this.game.appendChild(this.background)
         this.educationSetter()
     }
@@ -45,7 +45,7 @@ class LocatieSelectie{
     }
 
     locationPicker(){
-        this.background.style.backgroundImage = "url(/docs/assets/akte_1_map@0.75x.jpg)"
+        this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.jpg)"
         this.background.style.backgroundSize = "100% 100%"
         this.educationSet.remove()
 
@@ -92,7 +92,7 @@ class LocatieSelectie{
         
 
         if(awnser == 'correct'){
-            locationImage.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123456.jpg)'
+            locationImage.style.backgroundImage = 'url(assets/IMG_20200708_123456.jpg)'
             popupLocation.innerHTML += 'dummy text'
             let goto = document.createElement('button')
             popupLocation.appendChild(goto)
@@ -101,7 +101,7 @@ class LocatieSelectie{
                 document.getElementsByTagName("game")[0].innerHTML = ""
                 new Act1}) 
         }else{
-            locationImage.style.backgroundImage = 'url(/docs/assets/IMG_20200708_123018.jpg)'
+            locationImage.style.backgroundImage = 'url(assets/IMG_20200708_123018.jpg)'
             popupLocation.innerHTML += 'incorrect'
         }
 
