@@ -97,7 +97,7 @@ backgroundact3 {
 classroom {
     position: absolute;
 }
-openfolder {
+openfolder, testbutton {
     position: absolute;
     z-index: 3;
     background-repeat: no-repeat;
