@@ -773,7 +773,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url1;
-                    pinPopup.style.transform = "translate(21vw, 1vh)";
+                    pinPopup.style.transform = "translate(23vw, 1vh)";
                     pinPopup.innerHTML += text1;
                 });
                 pin1.addEventListener("mouseout", function () {
@@ -791,7 +791,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url2;
-                    pinPopup.style.transform = "translate(16vw, 0.7vh)";
+                    pinPopup.style.transform = "translate(18vw, 0.7vh)";
                     pinPopup.innerHTML += text2;
                 });
                 pin2.addEventListener("mouseout", function () {
@@ -809,7 +809,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url3;
-                    pinPopup.style.transform = "translate(41vw, 42vh)";
+                    pinPopup.style.transform = "translate(43vw, 42vh)";
                     pinPopup.innerHTML += text3;
                 });
                 pin3.addEventListener("mouseout", function () {
@@ -827,7 +827,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url4;
-                    pinPopup.style.transform = "translate(19vw, 2vh)";
+                    pinPopup.style.transform = "translate(21vw, 2vh)";
                     pinPopup.innerHTML += text4;
                 });
                 pin4.addEventListener("mouseout", function () {
@@ -845,7 +845,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url5;
-                    pinPopup.style.transform = "translate(25vw, 23vh)";
+                    pinPopup.style.transform = "translate(27vw, 23vh)";
                     pinPopup.innerHTML += text5;
                 });
                 pin5.addEventListener("mouseout", function () {
@@ -863,7 +863,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url6;
-                    pinPopup.style.transform = "translate(26vw, 7.7vh)";
+                    pinPopup.style.transform = "translate(28vw, 7.7vh)";
                     pinPopup.innerHTML += text6;
                 });
                 pin6.addEventListener("mouseout", function () {
@@ -871,7 +871,7 @@ var Act3 = (function () {
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
-                pin7.style.transform = "translate(29.8vw, 33.7vh)";
+                pin7.style.transform = "translate(25.8vw, 55.1vh)";
                 pin7.style.zIndex = "3";
                 pin7.addEventListener("mouseover", function () {
                     console.log("in");
@@ -881,14 +881,15 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url7;
-                    pinPopup.style.transform = "translate(21vw, 1vh)";
+                    pinPopup.style.transform = "translate(18.5vw, 21vh)";
                     pinPopup.innerHTML += text7;
                 });
                 pin7.addEventListener("mouseout", function () {
                     console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
+                    pinPopup.remove();
                 });
-                pin8.style.transform = "translate(29.8vw, 33.7vh)";
+                pin8.style.transform = "translate(34.3vw, 38.7vh)";
                 pin8.style.zIndex = "3";
                 pin8.addEventListener("mouseover", function () {
                     console.log("in");
@@ -898,14 +899,15 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url8;
-                    pinPopup.style.transform = "translate(21vw, 1vh)";
+                    pinPopup.style.transform = "translate(27vw, 5.3vh)";
                     pinPopup.innerHTML += text8;
                 });
                 pin8.addEventListener("mouseout", function () {
                     console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
+                    pinPopup.remove();
                 });
-                pin9.style.transform = "translate(29.8vw, 33.7vh)";
+                pin9.style.transform = "translate(32.2vw, 40.7vh)";
                 pin9.style.zIndex = "3";
                 pin9.addEventListener("mouseover", function () {
                     console.log("in");
@@ -915,14 +917,15 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url9;
-                    pinPopup.style.transform = "translate(21vw, 1vh)";
+                    pinPopup.style.transform = "translate(26.3vw, 5.2vh)";
                     pinPopup.innerHTML += text9;
                 });
                 pin9.addEventListener("mouseout", function () {
                     console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
+                    pinPopup.remove();
                 });
-                pin10.style.transform = "translate(29.8vw, 33.7vh)";
+                pin10.style.transform = "translate(36.5vw, 39.2vh)";
                 pin10.style.zIndex = "3";
                 pin10.addEventListener("mouseover", function () {
                     console.log("in");
@@ -932,14 +935,15 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url10;
-                    pinPopup.style.transform = "translate(21vw, 1vh)";
+                    pinPopup.style.transform = "translate(29.9vw, 5.7vh)";
                     pinPopup.innerHTML += text10;
                 });
                 pin10.addEventListener("mouseout", function () {
                     console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
+                    pinPopup.remove();
                 });
-                pin11.style.transform = "translate(29.8vw, 33.7vh)";
+                pin11.style.transform = "translate(30.4vw, 41.3vh)";
                 pin11.style.zIndex = "3";
                 pin11.addEventListener("mouseover", function () {
                     console.log("in");
@@ -949,14 +953,15 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url11;
-                    pinPopup.style.transform = "translate(21vw, 1vh)";
+                    pinPopup.style.transform = "translate(24vw, 10vh)";
                     pinPopup.innerHTML += text11;
                 });
                 pin11.addEventListener("mouseout", function () {
                     console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
+                    pinPopup.remove();
                 });
-                pin12.style.transform = "translate(29.8vw, 33.7vh)";
+                pin12.style.transform = "translate(33.8vw, 41.7vh)";
                 pin12.style.zIndex = "3";
                 pin12.addEventListener("mouseover", function () {
                     console.log("in");
@@ -966,14 +971,15 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url12;
-                    pinPopup.style.transform = "translate(21vw, 1vh)";
+                    pinPopup.style.transform = "translate(27vw, 10vh)";
                     pinPopup.innerHTML += text12;
                 });
                 pin12.addEventListener("mouseout", function () {
                     console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
+                    pinPopup.remove();
                 });
-                pin13.style.transform = "translate(29.8vw, 33.7vh)";
+                pin13.style.transform = "translate(31.7vw, 43.6vh)";
                 pin13.style.zIndex = "3";
                 pin13.addEventListener("mouseover", function () {
                     console.log("in");
@@ -983,12 +989,13 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url13;
-                    pinPopup.style.transform = "translate(21vw, 1vh)";
+                    pinPopup.style.transform = "translate(25vw, 11vh)";
                     pinPopup.innerHTML += text13;
                 });
                 pin13.addEventListener("mouseout", function () {
                     console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
+                    pinPopup.remove();
                 });
                 var button = document.createElement("button");
                 game.appendChild(button);
