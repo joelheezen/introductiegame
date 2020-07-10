@@ -64,18 +64,19 @@ class Act2{
 
         this.doorName1.style.width = '11.77vw'
         this.doorName1.style.height = '3.65vh'
-        this.doorName1.style.transform = `translate(4.75vw, 26.6vh)`
+        this.doorName1.style.transform = `translate(4.75vw, 27.5vh)`
         this.doorName1.style.textAlign = 'center'
-        this.doorName1.style.fontSize = `1vw`
+        this.doorName2.style.paddingTop = '1.5vh'
+        this.doorName1.style.fontSize = `2vh`
         this.doorName1.style.fontFamily = `Arial Black`
-        this.doorName1.innerHTML = "Vertrouwens- persoon"
+        this.doorName1.innerHTML = "Vertrouwenspersoon"
 
         this.doorName2.style.width = '11.77vw'
         this.doorName2.style.height = '3.65vh'
         this.doorName2.style.transform = `translate(24.65vw, 26.6vh)`
         this.doorName2.style.textAlign = 'center'
-        this.doorName2.style.paddingTop = '0.3vh'
-        this.doorName2.style.fontSize = `1.5vw`
+        this.doorName2.style.paddingTop = '0.4vh'
+        this.doorName2.style.fontSize = `2.5vh`
         this.doorName2.innerHTML = "Peercoach"
 
         this.doorName3.style.width = '11.77vw'
@@ -83,7 +84,7 @@ class Act2{
         this.doorName3.style.transform = `translate(44.36vw, 26.6vh)`
         this.doorName3.style.textAlign = 'center'
         this.doorName3.style.paddingTop = '0vh'
-        this.doorName3.style.fontSize = `2vw`
+        this.doorName3.style.fontSize = `3vh`
         this.doorName3.innerHTML = "SLC"
 
         this.doorName4.style.width = '11.77vw'
@@ -91,15 +92,15 @@ class Act2{
         this.doorName4.style.transform = `translate(64.26vw, 26.6vh)`
         this.doorName4.style.textAlign = 'center'
         this.doorName4.style.paddingTop = '0vh'
-        this.doorName4.style.fontSize = `2vw`
+        this.doorName4.style.fontSize = `3vh`
         this.doorName4.innerHTML = "Decaan"
 
         this.doorName5.style.width = '11.77vw'
         this.doorName5.style.height = '3.65vh'
-        this.doorName5.style.transform = `translate(84vw, 26.6vh)`
+        this.doorName5.style.transform = `translate(84vw, 26.1vh)`
         this.doorName5.style.textAlign = 'center'
         this.doorName5.style.paddingTop = '0.9vh'
-        this.doorName5.style.fontSize = `1.3vw`
+        this.doorName5.style.fontSize = `2.6vh`
         this.doorName5.innerHTML = "Student aan zet"
     }
     codeInput(){

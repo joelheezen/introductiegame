@@ -97,7 +97,7 @@ backgroundact3 {
 classroom {
     position: absolute;
 }
-openfolder {
+openfolder, testbutton {
     position: absolute;
     z-index: 3;
     background-repeat: no-repeat;
@@ -159,7 +159,8 @@ pinPopup {
     box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
     background-color: #ffb911;
     position: absolute;
-    width: 20vw; height: 13vw;
+    width: 15vw; height: 13vh;
+    z-index: 4;
 }
 
 pinPopupImage{
