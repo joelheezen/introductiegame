@@ -296,6 +296,24 @@ var Act2Room5 = (function () {
     }
     return Act2Room5;
 }());
+var Act3 = (function () {
+    function Act3() {
+        this.game = document.getElementsByTagName("game")[0];
+        this.bg = document.createElement("videoBackground");
+        this.video = document.createElement("video");
+        this.bg.style.backgroundColor = "black";
+        this.game.appendChild(this.bg);
+        this.game.appendChild(this.video);
+        this.video.src = 'assets/Akte2/filmpjedecaanhorizontaal.mp4';
+        this.video.autoplay = true;
+        this.video.controls = false;
+        this.video.onended = function () {
+            var vid = document.getElementsByTagName("video")[0];
+            vid.remove();
+        };
+    }
+    return Act3;
+}());
 var EnterBuilding = (function () {
     function EnterBuilding() {
         var _this = this;
@@ -357,7 +375,7 @@ var Game = (function () {
     }
     Game.prototype.buttonPress1 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
-        new Act1();
+        new Act3();
     };
     Game.prototype.buttonPress2 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
