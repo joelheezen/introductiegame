@@ -1,4 +1,17 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Act1 = (function () {
     function Act1() {
         this.input1 = document.createElement("input");
@@ -184,6 +197,7 @@ var Act2 = (function () {
         this.game = document.getElementsByTagName("game")[0];
         var background = document.createElement("backgroundact2");
         this.game.appendChild(background);
+        this.createFolderItems();
         this.levelSelect();
     }
     Act2.prototype.makeLevelIcon = function (posX, posY, width, height) {
@@ -197,56 +211,177 @@ var Act2 = (function () {
         this.makeLevelIcon(4, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
             console.log("room1");
+            document.getElementsByTagName("game")[0].innerHTML = "";
             new Act2Room1;
         });
         this.makeLevelIcon(24, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
             console.log("room2");
+            document.getElementsByTagName("game")[0].innerHTML = "";
             new Act2Room2;
         });
-        this.makeLevelIcon(44, 25, 13, 43);
+        this.makeLevelIcon(43.5, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
             console.log("room3");
+            document.getElementsByTagName("game")[0].innerHTML = "";
             new Act2Room3;
         });
         this.makeLevelIcon(63.8, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
             console.log("room4");
+            document.getElementsByTagName("game")[0].innerHTML = "";
             new Act2Room4;
         });
         this.makeLevelIcon(83.5, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
             console.log("room5");
+            document.getElementsByTagName("game")[0].innerHTML = "";
             new Act2Room5;
         });
-        this.makeLevelIcon(28, 75, 5, 4);
-        this.classroomIcon.style.backgroundColor = "black";
-        this.classroomIcon.addEventListener("click", function () {
+    };
+    Act2.prototype.createFolderItems = function () {
+        this.folderItem1 = document.createElement("folderitem");
+        this.folderItem2 = document.createElement("folderitem");
+        this.folderItem3 = document.createElement("folderitem");
+        this.folderItem4 = document.createElement("folderitem");
+        this.folderItem5 = document.createElement("folderitem");
+        this.folderItem6 = document.createElement("folderitem");
+        this.game.appendChild(this.folderItem1);
+        this.game.appendChild(this.folderItem2);
+        this.game.appendChild(this.folderItem3);
+        this.game.appendChild(this.folderItem4);
+        this.game.appendChild(this.folderItem5);
+        this.game.appendChild(this.folderItem6);
+        this.folderItem1.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_getallen.png)';
+        this.folderItem1.style.transform = "translate(20vw,72vh)";
+        this.folderItem1.style.width = '8.3vw';
+        this.folderItem1.style.height = '8.3vh';
+        this.folderItem1.addEventListener("click", function () {
             console.log("folder1");
+            new Act2folder1;
         });
-        this.makeLevelIcon(25, 82, 7, 12);
-        this.classroomIcon.style.backgroundColor = "black";
-        this.classroomIcon.addEventListener("click", function () {
+        this.folderItem2.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_studie.png)';
+        this.folderItem2.style.transform = "translate(44vw,87vh)";
+        this.folderItem2.style.width = '12vw';
+        this.folderItem2.style.height = '12vh';
+        this.folderItem2.addEventListener("click", function () {
             console.log("folder2");
+            new Act2folder2;
         });
-        this.makeLevelIcon(35, 93, 5, 5);
-        this.classroomIcon.style.backgroundColor = "black";
-        this.classroomIcon.addEventListener("click", function () {
+        this.folderItem3.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_solliciteren.png)';
+        this.folderItem3.style.transform = "translate(60vw,70vh)";
+        this.folderItem3.style.width = '8vw';
+        this.folderItem3.style.height = '8vh';
+        this.folderItem3.addEventListener("click", function () {
             console.log("folder3");
+            new Act2folder3;
         });
-        this.makeLevelIcon(33.5, 86, 5, 5);
-        this.classroomIcon.style.backgroundColor = "black";
-        this.classroomIcon.addEventListener("click", function () {
+        this.folderItem4.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_coia.png)';
+        this.folderItem4.style.transform = "translate(3vw,83vh)";
+        this.folderItem4.style.width = '10vw';
+        this.folderItem4.style.height = '10vh';
+        this.folderItem4.addEventListener("click", function () {
             console.log("folder4");
+            new Act2folder4;
         });
-        this.makeLevelIcon(86.5, 25.3, 5, 15);
-        this.classroomIcon.style.backgroundColor = "black";
-        this.classroomIcon.addEventListener("click", function () {
-            console.log("folder4");
+        this.folderItem5.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_morsecode.png)';
+        this.folderItem5.style.transform = "translate(80vw,78vh)";
+        this.folderItem5.style.width = '10vw';
+        this.folderItem5.style.height = '10vh';
+        this.folderItem5.addEventListener("click", function () {
+            console.log("folder5");
+            new Act2folder5;
+        });
+        this.folderItem6.style.backgroundImage = 'url(assets/Akte2/Postervormen&kleuren.jpg)';
+        this.folderItem6.style.transform = "translate(58.1vw,30vh)";
+        this.folderItem6.style.width = '4.45vw';
+        this.folderItem6.style.height = '11.6vh';
+        this.folderItem6.addEventListener("click", function () {
+            console.log("folder6");
+            new Act2folder6;
         });
     };
     return Act2;
 }());
+var folders = (function () {
+    function folders() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.folder = document.createElement("openfolder");
+        this.createFolder();
+    }
+    folders.prototype.createFolder = function () {
+        var _this = this;
+        this.folder.style.width = '100vw';
+        this.folder.style.height = '100vh';
+        this.game.appendChild(this.folder);
+        this.folder.addEventListener("click", function () {
+            console.log("folder removed");
+            _this.folder.remove();
+        });
+    };
+    folders.prototype.removeMe = function () {
+        this.folder.remove();
+    };
+    return folders;
+}());
+var Act2folder1 = (function (_super) {
+    __extends(Act2folder1, _super);
+    function Act2folder1() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer1getallen.jpg)';
+        _this.folder.style.backgroundSize = '50% 50%';
+        return _this;
+    }
+    return Act2folder1;
+}(folders));
+var Act2folder2 = (function (_super) {
+    __extends(Act2folder2, _super);
+    function Act2folder2() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer2HulpbijStudie.jpg)';
+        _this.folder.style.backgroundSize = '40% 90%';
+        return _this;
+    }
+    return Act2folder2;
+}(folders));
+var Act2folder3 = (function (_super) {
+    __extends(Act2folder3, _super);
+    function Act2folder3() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer3WorkshopSolliciteren.jpg)';
+        _this.folder.style.backgroundSize = '30% 90%';
+        return _this;
+    }
+    return Act2folder3;
+}(folders));
+var Act2folder4 = (function (_super) {
+    __extends(Act2folder4, _super);
+    function Act2folder4() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer4COIAinfo.png)';
+        _this.folder.style.backgroundSize = '45% 80%';
+        return _this;
+    }
+    return Act2folder4;
+}(folders));
+var Act2folder5 = (function (_super) {
+    __extends(Act2folder5, _super);
+    function Act2folder5() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer5MorseCodeAlfabet.jpg)';
+        return _this;
+    }
+    return Act2folder5;
+}(folders));
+var Act2folder6 = (function (_super) {
+    __extends(Act2folder6, _super);
+    function Act2folder6() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Postervormen&kleuren.jpg)';
+        return _this;
+    }
+    return Act2folder6;
+}(folders));
 var Act2Room1 = (function () {
     function Act2Room1() {
         this.game = document.getElementsByTagName('game')[0];
@@ -290,6 +425,7 @@ var Act2Room4 = (function () {
             var bg = document.getElementsByTagName("videoBackground")[0];
             vid.remove();
             bg.remove();
+            new Act2;
         };
     }
     return Act2Room4;
