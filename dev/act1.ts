@@ -7,6 +7,8 @@ class Act1 {
     private input2Save :string = ""
     private input3Save :string = ""
 
+    private popupSave :boolean = false
+
     constructor(){
         this.createAnswerScreen()
     }
@@ -89,21 +91,8 @@ class Act1 {
         let shape3 = (<HTMLInputElement>document.getElementById("input3")).value
         if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje"){
             if (confirm("dit is het goede antwoord, wil je verder? klik op cancel voor een pauze.")){
+                document.getElementsByTagName("game")[0].innerHTML = ""
                 new EnterBuilding()
-                let inputs = document.getElementsByTagName("input")
-                let buttons = document.getElementsByTagName("button")
-
-                if (buttons){
-                    for (let i = (buttons.length -1); i >= 0; i--) {
-                        buttons[i].remove()
-                    }
-                }
-
-                if (inputs) {
-                    for (let i = (inputs.length -1); i >= 0; i--) {
-                        inputs[i].remove()
-                    }
-                }
             }
             else{
                 console.log("je neemt een pauze")
@@ -115,15 +104,40 @@ class Act1 {
     }
 
     searchOnline() {
+        
         this.input1Save = (<HTMLInputElement>document.getElementById("input1")).value
         this.input2Save = (<HTMLInputElement>document.getElementById("input2")).value
         this.input3Save = (<HTMLInputElement>document.getElementById("input3")).value
+        
         document.getElementsByTagName("game")[0].innerHTML = ""
         
         let background = document.createElement("backgroundact1")
         let game = document.getElementsByTagName("game")[0]
         game.appendChild(background)
-        background.style.backgroundImage = `url(assets/plattegrond.jpg)`
+
+        let button_next = document.createElement("button")
+        game.appendChild(button_next)
+
+        if(this.popupSave == false){
+            background.style.backgroundImage = `url(assets/plattegrond_popup.png)`
+            this.popupSave = true
+            background.style.zIndex = `9`
+        }else{
+            background.style.backgroundImage = `url(assets/plattegrond.jpg)`
+            game.removeChild(button_next)
+            background.style.zIndex = `-1`
+        }
+
+        button_next.style.width = `9.2vw`
+        button_next.style.height = `5vh`
+        button_next.style.transform = `translate(59.8vw, 64vh)`
+        button_next.style.opacity = `0%`
+        button_next.style.zIndex = `999`
+        button_next.addEventListener("click" , function(){
+            background.style.backgroundImage = `url(assets/plattegrond.jpg)`
+            game.removeChild(button_next)
+            background.style.zIndex = `-1`
+        })
 
         let button1 = document.createElement("button")
         let button2 = document.createElement("button")
@@ -187,6 +201,44 @@ class Act1 {
 
     rooster(){
         console.log("rooster is aangeklikt")
+
+        let background = <HTMLElement>document.getElementsByTagName("backgroundact1")[0]
+        let game = document.getElementsByTagName("game")[0]
+
+        let button_next = document.createElement("button")
+        game.appendChild(button_next)
+
+        let button_previous = document.createElement("button")
+        game.appendChild(button_previous)
+
+        
+        background.style.backgroundImage = `url(assets/rooster_popup.png)`
+        background.style.zIndex = `1`
+        
+    
+        button_next.style.width = `9.2vw`
+        button_next.style.height = `5vh`
+        button_next.style.transform = `translate(59.8vw, 64vh)`
+        button_next.style.opacity = `0%`
+        button_next.style.zIndex = `999`
+        button_next.addEventListener("click" , function(){
+            background.style.backgroundImage = `url(assets/plattegrond.jpg)`
+            button_next.remove()
+            button_previous.remove()
+            background.style.zIndex = `-1`
+        })
+
+        button_previous.style.width = `6.2vw`
+        button_previous.style.height = `5vh`
+        button_previous.style.transform = `translate(52.6vw, 64vh)`
+        button_previous.style.opacity = `0%`
+        button_previous.style.zIndex = `999`
+        button_previous.addEventListener("click" , function(){
+            background.style.backgroundImage = `url(assets/plattegrond.jpg)`
+            button_previous.remove()
+            button_next.remove()
+            background.style.zIndex = `-1`
+        })
     }
 
     studentenServiceCenter(){
@@ -195,6 +247,34 @@ class Act1 {
 
     studentenpas(){
         console.log("studentenpas is aangeklikt")
+        let game = document.getElementsByTagName("game")[0]
+        var myloc = new Image();  
+        myloc.useMap = "/docs/assets/studentenpas.png";  
+        var img = document.createElement('img')  
+        img.setAttribute('src', myloc.useMap);  
+        img.setAttribute('style', "height:25vh;width:25vw;transform:translate(28.3vw, 26.5vh);cursor:pointer;");  
+        game.appendChild(img);
+
+        img.addEventListener("click" , function(){
+            button.style.display = `none`
+            game.removeChild(img);
+            button.remove()
+        })
+        img.style.position = `absolute`
+
+        let button = document.createElement("button")
+        game.appendChild(button)
+
+        button.style.width = `20.3vw`
+        button.style.height = `18vh`
+        button.style.transform = `translate(61.2vw, 63.8vh)`
+        button.style.opacity = `0%`
+
+        button.addEventListener("click" , function(){
+            button.style.display = `none`
+            game.removeChild(img);
+            button.remove()
+        })
     }
 
     lms(){

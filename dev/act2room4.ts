@@ -14,7 +14,10 @@ class Act2Room4{
         this.video.controls = true
         this.video.onended = function() {
              let vid = document.getElementsByTagName("video")[0]
+             let bg = document.getElementsByTagName("videoBackground")[0]
              vid.remove()
+             bg.remove()
+             new Act2
           };
     }
 }

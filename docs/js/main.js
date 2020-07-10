@@ -1,4 +1,17 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Act1 = (function () {
     function Act1() {
         this.input1 = document.createElement("input");
@@ -7,6 +20,7 @@ var Act1 = (function () {
         this.input1Save = "";
         this.input2Save = "";
         this.input3Save = "";
+        this.popupSave = false;
         this.createAnswerScreen();
     }
     Act1.prototype.createAnswerScreen = function () {
@@ -79,19 +93,8 @@ var Act1 = (function () {
         var shape3 = document.getElementById("input3").value;
         if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje") {
             if (confirm("dit is het goede antwoord, wil je verder? klik op cancel voor een pauze.")) {
+                document.getElementsByTagName("game")[0].innerHTML = "";
                 new EnterBuilding();
-                var inputs = document.getElementsByTagName("input");
-                var buttons = document.getElementsByTagName("button");
-                if (buttons) {
-                    for (var i = (buttons.length - 1); i >= 0; i--) {
-                        buttons[i].remove();
-                    }
-                }
-                if (inputs) {
-                    for (var i = (inputs.length - 1); i >= 0; i--) {
-                        inputs[i].remove();
-                    }
-                }
             }
             else {
                 console.log("je neemt een pauze");
@@ -110,7 +113,28 @@ var Act1 = (function () {
         var background = document.createElement("backgroundact1");
         var game = document.getElementsByTagName("game")[0];
         game.appendChild(background);
-        background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+        var button_next = document.createElement("button");
+        game.appendChild(button_next);
+        if (this.popupSave == false) {
+            background.style.backgroundImage = "url(assets/plattegrond_popup.png)";
+            this.popupSave = true;
+            background.style.zIndex = "9";
+        }
+        else {
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+            game.removeChild(button_next);
+            background.style.zIndex = "-1";
+        }
+        button_next.style.width = "9.2vw";
+        button_next.style.height = "5vh";
+        button_next.style.transform = "translate(59.8vw, 64vh)";
+        button_next.style.opacity = "0%";
+        button_next.style.zIndex = "999";
+        button_next.addEventListener("click", function () {
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+            game.removeChild(button_next);
+            background.style.zIndex = "-1";
+        });
         var button1 = document.createElement("button");
         var button2 = document.createElement("button");
         var button3 = document.createElement("button");
@@ -162,12 +186,66 @@ var Act1 = (function () {
     };
     Act1.prototype.rooster = function () {
         console.log("rooster is aangeklikt");
+        var background = document.getElementsByTagName("backgroundact1")[0];
+        var game = document.getElementsByTagName("game")[0];
+        var button_next = document.createElement("button");
+        game.appendChild(button_next);
+        var button_previous = document.createElement("button");
+        game.appendChild(button_previous);
+        background.style.backgroundImage = "url(assets/rooster_popup.png)";
+        background.style.zIndex = "1";
+        button_next.style.width = "9.2vw";
+        button_next.style.height = "5vh";
+        button_next.style.transform = "translate(59.8vw, 64vh)";
+        button_next.style.opacity = "0%";
+        button_next.style.zIndex = "999";
+        button_next.addEventListener("click", function () {
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+            button_next.remove();
+            button_previous.remove();
+            background.style.zIndex = "-1";
+        });
+        button_previous.style.width = "6.2vw";
+        button_previous.style.height = "5vh";
+        button_previous.style.transform = "translate(52.6vw, 64vh)";
+        button_previous.style.opacity = "0%";
+        button_previous.style.zIndex = "999";
+        button_previous.addEventListener("click", function () {
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+            button_previous.remove();
+            button_next.remove();
+            background.style.zIndex = "-1";
+        });
     };
     Act1.prototype.studentenServiceCenter = function () {
         console.log("ssc is aangeklikt");
     };
     Act1.prototype.studentenpas = function () {
         console.log("studentenpas is aangeklikt");
+        var game = document.getElementsByTagName("game")[0];
+        var myloc = new Image();
+        myloc.useMap = "/docs/assets/studentenpas.png";
+        var img = document.createElement('img');
+        img.setAttribute('src', myloc.useMap);
+        img.setAttribute('style', "height:25vh;width:25vw;transform:translate(28.3vw, 26.5vh);cursor:pointer;");
+        game.appendChild(img);
+        img.addEventListener("click", function () {
+            button.style.display = "none";
+            game.removeChild(img);
+            button.remove();
+        });
+        img.style.position = "absolute";
+        var button = document.createElement("button");
+        game.appendChild(button);
+        button.style.width = "20.3vw";
+        button.style.height = "18vh";
+        button.style.transform = "translate(61.2vw, 63.8vh)";
+        button.style.opacity = "0%";
+        button.addEventListener("click", function () {
+            button.style.display = "none";
+            game.removeChild(img);
+            button.remove();
+        });
     };
     Act1.prototype.lms = function () {
         console.log("lms is aangeklikt");
@@ -184,6 +262,7 @@ var Act2 = (function () {
         this.game = document.getElementsByTagName("game")[0];
         var background = document.createElement("backgroundact2");
         this.game.appendChild(background);
+        this.createFolderItems();
         this.levelSelect();
     }
     Act2.prototype.makeLevelIcon = function (posX, posY, width, height) {
@@ -194,54 +273,180 @@ var Act2 = (function () {
         this.classroomIcon.style.height = height + "vh";
     };
     Act2.prototype.levelSelect = function () {
-        this.makeLevelIcon(8.8, 15.5, 9.5, 32);
+        this.makeLevelIcon(4, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
             console.log("room1");
+            document.getElementsByTagName("game")[0].innerHTML = "";
             new Act2Room1;
         });
-        this.makeLevelIcon(28.5, 15.5, 9.5, 32);
+        this.makeLevelIcon(24, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
             console.log("room2");
+            document.getElementsByTagName("game")[0].innerHTML = "";
             new Act2Room2;
         });
-        this.makeLevelIcon(47, 15.5, 9.5, 32);
+        this.makeLevelIcon(43.5, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
             console.log("room3");
+            document.getElementsByTagName("game")[0].innerHTML = "";
             new Act2Room3;
         });
-        this.makeLevelIcon(65.2, 15.5, 9.5, 32);
+        this.makeLevelIcon(63.8, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
             console.log("room4");
+            document.getElementsByTagName("game")[0].innerHTML = "";
             new Act2Room4;
         });
-        this.makeLevelIcon(84, 15.5, 9.5, 32);
+        this.makeLevelIcon(83.5, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
             console.log("room5");
+            document.getElementsByTagName("game")[0].innerHTML = "";
             new Act2Room5;
         });
-        this.makeLevelIcon(28, 75, 5, 4);
-        this.classroomIcon.addEventListener("click", function () {
+    };
+    Act2.prototype.createFolderItems = function () {
+        this.folderItem1 = document.createElement("folderitem");
+        this.folderItem2 = document.createElement("folderitem");
+        this.folderItem3 = document.createElement("folderitem");
+        this.folderItem4 = document.createElement("folderitem");
+        this.folderItem5 = document.createElement("folderitem");
+        this.folderItem6 = document.createElement("folderitem");
+        this.game.appendChild(this.folderItem1);
+        this.game.appendChild(this.folderItem2);
+        this.game.appendChild(this.folderItem3);
+        this.game.appendChild(this.folderItem4);
+        this.game.appendChild(this.folderItem5);
+        this.game.appendChild(this.folderItem6);
+        this.folderItem1.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_getallen.png)';
+        this.folderItem1.style.transform = "translate(20vw,72vh)";
+        this.folderItem1.style.width = '8.3vw';
+        this.folderItem1.style.height = '8.3vh';
+        this.folderItem1.addEventListener("click", function () {
             console.log("folder1");
+            new Act2folder1;
         });
-        this.makeLevelIcon(25, 82, 7, 12);
-        this.classroomIcon.addEventListener("click", function () {
+        this.folderItem2.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_studie.png)';
+        this.folderItem2.style.transform = "translate(44vw,87vh)";
+        this.folderItem2.style.width = '12vw';
+        this.folderItem2.style.height = '12vh';
+        this.folderItem2.addEventListener("click", function () {
             console.log("folder2");
+            new Act2folder2;
         });
-        this.makeLevelIcon(35, 93, 5, 5);
-        this.classroomIcon.addEventListener("click", function () {
+        this.folderItem3.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_solliciteren.png)';
+        this.folderItem3.style.transform = "translate(60vw,70vh)";
+        this.folderItem3.style.width = '8vw';
+        this.folderItem3.style.height = '8vh';
+        this.folderItem3.addEventListener("click", function () {
             console.log("folder3");
+            new Act2folder3;
         });
-        this.makeLevelIcon(33.5, 86, 5, 5);
-        this.classroomIcon.addEventListener("click", function () {
+        this.folderItem4.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_coia.png)';
+        this.folderItem4.style.transform = "translate(3vw,83vh)";
+        this.folderItem4.style.width = '10vw';
+        this.folderItem4.style.height = '10vh';
+        this.folderItem4.addEventListener("click", function () {
             console.log("folder4");
+            new Act2folder4;
         });
-        this.makeLevelIcon(86.5, 25.3, 5, 15);
-        this.classroomIcon.addEventListener("click", function () {
-            console.log("folder4");
+        this.folderItem5.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_morsecode.png)';
+        this.folderItem5.style.transform = "translate(80vw,78vh)";
+        this.folderItem5.style.width = '10vw';
+        this.folderItem5.style.height = '10vh';
+        this.folderItem5.addEventListener("click", function () {
+            console.log("folder5");
+            new Act2folder5;
+        });
+        this.folderItem6.style.backgroundImage = 'url(assets/Akte2/Postervormen&kleuren.jpg)';
+        this.folderItem6.style.transform = "translate(58.1vw,30vh)";
+        this.folderItem6.style.width = '4.45vw';
+        this.folderItem6.style.height = '11.6vh';
+        this.folderItem6.addEventListener("click", function () {
+            console.log("folder6");
+            new Act2folder6;
         });
     };
     return Act2;
 }());
+var folders = (function () {
+    function folders() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.folder = document.createElement("openfolder");
+        this.createFolder();
+    }
+    folders.prototype.createFolder = function () {
+        var _this = this;
+        this.folder.style.width = '100vw';
+        this.folder.style.height = '100vh';
+        this.game.appendChild(this.folder);
+        this.folder.addEventListener("click", function () {
+            console.log("folder removed");
+            _this.folder.remove();
+        });
+    };
+    folders.prototype.removeMe = function () {
+        this.folder.remove();
+    };
+    return folders;
+}());
+var Act2folder1 = (function (_super) {
+    __extends(Act2folder1, _super);
+    function Act2folder1() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer1getallen.jpg)';
+        _this.folder.style.backgroundSize = '50% 50%';
+        return _this;
+    }
+    return Act2folder1;
+}(folders));
+var Act2folder2 = (function (_super) {
+    __extends(Act2folder2, _super);
+    function Act2folder2() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer2HulpbijStudie.jpg)';
+        _this.folder.style.backgroundSize = '40% 90%';
+        return _this;
+    }
+    return Act2folder2;
+}(folders));
+var Act2folder3 = (function (_super) {
+    __extends(Act2folder3, _super);
+    function Act2folder3() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer3WorkshopSolliciteren.jpg)';
+        _this.folder.style.backgroundSize = '30% 90%';
+        return _this;
+    }
+    return Act2folder3;
+}(folders));
+var Act2folder4 = (function (_super) {
+    __extends(Act2folder4, _super);
+    function Act2folder4() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer4COIAinfo.png)';
+        _this.folder.style.backgroundSize = '45% 80%';
+        return _this;
+    }
+    return Act2folder4;
+}(folders));
+var Act2folder5 = (function (_super) {
+    __extends(Act2folder5, _super);
+    function Act2folder5() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer5MorseCodeAlfabet.jpg)';
+        return _this;
+    }
+    return Act2folder5;
+}(folders));
+var Act2folder6 = (function (_super) {
+    __extends(Act2folder6, _super);
+    function Act2folder6() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Postervormen&kleuren.jpg)';
+        return _this;
+    }
+    return Act2folder6;
+}(folders));
 var Act2Room1 = (function () {
     function Act2Room1() {
         this.game = document.getElementsByTagName('game')[0];
@@ -282,7 +487,10 @@ var Act2Room4 = (function () {
         this.video.controls = true;
         this.video.onended = function () {
             var vid = document.getElementsByTagName("video")[0];
+            var bg = document.getElementsByTagName("videoBackground")[0];
             vid.remove();
+            bg.remove();
+            new Act2;
         };
     }
     return Act2Room4;
@@ -295,6 +503,42 @@ var Act2Room5 = (function () {
         this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
     }
     return Act2Room5;
+}());
+var Act3 = (function () {
+    function Act3() {
+        var _this = this;
+        this.game = document.getElementsByTagName("game")[0];
+        this.bg = document.createElement("videoBackground");
+        this.video = document.createElement("video");
+        var playButton = document.createElement("button");
+        this.bg.style.backgroundColor = "black";
+        this.game.appendChild(this.bg);
+        this.game.appendChild(this.video);
+        this.game.appendChild(playButton);
+        playButton.style.width = "100vw";
+        playButton.style.height = "100vh";
+        playButton.style.opacity = "0%";
+        playButton.addEventListener("click", function () { return _this.togglePlay(); });
+        this.video.src = 'assets/Akte2/filmpjedecaanhorizontaal.mp4';
+        this.video.autoplay = true;
+        this.video.controls = false;
+        this.video.playbackRate = 16;
+        this.video.onended = function () {
+            var game = document.getElementsByTagName("game")[0];
+            game.innerHTML = "";
+            var background = document.createElement("backgroundAct3");
+            game.appendChild(background);
+        };
+    }
+    Act3.prototype.togglePlay = function () {
+        if (this.video.paused) {
+            this.video.play();
+        }
+        else {
+            this.video.pause();
+        }
+    };
+    return Act3;
 }());
 var EnterBuilding = (function () {
     function EnterBuilding() {
@@ -316,7 +560,6 @@ var EnterBuilding = (function () {
         }
         else if (this.i == 2) {
             this.bge.remove();
-            console.log('help');
             new Act2();
         }
         this.i++;
@@ -357,7 +600,7 @@ var Game = (function () {
     }
     Game.prototype.buttonPress1 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
-        new Act1();
+        new Act3();
     };
     Game.prototype.buttonPress2 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";

@@ -77,15 +77,39 @@ backgroundact2, act2background{
     position: absolute;
     width:100vw; height:100vh;
     z-index: -1;
-    background-image: url(../assets/Akte2/Akte2-overview-startscherm.jpg);
+    background-image: url(../assets/PRODUCTION/PRODUCTION/ASSETS/act_2_background.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
     left:0; top:0;
 }
 
+backgroundact3 {
+    position: absolute;
+    width: 100vw; height: 100vh;
+    z-index:-1;
+    background-image: url(../assets/PRODUCTION/PRODUCTION/ASSETS/act_2_background.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    left:0; top:0;
+}
+
 classroom {
     position: absolute;
+}
+openfolder {
+    position: absolute;
+    z-index: 3;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+folderitem {
+    position: absolute;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
 }
 input:focus{
     outline:none;
