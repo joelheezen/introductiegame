@@ -110,7 +110,7 @@ var Act1 = (function () {
         var background = document.createElement("backgroundact1");
         var game = document.getElementsByTagName("game")[0];
         game.appendChild(background);
-        background.style.backgroundImage = "url(/docs/assets/plattegrond.jpg)";
+        background.style.backgroundImage = "url(assets/plattegrond.jpg)";
         var button1 = document.createElement("button");
         var button2 = document.createElement("button");
         var button3 = document.createElement("button");
