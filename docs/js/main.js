@@ -305,20 +305,46 @@ var Act2Room5 = (function () {
 }());
 var Act3 = (function () {
     function Act3() {
+        var _this = this;
         this.game = document.getElementsByTagName("game")[0];
         this.bg = document.createElement("videoBackground");
         this.video = document.createElement("video");
+        var playButton = document.createElement("button");
         this.bg.style.backgroundColor = "black";
         this.game.appendChild(this.bg);
         this.game.appendChild(this.video);
+        this.game.appendChild(playButton);
+        playButton.style.width = "100vw";
+        playButton.style.height = "100vh";
+        playButton.style.opacity = "0%";
+        playButton.addEventListener("click", function () { return _this.togglePlay(); });
         this.video.src = 'assets/Akte2/filmpjedecaanhorizontaal.mp4';
         this.video.autoplay = true;
         this.video.controls = false;
+        this.video.playbackRate = 16;
         this.video.onended = function () {
-            var vid = document.getElementsByTagName("video")[0];
-            vid.remove();
+            var game = document.getElementsByTagName("game")[0];
+            game.innerHTML = "";
+            var background = document.createElement("backgroundAct3");
+            game.appendChild(background);
+            var button = document.createElement("button");
+            game.appendChild(button);
+            button.style.width = "10vw";
+            button.style.height = "10vh";
+            button.style.transform = "translate(45vw,45vh)";
+            button.innerHTML = "screenshot";
+            button.addEventListener("click", function () {
+            });
         };
     }
+    Act3.prototype.togglePlay = function () {
+        if (this.video.paused) {
+            this.video.play();
+        }
+        else {
+            this.video.pause();
+        }
+    };
     return Act3;
 }());
 var EnterBuilding = (function () {
