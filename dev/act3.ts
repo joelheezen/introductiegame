@@ -58,13 +58,13 @@ class Act3{
                 popup.style.transform = `translate(10vw, 10vh)`
                 popup.style.position = `absolute`
 
-                let playArea = document.createElement("playArea")
-                game.appendChild(playArea)
-                playArea.style.width = `80vw`
-                playArea.style.height = `80vh`
-                playArea.style.transform = `translate(10vw, 10vh)`
-                playArea.style.zIndex = `2`
-                playArea.style.position = `absolute`
+                let mapArea = document.createElement("mapArea")
+                game.appendChild(mapArea)
+                mapArea.style.width = `80vw`
+                mapArea.style.height = `80vh`
+                mapArea.style.transform = `translate(10vw, 10vh)`
+                mapArea.style.zIndex = `2`
+                mapArea.style.position = `absolute`
 
                 let pin1 = document.createElement("pin")
                 let pin2 = document.createElement("pin")
@@ -79,21 +79,310 @@ class Act3{
                 let pin11 = document.createElement("pin")
                 let pin12 = document.createElement("pin")
                 let pin13 = document.createElement("pin")
+
+                mapArea.appendChild(pin1)
+                mapArea.appendChild(pin2)
+                mapArea.appendChild(pin3)
+                mapArea.appendChild(pin4)
+                mapArea.appendChild(pin5)
+                mapArea.appendChild(pin6)
+                mapArea.appendChild(pin7)
+                mapArea.appendChild(pin8)
+                mapArea.appendChild(pin9)
+                mapArea.appendChild(pin10)
+                mapArea.appendChild(pin11)
+                mapArea.appendChild(pin12)
+                mapArea.appendChild(pin13)
+
+                let url = "url(assets/PRODUCTION/PRODUCTION/ASSETS/blaak.png)"
+
+                let url1 = url
+                let url2 = url
+                let url3 = url
+                let url4 = url
+                let url5 = url
+                let url6 = url
+                let url7 = url
+                let url8 = url
+                let url9 = url
+                let url10 = url
+                let url11 = url
+                let url12 = url
+                let url13 = url
+
+                let text1 = "Hofpleinfontein"
+                let text2 = "Rotterdam CS"
+                let text3 = "Feyenoordstadion"
+                let text4 = "kuntswerk 'De Belichaamde Eenheid'"
+                let text5 = "Erasmusbrug"
+                let text6 = "Station Blaak"
+                let text7 = "Erasmus Medisch Centrum"
+                let text8 = "Binnenrotte plein"
+                let text9 = "Markthal"
+                let text10 = "Centrale Bibliotheek"
+                let text11 = "Beurstraverse"
+                let text12 = "Blaaktoren"
+                let text13 = "Kunstwerk 'De gestileerde bloem'"
                 
-                game.appendChild(pin1)
-                game.appendChild(pin2)
-                game.appendChild(pin3)
-                game.appendChild(pin4)
-                game.appendChild(pin5)
-                game.appendChild(pin6)
-                game.appendChild(pin7)
-                game.appendChild(pin8)
-                game.appendChild(pin9)
-                game.appendChild(pin10)
-                game.appendChild(pin11)
-                game.appendChild(pin12)
-                game.appendChild(pin13)
-                
+                pin1.style.transform = `translate(30.5vw, 35.7vh)`
+                pin1.style.zIndex = `3`
+                pin1.addEventListener("mouseover", function(){
+                    console.log("in")
+                    let pinPopup = document.createElement("pinPopup")
+                    let mapArea = document.getElementsByTagName("mapArea")[0]
+                    mapArea.appendChild(pinPopup)
+                    let pinPopupImage = document.createElement("pinPopupImage")
+                    pinPopup.appendChild(pinPopupImage)
+                    pinPopupImage.style.backgroundImage = `${url1}`
+
+                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.innerHTML += text1
+                })
+                pin1.addEventListener("mouseout", function(){
+                    console.log("out")
+                    let pinPopup = document.getElementsByTagName("pinPopup")[0]
+                    pinPopup.remove()
+                })
+
+                pin2.style.transform = `translate(26.2vw, 34.8vh)`
+                pin2.style.zIndex = `3`
+                pin2.addEventListener("mouseover", function(){
+                    console.log("in")
+                    let pinPopup = document.createElement("pinPopup")
+                    let mapArea = document.getElementsByTagName("mapArea")[0]
+                    mapArea.appendChild(pinPopup)
+                    let pinPopupImage = document.createElement("pinPopupImage")
+                    pinPopup.appendChild(pinPopupImage)
+                    pinPopupImage.style.backgroundImage = `${url2}`
+
+                    pinPopup.style.transform = `translate(16vw, 0.7vh)`
+                    pinPopup.innerHTML += text2
+                })
+                pin2.addEventListener("mouseout", function(){
+                    console.log("out")
+                    let pinPopup = document.getElementsByTagName("pinPopup")[0]
+                    pinPopup.remove()
+                })
+
+                pin3.style.transform = `translate(50.3vw, 75.7vh)`
+                pin3.style.zIndex = `3`
+                pin3.addEventListener("mouseover", function(){
+                    console.log("in")
+                    let pinPopup = document.createElement("pinPopup")
+                    let mapArea = document.getElementsByTagName("mapArea")[0]
+                    mapArea.appendChild(pinPopup)
+                    let pinPopupImage = document.createElement("pinPopupImage")
+                    pinPopup.appendChild(pinPopupImage)
+                    pinPopupImage.style.backgroundImage = `${url3}`
+
+                    pinPopup.style.transform = `translate(41vw, 42vh)`
+                    pinPopup.innerHTML += text3
+                })
+                pin3.addEventListener("mouseout", function(){
+                    console.log("out")
+                    let pinPopup = document.getElementsByTagName("pinPopup")[0]
+                    pinPopup.remove()
+                })
+
+                pin4.style.transform = `translate(28.3vw, 36.7vh)`
+                pin4.style.zIndex = `3`
+                pin4.addEventListener("mouseover", function(){
+                    console.log("in")
+                    let pinPopup = document.createElement("pinPopup")
+                    let mapArea = document.getElementsByTagName("mapArea")[0]
+                    mapArea.appendChild(pinPopup)
+                    let pinPopupImage = document.createElement("pinPopupImage")
+                    pinPopup.appendChild(pinPopupImage)
+                    pinPopupImage.style.backgroundImage = `${url4}`
+
+                    pinPopup.style.transform = `translate(19vw, 2vh)`
+                    pinPopup.innerHTML += text4
+                })
+                pin4.addEventListener("mouseout", function(){
+                    console.log("out")
+                    let pinPopup = document.getElementsByTagName("pinPopup")[0]
+                    pinPopup.remove()
+                })
+
+                pin5.style.transform = `translate(34.3vw, 56.7vh)`
+                pin5.style.zIndex = `3`
+                pin5.addEventListener("mouseover", function(){
+                    console.log("in")
+                    let pinPopup = document.createElement("pinPopup")
+                    let mapArea = document.getElementsByTagName("mapArea")[0]
+                    mapArea.appendChild(pinPopup)
+                    let pinPopupImage = document.createElement("pinPopupImage")
+                    pinPopup.appendChild(pinPopupImage)
+                    pinPopupImage.style.backgroundImage = `${url5}`
+
+                    pinPopup.style.transform = `translate(25vw, 23vh)`
+                    pinPopup.innerHTML += text5
+                })
+                pin5.addEventListener("mouseout", function(){
+                    console.log("out")
+                    let pinPopup = document.getElementsByTagName("pinPopup")[0]
+                    pinPopup.remove()
+                })
+
+                pin6.style.transform = `translate(35.6vw, 42vh)`
+                pin6.style.zIndex = `3`
+                pin6.addEventListener("mouseover", function(){
+                    console.log("in")
+                    let pinPopup = document.createElement("pinPopup")
+                    let mapArea = document.getElementsByTagName("mapArea")[0]
+                    mapArea.appendChild(pinPopup)
+                    let pinPopupImage = document.createElement("pinPopupImage")
+                    pinPopup.appendChild(pinPopupImage)
+                    pinPopupImage.style.backgroundImage = `${url6}`
+
+                    pinPopup.style.transform = `translate(26vw, 7.7vh)`
+                    pinPopup.innerHTML += text6
+                })
+                pin6.addEventListener("mouseout", function(){
+                    console.log("out")
+                    let pinPopup = document.getElementsByTagName("pinPopup")[0]
+                    pinPopup.remove()
+                })
+
+                pin7.style.transform = `translate(29.8vw, 33.7vh)`
+                pin7.style.zIndex = `3`
+                pin7.addEventListener("mouseover", function(){
+                    console.log("in")
+                    let pinPopup = document.createElement("pinPopup")
+                    let mapArea = document.getElementsByTagName("mapArea")[0]
+                    mapArea.appendChild(pinPopup)
+                    let pinPopupImage = document.createElement("pinPopupImage")
+                    pinPopup.appendChild(pinPopupImage)
+                    pinPopupImage.style.backgroundImage = `${url7}`
+
+                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.innerHTML += text7
+                })
+                pin7.addEventListener("mouseout", function(){
+                    console.log("out")
+                    let pinPopup = document.getElementsByTagName("pinPopup")[0]
+                    //pinPopup.remove()
+                })
+
+                pin8.style.transform = `translate(29.8vw, 33.7vh)`
+                pin8.style.zIndex = `3`
+                pin8.addEventListener("mouseover", function(){
+                    console.log("in")
+                    let pinPopup = document.createElement("pinPopup")
+                    let mapArea = document.getElementsByTagName("mapArea")[0]
+                    mapArea.appendChild(pinPopup)
+                    let pinPopupImage = document.createElement("pinPopupImage")
+                    pinPopup.appendChild(pinPopupImage)
+                    pinPopupImage.style.backgroundImage = `${url8}`
+
+                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.innerHTML += text8
+                })
+                pin8.addEventListener("mouseout", function(){
+                    console.log("out")
+                    let pinPopup = document.getElementsByTagName("pinPopup")[0]
+                    //pinPopup.remove()
+                })
+
+                pin9.style.transform = `translate(29.8vw, 33.7vh)`
+                pin9.style.zIndex = `3`
+                pin9.addEventListener("mouseover", function(){
+                    console.log("in")
+                    let pinPopup = document.createElement("pinPopup")
+                    let mapArea = document.getElementsByTagName("mapArea")[0]
+                    mapArea.appendChild(pinPopup)
+                    let pinPopupImage = document.createElement("pinPopupImage")
+                    pinPopup.appendChild(pinPopupImage)
+                    pinPopupImage.style.backgroundImage = `${url9}`
+
+                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.innerHTML += text9
+                })
+                pin9.addEventListener("mouseout", function(){
+                    console.log("out")
+                    let pinPopup = document.getElementsByTagName("pinPopup")[0]
+                    //pinPopup.remove()
+                })
+
+                pin10.style.transform = `translate(29.8vw, 33.7vh)`
+                pin10.style.zIndex = `3`
+                pin10.addEventListener("mouseover", function(){
+                    console.log("in")
+                    let pinPopup = document.createElement("pinPopup")
+                    let mapArea = document.getElementsByTagName("mapArea")[0]
+                    mapArea.appendChild(pinPopup)
+                    let pinPopupImage = document.createElement("pinPopupImage")
+                    pinPopup.appendChild(pinPopupImage)
+                    pinPopupImage.style.backgroundImage = `${url10}`
+
+                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.innerHTML += text10
+                })
+                pin10.addEventListener("mouseout", function(){
+                    console.log("out")
+                    let pinPopup = document.getElementsByTagName("pinPopup")[0]
+                    //pinPopup.remove()
+                })
+
+                pin11.style.transform = `translate(29.8vw, 33.7vh)`
+                pin11.style.zIndex = `3`
+                pin11.addEventListener("mouseover", function(){
+                    console.log("in")
+                    let pinPopup = document.createElement("pinPopup")
+                    let mapArea = document.getElementsByTagName("mapArea")[0]
+                    mapArea.appendChild(pinPopup)
+                    let pinPopupImage = document.createElement("pinPopupImage")
+                    pinPopup.appendChild(pinPopupImage)
+                    pinPopupImage.style.backgroundImage = `${url11}`
+
+                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.innerHTML += text11
+                })
+                pin11.addEventListener("mouseout", function(){
+                    console.log("out")
+                    let pinPopup = document.getElementsByTagName("pinPopup")[0]
+                    //pinPopup.remove()
+                })
+
+                pin12.style.transform = `translate(29.8vw, 33.7vh)`
+                pin12.style.zIndex = `3`
+                pin12.addEventListener("mouseover", function(){
+                    console.log("in")
+                    let pinPopup = document.createElement("pinPopup")
+                    let mapArea = document.getElementsByTagName("mapArea")[0]
+                    mapArea.appendChild(pinPopup)
+                    let pinPopupImage = document.createElement("pinPopupImage")
+                    pinPopup.appendChild(pinPopupImage)
+                    pinPopupImage.style.backgroundImage = `${url12}`
+
+                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.innerHTML += text12
+                })
+                pin12.addEventListener("mouseout", function(){
+                    console.log("out")
+                    let pinPopup = document.getElementsByTagName("pinPopup")[0]
+                    //pinPopup.remove()
+                })
+
+                pin13.style.transform = `translate(29.8vw, 33.7vh)`
+                pin13.style.zIndex = `3`
+                pin13.addEventListener("mouseover", function(){
+                    console.log("in")
+                    let pinPopup = document.createElement("pinPopup")
+                    let mapArea = document.getElementsByTagName("mapArea")[0]
+                    mapArea.appendChild(pinPopup)
+                    let pinPopupImage = document.createElement("pinPopupImage")
+                    pinPopup.appendChild(pinPopupImage)
+                    pinPopupImage.style.backgroundImage = `${url13}`
+
+                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.innerHTML += text13
+                })
+                pin13.addEventListener("mouseout", function(){
+                    console.log("out")
+                    let pinPopup = document.getElementsByTagName("pinPopup")[0]
+                    //pinPopup.remove()
+                })
 
                 let button = document.createElement("button")
                 game.appendChild(button)
@@ -104,7 +393,7 @@ class Act3{
                 button.addEventListener("click", function(){
                     popup.remove()
                     button.remove()
-                    playArea.remove()
+                    mapArea.remove()
                 })
 
 
