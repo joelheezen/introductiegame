@@ -19,7 +19,7 @@ backgroundLocation{
     left:0;
     width:100vw; 
     height:100vh;
-    background-size: 100% auto;
+    background-size: 120% 120%;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -45,16 +45,16 @@ educationsetter button{
     width:40%;
     height:3vw;    
     left:calc(30% - 6px);
-    top:40%;
+    top:35%;
     cursor: pointer;
 }
 
 educationsetter select{
     position:absolute;
-    width:40%;
+    width:90%;
     height:2vw;
-    top:30%;    
-    left:calc(30% - 6px);
+    top:25%;    
+    left:5%;
     border-radius: 10px;
     border:none;
     box-shadow: 3px 3px gray inset;
@@ -127,8 +127,10 @@ input {
 }
 
 
-locationMarker{
-    background-color:black;
+pin{
+    background-image: url(../assets/PRODUCTION/PRODUCTION/ASSETS/locationpin.png);
+    background-position: center;
+    background-size: 100% 100%;
     width:5vh;
     height:5vh;
 }
@@ -161,11 +163,22 @@ popuplocation button{
 
 locationimage{
     position:absolute;
-    width: calc(100% - 6px);
+    width: 100%;
     height:50%;
     background-size:100% 100%;
     left:0;
     top:0;
     border-radius: 1vh;
-    border:solid 3px#cf0245;
+}
+
+map{
+    position:absolute;
+    background-image: url(../assets/PRODUCTION/PRODUCTION/ASSETS/map.png);
+    background-size: 100% 100%;
+    background-position: center;
+    width:74.1vw;
+    height:73.3vh;
+    top:17.6vh;
+    left:12.9vw;
+
 }

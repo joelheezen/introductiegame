@@ -378,8 +378,8 @@ var LocatieSelectie = (function () {
     function LocatieSelectie() {
         this.background = document.createElement('backgroundLocation');
         this.game = document.getElementsByTagName('game')[0];
-        this.educations = new Array();
-        this.background.style.backgroundImage = "url(assets/rotterdam_50.png";
+        this.educations = new Locations();
+        this.background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/map.png";
         this.game.appendChild(this.background);
         this.educationSetter();
     }
@@ -388,19 +388,50 @@ var LocatieSelectie = (function () {
         this.educationSet = document.createElement('educationsetter');
         this.game.appendChild(this.educationSet);
         this.educationSet.innerHTML = "Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding.";
-        var educationSelect = document.createElement('select');
-        this.educations = ['CMGT', 'Informatica', 'Communicatie', 'Crossmediale Communicatie', 'ICT Internet of Things', 'ICT Service Management'];
-        for (var index = 0; index < this.educations.length; index++) {
-            var addToDrop = document.createElement('option');
-            addToDrop.value = this.educations[index];
-            addToDrop.innerHTML = this.educations[index];
-            educationSelect.appendChild(addToDrop);
-        }
-        this.educationSet.appendChild(educationSelect);
+        this.educationSelect = document.createElement('select');
+        this.currentLocation = this.educations.academieplein.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.blaak.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.kralingse_zoom.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.lloyd_straat.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.max_euwelaan.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.museumpark_hoogbouw.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.museumpark_laagbouw.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.pieter_de_hoogweg.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.posthumalaan.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.rmd_rotterdam.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.rochussenstraat.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.wijnhaven_103.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.wijnhaven_107.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.wijnhaven_61.opleidingen;
+        this.addToSelect();
+        this.currentLocation = this.educations.wijnhaven_99.opleidingen;
+        this.addToSelect();
+        this.educationSet.appendChild(this.educationSelect);
         var thisLocation = document.createElement('button');
         thisLocation.innerHTML = 'Kies opleiding';
         thisLocation.addEventListener('click', function () { return _this.saveEducation(); });
         this.educationSet.appendChild(thisLocation);
+    };
+    LocatieSelectie.prototype.addToSelect = function () {
+        for (var education in this.currentLocation) {
+            var addToDrop = document.createElement('option');
+            addToDrop.value = this.currentLocation[education];
+            addToDrop.innerHTML = this.currentLocation[education];
+            this.educationSelect.appendChild(addToDrop);
+        }
     };
     LocatieSelectie.prototype.saveEducation = function () {
         var education = document.getElementsByTagName('select')[0].value;
@@ -408,32 +439,176 @@ var LocatieSelectie = (function () {
         this.locationPicker();
     };
     LocatieSelectie.prototype.locationPicker = function () {
+        var map = document.createElement('map');
+        this.game.appendChild(map);
         this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.jpg)";
         this.background.style.backgroundSize = "100% 100%";
         this.educationSet.remove();
-        this.locationMarker(30, 40, 'CMGT');
-        this.locationMarker(44, 16, 'Informatica');
-        this.locationMarker(24, 70, 'Communicatie');
-        this.locationMarker(60, 60, 'Crossmediale Communicatie');
-        this.locationMarker(17, 50, 'ICT Internet of Things');
-        this.locationMarker(80, 36, 'ICT Service Management');
+        this.locationMarker(30, 40, 'academieplein');
+        this.locationMarker(30, 40, 'blaak');
+        this.locationMarker(30, 40, 'kralingse_zoom');
+        this.locationMarker(30, 40, 'lloyd_straat');
+        this.locationMarker(30, 40, 'max_euwelaan');
+        this.locationMarker(30, 40, 'museumpark_hoogbouw');
+        this.locationMarker(30, 40, 'museumpark_laagbouw');
+        this.locationMarker(30, 40, 'pieter_de_hoogweg');
+        this.locationMarker(30, 40, 'posthumalaan');
+        this.locationMarker(30, 40, 'rmd_rotterdam');
+        this.locationMarker(30, 40, 'rochussenstraat');
+        this.locationMarker(30, 40, 'wijnhaven_61');
+        this.locationMarker(30, 40, 'wijnhaven_99');
+        this.locationMarker(30, 40, 'wijnhaven_103');
+        this.locationMarker(30, 40, 'wijnhaven_107');
     };
     LocatieSelectie.prototype.locationMarker = function (x, y, location) {
         var _this = this;
-        var marker = document.createElement('locationMarker');
+        var marker = document.createElement('pin');
         this.game.appendChild(marker);
         marker.style.transform = "translate(" + x + "vw," + y + "vh)";
         marker.addEventListener('click', function () {
-            var education = localStorage.getItem('education');
-            if (location == education) {
-                _this.popupLoc('correct');
-            }
-            else {
-                _this.popupLoc('incorrect');
+            var yourEducation = localStorage.getItem('education');
+            var educations = new Locations;
+            var clicked;
+            switch (location) {
+                case 'academieplein':
+                    clicked = educations.academieplein;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
+                    }
+                    break;
+                case 'blaak':
+                    clicked = educations.blaak;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
+                case 'kralingse_zoom':
+                    clicked = educations.kralingse_zoom;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
+                case 'lloyd_straat':
+                    clicked = educations.lloyd_straat;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
+                case 'max_euwelaan':
+                    clicked = educations.max_euwelaan;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
+                case 'museumpark_hoogbouw':
+                    clicked = educations.museumpark_hoogbouw;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
+                case 'museumpark_laagbouw':
+                    clicked = educations.museumpark_laagbouw;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
+                case 'pieter_de_hoogweg':
+                    clicked = educations.pieter_de_hoogweg;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
+                case 'posthumalaan':
+                    clicked = educations.posthumalaan;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
+                case 'rmd_rotterdam':
+                    clicked = educations.rmd_rotterdam;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
+                case 'rochussenstraat':
+                    clicked = educations.rochussenstraat;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
+                case 'wijnhaven_61':
+                    clicked = educations.wijnhaven_61;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
+                case 'wijnhaven_99':
+                    clicked = educations.wijnhaven_99;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
+                case 'wijnhaven_103':
+                    clicked = educations.wijnhaven_103;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
+                case 'wijnhaven_107':
+                    clicked = educations.wijnhaven_107;
+                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
+                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                    }
+                    else {
+                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                    }
+                    break;
             }
         });
     };
-    LocatieSelectie.prototype.popupLoc = function (awnser) {
+    LocatieSelectie.prototype.popupLoc = function (awnser, location, info) {
         if (document.getElementsByTagName('popupLocation')[0]) {
             document.getElementsByTagName('popupLocation')[0].remove();
         }
@@ -441,25 +616,204 @@ var LocatieSelectie = (function () {
         var locationImage = document.createElement('locationImage');
         this.game.appendChild(popupLocation);
         popupLocation.appendChild(locationImage);
+        locationImage.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/" + location + ".png)";
         if (awnser == 'correct') {
-            locationImage.style.backgroundImage = 'url(assets/IMG_20200708_123456.jpg)';
-            popupLocation.innerHTML += 'dummy text';
+            popupLocation.innerHTML += 'correct';
             var goto = document.createElement('button');
             popupLocation.appendChild(goto);
             goto.innerHTML = "Loop naar binnen";
+            console.log('test');
             goto.addEventListener('click', function () {
+                console.log('test');
                 document.getElementsByTagName("game")[0].innerHTML = "";
                 new Act1;
             });
         }
         else {
-            locationImage.style.backgroundImage = 'url(assets/IMG_20200708_123018.jpg)';
             popupLocation.innerHTML += 'incorrect';
         }
+        popupLocation.innerHTML += info;
         popupLocation.addEventListener('click', function () {
-            document.getElementsByTagName('popupLocation')[0].remove();
         });
     };
     return LocatieSelectie;
+}());
+var Locations = (function () {
+    function Locations() {
+        this.academieplein = {
+            opleidingen: [
+                "Biologie en Medisch Laboratoriumonderzoek",
+                "Bouwkunde",
+                "Chemie",
+                "Civiele Techniek",
+                "Elektrotechniek",
+                "Facility Management",
+                "Logistics Management",
+                "Ruimtelijke Ontwikkeling | Ruimtelijke Ordening en Planologie",
+                "Technische Bedrijfskunde",
+                "Vastgoed en Makelaardij",
+                "Watermanagement",
+                "Werktuigbouwkunde"
+            ],
+            locatieInfo: ""
+        };
+        this.blaak = {
+            opleidingen: [
+                "Arts & Crafts",
+                "Autonome Beeldende Kunst",
+                "Docent Beeldende Kunst en Vormgeving",
+                "Vormgeving",
+                "Interior Architecture: Research + Design",
+                "Master of Arts in Fine Art and Design | Media Design",
+                "Design",
+                "Education in Arts"
+            ],
+            locatieinfo: ""
+        };
+        this.kralingse_zoom = {
+            opleidingen: [
+                "Accountancy",
+                "Bedrijfskunde",
+                "Business IT & Management",
+                "Commerciële Economie | Creative Marketing & Sales",
+                "Commerciële Economie | Global Marketing & Sales",
+                "Commerciële Economie | Marketing of Social Business",
+                "Finance & Control",
+                "Finance, Tax and Advice",
+                "Human Resource Management",
+                "Ondernemerschap & Retail Management",
+                "Master in Consultancy and Entrepreneurship",
+                "Master in Finance and Accounting",
+                "Master in International Supply Chain Management",
+                "Commerciële Economie"
+            ],
+            locatieinfo: ""
+        };
+        this.lloyd_straat = {
+            opleidingen: [
+                "Chemische Technologie",
+                "Logistics Engineering",
+                "Maritiem Officier",
+                "Maritieme Techniek"
+            ],
+            locatieinfo: ""
+        };
+        this.max_euwelaan = {
+            opleidingen: [
+                "Commerciële Economie | SportMarketing & Management"
+            ],
+            locatieinfo: ""
+        };
+        this.museumpark_hoogbouw = {
+            opleidingen: [
+                "Accountancy",
+                "Crossmediale Communicatie",
+                "Engineering",
+                "ICT Service Management",
+                "ICT Internet of Things",
+                "Integraal Bouwmanagement",
+                "Logistiek Management",
+                "Maintenance & Mechanics",
+                "Management in de Zorg",
+                "Management",
+                "Onderwijsondersteuner Technisch beroepsonderwijs",
+                "Pedagogisch Educatief Professional",
+                "Sales & Accountmanagement",
+                "Sociaal Financiële Dienstverlening",
+                "Begeleidingskunde",
+                "Leren en Innoveren",
+                "Management en Innovatie in maatschappelijke organisaties",
+                "Pedagogiek",
+                "Ondernemen"
+            ],
+            locatieinfo: ""
+        };
+        this.museumpark_laagbouw = {
+            opleidingen: [
+                "Academische pabo",
+                "Lerarenopleiding Basisonderwijs (pabo)",
+                "Lerarenopleiding VO/BVE Aardrijkskunde",
+                "Lerarenopleiding VO/BVE Algemene Economie",
+                "Lerarenopleiding VO/BVE Bedrijfseconomie",
+                "Lerarenopleiding VO/BVE Biologie",
+                "Lerarenopleiding VO/BVE Duits",
+                "Lerarenopleiding VO/BVE Engels",
+                "Lerarenopleiding VO/BVE Frans",
+                "Lerarenopleiding VO/BVE Geschiedenis",
+                "Lerarenopleiding VO/BVE Maatschappijleer",
+                "Lerarenopleiding VO/BVE Natuurkunde",
+                "Lerarenopleiding VO/BVE Nederlands",
+                "Lerarenopleiding VO/BVE Technisch beroepsonderwijs",
+                "Lerarenopleiding VO/BVE Wiskunde",
+                "Social Work"
+            ],
+            locatieinfo: ""
+        };
+        this.pieter_de_hoogweg = {
+            opleidingen: [
+                "Industrieel Product Ontwerpen",
+                "Mens en Techniek | Gezondheidszorg Technologie"
+            ],
+            locatieinfo: ""
+        };
+        this.posthumalaan = {
+            opleidingen: [
+                "International Business"
+            ],
+            locatieinfo: ""
+        };
+        this.rmd_rotterdam = {
+            opleidingen: [
+                "Automotive",
+                "River Delta Development"
+            ],
+            locatieinfo: ""
+        };
+        this.rochussenstraat = {
+            opleidingen: [
+                "Ergotherapie",
+                "Fysiotherapie",
+                "Logopedie",
+                "Medische Hulpverlening",
+                "Verloskunde",
+                "Verpleegkunde",
+                "Onderwijsondersteuner Gezondheidszorg en Welzijn",
+                "Leraar Gezondheidszorg en Welzijn",
+                "Kinderfysiotherapie",
+                "Manuele Therapie",
+                "Sportfysiotherapie",
+                "Advanced Nursing Practice",
+                "Physician Assistant (algemeen)",
+                "Physician Assistant (Klinisch Verloskundige)"
+            ],
+            locatieinfo: ""
+        };
+        this.wijnhaven_61 = {
+            opleidingen: [
+                "Leisure & Events Management"
+            ],
+            locatieinfo: ""
+        };
+        this.wijnhaven_99 = {
+            opleidingen: [
+                "Creative Media and Game Technologies"
+            ],
+            locatieinfo: ""
+        };
+        this.wijnhaven_103 = {
+            opleidingen: [],
+            locatieinfo: ""
+        };
+        this.wijnhaven_107 = {
+            opleidingen: [
+                "Communicatie",
+                "Communication and Multimedia Design",
+                "Informatica",
+                "Technische Informatica"
+            ],
+            locatieinfo: ""
+        };
+    }
+    return Locations;
 }());
 //# sourceMappingURL=main.js.map
