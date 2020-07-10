@@ -1,7 +1,7 @@
 
 game *{
     display: block;
-    font-family: Arial;
+    font-family: Arial Black;
 }
 
 game *{
@@ -53,7 +53,7 @@ educationsetter select{
     position:absolute;
     width:90%;
     height:2vw;
-    top:25%;    
+    top:26%;    
     left:5%;
     border-radius: 10px;
     border:none;
@@ -155,8 +155,9 @@ pin{
     background-image: url(../assets/PRODUCTION/PRODUCTION/ASSETS/locationpin.png);
     background-position: center;
     background-size: 100% 100%;
-    width:5vh;
-    height:5vh;
+    width:3vh;
+    height:3vh;
+    position:absolute;
 }
 
 popuplocation{
@@ -178,8 +179,7 @@ popuplocation button{
     border: solid black 3px;
     font-weight: bolder;
     border-radius: 3px;
-    width:40%;
-    height:3vw;    
+    width:40%;    
     left:30%;
     bottom:5%;
     cursor: pointer;

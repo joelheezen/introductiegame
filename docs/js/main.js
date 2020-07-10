@@ -687,21 +687,21 @@ var LocatieSelectie = (function () {
         this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.jpg)";
         this.background.style.backgroundSize = "100% 100%";
         this.educationSet.remove();
-        this.locationMarker(30, 40, 'academieplein');
-        this.locationMarker(30, 40, 'blaak');
-        this.locationMarker(30, 40, 'kralingse_zoom');
-        this.locationMarker(30, 40, 'lloyd_straat');
-        this.locationMarker(30, 40, 'max_euwelaan');
-        this.locationMarker(30, 40, 'museumpark_hoogbouw');
-        this.locationMarker(30, 40, 'museumpark_laagbouw');
-        this.locationMarker(30, 40, 'pieter_de_hoogweg');
-        this.locationMarker(30, 40, 'posthumalaan');
-        this.locationMarker(30, 40, 'rmd_rotterdam');
-        this.locationMarker(30, 40, 'rochussenstraat');
-        this.locationMarker(30, 40, 'wijnhaven_61');
-        this.locationMarker(30, 40, 'wijnhaven_99');
-        this.locationMarker(30, 40, 'wijnhaven_103');
-        this.locationMarker(30, 40, 'wijnhaven_107');
+        this.locationMarker(34.3, 67.9, 'academieplein');
+        this.locationMarker(46.3, 57, 'blaak');
+        this.locationMarker(62.7, 61.5, 'kralingse_zoom');
+        this.locationMarker(33.9, 78.5, 'lloyd_straat');
+        this.locationMarker(64, 60, 'max_euwelaan');
+        this.locationMarker(37, 65, 'museumpark_hoogbouw');
+        this.locationMarker(38, 63, 'museumpark_laagbouw');
+        this.locationMarker(33, 72.5, 'pieter_de_hoogweg');
+        this.locationMarker(49, 73, 'posthumalaan');
+        this.locationMarker(15.7, 82, 'rmd_rotterdam');
+        this.locationMarker(35, 67, 'rochussenstraat');
+        this.locationMarker(46, 58, 'wijnhaven_61');
+        this.locationMarker(45, 58.4, 'wijnhaven_99');
+        this.locationMarker(44.4, 58.7, 'wijnhaven_103');
+        this.locationMarker(43.8, 59, 'wijnhaven_107');
     };
     LocatieSelectie.prototype.locationMarker = function (x, y, location) {
         var _this = this;
@@ -862,6 +862,7 @@ var LocatieSelectie = (function () {
         locationImage.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/" + location + ".png)";
         if (awnser == 'correct') {
             popupLocation.innerHTML += 'correct';
+            popupLocation.innerHTML += location;
             var goto = document.createElement('button');
             popupLocation.appendChild(goto);
             goto.innerHTML = "Loop naar binnen";
@@ -874,10 +875,14 @@ var LocatieSelectie = (function () {
         }
         else {
             popupLocation.innerHTML += 'incorrect';
+            popupLocation.innerHTML += location;
+            var goto = document.createElement('button');
+            popupLocation.appendChild(goto);
+            goto.innerHTML = "Probeer opnieuw";
+            goto.addEventListener('click', function () {
+                document.getElementsByTagName('popupLocation')[0].remove();
+            });
         }
-        popupLocation.innerHTML += info;
-        popupLocation.addEventListener('click', function () {
-        });
     };
     return LocatieSelectie;
 }());
