@@ -17,6 +17,7 @@ var Act1 = (function () {
         this.input1 = document.createElement("input");
         this.input2 = document.createElement("input");
         this.input3 = document.createElement("input");
+        this.wrong_div = document.createElement("div");
         this.input1Save = "";
         this.input2Save = "";
         this.input3Save = "";
@@ -101,7 +102,25 @@ var Act1 = (function () {
             }
         }
         else {
-            alert("helaas dit antwoord is fout.");
+            var game = document.getElementsByTagName("game")[0];
+            game.appendChild(this.wrong_div);
+            this.wrong_div.style.width = "13.7vw";
+            this.wrong_div.style.height = "5.7vh";
+            this.wrong_div.style.transform = "translate(10vw, 39.2vh)";
+            this.wrong_div.style.borderRadius = "25px";
+            this.wrong_div.style.border = "none";
+            this.wrong_div.style.fontSize = "20px";
+            this.wrong_div.style.paddingLeft = "1vw";
+            this.wrong_div.style.fontFamily = "Arial Black";
+            this.wrong_div.style.textTransform = "uppercase";
+            this.wrong_div.style.zIndex = "999";
+            this.wrong_div.id = "input1";
+            var myloc = new Image();
+            myloc.useMap = "/docs/assets/fout_antwoord.png";
+            var img = document.createElement('img');
+            img.setAttribute('src', myloc.useMap);
+            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(28.3vw, 26.5vh);cursor:pointer;");
+            game.appendChild(img);
         }
     };
     Act1.prototype.searchOnline = function () {
@@ -180,6 +199,7 @@ var Act1 = (function () {
     };
     Act1.prototype.webmail = function () {
         console.log("webmail is aangeklikt");
+        window.open('https://webmail.hr.nl', '_blank');
     };
     Act1.prototype.osiris = function () {
         console.log("osiris is aangeklikt");
@@ -204,6 +224,7 @@ var Act1 = (function () {
             button_next.remove();
             button_previous.remove();
             background.style.zIndex = "-1";
+            window.open('https://google.nl', '_blank');
         });
         button_previous.style.width = "6.2vw";
         button_previous.style.height = "5vh";
@@ -219,6 +240,22 @@ var Act1 = (function () {
     };
     Act1.prototype.studentenServiceCenter = function () {
         console.log("ssc is aangeklikt");
+        var background = document.getElementsByTagName("backgroundact1")[0];
+        var game = document.getElementsByTagName("game")[0];
+        var button_next = document.createElement("button");
+        game.appendChild(button_next);
+        background.style.backgroundImage = "url(assets/ssc_popup.png)";
+        background.style.zIndex = "1";
+        button_next.style.width = "9.2vw";
+        button_next.style.height = "5vh";
+        button_next.style.transform = "translate(59.8vw, 64vh)";
+        button_next.style.opacity = "0%";
+        button_next.style.zIndex = "999";
+        button_next.addEventListener("click", function () {
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+            button_next.remove();
+            background.style.zIndex = "-1";
+        });
     };
     Act1.prototype.studentenpas = function () {
         console.log("studentenpas is aangeklikt");
@@ -249,6 +286,23 @@ var Act1 = (function () {
     };
     Act1.prototype.lms = function () {
         console.log("lms is aangeklikt");
+        var background = document.getElementsByTagName("backgroundact1")[0];
+        var game = document.getElementsByTagName("game")[0];
+        var button_next = document.createElement("button");
+        game.appendChild(button_next);
+        background.style.backgroundImage = "url(assets/lms_popup.png)";
+        background.style.zIndex = "1";
+        button_next.style.width = "9.2vw";
+        button_next.style.height = "5vh";
+        button_next.style.transform = "translate(59.8vw, 64vh)";
+        button_next.style.opacity = "0%";
+        button_next.style.zIndex = "999";
+        button_next.addEventListener("click", function () {
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+            button_next.remove();
+            background.style.zIndex = "-1";
+            window.open('https://lms.hr.nl', '_blank');
+        });
     };
     Act1.prototype.goBack = function () {
         console.log("terug naar invulscherm");
