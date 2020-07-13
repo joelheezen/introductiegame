@@ -159,8 +159,9 @@ pinPopup {
     box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
     background-color: #ffb911;
     position: absolute;
-    width: 15vw; height: 13vh;
+    width: 30vw; height: 14vh;
     z-index: 4;
+    font-size: 1.25vh;
 }
 
 pinPopupImage{
