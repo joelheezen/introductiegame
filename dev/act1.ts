@@ -3,6 +3,8 @@ class Act1 {
     private input1 = document.createElement("input")
     private input2 = document.createElement("input")
     private input3 = document.createElement("input")
+    private wrong_div = document.createElement("div")
+
     private input1Save :string = ""
     private input2Save :string = ""
     private input3Save :string = ""
@@ -99,7 +101,36 @@ class Act1 {
             }
         }
         else{
-            alert("helaas dit antwoord is fout.")
+            let game = document.getElementsByTagName("game")[0]
+            let background = document.createElement("backgroundact2")
+
+            game.appendChild(background)
+            game.removeChild(this.input1)
+            game.removeChild(this.input2)
+            game.removeChild(this.input3)
+
+            background.style.backgroundImage = `url(/docs/assets/backgroundact1main2.png)`
+
+            game.appendChild(this.wrong_div)
+            this.wrong_div.style.width = `13.7vw`
+            this.wrong_div.style.height = `5.7vh`
+            this.wrong_div.style.position = `absolute`
+            this.wrong_div.style.transform = `translate(39.2vw, 39.2vh)`
+            this.wrong_div.style.borderRadius = `25px`
+            this.wrong_div.style.border = `none`
+            this.wrong_div.style.fontSize = `20px`
+            this.wrong_div.style.paddingLeft = `1vw`
+            this.wrong_div.style.fontFamily = `Arial Black`
+            this.wrong_div.style.textTransform = `uppercase`
+            this.wrong_div.style.zIndex = `999`
+            this.wrong_div.id = "input1"
+
+            var myloc = new Image();  
+            myloc.useMap = "/docs/assets/fout_antwoord.png";  
+            var img = document.createElement('img')  
+            img.setAttribute('src', myloc.useMap);  
+            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(28.3vw, 26.5vh);cursor:pointer;");  
+            game.appendChild(img);
         }
     }
 
@@ -193,6 +224,8 @@ class Act1 {
 
     webmail(){
         console.log("webmail is aangeklikt")
+
+        window.open('https://webmail.hr.nl', '_blank');
     }
 
     osiris(){
@@ -226,6 +259,7 @@ class Act1 {
             button_next.remove()
             button_previous.remove()
             background.style.zIndex = `-1`
+            window.open('https://google.nl', '_blank');
         })
 
         button_previous.style.width = `6.2vw`
@@ -243,6 +277,27 @@ class Act1 {
 
     studentenServiceCenter(){
         console.log("ssc is aangeklikt")
+
+        let background = <HTMLElement>document.getElementsByTagName("backgroundact1")[0]
+        let game = document.getElementsByTagName("game")[0]
+
+        let button_next = document.createElement("button")
+        game.appendChild(button_next)
+        
+        background.style.backgroundImage = `url(assets/ssc_popup.png)`
+        background.style.zIndex = `1`
+        
+    
+        button_next.style.width = `9.2vw`
+        button_next.style.height = `5vh`
+        button_next.style.transform = `translate(59.8vw, 64vh)`
+        button_next.style.opacity = `0%`
+        button_next.style.zIndex = `999`
+        button_next.addEventListener("click" , function(){
+            background.style.backgroundImage = `url(assets/plattegrond.jpg)`
+            button_next.remove()
+            background.style.zIndex = `-1`
+        })
     }
 
     studentenpas(){
@@ -279,6 +334,28 @@ class Act1 {
 
     lms(){
         console.log("lms is aangeklikt")
+
+        let background = <HTMLElement>document.getElementsByTagName("backgroundact1")[0]
+        let game = document.getElementsByTagName("game")[0]
+
+        let button_next = document.createElement("button")
+        game.appendChild(button_next)
+        
+        background.style.backgroundImage = `url(assets/lms_popup.png)`
+        background.style.zIndex = `1`
+        
+    
+        button_next.style.width = `9.2vw`
+        button_next.style.height = `5vh`
+        button_next.style.transform = `translate(59.8vw, 64vh)`
+        button_next.style.opacity = `0%`
+        button_next.style.zIndex = `999`
+        button_next.addEventListener("click" , function(){
+            background.style.backgroundImage = `url(assets/plattegrond.jpg)`
+            button_next.remove()
+            background.style.zIndex = `-1`
+            window.open('https://lms.hr.nl', '_blank');
+        })
     }
 
     goBack(){

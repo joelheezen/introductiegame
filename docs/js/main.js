@@ -86,6 +86,7 @@ var Act1 = (function () {
         this.input1 = document.createElement("input");
         this.input2 = document.createElement("input");
         this.input3 = document.createElement("input");
+        this.wrong_div = document.createElement("div");
         this.input1Save = "";
         this.input2Save = "";
         this.input3Save = "";
@@ -170,7 +171,32 @@ var Act1 = (function () {
             }
         }
         else {
-            alert("helaas dit antwoord is fout.");
+            var game = document.getElementsByTagName("game")[0];
+            var background = document.createElement("backgroundact2");
+            game.appendChild(background);
+            game.removeChild(this.input1);
+            game.removeChild(this.input2);
+            game.removeChild(this.input3);
+            background.style.backgroundImage = "url(/docs/assets/backgroundact1main2.png)";
+            game.appendChild(this.wrong_div);
+            this.wrong_div.style.width = "13.7vw";
+            this.wrong_div.style.height = "5.7vh";
+            this.wrong_div.style.position = "absolute";
+            this.wrong_div.style.transform = "translate(39.2vw, 39.2vh)";
+            this.wrong_div.style.borderRadius = "25px";
+            this.wrong_div.style.border = "none";
+            this.wrong_div.style.fontSize = "20px";
+            this.wrong_div.style.paddingLeft = "1vw";
+            this.wrong_div.style.fontFamily = "Arial Black";
+            this.wrong_div.style.textTransform = "uppercase";
+            this.wrong_div.style.zIndex = "999";
+            this.wrong_div.id = "input1";
+            var myloc = new Image();
+            myloc.useMap = "/docs/assets/fout_antwoord.png";
+            var img = document.createElement('img');
+            img.setAttribute('src', myloc.useMap);
+            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(28.3vw, 26.5vh);cursor:pointer;");
+            game.appendChild(img);
         }
     };
     Act1.prototype.searchOnline = function () {
@@ -249,6 +275,7 @@ var Act1 = (function () {
     };
     Act1.prototype.webmail = function () {
         console.log("webmail is aangeklikt");
+        window.open('https://webmail.hr.nl', '_blank');
     };
     Act1.prototype.osiris = function () {
         console.log("osiris is aangeklikt");
@@ -273,6 +300,7 @@ var Act1 = (function () {
             button_next.remove();
             button_previous.remove();
             background.style.zIndex = "-1";
+            window.open('https://google.nl', '_blank');
         });
         button_previous.style.width = "6.2vw";
         button_previous.style.height = "5vh";
@@ -288,6 +316,22 @@ var Act1 = (function () {
     };
     Act1.prototype.studentenServiceCenter = function () {
         console.log("ssc is aangeklikt");
+        var background = document.getElementsByTagName("backgroundact1")[0];
+        var game = document.getElementsByTagName("game")[0];
+        var button_next = document.createElement("button");
+        game.appendChild(button_next);
+        background.style.backgroundImage = "url(assets/ssc_popup.png)";
+        background.style.zIndex = "1";
+        button_next.style.width = "9.2vw";
+        button_next.style.height = "5vh";
+        button_next.style.transform = "translate(59.8vw, 64vh)";
+        button_next.style.opacity = "0%";
+        button_next.style.zIndex = "999";
+        button_next.addEventListener("click", function () {
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+            button_next.remove();
+            background.style.zIndex = "-1";
+        });
     };
     Act1.prototype.studentenpas = function () {
         console.log("studentenpas is aangeklikt");
@@ -318,6 +362,23 @@ var Act1 = (function () {
     };
     Act1.prototype.lms = function () {
         console.log("lms is aangeklikt");
+        var background = document.getElementsByTagName("backgroundact1")[0];
+        var game = document.getElementsByTagName("game")[0];
+        var button_next = document.createElement("button");
+        game.appendChild(button_next);
+        background.style.backgroundImage = "url(assets/lms_popup.png)";
+        background.style.zIndex = "1";
+        button_next.style.width = "9.2vw";
+        button_next.style.height = "5vh";
+        button_next.style.transform = "translate(59.8vw, 64vh)";
+        button_next.style.opacity = "0%";
+        button_next.style.zIndex = "999";
+        button_next.addEventListener("click", function () {
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+            button_next.remove();
+            background.style.zIndex = "-1";
+            window.open('https://lms.hr.nl', '_blank');
+        });
     };
     Act1.prototype.goBack = function () {
         console.log("terug naar invulscherm");
@@ -736,7 +797,7 @@ var Act3 = (function () {
         playButton.style.height = "100vh";
         playButton.style.opacity = "0%";
         playButton.addEventListener("click", function () { return _this.togglePlay(); });
-        this.video.src = 'assets/Akte2/filmpjedecaanhorizontaal.mp4';
+        this.video.src = 'assets/Akte3/startAct3.mp4';
         this.video.autoplay = true;
         this.video.controls = false;
         this.video.playbackRate = 16;
@@ -773,6 +834,8 @@ var Act3 = (function () {
                 popup.style.height = "80vh";
                 popup.style.transform = "translate(10vw, 10vh)";
                 popup.style.position = "absolute";
+                popup.style.boxShadow = "rgba(0,0,0,0.25) 20px 20px";
+                popup.style.borderRadius = "15px";
                 var mapArea = document.createElement("mapArea");
                 game.appendChild(mapArea);
                 mapArea.style.width = "80vw";
@@ -1073,6 +1136,7 @@ var Act3 = (function () {
                 button.style.height = "100vh";
                 button.style.opacity = "0%";
                 button.style.zIndex = "1";
+                button.style.position = "absolute";
                 button.addEventListener("click", function () {
                     popup.remove();
                     button.remove();
@@ -1083,17 +1147,171 @@ var Act3 = (function () {
             button2.style.height = "14.3vh";
             button2.style.transform = "translate(44.4vw, 37.6vh)";
             button2.style.opacity = "30%";
-            button2.addEventListener("click", function () { return _this.notebook(); });
+            button2.addEventListener("click", function () {
+                var game = document.getElementsByTagName("game")[0];
+                var popup = document.createElement("popup");
+                game.appendChild(popup);
+                popup.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/notebook_open.png)";
+                popup.style.zIndex = "2";
+                popup.style.width = "90vw";
+                popup.style.height = "90vh";
+                popup.style.backgroundSize = "100% 100%";
+                popup.style.backgroundRepeat = "no-repeat";
+                popup.style.transform = "translate(5vw, 5vh)";
+                popup.style.position = "absolute";
+                var button = document.createElement("button");
+                game.appendChild(button);
+                button.style.width = "100vw";
+                button.style.height = "100vh";
+                button.style.opacity = "0%";
+                button.style.zIndex = "1";
+                button.style.position = "absolute";
+                button.addEventListener("click", function () {
+                    button.remove();
+                    popup.remove();
+                });
+                var text1 = document.createElement("question");
+                var text2 = document.createElement("question");
+                var text3 = document.createElement("question");
+                var text4 = document.createElement("question");
+                var input1 = document.createElement("input");
+                var input2 = document.createElement("input");
+                var input3 = document.createElement("input");
+                var input4 = document.createElement("input");
+                popup.appendChild(text1);
+                popup.appendChild(text2);
+                popup.appendChild(text3);
+                popup.appendChild(text4);
+                popup.appendChild(input1);
+                popup.appendChild(input2);
+                popup.appendChild(input3);
+                popup.appendChild(input4);
+                text1.style.width = "25vw";
+                text1.style.height = "2vh";
+                text1.style.transform = "translate(12.3vw, 6vh)";
+                text1.style.fontSize = "2.5vh";
+                text1.style.position = "absolute";
+                text1.innerHTML = "Vraag 1: \"Rotterdamse icoon\"";
+                input1.style.width = "24.5vw";
+                input1.style.height = "3vh";
+                input1.style.transform = "translate(12.5vw, 11.5vh)";
+                input1.style.position = "absolute";
+                input1.style.border = "none";
+                input1.style.fontSize = "2.5vh";
+                input1.style.borderBottom = "dashed 2px";
+                input1.style.backgroundColor = "transparent";
+                text2.style.width = "28vw";
+                text2.style.height = "2vh";
+                text2.style.transform = "translate(12.3vw, 22.5vh)";
+                text2.style.fontSize = "2.5vh";
+                text2.style.position = "absolute";
+                text2.innerHTML = "Vraag 2: \"Tijd voor een feestje\"";
+                input2.style.width = "24.5vw";
+                input2.style.height = "3vh";
+                input2.style.transform = "translate(12.5vw, 28.5vh)";
+                input2.style.position = "absolute";
+                input2.style.border = "none";
+                input2.style.fontSize = "2.5vh";
+                input2.style.borderBottom = "dashed 2px";
+                input2.style.backgroundColor = "transparent";
+                text3.style.width = "25vw";
+                text3.style.height = "2vh";
+                text3.style.transform = "translate(12.3vw, 39.8vh)";
+                text3.style.fontSize = "2.5vh";
+                text3.style.position = "absolute";
+                text3.innerHTML = "Vraag 3: \"RKVV\"";
+                input3.style.width = "24.5vw";
+                input3.style.height = "3vh";
+                input3.style.transform = "translate(12.5vw, 45.8vh)";
+                input3.style.position = "absolute";
+                input3.style.border = "none";
+                input3.style.fontSize = "2.5vh";
+                input3.style.borderBottom = "dashed 2px";
+                input3.style.backgroundColor = "transparent";
+                text4.style.width = "25vw";
+                text4.style.height = "2vh";
+                text4.style.transform = "translate(12.3vw, 57.2vh)";
+                text4.style.fontSize = "2.5vh";
+                text4.style.position = "absolute";
+                text4.innerHTML = "Vraag 4: \"Rondje?\"";
+                input4.style.width = "24.5vw";
+                input4.style.height = "3vh";
+                input4.style.transform = "translate(12.5vw, 63.2vh)";
+                input4.style.position = "absolute";
+                input4.style.border = "none";
+                input4.style.fontSize = "2.5vh";
+                input4.style.borderBottom = "dashed 2px";
+                input4.style.backgroundColor = "transparent";
+            });
             button3.style.width = "16.3vw";
             button3.style.height = "17.9vh";
             button3.style.transform = "translate(68.7vw, 54.4vh)";
             button3.style.opacity = "30%";
-            button3.addEventListener("click", function () { return _this.rkvv(); });
-            button4.style.width = "20.3vw";
-            button4.style.height = "18vh";
-            button4.style.transform = "translate(61.2vw, 63.8vh)";
-            button4.style.opacity = "80%";
-            button4.addEventListener("click", function () { return _this.studentenpas(); });
+            button3.addEventListener("click", function () {
+                var win = window.open("assets/Akte3/RKvVboekje2020.pdf");
+                win.focus();
+            });
+            button4.style.width = "10.5vw";
+            button4.style.height = "11vh";
+            button4.style.transform = "translate(27.5vw, 65.9vh)";
+            button4.style.opacity = "30%";
+            button4.addEventListener("click", function () {
+                var game = document.getElementsByTagName("game")[0];
+                var popup = document.createElement("popup");
+                game.appendChild(popup);
+                popup.style.backgroundImage = "url(assets/Akte3/woordzoeker.png)";
+                popup.style.backgroundRepeat = "no-repeat";
+                popup.style.backgroundSize = "100% 100%";
+                popup.style.width = "90vw";
+                popup.style.height = "90vh";
+                popup.style.position = "absolute";
+                popup.style.zIndex = "2";
+                popup.style.transform = "translate(5vw, 5vh)";
+                popup.style.borderRadius = "20px";
+                popup.style.boxShadow = "rgba(0,0,0,0.25) 20px 20px";
+                var button = document.createElement("button");
+                game.appendChild(button);
+                button.style.zIndex = "1";
+                button.style.width = "100vw";
+                button.style.height = "100vh";
+                button.style.opacity = "60%";
+                button.style.position = "absolute";
+                button.addEventListener("click", function () {
+                    popup.remove();
+                    button.remove();
+                });
+                var text = document.createElement("text");
+                popup.appendChild(text);
+                text.style.fontSize = "2.5vh";
+                text.style.transform = "translate(50.5vw, 8vh)";
+                text.style.position = "absolute";
+                text.style.width = "40vw";
+                text.style.height = "10vh";
+                text.innerHTML = "";
+                var words = document.createElement("word");
+                words.style.backgroundImage = "url(assets/Akte3/woorden.png)";
+                words.style.backgroundSize = "100% 100%";
+                words.style.width = "50vw";
+                words.style.height = "50vh";
+                words.style.transform = "translate(10vw, 10vh)";
+                popup.addEventListener("click", function (event) {
+                    var dot = document.createElement("dot");
+                    popup.appendChild(dot);
+                    var x = ((event.clientX / innerWidth) * 100);
+                    var y = ((event.clientY / innerHeight) * 100);
+                    dot.addEventListener("click", function (event) {
+                        dot.remove();
+                        event.stopPropagation();
+                    });
+                    dot.style.transform = "translate(" + (x - 5.5) + "vw, " + (y - 6) + "vh)";
+                    dot.style.width = "1vw";
+                    dot.style.height = "2vh";
+                    dot.style.backgroundColor = "red";
+                    dot.style.borderRadius = "50%";
+                    dot.style.position = "absolute";
+                    dot.style.zIndex = "3";
+                });
+            });
             button5.style.width = "12.8vw";
             button5.style.height = "61.3vh";
             button5.style.transform = "translate(83.7vw, 20.8vh)";
