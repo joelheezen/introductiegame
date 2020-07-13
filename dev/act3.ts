@@ -4,7 +4,13 @@ class Act3{
     bg:HTMLElement = document.createElement("videoBackground")
     video = (<HTMLAudioElement>document.createElement("video"))
 
+
     constructor(){
+
+        localStorage.setItem(`note1Save`, ` `)
+        localStorage.setItem(`note2Save`, ` `)
+        localStorage.setItem(`note3Save`, ` `)
+        localStorage.setItem(`note4Save`, ` `)
         
         let playButton = document.createElement("button")
 
@@ -45,7 +51,7 @@ class Act3{
             button1.style.width = `7.2vw`
             button1.style.height = `14.4vh`
             button1.style.transform = `translate(31vw, 31.8vh)`
-            button1.style.opacity = `30%`
+            button1.style.opacity = `0%`
             button1.addEventListener("click" , function(){
                 let popup = document.createElement("popup")
                 let game = document.getElementsByTagName("game")[0]
@@ -127,7 +133,6 @@ class Act3{
                 pin1.style.transform = `translate(30.5vw, 35.7vh)`
                 pin1.style.zIndex = `3`
                 pin1.addEventListener("mouseover", function(){
-                    console.log("in")
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
@@ -139,7 +144,6 @@ class Act3{
                     pinPopup.innerHTML += text1
                 })
                 pin1.addEventListener("mouseout", function(){
-                    console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
                     pinPopup.remove()
                 })
@@ -147,7 +151,6 @@ class Act3{
                 pin2.style.transform = `translate(26.2vw, 34.8vh)`
                 pin2.style.zIndex = `3`
                 pin2.addEventListener("mouseover", function(){
-                    console.log("in")
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
@@ -159,7 +162,6 @@ class Act3{
                     pinPopup.innerHTML += text2
                 })
                 pin2.addEventListener("mouseout", function(){
-                    console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
                     pinPopup.remove()
                 })
@@ -167,7 +169,6 @@ class Act3{
                 pin3.style.transform = `translate(50.3vw, 75.7vh)`
                 pin3.style.zIndex = `3`
                 pin3.addEventListener("mouseover", function(){
-                    console.log("in")
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
@@ -179,7 +180,6 @@ class Act3{
                     pinPopup.innerHTML += text3
                 })
                 pin3.addEventListener("mouseout", function(){
-                    console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
                     pinPopup.remove()
                 })
@@ -187,7 +187,6 @@ class Act3{
                 pin4.style.transform = `translate(28.3vw, 36.7vh)`
                 pin4.style.zIndex = `3`
                 pin4.addEventListener("mouseover", function(){
-                    console.log("in")
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
@@ -199,7 +198,6 @@ class Act3{
                     pinPopup.innerHTML += text4
                 })
                 pin4.addEventListener("mouseout", function(){
-                    console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
                     pinPopup.remove()
                 })
@@ -207,7 +205,6 @@ class Act3{
                 pin5.style.transform = `translate(34.3vw, 56.7vh)`
                 pin5.style.zIndex = `3`
                 pin5.addEventListener("mouseover", function(){
-                    console.log("in")
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
@@ -219,7 +216,6 @@ class Act3{
                     pinPopup.innerHTML += text5
                 })
                 pin5.addEventListener("mouseout", function(){
-                    console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
                     pinPopup.remove()
                 })
@@ -227,7 +223,6 @@ class Act3{
                 pin6.style.transform = `translate(35.6vw, 42vh)`
                 pin6.style.zIndex = `3`
                 pin6.addEventListener("mouseover", function(){
-                    console.log("in")
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
@@ -239,7 +234,6 @@ class Act3{
                     pinPopup.innerHTML += text6
                 })
                 pin6.addEventListener("mouseout", function(){
-                    console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
                     pinPopup.remove()
                 })
@@ -247,7 +241,6 @@ class Act3{
                 pin7.style.transform = `translate(25.8vw, 55.1vh)`
                 pin7.style.zIndex = `3`
                 pin7.addEventListener("mouseover", function(){
-                    console.log("in")
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
@@ -259,7 +252,6 @@ class Act3{
                     pinPopup.innerHTML += text7
                 })
                 pin7.addEventListener("mouseout", function(){
-                    console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
                     pinPopup.remove()
                 })
@@ -267,7 +259,6 @@ class Act3{
                 pin8.style.transform = `translate(34.3vw, 37.9vh)`
                 pin8.style.zIndex = `3`
                 pin8.addEventListener("mouseover", function(){
-                    console.log("in")
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
@@ -279,7 +270,6 @@ class Act3{
                     pinPopup.innerHTML += text8
                 })
                 pin8.addEventListener("mouseout", function(){
-                    console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
                     pinPopup.remove()
                 })
@@ -287,7 +277,6 @@ class Act3{
                 pin9.style.transform = `translate(32.2vw, 39.2vh)`
                 pin9.style.zIndex = `3`
                 pin9.addEventListener("mouseover", function(){
-                    console.log("in")
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
@@ -299,7 +288,6 @@ class Act3{
                     pinPopup.innerHTML += text9
                 })
                 pin9.addEventListener("mouseout", function(){
-                    console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
                     pinPopup.remove()
                 })
@@ -307,7 +295,6 @@ class Act3{
                 pin10.style.transform = `translate(36.5vw, 39.2vh)`
                 pin10.style.zIndex = `3`
                 pin10.addEventListener("mouseover", function(){
-                    console.log("in")
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
@@ -319,7 +306,6 @@ class Act3{
                     pinPopup.innerHTML += text10
                 })
                 pin10.addEventListener("mouseout", function(){
-                    console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
                     pinPopup.remove()
                 })
@@ -327,7 +313,6 @@ class Act3{
                 pin11.style.transform = `translate(30.4vw, 41.3vh)`
                 pin11.style.zIndex = `3`
                 pin11.addEventListener("mouseover", function(){
-                    console.log("in")
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
@@ -339,7 +324,6 @@ class Act3{
                     pinPopup.innerHTML += text11
                 })
                 pin11.addEventListener("mouseout", function(){
-                    console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
                     pinPopup.remove()
                 })
@@ -347,7 +331,6 @@ class Act3{
                 pin12.style.transform = `translate(33.8vw, 41.7vh)`
                 pin12.style.zIndex = `3`
                 pin12.addEventListener("mouseover", function(){
-                    console.log("in")
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
@@ -359,7 +342,6 @@ class Act3{
                     pinPopup.innerHTML += text12
                 })
                 pin12.addEventListener("mouseout", function(){
-                    console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
                     pinPopup.remove()
                 })
@@ -367,7 +349,6 @@ class Act3{
                 pin13.style.transform = `translate(31.7vw, 43.6vh)`
                 pin13.style.zIndex = `3`
                 pin13.addEventListener("mouseover", function(){
-                    console.log("in")
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
@@ -379,7 +360,6 @@ class Act3{
                     pinPopup.innerHTML += text13
                 })
                 pin13.addEventListener("mouseout", function(){
-                    console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
                     pinPopup.remove()
                 })
@@ -511,10 +491,11 @@ class Act3{
 
             })
 
+
             button2.style.width = `11.5vw`
             button2.style.height = `14.3vh`
             button2.style.transform = `translate(44.4vw, 37.6vh)`
-            button2.style.opacity = `30%`
+            button2.style.opacity = `0%`
             button2.addEventListener("click" , function(){
                 let game = document.getElementsByTagName("game")[0]
                 let popup = document.createElement("popup")
@@ -537,8 +518,19 @@ class Act3{
                 button.style.zIndex = `1`
                 button.style.position = `absolute`
                 button.addEventListener("click", function(){
+                    let note1 = (<HTMLInputElement>document.getElementById("note1")).value
+                    let note2 = (<HTMLInputElement>document.getElementById("note2")).value
+                    let note3 = (<HTMLInputElement>document.getElementById("note3")).value
+                    let note4 = (<HTMLInputElement>document.getElementById("note4")).value
+
+                    localStorage.setItem(`note1Save`, note1)
+                    localStorage.setItem(`note2Save`, note2)
+                    localStorage.setItem(`note3Save`, note3)
+                    localStorage.setItem(`note4Save`, note4)
+
                     button.remove()
                     popup.remove()
+                    
                 })
 
                 let text1 = document.createElement("question")
@@ -561,6 +553,11 @@ class Act3{
                 popup.appendChild(input3)
                 popup.appendChild(input4)
 
+                let input1Text = localStorage.getItem(`note1Save`)
+                let input2Text = localStorage.getItem(`note2Save`)
+                let input3Text = localStorage.getItem(`note3Save`)
+                let input4Text = localStorage.getItem(`note4Save`)
+
 
                 text1.style.width = `25vw`
                 text1.style.height = `2vh`
@@ -577,6 +574,8 @@ class Act3{
                 input1.style.fontSize = `2.5vh`
                 input1.style.borderBottom = `dashed 2px`
                 input1.style.backgroundColor = `transparent`
+                input1.value = input1Text!
+                input1.id = "note1"
 
                 text2.style.width = `28vw`
                 text2.style.height = `2vh`
@@ -593,6 +592,8 @@ class Act3{
                 input2.style.fontSize = `2.5vh`
                 input2.style.borderBottom = `dashed 2px`
                 input2.style.backgroundColor = `transparent`
+                input2.value = input2Text!
+                input2.id = "note2"
 
                 text3.style.width = `25vw`
                 text3.style.height = `2vh`
@@ -609,6 +610,8 @@ class Act3{
                 input3.style.fontSize = `2.5vh`
                 input3.style.borderBottom = `dashed 2px`
                 input3.style.backgroundColor = `transparent`
+                input3.value = input3Text!
+                input3.id = "note3"
 
                 text4.style.width = `25vw`
                 text4.style.height = `2vh`
@@ -625,6 +628,8 @@ class Act3{
                 input4.style.fontSize = `2.5vh`
                 input4.style.borderBottom = `dashed 2px`
                 input4.style.backgroundColor = `transparent`
+                input4.value = input4Text!
+                input4.id = "note4"
 
 
             })
@@ -632,7 +637,7 @@ class Act3{
             button3.style.width = `16.3vw`
             button3.style.height = `17.9vh`
             button3.style.transform = `translate(68.7vw, 54.4vh)`
-            button3.style.opacity = `30%`
+            button3.style.opacity = `0%`
             button3.addEventListener("click" , function(){
                 let win = window.open("assets/Akte3/RKvVboekje2020.pdf")
                 win!.focus()
@@ -641,7 +646,7 @@ class Act3{
             button4.style.width = `10.5vw`
             button4.style.height = `11vh`
             button4.style.transform = `translate(27.5vw, 65.9vh)`
-            button4.style.opacity = `30%`
+            button4.style.opacity = `0%`
             button4.addEventListener("click" , function(){
                 let card = document.getElementById("card")
                 if (card){
@@ -652,7 +657,7 @@ class Act3{
                     button.style.zIndex = `1`
                     button.style.width = `100vw`
                     button.style.height = `100vh`
-                    button.style.opacity = `60%`
+                    button.style.opacity = `0%`
                     button.style.position = `absolute`
                     button.addEventListener("click", function(){
                         let card = document.getElementById("card")
@@ -685,7 +690,7 @@ class Act3{
                 button.style.zIndex = `1`
                 button.style.width = `100vw`
                 button.style.height = `100vh`
-                button.style.opacity = `60%`
+                button.style.opacity = `0%`
                 button.style.position = `absolute`
                 button.addEventListener("click", function(){
                     popup.style.display = `none`
@@ -728,7 +733,7 @@ class Act3{
             button5.style.width = `8vw`
             button5.style.height = `9.1vh`
             button5.style.transform = `translate(46.8vw, 56.8vh)`
-            button5.style.opacity = `30%`
+            button5.style.opacity = `0%`
             button5.addEventListener("click" , function(){
                 let popup = document.createElement("popup")
                 let game = document.getElementsByTagName("game")[0]
@@ -748,7 +753,7 @@ class Act3{
                 button.style.width = `100vw`
                 button.style.height = `100vh`
                 button.style.position = `absolute`
-                button.style.opacity = `80%`
+                button.style.opacity = `0%`
                 button.style.zIndex = `1`
                 button.addEventListener("click", function(){
                     button.remove()
@@ -759,7 +764,7 @@ class Act3{
             button6.style.width = `12.4vw`
             button6.style.height = `3.7vh`
             button6.style.transform = `translate(62.6vw, 72vh)`
-            button6.style.opacity = `30%`
+            button6.style.opacity = `0%`
             button6.addEventListener("click" , function(){
                 let win = window.open("http://www.rotterdamstaattespringen.nl/")
                 win!.focus()

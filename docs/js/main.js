@@ -12,75 +12,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Timer = (function () {
-    function Timer() {
-        var _this = this;
-        this.startTimer();
-        setTimeout(function () {
-            _this.startPause();
-        }, 2000);
-        setTimeout(function () {
-            _this.endPause();
-        }, 4000);
-        setTimeout(function () {
-            _this.startPause();
-        }, 6000);
-        setTimeout(function () {
-            _this.endPause();
-        }, 8000);
-        setTimeout(function () {
-            _this.endTimer();
-            _this.score();
-            _this.resetTimer();
-        }, 12000);
-    }
-    Timer.prototype.startTimer = function () {
-        if (!localStorage.getItem('start')) {
-            localStorage.setItem('start', new Date().getTime().toString());
-        }
-        if (!localStorage.getItem('pause')) {
-            localStorage.setItem('pause', '0');
-        }
-        if (!localStorage.getItem('bonus')) {
-            localStorage.setItem('bonus', '0');
-        }
-    };
-    Timer.prototype.startPause = function () {
-        this.pauseStart = new Date().getTime();
-    };
-    Timer.prototype.endPause = function () {
-        this.pauseEnd = new Date().getTime();
-        var currentPause = parseInt(localStorage.getItem('pause'));
-        var thisPause = this.pauseEnd - this.pauseStart;
-        var newPause = thisPause + currentPause;
-        localStorage.setItem('pause', newPause.toString());
-    };
-    Timer.prototype.addBonus = function (point) {
-        var currentBonus = parseInt(localStorage.getItem('bonus'));
-        var newBonus = currentBonus + point;
-        localStorage.setItem('bonus', newBonus);
-    };
-    Timer.prototype.endTimer = function () {
-        if (!localStorage.getItem('end')) {
-            localStorage.setItem('end', new Date().getTime().toString());
-        }
-    };
-    Timer.prototype.score = function () {
-        var start = parseInt(localStorage.getItem('start'));
-        var end = parseInt(localStorage.getItem('end'));
-        var pause = parseInt(localStorage.getItem('pause'));
-        var bonus = parseInt(localStorage.getItem('bonus'));
-        var score = Math.floor((end - start - pause) / 1000) - bonus;
-        console.log(score);
-    };
-    Timer.prototype.resetTimer = function () {
-        localStorage.removeItem('start');
-        localStorage.removeItem('end');
-        localStorage.removeItem('pause');
-    };
-    return Timer;
-}());
-window.addEventListener('load', function () { return new Timer(); });
 var Act1 = (function () {
     function Act1() {
         this.input1 = document.createElement("input");
@@ -870,6 +801,10 @@ var Act3 = (function () {
         this.game = document.getElementsByTagName("game")[0];
         this.bg = document.createElement("videoBackground");
         this.video = document.createElement("video");
+        localStorage.setItem("note1Save", " ");
+        localStorage.setItem("note2Save", " ");
+        localStorage.setItem("note3Save", " ");
+        localStorage.setItem("note4Save", " ");
         var playButton = document.createElement("button");
         this.bg.style.backgroundColor = "black";
         this.game.appendChild(this.bg);
@@ -903,7 +838,7 @@ var Act3 = (function () {
             button1.style.width = "7.2vw";
             button1.style.height = "14.4vh";
             button1.style.transform = "translate(31vw, 31.8vh)";
-            button1.style.opacity = "30%";
+            button1.style.opacity = "0%";
             button1.addEventListener("click", function () {
                 var popup = document.createElement("popup");
                 var game = document.getElementsByTagName("game")[0];
@@ -979,7 +914,6 @@ var Act3 = (function () {
                 pin1.style.transform = "translate(30.5vw, 35.7vh)";
                 pin1.style.zIndex = "3";
                 pin1.addEventListener("mouseover", function () {
-                    console.log("in");
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
@@ -990,14 +924,12 @@ var Act3 = (function () {
                     pinPopup.innerHTML += text1;
                 });
                 pin1.addEventListener("mouseout", function () {
-                    console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
                 pin2.style.transform = "translate(26.2vw, 34.8vh)";
                 pin2.style.zIndex = "3";
                 pin2.addEventListener("mouseover", function () {
-                    console.log("in");
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
@@ -1008,14 +940,12 @@ var Act3 = (function () {
                     pinPopup.innerHTML += text2;
                 });
                 pin2.addEventListener("mouseout", function () {
-                    console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
                 pin3.style.transform = "translate(50.3vw, 75.7vh)";
                 pin3.style.zIndex = "3";
                 pin3.addEventListener("mouseover", function () {
-                    console.log("in");
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
@@ -1026,14 +956,12 @@ var Act3 = (function () {
                     pinPopup.innerHTML += text3;
                 });
                 pin3.addEventListener("mouseout", function () {
-                    console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
                 pin4.style.transform = "translate(28.3vw, 36.7vh)";
                 pin4.style.zIndex = "3";
                 pin4.addEventListener("mouseover", function () {
-                    console.log("in");
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
@@ -1044,14 +972,12 @@ var Act3 = (function () {
                     pinPopup.innerHTML += text4;
                 });
                 pin4.addEventListener("mouseout", function () {
-                    console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
                 pin5.style.transform = "translate(34.3vw, 56.7vh)";
                 pin5.style.zIndex = "3";
                 pin5.addEventListener("mouseover", function () {
-                    console.log("in");
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
@@ -1062,14 +988,12 @@ var Act3 = (function () {
                     pinPopup.innerHTML += text5;
                 });
                 pin5.addEventListener("mouseout", function () {
-                    console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
                 pin6.style.transform = "translate(35.6vw, 42vh)";
                 pin6.style.zIndex = "3";
                 pin6.addEventListener("mouseover", function () {
-                    console.log("in");
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
@@ -1080,14 +1004,12 @@ var Act3 = (function () {
                     pinPopup.innerHTML += text6;
                 });
                 pin6.addEventListener("mouseout", function () {
-                    console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
                 pin7.style.transform = "translate(25.8vw, 55.1vh)";
                 pin7.style.zIndex = "3";
                 pin7.addEventListener("mouseover", function () {
-                    console.log("in");
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
@@ -1098,14 +1020,12 @@ var Act3 = (function () {
                     pinPopup.innerHTML += text7;
                 });
                 pin7.addEventListener("mouseout", function () {
-                    console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
                 pin8.style.transform = "translate(34.3vw, 37.9vh)";
                 pin8.style.zIndex = "3";
                 pin8.addEventListener("mouseover", function () {
-                    console.log("in");
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
@@ -1116,14 +1036,12 @@ var Act3 = (function () {
                     pinPopup.innerHTML += text8;
                 });
                 pin8.addEventListener("mouseout", function () {
-                    console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
                 pin9.style.transform = "translate(32.2vw, 39.2vh)";
                 pin9.style.zIndex = "3";
                 pin9.addEventListener("mouseover", function () {
-                    console.log("in");
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
@@ -1134,14 +1052,12 @@ var Act3 = (function () {
                     pinPopup.innerHTML += text9;
                 });
                 pin9.addEventListener("mouseout", function () {
-                    console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
                 pin10.style.transform = "translate(36.5vw, 39.2vh)";
                 pin10.style.zIndex = "3";
                 pin10.addEventListener("mouseover", function () {
-                    console.log("in");
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
@@ -1152,14 +1068,12 @@ var Act3 = (function () {
                     pinPopup.innerHTML += text10;
                 });
                 pin10.addEventListener("mouseout", function () {
-                    console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
                 pin11.style.transform = "translate(30.4vw, 41.3vh)";
                 pin11.style.zIndex = "3";
                 pin11.addEventListener("mouseover", function () {
-                    console.log("in");
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
@@ -1170,14 +1084,12 @@ var Act3 = (function () {
                     pinPopup.innerHTML += text11;
                 });
                 pin11.addEventListener("mouseout", function () {
-                    console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
                 pin12.style.transform = "translate(33.8vw, 41.7vh)";
                 pin12.style.zIndex = "3";
                 pin12.addEventListener("mouseover", function () {
-                    console.log("in");
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
@@ -1188,14 +1100,12 @@ var Act3 = (function () {
                     pinPopup.innerHTML += text12;
                 });
                 pin12.addEventListener("mouseout", function () {
-                    console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
                 pin13.style.transform = "translate(31.7vw, 43.6vh)";
                 pin13.style.zIndex = "3";
                 pin13.addEventListener("mouseover", function () {
-                    console.log("in");
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
@@ -1206,7 +1116,6 @@ var Act3 = (function () {
                     pinPopup.innerHTML += text13;
                 });
                 pin13.addEventListener("mouseout", function () {
-                    console.log("out");
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
@@ -1331,7 +1240,7 @@ var Act3 = (function () {
             button2.style.width = "11.5vw";
             button2.style.height = "14.3vh";
             button2.style.transform = "translate(44.4vw, 37.6vh)";
-            button2.style.opacity = "30%";
+            button2.style.opacity = "0%";
             button2.addEventListener("click", function () {
                 var game = document.getElementsByTagName("game")[0];
                 var popup = document.createElement("popup");
@@ -1352,6 +1261,14 @@ var Act3 = (function () {
                 button.style.zIndex = "1";
                 button.style.position = "absolute";
                 button.addEventListener("click", function () {
+                    var note1 = document.getElementById("note1").value;
+                    var note2 = document.getElementById("note2").value;
+                    var note3 = document.getElementById("note3").value;
+                    var note4 = document.getElementById("note4").value;
+                    localStorage.setItem("note1Save", note1);
+                    localStorage.setItem("note2Save", note2);
+                    localStorage.setItem("note3Save", note3);
+                    localStorage.setItem("note4Save", note4);
                     button.remove();
                     popup.remove();
                 });
@@ -1371,6 +1288,10 @@ var Act3 = (function () {
                 popup.appendChild(input2);
                 popup.appendChild(input3);
                 popup.appendChild(input4);
+                var input1Text = localStorage.getItem("note1Save");
+                var input2Text = localStorage.getItem("note2Save");
+                var input3Text = localStorage.getItem("note3Save");
+                var input4Text = localStorage.getItem("note4Save");
                 text1.style.width = "25vw";
                 text1.style.height = "2vh";
                 text1.style.transform = "translate(12.3vw, 6vh)";
@@ -1385,6 +1306,8 @@ var Act3 = (function () {
                 input1.style.fontSize = "2.5vh";
                 input1.style.borderBottom = "dashed 2px";
                 input1.style.backgroundColor = "transparent";
+                input1.value = input1Text;
+                input1.id = "note1";
                 text2.style.width = "28vw";
                 text2.style.height = "2vh";
                 text2.style.transform = "translate(12.3vw, 22.5vh)";
@@ -1399,6 +1322,8 @@ var Act3 = (function () {
                 input2.style.fontSize = "2.5vh";
                 input2.style.borderBottom = "dashed 2px";
                 input2.style.backgroundColor = "transparent";
+                input2.value = input2Text;
+                input2.id = "note2";
                 text3.style.width = "25vw";
                 text3.style.height = "2vh";
                 text3.style.transform = "translate(12.3vw, 39.8vh)";
@@ -1413,6 +1338,8 @@ var Act3 = (function () {
                 input3.style.fontSize = "2.5vh";
                 input3.style.borderBottom = "dashed 2px";
                 input3.style.backgroundColor = "transparent";
+                input3.value = input3Text;
+                input3.id = "note3";
                 text4.style.width = "25vw";
                 text4.style.height = "2vh";
                 text4.style.transform = "translate(12.3vw, 57.2vh)";
@@ -1427,11 +1354,13 @@ var Act3 = (function () {
                 input4.style.fontSize = "2.5vh";
                 input4.style.borderBottom = "dashed 2px";
                 input4.style.backgroundColor = "transparent";
+                input4.value = input4Text;
+                input4.id = "note4";
             });
             button3.style.width = "16.3vw";
             button3.style.height = "17.9vh";
             button3.style.transform = "translate(68.7vw, 54.4vh)";
-            button3.style.opacity = "30%";
+            button3.style.opacity = "0%";
             button3.addEventListener("click", function () {
                 var win = window.open("assets/Akte3/RKvVboekje2020.pdf");
                 win.focus();
@@ -1439,7 +1368,7 @@ var Act3 = (function () {
             button4.style.width = "10.5vw";
             button4.style.height = "11vh";
             button4.style.transform = "translate(27.5vw, 65.9vh)";
-            button4.style.opacity = "30%";
+            button4.style.opacity = "0%";
             button4.addEventListener("click", function () {
                 var card = document.getElementById("card");
                 if (card) {
@@ -1449,7 +1378,7 @@ var Act3 = (function () {
                     button_1.style.zIndex = "1";
                     button_1.style.width = "100vw";
                     button_1.style.height = "100vh";
-                    button_1.style.opacity = "60%";
+                    button_1.style.opacity = "0%";
                     button_1.style.position = "absolute";
                     button_1.addEventListener("click", function () {
                         var card = document.getElementById("card");
@@ -1477,7 +1406,7 @@ var Act3 = (function () {
                     button_2.style.zIndex = "1";
                     button_2.style.width = "100vw";
                     button_2.style.height = "100vh";
-                    button_2.style.opacity = "60%";
+                    button_2.style.opacity = "0%";
                     button_2.style.position = "absolute";
                     button_2.addEventListener("click", function () {
                         popup_1.style.display = "none";
@@ -1514,7 +1443,7 @@ var Act3 = (function () {
             button5.style.width = "8vw";
             button5.style.height = "9.1vh";
             button5.style.transform = "translate(46.8vw, 56.8vh)";
-            button5.style.opacity = "30%";
+            button5.style.opacity = "0%";
             button5.addEventListener("click", function () {
                 var popup = document.createElement("popup");
                 var game = document.getElementsByTagName("game")[0];
@@ -1531,7 +1460,7 @@ var Act3 = (function () {
                 button.style.width = "100vw";
                 button.style.height = "100vh";
                 button.style.position = "absolute";
-                button.style.opacity = "80%";
+                button.style.opacity = "0%";
                 button.style.zIndex = "1";
                 button.addEventListener("click", function () {
                     button.remove();
@@ -1541,7 +1470,7 @@ var Act3 = (function () {
             button6.style.width = "12.4vw";
             button6.style.height = "3.7vh";
             button6.style.transform = "translate(62.6vw, 72vh)";
-            button6.style.opacity = "30%";
+            button6.style.opacity = "0%";
             button6.addEventListener("click", function () {
                 var win = window.open("http://www.rotterdamstaattespringen.nl/");
                 win.focus();
