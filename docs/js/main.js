@@ -12,6 +12,75 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var Timer = (function () {
+    function Timer() {
+        var _this = this;
+        this.startTimer();
+        setTimeout(function () {
+            _this.startPause();
+        }, 2000);
+        setTimeout(function () {
+            _this.endPause();
+        }, 4000);
+        setTimeout(function () {
+            _this.startPause();
+        }, 6000);
+        setTimeout(function () {
+            _this.endPause();
+        }, 8000);
+        setTimeout(function () {
+            _this.endTimer();
+            _this.score();
+            _this.resetTimer();
+        }, 12000);
+    }
+    Timer.prototype.startTimer = function () {
+        if (!localStorage.getItem('start')) {
+            localStorage.setItem('start', new Date().getTime().toString());
+        }
+        if (!localStorage.getItem('pause')) {
+            localStorage.setItem('pause', '0');
+        }
+        if (!localStorage.getItem('bonus')) {
+            localStorage.setItem('bonus', '0');
+        }
+    };
+    Timer.prototype.startPause = function () {
+        this.pauseStart = new Date().getTime();
+    };
+    Timer.prototype.endPause = function () {
+        this.pauseEnd = new Date().getTime();
+        var currentPause = parseInt(localStorage.getItem('pause'));
+        var thisPause = this.pauseEnd - this.pauseStart;
+        var newPause = thisPause + currentPause;
+        localStorage.setItem('pause', newPause.toString());
+    };
+    Timer.prototype.addBonus = function (point) {
+        var currentBonus = parseInt(localStorage.getItem('bonus'));
+        var newBonus = currentBonus + point;
+        localStorage.setItem('bonus', newBonus);
+    };
+    Timer.prototype.endTimer = function () {
+        if (!localStorage.getItem('end')) {
+            localStorage.setItem('end', new Date().getTime().toString());
+        }
+    };
+    Timer.prototype.score = function () {
+        var start = parseInt(localStorage.getItem('start'));
+        var end = parseInt(localStorage.getItem('end'));
+        var pause = parseInt(localStorage.getItem('pause'));
+        var bonus = parseInt(localStorage.getItem('bonus'));
+        var score = Math.floor((end - start - pause) / 1000) - bonus;
+        console.log(score);
+    };
+    Timer.prototype.resetTimer = function () {
+        localStorage.removeItem('start');
+        localStorage.removeItem('end');
+        localStorage.removeItem('pause');
+    };
+    return Timer;
+}());
+window.addEventListener('load', function () { return new Timer(); });
 var Act1 = (function () {
     function Act1() {
         this.input1 = document.createElement("input");
