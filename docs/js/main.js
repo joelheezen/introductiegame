@@ -68,6 +68,7 @@ var Act1 = (function () {
         this.input2 = document.createElement("input");
         this.input3 = document.createElement("input");
         this.wrong_div = document.createElement("div");
+        this.button1 = document.createElement("button");
         this.input1Save = "";
         this.input2Save = "";
         this.input3Save = "";
@@ -115,13 +116,12 @@ var Act1 = (function () {
         this.input3.style.textTransform = "uppercase";
         this.input3.value = this.input3Save;
         this.input3.id = "input3";
-        var button1 = document.createElement("button");
-        game.appendChild(button1);
-        button1.style.width = "15.1vw";
-        button1.style.height = "7.5vh";
-        button1.style.transform = "translate(42.4vw, 47.9vh)";
-        button1.style.opacity = "0%";
-        button1.addEventListener("click", function () { return _this.shapeCheck(); });
+        game.appendChild(this.button1);
+        this.button1.style.width = "15.1vw";
+        this.button1.style.height = "7.5vh";
+        this.button1.style.transform = "translate(42.4vw, 47.9vh)";
+        this.button1.style.opacity = "0%";
+        this.button1.addEventListener("click", function () { return _this.shapeCheck(); });
         var button2 = document.createElement("button");
         game.appendChild(button2);
         button2.style.width = "18.5vw";
@@ -143,8 +143,20 @@ var Act1 = (function () {
         var shape2 = document.getElementById("input2").value;
         var shape3 = document.getElementById("input3").value;
         if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje") {
-            document.getElementsByTagName("game")[0].innerHTML = "";
-            new Pause(1, 'EnterBuilding');
+            var background = document.createElement("backgroundact2");
+            var game = document.getElementsByTagName("game")[0];
+            game.appendChild(background);
+            background.style.backgroundImage = "url(/docs/assets/backgroundact1main2.png)";
+            game.removeChild(this.input1);
+            game.removeChild(this.input2);
+            game.removeChild(this.input3);
+            game.removeChild(this.button1);
+            var myloc = new Image();
+            myloc.useMap = "/docs/assets/goed_antwoord.png";
+            var img = document.createElement('img');
+            img.setAttribute('src', myloc.useMap);
+            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(35vw, 26.5vh);cursor:pointer;z-index:9999;");
+            game.appendChild(img);
         }
         else {
             var game = document.getElementsByTagName("game")[0];
@@ -153,25 +165,26 @@ var Act1 = (function () {
             game.removeChild(this.input1);
             game.removeChild(this.input2);
             game.removeChild(this.input3);
+            game.removeChild(this.button1);
             background.style.backgroundImage = "url(/docs/assets/backgroundact1main2.png)";
             game.appendChild(this.wrong_div);
             this.wrong_div.style.width = "13.7vw";
             this.wrong_div.style.height = "5.7vh";
             this.wrong_div.style.position = "absolute";
-            this.wrong_div.style.transform = "translate(39.2vw, 39.2vh)";
+            this.wrong_div.style.transform = "translate(10vw, 39.2vh)";
             this.wrong_div.style.borderRadius = "25px";
             this.wrong_div.style.border = "none";
             this.wrong_div.style.fontSize = "20px";
             this.wrong_div.style.paddingLeft = "1vw";
             this.wrong_div.style.fontFamily = "Arial Black";
             this.wrong_div.style.textTransform = "uppercase";
-            this.wrong_div.style.zIndex = "999";
+            this.wrong_div.style.zIndex = "9999";
             this.wrong_div.id = "input1";
             var myloc = new Image();
             myloc.useMap = "/docs/assets/fout_antwoord.png";
             var img = document.createElement('img');
             img.setAttribute('src', myloc.useMap);
-            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(28.3vw, 26.5vh);cursor:pointer;");
+            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(35vw, 26.5vh);cursor:pointer;z-index:9999;");
             game.appendChild(img);
         }
     };
@@ -365,7 +378,6 @@ var Act1 = (function () {
 }());
 var Act2 = (function () {
     function Act2() {
-        var _this = this;
         this.game = document.getElementsByTagName("game")[0];
         this.doorName1 = document.createElement("doorName");
         this.doorName2 = document.createElement("doorName");
@@ -382,7 +394,6 @@ var Act2 = (function () {
         this.number3 = "number3";
         this.number4 = "number4";
         this.number5 = "number5";
-        this.testbutton = document.createElement("testbutton");
         var background = document.createElement("backgroundact2");
         this.game.appendChild(background);
         this.createFolderItems();
@@ -390,14 +401,8 @@ var Act2 = (function () {
         this.codeInput();
         this.codeEind();
         this.doorNames();
-        this.game.appendChild(this.testbutton);
-        this.testbutton.style.width = "3vw";
-        this.testbutton.style.height = "5vh";
-        this.testbutton.style.backgroundColor = "black";
-        this.testbutton.addEventListener("click", function () {
-            _this.codeEind();
-            _this.localStorageUpdate();
-        });
+        new popup("Hulp nodig? Blijf (er) niet (mee) rondlopen! Hier moet je zijn: Hulp bij studie. De hogeschool biedt allerlei vormen van een-op-een begeleiding en ondersteuning." +
+            " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!", 64, 75, 30, 20);
     }
     Act2.prototype.doorNames = function () {
         this.game.appendChild(this.doorName1);
@@ -410,99 +415,124 @@ var Act2 = (function () {
         this.doorName1.style.transform = "translate(4.75vw, 27.5vh)";
         this.doorName1.style.textAlign = 'center';
         this.doorName2.style.paddingTop = '1.5vh';
-        this.doorName1.style.fontSize = "2vh";
-        this.doorName1.style.fontFamily = "Arial Black";
+        this.doorName1.style.fontSize = "1vw";
         this.doorName1.innerHTML = "Vertrouwenspersoon";
         this.doorName2.style.width = '11.77vw';
         this.doorName2.style.height = '3.65vh';
-        this.doorName2.style.transform = "translate(24.65vw, 26.6vh)";
+        this.doorName2.style.transform = "translate(24.67vw, 26.6vh)";
         this.doorName2.style.textAlign = 'center';
-        this.doorName2.style.paddingTop = '0.4vh';
-        this.doorName2.style.fontSize = "2.5vh";
+        this.doorName2.style.paddingTop = '0.8vh';
+        this.doorName2.style.fontSize = "1vw";
         this.doorName2.innerHTML = "Peercoach";
         this.doorName3.style.width = '11.77vw';
         this.doorName3.style.height = '3.65vh';
         this.doorName3.style.transform = "translate(44.36vw, 26.6vh)";
         this.doorName3.style.textAlign = 'center';
-        this.doorName3.style.paddingTop = '0vh';
-        this.doorName3.style.fontSize = "3vh";
+        this.doorName3.style.paddingTop = '0.8vh';
+        this.doorName3.style.fontSize = "1vw";
         this.doorName3.innerHTML = "SLC";
         this.doorName4.style.width = '11.77vw';
         this.doorName4.style.height = '3.65vh';
         this.doorName4.style.transform = "translate(64.26vw, 26.6vh)";
         this.doorName4.style.textAlign = 'center';
-        this.doorName4.style.paddingTop = '0vh';
-        this.doorName4.style.fontSize = "3vh";
+        this.doorName4.style.paddingTop = '0.8vh';
+        this.doorName4.style.fontSize = "1vw";
         this.doorName4.innerHTML = "Decaan";
         this.doorName5.style.width = '11.77vw';
         this.doorName5.style.height = '3.65vh';
         this.doorName5.style.transform = "translate(84vw, 26.1vh)";
         this.doorName5.style.textAlign = 'center';
-        this.doorName5.style.paddingTop = '0.9vh';
-        this.doorName5.style.fontSize = "2.6vh";
+        this.doorName5.style.paddingTop = '1.3vh';
+        this.doorName5.style.fontSize = "1vw";
         this.doorName5.innerHTML = "Student aan zet";
     };
     Act2.prototype.codeInput = function () {
+        var _this = this;
         this.game.appendChild(this.input1);
-        this.input1.style.width = "2vw";
+        this.input1.style.width = "2.5vw";
         this.input1.style.height = "5.7vh";
-        this.input1.style.transform = "translate(9.1vw, 36.25vh)";
-        this.input1.style.border = "none";
-        this.input1.style.fontSize = "30px";
+        this.input1.style.transform = "translate(8.7vw, 35.45vh)";
+        this.input1.style.border = "thick solid #A9A9A9";
+        this.input1.style.fontSize = "2.5vw";
         this.input1.maxLength = 1;
         this.input1.style.paddingLeft = "0.8vw";
         this.input1.style.fontFamily = "Arial Black";
         this.input1.style.textTransform = "uppercase";
         this.input1.value = localStorage.getItem(this.number1);
         this.input1.id = "input1";
+        this.input1.addEventListener("keyup", function () {
+            _this.codeCheck("input1", _this.input1, "D", 'd');
+            _this.localStorageUpdate();
+            _this.codeEind();
+        });
         this.game.appendChild(this.input2);
         this.input2.style.width = "2.4vw";
         this.input2.style.height = "5.7vh";
-        this.input2.style.transform = "translate(29vw, 36.25vh)";
-        this.input2.style.border = "none";
-        this.input2.style.fontSize = "30px";
+        this.input2.style.transform = "translate(28.6vw, 35.45vh)";
+        this.input2.style.border = "thick solid #A9A9A9";
+        this.input2.style.fontSize = "2.5vw";
         this.input2.maxLength = 1;
         this.input2.style.paddingLeft = "0.8vw";
         this.input2.style.fontFamily = "Arial Black";
         this.input2.style.textTransform = "uppercase";
         this.input2.value = localStorage.getItem(this.number2);
         this.input2.id = "input2";
+        this.input2.addEventListener("keyup", function () {
+            _this.codeCheck("input2", _this.input2, "B", 'b');
+            _this.localStorageUpdate();
+            _this.codeEind();
+        });
         this.game.appendChild(this.input3);
-        this.input3.style.width = "2vw";
+        this.input3.style.width = "2.6vw";
         this.input3.style.height = "5.7vh";
-        this.input3.style.transform = "translate(48.5vw, 36.25vh)";
-        this.input3.style.border = "none";
-        this.input3.style.fontSize = "30px";
+        this.input3.style.transform = "translate(48.2vw, 35.45vh)";
+        this.input3.style.border = "thick solid #A9A9A9";
+        this.input3.style.fontSize = "2.5vw";
         this.input3.maxLength = 1;
-        this.input3.style.paddingLeft = "0.8vw";
+        this.input3.style.paddingLeft = "0.6vw";
         this.input3.style.fontFamily = "Arial Black";
         this.input3.style.textTransform = "uppercase";
         this.input3.value = localStorage.getItem(this.number3);
         this.input3.id = "input3";
+        this.input3.addEventListener("keyup", function () {
+            _this.codeCheck("input3", _this.input3, "N", 'n');
+            _this.localStorageUpdate();
+            _this.codeEind();
+        });
         this.game.appendChild(this.input4);
-        this.input4.style.width = "2vw";
+        this.input4.style.width = "2.6vw";
         this.input4.style.height = "5.7vh";
-        this.input4.style.transform = "translate(68.4vw, 36.25vh)";
-        this.input4.style.border = "none";
-        this.input4.style.fontSize = "30px";
+        this.input4.style.transform = "translate(68vw, 35.45vh)";
+        this.input4.style.border = "thick solid #A9A9A9";
+        this.input4.style.fontSize = "2.5vw";
         this.input4.maxLength = 1;
-        this.input4.style.paddingLeft = "0.8vw";
+        this.input4.style.paddingLeft = "0.6vw";
         this.input4.style.fontFamily = "Arial Black";
         this.input4.style.textTransform = "uppercase";
         this.input4.value = localStorage.getItem(this.number4);
         this.input4.id = "input4";
+        this.input4.addEventListener("keyup", function () {
+            _this.codeCheck("input4", _this.input4, "V", 'v');
+            _this.localStorageUpdate();
+            _this.codeEind();
+        });
         this.game.appendChild(this.input5);
-        this.input5.style.width = "2vw";
+        this.input5.style.width = "2.5vw";
         this.input5.style.height = "5.7vh";
-        this.input5.style.transform = "translate(88.3vw, 36.25vh)";
-        this.input5.style.border = "none";
-        this.input5.style.fontSize = "30px";
+        this.input5.style.transform = "translate(88vw, 35.45vh)";
+        this.input5.style.border = "thick solid #A9A9A9";
+        this.input5.style.fontSize = "2.5vw";
         this.input5.maxLength = 1;
         this.input5.style.paddingLeft = "0.8vw";
         this.input5.style.fontFamily = "Arial Black";
         this.input5.style.textTransform = "uppercase";
         this.input5.value = localStorage.getItem(this.number5);
         this.input5.id = "input5";
+        this.input5.addEventListener("keyup", function () {
+            _this.codeCheck("input5", _this.input5, "E", 'e');
+            _this.localStorageUpdate();
+            _this.codeEind();
+        });
     };
     Act2.prototype.localStorageUpdate = function () {
         localStorage.setItem(this.number1, document.getElementById("input1").value);
@@ -511,6 +541,15 @@ var Act2 = (function () {
         localStorage.setItem(this.number4, document.getElementById("input4").value);
         localStorage.setItem(this.number5, document.getElementById("input5").value);
     };
+    Act2.prototype.codeCheck = function (input, inputtwee, awnser, awnser2) {
+        console.log(input);
+        if (document.getElementById(input).value == awnser || document.getElementById(input).value == awnser2) {
+            inputtwee.style.border = "thick solid #00FF00";
+        }
+        else {
+            inputtwee.style.border = "thick solid #FF0000";
+        }
+    };
     Act2.prototype.codeEind = function () {
         var codeString = document.getElementById("input1").value +
             document.getElementById("input2").value +
@@ -518,6 +557,9 @@ var Act2 = (function () {
             document.getElementById("input4").value +
             document.getElementById("input5").value;
         console.log(codeString);
+        if (codeString == "DBNVE") {
+            console.log("winner");
+        }
     };
     Act2.prototype.makeLevelIcon = function (posX, posY, width, height) {
         this.classroomIcon = document.createElement('classroom');
@@ -705,38 +747,45 @@ var Act2Room1 = (function () {
     function Act2Room1() {
         this.game = document.getElementsByTagName('game')[0];
         this.bg = document.createElement("act2background");
-        this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
+        this.openInNewTab("https://hint.hr.nl/nl/HR/Studie/hulp-bij-studie/vertrouwenspersoon-introgame/?ticket=ST-7561117-asFVoii1iQmlJNL9MKZ3jK4u9c0lwEYAbd5-20");
+        new Act2;
     }
+    Act2Room1.prototype.openInNewTab = function (url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    };
     return Act2Room1;
 }());
 var Act2Room2 = (function () {
     function Act2Room2() {
-        this.game = document.getElementsByTagName('game')[0];
-        this.bg = document.createElement("act2background");
-        this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
-    }
-    return Act2Room2;
-}());
-var Act2Room3 = (function () {
-    function Act2Room3() {
-        this.game = document.getElementsByTagName('game')[0];
-        this.bg = document.createElement("act2background");
-        this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
-    }
-    return Act2Room3;
-}());
-var Act2Room4 = (function () {
-    function Act2Room4() {
         this.game = document.getElementsByTagName('game')[0];
         this.bg = document.createElement("videoBackground");
         this.video = document.createElement("video");
         this.bg.style.backgroundColor = "black";
         this.game.appendChild(this.bg);
         this.game.appendChild(this.video);
-        this.video.src = 'assets/Akte2/filmpjedecaanhorizontaal.mp4';
+        this.video.src = 'assets/Akte2/peer1.mp4';
+        this.video.autoplay = true;
+        this.video.controls = true;
+        this.video.onended = function () {
+            var vid = document.getElementsByTagName("video")[0];
+            var bg = document.getElementsByTagName("videoBackground")[0];
+            vid.remove();
+            bg.remove();
+            new Act2Room2s1;
+        };
+    }
+    return Act2Room2;
+}());
+var Act2Room2s1 = (function () {
+    function Act2Room2s1() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("videoBackground");
+        this.video = document.createElement("video");
+        this.bg.style.backgroundColor = "black";
+        this.game.appendChild(this.bg);
+        this.game.appendChild(this.video);
+        this.video.src = 'assets/Akte2/peer2.mp4';
         this.video.autoplay = true;
         this.video.controls = true;
         this.video.onended = function () {
@@ -747,15 +796,74 @@ var Act2Room4 = (function () {
             new Act2;
         };
     }
+    return Act2Room2s1;
+}());
+var Act2Room3 = (function () {
+    function Act2Room3() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("act2background");
+        this.openInNewTab("https://hint.hr.nl/nl/HR/Studie/hulp-bij-studie/studieloopbaancoach-slc-introgame/");
+        new Act2;
+    }
+    Act2Room3.prototype.openInNewTab = function (url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    };
+    return Act2Room3;
+}());
+var Act2Room4 = (function () {
+    function Act2Room4() {
+        var _this = this;
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("videoBackground");
+        this.video = document.createElement("video");
+        this.signin = document.createElement("signin");
+        this.bg.style.backgroundColor = "black";
+        this.game.appendChild(this.bg);
+        this.game.appendChild(this.video);
+        this.game.appendChild(this.signin);
+        this.video.src = 'assets/Akte2/filmpjedecaanhorizontaal.mp4';
+        this.video.autoplay = true;
+        this.video.controls = true;
+        this.signin.style.width = "15vw";
+        this.signin.style.height = "3.7vh";
+        this.signin.style.transform = "translate(8vw,80vh)";
+        this.signin.style.backgroundColor = "#ffb911";
+        this.signin.style.borderRadius = "20px";
+        this.signin.style.display = "table-cell";
+        this.signin.style.fontSize = "18px";
+        this.signin.style.textAlign = 'center';
+        this.signin.style.paddingTop = '0.5vh';
+        this.signin.style.cursor = "pointer";
+        this.signin.innerText = "Maak hier een afspraak";
+        this.signin.addEventListener("click", function () {
+            _this.openInNewTab("https://hint.hr.nl/nl/HR/Studie/hulp-bij-studie/Afspraak-maken-decaan-introgame/");
+        });
+        this.video.onended = function () {
+            var vid = document.getElementsByTagName("video")[0];
+            var bg = document.getElementsByTagName("videoBackground")[0];
+            vid.remove();
+            bg.remove();
+            new Act2;
+        };
+    }
+    Act2Room4.prototype.openInNewTab = function (url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    };
     return Act2Room4;
 }());
 var Act2Room5 = (function () {
     function Act2Room5() {
         this.game = document.getElementsByTagName('game')[0];
         this.bg = document.createElement("act2background");
-        this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
+        this.openInNewTab("https://hint.hr.nl/nl/HR/Studie/hulp-bij-studie/Studentenwelzijnsadviseurs-introgame/");
+        new Act2;
     }
+    Act2Room5.prototype.openInNewTab = function (url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    };
     return Act2Room5;
 }());
 var Act3 = (function () {
@@ -1697,6 +1805,28 @@ var Pause = (function () {
         });
     }
     return Pause;
+}());
+var popup = (function () {
+    function popup(text, posX, posY, width, height) {
+        var _this = this;
+        this.field = document.createElement('popup');
+        this.game = document.getElementsByTagName('game')[0];
+        this.game.appendChild(this.field);
+        this.field.innerText = text;
+        this.field.style.position = "absolute";
+        this.field.style.transform = "translate(" + posX + "vw," + posY + "vh)";
+        this.field.style.width = width.toString() + "vw";
+        this.field.style.height = height.toString() + "vh";
+        this.field.style.borderRadius = "20px";
+        this.field.style.backgroundColor = "#ffb911";
+        this.field.style.fontSize = "20px";
+        this.field.style.zIndex = "2";
+        this.field.style.padding = "10px";
+        this.field.addEventListener("click", function () {
+            _this.field.remove();
+        });
+    }
+    return popup;
 }());
 var StartScreem = (function () {
     function StartScreem() {

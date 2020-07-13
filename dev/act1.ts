@@ -5,6 +5,8 @@ class Act1 {
     private input3 = document.createElement("input")
     private wrong_div = document.createElement("div")
 
+    private button1 = document.createElement("button")
+
     private input1Save :string = ""
     private input2Save :string = ""
     private input3Save :string = ""
@@ -61,13 +63,12 @@ class Act1 {
         this.input3.value = this.input3Save
         this.input3.id = "input3"
 
-        let button1 = document.createElement("button")
-        game.appendChild(button1)
-        button1.style.width = `15.1vw`
-        button1.style.height = `7.5vh`
-        button1.style.transform = `translate(42.4vw, 47.9vh)`
-        button1.style.opacity = `0%`
-        button1.addEventListener("click" , () => this.shapeCheck())
+        game.appendChild(this.button1)
+        this.button1.style.width = `15.1vw`
+        this.button1.style.height = `7.5vh`
+        this.button1.style.transform = `translate(42.4vw, 47.9vh)`
+        this.button1.style.opacity = `0%`
+        this.button1.addEventListener("click" , () => this.shapeCheck())
 
         let button2 = document.createElement("button")
         game.appendChild(button2)
@@ -92,10 +93,36 @@ class Act1 {
         let shape2 = (<HTMLInputElement>document.getElementById("input2")).value
         let shape3 = (<HTMLInputElement>document.getElementById("input3")).value
         if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje"){
-            
-                document.getElementsByTagName("game")[0].innerHTML = ""
-                new Pause(1,'EnterBuilding')
-                
+
+            //document.getElementsByTagName("game")[0].innerHTML = ""
+            //new Pause(1,'EnterBuilding')
+
+            let background = document.createElement("backgroundact2")
+            let game = document.getElementsByTagName("game")[0]
+
+            game.appendChild(background)
+            background.style.backgroundImage = `url(/docs/assets/backgroundact1main2.png)`
+
+            game.removeChild(this.input1)
+            game.removeChild(this.input2)
+            game.removeChild(this.input3)
+
+            game.removeChild(this.button1)
+
+            var myloc = new Image();  
+            myloc.useMap = "/docs/assets/goed_antwoord.png";  
+            var img = document.createElement('img')  
+            img.setAttribute('src', myloc.useMap);  
+            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(35vw, 26.5vh);cursor:pointer;z-index:9999;");  
+            game.appendChild(img);
+
+            // if (confirm("dit is het goede antwoord, wil je verder? klik op cancel voor een pauze.")){
+            //     document.getElementsByTagName("game")[0].innerHTML = ""
+            //     new EnterBuilding()
+            // }
+            // else{
+            //     console.log("je neemt een pauze")
+            // }
         }
         else{
             let game = document.getElementsByTagName("game")[0]
@@ -106,27 +133,30 @@ class Act1 {
             game.removeChild(this.input2)
             game.removeChild(this.input3)
 
+            game.removeChild(this.button1)
+
             background.style.backgroundImage = `url(/docs/assets/backgroundact1main2.png)`
+            
 
             game.appendChild(this.wrong_div)
             this.wrong_div.style.width = `13.7vw`
             this.wrong_div.style.height = `5.7vh`
             this.wrong_div.style.position = `absolute`
-            this.wrong_div.style.transform = `translate(39.2vw, 39.2vh)`
+            this.wrong_div.style.transform = `translate(10vw, 39.2vh)`
             this.wrong_div.style.borderRadius = `25px`
             this.wrong_div.style.border = `none`
             this.wrong_div.style.fontSize = `20px`
             this.wrong_div.style.paddingLeft = `1vw`
             this.wrong_div.style.fontFamily = `Arial Black`
             this.wrong_div.style.textTransform = `uppercase`
-            this.wrong_div.style.zIndex = `999`
+            this.wrong_div.style.zIndex = `9999`
             this.wrong_div.id = "input1"
 
             var myloc = new Image();  
             myloc.useMap = "/docs/assets/fout_antwoord.png";  
             var img = document.createElement('img')  
             img.setAttribute('src', myloc.useMap);  
-            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(28.3vw, 26.5vh);cursor:pointer;");  
+            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(35vw, 26.5vh);cursor:pointer;z-index:9999;");  
             game.appendChild(img);
         }
     }
