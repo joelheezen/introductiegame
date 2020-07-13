@@ -12,6 +12,75 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var Timer = (function () {
+    function Timer() {
+        var _this = this;
+        this.startTimer();
+        setTimeout(function () {
+            _this.startPause();
+        }, 2000);
+        setTimeout(function () {
+            _this.endPause();
+        }, 4000);
+        setTimeout(function () {
+            _this.startPause();
+        }, 6000);
+        setTimeout(function () {
+            _this.endPause();
+        }, 8000);
+        setTimeout(function () {
+            _this.endTimer();
+            _this.score();
+            _this.resetTimer();
+        }, 12000);
+    }
+    Timer.prototype.startTimer = function () {
+        if (!localStorage.getItem('start')) {
+            localStorage.setItem('start', new Date().getTime().toString());
+        }
+        if (!localStorage.getItem('pause')) {
+            localStorage.setItem('pause', '0');
+        }
+        if (!localStorage.getItem('bonus')) {
+            localStorage.setItem('bonus', '0');
+        }
+    };
+    Timer.prototype.startPause = function () {
+        this.pauseStart = new Date().getTime();
+    };
+    Timer.prototype.endPause = function () {
+        this.pauseEnd = new Date().getTime();
+        var currentPause = parseInt(localStorage.getItem('pause'));
+        var thisPause = this.pauseEnd - this.pauseStart;
+        var newPause = thisPause + currentPause;
+        localStorage.setItem('pause', newPause.toString());
+    };
+    Timer.prototype.addBonus = function (point) {
+        var currentBonus = parseInt(localStorage.getItem('bonus'));
+        var newBonus = currentBonus + point;
+        localStorage.setItem('bonus', newBonus);
+    };
+    Timer.prototype.endTimer = function () {
+        if (!localStorage.getItem('end')) {
+            localStorage.setItem('end', new Date().getTime().toString());
+        }
+    };
+    Timer.prototype.score = function () {
+        var start = parseInt(localStorage.getItem('start'));
+        var end = parseInt(localStorage.getItem('end'));
+        var pause = parseInt(localStorage.getItem('pause'));
+        var bonus = parseInt(localStorage.getItem('bonus'));
+        var score = Math.floor((end - start - pause) / 1000) - bonus;
+        console.log(score);
+    };
+    Timer.prototype.resetTimer = function () {
+        localStorage.removeItem('start');
+        localStorage.removeItem('end');
+        localStorage.removeItem('pause');
+    };
+    return Timer;
+}());
+window.addEventListener('load', function () { return new Timer(); });
 var Act1 = (function () {
     function Act1() {
         this.input1 = document.createElement("input");
@@ -328,7 +397,6 @@ var Act1 = (function () {
 }());
 var Act2 = (function () {
     function Act2() {
-        var _this = this;
         this.game = document.getElementsByTagName("game")[0];
         this.doorName1 = document.createElement("doorName");
         this.doorName2 = document.createElement("doorName");
@@ -345,7 +413,6 @@ var Act2 = (function () {
         this.number3 = "number3";
         this.number4 = "number4";
         this.number5 = "number5";
-        this.testbutton = document.createElement("testbutton");
         var background = document.createElement("backgroundact2");
         this.game.appendChild(background);
         this.createFolderItems();
@@ -353,14 +420,8 @@ var Act2 = (function () {
         this.codeInput();
         this.codeEind();
         this.doorNames();
-        this.game.appendChild(this.testbutton);
-        this.testbutton.style.width = "3vw";
-        this.testbutton.style.height = "5vh";
-        this.testbutton.style.backgroundColor = "black";
-        this.testbutton.addEventListener("click", function () {
-            _this.codeEind();
-            _this.localStorageUpdate();
-        });
+        new popup("Hulp nodig? Blijf (er) niet (mee) rondlopen! Hier moet je zijn: Hulp bij studie. De hogeschool biedt allerlei vormen van een-op-een begeleiding en ondersteuning." +
+            " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!", 64, 75, 30, 20);
     }
     Act2.prototype.doorNames = function () {
         this.game.appendChild(this.doorName1);
@@ -373,99 +434,124 @@ var Act2 = (function () {
         this.doorName1.style.transform = "translate(4.75vw, 27.5vh)";
         this.doorName1.style.textAlign = 'center';
         this.doorName2.style.paddingTop = '1.5vh';
-        this.doorName1.style.fontSize = "2vh";
-        this.doorName1.style.fontFamily = "Arial Black";
+        this.doorName1.style.fontSize = "1vw";
         this.doorName1.innerHTML = "Vertrouwenspersoon";
         this.doorName2.style.width = '11.77vw';
         this.doorName2.style.height = '3.65vh';
         this.doorName2.style.transform = "translate(24.65vw, 26.6vh)";
         this.doorName2.style.textAlign = 'center';
-        this.doorName2.style.paddingTop = '0.4vh';
-        this.doorName2.style.fontSize = "2.5vh";
+        this.doorName2.style.paddingTop = '0.8vh';
+        this.doorName2.style.fontSize = "1vw";
         this.doorName2.innerHTML = "Peercoach";
         this.doorName3.style.width = '11.77vw';
         this.doorName3.style.height = '3.65vh';
         this.doorName3.style.transform = "translate(44.36vw, 26.6vh)";
         this.doorName3.style.textAlign = 'center';
-        this.doorName3.style.paddingTop = '0vh';
-        this.doorName3.style.fontSize = "3vh";
+        this.doorName3.style.paddingTop = '0.8vh';
+        this.doorName3.style.fontSize = "1vw";
         this.doorName3.innerHTML = "SLC";
         this.doorName4.style.width = '11.77vw';
         this.doorName4.style.height = '3.65vh';
         this.doorName4.style.transform = "translate(64.26vw, 26.6vh)";
         this.doorName4.style.textAlign = 'center';
-        this.doorName4.style.paddingTop = '0vh';
-        this.doorName4.style.fontSize = "3vh";
+        this.doorName4.style.paddingTop = '0.8vh';
+        this.doorName4.style.fontSize = "1vw";
         this.doorName4.innerHTML = "Decaan";
         this.doorName5.style.width = '11.77vw';
         this.doorName5.style.height = '3.65vh';
         this.doorName5.style.transform = "translate(84vw, 26.1vh)";
         this.doorName5.style.textAlign = 'center';
-        this.doorName5.style.paddingTop = '0.9vh';
-        this.doorName5.style.fontSize = "2.6vh";
+        this.doorName5.style.paddingTop = '1.3vh';
+        this.doorName5.style.fontSize = "1vw";
         this.doorName5.innerHTML = "Student aan zet";
     };
     Act2.prototype.codeInput = function () {
+        var _this = this;
         this.game.appendChild(this.input1);
-        this.input1.style.width = "2vw";
+        this.input1.style.width = "2.5vw";
         this.input1.style.height = "5.7vh";
-        this.input1.style.transform = "translate(9.1vw, 36.25vh)";
+        this.input1.style.transform = "translate(9vw, 36.25vh)";
         this.input1.style.border = "none";
-        this.input1.style.fontSize = "30px";
+        this.input1.style.fontSize = "2.5vw";
         this.input1.maxLength = 1;
         this.input1.style.paddingLeft = "0.8vw";
         this.input1.style.fontFamily = "Arial Black";
         this.input1.style.textTransform = "uppercase";
         this.input1.value = localStorage.getItem(this.number1);
         this.input1.id = "input1";
+        this.input1.addEventListener("keyup", function () {
+            _this.codeCheck("input1", "D", 'd');
+            _this.localStorageUpdate();
+            _this.codeEind();
+        });
         this.game.appendChild(this.input2);
         this.input2.style.width = "2.4vw";
         this.input2.style.height = "5.7vh";
-        this.input2.style.transform = "translate(29vw, 36.25vh)";
+        this.input2.style.transform = "translate(28.9vw, 36.25vh)";
         this.input2.style.border = "none";
-        this.input2.style.fontSize = "30px";
+        this.input2.style.fontSize = "2.5vw";
         this.input2.maxLength = 1;
         this.input2.style.paddingLeft = "0.8vw";
         this.input2.style.fontFamily = "Arial Black";
         this.input2.style.textTransform = "uppercase";
         this.input2.value = localStorage.getItem(this.number2);
         this.input2.id = "input2";
+        this.input2.addEventListener("keyup", function () {
+            _this.codeCheck("input2", "B", 'b');
+            _this.localStorageUpdate();
+            _this.codeEind();
+        });
         this.game.appendChild(this.input3);
         this.input3.style.width = "2vw";
         this.input3.style.height = "5.7vh";
         this.input3.style.transform = "translate(48.5vw, 36.25vh)";
         this.input3.style.border = "none";
-        this.input3.style.fontSize = "30px";
+        this.input3.style.fontSize = "2.5vw";
         this.input3.maxLength = 1;
-        this.input3.style.paddingLeft = "0.8vw";
+        this.input3.style.paddingLeft = "0.6vw";
         this.input3.style.fontFamily = "Arial Black";
         this.input3.style.textTransform = "uppercase";
         this.input3.value = localStorage.getItem(this.number3);
         this.input3.id = "input3";
+        this.input3.addEventListener("keyup", function () {
+            _this.codeCheck("input3", "N", 'n');
+            _this.localStorageUpdate();
+            _this.codeEind();
+        });
         this.game.appendChild(this.input4);
         this.input4.style.width = "2vw";
         this.input4.style.height = "5.7vh";
         this.input4.style.transform = "translate(68.4vw, 36.25vh)";
         this.input4.style.border = "none";
-        this.input4.style.fontSize = "30px";
+        this.input4.style.fontSize = "2.5vw";
         this.input4.maxLength = 1;
-        this.input4.style.paddingLeft = "0.8vw";
+        this.input4.style.paddingLeft = "0.6vw";
         this.input4.style.fontFamily = "Arial Black";
         this.input4.style.textTransform = "uppercase";
         this.input4.value = localStorage.getItem(this.number4);
         this.input4.id = "input4";
+        this.input4.addEventListener("keyup", function () {
+            _this.codeCheck("input4", "V", 'v');
+            _this.localStorageUpdate();
+            _this.codeEind();
+        });
         this.game.appendChild(this.input5);
         this.input5.style.width = "2vw";
         this.input5.style.height = "5.7vh";
         this.input5.style.transform = "translate(88.3vw, 36.25vh)";
         this.input5.style.border = "none";
-        this.input5.style.fontSize = "30px";
+        this.input5.style.fontSize = "2.5vw";
         this.input5.maxLength = 1;
         this.input5.style.paddingLeft = "0.8vw";
         this.input5.style.fontFamily = "Arial Black";
         this.input5.style.textTransform = "uppercase";
         this.input5.value = localStorage.getItem(this.number5);
         this.input5.id = "input5";
+        this.input5.addEventListener("keyup", function () {
+            _this.codeCheck("input5", "E", 'e');
+            _this.localStorageUpdate();
+            _this.codeEind();
+        });
     };
     Act2.prototype.localStorageUpdate = function () {
         localStorage.setItem(this.number1, document.getElementById("input1").value);
@@ -474,6 +560,15 @@ var Act2 = (function () {
         localStorage.setItem(this.number4, document.getElementById("input4").value);
         localStorage.setItem(this.number5, document.getElementById("input5").value);
     };
+    Act2.prototype.codeCheck = function (input, awnser, awnser2) {
+        console.log(input);
+        if (document.getElementById(input).value == awnser || document.getElementById(input).value == awnser2) {
+            console.log(input + " is true");
+        }
+        else {
+            console.log(input + " is false");
+        }
+    };
     Act2.prototype.codeEind = function () {
         var codeString = document.getElementById("input1").value +
             document.getElementById("input2").value +
@@ -481,6 +576,9 @@ var Act2 = (function () {
             document.getElementById("input4").value +
             document.getElementById("input5").value;
         console.log(codeString);
+        if (codeString == "DBNVE") {
+            console.log("winner");
+        }
     };
     Act2.prototype.makeLevelIcon = function (posX, posY, width, height) {
         this.classroomIcon = document.createElement('classroom');
@@ -668,38 +766,24 @@ var Act2Room1 = (function () {
     function Act2Room1() {
         this.game = document.getElementsByTagName('game')[0];
         this.bg = document.createElement("act2background");
-        this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
+        this.openInNewTab("https://hint.hr.nl/nl/HR/Studie/hulp-bij-studie/vertrouwenspersoon-introgame/?ticket=ST-7561117-asFVoii1iQmlJNL9MKZ3jK4u9c0lwEYAbd5-20");
+        new Act2;
     }
+    Act2Room1.prototype.openInNewTab = function (url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    };
     return Act2Room1;
 }());
 var Act2Room2 = (function () {
     function Act2Room2() {
-        this.game = document.getElementsByTagName('game')[0];
-        this.bg = document.createElement("act2background");
-        this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
-    }
-    return Act2Room2;
-}());
-var Act2Room3 = (function () {
-    function Act2Room3() {
-        this.game = document.getElementsByTagName('game')[0];
-        this.bg = document.createElement("act2background");
-        this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
-    }
-    return Act2Room3;
-}());
-var Act2Room4 = (function () {
-    function Act2Room4() {
         this.game = document.getElementsByTagName('game')[0];
         this.bg = document.createElement("videoBackground");
         this.video = document.createElement("video");
         this.bg.style.backgroundColor = "black";
         this.game.appendChild(this.bg);
         this.game.appendChild(this.video);
-        this.video.src = 'assets/Akte2/filmpjedecaanhorizontaal.mp4';
+        this.video.src = 'assets/Akte2/filmpjepeercoachLoek.mp4';
         this.video.autoplay = true;
         this.video.controls = true;
         this.video.onended = function () {
@@ -710,15 +794,74 @@ var Act2Room4 = (function () {
             new Act2;
         };
     }
+    return Act2Room2;
+}());
+var Act2Room3 = (function () {
+    function Act2Room3() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("act2background");
+        this.openInNewTab("https://hint.hr.nl/nl/HR/Studie/hulp-bij-studie/studieloopbaancoach-slc-introgame/");
+        new Act2;
+    }
+    Act2Room3.prototype.openInNewTab = function (url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    };
+    return Act2Room3;
+}());
+var Act2Room4 = (function () {
+    function Act2Room4() {
+        var _this = this;
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("videoBackground");
+        this.video = document.createElement("video");
+        this.signin = document.createElement("signin");
+        this.bg.style.backgroundColor = "black";
+        this.game.appendChild(this.bg);
+        this.game.appendChild(this.video);
+        this.game.appendChild(this.signin);
+        this.video.src = 'assets/Akte2/filmpjedecaanhorizontaal.mp4';
+        this.video.autoplay = true;
+        this.video.controls = true;
+        this.signin.style.width = "15vw";
+        this.signin.style.height = "3.7vh";
+        this.signin.style.transform = "translate(8vw,80vh)";
+        this.signin.style.backgroundColor = "#ffb911";
+        this.signin.style.borderRadius = "20px";
+        this.signin.style.display = "table-cell";
+        this.signin.style.fontSize = "18px";
+        this.signin.style.textAlign = 'center';
+        this.signin.style.paddingTop = '0.5vh';
+        this.signin.style.cursor = "pointer";
+        this.signin.innerText = "Maak hier een afspraak";
+        this.signin.addEventListener("click", function () {
+            _this.openInNewTab("https://hint.hr.nl/nl/HR/Studie/hulp-bij-studie/Afspraak-maken-decaan-introgame/");
+        });
+        this.video.onended = function () {
+            var vid = document.getElementsByTagName("video")[0];
+            var bg = document.getElementsByTagName("videoBackground")[0];
+            vid.remove();
+            bg.remove();
+            new Act2;
+        };
+    }
+    Act2Room4.prototype.openInNewTab = function (url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    };
     return Act2Room4;
 }());
 var Act2Room5 = (function () {
     function Act2Room5() {
         this.game = document.getElementsByTagName('game')[0];
         this.bg = document.createElement("act2background");
-        this.game.appendChild(this.bg);
-        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
+        this.openInNewTab("https://hint.hr.nl/nl/HR/Studie/hulp-bij-studie/Studentenwelzijnsadviseurs-introgame/");
+        new Act2;
     }
+    Act2Room5.prototype.openInNewTab = function (url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    };
     return Act2Room5;
 }());
 var Act3 = (function () {
@@ -1354,7 +1497,7 @@ var LocatieSelectie = (function () {
     function LocatieSelectie() {
         this.background = document.createElement('backgroundLocation');
         this.game = document.getElementsByTagName('game')[0];
-        this.educations = new Locations();
+        this.educations = new Locations().collective;
         this.background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/map.png";
         this.game.appendChild(this.background);
         this.educationSetter();
@@ -1365,49 +1508,20 @@ var LocatieSelectie = (function () {
         this.game.appendChild(this.educationSet);
         this.educationSet.innerHTML = "Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding.";
         this.educationSelect = document.createElement('select');
-        this.currentLocation = this.educations.academieplein.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.blaak.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.kralingse_zoom.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.lloyd_straat.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.max_euwelaan.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.museumpark_hoogbouw.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.museumpark_laagbouw.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.pieter_de_hoogweg.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.posthumalaan.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.rmd_rotterdam.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.rochussenstraat.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.wijnhaven_103.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.wijnhaven_107.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.wijnhaven_61.opleidingen;
-        this.addToSelect();
-        this.currentLocation = this.educations.wijnhaven_99.opleidingen;
-        this.addToSelect();
+        for (var index = 0; index < this.educations.length; index++) {
+            this.currentLocation = this.educations[index].opleidingen;
+            for (var education in this.currentLocation) {
+                var addToDrop = document.createElement('option');
+                addToDrop.value = this.currentLocation[education];
+                addToDrop.innerHTML = this.currentLocation[education];
+                this.educationSelect.appendChild(addToDrop);
+            }
+        }
         this.educationSet.appendChild(this.educationSelect);
         var thisLocation = document.createElement('button');
         thisLocation.innerHTML = 'Kies opleiding';
         thisLocation.addEventListener('click', function () { return _this.saveEducation(); });
         this.educationSet.appendChild(thisLocation);
-    };
-    LocatieSelectie.prototype.addToSelect = function () {
-        for (var education in this.currentLocation) {
-            var addToDrop = document.createElement('option');
-            addToDrop.value = this.currentLocation[education];
-            addToDrop.innerHTML = this.currentLocation[education];
-            this.educationSelect.appendChild(addToDrop);
-        }
     };
     LocatieSelectie.prototype.saveEducation = function () {
         var education = document.getElementsByTagName('select')[0].value;
@@ -1420,167 +1534,35 @@ var LocatieSelectie = (function () {
         this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.jpg)";
         this.background.style.backgroundSize = "100% 100%";
         this.educationSet.remove();
-        this.locationMarker(34.3, 67.9, 'academieplein');
-        this.locationMarker(46.3, 57, 'blaak');
-        this.locationMarker(62.7, 61.5, 'kralingse_zoom');
-        this.locationMarker(33.9, 78.5, 'lloyd_straat');
-        this.locationMarker(64, 60, 'max_euwelaan');
-        this.locationMarker(37, 65, 'museumpark_hoogbouw');
-        this.locationMarker(38, 63, 'museumpark_laagbouw');
-        this.locationMarker(33, 72.5, 'pieter_de_hoogweg');
-        this.locationMarker(49, 73, 'posthumalaan');
-        this.locationMarker(15.7, 82, 'rmd_rotterdam');
-        this.locationMarker(35, 67, 'rochussenstraat');
-        this.locationMarker(46, 58, 'wijnhaven_61');
-        this.locationMarker(45, 58.4, 'wijnhaven_99');
-        this.locationMarker(44.4, 58.7, 'wijnhaven_103');
-        this.locationMarker(43.8, 59, 'wijnhaven_107');
+        this.locationMarker(34.3, 67.9, 'academieplein', 0);
+        this.locationMarker(46.3, 57, 'blaak', 1);
+        this.locationMarker(62.7, 61.5, 'kralingse_zoom', 2);
+        this.locationMarker(33.9, 78.5, 'lloyd_straat', 3);
+        this.locationMarker(64, 60, 'max_euwelaan', 4);
+        this.locationMarker(37, 65, 'museumpark_hoogbouw', 5);
+        this.locationMarker(38, 63, 'museumpark_laagbouw', 6);
+        this.locationMarker(33, 72.5, 'pieter_de_hoogweg', 7);
+        this.locationMarker(49, 73, 'posthumalaan', 8);
+        this.locationMarker(15.7, 82, 'rmd_rotterdam', 9);
+        this.locationMarker(35, 67, 'rochussenstraat', 10);
+        this.locationMarker(46, 58, 'wijnhaven_61', 11);
+        this.locationMarker(45, 58.4, 'wijnhaven_99', 12);
+        this.locationMarker(44.4, 58.7, 'wijnhaven_103', 13);
+        this.locationMarker(43.8, 59, 'wijnhaven_107', 14);
     };
-    LocatieSelectie.prototype.locationMarker = function (x, y, location) {
+    LocatieSelectie.prototype.locationMarker = function (x, y, location, index) {
         var _this = this;
         var marker = document.createElement('pin');
         this.game.appendChild(marker);
         marker.style.transform = "translate(" + x + "vw," + y + "vh)";
         marker.addEventListener('click', function () {
             var yourEducation = localStorage.getItem('education');
-            var educations = new Locations;
-            var clicked;
-            switch (location) {
-                case 'academieplein':
-                    clicked = educations.academieplein;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'blaak':
-                    clicked = educations.blaak;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'kralingse_zoom':
-                    clicked = educations.kralingse_zoom;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'lloyd_straat':
-                    clicked = educations.lloyd_straat;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'max_euwelaan':
-                    clicked = educations.max_euwelaan;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'museumpark_hoogbouw':
-                    clicked = educations.museumpark_hoogbouw;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'museumpark_laagbouw':
-                    clicked = educations.museumpark_laagbouw;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'pieter_de_hoogweg':
-                    clicked = educations.pieter_de_hoogweg;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'posthumalaan':
-                    clicked = educations.posthumalaan;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'rmd_rotterdam':
-                    clicked = educations.rmd_rotterdam;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'rochussenstraat':
-                    clicked = educations.rochussenstraat;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'wijnhaven_61':
-                    clicked = educations.wijnhaven_61;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'wijnhaven_99':
-                    clicked = educations.wijnhaven_99;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'wijnhaven_103':
-                    clicked = educations.wijnhaven_103;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
-                case 'wijnhaven_107':
-                    clicked = educations.wijnhaven_107;
-                    if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieInfo);
-                    }
-                    else {
-                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
-                    }
-                    break;
+            console.log(_this.educations);
+            if (_this.educations[index].opleidingen.indexOf(yourEducation) > -1) {
+                _this.popupLoc('correct', location, _this.educations[index].locatieInfo);
+            }
+            else {
+                _this.popupLoc('incorrect', location, _this.educations[index].locatieInfo);
             }
         });
     };
@@ -1594,21 +1576,19 @@ var LocatieSelectie = (function () {
         popupLocation.appendChild(locationImage);
         locationImage.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/" + location + ".png)";
         if (awnser == 'correct') {
-            popupLocation.innerHTML += 'correct<br>';
-            popupLocation.innerHTML += info;
+            popupLocation.innerHTML += '<b>Correct!</b>Dit is de locatie van jouw opleiding.<br>';
+            popupLocation.innerHTML += "<p><a target='_blank' href='" + info + "'>Klik hier</a>voor meer informatie over deze locatie.</p>";
             var goto = document.createElement('button');
             popupLocation.appendChild(goto);
             goto.innerHTML = "Loop naar binnen";
-            console.log('test');
             goto.addEventListener('click', function () {
-                console.log('test');
                 document.getElementsByTagName("game")[0].innerHTML = "";
                 new Act1;
             });
         }
         else {
-            popupLocation.innerHTML += 'incorrect<br>';
-            popupLocation.innerHTML += info;
+            popupLocation.innerHTML += '<b>Incorrect!</b>Dit is niet de locatie van jouw opleiding';
+            popupLocation.innerHTML += "<p><a target='_blank' href='" + info + "'>Klik hier</a>om te zien welke opleidingen hier wel gegeven worden.</p>";
             var goto = document.createElement('button');
             popupLocation.appendChild(goto);
             goto.innerHTML = "Probeer opnieuw";
@@ -1636,7 +1616,7 @@ var Locations = (function () {
                 "Watermanagement",
                 "Werktuigbouwkunde"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/academieplein/"
         };
         this.blaak = {
             opleidingen: [
@@ -1649,7 +1629,7 @@ var Locations = (function () {
                 "Design",
                 "Education in Arts"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/blaak/"
         };
         this.kralingse_zoom = {
             opleidingen: [
@@ -1668,7 +1648,7 @@ var Locations = (function () {
                 "Master in International Supply Chain Management",
                 "Commerciële Economie"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/kralingse-zoom/"
         };
         this.lloyd_straat = {
             opleidingen: [
@@ -1677,13 +1657,13 @@ var Locations = (function () {
                 "Maritiem Officier",
                 "Maritieme Techniek"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/lloydstraat/"
         };
         this.max_euwelaan = {
             opleidingen: [
                 "Commerciële Economie | SportMarketing & Management"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/max-euwelaan/"
         };
         this.museumpark_hoogbouw = {
             opleidingen: [
@@ -1707,7 +1687,7 @@ var Locations = (function () {
                 "Pedagogiek",
                 "Ondernemen"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/museumpark-laagbouw/"
         };
         this.museumpark_laagbouw = {
             opleidingen: [
@@ -1728,27 +1708,27 @@ var Locations = (function () {
                 "Lerarenopleiding VO/BVE Wiskunde",
                 "Social Work"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/mp-hoogbouw/"
         };
         this.pieter_de_hoogweg = {
             opleidingen: [
                 "Industrieel Product Ontwerpen",
                 "Mens en Techniek | Gezondheidszorg Technologie"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/pieter-de-hoochweg/"
         };
         this.posthumalaan = {
             opleidingen: [
                 "International Business"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/posthumalaan/"
         };
         this.rmd_rotterdam = {
             opleidingen: [
                 "Automotive",
                 "River Delta Development"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rdm-campus/"
         };
         this.rochussenstraat = {
             opleidingen: [
@@ -1767,23 +1747,25 @@ var Locations = (function () {
                 "Physician Assistant (algemeen)",
                 "Physician Assistant (Klinisch Verloskundige)"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rochussenstraat/"
         };
         this.wijnhaven_61 = {
             opleidingen: [
                 "Leisure & Events Management"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-61/"
         };
         this.wijnhaven_99 = {
             opleidingen: [
                 "Creative Media and Game Technologies"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-99/"
         };
         this.wijnhaven_103 = {
-            opleidingen: [],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            opleidingen: [
+                ""
+            ],
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-103/"
         };
         this.wijnhaven_107 = {
             opleidingen: [
@@ -1792,9 +1774,101 @@ var Locations = (function () {
                 "Informatica",
                 "Technische Informatica"
             ],
-            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-107/"
         };
+        this.collective = [this.academieplein, this.blaak, this.kralingse_zoom, this.lloyd_straat, this.max_euwelaan, this.museumpark_hoogbouw, this.museumpark_laagbouw, this.pieter_de_hoogweg, this.posthumalaan, this.rmd_rotterdam, this.rochussenstraat, this.wijnhaven_61, this.wijnhaven_99, this.wijnhaven_103, this.wijnhaven_107];
     }
     return Locations;
 }());
+var popup = (function () {
+    function popup(text, posX, posY, width, height) {
+        var _this = this;
+        this.field = document.createElement('popup');
+        this.game = document.getElementsByTagName('game')[0];
+        this.game.appendChild(this.field);
+        this.field.innerText = text;
+        this.field.style.position = "absolute";
+        this.field.style.transform = "translate(" + posX + "vw," + posY + "vh)";
+        this.field.style.width = width.toString() + "vw";
+        this.field.style.height = height.toString() + "vh";
+        this.field.style.borderRadius = "20px";
+        this.field.style.backgroundColor = "#ffb911";
+        this.field.style.fontSize = "20px";
+        this.field.style.zIndex = "2";
+        this.field.style.padding = "10px";
+        this.field.addEventListener("click", function () {
+            _this.field.remove();
+        });
+    }
+    return popup;
+}());
+var Timer = (function () {
+    function Timer() {
+        var _this = this;
+        this.startTimer();
+        setTimeout(function () {
+            _this.startPause();
+        }, 2000);
+        setTimeout(function () {
+            _this.endPause();
+        }, 4000);
+        setTimeout(function () {
+            _this.startPause();
+        }, 6000);
+        setTimeout(function () {
+            _this.endPause();
+        }, 8000);
+        setTimeout(function () {
+            _this.endTimer();
+            _this.score();
+            _this.resetTimer();
+        }, 12000);
+    }
+    Timer.prototype.startTimer = function () {
+        if (!localStorage.getItem('start')) {
+            localStorage.setItem('start', new Date().getTime().toString());
+        }
+        if (!localStorage.getItem('pause')) {
+            localStorage.setItem('pause', '0');
+        }
+        if (!localStorage.getItem('bonus')) {
+            localStorage.setItem('bonus', '0');
+        }
+    };
+    Timer.prototype.startPause = function () {
+        this.pauseStart = new Date().getTime();
+    };
+    Timer.prototype.endPause = function () {
+        this.pauseEnd = new Date().getTime();
+        var currentPause = parseInt(localStorage.getItem('pause'));
+        var thisPause = this.pauseEnd - this.pauseStart;
+        var newPause = thisPause + currentPause;
+        localStorage.setItem('pause', newPause.toString());
+    };
+    Timer.prototype.addBonus = function (point) {
+        var currentBonus = parseInt(localStorage.getItem('bonus'));
+        var newBonus = currentBonus + point;
+        localStorage.setItem('bonus', newBonus);
+    };
+    Timer.prototype.endTimer = function () {
+        if (!localStorage.getItem('end')) {
+            localStorage.setItem('end', new Date().getTime().toString());
+        }
+    };
+    Timer.prototype.score = function () {
+        var start = parseInt(localStorage.getItem('start'));
+        var end = parseInt(localStorage.getItem('end'));
+        var pause = parseInt(localStorage.getItem('pause'));
+        var bonus = parseInt(localStorage.getItem('bonus'));
+        var score = Math.floor((end - start - pause) / 1000) - bonus;
+        console.log(score);
+    };
+    Timer.prototype.resetTimer = function () {
+        localStorage.removeItem('start');
+        localStorage.removeItem('end');
+        localStorage.removeItem('pause');
+    };
+    return Timer;
+}());
+window.addEventListener('load', function () { return new Timer(); });
 //# sourceMappingURL=main.js.map
