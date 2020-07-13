@@ -1,8 +1,10 @@
 class Locations{
 
     constructor(){
-          
+    
     }
+
+    
 
     academieplein = {
         opleidingen: [
@@ -19,8 +21,7 @@ class Locations{
             "Watermanagement",
             "Werktuigbouwkunde"
         ],
-        locatieInfo: ""
-    }
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/academieplein/" }
 
     blaak = {
         opleidingen: [ 
@@ -33,8 +34,7 @@ class Locations{
             "Design",
             "Education in Arts"
         ],
-        locatieinfo: ""
-    }
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/blaak/"}
 
     kralingse_zoom = {
         opleidingen:[
@@ -53,8 +53,7 @@ class Locations{
             "Master in International Supply Chain Management",
             "Commerciële Economie"
         ],
-        locatieinfo:""
-    }
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/kralingse-zoom/" }
 
     lloyd_straat = {
         opleidingen:[
@@ -63,15 +62,13 @@ class Locations{
             "Maritiem Officier",
             "Maritieme Techniek"
         ],
-        locatieinfo:""
-    }
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/lloydstraat/"}
 
     max_euwelaan = {
         opleidingen:[
             "Commerciële Economie | SportMarketing & Management"
         ],
-        locatieinfo:""
-    }
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/max-euwelaan/"}
 
     museumpark_hoogbouw = {
         opleidingen:[
@@ -95,7 +92,7 @@ class Locations{
             "Pedagogiek",
             "Ondernemen"
         ],
-        locatieinfo:""
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/museumpark-laagbouw/"
     }
 
     museumpark_laagbouw = {
@@ -117,7 +114,7 @@ class Locations{
             "Lerarenopleiding VO/BVE Wiskunde",
             "Social Work"
         ], 
-        locatieinfo:""
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/mp-hoogbouw/"
     }
 
     pieter_de_hoogweg = {
@@ -125,14 +122,14 @@ class Locations{
             "Industrieel Product Ontwerpen",
             "Mens en Techniek | Gezondheidszorg Technologie"
         ],
-        locatieinfo:""
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/pieter-de-hoochweg/"
     } 
 
     posthumalaan = {
         opleidingen:[
             "International Business"
         ],
-        locatieinfo :""
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/posthumalaan/"
     } 
 
     rmd_rotterdam = {
@@ -140,7 +137,7 @@ class Locations{
             "Automotive",
             "River Delta Development"
         ], 
-        locatieinfo:""
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rdm-campus/"
     }
 
     rochussenstraat = {
@@ -160,28 +157,28 @@ class Locations{
             "Physician Assistant (algemeen)",
             "Physician Assistant (Klinisch Verloskundige)"
         ],
-        locatieinfo:""
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rochussenstraat/"
     } 
 
     wijnhaven_61 = {
         opleidingen:[
             "Leisure & Events Management"
         ], 
-        locatieinfo:""
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-61/"
     }
 
     wijnhaven_99 = {
         opleidingen:[
             "Creative Media and Game Technologies"
         ],
-        locatieinfo:""
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-99/"
     }
 
     wijnhaven_103 = {
         opleidingen:[
+            ""
         ],
-        locatieinfo:""
-    }
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-103/"}
 
     wijnhaven_107 = {
         opleidingen:[
@@ -190,8 +187,9 @@ class Locations{
             "Informatica",
             "Technische Informatica"
         ],
-        locatieinfo :""
-    }  
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-107/" }  
+
+    collective = [this.academieplein,this.blaak,this.kralingse_zoom,this.lloyd_straat,this.max_euwelaan,this.museumpark_hoogbouw,this.museumpark_laagbouw,this.pieter_de_hoogweg,this.posthumalaan,this.rmd_rotterdam,this.rochussenstraat,this.wijnhaven_61,this.wijnhaven_99,this.wijnhaven_103,this.wijnhaven_107]
     
 }
 

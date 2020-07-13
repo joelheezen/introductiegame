@@ -1,11 +1,23 @@
 class Act2Room2{
 
     game = document.getElementsByTagName('game')[0]
-    bg: HTMLElement = document.createElement("act2background")
+    bg: HTMLElement = document.createElement("videoBackground")
+    video = (<HTMLAudioElement>document.createElement("video"))
 
     constructor(){
-        
+        this.bg.style.backgroundColor = "black"
         this.game.appendChild(this.bg)
-        this.bg.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)'
+        this.game.appendChild(this.video)
+
+        this.video.src = 'assets/Akte2/filmpjepeercoachLoek.mp4'
+        this.video.autoplay = true
+        this.video.controls = true
+        this.video.onended = function() {
+                let vid = document.getElementsByTagName("video")[0]
+                let bg = document.getElementsByTagName("videoBackground")[0]
+                vid.remove()
+                bg.remove()
+                new Act2
+            };
     }
 }

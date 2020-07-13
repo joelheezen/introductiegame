@@ -18,7 +18,7 @@ class Act3{
         playButton.style.opacity = `0%`
         playButton.addEventListener("click", () => this.togglePlay())
 
-        this.video.src = 'assets/Akte2/filmpjedecaanhorizontaal.mp4'
+        this.video.src = 'assets/Akte3/startAct3.mp4'
         this.video.autoplay = true
         this.video.controls = false
         this.video.playbackRate = 16
@@ -57,6 +57,8 @@ class Act3{
                 popup.style.height = `80vh`
                 popup.style.transform = `translate(10vw, 10vh)`
                 popup.style.position = `absolute`
+                popup.style.boxShadow = `rgba(0,0,0,0.25) 20px 20px`
+                popup.style.borderRadius = `15px`
 
                 let mapArea = document.createElement("mapArea")
                 game.appendChild(mapArea)
@@ -135,7 +137,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url1}`
 
-                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.style.transform = `translate(23vw, 1vh)`
                     pinPopup.innerHTML += text1
                 })
                 pin1.addEventListener("mouseout", function(){
@@ -155,7 +157,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url2}`
 
-                    pinPopup.style.transform = `translate(16vw, 0.7vh)`
+                    pinPopup.style.transform = `translate(18vw, 0.7vh)`
                     pinPopup.innerHTML += text2
                 })
                 pin2.addEventListener("mouseout", function(){
@@ -175,7 +177,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url3}`
 
-                    pinPopup.style.transform = `translate(41vw, 42vh)`
+                    pinPopup.style.transform = `translate(43vw, 42vh)`
                     pinPopup.innerHTML += text3
                 })
                 pin3.addEventListener("mouseout", function(){
@@ -195,7 +197,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url4}`
 
-                    pinPopup.style.transform = `translate(19vw, 2vh)`
+                    pinPopup.style.transform = `translate(21vw, 2vh)`
                     pinPopup.innerHTML += text4
                 })
                 pin4.addEventListener("mouseout", function(){
@@ -215,7 +217,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url5}`
 
-                    pinPopup.style.transform = `translate(25vw, 23vh)`
+                    pinPopup.style.transform = `translate(27vw, 23vh)`
                     pinPopup.innerHTML += text5
                 })
                 pin5.addEventListener("mouseout", function(){
@@ -235,7 +237,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url6}`
 
-                    pinPopup.style.transform = `translate(26vw, 7.7vh)`
+                    pinPopup.style.transform = `translate(28vw, 7.7vh)`
                     pinPopup.innerHTML += text6
                 })
                 pin6.addEventListener("mouseout", function(){
@@ -244,7 +246,7 @@ class Act3{
                     pinPopup.remove()
                 })
 
-                pin7.style.transform = `translate(29.8vw, 33.7vh)`
+                pin7.style.transform = `translate(25.8vw, 55.1vh)`
                 pin7.style.zIndex = `3`
                 pin7.addEventListener("mouseover", function(){
                     console.log("in")
@@ -255,16 +257,16 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url7}`
 
-                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.style.transform = `translate(18.5vw, 21vh)`
                     pinPopup.innerHTML += text7
                 })
                 pin7.addEventListener("mouseout", function(){
                     console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
-                    //pinPopup.remove()
+                    pinPopup.remove()
                 })
 
-                pin8.style.transform = `translate(29.8vw, 33.7vh)`
+                pin8.style.transform = `translate(34.3vw, 38.7vh)`
                 pin8.style.zIndex = `3`
                 pin8.addEventListener("mouseover", function(){
                     console.log("in")
@@ -275,16 +277,16 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url8}`
 
-                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.style.transform = `translate(27vw, 5.3vh)`
                     pinPopup.innerHTML += text8
                 })
                 pin8.addEventListener("mouseout", function(){
                     console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
-                    //pinPopup.remove()
+                    pinPopup.remove()
                 })
 
-                pin9.style.transform = `translate(29.8vw, 33.7vh)`
+                pin9.style.transform = `translate(32.2vw, 40.7vh)`
                 pin9.style.zIndex = `3`
                 pin9.addEventListener("mouseover", function(){
                     console.log("in")
@@ -295,16 +297,16 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url9}`
 
-                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.style.transform = `translate(26.3vw, 5.2vh)`
                     pinPopup.innerHTML += text9
                 })
                 pin9.addEventListener("mouseout", function(){
                     console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
-                    //pinPopup.remove()
+                    pinPopup.remove()
                 })
 
-                pin10.style.transform = `translate(29.8vw, 33.7vh)`
+                pin10.style.transform = `translate(36.5vw, 39.2vh)`
                 pin10.style.zIndex = `3`
                 pin10.addEventListener("mouseover", function(){
                     console.log("in")
@@ -315,16 +317,16 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url10}`
 
-                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.style.transform = `translate(29.9vw, 5.7vh)`
                     pinPopup.innerHTML += text10
                 })
                 pin10.addEventListener("mouseout", function(){
                     console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
-                    //pinPopup.remove()
+                    pinPopup.remove()
                 })
 
-                pin11.style.transform = `translate(29.8vw, 33.7vh)`
+                pin11.style.transform = `translate(30.4vw, 41.3vh)`
                 pin11.style.zIndex = `3`
                 pin11.addEventListener("mouseover", function(){
                     console.log("in")
@@ -335,16 +337,16 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url11}`
 
-                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.style.transform = `translate(24vw, 10vh)`
                     pinPopup.innerHTML += text11
                 })
                 pin11.addEventListener("mouseout", function(){
                     console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
-                    //pinPopup.remove()
+                    pinPopup.remove()
                 })
 
-                pin12.style.transform = `translate(29.8vw, 33.7vh)`
+                pin12.style.transform = `translate(33.8vw, 41.7vh)`
                 pin12.style.zIndex = `3`
                 pin12.addEventListener("mouseover", function(){
                     console.log("in")
@@ -355,16 +357,16 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url12}`
 
-                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.style.transform = `translate(27vw, 10vh)`
                     pinPopup.innerHTML += text12
                 })
                 pin12.addEventListener("mouseout", function(){
                     console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
-                    //pinPopup.remove()
+                    pinPopup.remove()
                 })
 
-                pin13.style.transform = `translate(29.8vw, 33.7vh)`
+                pin13.style.transform = `translate(31.7vw, 43.6vh)`
                 pin13.style.zIndex = `3`
                 pin13.addEventListener("mouseover", function(){
                     console.log("in")
@@ -375,13 +377,13 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url13}`
 
-                    pinPopup.style.transform = `translate(21vw, 1vh)`
+                    pinPopup.style.transform = `translate(25vw, 11vh)`
                     pinPopup.innerHTML += text13
                 })
                 pin13.addEventListener("mouseout", function(){
                     console.log("out")
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
-                    //pinPopup.remove()
+                    pinPopup.remove()
                 })
 
                 let button = document.createElement("button")
@@ -390,6 +392,7 @@ class Act3{
                 button.style.height = `100vh`
                 button.style.opacity = `0%`
                 button.style.zIndex = `1`
+                button.style.position = `absolute`
                 button.addEventListener("click", function(){
                     popup.remove()
                     button.remove()
@@ -403,19 +406,203 @@ class Act3{
             button2.style.height = `14.3vh`
             button2.style.transform = `translate(44.4vw, 37.6vh)`
             button2.style.opacity = `30%`
-            button2.addEventListener("click" , () => this.notebook())
+            button2.addEventListener("click" , function(){
+                let game = document.getElementsByTagName("game")[0]
+                let popup = document.createElement("popup")
+                game.appendChild(popup)
+                popup.style.backgroundImage = `url(assets/PRODUCTION/PRODUCTION/ASSETS/notebook_open.png)`
+                popup.style.zIndex = `2`
+                popup.style.width = `90vw`
+                popup.style.height = `90vh`
+                popup.style.backgroundSize = `100% 100%`
+                popup.style.backgroundRepeat = `no-repeat`
+                popup.style.transform = `translate(5vw, 5vh)`
+                popup.style.position = `absolute`
+
+
+                let button = document.createElement("button")
+                game.appendChild(button)
+                button.style.width = `100vw`
+                button.style.height = `100vh`
+                button.style.opacity = `0%`
+                button.style.zIndex = `1`
+                button.style.position = `absolute`
+                button.addEventListener("click", function(){
+                    button.remove()
+                    popup.remove()
+                })
+
+                let text1 = document.createElement("question")
+                let text2 = document.createElement("question")
+                let text3 = document.createElement("question")
+                let text4 = document.createElement("question")
+
+                let input1 = document.createElement("input")
+                let input2 = document.createElement("input")
+                let input3 = document.createElement("input")
+                let input4 = document.createElement("input")
+
+                popup.appendChild(text1)
+                popup.appendChild(text2)
+                popup.appendChild(text3)
+                popup.appendChild(text4)
+
+                popup.appendChild(input1)
+                popup.appendChild(input2)
+                popup.appendChild(input3)
+                popup.appendChild(input4)
+
+
+                text1.style.width = `25vw`
+                text1.style.height = `2vh`
+                text1.style.transform = `translate(12.3vw, 6vh)`
+                text1.style.fontSize = `2.5vh`
+                text1.style.position = `absolute`
+                text1.innerHTML = `Vraag 1: "Rotterdamse icoon"`
+
+                input1.style.width = `24.5vw`
+                input1.style.height = `3vh`
+                input1.style.transform = `translate(12.5vw, 11.5vh)`
+                input1.style.position = `absolute`
+                input1.style.border = `none`
+                input1.style.fontSize = `2.5vh`
+                input1.style.borderBottom = `dashed 2px`
+                input1.style.backgroundColor = `transparent`
+
+                text2.style.width = `28vw`
+                text2.style.height = `2vh`
+                text2.style.transform = `translate(12.3vw, 22.5vh)`
+                text2.style.fontSize = `2.5vh`
+                text2.style.position = `absolute`
+                text2.innerHTML = `Vraag 2: "Tijd voor een feestje"`
+
+                input2.style.width = `24.5vw`
+                input2.style.height = `3vh`
+                input2.style.transform = `translate(12.5vw, 28.5vh)`
+                input2.style.position = `absolute`
+                input2.style.border = `none`
+                input2.style.fontSize = `2.5vh`
+                input2.style.borderBottom = `dashed 2px`
+                input2.style.backgroundColor = `transparent`
+
+                text3.style.width = `25vw`
+                text3.style.height = `2vh`
+                text3.style.transform = `translate(12.3vw, 39.8vh)`
+                text3.style.fontSize = `2.5vh`
+                text3.style.position = `absolute`
+                text3.innerHTML = `Vraag 3: "RKVV"`
+
+                input3.style.width = `24.5vw`
+                input3.style.height = `3vh`
+                input3.style.transform = `translate(12.5vw, 45.8vh)`
+                input3.style.position = `absolute`
+                input3.style.border = `none`
+                input3.style.fontSize = `2.5vh`
+                input3.style.borderBottom = `dashed 2px`
+                input3.style.backgroundColor = `transparent`
+
+                text4.style.width = `25vw`
+                text4.style.height = `2vh`
+                text4.style.transform = `translate(12.3vw, 57.2vh)`
+                text4.style.fontSize = `2.5vh`
+                text4.style.position = `absolute`
+                text4.innerHTML = `Vraag 4: "Rondje?"`
+
+                input4.style.width = `24.5vw`
+                input4.style.height = `3vh`
+                input4.style.transform = `translate(12.5vw, 63.2vh)`
+                input4.style.position = `absolute`
+                input4.style.border = `none`
+                input4.style.fontSize = `2.5vh`
+                input4.style.borderBottom = `dashed 2px`
+                input4.style.backgroundColor = `transparent`
+
+
+            })
 
             button3.style.width = `16.3vw`
             button3.style.height = `17.9vh`
             button3.style.transform = `translate(68.7vw, 54.4vh)`
             button3.style.opacity = `30%`
-            button3.addEventListener("click" , () => this.rkvv())
+            button3.addEventListener("click" , function(){
+                let win = window.open("assets/Akte3/RKvVboekje2020.pdf")
+                win!.focus()
+            })
 
-            button4.style.width = `20.3vw`
-            button4.style.height = `18vh`
-            button4.style.transform = `translate(61.2vw, 63.8vh)`
-            button4.style.opacity = `80%`
-            button4.addEventListener("click" , () => this.studentenpas())
+            button4.style.width = `10.5vw`
+            button4.style.height = `11vh`
+            button4.style.transform = `translate(27.5vw, 65.9vh)`
+            button4.style.opacity = `30%`
+            button4.addEventListener("click" , function(){
+                let game = document.getElementsByTagName("game")[0]
+                let popup = document.createElement("popup")
+
+                game.appendChild(popup)
+
+                popup.style.backgroundImage = `url(assets/Akte3/woordzoeker.png)`
+                popup.style.backgroundRepeat = `no-repeat`
+                popup.style.backgroundSize = `100% 100%`
+                popup.style.width = `90vw`
+                popup.style.height = `90vh`
+                popup.style.position = `absolute`
+                popup.style.zIndex = `2`
+                popup.style.transform = `translate(5vw, 5vh)`
+                popup.style.borderRadius = `20px`
+                popup.style.boxShadow = `rgba(0,0,0,0.25) 20px 20px`
+                
+
+                let button = document.createElement("button")
+                game.appendChild(button)
+
+                button.style.zIndex = `1`
+                button.style.width = `100vw`
+                button.style.height = `100vh`
+                button.style.opacity = `60%`
+                button.style.position = `absolute`
+                button.addEventListener("click", function(){
+                    popup.remove()
+                    button.remove()
+                })
+
+                let text = document.createElement("text")
+                popup.appendChild(text)
+                
+                text.style.fontSize = `2.5vh`
+                text.style.transform = `translate(50.5vw, 8vh)`
+                text.style.position = `absolute`
+                text.style.width = `40vw`
+                text.style.height = `10vh`
+                text.innerHTML = ""
+
+                let words = document.createElement("word")
+
+                words.style.backgroundImage = `url(assets/Akte3/woorden.png)`
+                words.style.backgroundSize = `100% 100%`
+                words.style.width = `50vw`
+                words.style.height = `50vh`
+                words.style.transform = `translate(10vw, 10vh)`
+                
+                popup.addEventListener("click", function(event){
+                    let dot = document.createElement("dot")
+                    popup.appendChild(dot)
+
+                    let x = ((event.clientX / innerWidth) * 100)
+                    let y = ((event.clientY / innerHeight) * 100)
+                    dot.addEventListener("click",function(event){
+                        dot.remove()
+                        event.stopPropagation()
+                    })
+                    dot.style.transform = `translate(${x - 5.5}vw, ${y - 6}vh)`
+                    dot.style.width = `1vw`
+                    dot.style.height = `2vh`
+                    dot.style.backgroundColor = `red`
+                    dot.style.borderRadius = `50%`
+                    dot.style.position = `absolute`
+                    dot.style.zIndex = `3`
+                })
+
+
+            })
 
             button5.style.width = `12.8vw`
             button5.style.height = `61.3vh`
