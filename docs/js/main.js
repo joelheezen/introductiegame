@@ -369,7 +369,7 @@ var Act2 = (function () {
         this.doorName1.innerHTML = "Vertrouwenspersoon";
         this.doorName2.style.width = '11.77vw';
         this.doorName2.style.height = '3.65vh';
-        this.doorName2.style.transform = "translate(24.65vw, 26.6vh)";
+        this.doorName2.style.transform = "translate(24.67vw, 26.6vh)";
         this.doorName2.style.textAlign = 'center';
         this.doorName2.style.paddingTop = '0.8vh';
         this.doorName2.style.fontSize = "1vw";
@@ -401,8 +401,8 @@ var Act2 = (function () {
         this.game.appendChild(this.input1);
         this.input1.style.width = "2.5vw";
         this.input1.style.height = "5.7vh";
-        this.input1.style.transform = "translate(9vw, 36.25vh)";
-        this.input1.style.border = "none";
+        this.input1.style.transform = "translate(8.7vw, 35.45vh)";
+        this.input1.style.border = "thick solid #A9A9A9";
         this.input1.style.fontSize = "2.5vw";
         this.input1.maxLength = 1;
         this.input1.style.paddingLeft = "0.8vw";
@@ -411,15 +411,15 @@ var Act2 = (function () {
         this.input1.value = localStorage.getItem(this.number1);
         this.input1.id = "input1";
         this.input1.addEventListener("keyup", function () {
-            _this.codeCheck("input1", "D", 'd');
+            _this.codeCheck("input1", _this.input1, "D", 'd');
             _this.localStorageUpdate();
             _this.codeEind();
         });
         this.game.appendChild(this.input2);
         this.input2.style.width = "2.4vw";
         this.input2.style.height = "5.7vh";
-        this.input2.style.transform = "translate(28.9vw, 36.25vh)";
-        this.input2.style.border = "none";
+        this.input2.style.transform = "translate(28.6vw, 35.45vh)";
+        this.input2.style.border = "thick solid #A9A9A9";
         this.input2.style.fontSize = "2.5vw";
         this.input2.maxLength = 1;
         this.input2.style.paddingLeft = "0.8vw";
@@ -428,15 +428,15 @@ var Act2 = (function () {
         this.input2.value = localStorage.getItem(this.number2);
         this.input2.id = "input2";
         this.input2.addEventListener("keyup", function () {
-            _this.codeCheck("input2", "B", 'b');
+            _this.codeCheck("input2", _this.input2, "B", 'b');
             _this.localStorageUpdate();
             _this.codeEind();
         });
         this.game.appendChild(this.input3);
-        this.input3.style.width = "2vw";
+        this.input3.style.width = "2.6vw";
         this.input3.style.height = "5.7vh";
-        this.input3.style.transform = "translate(48.5vw, 36.25vh)";
-        this.input3.style.border = "none";
+        this.input3.style.transform = "translate(48.2vw, 35.45vh)";
+        this.input3.style.border = "thick solid #A9A9A9";
         this.input3.style.fontSize = "2.5vw";
         this.input3.maxLength = 1;
         this.input3.style.paddingLeft = "0.6vw";
@@ -445,15 +445,15 @@ var Act2 = (function () {
         this.input3.value = localStorage.getItem(this.number3);
         this.input3.id = "input3";
         this.input3.addEventListener("keyup", function () {
-            _this.codeCheck("input3", "N", 'n');
+            _this.codeCheck("input3", _this.input3, "N", 'n');
             _this.localStorageUpdate();
             _this.codeEind();
         });
         this.game.appendChild(this.input4);
-        this.input4.style.width = "2vw";
+        this.input4.style.width = "2.6vw";
         this.input4.style.height = "5.7vh";
-        this.input4.style.transform = "translate(68.4vw, 36.25vh)";
-        this.input4.style.border = "none";
+        this.input4.style.transform = "translate(68vw, 35.45vh)";
+        this.input4.style.border = "thick solid #A9A9A9";
         this.input4.style.fontSize = "2.5vw";
         this.input4.maxLength = 1;
         this.input4.style.paddingLeft = "0.6vw";
@@ -462,15 +462,15 @@ var Act2 = (function () {
         this.input4.value = localStorage.getItem(this.number4);
         this.input4.id = "input4";
         this.input4.addEventListener("keyup", function () {
-            _this.codeCheck("input4", "V", 'v');
+            _this.codeCheck("input4", _this.input4, "V", 'v');
             _this.localStorageUpdate();
             _this.codeEind();
         });
         this.game.appendChild(this.input5);
-        this.input5.style.width = "2vw";
+        this.input5.style.width = "2.5vw";
         this.input5.style.height = "5.7vh";
-        this.input5.style.transform = "translate(88.3vw, 36.25vh)";
-        this.input5.style.border = "none";
+        this.input5.style.transform = "translate(88vw, 35.45vh)";
+        this.input5.style.border = "thick solid #A9A9A9";
         this.input5.style.fontSize = "2.5vw";
         this.input5.maxLength = 1;
         this.input5.style.paddingLeft = "0.8vw";
@@ -479,7 +479,7 @@ var Act2 = (function () {
         this.input5.value = localStorage.getItem(this.number5);
         this.input5.id = "input5";
         this.input5.addEventListener("keyup", function () {
-            _this.codeCheck("input5", "E", 'e');
+            _this.codeCheck("input5", _this.input5, "E", 'e');
             _this.localStorageUpdate();
             _this.codeEind();
         });
@@ -491,13 +491,13 @@ var Act2 = (function () {
         localStorage.setItem(this.number4, document.getElementById("input4").value);
         localStorage.setItem(this.number5, document.getElementById("input5").value);
     };
-    Act2.prototype.codeCheck = function (input, awnser, awnser2) {
+    Act2.prototype.codeCheck = function (input, inputtwee, awnser, awnser2) {
         console.log(input);
         if (document.getElementById(input).value == awnser || document.getElementById(input).value == awnser2) {
-            console.log(input + " is true");
+            inputtwee.style.border = "thick solid #00FF00";
         }
         else {
-            console.log(input + " is false");
+            inputtwee.style.border = "thick solid #FF0000";
         }
     };
     Act2.prototype.codeEind = function () {
@@ -714,7 +714,28 @@ var Act2Room2 = (function () {
         this.bg.style.backgroundColor = "black";
         this.game.appendChild(this.bg);
         this.game.appendChild(this.video);
-        this.video.src = 'assets/Akte2/filmpjepeercoachLoek.mp4';
+        this.video.src = 'assets/Akte2/peer1.mp4';
+        this.video.autoplay = true;
+        this.video.controls = true;
+        this.video.onended = function () {
+            var vid = document.getElementsByTagName("video")[0];
+            var bg = document.getElementsByTagName("videoBackground")[0];
+            vid.remove();
+            bg.remove();
+            new Act2Room2s1;
+        };
+    }
+    return Act2Room2;
+}());
+var Act2Room2s1 = (function () {
+    function Act2Room2s1() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("videoBackground");
+        this.video = document.createElement("video");
+        this.bg.style.backgroundColor = "black";
+        this.game.appendChild(this.bg);
+        this.game.appendChild(this.video);
+        this.video.src = 'assets/Akte2/peer2.mp4';
         this.video.autoplay = true;
         this.video.controls = true;
         this.video.onended = function () {
@@ -725,7 +746,7 @@ var Act2Room2 = (function () {
             new Act2;
         };
     }
-    return Act2Room2;
+    return Act2Room2s1;
 }());
 var Act2Room3 = (function () {
     function Act2Room3() {
