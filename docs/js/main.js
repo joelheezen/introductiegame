@@ -14,25 +14,6 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Timer = (function () {
     function Timer() {
-        var _this = this;
-        this.startTimer();
-        setTimeout(function () {
-            _this.startPause();
-        }, 2000);
-        setTimeout(function () {
-            _this.endPause();
-        }, 4000);
-        setTimeout(function () {
-            _this.startPause();
-        }, 6000);
-        setTimeout(function () {
-            _this.endPause();
-        }, 8000);
-        setTimeout(function () {
-            _this.endTimer();
-            _this.score();
-            _this.resetTimer();
-        }, 12000);
     }
     Timer.prototype.startTimer = function () {
         if (!localStorage.getItem('start')) {
@@ -162,13 +143,8 @@ var Act1 = (function () {
         var shape2 = document.getElementById("input2").value;
         var shape3 = document.getElementById("input3").value;
         if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje") {
-            if (confirm("dit is het goede antwoord, wil je verder? klik op cancel voor een pauze.")) {
-                document.getElementsByTagName("game")[0].innerHTML = "";
-                new EnterBuilding();
-            }
-            else {
-                console.log("je neemt een pauze");
-            }
+            document.getElementsByTagName("game")[0].innerHTML = "";
+            new Pause(1, 'EnterBuilding');
         }
         else {
             var game = document.getElementsByTagName("game")[0];
@@ -1377,13 +1353,6 @@ var Game = (function () {
         button2.style.transform = "translate(50vw, 25vh)";
         button2.innerHTML = "gert";
         button2.onclick = this.buttonPress2;
-        var button3 = document.createElement("button");
-        game.appendChild(button3);
-        button3.style.width = "10vw";
-        button3.style.height = "10vh";
-        button3.style.transform = "translate(25vw, 50vh)";
-        button3.innerHTML = "tom";
-        button3.onclick = this.buttonPress3;
         var button4 = document.createElement("button");
         game.appendChild(button4);
         button4.style.width = "10vw";
@@ -1400,10 +1369,6 @@ var Game = (function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
         new Act1();
     };
-    Game.prototype.buttonPress3 = function () {
-        document.getElementsByTagName("game")[0].innerHTML = "";
-        new LocatieSelectie();
-    };
     Game.prototype.buttonPress4 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
         new EnterBuilding();
@@ -1413,13 +1378,22 @@ var Game = (function () {
 window.addEventListener("load", function () { return new Game(); });
 var LocatieSelectie = (function () {
     function LocatieSelectie() {
+        var _this = this;
         this.background = document.createElement('backgroundLocation');
         this.game = document.getElementsByTagName('game')[0];
         this.educations = new Locations().collective;
         this.background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/map.png";
         this.game.appendChild(this.background);
         this.educationSetter();
+        var back = document.createElement("button");
+        back.id = 'backToLocatie';
+        back.addEventListener('click', function () { return _this.goBack(); });
+        this.game.appendChild(back);
     }
+    LocatieSelectie.prototype.goBack = function () {
+        this.game.innerHTML = "";
+        new LocatieSelectie();
+    };
     LocatieSelectie.prototype.educationSetter = function () {
         var _this = this;
         this.educationSet = document.createElement('educationsetter');
@@ -1698,4 +1672,48 @@ var Locations = (function () {
     }
     return Locations;
 }());
+var Pause = (function () {
+    function Pause(act, next) {
+        var _this = this;
+        this.game = document.getElementsByTagName('game')[0];
+        new Timer().startPause();
+        console.log('luuk gay');
+        var background = document.createElement('background');
+        background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/pauze.jpg)";
+        this.game.appendChild(background);
+        var title = document.createElement('hurray');
+        var message = document.createElement('message');
+        var nextButton = document.createElement('next');
+        title.innerHTML = "Gefeliciteerd!!!<br>Je hebt akte " + act + " gehaald";
+        message.innerHTML = "Je kunt nu even pauze nemen<br>Druk op de knop om te beginnen met akte " + (act + 1);
+        nextButton.innerHTML = "Begin akte " + (act + 1);
+        this.game.appendChild(title);
+        this.game.appendChild(message);
+        this.game.appendChild(nextButton);
+        nextButton.addEventListener('click', function () {
+            new Timer().endPause();
+            _this.game.innerHTML = '';
+            eval("new " + next + "()");
+        });
+    }
+    return Pause;
+}());
+var StartScreem = (function () {
+    function StartScreem() {
+        var _this = this;
+        this.game = document.getElementsByTagName('game')[0];
+        this.background = document.createElement('background');
+        this.background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/startScherm.png)";
+        this.game.appendChild(this.background);
+        var start = document.createElement('startgame');
+        this.game.appendChild(start);
+        start.addEventListener('click', function () {
+            _this.game.innerHTML = "";
+            new LocatieSelectie();
+            new Timer().startTimer();
+        });
+    }
+    return StartScreem;
+}());
+window.addEventListener('load', function () { return new StartScreem(); });
 //# sourceMappingURL=main.js.map

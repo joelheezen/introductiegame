@@ -92,13 +92,10 @@ class Act1 {
         let shape2 = (<HTMLInputElement>document.getElementById("input2")).value
         let shape3 = (<HTMLInputElement>document.getElementById("input3")).value
         if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje"){
-            if (confirm("dit is het goede antwoord, wil je verder? klik op cancel voor een pauze.")){
+            
                 document.getElementsByTagName("game")[0].innerHTML = ""
-                new EnterBuilding()
-            }
-            else{
-                console.log("je neemt een pauze")
-            }
+                new Pause(1,'EnterBuilding')
+                
         }
         else{
             let game = document.getElementsByTagName("game")[0]
