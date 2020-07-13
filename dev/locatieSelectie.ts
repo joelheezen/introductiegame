@@ -128,113 +128,113 @@ class LocatieSelectie{
                 case 'blaak':
                     clicked = educations.blaak
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 case 'kralingse_zoom':
                     clicked = educations.kralingse_zoom
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 case 'lloyd_straat':
                     clicked = educations.lloyd_straat
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 case 'max_euwelaan':
                     clicked = educations.max_euwelaan
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 case 'museumpark_hoogbouw':
                     clicked = educations.museumpark_hoogbouw
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 case 'museumpark_laagbouw':
                     clicked = educations.museumpark_laagbouw
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 case 'pieter_de_hoogweg':
                     clicked = educations.pieter_de_hoogweg
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 case 'posthumalaan':
                     clicked = educations.posthumalaan
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 case 'rmd_rotterdam':
                     clicked = educations.rmd_rotterdam
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 case 'rochussenstraat':
                     clicked = educations.rochussenstraat
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 case 'wijnhaven_61':
                     clicked = educations.wijnhaven_61
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 case 'wijnhaven_99':
                     clicked = educations.wijnhaven_99
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 case 'wijnhaven_103':
                     clicked = educations.wijnhaven_103
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 case 'wijnhaven_107':
                     clicked = educations.wijnhaven_107
                     if(clicked.opleidingen.indexOf(yourEducation) > -1){
-                        this.popupLoc('correct',location,clicked.locatieinfo)
+                        this.popupLoc('correct',location,clicked.locatieInfo)
                     }else{
-                        this.popupLoc('incorrect',location,clicked.locatieinfo)
+                        this.popupLoc('incorrect',location,clicked.locatieInfo)
                     }
                 break;
                 
@@ -261,8 +261,8 @@ class LocatieSelectie{
             
 
         if(awnser == 'correct'){
-            popupLocation.innerHTML += 'correct'
-            popupLocation.innerHTML += location
+            popupLocation.innerHTML += 'correct<br>'
+            popupLocation.innerHTML += info
             let goto = document.createElement('button')
             popupLocation.appendChild(goto)
             goto.innerHTML = "Loop naar binnen"
@@ -275,8 +275,8 @@ class LocatieSelectie{
             }) 
 
         }else{
-            popupLocation.innerHTML += 'incorrect'
-            popupLocation.innerHTML += location
+            popupLocation.innerHTML += 'incorrect<br>'
+            popupLocation.innerHTML += info
             let goto = document.createElement('button')
             popupLocation.appendChild(goto)
             goto.innerHTML = "Probeer opnieuw"  

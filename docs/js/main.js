@@ -17,6 +17,7 @@ var Act1 = (function () {
         this.input1 = document.createElement("input");
         this.input2 = document.createElement("input");
         this.input3 = document.createElement("input");
+        this.wrong_div = document.createElement("div");
         this.input1Save = "";
         this.input2Save = "";
         this.input3Save = "";
@@ -101,7 +102,25 @@ var Act1 = (function () {
             }
         }
         else {
-            alert("helaas dit antwoord is fout.");
+            var game = document.getElementsByTagName("game")[0];
+            game.appendChild(this.wrong_div);
+            this.wrong_div.style.width = "13.7vw";
+            this.wrong_div.style.height = "5.7vh";
+            this.wrong_div.style.transform = "translate(10vw, 39.2vh)";
+            this.wrong_div.style.borderRadius = "25px";
+            this.wrong_div.style.border = "none";
+            this.wrong_div.style.fontSize = "20px";
+            this.wrong_div.style.paddingLeft = "1vw";
+            this.wrong_div.style.fontFamily = "Arial Black";
+            this.wrong_div.style.textTransform = "uppercase";
+            this.wrong_div.style.zIndex = "999";
+            this.wrong_div.id = "input1";
+            var myloc = new Image();
+            myloc.useMap = "/docs/assets/fout_antwoord.png";
+            var img = document.createElement('img');
+            img.setAttribute('src', myloc.useMap);
+            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(28.3vw, 26.5vh);cursor:pointer;");
+            game.appendChild(img);
         }
     };
     Act1.prototype.searchOnline = function () {
@@ -180,6 +199,7 @@ var Act1 = (function () {
     };
     Act1.prototype.webmail = function () {
         console.log("webmail is aangeklikt");
+        window.open('https://webmail.hr.nl', '_blank');
     };
     Act1.prototype.osiris = function () {
         console.log("osiris is aangeklikt");
@@ -204,6 +224,7 @@ var Act1 = (function () {
             button_next.remove();
             button_previous.remove();
             background.style.zIndex = "-1";
+            window.open('https://google.nl', '_blank');
         });
         button_previous.style.width = "6.2vw";
         button_previous.style.height = "5vh";
@@ -219,6 +240,22 @@ var Act1 = (function () {
     };
     Act1.prototype.studentenServiceCenter = function () {
         console.log("ssc is aangeklikt");
+        var background = document.getElementsByTagName("backgroundact1")[0];
+        var game = document.getElementsByTagName("game")[0];
+        var button_next = document.createElement("button");
+        game.appendChild(button_next);
+        background.style.backgroundImage = "url(assets/ssc_popup.png)";
+        background.style.zIndex = "1";
+        button_next.style.width = "9.2vw";
+        button_next.style.height = "5vh";
+        button_next.style.transform = "translate(59.8vw, 64vh)";
+        button_next.style.opacity = "0%";
+        button_next.style.zIndex = "999";
+        button_next.addEventListener("click", function () {
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+            button_next.remove();
+            background.style.zIndex = "-1";
+        });
     };
     Act1.prototype.studentenpas = function () {
         console.log("studentenpas is aangeklikt");
@@ -249,6 +286,23 @@ var Act1 = (function () {
     };
     Act1.prototype.lms = function () {
         console.log("lms is aangeklikt");
+        var background = document.getElementsByTagName("backgroundact1")[0];
+        var game = document.getElementsByTagName("game")[0];
+        var button_next = document.createElement("button");
+        game.appendChild(button_next);
+        background.style.backgroundImage = "url(assets/lms_popup.png)";
+        background.style.zIndex = "1";
+        button_next.style.width = "9.2vw";
+        button_next.style.height = "5vh";
+        button_next.style.transform = "translate(59.8vw, 64vh)";
+        button_next.style.opacity = "0%";
+        button_next.style.zIndex = "999";
+        button_next.addEventListener("click", function () {
+            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
+            button_next.remove();
+            background.style.zIndex = "-1";
+            window.open('https://lms.hr.nl', '_blank');
+        });
     };
     Act1.prototype.goBack = function () {
         console.log("terug naar invulscherm");
@@ -1389,127 +1443,127 @@ var LocatieSelectie = (function () {
                 case 'blaak':
                     clicked = educations.blaak;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
                 case 'kralingse_zoom':
                     clicked = educations.kralingse_zoom;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
                 case 'lloyd_straat':
                     clicked = educations.lloyd_straat;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
                 case 'max_euwelaan':
                     clicked = educations.max_euwelaan;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
                 case 'museumpark_hoogbouw':
                     clicked = educations.museumpark_hoogbouw;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
                 case 'museumpark_laagbouw':
                     clicked = educations.museumpark_laagbouw;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
                 case 'pieter_de_hoogweg':
                     clicked = educations.pieter_de_hoogweg;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
                 case 'posthumalaan':
                     clicked = educations.posthumalaan;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
                 case 'rmd_rotterdam':
                     clicked = educations.rmd_rotterdam;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
                 case 'rochussenstraat':
                     clicked = educations.rochussenstraat;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
                 case 'wijnhaven_61':
                     clicked = educations.wijnhaven_61;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
                 case 'wijnhaven_99':
                     clicked = educations.wijnhaven_99;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
                 case 'wijnhaven_103':
                     clicked = educations.wijnhaven_103;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
                 case 'wijnhaven_107':
                     clicked = educations.wijnhaven_107;
                     if (clicked.opleidingen.indexOf(yourEducation) > -1) {
-                        _this.popupLoc('correct', location, clicked.locatieinfo);
+                        _this.popupLoc('correct', location, clicked.locatieInfo);
                     }
                     else {
-                        _this.popupLoc('incorrect', location, clicked.locatieinfo);
+                        _this.popupLoc('incorrect', location, clicked.locatieInfo);
                     }
                     break;
             }
@@ -1525,8 +1579,8 @@ var LocatieSelectie = (function () {
         popupLocation.appendChild(locationImage);
         locationImage.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/" + location + ".png)";
         if (awnser == 'correct') {
-            popupLocation.innerHTML += 'correct';
-            popupLocation.innerHTML += location;
+            popupLocation.innerHTML += 'correct<br>';
+            popupLocation.innerHTML += info;
             var goto = document.createElement('button');
             popupLocation.appendChild(goto);
             goto.innerHTML = "Loop naar binnen";
@@ -1538,8 +1592,8 @@ var LocatieSelectie = (function () {
             });
         }
         else {
-            popupLocation.innerHTML += 'incorrect';
-            popupLocation.innerHTML += location;
+            popupLocation.innerHTML += 'incorrect<br>';
+            popupLocation.innerHTML += info;
             var goto = document.createElement('button');
             popupLocation.appendChild(goto);
             goto.innerHTML = "Probeer opnieuw";
@@ -1567,7 +1621,7 @@ var Locations = (function () {
                 "Watermanagement",
                 "Werktuigbouwkunde"
             ],
-            locatieInfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.blaak = {
             opleidingen: [
@@ -1580,7 +1634,7 @@ var Locations = (function () {
                 "Design",
                 "Education in Arts"
             ],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.kralingse_zoom = {
             opleidingen: [
@@ -1599,7 +1653,7 @@ var Locations = (function () {
                 "Master in International Supply Chain Management",
                 "Commerciële Economie"
             ],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.lloyd_straat = {
             opleidingen: [
@@ -1608,13 +1662,13 @@ var Locations = (function () {
                 "Maritiem Officier",
                 "Maritieme Techniek"
             ],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.max_euwelaan = {
             opleidingen: [
                 "Commerciële Economie | SportMarketing & Management"
             ],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.museumpark_hoogbouw = {
             opleidingen: [
@@ -1638,7 +1692,7 @@ var Locations = (function () {
                 "Pedagogiek",
                 "Ondernemen"
             ],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.museumpark_laagbouw = {
             opleidingen: [
@@ -1659,27 +1713,27 @@ var Locations = (function () {
                 "Lerarenopleiding VO/BVE Wiskunde",
                 "Social Work"
             ],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.pieter_de_hoogweg = {
             opleidingen: [
                 "Industrieel Product Ontwerpen",
                 "Mens en Techniek | Gezondheidszorg Technologie"
             ],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.posthumalaan = {
             opleidingen: [
                 "International Business"
             ],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.rmd_rotterdam = {
             opleidingen: [
                 "Automotive",
                 "River Delta Development"
             ],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.rochussenstraat = {
             opleidingen: [
@@ -1698,23 +1752,23 @@ var Locations = (function () {
                 "Physician Assistant (algemeen)",
                 "Physician Assistant (Klinisch Verloskundige)"
             ],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.wijnhaven_61 = {
             opleidingen: [
                 "Leisure & Events Management"
             ],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.wijnhaven_99 = {
             opleidingen: [
                 "Creative Media and Game Technologies"
             ],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.wijnhaven_103 = {
             opleidingen: [],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
         this.wijnhaven_107 = {
             opleidingen: [
@@ -1723,7 +1777,7 @@ var Locations = (function () {
                 "Informatica",
                 "Technische Informatica"
             ],
-            locatieinfo: ""
+            locatieInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         };
     }
     return Locations;

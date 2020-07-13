@@ -180,6 +180,14 @@ pin{
     position: absolute;
 }
 
+pin:hover{
+    height:7vh;
+    width:7vh;
+    margin-top:-4vh;
+    margin-left:-2vh;
+    transition:1s;
+}
+
 popuplocation{
     background-color: #ffb911;
     position: absolute;
@@ -192,6 +200,7 @@ popuplocation{
     left:38vw;
     border-radius: 1vh;
     box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
+    font-size:0.7rem;
 }
 
 popuplocation button{
