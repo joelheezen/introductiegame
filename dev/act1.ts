@@ -102,11 +102,20 @@ class Act1 {
         }
         else{
             let game = document.getElementsByTagName("game")[0]
+            let background = document.createElement("backgroundact2")
+
+            game.appendChild(background)
+            game.removeChild(this.input1)
+            game.removeChild(this.input2)
+            game.removeChild(this.input3)
+
+            background.style.backgroundImage = `url(/docs/assets/backgroundact1main2.png)`
 
             game.appendChild(this.wrong_div)
             this.wrong_div.style.width = `13.7vw`
             this.wrong_div.style.height = `5.7vh`
-            this.wrong_div.style.transform = `translate(10vw, 39.2vh)`
+            this.wrong_div.style.position = `absolute`
+            this.wrong_div.style.transform = `translate(39.2vw, 39.2vh)`
             this.wrong_div.style.borderRadius = `25px`
             this.wrong_div.style.border = `none`
             this.wrong_div.style.fontSize = `20px`
