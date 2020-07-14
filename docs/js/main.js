@@ -337,7 +337,6 @@ var Act2 = (function () {
         this.input1.value = localStorage.getItem(this.number1);
         this.input1.id = "input1";
         this.input1.addEventListener("keyup", function () {
-            _this.codeCheck("input1", _this.input1, "D", 'd');
             _this.localStorageUpdate();
             _this.codeEind();
         });
@@ -354,7 +353,6 @@ var Act2 = (function () {
         this.input2.value = localStorage.getItem(this.number2);
         this.input2.id = "input2";
         this.input2.addEventListener("keyup", function () {
-            _this.codeCheck("input2", _this.input2, "B", 'b');
             _this.localStorageUpdate();
             _this.codeEind();
         });
@@ -371,7 +369,6 @@ var Act2 = (function () {
         this.input3.value = localStorage.getItem(this.number3);
         this.input3.id = "input3";
         this.input3.addEventListener("keyup", function () {
-            _this.codeCheck("input3", _this.input3, "N", 'n');
             _this.localStorageUpdate();
             _this.codeEind();
         });
@@ -388,7 +385,6 @@ var Act2 = (function () {
         this.input4.value = localStorage.getItem(this.number4);
         this.input4.id = "input4";
         this.input4.addEventListener("keyup", function () {
-            _this.codeCheck("input4", _this.input4, "V", 'v');
             _this.localStorageUpdate();
             _this.codeEind();
         });
@@ -405,7 +401,6 @@ var Act2 = (function () {
         this.input5.value = localStorage.getItem(this.number5);
         this.input5.id = "input5";
         this.input5.addEventListener("keyup", function () {
-            _this.codeCheck("input5", _this.input5, "E", 'e');
             _this.localStorageUpdate();
             _this.codeEind();
         });
@@ -417,22 +412,13 @@ var Act2 = (function () {
         localStorage.setItem(this.number4, document.getElementById("input4").value);
         localStorage.setItem(this.number5, document.getElementById("input5").value);
     };
-    Act2.prototype.codeCheck = function (input, inputtwee, awnser, awnser2) {
-        console.log(input);
-        if (document.getElementById(input).value == awnser || document.getElementById(input).value == awnser2) {
-            inputtwee.style.border = "thick solid #00FF00";
-        }
-        else {
-            inputtwee.style.border = "thick solid #FF0000";
-        }
-    };
     Act2.prototype.setHint = function () {
-        new popup("Zoek je juiste kleur bij de juiste persoon.", 5, 93, 24, 2.5);
+        new popup("Zoek je juiste kleur bij de juiste persoon.", 5, 93, 340, 20);
         new popup("Hulp nodig? Blijf (er) niet (mee) rondlopen! Hier moet je zijn: Hulp bij studie. De hogeschool biedt allerlei vormen van een-op-een begeleiding en ondersteuning." +
-            " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!", 64, 75, 30, 20);
-        new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.", 20, 45, 20, 6);
-        new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door", 59, 45, 20, 8);
-        new popup("Solliciteren is soms een numbers game", 82, 45, 15, 6);
+            " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!", 64, 75, 300, 200);
+        new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.", 20, 45, 200, 60);
+        new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door", 59, 45, 300, 80);
+        new popup("Solliciteren is soms een numbers game", 82, 45, 250, 60);
     };
     Act2.prototype.codeEind = function () {
         var codeString = document.getElementById("input1").value +
@@ -441,8 +427,22 @@ var Act2 = (function () {
             document.getElementById("input4").value +
             document.getElementById("input5").value;
         console.log(codeString);
-        if (codeString == "DBNVE") {
-            console.log("winner");
+        if (codeString.toLowerCase() == "dbnve") {
+            console.log("goed ");
+            this.input1.style.border = "thick solid #00FF00";
+            this.input2.style.border = "thick solid #00FF00";
+            this.input3.style.border = "thick solid #00FF00";
+            this.input4.style.border = "thick solid #00FF00";
+            this.input5.style.border = "thick solid #00FF00";
+            new popup("De puzzel is opgelost. Daar komt de peercoach", 40, 50, 300, 35);
+        }
+        else {
+            console.log("fout");
+            this.input1.style.border = "thick solid #FF0000";
+            this.input2.style.border = "thick solid #FF0000";
+            this.input3.style.border = "thick solid #FF0000";
+            this.input4.style.border = "thick solid #FF0000";
+            this.input5.style.border = "thick solid #FF0000";
         }
     };
     Act2.prototype.makeLevelIcon = function (posX, posY, width, height) {
@@ -485,6 +485,8 @@ var Act2 = (function () {
         });
     };
     Act2.prototype.createFolderItems = function () {
+        var _this = this;
+        this.folderBackground = document.createElement("folderbackground");
         this.folderItem1 = document.createElement("folderitem");
         this.folderItem2 = document.createElement("folderitem");
         this.folderItem3 = document.createElement("folderitem");
@@ -497,12 +499,16 @@ var Act2 = (function () {
         this.game.appendChild(this.folderItem4);
         this.game.appendChild(this.folderItem5);
         this.game.appendChild(this.folderItem6);
+        this.folderBackground.style.backgroundColor = "black";
+        this.folderBackground.style.opacity = "0.8";
+        this.folderBackground.style.zIndex = "15";
         this.folderItem1.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_getallen.png)';
         this.folderItem1.style.transform = "translate(20vw,72vh)";
         this.folderItem1.style.width = '8.3vw';
         this.folderItem1.style.height = '8.3vh';
         this.folderItem1.addEventListener("click", function () {
             console.log("folder1");
+            _this.game.appendChild(_this.folderBackground);
             new Act2folder1;
         });
         this.folderItem2.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_studie.png)';
@@ -511,6 +517,7 @@ var Act2 = (function () {
         this.folderItem2.style.height = '12vh';
         this.folderItem2.addEventListener("click", function () {
             console.log("folder2");
+            _this.game.appendChild(_this.folderBackground);
             new Act2folder2;
         });
         this.folderItem3.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_solliciteren.png)';
@@ -519,6 +526,7 @@ var Act2 = (function () {
         this.folderItem3.style.height = '8vh';
         this.folderItem3.addEventListener("click", function () {
             console.log("folder3");
+            _this.game.appendChild(_this.folderBackground);
             new Act2folder3;
         });
         this.folderItem4.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_coia.png)';
@@ -527,6 +535,7 @@ var Act2 = (function () {
         this.folderItem4.style.height = '10vh';
         this.folderItem4.addEventListener("click", function () {
             console.log("folder4");
+            _this.game.appendChild(_this.folderBackground);
             new Act2folder4;
         });
         this.folderItem5.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_morsecode.png)';
@@ -535,6 +544,7 @@ var Act2 = (function () {
         this.folderItem5.style.height = '10vh';
         this.folderItem5.addEventListener("click", function () {
             console.log("folder5");
+            _this.game.appendChild(_this.folderBackground);
             new Act2folder5;
         });
         this.folderItem6.style.backgroundImage = 'url(assets/Akte2/Postervormen&kleuren.jpg)';
@@ -543,6 +553,7 @@ var Act2 = (function () {
         this.folderItem6.style.height = '11.6vh';
         this.folderItem6.addEventListener("click", function () {
             console.log("folder6");
+            _this.game.appendChild(_this.folderBackground);
             new Act2folder6;
         });
     };
@@ -560,12 +571,11 @@ var folders = (function () {
         this.folder.style.height = '100vh';
         this.game.appendChild(this.folder);
         this.folder.addEventListener("click", function () {
+            var folderBG = document.getElementsByTagName('folderbackground')[0];
             console.log("folder removed");
+            folderBG.remove();
             _this.folder.remove();
         });
-    };
-    folders.prototype.removeMe = function () {
-        this.folder.remove();
     };
     return folders;
 }());
@@ -802,10 +812,10 @@ var Act3 = (function () {
         this.game = document.getElementsByTagName("game")[0];
         this.bg = document.createElement("videoBackground");
         this.video = document.createElement("video");
-        localStorage.setItem("note1Save", " ");
-        localStorage.setItem("note2Save", " ");
-        localStorage.setItem("note3Save", " ");
-        localStorage.setItem("note4Save", " ");
+        localStorage.setItem("note1Save", "");
+        localStorage.setItem("note2Save", "");
+        localStorage.setItem("note3Save", "");
+        localStorage.setItem("note4Save", "");
         var playButton = document.createElement("button");
         this.bg.style.backgroundColor = "black";
         this.game.appendChild(this.bg);
@@ -1242,6 +1252,10 @@ var Act3 = (function () {
                     pinPopup.remove();
                 });
             });
+            var correct1 = 0;
+            var correct2 = 0;
+            var correct3 = 0;
+            var correct4 = 0;
             button2.style.width = "11.5vw";
             button2.style.height = "14.3vh";
             button2.style.transform = "translate(44.4vw, 37.6vh)";
@@ -1266,10 +1280,10 @@ var Act3 = (function () {
                 button.style.zIndex = "1";
                 button.style.position = "absolute";
                 button.addEventListener("click", function () {
-                    var note1 = document.getElementById("note1").value;
-                    var note2 = document.getElementById("note2").value;
-                    var note3 = document.getElementById("note3").value;
-                    var note4 = document.getElementById("note4").value;
+                    var note1 = document.getElementById("note1").value.toLowerCase();
+                    var note2 = document.getElementById("note2").value.toLowerCase();
+                    var note3 = document.getElementById("note3").value.toLowerCase();
+                    var note4 = document.getElementById("note4").value.toLowerCase();
                     localStorage.setItem("note1Save", note1);
                     localStorage.setItem("note2Save", note2);
                     localStorage.setItem("note3Save", note3);
@@ -1361,6 +1375,80 @@ var Act3 = (function () {
                 input4.style.backgroundColor = "transparent";
                 input4.value = input4Text;
                 input4.id = "note4";
+                if (correct1 == 1) {
+                    input1.style.color = "green";
+                    input1.style.borderColor = "black";
+                }
+                if (correct2 == 1) {
+                    input2.style.color = "green";
+                    input2.style.borderColor = "black";
+                }
+                if (correct3 == 1) {
+                    input3.style.color = "green";
+                    input3.style.borderColor = "black";
+                }
+                if (correct4 == 1) {
+                    input4.style.color = "green";
+                    input4.style.borderColor = "black";
+                }
+                input1.addEventListener("keyup", function () {
+                    var note1 = document.getElementById("note1").value.toLowerCase();
+                    if (note1 == "bibliotheek") {
+                        input1.style.color = "green";
+                        input1.style.borderColor = "black";
+                        correct1 = 1;
+                    }
+                    else {
+                        input1.style.color = "black";
+                        correct1 = 0;
+                    }
+                });
+                input2.addEventListener("keyup", function () {
+                    var note2 = document.getElementById("note2").value.toLowerCase();
+                    if (note2 == "5") {
+                        input2.style.color = "green";
+                        input2.style.borderColor = "black";
+                        correct2 = 1;
+                    }
+                    else {
+                        input2.style.color = "black";
+                        correct2 = 0;
+                    }
+                });
+                input3.addEventListener("keyup", function () {
+                    var note3 = document.getElementById("note3").value.toLowerCase();
+                    if (note3 == "word lid") {
+                        input3.style.color = "green";
+                        input3.style.borderColor = "black";
+                        correct3 = 1;
+                    }
+                    else {
+                        input3.style.color = "black";
+                        correct3 = 0;
+                    }
+                });
+                input4.addEventListener("keyup", function () {
+                    var note4 = document.getElementById("note4").value.toLowerCase();
+                    if (note4 == "24,20") {
+                        input4.style.color = "green";
+                        input4.style.borderColor = "black";
+                        correct4 = 1;
+                    }
+                    else {
+                        input4.style.color = "black";
+                        correct4 = 0;
+                    }
+                });
+                popup.addEventListener("keyup", function () {
+                    var note1 = document.getElementById("note1").value.toLowerCase();
+                    var note2 = document.getElementById("note2").value.toLowerCase();
+                    var note3 = document.getElementById("note3").value.toLowerCase();
+                    var note4 = document.getElementById("note4").value.toLowerCase();
+                    if (note1 == "bibliotheek" && note2 == "5" && note3 == "word lid" && note4 == "24,20") {
+                        game.innerHTML = "";
+                        new Ending;
+                    }
+                });
             });
             button3.style.width = "16.3vw";
             button3.style.height = "17.9vh";
@@ -1422,9 +1510,9 @@ var Act3 = (function () {
                     text.style.fontSize = "2.5vh";
                     text.style.transform = "translate(50.5vw, 13vh)";
                     text.style.position = "absolute";
-                    text.style.width = "40vw";
+                    text.style.width = "35vw";
                     text.style.height = "10vh";
-                    text.innerHTML = "Klik op de aansichtkaart om een stip te zetten, klik op de stip om deze weer weg te halen. Uiteindelijk komt er een uitkomst vul deze in in het notitieboekje!";
+                    text.innerHTML = "Klik op de aansichtkaart om een stip te zetten, klik op de stip om deze weer weg te halen. Uiteindelijk komt er een uitkomst vul deze in in het notitieboekje!</br> Hint: het is alleen het eerste woord wat je krijgt nadat je alles in hebt gevuld.";
                     popup_1.addEventListener("click", function (event) {
                         var dot = document.createElement("dot");
                         popup_1.appendChild(dot);
@@ -1455,9 +1543,9 @@ var Act3 = (function () {
                 game.appendChild(popup);
                 popup.style.backgroundImage = "url(assets/Akte3/Rotterdampas.png)";
                 popup.style.backgroundSize = "100% 100%";
-                popup.style.width = "40vw";
+                popup.style.width = "30vw";
                 popup.style.height = "30vh";
-                popup.style.transform = "translate(30vw, 35vh)";
+                popup.style.transform = "translate(40vw, 35vh)";
                 popup.style.position = "absolute";
                 popup.style.zIndex = "2";
                 var button = document.createElement("button");
@@ -1483,7 +1571,7 @@ var Act3 = (function () {
             button7.style.width = "14.3vw";
             button7.style.height = "15vh";
             button7.style.transform = "translate(15.2vw, 59vh)";
-            button7.style.opacity = "30%";
+            button7.style.opacity = "0%";
             button7.addEventListener("click", function () {
                 var popup = document.createElement("popup");
                 var game = document.getElementsByTagName("game")[0];
@@ -1499,41 +1587,55 @@ var Act3 = (function () {
                     button.remove();
                     popup.remove();
                 });
-                var clicked = true;
-                popup.style.backgroundImage = "url(assets/Akte3/Rotterdampas.png)";
+                popup.style.backgroundImage = "url(assets/Akte3/vidiVici.png)";
                 popup.style.backgroundSize = "100% 100%";
-                popup.style.width = "40vw";
-                popup.style.height = "30vh";
-                popup.style.transform = "translate(30vw, 35vh)";
+                popup.style.width = "25vw";
+                popup.style.height = "57vh";
+                popup.style.transform = "translate(37.5vw, 15vh)";
                 popup.style.position = "absolute";
                 popup.style.zIndex = "2";
-                popup.addEventListener("click", function () {
-                    if (clicked == true) {
-                        popup.style.backgroundImage = "url(assets/Akte3/Binnenrotte.jpg)";
-                        clicked = false;
-                    }
-                    else {
-                        popup.style.backgroundImage = "url(assets/Akte3/Rotterdampas.png)";
-                        clicked = true;
-                    }
-                });
+                popup.style.paddingTop = "8vh";
+                popup.style.paddingBottom = "1vh";
+                popup.style.paddingLeft = "1vw";
+                popup.style.paddingRight = "1vw";
+                popup.style.boxShadow = "rgba(0, 0, 0, 0.5) 15px 15px";
+                popup.style.fontSize = "1.5vh";
+                popup.innerHTML += "Zin in een feestje? Maar heb ik daar wel tijd voor? Nu je student wordt zal je het razend druk gaat krijgen met je studie. Heb je eigenlijk nog wel tijd om iets leuks te doen? Je wil toch ook een beetje genieten van je studententijd? Hoe doen andere studenten dat eigenlijk?\n                </br>Stel: Je gaat om elf uur naar bed en je staat om zeven uur weer op om naar de hogeschool te gaan. In het weekend ga je vaak wat later naar bed, maar slaap je ook net zoveel uit. Je hebt 0:45 uur reistijd van huis naar school, een half uur om aan te kleden en te eten 's ochtend. Op school heb je van maandag t/m donderdag les van 8.30 uur tot 10:10 uur en je hebt les 12:10 tot 13.50 uur. Vrijdag heb je ook les, maar die volg je online via Teams. Naast je lessen heb je nog ongeveer 4 uur nodig voor je huiswerk. Dat doe je vaak effici\u00EBnt tussen de lessen door, hoef je minder 's avonds en in het weekend te doen. Je kookt je eigen eten, kost een half uurtje en tja, binnen 20 minuten heb je dat op. Per week werk je gemiddeld 14 uur in een leuk koffietentje in de stad. Je wilt het eigenlijk niet, maar aan social media ben je bijna anderhalf uur per dag kwijt. Oh ja, en je belt natuurlijk elke week een keer met je ouders (of oma/opa/tante) voor zo'n 30 min. \n                </br></br>Hoeveel tijd hou jij over voor ontspanning?\n                </br></br>Gemiddeld ... uur per dag. ";
             });
             button8.style.width = "5.9vw";
-            button8.style.height = "9.4vw";
+            button8.style.height = "11.7vh";
             button8.style.transform = "translate(64.8vw, 34.1vh)";
-            button8.style.opacity = "30%";
+            button8.style.opacity = "0%";
+            button8.style.zIndex = "-1";
             button8.addEventListener("click", function () {
                 var game = document.getElementsByTagName("game")[0];
+                var popup = document.createElement("pinPopup");
+                var button = document.createElement("button");
+                game.appendChild(button);
+                game.appendChild(popup);
                 var audio = document.createElement("audio");
                 var audioCheck = document.getElementsByTagName("audio")[0];
                 if (audioCheck == null) {
-                    game.appendChild(audio);
+                    popup.appendChild(audio);
                     audio.src = "assets/Akte3/audio.mp3";
                     audio.autoplay = true;
+                    audio.controls = true;
+                    audio.style.width = "100%";
+                    audio.style.paddingBottom = "1vh";
                 }
-                audio.onended = function () {
-                    audio.remove();
-                };
+                popup.style.zIndex = "2";
+                popup.style.paddingTop = "1vh";
+                popup.style.transform = "translate(35vw, 43vh)";
+                popup.innerHTML += "Hoeveel geld houd ik over voor een rondje?";
+                button.style.width = "100vw";
+                button.style.height = "100vh";
+                button.style.position = "absolute";
+                button.style.zIndex = "1";
+                button.style.opacity = "0%";
+                button.addEventListener("click", function () {
+                    button.remove();
+                    popup.remove();
+                });
             });
         };
     }
@@ -1546,6 +1648,34 @@ var Act3 = (function () {
         }
     };
     return Act3;
+}());
+var Ending = (function () {
+    function Ending() {
+        var bg = document.createElement("backgroundEnd");
+        var game = document.getElementsByTagName("game")[0];
+        game.appendChild(bg);
+        bg.style.backgroundImage = "url(assets/Akte3/Binnenrotte.jpg)";
+        bg.style.backgroundSize = "100% 100%";
+        bg.style.backgroundRepeat = "no-repeat";
+        bg.style.width = "100vw";
+        bg.style.height = "100vh";
+        bg.style.position = "absolute";
+        var popup = document.createElement("pinPopup");
+        game.appendChild(popup);
+        popup.style.transform = "translate(34vw, 20vh)";
+        popup.innerHTML += "je score is te slecht om te laten zien";
+        var button = document.createElement("button");
+        popup.appendChild(button);
+        button.style.position = "absolute";
+        button.style.width = "94%";
+        button.style.height = "20%";
+        button.style.transform = "translate(0%, 30%)";
+        button.innerHTML += "klik hier voor een uitdraai van je score";
+        button.addEventListener("click", function () {
+            window.print();
+        });
+    }
+    return Ending;
 }());
 var EnterBuilding = (function () {
     function EnterBuilding() {
@@ -1600,7 +1730,7 @@ var Game = (function () {
     }
     Game.prototype.buttonPress1 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
-        new Act3();
+        new Ending();
     };
     Game.prototype.buttonPress2 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
@@ -1613,6 +1743,15 @@ var Game = (function () {
     return Game;
 }());
 window.addEventListener("load", function () { return new Game(); });
+var hint = (function () {
+    function hint() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.hint1 = document.createElement("hinticon");
+        this.hint2 = document.createElement("hinticon");
+        this.hint3 = document.createElement("hinticon");
+    }
+    return hint;
+}());
 var LocatieSelectie = (function () {
     function LocatieSelectie() {
         var _this = this;
@@ -2140,11 +2279,11 @@ var popup = (function () {
         this.field.innerText = text;
         this.field.style.position = "absolute";
         this.field.style.transform = "translate(" + posX + "vw," + posY + "vh)";
-        this.field.style.width = width.toString() + "vw";
-        this.field.style.height = height.toString() + "vh";
+        this.field.style.width = width.toString() + "px";
+        this.field.style.height = height.toString() + "px";
         this.field.style.borderRadius = "20px";
         this.field.style.backgroundColor = "#ffb911";
-        this.field.style.fontSize = "1vw";
+        this.field.style.fontSize = "14px";
         this.field.style.zIndex = "2";
         this.field.style.padding = "10px";
         this.field.style.boxShadow = "5px 10px";

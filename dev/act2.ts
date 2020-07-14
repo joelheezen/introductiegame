@@ -5,6 +5,8 @@ class Act2{
 
     folder : HTMLElement
 
+    folderBackground : HTMLElement
+
     folderItem1 : HTMLElement
     folderItem2 : HTMLElement
     folderItem3 : HTMLElement
@@ -110,7 +112,6 @@ class Act2{
         this.input1.value = localStorage.getItem(this.number1)!
         this.input1.id = "input1"
         this.input1.addEventListener("keyup",()=>{
-            this.codeCheck("input1",this.input1,"D",'d')
             this.localStorageUpdate()
             this.codeEind()
         })
@@ -129,7 +130,6 @@ class Act2{
         this.input2.value = localStorage.getItem(this.number2)!
         this.input2.id = "input2"
         this.input2.addEventListener("keyup",()=>{
-            this.codeCheck("input2",this.input2,"B",'b')
             this.localStorageUpdate()
             this.codeEind()
         })
@@ -148,7 +148,6 @@ class Act2{
         this.input3.value = localStorage.getItem(this.number3)!
         this.input3.id = "input3"
         this.input3.addEventListener("keyup",()=>{
-            this.codeCheck("input3",this.input3,"N",'n')
             this.localStorageUpdate()
             this.codeEind()
         })
@@ -167,7 +166,6 @@ class Act2{
         this.input4.value = localStorage.getItem(this.number4)!
         this.input4.id = "input4"
         this.input4.addEventListener("keyup",()=>{
-            this.codeCheck("input4",this.input4,"V",'v')
             this.localStorageUpdate()
             this.codeEind()
         })
@@ -187,7 +185,6 @@ class Act2{
         this.input5.value = localStorage.getItem(this.number5)!
         this.input5.id = "input5"
         this.input5.addEventListener("keyup",()=>{
-            this.codeCheck("input5",this.input5,"E",'e')
             this.localStorageUpdate()
             this.codeEind()
         })
@@ -199,23 +196,14 @@ class Act2{
         localStorage.setItem(this.number4, (<HTMLInputElement>document.getElementById("input4")).value)
         localStorage.setItem(this.number5, (<HTMLInputElement>document.getElementById("input5")).value)
     }
-    codeCheck(input: string, inputtwee: HTMLElement, awnser:string, awnser2:string){
-        console.log(input)
-        if((<HTMLInputElement>document.getElementById(input)).value == awnser || (<HTMLInputElement>document.getElementById(input)).value == awnser2){
-            inputtwee.style.border = "thick solid #00FF00"
-        }else{
-            inputtwee.style.border = "thick solid #FF0000"
-        }
 
-    }
     setHint(){
-        new popup("Zoek je juiste kleur bij de juiste persoon.",5,93,24,2.5)
+        new popup("Zoek je juiste kleur bij de juiste persoon.",5,93,340,20)
         new popup("Hulp nodig? Blijf (er) niet (mee) rondlopen! Hier moet je zijn: Hulp bij studie. De hogeschool biedt allerlei vormen van een-op-een begeleiding en ondersteuning."+
-        " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!",64,75,30,20)
-        new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.",20,45,20,6)
-        new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door",59,45,20,8)
-        new popup("Solliciteren is soms een numbers game",82,45,15,6)
-
+        " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!",64,75,300,200)
+        new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.",20,45,200,60)
+        new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door",59,45,300,80)
+        new popup("Solliciteren is soms een numbers game",82,45,250,60)
     }
 
     codeEind(){
@@ -226,8 +214,22 @@ class Act2{
         (<HTMLInputElement>document.getElementById("input4")).value + 
         (<HTMLInputElement>document.getElementById("input5")).value
         console.log(codeString)
-        if(codeString=="DBNVE"){
-            console.log("winner")
+        if(codeString.toLowerCase() =="dbnve"){
+            console.log("goed ")
+            this.input1.style.border = "thick solid #00FF00"
+            this.input2.style.border = "thick solid #00FF00"
+            this.input3.style.border = "thick solid #00FF00"
+            this.input4.style.border = "thick solid #00FF00"
+            this.input5.style.border = "thick solid #00FF00"
+            new popup("De puzzel is opgelost. Daar komt de peercoach",40,50,300,35)
+        }else{
+            console.log("fout")
+            this.input1.style.border = "thick solid #FF0000"
+            this.input2.style.border = "thick solid #FF0000"
+            this.input3.style.border = "thick solid #FF0000"
+            this.input4.style.border = "thick solid #FF0000"
+            this.input5.style.border = "thick solid #FF0000"
+            
         }
     }
     
@@ -275,6 +277,8 @@ class Act2{
     }
 
     createFolderItems(){
+
+        this.folderBackground = document.createElement("folderbackground")
         
         this.folderItem1 = document.createElement("folderitem")
         this.folderItem2 = document.createElement("folderitem")
@@ -290,6 +294,9 @@ class Act2{
         this.game.appendChild(this.folderItem5)
         this.game.appendChild(this.folderItem6)
 
+        this.folderBackground.style.backgroundColor = "black"
+        this.folderBackground.style.opacity = "0.8"
+        this.folderBackground.style.zIndex = "15"
         
         this.folderItem1.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_getallen.png)'
         this.folderItem1.style.transform = `translate(20vw,72vh)`
@@ -297,6 +304,7 @@ class Act2{
         this.folderItem1.style.height = '8.3vh'
         this.folderItem1.addEventListener("click",()=>{
             console.log("folder1")
+            this.game.appendChild(this.folderBackground)
             new Act2folder1
         })
 
@@ -306,6 +314,7 @@ class Act2{
         this.folderItem2.style.height = '12vh'
         this.folderItem2.addEventListener("click",()=>{
             console.log("folder2")
+            this.game.appendChild(this.folderBackground)
             new Act2folder2
         })
 
@@ -315,6 +324,7 @@ class Act2{
         this.folderItem3.style.height = '8vh'
         this.folderItem3.addEventListener("click",()=>{
             console.log("folder3")
+            this.game.appendChild(this.folderBackground)
             new Act2folder3
         })
 
@@ -324,6 +334,7 @@ class Act2{
         this.folderItem4.style.height = '10vh'
         this.folderItem4.addEventListener("click",()=>{
             console.log("folder4")
+            this.game.appendChild(this.folderBackground)
             new Act2folder4
         })
 
@@ -333,6 +344,7 @@ class Act2{
         this.folderItem5.style.height = '10vh'
         this.folderItem5.addEventListener("click",()=>{
             console.log("folder5")
+            this.game.appendChild(this.folderBackground)
             new Act2folder5
         })
         this.folderItem6.style.backgroundImage = 'url(assets/Akte2/Postervormen&kleuren.jpg)'
@@ -341,6 +353,7 @@ class Act2{
         this.folderItem6.style.height = '11.6vh'
         this.folderItem6.addEventListener("click",()=>{
             console.log("folder6")
+            this.game.appendChild(this.folderBackground)
             new Act2folder6
         })
         
@@ -360,13 +373,12 @@ class folders{
         this.folder.style.height = '100vh'
         this.game.appendChild(this.folder)
         this.folder.addEventListener("click",()=>{
+            let folderBG = document.getElementsByTagName('folderbackground')[0]
             console.log("folder removed")
+            folderBG.remove()
             this.folder.remove()
         })
         
-    }
-    removeMe(){
-        this.folder.remove()
     }
 }
 
@@ -376,6 +388,7 @@ class Act2folder1 extends folders{
         super()
         this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer1getallen.jpg)'
         this.folder.style.backgroundSize = '50% 50%'
+    
     }
 }
 class Act2folder2 extends folders{
