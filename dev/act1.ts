@@ -21,45 +21,32 @@ class Act1 {
         let game = document.getElementsByTagName("game")[0]
 
         let background = document.createElement("backgroundact1")
+        let location = localStorage.getItem('location')
+        background.style.backgroundImage = `url(assets/PRODUCTION/PRODUCTION/ASSETS/${location}_door.jpg)`
         game.appendChild(background)
 
+        let banner = document.createElement('banner')
+        game.appendChild(banner)
+
+        let act1Box = document.createElement('act1Box')
+        act1Box.innerHTML = 'Oh nee! De deur zit dicht en heeft een specifieke sleutel nodig om gepend te worden. Vul de juisten vormen van de sleutel in.'
+        game.appendChild(act1Box)
         
         game.appendChild(this.input1)
-        this.input1.style.width = `13.7vw`
-        this.input1.style.height = `5.7vh`
+        this.input1.classList.add('inputShape')
         this.input1.style.transform = `translate(26vw, 39.2vh)`
-        this.input1.style.borderRadius = `25px`
-        this.input1.style.border = `none`
-        this.input1.style.fontSize = `20px`
-        this.input1.style.paddingLeft = `1vw`
-        this.input1.style.fontFamily = `Arial Black`
-        this.input1.style.textTransform = `uppercase`
         this.input1.value = this.input1Save
         this.input1.id = "input1"
 
         game.appendChild(this.input2)
-        this.input2.style.width = `13.7vw`
-        this.input2.style.height = `5.7vh`
+        this.input2.classList.add('inputShape')
         this.input2.style.transform = `translate(42.7vw, 39.2vh)`
-        this.input2.style.borderRadius = `25px`
-        this.input2.style.border = `none`
-        this.input2.style.fontSize = `20px`
-        this.input2.style.paddingLeft = `1vw`
-        this.input2.style.fontFamily = `Arial Black`
-        this.input2.style.textTransform = `uppercase`
         this.input2.value = this.input2Save
         this.input2.id = "input2"
 
         game.appendChild(this.input3)
-        this.input3.style.width = `13.7vw`
-        this.input3.style.height = `5.7vh`
+        this.input3.classList.add('inputShape')
         this.input3.style.transform = `translate(59.2vw, 39.2vh)`
-        this.input3.style.borderRadius = `25px`
-        this.input3.style.border = `none`
-        this.input3.style.fontSize = `20px`
-        this.input3.style.paddingLeft = `1vw`
-        this.input3.style.fontFamily = `Arial Black`
-        this.input3.style.textTransform = `uppercase`
         this.input3.value = this.input3Save
         this.input3.id = "input3"
 
@@ -67,15 +54,18 @@ class Act1 {
         this.button1.style.width = `15.1vw`
         this.button1.style.height = `7.5vh`
         this.button1.style.transform = `translate(42.4vw, 47.9vh)`
-        this.button1.style.opacity = `0%`
+        this.button1.innerHTML = "VERZENDEN"
+        this.button1.classList.add('verzenden')
         this.button1.addEventListener("click" , () => this.shapeCheck())
 
         let button2 = document.createElement("button")
         game.appendChild(button2)
+        button2.classList.add('search')
         button2.style.width = `18.5vw`
-        button2.style.height = `3vh`
+        button2.style.height = `4vh`
         button2.style.transform = `translate(25.25vw, 61vh)`
-        button2.style.opacity = `0%`
+        button2.style.opacity = `100%`
+        button2.innerHTML = 'Online zoeken naar vormen'
         button2.addEventListener("click" , () => this.searchOnline())
 
         let button3 = document.createElement("button")
@@ -121,7 +111,6 @@ class Act1 {
             this.wrong_div.style.border = `none`
             this.wrong_div.style.fontSize = `20px`
             this.wrong_div.style.paddingLeft = `1vw`
-            this.wrong_div.style.fontFamily = `Arial Black`
             this.wrong_div.style.textTransform = `uppercase`
             this.wrong_div.style.zIndex = `9999`
             this.wrong_div.id = "input1"
@@ -135,6 +124,34 @@ class Act1 {
         }
     }
 
+    onlinePopup(title:string,message:string,open:string){
+        let popup = document.createElement('onlinePopup')
+
+        let popupTitle = document.createElement('popupTitle')
+        popupTitle.innerHTML = title
+
+        let popupMessage = document.createElement('popupMessage')
+        popupMessage.innerHTML = message
+
+        let doorgaan = document.createElement('button')
+        doorgaan.innerHTML = 'Doorgaan'
+
+        doorgaan.addEventListener('click',()=>{
+
+            if(open !== ''){
+                window.open(open, '_blank');
+            }
+            popup.remove()
+        })
+
+        popup.appendChild(doorgaan)
+        popup.appendChild(popupTitle)
+        popup.appendChild(popupMessage)
+
+        let game = document.getElementsByTagName("game")[0]
+        game.appendChild(popup) 
+    }
+
     searchOnline() {
         
         this.input1Save = (<HTMLInputElement>document.getElementById("input1")).value
@@ -143,33 +160,17 @@ class Act1 {
         
         document.getElementsByTagName("game")[0].innerHTML = ""
         
-        let background = document.createElement("backgroundact1")
+        let background = document.createElement("backgroundOnline")
         let game = document.getElementsByTagName("game")[0]
         game.appendChild(background)
 
-        let button_next = document.createElement("button")
-        game.appendChild(button_next)
+        let banner = document.createElement('banner')
+        game.appendChild(banner)
 
         if(this.popupSave == false){
-            background.style.backgroundImage = `url(assets/plattegrond_popup.png)`
-            this.popupSave = true
-            background.style.zIndex = `9`
-        }else{
-            background.style.backgroundImage = `url(assets/plattegrond.jpg)`
-            game.removeChild(button_next)
-            background.style.zIndex = `-1`
+            this.onlinePopup('Welkom op jullie online plattegrond','Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel','')
+            this.popupSave = true;
         }
-
-        button_next.style.width = `9.2vw`
-        button_next.style.height = `5vh`
-        button_next.style.transform = `translate(59.8vw, 64vh)`
-        button_next.style.opacity = `0%`
-        button_next.style.zIndex = `999`
-        button_next.addEventListener("click" , function(){
-            background.style.backgroundImage = `url(assets/plattegrond.jpg)`
-            game.removeChild(button_next)
-            background.style.zIndex = `-1`
-        })
 
         let button1 = document.createElement("button")
         let button2 = document.createElement("button")
@@ -187,33 +188,33 @@ class Act1 {
         game.appendChild(button6)
         game.appendChild(button7)
 
-        button1.style.width = `19.6vw`
+        button1.style.width = `15.6vw`
         button1.style.height = `60.9vh`
-        button1.style.transform = `translate(5.7vw, 20.8vh)`
+        button1.style.transform = `translate(14.5vw, 20.8vh)`
         button1.style.opacity = `0%`
         button1.addEventListener("click" , () => this.webmail())
 
-        button2.style.width = `27.5vw`
+        button2.style.width = `22vw`
         button2.style.height = `12.3vh`
-        button2.style.transform = `translate(27.2vw, 69.8vh)`
+        button2.style.transform = `translate(31.7vw, 69.8vh)`
         button2.style.opacity = `0%`
         button2.addEventListener("click" , () => this.rooster())
 
-        button3.style.width = `13.2vw`
+        button3.style.width = `10.7vw`
         button3.style.height = `27.3vh`
-        button3.style.transform = `translate(56.3vw, 20.7vh)`
+        button3.style.transform = `translate(55vw, 20.7vh)`
         button3.style.opacity = `0%`
         button3.addEventListener("click" , () => this.studentenServiceCenter())
 
-        button4.style.width = `20.3vw`
+        button4.style.width = `16.3vw`
         button4.style.height = `18vh`
-        button4.style.transform = `translate(61.2vw, 63.8vh)`
+        button4.style.transform = `translate(59vw, 63.8vh)`
         button4.style.opacity = `0%`
         button4.addEventListener("click" , () => this.studentenpas())
 
-        button5.style.width = `12.8vw`
+        button5.style.width = `10.2vw`
         button5.style.height = `61.3vh`
-        button5.style.transform = `translate(83.7vw, 20.8vh)`
+        button5.style.transform = `translate(77vw, 20.8vh)`
         button5.style.opacity = `0%`
         button5.addEventListener("click" , () => this.lms())
 
@@ -243,81 +244,20 @@ class Act1 {
     }
 
     rooster(){
-        console.log("rooster is aangeklikt")
-
-        let background = <HTMLElement>document.getElementsByTagName("backgroundact1")[0]
-        let game = document.getElementsByTagName("game")[0]
-
-        let button_next = document.createElement("button")
-        game.appendChild(button_next)
-
-        let button_previous = document.createElement("button")
-        game.appendChild(button_previous)
-
-        
-        background.style.backgroundImage = `url(assets/rooster_popup.png)`
-        background.style.zIndex = `1`
-        
-    
-        button_next.style.width = `9.2vw`
-        button_next.style.height = `5vh`
-        button_next.style.transform = `translate(59.8vw, 64vh)`
-        button_next.style.opacity = `0%`
-        button_next.style.zIndex = `999`
-        button_next.addEventListener("click" , function(){
-            background.style.backgroundImage = `url(assets/plattegrond.jpg)`
-            button_next.remove()
-            button_previous.remove()
-            background.style.zIndex = `-1`
-            window.open('https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/', '_blank');
-        })
-
-        button_previous.style.width = `6.2vw`
-        button_previous.style.height = `5vh`
-        button_previous.style.transform = `translate(52.6vw, 64vh)`
-        button_previous.style.opacity = `0%`
-        button_previous.style.zIndex = `999`
-        button_previous.addEventListener("click" , function(){
-            background.style.backgroundImage = `url(assets/plattegrond.jpg)`
-            button_previous.remove()
-            button_next.remove()
-            background.style.zIndex = `-1`
-        })
+        this.onlinePopup('Rooster','Klik op doorgaan om je rooster te zien','https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/')
     }
 
     studentenServiceCenter(){
-        console.log("ssc is aangeklikt")
-
-        let background = <HTMLElement>document.getElementsByTagName("backgroundact1")[0]
-        let game = document.getElementsByTagName("game")[0]
-
-        let button_next = document.createElement("button")
-        game.appendChild(button_next)
-        
-        background.style.backgroundImage = `url(assets/ssc_popup.png)`
-        background.style.zIndex = `1`
-        
-    
-        button_next.style.width = `9.2vw`
-        button_next.style.height = `5vh`
-        button_next.style.transform = `translate(59.8vw, 64vh)`
-        button_next.style.opacity = `0%`
-        button_next.style.zIndex = `999`
-        button_next.addEventListener("click" , function(){
-            background.style.backgroundImage = `url(assets/plattegrond.jpg)`
-            button_next.remove()
-            background.style.zIndex = `-1`
-        })
+        this.onlinePopup('Student Service Center','Mail het SSC met je persoonlijke studentenmail:ssc@hr.nl','')
     }
 
     studentenpas(){
         console.log("studentenpas is aangeklikt")
         let game = document.getElementsByTagName("game")[0]
-        var myloc = new Image();  
-        myloc.useMap = "/docs/assets/studentenpas.png";  
+        
         var img = document.createElement('img')  
-        img.setAttribute('src', myloc.useMap);  
-        img.setAttribute('style', "height:25vh;width:24vw;transform:translate(28.7vw, 26.5vh);cursor:pointer;");  
+        img.src = "/docs/assets/studentenpas.png";
+        img.classList.add('studentenPas')  
         game.appendChild(img);
 
         img.addEventListener("click" , function(){
@@ -343,29 +283,7 @@ class Act1 {
     }
 
     lms(){
-        console.log("lms is aangeklikt")
-
-        let background = <HTMLElement>document.getElementsByTagName("backgroundact1")[0]
-        let game = document.getElementsByTagName("game")[0]
-
-        let button_next = document.createElement("button")
-        game.appendChild(button_next)
-        
-        background.style.backgroundImage = `url(assets/lms_popup.png)`
-        background.style.zIndex = `1`
-        
-    
-        button_next.style.width = `9.2vw`
-        button_next.style.height = `5vh`
-        button_next.style.transform = `translate(59.8vw, 64vh)`
-        button_next.style.opacity = `0%`
-        button_next.style.zIndex = `999`
-        button_next.addEventListener("click" , function(){
-            background.style.backgroundImage = `url(assets/plattegrond.jpg)`
-            button_next.remove()
-            background.style.zIndex = `-1`
-            window.open('https://lms.hr.nl', '_blank');
-        })
+        this.onlinePopup('LMS','Verschillende vakken en informatie kun je vinden door op doorgaan te klikken','https://lms.hr.nl')
     }
 
     goBack(){

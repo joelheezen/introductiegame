@@ -4,9 +4,8 @@ class Locations{
     
     }
 
-    
-
     academieplein = {
+        location: "academieplein",
         opleidingen: [
             "Biologie en Medisch Laboratoriumonderzoek",
             "Bouwkunde",
@@ -24,6 +23,7 @@ class Locations{
         locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/academieplein/" }
 
     blaak = {
+        location: "blaak",
         opleidingen: [ 
             "Arts & Crafts",
             "Autonome Beeldende Kunst",
@@ -37,6 +37,7 @@ class Locations{
         locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/blaak/"}
 
     kralingse_zoom = {
+        location: "krazingse_zoom",
         opleidingen:[
             "Accountancy",
             "Bedrijfskunde",
@@ -56,6 +57,7 @@ class Locations{
         locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/kralingse-zoom/" }
 
     lloyd_straat = {
+        location: "lloyd_straat",
         opleidingen:[
             "Chemische Technologie",
             "Logistics Engineering",
@@ -65,12 +67,14 @@ class Locations{
         locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/lloydstraat/"}
 
     max_euwelaan = {
+        location: "max_euwelaan",
         opleidingen:[
             "Commerciële Economie | SportMarketing & Management"
         ],
         locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/max-euwelaan/"}
 
     museumpark_hoogbouw = {
+        location: "museumpark_hoogbouw",
         opleidingen:[
             "Accountancy",
             "Crossmediale Communicatie",
@@ -96,6 +100,7 @@ class Locations{
     }
 
     museumpark_laagbouw = {
+        location: "museumpark_laagbouw",
         opleidingen:[
             "Academische pabo",
             "Lerarenopleiding Basisonderwijs (pabo)",
@@ -118,6 +123,7 @@ class Locations{
     }
 
     pieter_de_hoogweg = {
+        location: "pieter_de_hoogbouw",
         opleidingen:[
             "Industrieel Product Ontwerpen",
             "Mens en Techniek | Gezondheidszorg Technologie"
@@ -126,6 +132,7 @@ class Locations{
     } 
 
     posthumalaan = {
+        location: "posthumalaan",
         opleidingen:[
             "International Business"
         ],
@@ -133,6 +140,7 @@ class Locations{
     } 
 
     rmd_rotterdam = {
+        location: "rmd_rotterdam",
         opleidingen:[
             "Automotive",
             "River Delta Development"
@@ -141,6 +149,7 @@ class Locations{
     }
 
     rochussenstraat = {
+        location: "rochussenstraat",
         opleidingen :[           
             "Ergotherapie",
             "Fysiotherapie",
@@ -161,6 +170,7 @@ class Locations{
     } 
 
     wijnhaven_61 = {
+        location: "wijnhaven_61",
         opleidingen:[
             "Leisure & Events Management"
         ], 
@@ -168,6 +178,7 @@ class Locations{
     }
 
     wijnhaven_99 = {
+        location: "wijnhaven_99",
         opleidingen:[
             "Creative Media and Game Technologies"
         ],
@@ -175,12 +186,14 @@ class Locations{
     }
 
     wijnhaven_103 = {
+        location: "wijnhaven_103",
         opleidingen:[
             ""
         ],
         locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-103/"}
 
     wijnhaven_107 = {
+        location: "wijnhaven_107",
         opleidingen:[
             "Communicatie",
             "Communication and Multimedia Design",

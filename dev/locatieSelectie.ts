@@ -95,9 +95,9 @@ class LocatieSelectie{
 
             let yourEducation = localStorage.getItem('education')!
 
-            console.log(this.educations )
 
             if(this.educations[index].opleidingen.indexOf(yourEducation) > -1){
+                    localStorage.setItem('location',this.educations[index].location)
                     this.popupLoc('correct',location,this.educations[index].locatieInfo)
             }else{
                     this.popupLoc('incorrect',location,this.educations[index].locatieInfo)
