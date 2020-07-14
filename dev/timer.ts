@@ -4,6 +4,29 @@ class Timer{
 
     constructor(){
         
+        this.resetTimer()
+        this.startTimer()
+
+        setTimeout(() => {
+            this.startPause()
+        }, 2000);
+
+        setTimeout(() => {
+            this.endPause()
+        }, 4000);
+
+        setTimeout(() => {
+            this.startPause()
+        }, 6000);
+
+        setTimeout(() => {
+            this.endPause() 
+        }, 8000);
+
+        setTimeout(() => {
+            this.endTimer()
+            this.score()
+        }, 10000);
     }
 
     startTimer(){
@@ -32,7 +55,7 @@ class Timer{
 
         let thisPause = this.pauseEnd - this.pauseStart
         let newPause = thisPause + currentPause
-
+            
         localStorage.setItem('pause', newPause.toString())
     }
 

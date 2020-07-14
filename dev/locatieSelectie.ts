@@ -102,9 +102,7 @@ class LocatieSelectie{
             }else{
                     this.popupLoc('incorrect',location,this.educations[index].locatieInfo)
             } 
-
         })
-
     }
 
     popupLoc(awnser: string,location: string,info: string){
