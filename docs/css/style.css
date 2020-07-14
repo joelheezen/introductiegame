@@ -107,6 +107,15 @@ onlinePopup{
     cursor:pointer;
 }
 
+wrong{
+    color:red;
+    text-align:center;
+    top:57vh;
+    position:absolute;
+    width:100vw;
+    text-align:center
+}
+
 onlinePopup *{
     width:100%;
     text-align: center;

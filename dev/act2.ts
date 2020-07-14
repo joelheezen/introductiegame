@@ -192,6 +192,7 @@ class Act2{
             this.codeEind()
         })
     }
+    
     localStorageUpdate(){
         localStorage.setItem(this.number1, (<HTMLInputElement>document.getElementById("input1")).value)
         localStorage.setItem(this.number2, (<HTMLInputElement>document.getElementById("input2")).value)
@@ -199,6 +200,7 @@ class Act2{
         localStorage.setItem(this.number4, (<HTMLInputElement>document.getElementById("input4")).value)
         localStorage.setItem(this.number5, (<HTMLInputElement>document.getElementById("input5")).value)
     }
+
     codeCheck(input: string, inputtwee: HTMLElement, awnser:string, awnser2:string){
         console.log(input)
         if((<HTMLInputElement>document.getElementById(input)).value == awnser || (<HTMLInputElement>document.getElementById(input)).value == awnser2){
@@ -208,6 +210,7 @@ class Act2{
         }
 
     }
+
     setHint(){
         new popup("Zoek je juiste kleur bij de juiste persoon.",5,93,24,2.5)
         new popup("Hulp nodig? Blijf (er) niet (mee) rondlopen! Hier moet je zijn: Hulp bij studie. De hogeschool biedt allerlei vormen van een-op-een begeleiding en ondersteuning."+
@@ -289,8 +292,7 @@ class Act2{
         this.game.appendChild(this.folderItem4)
         this.game.appendChild(this.folderItem5)
         this.game.appendChild(this.folderItem6)
-
-        
+       
         this.folderItem1.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_getallen.png)'
         this.folderItem1.style.transform = `translate(20vw,72vh)`
         this.folderItem1.style.width = '8.3vw'
@@ -335,6 +337,7 @@ class Act2{
             console.log("folder5")
             new Act2folder5
         })
+
         this.folderItem6.style.backgroundImage = 'url(assets/Akte2/Postervormen&kleuren.jpg)'
         this.folderItem6.style.transform = `translate(58.1vw,30vh)`
         this.folderItem6.style.width = '4.45vw'
@@ -344,8 +347,6 @@ class Act2{
             new Act2folder6
         })
         
-
-
     }
 }
 class folders{

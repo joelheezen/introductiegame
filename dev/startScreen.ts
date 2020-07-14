@@ -17,7 +17,6 @@ class StartScreem{
         })
     }
 
-
 }
 
 window.addEventListener('load',() => new StartScreem())
