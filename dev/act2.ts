@@ -215,7 +215,7 @@ class Act2{
         (<HTMLInputElement>document.getElementById("input5")).value
         console.log(codeString)
         if(codeString.toLowerCase() =="dbnve"){
-            console.log("goed")
+            console.log("goed ")
             this.input1.style.border = "thick solid #00FF00"
             this.input2.style.border = "thick solid #00FF00"
             this.input3.style.border = "thick solid #00FF00"

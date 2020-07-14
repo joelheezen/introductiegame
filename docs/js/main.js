@@ -494,7 +494,7 @@ var Act2 = (function () {
             document.getElementById("input5").value;
         console.log(codeString);
         if (codeString.toLowerCase() == "dbnve") {
-            console.log("goed");
+            console.log("goed ");
             this.input1.style.border = "thick solid #00FF00";
             this.input2.style.border = "thick solid #00FF00";
             this.input3.style.border = "thick solid #00FF00";
@@ -1689,6 +1689,15 @@ var Game = (function () {
     return Game;
 }());
 window.addEventListener("load", function () { return new Game(); });
+var hint = (function () {
+    function hint() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.hint1 = document.createElement("hinticon");
+        this.hint2 = document.createElement("hinticon");
+        this.hint3 = document.createElement("hinticon");
+    }
+    return hint;
+}());
 var LocatieSelectie = (function () {
     function LocatieSelectie() {
         var _this = this;
