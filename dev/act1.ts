@@ -177,6 +177,7 @@ class Act1 {
         let button4 = document.createElement("button")
         let button5 = document.createElement("button")
         let button6 = document.createElement("button")
+        let button7 = document.createElement("button")
         
         game.appendChild(button1)
         game.appendChild(button2)
@@ -184,6 +185,7 @@ class Act1 {
         game.appendChild(button4)
         game.appendChild(button5)
         game.appendChild(button6)
+        game.appendChild(button7)
 
         button1.style.width = `19.6vw`
         button1.style.height = `60.9vh`
@@ -221,6 +223,12 @@ class Act1 {
         button6.style.opacity = `0%`
         button6.addEventListener("click" , () => this.goBack())
 
+        button7.style.width = `11vw`
+        button7.style.height = `18vh`
+        button7.style.transform = `translate(71vw, 20.8vh)`
+        button7.style.opacity = `0%`
+        button7.addEventListener("click" , () => this.osiris())
+
     }
 
     webmail(){
@@ -231,6 +239,7 @@ class Act1 {
 
     osiris(){
         console.log("osiris is aangeklikt")
+        window.open('/docs/osiris.html', '_blank');
     }
 
     rooster(){
