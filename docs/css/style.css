@@ -33,17 +33,15 @@ educationsetter{
     top:20vh;
     left:28vw;
     box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
-    background-color: #cf0245;
+    background-color: #ffb911;
     border-radius: 1vh;
-    color:white;
 }
 
 educationsetter button{
-    background-color: #cf0245;
-    border: solid white 3px;
+    background-color: #ffb911;
+    border: solid black 3px;
     font-weight: bolder;
     border-radius: 3px;
-    color:white;
     width:40%;
     height:3vw;    
     left:calc(30% - 6px);
@@ -216,8 +214,7 @@ pin:hover{
 }
 
 popuplocation{
-    background-color:  #cf0245;
-    color:white;
+    background-color:  #ffb911;
     position: absolute;
     padding-left:2vw;
     padding-right:2vw;
@@ -232,9 +229,8 @@ popuplocation{
 }
 
 popuplocation button{
-    background-color:  #cf0245;
-    color:white;
-    border: solid white 3px;
+    background-color:  #ffb911;
+    border: solid black 3px;
     font-weight: bolder;
     border-radius: 3px;
     width:40%;    
@@ -281,12 +277,11 @@ next{
     left:9.5vw;
     position: absolute;
     cursor: pointer;
-    background-color: #cf0245;
+    background-color: #ffb911;
     border-radius: 15px;
     text-align: center;
     font-size:3vh;
-    border: solid white 0.2vw;
-    color:white;
+    border: solid black 0.2vw;
 }
 
 congratulations{
@@ -294,27 +289,25 @@ congratulations{
     top:5vh;
     width:100%;
     text-align:center;
-    color:white;
     font-size: 10vh;
-    background-color: #cf0245;
+    background-color: #ffb911;
     padding-bottom:1vh;
 }
 
 akteGehaald{
     text-align:center;
-    color:white;
     font-size:3vh;
 }
 
 pauseMessage{
     padding:2vw;
     text-align:center;
-    color:white;
     position: absolute;
-    background-color: #cf0245;
+    background-color: #ffb911;
     border-radius: 15px;
     width:30vw;
     left:33vw;
     top:45vh;
     height:30vh;
+    font-size: 2.7vh;
 }

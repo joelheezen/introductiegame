@@ -227,7 +227,7 @@ var Act1 = (function () {
             button_next.remove();
             button_previous.remove();
             background.style.zIndex = "-1";
-            window.open('https://google.nl', '_blank');
+            window.open('https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/', '_blank');
         });
         button_previous.style.width = "6.2vw";
         button_previous.style.height = "5vh";
@@ -267,7 +267,7 @@ var Act1 = (function () {
         myloc.useMap = "/docs/assets/studentenpas.png";
         var img = document.createElement('img');
         img.setAttribute('src', myloc.useMap);
-        img.setAttribute('style', "height:25vh;width:25vw;transform:translate(28.3vw, 26.5vh);cursor:pointer;");
+        img.setAttribute('style', "height:25vh;width:24vw;transform:translate(28.7vw, 26.5vh);cursor:pointer;");
         game.appendChild(img);
         img.addEventListener("click", function () {
             button.style.display = "none";
@@ -896,12 +896,16 @@ var Act3 = (function () {
             var button4 = document.createElement("button");
             var button5 = document.createElement("button");
             var button6 = document.createElement("button");
+            var button7 = document.createElement("button");
+            var button8 = document.createElement("button");
             game.appendChild(button1);
             game.appendChild(button2);
             game.appendChild(button3);
             game.appendChild(button4);
             game.appendChild(button5);
             game.appendChild(button6);
+            game.appendChild(button7);
+            game.appendChild(button8);
             button1.style.width = "7.2vw";
             button1.style.height = "14.4vh";
             button1.style.transform = "translate(31vw, 31.8vh)";
@@ -1210,7 +1214,7 @@ var Act3 = (function () {
                 mapArea.appendChild(char5);
                 char1.style.backgroundImage = "url(assets/Akte3/cees.png)";
                 char1.style.backgroundSize = "100% 100%";
-                char1.style.width = "5vw";
+                char1.style.width = "3.5vw";
                 char1.style.height = "10vh";
                 char1.style.position = "absolute";
                 char1.style.transform = "translate(42.5vw, 33vh)";
@@ -1229,7 +1233,7 @@ var Act3 = (function () {
                 });
                 char2.style.backgroundImage = "url(assets/Akte3/zoe.png)";
                 char2.style.backgroundSize = "100% 100%";
-                char2.style.width = "5vw";
+                char2.style.width = "3.5vw";
                 char2.style.height = "10vh";
                 char2.style.position = "absolute";
                 char2.style.transform = "translate(25.5vw, 42vh)";
@@ -1248,7 +1252,7 @@ var Act3 = (function () {
                 });
                 char3.style.backgroundImage = "url(assets/Akte3/loes.png)";
                 char3.style.backgroundSize = "100% 100%";
-                char3.style.width = "5vw";
+                char3.style.width = "3.5vw";
                 char3.style.height = "10vh";
                 char3.style.position = "absolute";
                 char3.style.transform = "translate(37.6vw, 42.3vh)";
@@ -1267,7 +1271,7 @@ var Act3 = (function () {
                 });
                 char4.style.backgroundImage = "url(assets/Akte3/donna.png)";
                 char4.style.backgroundSize = "100% 100%";
-                char4.style.width = "5vw";
+                char4.style.width = "3.5vw";
                 char4.style.height = "10vh";
                 char4.style.position = "absolute";
                 char4.style.transform = "translate(42.5vw, 42vh)";
@@ -1286,7 +1290,7 @@ var Act3 = (function () {
                 });
                 char5.style.backgroundImage = "url(assets/Akte3/werner.png)";
                 char5.style.backgroundSize = "100% 100%";
-                char5.style.width = "5vw";
+                char5.style.width = "3.5vw";
                 char5.style.height = "10vh";
                 char5.style.position = "absolute";
                 char5.style.transform = "translate(20.5vw, 42vh)";
@@ -1541,6 +1545,61 @@ var Act3 = (function () {
             button6.addEventListener("click", function () {
                 var win = window.open("http://www.rotterdamstaattespringen.nl/");
                 win.focus();
+            });
+            button7.style.width = "14.3vw";
+            button7.style.height = "15vh";
+            button7.style.transform = "translate(15.2vw, 59vh)";
+            button7.style.opacity = "30%";
+            button7.addEventListener("click", function () {
+                var popup = document.createElement("popup");
+                var game = document.getElementsByTagName("game")[0];
+                var button = document.createElement("button");
+                game.appendChild(button);
+                game.appendChild(popup);
+                button.style.width = "100vw";
+                button.style.height = "100vh";
+                button.style.position = "absolute";
+                button.style.zIndex = "1";
+                button.style.opacity = "0%";
+                button.addEventListener("click", function () {
+                    button.remove();
+                    popup.remove();
+                });
+                var clicked = true;
+                popup.style.backgroundImage = "url(assets/Akte3/Rotterdampas.png)";
+                popup.style.backgroundSize = "100% 100%";
+                popup.style.width = "40vw";
+                popup.style.height = "30vh";
+                popup.style.transform = "translate(30vw, 35vh)";
+                popup.style.position = "absolute";
+                popup.style.zIndex = "2";
+                popup.addEventListener("click", function () {
+                    if (clicked == true) {
+                        popup.style.backgroundImage = "url(assets/Akte3/Binnenrotte.jpg)";
+                        clicked = false;
+                    }
+                    else {
+                        popup.style.backgroundImage = "url(assets/Akte3/Rotterdampas.png)";
+                        clicked = true;
+                    }
+                });
+            });
+            button8.style.width = "5.9vw";
+            button8.style.height = "9.4vw";
+            button8.style.transform = "translate(64.8vw, 34.1vh)";
+            button8.style.opacity = "30%";
+            button8.addEventListener("click", function () {
+                var game = document.getElementsByTagName("game")[0];
+                var audio = document.createElement("audio");
+                var audioCheck = document.getElementsByTagName("audio")[0];
+                if (audioCheck == null) {
+                    game.appendChild(audio);
+                    audio.src = "assets/Akte3/audio.mp3";
+                    audio.autoplay = true;
+                }
+                audio.onended = function () {
+                    audio.remove();
+                };
             });
         };
     }
@@ -1988,6 +2047,8 @@ var StartScreem = (function () {
 window.addEventListener('load', function () { return new StartScreem(); });
 var Timer = (function () {
     function Timer() {
+<<<<<<< HEAD
+=======
         var _this = this;
         this.resetTimer();
         this.startTimer();
@@ -2007,6 +2068,7 @@ var Timer = (function () {
             _this.endTimer();
             _this.score();
         }, 10000);
+>>>>>>> 54b00c14e17caa68c789320655b7beff572932d2
     }
     Timer.prototype.startTimer = function () {
         if (!localStorage.getItem('start')) {

@@ -40,6 +40,8 @@ class Act3{
             let button4 = document.createElement("button")
             let button5 = document.createElement("button")
             let button6 = document.createElement("button")
+            let button7 = document.createElement("button")
+            let button8 = document.createElement("button")
 
             game.appendChild(button1)
             game.appendChild(button2)
@@ -47,6 +49,8 @@ class Act3{
             game.appendChild(button4)
             game.appendChild(button5)
             game.appendChild(button6)
+            game.appendChild(button7)
+            game.appendChild(button8)
 
             button1.style.width = `7.2vw`
             button1.style.height = `14.4vh`
@@ -391,7 +395,7 @@ class Act3{
 
                 char1.style.backgroundImage = `url(assets/Akte3/cees.png)`
                 char1.style.backgroundSize = `100% 100%`
-                char1.style.width = `5vw`
+                char1.style.width = `3.5vw`
                 char1.style.height = `10vh`
                 char1.style.position = `absolute`
                 char1.style.transform = `translate(42.5vw, 33vh)`
@@ -411,7 +415,7 @@ class Act3{
 
                 char2.style.backgroundImage = `url(assets/Akte3/zoe.png)`
                 char2.style.backgroundSize = `100% 100%`
-                char2.style.width = `5vw`
+                char2.style.width = `3.5vw`
                 char2.style.height = `10vh`
                 char2.style.position = `absolute`
                 char2.style.transform = `translate(25.5vw, 42vh)`
@@ -431,7 +435,7 @@ class Act3{
 
                 char3.style.backgroundImage = `url(assets/Akte3/loes.png)`
                 char3.style.backgroundSize = `100% 100%`
-                char3.style.width = `5vw`
+                char3.style.width = `3.5vw`
                 char3.style.height = `10vh`
                 char3.style.position = `absolute`
                 char3.style.transform = `translate(37.6vw, 42.3vh)`
@@ -451,7 +455,7 @@ class Act3{
 
                 char4.style.backgroundImage = `url(assets/Akte3/donna.png)`
                 char4.style.backgroundSize = `100% 100%`
-                char4.style.width = `5vw`
+                char4.style.width = `3.5vw`
                 char4.style.height = `10vh`
                 char4.style.position = `absolute`
                 char4.style.transform = `translate(42.5vw, 42vh)`
@@ -471,7 +475,7 @@ class Act3{
 
                 char5.style.backgroundImage = `url(assets/Akte3/werner.png)`
                 char5.style.backgroundSize = `100% 100%`
-                char5.style.width = `5vw`
+                char5.style.width = `3.5vw`
                 char5.style.height = `10vh`
                 char5.style.position = `absolute`
                 char5.style.transform = `translate(20.5vw, 42vh)`
@@ -768,6 +772,69 @@ class Act3{
             button6.addEventListener("click" , function(){
                 let win = window.open("http://www.rotterdamstaattespringen.nl/")
                 win!.focus()
+            })
+
+            button7.style.width = `14.3vw`
+            button7.style.height = `15vh`
+            button7.style.transform = `translate(15.2vw, 59vh)`
+            button7.style.opacity = `30%`
+            button7.addEventListener("click", function(){
+                let popup = document.createElement("popup")
+                let game = document.getElementsByTagName("game")[0]
+                let button = document.createElement("button")
+
+                game.appendChild(button)
+                game.appendChild(popup)
+
+                button.style.width = `100vw`
+                button.style.height = `100vh`
+                button.style.position = `absolute`
+                button.style.zIndex = `1`
+                button.style.opacity = `0%`
+                button.addEventListener("click", function(){
+                    button.remove()
+                    popup.remove()
+                })
+
+                let clicked = true
+                popup.style.backgroundImage = `url(assets/Akte3/Rotterdampas.png)`
+                popup.style.backgroundSize = `100% 100%`
+                popup.style.width = `40vw`
+                popup.style.height = `30vh`
+                popup.style.transform = `translate(30vw, 35vh)`
+                popup.style.position = `absolute`
+                popup.style.zIndex = `2`
+                popup.addEventListener("click", function(){
+                    if (clicked == true){
+                        popup.style.backgroundImage = `url(assets/Akte3/Binnenrotte.jpg)`
+                        clicked = false
+                    }
+                    else {
+                        popup.style.backgroundImage = `url(assets/Akte3/Rotterdampas.png)`
+                        clicked = true
+                    }
+                })
+
+            })
+
+            button8.style.width = `5.9vw`
+            button8.style.height = `9.4vw`
+            button8.style.transform =  `translate(64.8vw, 34.1vh)`
+            button8.style.opacity = `30%`
+            button8.addEventListener("click", function(){
+                let game = document.getElementsByTagName("game")[0]
+                let audio = (<HTMLAudioElement>document.createElement("audio"))
+                let audioCheck = document.getElementsByTagName("audio")[0]
+                if (audioCheck == null){
+                    game.appendChild(audio)
+                    audio.src = `assets/Akte3/audio.mp3`
+                    audio.autoplay = true
+                }
+
+                audio.onended = function(){
+                    audio.remove()
+                }
+                
             })
             }
     }
