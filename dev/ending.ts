@@ -15,9 +15,10 @@ class Ending{
         let popup = document.createElement("pinPopup")
         game.appendChild(popup)
         popup.style.transform = `translate(34vw, 20vh)`
-        popup.innerHTML += `je score is te slecht om te laten zien`
+        popup.innerHTML += `je score is ..`
         let button = document.createElement("button")
         popup.appendChild(button)
+        popup.style.boxShadow = `none`
 
         button.style.position = `absolute`
         button.style.width = `94%`
