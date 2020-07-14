@@ -65,7 +65,7 @@ var Act1 = (function () {
         button2.style.width = "18.5vw";
         button2.style.height = "4vh";
         button2.style.transform = "translate(25.25vw, 61vh)";
-        button2.style.opacity = "100%";
+        button2.style.opacity = "1";
         button2.innerHTML = 'Online zoeken naar vormen';
         button2.addEventListener("click", function () { return _this.searchOnline(); });
         var button3 = document.createElement("button");
@@ -73,7 +73,7 @@ var Act1 = (function () {
         button3.style.width = "9vw";
         button3.style.height = "7.6vh";
         button3.style.transform = "translate(91vw, 0vh)";
-        button3.style.opacity = "0%";
+        button3.style.opacity = "0";
         button3.addEventListener("click", function () { return _this.searchOnline(); });
     };
     Act1.prototype.shapeCheck = function () {
@@ -134,37 +134,37 @@ var Act1 = (function () {
         button1.style.width = "15.6vw";
         button1.style.height = "60.9vh";
         button1.style.transform = "translate(14.5vw, 20.8vh)";
-        button1.style.opacity = "0%";
+        button1.style.opacity = "0";
         button1.addEventListener("click", function () { return _this.webmail(); });
         button2.style.width = "22vw";
         button2.style.height = "12.3vh";
         button2.style.transform = "translate(31.7vw, 69.8vh)";
-        button2.style.opacity = "0%";
+        button2.style.opacity = "0";
         button2.addEventListener("click", function () { return _this.rooster(); });
         button3.style.width = "10.7vw";
         button3.style.height = "27.3vh";
         button3.style.transform = "translate(55vw, 20.7vh)";
-        button3.style.opacity = "0%";
+        button3.style.opacity = "0";
         button3.addEventListener("click", function () { return _this.studentenServiceCenter(); });
         button4.style.width = "16.3vw";
         button4.style.height = "18vh";
         button4.style.transform = "translate(59vw, 63.8vh)";
-        button4.style.opacity = "0%";
+        button4.style.opacity = "0";
         button4.addEventListener("click", function () { return _this.studentenpas(); });
         button5.style.width = "10.2vw";
         button5.style.height = "61.3vh";
         button5.style.transform = "translate(77vw, 20.8vh)";
-        button5.style.opacity = "0%";
+        button5.style.opacity = "0";
         button5.addEventListener("click", function () { return _this.lms(); });
         button6.style.width = "9vw";
         button6.style.height = "7.6vh";
         button6.style.transform = "translate(91vw, 0vh)";
-        button6.style.opacity = "0%";
+        button6.style.opacity = "0";
         button6.addEventListener("click", function () { return _this.goBack(); });
         button7.style.width = "11vw";
         button7.style.height = "18vh";
         button7.style.transform = "translate(71vw, 20.8vh)";
-        button7.style.opacity = "0%";
+        button7.style.opacity = "0";
         button7.addEventListener("click", function () { return _this.osiris(); });
     };
     Act1.prototype.webmail = function () {
@@ -199,7 +199,7 @@ var Act1 = (function () {
         button.style.width = "20.3vw";
         button.style.height = "18vh";
         button.style.transform = "translate(61.2vw, 63.8vh)";
-        button.style.opacity = "0%";
+        button.style.opacity = "0";
         button.addEventListener("click", function () {
             button.style.display = "none";
             game.removeChild(img);
@@ -792,7 +792,7 @@ var Act3 = (function () {
         this.game.appendChild(playButton);
         playButton.style.width = "100vw";
         playButton.style.height = "100vh";
-        playButton.style.opacity = "0%";
+        playButton.style.opacity = "0";
         playButton.addEventListener("click", function () { return _this.togglePlay(); });
         this.video.src = 'assets/Akte3/startAct3.mp4';
         this.video.autoplay = true;
@@ -822,7 +822,7 @@ var Act3 = (function () {
             button1.style.width = "7.2vw";
             button1.style.height = "14.4vh";
             button1.style.transform = "translate(31vw, 31.8vh)";
-            button1.style.opacity = "0%";
+            button1.style.opacity = "0";
             button1.addEventListener("click", function () {
                 var popup = document.createElement("popup");
                 var game = document.getElementsByTagName("game")[0];
@@ -1107,7 +1107,7 @@ var Act3 = (function () {
                 game.appendChild(button);
                 button.style.width = "100vw";
                 button.style.height = "100vh";
-                button.style.opacity = "0%";
+                button.style.opacity = "0";
                 button.style.zIndex = "1";
                 button.style.position = "absolute";
                 button.addEventListener("click", function () {
@@ -1228,7 +1228,7 @@ var Act3 = (function () {
             button2.style.width = "11.5vw";
             button2.style.height = "14.3vh";
             button2.style.transform = "translate(44.4vw, 37.6vh)";
-            button2.style.opacity = "0%";
+            button2.style.opacity = "0";
             button2.addEventListener("click", function () {
                 var game = document.getElementsByTagName("game")[0];
                 var popup = document.createElement("popup");
@@ -1245,7 +1245,7 @@ var Act3 = (function () {
                 game.appendChild(button);
                 button.style.width = "100vw";
                 button.style.height = "100vh";
-                button.style.opacity = "0%";
+                button.style.opacity = "0";
                 button.style.zIndex = "1";
                 button.style.position = "absolute";
                 button.addEventListener("click", function () {
@@ -1422,15 +1422,34 @@ var Act3 = (function () {
             button3.style.width = "16.3vw";
             button3.style.height = "17.9vh";
             button3.style.transform = "translate(68.7vw, 54.4vh)";
-            button3.style.opacity = "0%";
+            button3.style.opacity = "0";
             button3.addEventListener("click", function () {
-                var win = window.open("assets/Akte3/RKvVboekje2020.pdf");
-                win.focus();
+                var pdf = document.createElement("object");
+                game.appendChild(pdf);
+                pdf.data = "assets/Akte3/RKvVboekje2020.pdf";
+                pdf.type = "application/pdf";
+                pdf.width = "50%";
+                pdf.height = "75%";
+                pdf.style.zIndex = "1";
+                pdf.style.position = "absolute";
+                pdf.style.transform = "translate(25vw, 10vh)";
+                pdf.style.boxShadow = "rgba(0,0,0,0.5) 15px 15px";
+                var button = document.createElement("button");
+                game.appendChild(button);
+                button.style.width = "100vw";
+                button.style.height = "100vh";
+                button.style.position = "absolute";
+                button.style.zIndex = "0";
+                button.style.opacity = "0";
+                button.addEventListener("click", function () {
+                    button.remove();
+                    pdf.remove();
+                });
             });
             button4.style.width = "10.5vw";
             button4.style.height = "11vh";
             button4.style.transform = "translate(27.5vw, 65.9vh)";
-            button4.style.opacity = "0%";
+            button4.style.opacity = "0";
             button4.addEventListener("click", function () {
                 var card = document.getElementById("card");
                 if (card) {
@@ -1440,7 +1459,7 @@ var Act3 = (function () {
                     button_1.style.zIndex = "1";
                     button_1.style.width = "100vw";
                     button_1.style.height = "100vh";
-                    button_1.style.opacity = "0%";
+                    button_1.style.opacity = "0";
                     button_1.style.position = "absolute";
                     button_1.addEventListener("click", function () {
                         var card = document.getElementById("card");
@@ -1468,7 +1487,7 @@ var Act3 = (function () {
                     button_2.style.zIndex = "1";
                     button_2.style.width = "100vw";
                     button_2.style.height = "100vh";
-                    button_2.style.opacity = "0%";
+                    button_2.style.opacity = "0";
                     button_2.style.position = "absolute";
                     button_2.addEventListener("click", function () {
                         popup_1.style.display = "none";
@@ -1498,14 +1517,14 @@ var Act3 = (function () {
                         dot.style.borderRadius = "50%";
                         dot.style.position = "absolute";
                         dot.style.zIndex = "3";
-                        dot.style.opacity = "30%";
+                        dot.style.opacity = "0.3";
                     });
                 }
             });
             button5.style.width = "8vw";
             button5.style.height = "9.1vh";
             button5.style.transform = "translate(46.8vw, 56.8vh)";
-            button5.style.opacity = "0%";
+            button5.style.opacity = "0";
             button5.addEventListener("click", function () {
                 var popup = document.createElement("popup");
                 var game = document.getElementsByTagName("game")[0];
@@ -1522,7 +1541,7 @@ var Act3 = (function () {
                 button.style.width = "100vw";
                 button.style.height = "100vh";
                 button.style.position = "absolute";
-                button.style.opacity = "0%";
+                button.style.opacity = "0";
                 button.style.zIndex = "1";
                 button.addEventListener("click", function () {
                     button.remove();
@@ -1532,7 +1551,7 @@ var Act3 = (function () {
             button6.style.width = "12.4vw";
             button6.style.height = "3.7vh";
             button6.style.transform = "translate(62.6vw, 72vh)";
-            button6.style.opacity = "0%";
+            button6.style.opacity = "0";
             button6.addEventListener("click", function () {
                 var win = window.open("http://www.rotterdamstaattespringen.nl/");
                 win.focus();
@@ -1540,7 +1559,7 @@ var Act3 = (function () {
             button7.style.width = "14.3vw";
             button7.style.height = "15vh";
             button7.style.transform = "translate(15.2vw, 59vh)";
-            button7.style.opacity = "0%";
+            button7.style.opacity = "0";
             button7.addEventListener("click", function () {
                 var popup = document.createElement("popup");
                 var game = document.getElementsByTagName("game")[0];
@@ -1551,7 +1570,7 @@ var Act3 = (function () {
                 button.style.height = "100vh";
                 button.style.position = "absolute";
                 button.style.zIndex = "1";
-                button.style.opacity = "0%";
+                button.style.opacity = "0";
                 button.addEventListener("click", function () {
                     button.remove();
                     popup.remove();
@@ -1574,7 +1593,7 @@ var Act3 = (function () {
             button8.style.width = "5.9vw";
             button8.style.height = "11.7vh";
             button8.style.transform = "translate(64.8vw, 34.1vh)";
-            button8.style.opacity = "0%";
+            button8.style.opacity = "0";
             button8.style.zIndex = "-1";
             button8.addEventListener("click", function () {
                 var game = document.getElementsByTagName("game")[0];
@@ -1600,7 +1619,7 @@ var Act3 = (function () {
                 button.style.height = "100vh";
                 button.style.position = "absolute";
                 button.style.zIndex = "1";
-                button.style.opacity = "0%";
+                button.style.opacity = "0";
                 button.addEventListener("click", function () {
                     button.remove();
                     popup.remove();
@@ -1726,7 +1745,7 @@ var Game = (function () {
     }
     Game.prototype.buttonPress1 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
-        new Ending();
+        new Act3();
     };
     Game.prototype.buttonPress2 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";

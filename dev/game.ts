@@ -30,7 +30,7 @@ class Game{
 
     buttonPress1(){
         document.getElementsByTagName("game")[0].innerHTML = ""
-        new Ending()
+        new Act3()
         
     }
     buttonPress2(){
