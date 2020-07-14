@@ -90,66 +90,27 @@ class Act1 {
         }
         else{
             let game = document.getElementsByTagName("game")[0]
-            let background = document.createElement("backgroundact2")
-
-            game.appendChild(background)
-            game.removeChild(this.input1)
-            game.removeChild(this.input2)
-            game.removeChild(this.input3)
-
-            game.removeChild(this.button1)
-
-            background.style.backgroundImage = `url(/docs/assets/backgroundact1main2.png)`
             
+            let inputs = document.getElementsByTagName('input')
 
-            game.appendChild(this.wrong_div)
-            this.wrong_div.style.width = `13.7vw`
-            this.wrong_div.style.height = `5.7vh`
-            this.wrong_div.style.position = `absolute`
-            this.wrong_div.style.transform = `translate(10vw, 39.2vh)`
-            this.wrong_div.style.borderRadius = `25px`
-            this.wrong_div.style.border = `none`
-            this.wrong_div.style.fontSize = `20px`
-            this.wrong_div.style.paddingLeft = `1vw`
-            this.wrong_div.style.textTransform = `uppercase`
-            this.wrong_div.style.zIndex = `9999`
-            this.wrong_div.id = "input1"
-
-            var myloc = new Image();  
-            myloc.useMap = "/docs/assets/fout_antwoord.png";  
-            var img = document.createElement('img')  
-            img.setAttribute('src', myloc.useMap);  
-            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(35vw, 26.5vh);cursor:pointer;z-index:9999;");  
-            game.appendChild(img);
-        }
-    }
-
-    onlinePopup(title:string,message:string,open:string){
-        let popup = document.createElement('onlinePopup')
-
-        let popupTitle = document.createElement('popupTitle')
-        popupTitle.innerHTML = title
-
-        let popupMessage = document.createElement('popupMessage')
-        popupMessage.innerHTML = message
-
-        let doorgaan = document.createElement('button')
-        doorgaan.innerHTML = 'Doorgaan'
-
-        doorgaan.addEventListener('click',()=>{
-
-            if(open !== ''){
-                window.open(open, '_blank');
+            for (let index = 0; index < inputs.length; index++) {
+                inputs[index].style.border = 'solid 3px red'
             }
-            popup.remove()
-        })
+            
+            let wrong = document.createElement('wrong')
+            wrong.innerHTML = 'Dit antwoord is onjuist. Probeer het nog een keer.'
 
-        popup.appendChild(doorgaan)
-        popup.appendChild(popupTitle)
-        popup.appendChild(popupMessage)
+            game.appendChild(wrong)
 
-        let game = document.getElementsByTagName("game")[0]
-        game.appendChild(popup) 
+            setTimeout(() => {
+                for (let index = 0; index < inputs.length; index++) {
+                    inputs[index].style.border = ''
+                    wrong.remove()
+                }
+            }, 2000);
+
+            
+        }
     }
 
     searchOnline() {
@@ -168,7 +129,7 @@ class Act1 {
         game.appendChild(banner)
 
         if(this.popupSave == false){
-            this.onlinePopup('Welkom op jullie online plattegrond','Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel','')
+            new CenterPopup('Welkom op jullie online plattegrond','Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel','')
             this.popupSave = true;
         }
 
@@ -178,6 +139,7 @@ class Act1 {
         let button4 = document.createElement("button")
         let button5 = document.createElement("button")
         let button6 = document.createElement("button")
+        let button7 = document.createElement("button")
         
         game.appendChild(button1)
         game.appendChild(button2)
@@ -185,6 +147,7 @@ class Act1 {
         game.appendChild(button4)
         game.appendChild(button5)
         game.appendChild(button6)
+        game.appendChild(button7)
 
         button1.style.width = `15.6vw`
         button1.style.height = `60.9vh`
@@ -222,6 +185,12 @@ class Act1 {
         button6.style.opacity = `0%`
         button6.addEventListener("click" , () => this.goBack())
 
+        button7.style.width = `11vw`
+        button7.style.height = `18vh`
+        button7.style.transform = `translate(71vw, 20.8vh)`
+        button7.style.opacity = `0%`
+        button7.addEventListener("click" , () => this.osiris())
+
     }
 
     webmail(){
@@ -232,14 +201,15 @@ class Act1 {
 
     osiris(){
         console.log("osiris is aangeklikt")
+        window.open('/docs/osiris.html', '_blank');
     }
 
     rooster(){
-        this.onlinePopup('Rooster','Klik op doorgaan om je rooster te zien','https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/')
+        new CenterPopup('Rooster','Klik op doorgaan om je rooster te zien','https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/')
     }
 
     studentenServiceCenter(){
-        this.onlinePopup('Student Service Center','Mail het SSC met je persoonlijke studentenmail:ssc@hr.nl','')
+        new CenterPopup('Student Service Center','Mail het SSC met je persoonlijke studentenmail:ssc@hr.nl','')
     }
 
     studentenpas(){
@@ -274,7 +244,7 @@ class Act1 {
     }
 
     lms(){
-        this.onlinePopup('LMS','Verschillende vakken en informatie kun je vinden door op doorgaan te klikken','https://lms.hr.nl')
+        new CenterPopup('LMS','Verschillende vakken en informatie kun je vinden door op doorgaan te klikken','https://lms.hr.nl')
     }
 
     goBack(){
