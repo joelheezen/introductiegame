@@ -1,11 +1,12 @@
 class Pause{
 
     game = document.getElementsByTagName('game')[0]
+    pauseTimer = new Timer()
 
     constructor(act: number,next: string){
         this.game.innerHTML = ''
 
-        new Timer().startPause()
+        this.pauseTimer.startPause()
         
         let background = document.createElement('background')
         background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/pauze.jpg)"
@@ -31,7 +32,7 @@ class Pause{
         message.appendChild(nextButton)
 
         nextButton.addEventListener('click',() =>{
-            new Timer().endPause()
+            this.pauseTimer.endPause()
             this.game.innerHTML = ''
             eval(`new ${next}()`);
         })
