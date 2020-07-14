@@ -782,10 +782,10 @@ var Act3 = (function () {
         this.game = document.getElementsByTagName("game")[0];
         this.bg = document.createElement("videoBackground");
         this.video = document.createElement("video");
-        localStorage.setItem("note1Save", " ");
-        localStorage.setItem("note2Save", " ");
-        localStorage.setItem("note3Save", " ");
-        localStorage.setItem("note4Save", " ");
+        localStorage.setItem("note1Save", "");
+        localStorage.setItem("note2Save", "");
+        localStorage.setItem("note3Save", "");
+        localStorage.setItem("note4Save", "");
         var playButton = document.createElement("button");
         this.bg.style.backgroundColor = "black";
         this.game.appendChild(this.bg);
@@ -1222,6 +1222,10 @@ var Act3 = (function () {
                     pinPopup.remove();
                 });
             });
+            var correct1 = 0;
+            var correct2 = 0;
+            var correct3 = 0;
+            var correct4 = 0;
             button2.style.width = "11.5vw";
             button2.style.height = "14.3vh";
             button2.style.transform = "translate(44.4vw, 37.6vh)";
@@ -1246,10 +1250,10 @@ var Act3 = (function () {
                 button.style.zIndex = "1";
                 button.style.position = "absolute";
                 button.addEventListener("click", function () {
-                    var note1 = document.getElementById("note1").value;
-                    var note2 = document.getElementById("note2").value;
-                    var note3 = document.getElementById("note3").value;
-                    var note4 = document.getElementById("note4").value;
+                    var note1 = document.getElementById("note1").value.toLowerCase();
+                    var note2 = document.getElementById("note2").value.toLowerCase();
+                    var note3 = document.getElementById("note3").value.toLowerCase();
+                    var note4 = document.getElementById("note4").value.toLowerCase();
                     localStorage.setItem("note1Save", note1);
                     localStorage.setItem("note2Save", note2);
                     localStorage.setItem("note3Save", note3);
@@ -1341,6 +1345,79 @@ var Act3 = (function () {
                 input4.style.backgroundColor = "transparent";
                 input4.value = input4Text;
                 input4.id = "note4";
+                if (correct1 == 1) {
+                    input1.style.color = "green";
+                    input1.style.borderColor = "black";
+                }
+                if (correct2 == 1) {
+                    input2.style.color = "green";
+                    input2.style.borderColor = "black";
+                }
+                if (correct3 == 1) {
+                    input3.style.color = "green";
+                    input3.style.borderColor = "black";
+                }
+                if (correct4 == 1) {
+                    input4.style.color = "green";
+                    input4.style.borderColor = "black";
+                }
+                input1.addEventListener("keyup", function () {
+                    var note1 = document.getElementById("note1").value.toLowerCase();
+                    if (note1 == "bibliotheek") {
+                        input1.style.color = "green";
+                        input1.style.borderColor = "black";
+                        correct1 = 1;
+                    }
+                    else {
+                        input1.style.color = "black";
+                        correct1 = 0;
+                    }
+                });
+                input2.addEventListener("keyup", function () {
+                    var note2 = document.getElementById("note2").value.toLowerCase();
+                    if (note2 == "5") {
+                        input2.style.color = "green";
+                        input2.style.borderColor = "black";
+                        correct2 = 1;
+                    }
+                    else {
+                        input2.style.color = "black";
+                        correct2 = 0;
+                    }
+                });
+                input3.addEventListener("keyup", function () {
+                    var note3 = document.getElementById("note3").value.toLowerCase();
+                    if (note3 == "word lid") {
+                        input3.style.color = "green";
+                        input3.style.borderColor = "black";
+                        correct3 = 1;
+                    }
+                    else {
+                        input3.style.color = "black";
+                        correct3 = 0;
+                    }
+                });
+                input4.addEventListener("keyup", function () {
+                    var note4 = document.getElementById("note4").value.toLowerCase();
+                    if (note4 == "24,20") {
+                        input4.style.color = "green";
+                        input4.style.borderColor = "black";
+                        correct4 = 1;
+                    }
+                    else {
+                        input4.style.color = "black";
+                        correct4 = 0;
+                    }
+                });
+                popup.addEventListener("keyup", function () {
+                    var note1 = document.getElementById("note1").value.toLowerCase();
+                    var note2 = document.getElementById("note2").value.toLowerCase();
+                    var note3 = document.getElementById("note3").value.toLowerCase();
+                    var note4 = document.getElementById("note4").value.toLowerCase();
+                    if (note1 == "bibliotheek" && note2 == "5" && note3 == "word lid" && note4 == "24,20") {
+                        console.log("you win");
+                    }
+                });
             });
             button3.style.width = "16.3vw";
             button3.style.height = "17.9vh";
@@ -1402,9 +1479,9 @@ var Act3 = (function () {
                     text.style.fontSize = "2.5vh";
                     text.style.transform = "translate(50.5vw, 13vh)";
                     text.style.position = "absolute";
-                    text.style.width = "40vw";
+                    text.style.width = "35vw";
                     text.style.height = "10vh";
-                    text.innerHTML = "Klik op de aansichtkaart om een stip te zetten, klik op de stip om deze weer weg te halen. Uiteindelijk komt er een uitkomst vul deze in in het notitieboekje!";
+                    text.innerHTML = "Klik op de aansichtkaart om een stip te zetten, klik op de stip om deze weer weg te halen. Uiteindelijk komt er een uitkomst vul deze in in het notitieboekje!</br> Hint: het is alleen het eerste woord wat je krijgt nadat je alles in hebt gevuld.";
                     popup_1.addEventListener("click", function (event) {
                         var dot = document.createElement("dot");
                         popup_1.appendChild(dot);
@@ -1435,9 +1512,9 @@ var Act3 = (function () {
                 game.appendChild(popup);
                 popup.style.backgroundImage = "url(assets/Akte3/Rotterdampas.png)";
                 popup.style.backgroundSize = "100% 100%";
-                popup.style.width = "40vw";
+                popup.style.width = "30vw";
                 popup.style.height = "30vh";
-                popup.style.transform = "translate(30vw, 35vh)";
+                popup.style.transform = "translate(40vw, 35vh)";
                 popup.style.position = "absolute";
                 popup.style.zIndex = "2";
                 var button = document.createElement("button");
@@ -1463,7 +1540,7 @@ var Act3 = (function () {
             button7.style.width = "14.3vw";
             button7.style.height = "15vh";
             button7.style.transform = "translate(15.2vw, 59vh)";
-            button7.style.opacity = "30%";
+            button7.style.opacity = "0%";
             button7.addEventListener("click", function () {
                 var popup = document.createElement("popup");
                 var game = document.getElementsByTagName("game")[0];
@@ -1479,41 +1556,55 @@ var Act3 = (function () {
                     button.remove();
                     popup.remove();
                 });
-                var clicked = true;
-                popup.style.backgroundImage = "url(assets/Akte3/Rotterdampas.png)";
+                popup.style.backgroundImage = "url(assets/Akte3/vidiVici.png)";
                 popup.style.backgroundSize = "100% 100%";
-                popup.style.width = "40vw";
-                popup.style.height = "30vh";
-                popup.style.transform = "translate(30vw, 35vh)";
+                popup.style.width = "25vw";
+                popup.style.height = "57vh";
+                popup.style.transform = "translate(37.5vw, 15vh)";
                 popup.style.position = "absolute";
                 popup.style.zIndex = "2";
-                popup.addEventListener("click", function () {
-                    if (clicked == true) {
-                        popup.style.backgroundImage = "url(assets/Akte3/Binnenrotte.jpg)";
-                        clicked = false;
-                    }
-                    else {
-                        popup.style.backgroundImage = "url(assets/Akte3/Rotterdampas.png)";
-                        clicked = true;
-                    }
-                });
+                popup.style.paddingTop = "8vh";
+                popup.style.paddingBottom = "1vh";
+                popup.style.paddingLeft = "1vw";
+                popup.style.paddingRight = "1vw";
+                popup.style.boxShadow = "rgba(0, 0, 0, 0.5) 15px 15px";
+                popup.style.fontSize = "1.5vh";
+                popup.innerHTML += "Zin in een feestje? Maar heb ik daar wel tijd voor? Nu je student wordt zal je het razend druk gaat krijgen met je studie. Heb je eigenlijk nog wel tijd om iets leuks te doen? Je wil toch ook een beetje genieten van je studententijd? Hoe doen andere studenten dat eigenlijk?\n                </br>Stel: Je gaat om elf uur naar bed en je staat om zeven uur weer op om naar de hogeschool te gaan. In het weekend ga je vaak wat later naar bed, maar slaap je ook net zoveel uit. Je hebt 0:45 uur reistijd van huis naar school, een half uur om aan te kleden en te eten 's ochtend. Op school heb je van maandag t/m donderdag les van 8.30 uur tot 10:10 uur en je hebt les 12:10 tot 13.50 uur. Vrijdag heb je ook les, maar die volg je online via Teams. Naast je lessen heb je nog ongeveer 4 uur nodig voor je huiswerk. Dat doe je vaak effici\u00EBnt tussen de lessen door, hoef je minder 's avonds en in het weekend te doen. Je kookt je eigen eten, kost een half uurtje en tja, binnen 20 minuten heb je dat op. Per week werk je gemiddeld 14 uur in een leuk koffietentje in de stad. Je wilt het eigenlijk niet, maar aan social media ben je bijna anderhalf uur per dag kwijt. Oh ja, en je belt natuurlijk elke week een keer met je ouders (of oma/opa/tante) voor zo'n 30 min. \n                </br></br>Hoeveel tijd hou jij over voor ontspanning?\n                </br></br>Gemiddeld ... uur per dag. ";
             });
             button8.style.width = "5.9vw";
-            button8.style.height = "9.4vw";
+            button8.style.height = "11.7vh";
             button8.style.transform = "translate(64.8vw, 34.1vh)";
-            button8.style.opacity = "30%";
+            button8.style.opacity = "0%";
+            button8.style.zIndex = "-1";
             button8.addEventListener("click", function () {
                 var game = document.getElementsByTagName("game")[0];
+                var popup = document.createElement("pinPopup");
+                var button = document.createElement("button");
+                game.appendChild(button);
+                game.appendChild(popup);
                 var audio = document.createElement("audio");
                 var audioCheck = document.getElementsByTagName("audio")[0];
                 if (audioCheck == null) {
-                    game.appendChild(audio);
+                    popup.appendChild(audio);
                     audio.src = "assets/Akte3/audio.mp3";
                     audio.autoplay = true;
+                    audio.controls = true;
+                    audio.style.width = "100%";
+                    audio.style.paddingBottom = "1vh";
                 }
-                audio.onended = function () {
-                    audio.remove();
-                };
+                popup.style.zIndex = "2";
+                popup.style.paddingTop = "1vh";
+                popup.style.transform = "translate(35vw, 43vh)";
+                popup.innerHTML += "Hoeveel geld houd ik over voor een rondje?";
+                button.style.width = "100vw";
+                button.style.height = "100vh";
+                button.style.position = "absolute";
+                button.style.zIndex = "1";
+                button.style.opacity = "0%";
+                button.addEventListener("click", function () {
+                    button.remove();
+                    popup.remove();
+                });
             });
         };
     }
