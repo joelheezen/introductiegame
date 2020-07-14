@@ -56,9 +56,9 @@ class Timer{
         let pause = parseInt(localStorage.getItem('pause')!)
         let bonus = parseInt(localStorage.getItem('bonus')!)
 
-        console.log(end - start)
+        
         let score = Math.floor((end - start - pause) / 1000) - bonus
-
+        console.log(score)
         return score
     }
 
@@ -66,6 +66,7 @@ class Timer{
         localStorage.removeItem('start')
         localStorage.removeItem('end')
         localStorage.removeItem('pause')
+        localStorage.removeItem('bonus')
     }
 }
 
