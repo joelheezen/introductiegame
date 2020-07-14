@@ -223,7 +223,7 @@ class Act2{
             this.input4.style.border = "thick solid #00FF00"
             this.input5.style.border = "thick solid #00FF00"
 
-            new CenterPopup('De puzzel is opgelost','Daar komt de peercoach','')
+            new CenterPopup('De puzzel is opgelost','Daar komt de peercoach','doorgaan')
             
         }else{
             console.log("fout")

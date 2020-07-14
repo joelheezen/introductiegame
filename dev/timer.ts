@@ -3,30 +3,7 @@ class Timer{
     pauseEnd: number
 
     constructor(){
-        
-        this.resetTimer()
-        this.startTimer()
-
-        setTimeout(() => {
-            this.startPause()
-        }, 2000);
-
-        setTimeout(() => {
-            this.endPause()
-        }, 4000);
-
-        setTimeout(() => {
-            this.startPause()
-        }, 6000);
-
-        setTimeout(() => {
-            this.endPause() 
-        }, 8000);
-
-        setTimeout(() => {
-            this.endTimer()
-            this.score()
-        }, 10000);
+        //this.resetTimer()
     }
 
     startTimer(){
@@ -78,10 +55,11 @@ class Timer{
         let end = parseInt(localStorage.getItem('end')!)
         let pause = parseInt(localStorage.getItem('pause')!)
         let bonus = parseInt(localStorage.getItem('bonus')!)
+
+        console.log(end - start)
         let score = Math.floor((end - start - pause) / 1000) - bonus
 
-        console.log(score)
-
+        return score
     }
 
     resetTimer(){

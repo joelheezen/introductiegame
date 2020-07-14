@@ -17,7 +17,6 @@ var Act1 = (function () {
         this.input1 = document.createElement("input");
         this.input2 = document.createElement("input");
         this.input3 = document.createElement("input");
-        this.wrong_div = document.createElement("div");
         this.button1 = document.createElement("button");
         this.input1Save = "";
         this.input2Save = "";
@@ -402,7 +401,7 @@ var Act2 = (function () {
             this.input3.style.border = "thick solid #00FF00";
             this.input4.style.border = "thick solid #00FF00";
             this.input5.style.border = "thick solid #00FF00";
-            new CenterPopup('De puzzel is opgelost', 'Daar komt de peercoach', '');
+            new CenterPopup('De puzzel is opgelost', 'Daar komt de peercoach', 'doorgaan');
         }
         else {
             console.log("fout");
@@ -1627,7 +1626,7 @@ var CenterPopup = (function () {
         var doorgaan = document.createElement('button');
         doorgaan.innerHTML = 'Doorgaan';
         doorgaan.addEventListener('click', function () {
-            if (open == '') {
+            if (open == 'doorgaan') {
                 new Pause(2, 'Act3');
             }
             else if (open !== '') {
@@ -1645,6 +1644,7 @@ var CenterPopup = (function () {
 }());
 var Ending = (function () {
     function Ending() {
+        new Timer().endTimer();
         var bg = document.createElement("backgroundEnd");
         var game = document.getElementsByTagName("game")[0];
         game.appendChild(bg);
@@ -1657,7 +1657,7 @@ var Ending = (function () {
         var popup = document.createElement("pinPopup");
         game.appendChild(popup);
         popup.style.transform = "translate(34vw, 20vh)";
-        popup.innerHTML += "je score is te slecht om te laten zien";
+        popup.innerHTML += new Timer().score();
         var button = document.createElement("button");
         popup.appendChild(button);
         button.style.position = "absolute";
@@ -2239,8 +2239,9 @@ var Pause = (function () {
     function Pause(act, next) {
         var _this = this;
         this.game = document.getElementsByTagName('game')[0];
+        this.pauseTimer = new Timer();
         this.game.innerHTML = '';
-        new Timer().startPause();
+        this.pauseTimer.startPause();
         var background = document.createElement('background');
         background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/pauze.jpg)";
         this.game.appendChild(background);
@@ -2257,7 +2258,7 @@ var Pause = (function () {
         this.game.appendChild(message);
         message.appendChild(nextButton);
         nextButton.addEventListener('click', function () {
-            new Timer().endPause();
+            _this.pauseTimer.endPause();
             _this.game.innerHTML = '';
             eval("new " + next + "()");
         });
@@ -2307,25 +2308,6 @@ var StartScreem = (function () {
 window.addEventListener('load', function () { return new StartScreem(); });
 var Timer = (function () {
     function Timer() {
-        var _this = this;
-        this.resetTimer();
-        this.startTimer();
-        setTimeout(function () {
-            _this.startPause();
-        }, 2000);
-        setTimeout(function () {
-            _this.endPause();
-        }, 4000);
-        setTimeout(function () {
-            _this.startPause();
-        }, 6000);
-        setTimeout(function () {
-            _this.endPause();
-        }, 8000);
-        setTimeout(function () {
-            _this.endTimer();
-            _this.score();
-        }, 10000);
     }
     Timer.prototype.startTimer = function () {
         if (!localStorage.getItem('start')) {
@@ -2363,8 +2345,9 @@ var Timer = (function () {
         var end = parseInt(localStorage.getItem('end'));
         var pause = parseInt(localStorage.getItem('pause'));
         var bonus = parseInt(localStorage.getItem('bonus'));
+        console.log(end - start);
         var score = Math.floor((end - start - pause) / 1000) - bonus;
-        console.log(score);
+        return score;
     };
     Timer.prototype.resetTimer = function () {
         localStorage.removeItem('start');

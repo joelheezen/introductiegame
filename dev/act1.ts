@@ -3,7 +3,6 @@ class Act1 {
     private input1 = document.createElement("input")
     private input2 = document.createElement("input")
     private input3 = document.createElement("input")
-    private wrong_div = document.createElement("div")
 
     private button1 = document.createElement("button")
 
