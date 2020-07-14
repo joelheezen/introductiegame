@@ -286,7 +286,7 @@ class Act1 {
             button_next.remove()
             button_previous.remove()
             background.style.zIndex = `-1`
-            window.open('https://google.nl', '_blank');
+            window.open('https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/', '_blank');
         })
 
         button_previous.style.width = `6.2vw`
@@ -334,7 +334,7 @@ class Act1 {
         myloc.useMap = "/docs/assets/studentenpas.png";  
         var img = document.createElement('img')  
         img.setAttribute('src', myloc.useMap);  
-        img.setAttribute('style', "height:25vh;width:25vw;transform:translate(28.3vw, 26.5vh);cursor:pointer;");  
+        img.setAttribute('style', "height:25vh;width:24vw;transform:translate(28.7vw, 26.5vh);cursor:pointer;");  
         game.appendChild(img);
 
         img.addEventListener("click" , function(){

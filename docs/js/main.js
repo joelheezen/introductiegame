@@ -239,7 +239,7 @@ var Act1 = (function () {
             button_next.remove();
             button_previous.remove();
             background.style.zIndex = "-1";
-            window.open('https://google.nl', '_blank');
+            window.open('https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/', '_blank');
         });
         button_previous.style.width = "6.2vw";
         button_previous.style.height = "5vh";
@@ -279,7 +279,7 @@ var Act1 = (function () {
         myloc.useMap = "/docs/assets/studentenpas.png";
         var img = document.createElement('img');
         img.setAttribute('src', myloc.useMap);
-        img.setAttribute('style', "height:25vh;width:25vw;transform:translate(28.3vw, 26.5vh);cursor:pointer;");
+        img.setAttribute('style', "height:25vh;width:24vw;transform:translate(28.7vw, 26.5vh);cursor:pointer;");
         game.appendChild(img);
         img.addEventListener("click", function () {
             button.style.display = "none";
@@ -1555,7 +1555,7 @@ var Game = (function () {
         game.appendChild(button4);
         button4.style.width = "10vw";
         button4.style.height = "10vh";
-        button4.style.transform = "translate(50vw, 50vh)";
+        button4.style.transform = "translate(80vw, 50vh)";
         button4.innerHTML = "luuk";
         button4.onclick = this.buttonPress4;
     }
@@ -1936,4 +1936,54 @@ var StartScreem = (function () {
     return StartScreem;
 }());
 window.addEventListener('load', function () { return new StartScreem(); });
+var Timer = (function () {
+    function Timer() {
+    }
+    Timer.prototype.startTimer = function () {
+        if (!localStorage.getItem('start')) {
+            localStorage.setItem('start', new Date().getTime().toString());
+        }
+        if (!localStorage.getItem('pause')) {
+            localStorage.setItem('pause', '0');
+        }
+        if (!localStorage.getItem('bonus')) {
+            localStorage.setItem('bonus', '0');
+        }
+    };
+    Timer.prototype.startPause = function () {
+        this.pauseStart = new Date().getTime();
+    };
+    Timer.prototype.endPause = function () {
+        this.pauseEnd = new Date().getTime();
+        var currentPause = parseInt(localStorage.getItem('pause'));
+        var thisPause = this.pauseEnd - this.pauseStart;
+        var newPause = thisPause + currentPause;
+        localStorage.setItem('pause', newPause.toString());
+    };
+    Timer.prototype.addBonus = function (point) {
+        var currentBonus = parseInt(localStorage.getItem('bonus'));
+        var newBonus = currentBonus + point;
+        localStorage.setItem('bonus', newBonus);
+    };
+    Timer.prototype.endTimer = function () {
+        if (!localStorage.getItem('end')) {
+            localStorage.setItem('end', new Date().getTime().toString());
+        }
+    };
+    Timer.prototype.score = function () {
+        var start = parseInt(localStorage.getItem('start'));
+        var end = parseInt(localStorage.getItem('end'));
+        var pause = parseInt(localStorage.getItem('pause'));
+        var bonus = parseInt(localStorage.getItem('bonus'));
+        var score = Math.floor((end - start - pause) / 1000) - bonus;
+        console.log(score);
+    };
+    Timer.prototype.resetTimer = function () {
+        localStorage.removeItem('start');
+        localStorage.removeItem('end');
+        localStorage.removeItem('pause');
+    };
+    return Timer;
+}());
+window.addEventListener('load', function () { return new Timer(); });
 //# sourceMappingURL=main.js.map
