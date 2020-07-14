@@ -94,6 +94,22 @@ backgroundact3 {
     left:0; top:0;
 }
 
+background {
+    position: absolute;
+    width: 100vw; height: 100vh;
+    z-index:-1;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    left:0; top:0;
+}
+
+#backToLocatie{
+    width: 9vw;
+    height: 7.6vh;
+    transform: translate(91vw, 0vh);
+    opacity: 0;
+}
+
 classroom {
     position: absolute;
 }
@@ -159,8 +175,9 @@ pinPopup {
     box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
     background-color: #ffb911;
     position: absolute;
-    width: 15vw; height: 13vh;
+    width: 30vw; height: 14vh;
     z-index: 4;
+    font-size: 1.25vh;
 }
 
 pinPopupImage{
@@ -233,5 +250,27 @@ map{
     height:73.3vh;
     top:17.6vh;
     left:12.9vw;
+}
 
+startgame{
+    width:42.8vw;
+    height:28.2vh;
+    top:48.5vh;
+    left:32vw;
+    position: absolute;
+    cursor: pointer;
+}
+
+next{
+    width:20vw;
+    height:10vh;
+    padding-top: 2.5vh;
+    top:60vh;
+    left:40vw;
+    position: absolute;
+    cursor: pointer;
+    background-color: #ffb911;
+    border-radius: 15px;
+    text-align: center;
+    font-size:5vh;
 }

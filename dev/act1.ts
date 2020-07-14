@@ -94,6 +94,9 @@ class Act1 {
         let shape3 = (<HTMLInputElement>document.getElementById("input3")).value
         if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje"){
 
+            //document.getElementsByTagName("game")[0].innerHTML = ""
+            //new Pause(1,'EnterBuilding')
+
             let background = document.createElement("backgroundact2")
             let game = document.getElementsByTagName("game")[0]
 
