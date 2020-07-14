@@ -382,12 +382,12 @@ var Act2 = (function () {
         localStorage.setItem(this.number5, document.getElementById("input5").value);
     };
     Act2.prototype.setHint = function () {
-        new popup("Zoek je juiste kleur bij de juiste persoon.", 5, 93, 340, 20);
+        new popup("Zoek je juiste kleur bij de juiste persoon.", 5, 87, 10, 8);
         new popup("Hulp nodig? Blijf (er) niet (mee) rondlopen! Hier moet je zijn: Hulp bij studie. De hogeschool biedt allerlei vormen van een-op-een begeleiding en ondersteuning." +
-            " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!", 64, 75, 300, 200);
-        new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.", 20, 45, 200, 60);
-        new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door", 59, 45, 300, 80);
-        new popup("Solliciteren is soms een numbers game", 82, 45, 250, 60);
+            " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!", 64, 80, 30, 15);
+        new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.", 20, 45, 20, 5);
+        new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door", 59, 45, 20, 7);
+        new popup("Solliciteren is soms een numbers game", 82, 45, 15, 5);
     };
     Act2.prototype.codeEind = function () {
         var codeString = document.getElementById("input1").value +
@@ -2285,11 +2285,11 @@ var popup = (function () {
         this.field.innerText = text;
         this.field.style.position = "absolute";
         this.field.style.transform = "translate(" + posX + "vw," + posY + "vh)";
-        this.field.style.width = width.toString() + "px";
-        this.field.style.height = height.toString() + "px";
+        this.field.style.width = width.toString() + "vw";
+        this.field.style.height = height.toString() + "vh";
         this.field.style.borderRadius = "20px";
         this.field.style.backgroundColor = "#ffb911";
-        this.field.style.fontSize = "14px";
+        this.field.style.fontSize = "1vw";
         this.field.style.zIndex = "2";
         this.field.style.padding = "10px";
         this.field.style.boxShadow = "5px 10px";
