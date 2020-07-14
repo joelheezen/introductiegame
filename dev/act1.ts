@@ -94,35 +94,9 @@ class Act1 {
         let shape3 = (<HTMLInputElement>document.getElementById("input3")).value
         if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje"){
 
-            //document.getElementsByTagName("game")[0].innerHTML = ""
-            //new Pause(1,'EnterBuilding')
-
-            let background = document.createElement("backgroundact2")
-            let game = document.getElementsByTagName("game")[0]
-
-            game.appendChild(background)
-            background.style.backgroundImage = `url(/docs/assets/backgroundact1main2.png)`
-
-            game.removeChild(this.input1)
-            game.removeChild(this.input2)
-            game.removeChild(this.input3)
-
-            game.removeChild(this.button1)
-
-            var myloc = new Image();  
-            myloc.useMap = "/docs/assets/goed_antwoord.png";  
-            var img = document.createElement('img')  
-            img.setAttribute('src', myloc.useMap);  
-            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(35vw, 26.5vh);cursor:pointer;z-index:9999;");  
-            game.appendChild(img);
-
-            // if (confirm("dit is het goede antwoord, wil je verder? klik op cancel voor een pauze.")){
-            //     document.getElementsByTagName("game")[0].innerHTML = ""
-            //     new EnterBuilding()
-            // }
-            // else{
-            //     console.log("je neemt een pauze")
-            // }
+            document.getElementsByTagName("game")[0].innerHTML = ""
+            new Pause(1,'EnterBuilding')
+            
         }
         else{
             let game = document.getElementsByTagName("game")[0]

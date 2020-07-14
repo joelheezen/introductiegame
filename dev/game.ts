@@ -37,6 +37,7 @@ class Game{
         document.getElementsByTagName("game")[0].innerHTML = ""
         new Act1()
     }
+
     buttonPress4(){
         document.getElementsByTagName("game")[0].innerHTML = ""
         new EnterBuilding()

@@ -12,56 +12,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Timer = (function () {
-    function Timer() {
-    }
-    Timer.prototype.startTimer = function () {
-        if (!localStorage.getItem('start')) {
-            localStorage.setItem('start', new Date().getTime().toString());
-        }
-        if (!localStorage.getItem('pause')) {
-            localStorage.setItem('pause', '0');
-        }
-        if (!localStorage.getItem('bonus')) {
-            localStorage.setItem('bonus', '0');
-        }
-    };
-    Timer.prototype.startPause = function () {
-        this.pauseStart = new Date().getTime();
-    };
-    Timer.prototype.endPause = function () {
-        this.pauseEnd = new Date().getTime();
-        var currentPause = parseInt(localStorage.getItem('pause'));
-        var thisPause = this.pauseEnd - this.pauseStart;
-        var newPause = thisPause + currentPause;
-        localStorage.setItem('pause', newPause.toString());
-    };
-    Timer.prototype.addBonus = function (point) {
-        var currentBonus = parseInt(localStorage.getItem('bonus'));
-        var newBonus = currentBonus + point;
-        localStorage.setItem('bonus', newBonus);
-    };
-    Timer.prototype.endTimer = function () {
-        if (!localStorage.getItem('end')) {
-            localStorage.setItem('end', new Date().getTime().toString());
-        }
-    };
-    Timer.prototype.score = function () {
-        var start = parseInt(localStorage.getItem('start'));
-        var end = parseInt(localStorage.getItem('end'));
-        var pause = parseInt(localStorage.getItem('pause'));
-        var bonus = parseInt(localStorage.getItem('bonus'));
-        var score = Math.floor((end - start - pause) / 1000) - bonus;
-        console.log(score);
-    };
-    Timer.prototype.resetTimer = function () {
-        localStorage.removeItem('start');
-        localStorage.removeItem('end');
-        localStorage.removeItem('pause');
-    };
-    return Timer;
-}());
-window.addEventListener('load', function () { return new Timer(); });
 var Act1 = (function () {
     function Act1() {
         this.input1 = document.createElement("input");
@@ -143,20 +93,8 @@ var Act1 = (function () {
         var shape2 = document.getElementById("input2").value;
         var shape3 = document.getElementById("input3").value;
         if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje") {
-            var background = document.createElement("backgroundact2");
-            var game = document.getElementsByTagName("game")[0];
-            game.appendChild(background);
-            background.style.backgroundImage = "url(/docs/assets/backgroundact1main2.png)";
-            game.removeChild(this.input1);
-            game.removeChild(this.input2);
-            game.removeChild(this.input3);
-            game.removeChild(this.button1);
-            var myloc = new Image();
-            myloc.useMap = "/docs/assets/goed_antwoord.png";
-            var img = document.createElement('img');
-            img.setAttribute('src', myloc.useMap);
-            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(35vw, 26.5vh);cursor:pointer;z-index:9999;");
-            game.appendChild(img);
+            document.getElementsByTagName("game")[0].innerHTML = "";
+            new Pause(1, 'EnterBuilding');
         }
         else {
             var game = document.getElementsByTagName("game")[0];
@@ -1924,20 +1862,23 @@ var Pause = (function () {
     function Pause(act, next) {
         var _this = this;
         this.game = document.getElementsByTagName('game')[0];
+        this.game.innerHTML = '';
         new Timer().startPause();
-        console.log('luuk gay');
         var background = document.createElement('background');
         background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/pauze.jpg)";
         this.game.appendChild(background);
-        var title = document.createElement('hurray');
-        var message = document.createElement('message');
+        var title = document.createElement('congratulations');
+        var subTitle = document.createElement('akteGehaald');
+        var message = document.createElement('pauseMessage');
         var nextButton = document.createElement('next');
-        title.innerHTML = "Gefeliciteerd!!!<br>Je hebt akte " + act + " gehaald";
-        message.innerHTML = "Je kunt nu even pauze nemen<br>Druk op de knop om te beginnen met akte " + (act + 1);
+        title.innerHTML = "Gefeliciteerd";
+        subTitle.innerHTML = "Je hebt akte " + act + " gehaald";
+        message.innerHTML = "Je kunt nu even pauze nemen<br>Tijdens de pauze staat de tijd stil<br>Druk op de knop om te beginnen met akte " + (act + 1);
         nextButton.innerHTML = "Begin akte " + (act + 1);
         this.game.appendChild(title);
+        title.appendChild(subTitle);
         this.game.appendChild(message);
-        this.game.appendChild(nextButton);
+        message.appendChild(nextButton);
         nextButton.addEventListener('click', function () {
             new Timer().endPause();
             _this.game.innerHTML = '';
@@ -1986,4 +1927,73 @@ var StartScreem = (function () {
     return StartScreem;
 }());
 window.addEventListener('load', function () { return new StartScreem(); });
+var Timer = (function () {
+    function Timer() {
+        var _this = this;
+        this.resetTimer();
+        this.startTimer();
+        setTimeout(function () {
+            _this.startPause();
+        }, 2000);
+        setTimeout(function () {
+            _this.endPause();
+        }, 4000);
+        setTimeout(function () {
+            _this.startPause();
+        }, 6000);
+        setTimeout(function () {
+            _this.endPause();
+        }, 8000);
+        setTimeout(function () {
+            _this.endTimer();
+            _this.score();
+        }, 10000);
+    }
+    Timer.prototype.startTimer = function () {
+        if (!localStorage.getItem('start')) {
+            localStorage.setItem('start', new Date().getTime().toString());
+        }
+        if (!localStorage.getItem('pause')) {
+            localStorage.setItem('pause', '0');
+        }
+        if (!localStorage.getItem('bonus')) {
+            localStorage.setItem('bonus', '0');
+        }
+    };
+    Timer.prototype.startPause = function () {
+        this.pauseStart = new Date().getTime();
+    };
+    Timer.prototype.endPause = function () {
+        this.pauseEnd = new Date().getTime();
+        var currentPause = parseInt(localStorage.getItem('pause'));
+        var thisPause = this.pauseEnd - this.pauseStart;
+        var newPause = thisPause + currentPause;
+        localStorage.setItem('pause', newPause.toString());
+    };
+    Timer.prototype.addBonus = function (point) {
+        var currentBonus = parseInt(localStorage.getItem('bonus'));
+        var newBonus = currentBonus + point;
+        localStorage.setItem('bonus', newBonus);
+    };
+    Timer.prototype.endTimer = function () {
+        if (!localStorage.getItem('end')) {
+            localStorage.setItem('end', new Date().getTime().toString());
+        }
+    };
+    Timer.prototype.score = function () {
+        var start = parseInt(localStorage.getItem('start'));
+        var end = parseInt(localStorage.getItem('end'));
+        var pause = parseInt(localStorage.getItem('pause'));
+        var bonus = parseInt(localStorage.getItem('bonus'));
+        var score = Math.floor((end - start - pause) / 1000) - bonus;
+        console.log(score);
+    };
+    Timer.prototype.resetTimer = function () {
+        localStorage.removeItem('start');
+        localStorage.removeItem('end');
+        localStorage.removeItem('pause');
+    };
+    return Timer;
+}());
+window.addEventListener('load', function () { return new Timer(); });
 //# sourceMappingURL=main.js.map
