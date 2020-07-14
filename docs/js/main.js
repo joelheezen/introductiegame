@@ -1423,27 +1423,40 @@ var Act3 = (function () {
             button3.style.transform = "translate(68.7vw, 54.4vh)";
             button3.style.opacity = "0";
             button3.addEventListener("click", function () {
-                var pdf = document.createElement("object");
-                game.appendChild(pdf);
-                pdf.data = "assets/Akte3/RKvVboekje2020.pdf";
-                pdf.type = "application/pdf";
-                pdf.width = "50%";
-                pdf.height = "75%";
-                pdf.style.zIndex = "1";
-                pdf.style.position = "absolute";
-                pdf.style.transform = "translate(25vw, 10vh)";
-                pdf.style.boxShadow = "rgba(0,0,0,0.5) 15px 15px";
-                var button = document.createElement("button");
-                game.appendChild(button);
-                button.style.width = "100vw";
-                button.style.height = "100vh";
-                button.style.position = "absolute";
-                button.style.zIndex = "0";
-                button.style.opacity = "0";
-                button.addEventListener("click", function () {
-                    button.remove();
-                    pdf.remove();
-                });
+                var winNav = window.navigator;
+                var vendorName = winNav.vendor;
+                var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+                var isIOSChrome = winNav.userAgent.match("CriOS");
+                if (isIOSChrome) {
+                }
+                else if (vendorName === "Google Inc." &&
+                    isIEedge === false) {
+                    var pdf_1 = document.createElement("object");
+                    game.appendChild(pdf_1);
+                    pdf_1.data = "assets/Akte3/RKvVboekje2020.pdf";
+                    pdf_1.type = "application/pdf";
+                    pdf_1.width = "50%";
+                    pdf_1.height = "75%";
+                    pdf_1.style.zIndex = "1";
+                    pdf_1.style.position = "absolute";
+                    pdf_1.style.transform = "translate(25vw, 10vh)";
+                    pdf_1.style.boxShadow = "rgba(0,0,0,0.5) 15px 15px";
+                    var button_1 = document.createElement("button");
+                    game.appendChild(button_1);
+                    button_1.style.width = "100vw";
+                    button_1.style.height = "100vh";
+                    button_1.style.position = "absolute";
+                    button_1.style.zIndex = "0";
+                    button_1.style.opacity = "0";
+                    button_1.addEventListener("click", function () {
+                        button_1.remove();
+                        pdf_1.remove();
+                    });
+                }
+                else {
+                    var win = window.open("assets/Akte3/RKvVboekje2020.pdf");
+                    win.focus();
+                }
             });
             button4.style.width = "10.5vw";
             button4.style.height = "11vh";
@@ -1453,17 +1466,17 @@ var Act3 = (function () {
                 var card = document.getElementById("card");
                 if (card) {
                     card.style.display = "block";
-                    var button_1 = document.createElement("button");
-                    game.appendChild(button_1);
-                    button_1.style.zIndex = "1";
-                    button_1.style.width = "100vw";
-                    button_1.style.height = "100vh";
-                    button_1.style.opacity = "0";
-                    button_1.style.position = "absolute";
-                    button_1.addEventListener("click", function () {
+                    var button_2 = document.createElement("button");
+                    game.appendChild(button_2);
+                    button_2.style.zIndex = "1";
+                    button_2.style.width = "100vw";
+                    button_2.style.height = "100vh";
+                    button_2.style.opacity = "0";
+                    button_2.style.position = "absolute";
+                    button_2.addEventListener("click", function () {
                         var card = document.getElementById("card");
                         card.style.display = "none";
-                        button_1.remove();
+                        button_2.remove();
                     });
                 }
                 else {
@@ -1481,16 +1494,16 @@ var Act3 = (function () {
                     popup_1.style.borderRadius = "20px";
                     popup_1.style.boxShadow = "rgba(0,0,0,0.25) 20px 20px";
                     popup_1.id = "card";
-                    var button_2 = document.createElement("button");
-                    game_1.appendChild(button_2);
-                    button_2.style.zIndex = "1";
-                    button_2.style.width = "100vw";
-                    button_2.style.height = "100vh";
-                    button_2.style.opacity = "0";
-                    button_2.style.position = "absolute";
-                    button_2.addEventListener("click", function () {
+                    var button_3 = document.createElement("button");
+                    game_1.appendChild(button_3);
+                    button_3.style.zIndex = "1";
+                    button_3.style.width = "100vw";
+                    button_3.style.height = "100vh";
+                    button_3.style.opacity = "0";
+                    button_3.style.position = "absolute";
+                    button_3.addEventListener("click", function () {
                         popup_1.style.display = "none";
-                        button_2.remove();
+                        button_3.remove();
                     });
                     var text = document.createElement("text");
                     popup_1.appendChild(text);

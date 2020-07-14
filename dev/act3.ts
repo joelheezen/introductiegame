@@ -734,6 +734,19 @@ class Act3{
             button3.style.transform = `translate(68.7vw, 54.4vh)`
             button3.style.opacity = `0`
             button3.addEventListener("click" , function(){
+
+                var winNav = window.navigator;
+                var vendorName = winNav.vendor;
+                var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+                var isIOSChrome = winNav.userAgent.match("CriOS");
+
+                if (isIOSChrome) {
+                // is Google Chrome on IOS
+                } else if(                
+                vendorName === "Google Inc." &&
+                isIEedge === false
+                ) {
+                // is Google Chrome
                 let pdf = document.createElement("object")
                 game.appendChild(pdf)
                 pdf.data = `assets/Akte3/RKvVboekje2020.pdf`
@@ -756,6 +769,11 @@ class Act3{
                     button.remove()
                     pdf.remove()
                 })
+                } else { 
+                // not Google Chrome 
+                let win = window.open("assets/Akte3/RKvVboekje2020.pdf")
+                win!.focus()
+                }
             })
 
             button4.style.width = `10.5vw`
