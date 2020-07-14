@@ -20,6 +20,7 @@ class Ending{
         popup.innerHTML += new Timer().score()
         let button = document.createElement("button")
         popup.appendChild(button)
+        popup.style.boxShadow = `none`
 
         button.style.position = `absolute`
         button.style.width = `94%`
