@@ -67,11 +67,117 @@ backgroundact1 {
     position: absolute;
     width:100vw; height:100vh;
     z-index: -1;
-    background-image: url(../assets/backgroundact1main.jpg);
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% auto;
     left:0; top:0;
 }
+
+backgroundOnline {
+    position: absolute;
+    width:100vw; height:100vh;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80% 100%;
+    left:0; top:0;
+    background-color: #f8f5ee;
+    background-image: url(../assets/plattegrond.jpg)
+}
+
+onlinePopup{
+    position: absolute;
+    padding-left:2vw;
+    padding-right:2vw;
+    padding-top:2vw;
+    width:24vw;
+    height:40vh;
+    top:30vh;
+    left:36vw;
+    box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
+    background-color: #ffb911;
+    border-radius: 1vh;
+    z-index:10;
+}
+
+.studentenPas{
+    height:25vh;
+    width:22vw;
+    transform:translate(31.7vw, 26.5vh);
+    cursor:pointer;
+}
+
+onlinePopup *{
+    width:100%;
+    text-align: center;
+}
+
+onlinePopup button{
+    background-color: #ffb911;
+    border: solid black 3px;
+    font-weight: bolder;
+    border-radius: 3px;
+    width:40%;
+    height:3vw;    
+    left:30%;
+    top:80%;
+    cursor: pointer;
+}
+
+popupTitle{
+    font-size:4vh;  
+    padding-bottom: 3vh;
+}
+
+
+
+
+.inputShape{
+    width:13.7vw;
+    height:5.7vh;
+    border-radius: 25px;
+    border:none;
+    font-size:20px;
+    padding-left:1vw;
+    text-transform: uppercase;
+
+}
+
+.verzenden{
+    background-color: #ffb911;
+    border: solid black 3px;
+    font-weight: bolder;
+    border-radius: 5px;
+}
+
+banner{
+    top:0;
+    left:0;
+    position: absolute;
+    width:100vw;
+    height:13vh;
+    background-image:url(../assets/banner.png);
+    background-size: 100% 100%;
+}
+
+act1Box{
+    background-color: #ffb911;
+    width:50vw;
+    height:40vh;
+    left:23vw;
+    top:23vh;
+    border-radius: 15px;
+    position: absolute;
+    padding: 4vh;
+    box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
+}
+
+.search{
+    background-color: #ffb911;
+    border: none;
+}
+
+
 
 backgroundact2, act2background{
     position: absolute;
@@ -216,6 +322,7 @@ pin:hover{
     width:7vh;
     margin-top:-4vh;
     margin-left:-2vh;
+    
     transition:1s;
 }
 
