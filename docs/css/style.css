@@ -1,4 +1,3 @@
-
 game *{
     display: block;
     font-family: Arial Black;
@@ -29,19 +28,22 @@ educationsetter{
     padding-left:2vw;
     padding-right:2vw;
     padding-top:2vw;
-    width:30vw;
+    width:40vw;
     height:60vh;
     top:20vh;
-    left:33vw;
-    background-color: #ffb911;
+    left:28vw;
+    box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
+    background-color: #cf0245;
     border-radius: 1vh;
+    color:white;
 }
 
 educationsetter button{
-    background-color: #ffb911;
-    border: solid black 3px;
+    background-color: #cf0245;
+    border: solid white 3px;
     font-weight: bolder;
     border-radius: 3px;
+    color:white;
     width:40%;
     height:3vw;    
     left:calc(30% - 6px);
@@ -94,6 +96,22 @@ backgroundact3 {
     left:0; top:0;
 }
 
+background {
+    position: absolute;
+    width: 100vw; height: 100vh;
+    z-index:-1;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    left:0; top:0;
+}
+
+#backToLocatie{
+    width: 9vw;
+    height: 7.6vh;
+    transform: translate(91vw, 0vh);
+    opacity: 0;
+}
+
 classroom {
     position: absolute;
 }
@@ -104,11 +122,19 @@ openfolder, testbutton {
     background-position: center;
 
 }
-folderitem, doorName, signin {
+folderitem, doorName {
     position: absolute;
     z-index: 0;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+
+}
+signin{
+    position: absolute;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-shadow: 5px 10px;
 
 }
 input:focus{
@@ -159,8 +185,9 @@ pinPopup {
     box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
     background-color: #ffb911;
     position: absolute;
-    width: 15vw; height: 13vh;
+    width: 30vw; height: 14vh;
     z-index: 4;
+    font-size: 1.25vh;
 }
 
 pinPopupImage{
@@ -189,7 +216,8 @@ pin:hover{
 }
 
 popuplocation{
-    background-color: #ffb911;
+    background-color:  #cf0245;
+    color:white;
     position: absolute;
     padding-left:2vw;
     padding-right:2vw;
@@ -204,8 +232,9 @@ popuplocation{
 }
 
 popuplocation button{
-    background-color: #ffb911;
-    border: solid black 3px;
+    background-color:  #cf0245;
+    color:white;
+    border: solid white 3px;
     font-weight: bolder;
     border-radius: 3px;
     width:40%;    
@@ -233,5 +262,59 @@ map{
     height:73.3vh;
     top:17.6vh;
     left:12.9vw;
+}
 
+startgame{
+    width:42.8vw;
+    height:31.5vh;
+    top:48.5vh;
+    left:32vw;
+    position: absolute;
+    cursor: pointer;
+}
+
+next{
+    width:15vw;
+    height:5.5vh;
+    padding-top: 1vh;
+    top:20vh;
+    left:9.5vw;
+    position: absolute;
+    cursor: pointer;
+    background-color: #cf0245;
+    border-radius: 15px;
+    text-align: center;
+    font-size:3vh;
+    border: solid white 0.2vw;
+    color:white;
+}
+
+congratulations{
+    position: absolute;
+    top:5vh;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size: 10vh;
+    background-color: #cf0245;
+    padding-bottom:1vh;
+}
+
+akteGehaald{
+    text-align:center;
+    color:white;
+    font-size:3vh;
+}
+
+pauseMessage{
+    padding:2vw;
+    text-align:center;
+    color:white;
+    position: absolute;
+    background-color: #cf0245;
+    border-radius: 15px;
+    width:30vw;
+    left:33vw;
+    top:45vh;
+    height:30vh;
 }

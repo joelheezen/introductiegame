@@ -10,9 +10,10 @@ class popup{
         this.field.style.height = height.toString() + "vh"
         this.field.style.borderRadius = "20px"
         this.field.style.backgroundColor = "#ffb911"
-        this.field.style.fontSize = "20px"
+        this.field.style.fontSize = "1vw"
         this.field.style.zIndex = "2"
         this.field.style.padding = "10px"
+        this.field.style.boxShadow = "5px 10px"
         this.field.addEventListener("click",()=>{
             this.field.remove()
         })

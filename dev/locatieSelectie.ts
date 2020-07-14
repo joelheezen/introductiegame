@@ -12,6 +12,16 @@ class LocatieSelectie{
         this.background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/map.png"
         this.game.appendChild(this.background)
         this.educationSetter()
+
+        let back = document.createElement("button")
+        back.id = 'backToLocatie'
+        back.addEventListener('click',() => this.goBack())
+        this.game.appendChild(back)
+    }
+
+    goBack(){
+        this.game.innerHTML= ""
+        new LocatieSelectie()
     }
 
     educationSetter(){
@@ -92,9 +102,7 @@ class LocatieSelectie{
             }else{
                     this.popupLoc('incorrect',location,this.educations[index].locatieInfo)
             } 
-
         })
-
     }
 
     popupLoc(awnser: string,location: string,info: string){

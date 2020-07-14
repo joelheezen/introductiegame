@@ -38,8 +38,7 @@ class Act2{
         this.codeInput()
         this.codeEind()
         this.doorNames()
-        new popup("Hulp nodig? Blijf (er) niet (mee) rondlopen! Hier moet je zijn: Hulp bij studie. De hogeschool biedt allerlei vormen van een-op-een begeleiding en ondersteuning."+
-        " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!",64,75,30,20)
+        this.setHint()
 
 
     }
@@ -56,6 +55,7 @@ class Act2{
         this.doorName1.style.textAlign = 'center'
         this.doorName2.style.paddingTop = '1.5vh'
         this.doorName1.style.fontSize = `1vw`
+        this.doorName1.style.pointerEvents = "none"
         this.doorName1.innerHTML = "Vertrouwenspersoon"
 
         this.doorName2.style.width = '11.77vw'
@@ -64,6 +64,7 @@ class Act2{
         this.doorName2.style.textAlign = 'center'
         this.doorName2.style.paddingTop = '0.8vh'
         this.doorName2.style.fontSize = `1vw`
+        this.doorName2.style.pointerEvents = "none"
         this.doorName2.innerHTML = "Peercoach"
 
         this.doorName3.style.width = '11.77vw'
@@ -72,6 +73,7 @@ class Act2{
         this.doorName3.style.textAlign = 'center'
         this.doorName3.style.paddingTop = '0.8vh'
         this.doorName3.style.fontSize = `1vw`
+        this.doorName3.style.pointerEvents = "none"
         this.doorName3.innerHTML = "SLC"
 
         this.doorName4.style.width = '11.77vw'
@@ -80,6 +82,7 @@ class Act2{
         this.doorName4.style.textAlign = 'center'
         this.doorName4.style.paddingTop = '0.8vh'
         this.doorName4.style.fontSize = `1vw`
+        this.doorName4.style.pointerEvents = "none"
         this.doorName4.innerHTML = "Decaan"
 
         this.doorName5.style.width = '11.77vw'
@@ -88,13 +91,14 @@ class Act2{
         this.doorName5.style.textAlign = 'center'
         this.doorName5.style.paddingTop = '1.3vh'
         this.doorName5.style.fontSize = `1vw`
+        this.doorName5.style.pointerEvents = "none"
         this.doorName5.innerHTML = "Student aan zet"
     }
     codeInput(){
 
         this.game.appendChild(this.input1)
 
-        this.input1.style.width = `2.5vw`
+        this.input1.style.width = `2.6vw`
         this.input1.style.height = `5.7vh`
         this.input1.style.transform = `translate(8.7vw, 35.45vh)`
         this.input1.style.border = "thick solid #A9A9A9"
@@ -113,7 +117,7 @@ class Act2{
 
         this.game.appendChild(this.input2)
 
-        this.input2.style.width = `2.4vw`
+        this.input2.style.width = `2.6vw`
         this.input2.style.height = `5.7vh`
         this.input2.style.transform = `translate(28.6vw, 35.45vh)`
         this.input2.style.border = "thick solid #A9A9A9"
@@ -132,7 +136,7 @@ class Act2{
 
         this.game.appendChild(this.input3)
 
-        this.input3.style.width = `2.6vw`
+        this.input3.style.width = `2.8vw`
         this.input3.style.height = `5.7vh`
         this.input3.style.transform = `translate(48.2vw, 35.45vh)`
         this.input3.style.border = "thick solid #A9A9A9"
@@ -151,7 +155,7 @@ class Act2{
 
         this.game.appendChild(this.input4)
 
-        this.input4.style.width = `2.6vw`
+        this.input4.style.width = `2.8vw`
         this.input4.style.height = `5.7vh`
         this.input4.style.transform = `translate(68vw, 35.45vh)`
         this.input4.style.border = "thick solid #A9A9A9"
@@ -171,7 +175,7 @@ class Act2{
     
         this.game.appendChild(this.input5)
 
-        this.input5.style.width = `2.5vw`
+        this.input5.style.width = `2.6vw`
         this.input5.style.height = `5.7vh`
         this.input5.style.transform = `translate(88vw, 35.45vh)`
         this.input5.style.border = "thick solid #A9A9A9"
@@ -202,6 +206,15 @@ class Act2{
         }else{
             inputtwee.style.border = "thick solid #FF0000"
         }
+
+    }
+    setHint(){
+        new popup("Zoek je juiste kleur bij de juiste persoon.",5,93,24,2.5)
+        new popup("Hulp nodig? Blijf (er) niet (mee) rondlopen! Hier moet je zijn: Hulp bij studie. De hogeschool biedt allerlei vormen van een-op-een begeleiding en ondersteuning."+
+        " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!",64,75,30,20)
+        new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.",20,45,20,6)
+        new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door",59,45,20,8)
+        new popup("Solliciteren is soms een numbers game",82,45,15,6)
 
     }
 
