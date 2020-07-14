@@ -403,7 +403,6 @@ var Act2 = (function () {
         this.input1.value = localStorage.getItem(this.number1);
         this.input1.id = "input1";
         this.input1.addEventListener("keyup", function () {
-            _this.codeCheck("input1", _this.input1, "D", 'd');
             _this.localStorageUpdate();
             _this.codeEind();
         });
@@ -420,7 +419,6 @@ var Act2 = (function () {
         this.input2.value = localStorage.getItem(this.number2);
         this.input2.id = "input2";
         this.input2.addEventListener("keyup", function () {
-            _this.codeCheck("input2", _this.input2, "B", 'b');
             _this.localStorageUpdate();
             _this.codeEind();
         });
@@ -437,7 +435,6 @@ var Act2 = (function () {
         this.input3.value = localStorage.getItem(this.number3);
         this.input3.id = "input3";
         this.input3.addEventListener("keyup", function () {
-            _this.codeCheck("input3", _this.input3, "N", 'n');
             _this.localStorageUpdate();
             _this.codeEind();
         });
@@ -454,7 +451,6 @@ var Act2 = (function () {
         this.input4.value = localStorage.getItem(this.number4);
         this.input4.id = "input4";
         this.input4.addEventListener("keyup", function () {
-            _this.codeCheck("input4", _this.input4, "V", 'v');
             _this.localStorageUpdate();
             _this.codeEind();
         });
@@ -471,7 +467,6 @@ var Act2 = (function () {
         this.input5.value = localStorage.getItem(this.number5);
         this.input5.id = "input5";
         this.input5.addEventListener("keyup", function () {
-            _this.codeCheck("input5", _this.input5, "E", 'e');
             _this.localStorageUpdate();
             _this.codeEind();
         });
@@ -483,22 +478,13 @@ var Act2 = (function () {
         localStorage.setItem(this.number4, document.getElementById("input4").value);
         localStorage.setItem(this.number5, document.getElementById("input5").value);
     };
-    Act2.prototype.codeCheck = function (input, inputtwee, awnser, awnser2) {
-        console.log(input);
-        if (document.getElementById(input).value == awnser || document.getElementById(input).value == awnser2) {
-            inputtwee.style.border = "thick solid #00FF00";
-        }
-        else {
-            inputtwee.style.border = "thick solid #FF0000";
-        }
-    };
     Act2.prototype.setHint = function () {
-        new popup("Zoek je juiste kleur bij de juiste persoon.", 5, 93, 24, 2.5);
+        new popup("Zoek je juiste kleur bij de juiste persoon.", 5, 93, 340, 20);
         new popup("Hulp nodig? Blijf (er) niet (mee) rondlopen! Hier moet je zijn: Hulp bij studie. De hogeschool biedt allerlei vormen van een-op-een begeleiding en ondersteuning." +
-            " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!", 64, 75, 30, 20);
-        new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.", 20, 45, 20, 6);
-        new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door", 59, 45, 20, 8);
-        new popup("Solliciteren is soms een numbers game", 82, 45, 15, 6);
+            " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!", 64, 75, 300, 200);
+        new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.", 20, 45, 200, 60);
+        new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door", 59, 45, 300, 80);
+        new popup("Solliciteren is soms een numbers game", 82, 45, 250, 60);
     };
     Act2.prototype.codeEind = function () {
         var codeString = document.getElementById("input1").value +
@@ -507,8 +493,22 @@ var Act2 = (function () {
             document.getElementById("input4").value +
             document.getElementById("input5").value;
         console.log(codeString);
-        if (codeString == "DBNVE") {
-            console.log("winner");
+        if (codeString.toLowerCase() == "dbnve") {
+            console.log("goed");
+            this.input1.style.border = "thick solid #00FF00";
+            this.input2.style.border = "thick solid #00FF00";
+            this.input3.style.border = "thick solid #00FF00";
+            this.input4.style.border = "thick solid #00FF00";
+            this.input5.style.border = "thick solid #00FF00";
+            new popup("De puzzel is opgelost. Daar komt de peercoach", 40, 50, 300, 35);
+        }
+        else {
+            console.log("fout");
+            this.input1.style.border = "thick solid #FF0000";
+            this.input2.style.border = "thick solid #FF0000";
+            this.input3.style.border = "thick solid #FF0000";
+            this.input4.style.border = "thick solid #FF0000";
+            this.input5.style.border = "thick solid #FF0000";
         }
     };
     Act2.prototype.makeLevelIcon = function (posX, posY, width, height) {
@@ -551,6 +551,8 @@ var Act2 = (function () {
         });
     };
     Act2.prototype.createFolderItems = function () {
+        var _this = this;
+        this.folderBackground = document.createElement("folderbackground");
         this.folderItem1 = document.createElement("folderitem");
         this.folderItem2 = document.createElement("folderitem");
         this.folderItem3 = document.createElement("folderitem");
@@ -563,12 +565,16 @@ var Act2 = (function () {
         this.game.appendChild(this.folderItem4);
         this.game.appendChild(this.folderItem5);
         this.game.appendChild(this.folderItem6);
+        this.folderBackground.style.backgroundColor = "black";
+        this.folderBackground.style.opacity = "0.8";
+        this.folderBackground.style.zIndex = "15";
         this.folderItem1.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_getallen.png)';
         this.folderItem1.style.transform = "translate(20vw,72vh)";
         this.folderItem1.style.width = '8.3vw';
         this.folderItem1.style.height = '8.3vh';
         this.folderItem1.addEventListener("click", function () {
             console.log("folder1");
+            _this.game.appendChild(_this.folderBackground);
             new Act2folder1;
         });
         this.folderItem2.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_studie.png)';
@@ -577,6 +583,7 @@ var Act2 = (function () {
         this.folderItem2.style.height = '12vh';
         this.folderItem2.addEventListener("click", function () {
             console.log("folder2");
+            _this.game.appendChild(_this.folderBackground);
             new Act2folder2;
         });
         this.folderItem3.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_solliciteren.png)';
@@ -585,6 +592,7 @@ var Act2 = (function () {
         this.folderItem3.style.height = '8vh';
         this.folderItem3.addEventListener("click", function () {
             console.log("folder3");
+            _this.game.appendChild(_this.folderBackground);
             new Act2folder3;
         });
         this.folderItem4.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_coia.png)';
@@ -593,6 +601,7 @@ var Act2 = (function () {
         this.folderItem4.style.height = '10vh';
         this.folderItem4.addEventListener("click", function () {
             console.log("folder4");
+            _this.game.appendChild(_this.folderBackground);
             new Act2folder4;
         });
         this.folderItem5.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_morsecode.png)';
@@ -601,6 +610,7 @@ var Act2 = (function () {
         this.folderItem5.style.height = '10vh';
         this.folderItem5.addEventListener("click", function () {
             console.log("folder5");
+            _this.game.appendChild(_this.folderBackground);
             new Act2folder5;
         });
         this.folderItem6.style.backgroundImage = 'url(assets/Akte2/Postervormen&kleuren.jpg)';
@@ -609,6 +619,7 @@ var Act2 = (function () {
         this.folderItem6.style.height = '11.6vh';
         this.folderItem6.addEventListener("click", function () {
             console.log("folder6");
+            _this.game.appendChild(_this.folderBackground);
             new Act2folder6;
         });
     };
@@ -626,12 +637,11 @@ var folders = (function () {
         this.folder.style.height = '100vh';
         this.game.appendChild(this.folder);
         this.folder.addEventListener("click", function () {
+            var folderBG = document.getElementsByTagName('folderbackground')[0];
             console.log("folder removed");
+            folderBG.remove();
             _this.folder.remove();
         });
-    };
-    folders.prototype.removeMe = function () {
-        this.folder.remove();
     };
     return folders;
 }());
@@ -2013,11 +2023,11 @@ var popup = (function () {
         this.field.innerText = text;
         this.field.style.position = "absolute";
         this.field.style.transform = "translate(" + posX + "vw," + posY + "vh)";
-        this.field.style.width = width.toString() + "vw";
-        this.field.style.height = height.toString() + "vh";
+        this.field.style.width = width.toString() + "px";
+        this.field.style.height = height.toString() + "px";
         this.field.style.borderRadius = "20px";
         this.field.style.backgroundColor = "#ffb911";
-        this.field.style.fontSize = "1vw";
+        this.field.style.fontSize = "14px";
         this.field.style.zIndex = "2";
         this.field.style.padding = "10px";
         this.field.style.boxShadow = "5px 10px";
