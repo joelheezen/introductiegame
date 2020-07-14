@@ -1942,7 +1942,7 @@ var Osiris = (function () {
     Osiris.prototype.createOsirisScreen = function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
-        var background = document.createElement("backgroundact1");
+        var background = document.createElement("backgroundact2");
         background.style.backgroundImage = "url(assets/osiris_1.png)";
         game2.appendChild(background);
         game2.appendChild(this.input1);
@@ -1975,7 +1975,7 @@ var Osiris = (function () {
         var game2 = document.getElementsByTagName("game2")[0];
         game2.removeChild(this.button1);
         game2.removeChild(this.input1);
-        var background = document.createElement("backgroundact1");
+        var background = document.createElement("backgroundact2");
         background.style.backgroundImage = "url(assets/osiris_2.png)";
         game2.appendChild(background);
         game2.appendChild(this.button2);
@@ -1995,7 +1995,7 @@ var Osiris = (function () {
         var game2 = document.getElementsByTagName("game2")[0];
         game2.removeChild(this.img);
         game2.removeChild(this.button2);
-        var background = document.createElement("backgroundact1");
+        var background = document.createElement("backgroundact2");
         background.style.backgroundImage = "url(assets/osiris_3.png)";
         game2.appendChild(background);
         game2.appendChild(this.input2);
@@ -2028,7 +2028,7 @@ var Osiris = (function () {
     Osiris.prototype.keuzeRight = function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
-        var background = document.createElement("backgroundact1");
+        var background = document.createElement("backgroundact2");
         background.style.backgroundImage = "url(assets/osiris_5.png)";
         game2.appendChild(background);
         game2.appendChild(this.button4);
@@ -2040,14 +2040,14 @@ var Osiris = (function () {
     };
     Osiris.prototype.keuzeWrong = function () {
         var game2 = document.getElementsByTagName("game2")[0];
-        var background = document.createElement("backgroundact1");
+        var background = document.createElement("backgroundact2");
         background.style.backgroundImage = "url(assets/osiris_4.png)";
         game2.appendChild(background);
     };
     Osiris.prototype.onderwijsAgain = function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
-        var background = document.createElement("backgroundact1");
+        var background = document.createElement("backgroundact2");
         background.style.backgroundImage = "url(assets/osiris_3.png)";
         game2.appendChild(background);
         game2.appendChild(this.input2);
@@ -2067,7 +2067,7 @@ var Osiris = (function () {
     Osiris.prototype.keuzevak = function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
-        var background = document.createElement("backgroundact1");
+        var background = document.createElement("backgroundact2");
         background.style.backgroundImage = "url(assets/osiris_6.png)";
         game2.appendChild(background);
         game2.removeChild(this.input2);
@@ -2082,7 +2082,7 @@ var Osiris = (function () {
     Osiris.prototype.signIn = function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
-        var background = document.createElement("backgroundact1");
+        var background = document.createElement("backgroundact2");
         background.style.backgroundImage = "url(assets/osiris_7.png)";
         game2.appendChild(background);
         game2.removeChild(this.button5);
@@ -2095,7 +2095,7 @@ var Osiris = (function () {
     };
     Osiris.prototype.definitief = function () {
         var game2 = document.getElementsByTagName("game2")[0];
-        var background = document.createElement("backgroundact1");
+        var background = document.createElement("backgroundact2");
         background.style.backgroundImage = "url(assets/osiris_8.png)";
         game2.appendChild(background);
     };

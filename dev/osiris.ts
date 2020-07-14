@@ -21,7 +21,7 @@ class Osiris {
     createOsirisScreen(){
         let game2 = document.getElementsByTagName("game2")[0]
 
-        let background = document.createElement("backgroundact1")
+        let background = document.createElement("backgroundact2")
         background.style.backgroundImage = `url(assets/osiris_1.png)`
         game2.appendChild(background)
 
@@ -67,7 +67,7 @@ class Osiris {
         game2.removeChild(this.button1)
         game2.removeChild(this.input1)
 
-        let background = document.createElement("backgroundact1")
+        let background = document.createElement("backgroundact2")
         background.style.backgroundImage = `url(assets/osiris_2.png)`
         game2.appendChild(background)
 
@@ -91,7 +91,7 @@ class Osiris {
         game2.removeChild(this.img);
         game2.removeChild(this.button2);
 
-        let background = document.createElement("backgroundact1")
+        let background = document.createElement("backgroundact2")
         background.style.backgroundImage = `url(assets/osiris_3.png)`
         game2.appendChild(background)
 
@@ -133,7 +133,7 @@ class Osiris {
     keuzeRight(){
         let game2 = document.getElementsByTagName("game2")[0]
 
-        let background = document.createElement("backgroundact1")
+        let background = document.createElement("backgroundact2")
         background.style.backgroundImage = `url(assets/osiris_5.png)`
         game2.appendChild(background)
 
@@ -148,7 +148,7 @@ class Osiris {
     keuzeWrong(){
         let game2 = document.getElementsByTagName("game2")[0]
 
-        let background = document.createElement("backgroundact1")
+        let background = document.createElement("backgroundact2")
         background.style.backgroundImage = `url(assets/osiris_4.png)`
         game2.appendChild(background)
     }
@@ -156,7 +156,7 @@ class Osiris {
     onderwijsAgain(){
         let game2 = document.getElementsByTagName("game2")[0]
 
-        let background = document.createElement("backgroundact1")
+        let background = document.createElement("backgroundact2")
         background.style.backgroundImage = `url(assets/osiris_3.png)`
         game2.appendChild(background)
 
@@ -183,7 +183,7 @@ class Osiris {
     keuzevak(){
         let game2 = document.getElementsByTagName("game2")[0]
 
-        let background = document.createElement("backgroundact1")
+        let background = document.createElement("backgroundact2")
         background.style.backgroundImage = `url(assets/osiris_6.png)`
         game2.appendChild(background)
 
@@ -201,7 +201,7 @@ class Osiris {
     signIn(){
         let game2 = document.getElementsByTagName("game2")[0]
 
-        let background = document.createElement("backgroundact1")
+        let background = document.createElement("backgroundact2")
         background.style.backgroundImage = `url(assets/osiris_7.png)`
         game2.appendChild(background)
 
@@ -218,7 +218,7 @@ class Osiris {
     definitief(){
         let game2 = document.getElementsByTagName("game2")[0]
 
-        let background = document.createElement("backgroundact1")
+        let background = document.createElement("backgroundact2")
         background.style.backgroundImage = `url(assets/osiris_8.png)`
         game2.appendChild(background)
     }
