@@ -1427,7 +1427,8 @@ var Act3 = (function () {
                     var note3 = document.getElementById("note3").value.toLowerCase();
                     var note4 = document.getElementById("note4").value.toLowerCase();
                     if (note1 == "bibliotheek" && note2 == "5" && note3 == "word lid" && note4 == "24,20") {
-                        console.log("you win");
+                        game.innerHTML = "";
+                        new Ending;
                     }
                 });
             });
@@ -1630,6 +1631,34 @@ var Act3 = (function () {
     };
     return Act3;
 }());
+var Ending = (function () {
+    function Ending() {
+        var bg = document.createElement("backgroundEnd");
+        var game = document.getElementsByTagName("game")[0];
+        game.appendChild(bg);
+        bg.style.backgroundImage = "url(assets/Akte3/Binnenrotte.jpg)";
+        bg.style.backgroundSize = "100% 100%";
+        bg.style.backgroundRepeat = "no-repeat";
+        bg.style.width = "100vw";
+        bg.style.height = "100vh";
+        bg.style.position = "absolute";
+        var popup = document.createElement("pinPopup");
+        game.appendChild(popup);
+        popup.style.transform = "translate(34vw, 20vh)";
+        popup.innerHTML += "je score is te slecht om te laten zien";
+        var button = document.createElement("button");
+        popup.appendChild(button);
+        button.style.position = "absolute";
+        button.style.width = "94%";
+        button.style.height = "20%";
+        button.style.transform = "translate(0%, 30%)";
+        button.innerHTML += "klik hier voor een uitdraai van je score";
+        button.addEventListener("click", function () {
+            window.print();
+        });
+    }
+    return Ending;
+}());
 var EnterBuilding = (function () {
     function EnterBuilding() {
         var _this = this;
@@ -1683,7 +1712,7 @@ var Game = (function () {
     }
     Game.prototype.buttonPress1 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
-        new Act3();
+        new Ending();
     };
     Game.prototype.buttonPress2 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";

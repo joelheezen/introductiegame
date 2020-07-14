@@ -721,7 +721,8 @@ class Act3{
                     let note4 = (<HTMLInputElement>document.getElementById("note4")).value.toLowerCase()
 
                     if(note1 == "bibliotheek" && note2 == "5" && note3 == "word lid" && note4 == "24,20"){
-                        console.log("you win")
+                        game.innerHTML = ""
+                        new Ending
                     }
                 })
 
