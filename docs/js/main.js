@@ -2358,14 +2358,15 @@ var Timer = (function () {
         var end = parseInt(localStorage.getItem('end'));
         var pause = parseInt(localStorage.getItem('pause'));
         var bonus = parseInt(localStorage.getItem('bonus'));
-        console.log(end - start);
         var score = Math.floor((end - start - pause) / 1000) - bonus;
+        console.log(score);
         return score;
     };
     Timer.prototype.resetTimer = function () {
         localStorage.removeItem('start');
         localStorage.removeItem('end');
         localStorage.removeItem('pause');
+        localStorage.removeItem('bonus');
     };
     return Timer;
 }());
