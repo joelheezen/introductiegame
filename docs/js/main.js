@@ -29,55 +29,44 @@ var Act1 = (function () {
         var _this = this;
         var game = document.getElementsByTagName("game")[0];
         var background = document.createElement("backgroundact1");
+        var location = localStorage.getItem('location');
+        background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/" + location + "_door.jpg)";
         game.appendChild(background);
+        var banner = document.createElement('banner');
+        game.appendChild(banner);
+        var act1Box = document.createElement('act1Box');
+        act1Box.innerHTML = 'Oh nee! De deur zit dicht en heeft een specifieke sleutel nodig om gepend te worden. Vul de juisten vormen van de sleutel in.';
+        game.appendChild(act1Box);
         game.appendChild(this.input1);
-        this.input1.style.width = "13.7vw";
-        this.input1.style.height = "5.7vh";
+        this.input1.classList.add('inputShape');
         this.input1.style.transform = "translate(26vw, 39.2vh)";
-        this.input1.style.borderRadius = "25px";
-        this.input1.style.border = "none";
-        this.input1.style.fontSize = "20px";
-        this.input1.style.paddingLeft = "1vw";
-        this.input1.style.fontFamily = "Arial Black";
-        this.input1.style.textTransform = "uppercase";
         this.input1.value = this.input1Save;
         this.input1.id = "input1";
         game.appendChild(this.input2);
-        this.input2.style.width = "13.7vw";
-        this.input2.style.height = "5.7vh";
+        this.input2.classList.add('inputShape');
         this.input2.style.transform = "translate(42.7vw, 39.2vh)";
-        this.input2.style.borderRadius = "25px";
-        this.input2.style.border = "none";
-        this.input2.style.fontSize = "20px";
-        this.input2.style.paddingLeft = "1vw";
-        this.input2.style.fontFamily = "Arial Black";
-        this.input2.style.textTransform = "uppercase";
         this.input2.value = this.input2Save;
         this.input2.id = "input2";
         game.appendChild(this.input3);
-        this.input3.style.width = "13.7vw";
-        this.input3.style.height = "5.7vh";
+        this.input3.classList.add('inputShape');
         this.input3.style.transform = "translate(59.2vw, 39.2vh)";
-        this.input3.style.borderRadius = "25px";
-        this.input3.style.border = "none";
-        this.input3.style.fontSize = "20px";
-        this.input3.style.paddingLeft = "1vw";
-        this.input3.style.fontFamily = "Arial Black";
-        this.input3.style.textTransform = "uppercase";
         this.input3.value = this.input3Save;
         this.input3.id = "input3";
         game.appendChild(this.button1);
         this.button1.style.width = "15.1vw";
         this.button1.style.height = "7.5vh";
         this.button1.style.transform = "translate(42.4vw, 47.9vh)";
-        this.button1.style.opacity = "0%";
+        this.button1.innerHTML = "VERZENDEN";
+        this.button1.classList.add('verzenden');
         this.button1.addEventListener("click", function () { return _this.shapeCheck(); });
         var button2 = document.createElement("button");
         game.appendChild(button2);
+        button2.classList.add('search');
         button2.style.width = "18.5vw";
-        button2.style.height = "3vh";
+        button2.style.height = "4vh";
         button2.style.transform = "translate(25.25vw, 61vh)";
-        button2.style.opacity = "0%";
+        button2.style.opacity = "100%";
+        button2.innerHTML = 'Online zoeken naar vormen';
         button2.addEventListener("click", function () { return _this.searchOnline(); });
         var button3 = document.createElement("button");
         game.appendChild(button3);
@@ -114,7 +103,6 @@ var Act1 = (function () {
             this.wrong_div.style.border = "none";
             this.wrong_div.style.fontSize = "20px";
             this.wrong_div.style.paddingLeft = "1vw";
-            this.wrong_div.style.fontFamily = "Arial Black";
             this.wrong_div.style.textTransform = "uppercase";
             this.wrong_div.style.zIndex = "9999";
             this.wrong_div.id = "input1";
@@ -126,37 +114,41 @@ var Act1 = (function () {
             game.appendChild(img);
         }
     };
+    Act1.prototype.onlinePopup = function (title, message, open) {
+        var popup = document.createElement('onlinePopup');
+        var popupTitle = document.createElement('popupTitle');
+        popupTitle.innerHTML = title;
+        var popupMessage = document.createElement('popupMessage');
+        popupMessage.innerHTML = message;
+        var doorgaan = document.createElement('button');
+        doorgaan.innerHTML = 'Doorgaan';
+        doorgaan.addEventListener('click', function () {
+            if (open !== '') {
+                window.open(open, '_blank');
+            }
+            popup.remove();
+        });
+        popup.appendChild(doorgaan);
+        popup.appendChild(popupTitle);
+        popup.appendChild(popupMessage);
+        var game = document.getElementsByTagName("game")[0];
+        game.appendChild(popup);
+    };
     Act1.prototype.searchOnline = function () {
         var _this = this;
         this.input1Save = document.getElementById("input1").value;
         this.input2Save = document.getElementById("input2").value;
         this.input3Save = document.getElementById("input3").value;
         document.getElementsByTagName("game")[0].innerHTML = "";
-        var background = document.createElement("backgroundact1");
+        var background = document.createElement("backgroundOnline");
         var game = document.getElementsByTagName("game")[0];
         game.appendChild(background);
-        var button_next = document.createElement("button");
-        game.appendChild(button_next);
+        var banner = document.createElement('banner');
+        game.appendChild(banner);
         if (this.popupSave == false) {
-            background.style.backgroundImage = "url(assets/plattegrond_popup.png)";
+            this.onlinePopup('Welkom op jullie online plattegrond', 'Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel', '');
             this.popupSave = true;
-            background.style.zIndex = "9";
         }
-        else {
-            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
-            game.removeChild(button_next);
-            background.style.zIndex = "-1";
-        }
-        button_next.style.width = "9.2vw";
-        button_next.style.height = "5vh";
-        button_next.style.transform = "translate(59.8vw, 64vh)";
-        button_next.style.opacity = "0%";
-        button_next.style.zIndex = "999";
-        button_next.addEventListener("click", function () {
-            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
-            game.removeChild(button_next);
-            background.style.zIndex = "-1";
-        });
         var button1 = document.createElement("button");
         var button2 = document.createElement("button");
         var button3 = document.createElement("button");
@@ -169,29 +161,29 @@ var Act1 = (function () {
         game.appendChild(button4);
         game.appendChild(button5);
         game.appendChild(button6);
-        button1.style.width = "19.6vw";
+        button1.style.width = "15.6vw";
         button1.style.height = "60.9vh";
-        button1.style.transform = "translate(5.7vw, 20.8vh)";
+        button1.style.transform = "translate(14.5vw, 20.8vh)";
         button1.style.opacity = "0%";
         button1.addEventListener("click", function () { return _this.webmail(); });
-        button2.style.width = "27.5vw";
+        button2.style.width = "22vw";
         button2.style.height = "12.3vh";
-        button2.style.transform = "translate(27.2vw, 69.8vh)";
+        button2.style.transform = "translate(31.7vw, 69.8vh)";
         button2.style.opacity = "0%";
         button2.addEventListener("click", function () { return _this.rooster(); });
-        button3.style.width = "13.2vw";
+        button3.style.width = "10.7vw";
         button3.style.height = "27.3vh";
-        button3.style.transform = "translate(56.3vw, 20.7vh)";
+        button3.style.transform = "translate(55vw, 20.7vh)";
         button3.style.opacity = "0%";
         button3.addEventListener("click", function () { return _this.studentenServiceCenter(); });
-        button4.style.width = "20.3vw";
+        button4.style.width = "16.3vw";
         button4.style.height = "18vh";
-        button4.style.transform = "translate(61.2vw, 63.8vh)";
+        button4.style.transform = "translate(59vw, 63.8vh)";
         button4.style.opacity = "0%";
         button4.addEventListener("click", function () { return _this.studentenpas(); });
-        button5.style.width = "12.8vw";
+        button5.style.width = "10.2vw";
         button5.style.height = "61.3vh";
-        button5.style.transform = "translate(83.7vw, 20.8vh)";
+        button5.style.transform = "translate(77vw, 20.8vh)";
         button5.style.opacity = "0%";
         button5.addEventListener("click", function () { return _this.lms(); });
         button6.style.width = "9vw";
@@ -208,66 +200,17 @@ var Act1 = (function () {
         console.log("osiris is aangeklikt");
     };
     Act1.prototype.rooster = function () {
-        console.log("rooster is aangeklikt");
-        var background = document.getElementsByTagName("backgroundact1")[0];
-        var game = document.getElementsByTagName("game")[0];
-        var button_next = document.createElement("button");
-        game.appendChild(button_next);
-        var button_previous = document.createElement("button");
-        game.appendChild(button_previous);
-        background.style.backgroundImage = "url(assets/rooster_popup.png)";
-        background.style.zIndex = "1";
-        button_next.style.width = "9.2vw";
-        button_next.style.height = "5vh";
-        button_next.style.transform = "translate(59.8vw, 64vh)";
-        button_next.style.opacity = "0%";
-        button_next.style.zIndex = "999";
-        button_next.addEventListener("click", function () {
-            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
-            button_next.remove();
-            button_previous.remove();
-            background.style.zIndex = "-1";
-            window.open('https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/', '_blank');
-        });
-        button_previous.style.width = "6.2vw";
-        button_previous.style.height = "5vh";
-        button_previous.style.transform = "translate(52.6vw, 64vh)";
-        button_previous.style.opacity = "0%";
-        button_previous.style.zIndex = "999";
-        button_previous.addEventListener("click", function () {
-            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
-            button_previous.remove();
-            button_next.remove();
-            background.style.zIndex = "-1";
-        });
+        this.onlinePopup('Rooster', 'Klik op doorgaan om je rooster te zien', 'https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/');
     };
     Act1.prototype.studentenServiceCenter = function () {
-        console.log("ssc is aangeklikt");
-        var background = document.getElementsByTagName("backgroundact1")[0];
-        var game = document.getElementsByTagName("game")[0];
-        var button_next = document.createElement("button");
-        game.appendChild(button_next);
-        background.style.backgroundImage = "url(assets/ssc_popup.png)";
-        background.style.zIndex = "1";
-        button_next.style.width = "9.2vw";
-        button_next.style.height = "5vh";
-        button_next.style.transform = "translate(59.8vw, 64vh)";
-        button_next.style.opacity = "0%";
-        button_next.style.zIndex = "999";
-        button_next.addEventListener("click", function () {
-            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
-            button_next.remove();
-            background.style.zIndex = "-1";
-        });
+        this.onlinePopup('Student Service Center', 'Mail het SSC met je persoonlijke studentenmail:ssc@hr.nl', '');
     };
     Act1.prototype.studentenpas = function () {
         console.log("studentenpas is aangeklikt");
         var game = document.getElementsByTagName("game")[0];
-        var myloc = new Image();
-        myloc.useMap = "/docs/assets/studentenpas.png";
         var img = document.createElement('img');
-        img.setAttribute('src', myloc.useMap);
-        img.setAttribute('style', "height:25vh;width:24vw;transform:translate(28.7vw, 26.5vh);cursor:pointer;");
+        img.src = "/docs/assets/studentenpas.png";
+        img.classList.add('studentenPas');
         game.appendChild(img);
         img.addEventListener("click", function () {
             button.style.display = "none";
@@ -288,24 +231,7 @@ var Act1 = (function () {
         });
     };
     Act1.prototype.lms = function () {
-        console.log("lms is aangeklikt");
-        var background = document.getElementsByTagName("backgroundact1")[0];
-        var game = document.getElementsByTagName("game")[0];
-        var button_next = document.createElement("button");
-        game.appendChild(button_next);
-        background.style.backgroundImage = "url(assets/lms_popup.png)";
-        background.style.zIndex = "1";
-        button_next.style.width = "9.2vw";
-        button_next.style.height = "5vh";
-        button_next.style.transform = "translate(59.8vw, 64vh)";
-        button_next.style.opacity = "0%";
-        button_next.style.zIndex = "999";
-        button_next.addEventListener("click", function () {
-            background.style.backgroundImage = "url(assets/plattegrond.jpg)";
-            button_next.remove();
-            background.style.zIndex = "-1";
-            window.open('https://lms.hr.nl', '_blank');
-        });
+        this.onlinePopup('LMS', 'Verschillende vakken en informatie kun je vinden door op doorgaan te klikken', 'https://lms.hr.nl');
     };
     Act1.prototype.goBack = function () {
         console.log("terug naar invulscherm");
@@ -1693,8 +1619,8 @@ var LocatieSelectie = (function () {
         marker.style.transform = "translate(" + x + "vw," + y + "vh)";
         marker.addEventListener('click', function () {
             var yourEducation = localStorage.getItem('education');
-            console.log(_this.educations);
             if (_this.educations[index].opleidingen.indexOf(yourEducation) > -1) {
+                localStorage.setItem('location', _this.educations[index].location);
                 _this.popupLoc('correct', location, _this.educations[index].locatieInfo);
             }
             else {
@@ -1738,6 +1664,7 @@ var LocatieSelectie = (function () {
 var Locations = (function () {
     function Locations() {
         this.academieplein = {
+            location: "academieplein",
             opleidingen: [
                 "Biologie en Medisch Laboratoriumonderzoek",
                 "Bouwkunde",
@@ -1755,6 +1682,7 @@ var Locations = (function () {
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/academieplein/"
         };
         this.blaak = {
+            location: "blaak",
             opleidingen: [
                 "Arts & Crafts",
                 "Autonome Beeldende Kunst",
@@ -1768,6 +1696,7 @@ var Locations = (function () {
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/blaak/"
         };
         this.kralingse_zoom = {
+            location: "krazingse_zoom",
             opleidingen: [
                 "Accountancy",
                 "Bedrijfskunde",
@@ -1787,6 +1716,7 @@ var Locations = (function () {
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/kralingse-zoom/"
         };
         this.lloyd_straat = {
+            location: "lloyd_straat",
             opleidingen: [
                 "Chemische Technologie",
                 "Logistics Engineering",
@@ -1796,12 +1726,14 @@ var Locations = (function () {
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/lloydstraat/"
         };
         this.max_euwelaan = {
+            location: "max_euwelaan",
             opleidingen: [
                 "Commerciële Economie | SportMarketing & Management"
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/max-euwelaan/"
         };
         this.museumpark_hoogbouw = {
+            location: "museumpark_hoogbouw",
             opleidingen: [
                 "Accountancy",
                 "Crossmediale Communicatie",
@@ -1826,6 +1758,7 @@ var Locations = (function () {
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/museumpark-laagbouw/"
         };
         this.museumpark_laagbouw = {
+            location: "museumpark_laagbouw",
             opleidingen: [
                 "Academische pabo",
                 "Lerarenopleiding Basisonderwijs (pabo)",
@@ -1847,6 +1780,7 @@ var Locations = (function () {
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/mp-hoogbouw/"
         };
         this.pieter_de_hoogweg = {
+            location: "pieter_de_hoogbouw",
             opleidingen: [
                 "Industrieel Product Ontwerpen",
                 "Mens en Techniek | Gezondheidszorg Technologie"
@@ -1854,12 +1788,14 @@ var Locations = (function () {
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/pieter-de-hoochweg/"
         };
         this.posthumalaan = {
+            location: "posthumalaan",
             opleidingen: [
                 "International Business"
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/posthumalaan/"
         };
         this.rmd_rotterdam = {
+            location: "rmd_rotterdam",
             opleidingen: [
                 "Automotive",
                 "River Delta Development"
@@ -1867,6 +1803,7 @@ var Locations = (function () {
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rdm-campus/"
         };
         this.rochussenstraat = {
+            location: "rochussenstraat",
             opleidingen: [
                 "Ergotherapie",
                 "Fysiotherapie",
@@ -1886,24 +1823,28 @@ var Locations = (function () {
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rochussenstraat/"
         };
         this.wijnhaven_61 = {
+            location: "wijnhaven_61",
             opleidingen: [
                 "Leisure & Events Management"
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-61/"
         };
         this.wijnhaven_99 = {
+            location: "wijnhaven_99",
             opleidingen: [
                 "Creative Media and Game Technologies"
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-99/"
         };
         this.wijnhaven_103 = {
+            location: "wijnhaven_103",
             opleidingen: [
                 ""
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-103/"
         };
         this.wijnhaven_107 = {
+            location: "wijnhaven_107",
             opleidingen: [
                 "Communicatie",
                 "Communication and Multimedia Design",
