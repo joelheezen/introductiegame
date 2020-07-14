@@ -87,52 +87,20 @@ var Act1 = (function () {
         }
         else {
             var game = document.getElementsByTagName("game")[0];
-            var background = document.createElement("backgroundact2");
-            game.appendChild(background);
-            game.removeChild(this.input1);
-            game.removeChild(this.input2);
-            game.removeChild(this.input3);
-            game.removeChild(this.button1);
-            background.style.backgroundImage = "url(/docs/assets/backgroundact1main2.png)";
-            game.appendChild(this.wrong_div);
-            this.wrong_div.style.width = "13.7vw";
-            this.wrong_div.style.height = "5.7vh";
-            this.wrong_div.style.position = "absolute";
-            this.wrong_div.style.transform = "translate(10vw, 39.2vh)";
-            this.wrong_div.style.borderRadius = "25px";
-            this.wrong_div.style.border = "none";
-            this.wrong_div.style.fontSize = "20px";
-            this.wrong_div.style.paddingLeft = "1vw";
-            this.wrong_div.style.textTransform = "uppercase";
-            this.wrong_div.style.zIndex = "9999";
-            this.wrong_div.id = "input1";
-            var myloc = new Image();
-            myloc.useMap = "/docs/assets/fout_antwoord.png";
-            var img = document.createElement('img');
-            img.setAttribute('src', myloc.useMap);
-            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(35vw, 26.5vh);cursor:pointer;z-index:9999;");
-            game.appendChild(img);
-        }
-    };
-    Act1.prototype.onlinePopup = function (title, message, open) {
-        var popup = document.createElement('onlinePopup');
-        var popupTitle = document.createElement('popupTitle');
-        popupTitle.innerHTML = title;
-        var popupMessage = document.createElement('popupMessage');
-        popupMessage.innerHTML = message;
-        var doorgaan = document.createElement('button');
-        doorgaan.innerHTML = 'Doorgaan';
-        doorgaan.addEventListener('click', function () {
-            if (open !== '') {
-                window.open(open, '_blank');
+            var inputs_1 = document.getElementsByTagName('input');
+            for (var index = 0; index < inputs_1.length; index++) {
+                inputs_1[index].style.border = 'solid 3px red';
             }
-            popup.remove();
-        });
-        popup.appendChild(doorgaan);
-        popup.appendChild(popupTitle);
-        popup.appendChild(popupMessage);
-        var game = document.getElementsByTagName("game")[0];
-        game.appendChild(popup);
+            var wrong_1 = document.createElement('wrong');
+            wrong_1.innerHTML = 'Dit antwoord is onjuist. Probeer het nog een keer.';
+            game.appendChild(wrong_1);
+            setTimeout(function () {
+                for (var index = 0; index < inputs_1.length; index++) {
+                    inputs_1[index].style.border = '';
+                    wrong_1.remove();
+                }
+            }, 2000);
+        }
     };
     Act1.prototype.searchOnline = function () {
         var _this = this;
@@ -146,7 +114,7 @@ var Act1 = (function () {
         var banner = document.createElement('banner');
         game.appendChild(banner);
         if (this.popupSave == false) {
-            this.onlinePopup('Welkom op jullie online plattegrond', 'Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel', '');
+            new CenterPopup('Welkom op jullie online plattegrond', 'Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel', '');
             this.popupSave = true;
         }
         var button1 = document.createElement("button");
@@ -155,12 +123,14 @@ var Act1 = (function () {
         var button4 = document.createElement("button");
         var button5 = document.createElement("button");
         var button6 = document.createElement("button");
+        var button7 = document.createElement("button");
         game.appendChild(button1);
         game.appendChild(button2);
         game.appendChild(button3);
         game.appendChild(button4);
         game.appendChild(button5);
         game.appendChild(button6);
+        game.appendChild(button7);
         button1.style.width = "15.6vw";
         button1.style.height = "60.9vh";
         button1.style.transform = "translate(14.5vw, 20.8vh)";
@@ -191,6 +161,11 @@ var Act1 = (function () {
         button6.style.transform = "translate(91vw, 0vh)";
         button6.style.opacity = "0%";
         button6.addEventListener("click", function () { return _this.goBack(); });
+        button7.style.width = "11vw";
+        button7.style.height = "18vh";
+        button7.style.transform = "translate(71vw, 20.8vh)";
+        button7.style.opacity = "0%";
+        button7.addEventListener("click", function () { return _this.osiris(); });
     };
     Act1.prototype.webmail = function () {
         console.log("webmail is aangeklikt");
@@ -198,12 +173,13 @@ var Act1 = (function () {
     };
     Act1.prototype.osiris = function () {
         console.log("osiris is aangeklikt");
+        window.open('/docs/osiris.html', '_blank');
     };
     Act1.prototype.rooster = function () {
-        this.onlinePopup('Rooster', 'Klik op doorgaan om je rooster te zien', 'https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/');
+        new CenterPopup('Rooster', 'Klik op doorgaan om je rooster te zien', 'https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/');
     };
     Act1.prototype.studentenServiceCenter = function () {
-        this.onlinePopup('Student Service Center', 'Mail het SSC met je persoonlijke studentenmail:ssc@hr.nl', '');
+        new CenterPopup('Student Service Center', 'Mail het SSC met je persoonlijke studentenmail:ssc@hr.nl', '');
     };
     Act1.prototype.studentenpas = function () {
         console.log("studentenpas is aangeklikt");
@@ -231,7 +207,7 @@ var Act1 = (function () {
         });
     };
     Act1.prototype.lms = function () {
-        this.onlinePopup('LMS', 'Verschillende vakken en informatie kun je vinden door op doorgaan te klikken', 'https://lms.hr.nl');
+        new CenterPopup('LMS', 'Verschillende vakken en informatie kun je vinden door op doorgaan te klikken', 'https://lms.hr.nl');
     };
     Act1.prototype.goBack = function () {
         console.log("terug naar invulscherm");
@@ -266,6 +242,7 @@ var Act2 = (function () {
         this.codeEind();
         this.doorNames();
         this.setHint();
+        new hint;
     }
     Act2.prototype.doorNames = function () {
         this.game.appendChild(this.doorName1);
@@ -426,7 +403,7 @@ var Act2 = (function () {
             this.input3.style.border = "thick solid #00FF00";
             this.input4.style.border = "thick solid #00FF00";
             this.input5.style.border = "thick solid #00FF00";
-            new popup("De puzzel is opgelost. Daar komt de peercoach", 40, 50, 300, 35);
+            new CenterPopup('De puzzel is opgelost', 'Daar komt de peercoach', '');
         }
         else {
             console.log("fout");
@@ -1641,6 +1618,32 @@ var Act3 = (function () {
     };
     return Act3;
 }());
+var CenterPopup = (function () {
+    function CenterPopup(title, message, open) {
+        var popup = document.createElement('onlinePopup');
+        var popupTitle = document.createElement('popupTitle');
+        popupTitle.innerHTML = title;
+        var popupMessage = document.createElement('popupMessage');
+        popupMessage.innerHTML = message;
+        var doorgaan = document.createElement('button');
+        doorgaan.innerHTML = 'Doorgaan';
+        doorgaan.addEventListener('click', function () {
+            if (open == '') {
+                new Pause(2, 'Act3');
+            }
+            else if (open !== '') {
+                window.open(open, '_blank');
+            }
+            popup.remove();
+        });
+        popup.appendChild(doorgaan);
+        popup.appendChild(popupTitle);
+        popup.appendChild(popupMessage);
+        var game = document.getElementsByTagName("game")[0];
+        game.appendChild(popup);
+    }
+    return CenterPopup;
+}());
 var Ending = (function () {
     function Ending() {
         var bg = document.createElement("backgroundEnd");
@@ -1742,6 +1745,17 @@ var hint = (function () {
         this.hint1 = document.createElement("hinticon");
         this.hint2 = document.createElement("hinticon");
         this.hint3 = document.createElement("hinticon");
+        this.game.appendChild(this.hint1);
+        this.game.appendChild(this.hint2);
+        this.game.appendChild(this.hint3);
+        this.hint1.style.width = "7vw";
+        this.hint1.style.height = "7vh";
+        this.hint2.style.width = "7vw";
+        this.hint2.style.height = "7vh";
+        this.hint2.style.transform = "translateX(7.5vw)";
+        this.hint3.style.width = "7vw";
+        this.hint3.style.height = "7vh";
+        this.hint3.style.transform = "translateX(15vw)";
     }
     return hint;
 }());
@@ -2056,6 +2070,184 @@ var Locations = (function () {
     }
     return Locations;
 }());
+var Osiris = (function () {
+    function Osiris() {
+        this.input1 = document.createElement("input");
+        this.input1Save = "";
+        this.button1 = document.createElement("button");
+        this.button2 = document.createElement("button");
+        this.button3 = document.createElement("button");
+        this.button4 = document.createElement("button");
+        this.button5 = document.createElement("button");
+        this.button6 = document.createElement("button");
+        this.img = document.createElement('img');
+        this.input2 = document.createElement("input");
+        this.input2Save = "";
+        this.createOsirisScreen();
+    }
+    Osiris.prototype.createOsirisScreen = function () {
+        var _this = this;
+        var game2 = document.getElementsByTagName("game2")[0];
+        var background = document.createElement("backgroundact2");
+        background.style.backgroundImage = "url(assets/osiris_1.png)";
+        game2.appendChild(background);
+        game2.appendChild(this.input1);
+        this.input1.style.width = "17.1vw";
+        this.input1.style.transform = "translate(14.1vw, 20.7vh)";
+        this.input1.style.fontSize = "17px";
+        this.input1.style.paddingLeft = "0.4vw";
+        this.input1.value = this.input1Save;
+        this.input1.id = "input1";
+        game2.appendChild(this.button1);
+        this.button1.style.width = "6.6vw";
+        this.button1.style.height = "3.3vh";
+        this.button1.style.transform = "translate(14.1vw, 26.6vh)";
+        this.button1.style.opacity = "0%";
+        this.button1.addEventListener("click", function () { return _this.loginCheck(); });
+    };
+    Osiris.prototype.loginCheck = function () {
+        console.log("button 1 is pressed");
+        var shape1 = document.getElementById("input1").value;
+        if (shape1 == "0200798") {
+            console.log("dit klopt");
+            this.login();
+        }
+        else {
+            console.log("dit klopt niet");
+        }
+    };
+    Osiris.prototype.login = function () {
+        var _this = this;
+        var game2 = document.getElementsByTagName("game2")[0];
+        game2.removeChild(this.button1);
+        game2.removeChild(this.input1);
+        var background = document.createElement("backgroundact2");
+        background.style.backgroundImage = "url(assets/osiris_2.png)";
+        game2.appendChild(background);
+        game2.appendChild(this.button2);
+        this.button2.style.width = "6.6vw";
+        this.button2.style.height = "3.3vh";
+        this.button2.style.transform = "translate(68.7vw, 8.4vh)";
+        this.button2.style.opacity = "0%";
+        this.button2.addEventListener("click", function () { return _this.onderwijs(); });
+        var myloc = new Image();
+        myloc.useMap = "/docs/assets/arrow.png";
+        this.img.setAttribute('src', myloc.useMap);
+        this.img.setAttribute('style', "height:5vh;width:2vw;transform:translate(71vw, 13.5vh);");
+        game2.appendChild(this.img);
+    };
+    Osiris.prototype.onderwijs = function () {
+        var _this = this;
+        var game2 = document.getElementsByTagName("game2")[0];
+        game2.removeChild(this.img);
+        game2.removeChild(this.button2);
+        var background = document.createElement("backgroundact2");
+        background.style.backgroundImage = "url(assets/osiris_3.png)";
+        game2.appendChild(background);
+        game2.appendChild(this.input2);
+        this.input2.style.width = "17.2vw";
+        this.input2.style.transform = "translate(13.9vw, 30.8vh)";
+        this.input2.style.fontSize = "17px";
+        this.input2.style.paddingLeft = "0.4vw";
+        this.input2.value = this.input2Save;
+        this.input2.id = "input2";
+        game2.appendChild(this.button3);
+        this.button3.style.width = "4vw";
+        this.button3.style.height = "2.5vh";
+        this.button3.style.transform = "translate(1vw, 86vh)";
+        this.button3.style.opacity = "0%";
+        this.button3.addEventListener("click", function () { return _this.keuzeCheck(); });
+    };
+    Osiris.prototype.keuzeCheck = function () {
+        console.log("button 1 is pressed");
+        var shape1 = document.getElementById("input2").value;
+        var shape2 = document.getElementById("input2").value;
+        if (shape1 == "Sleutel tot succes" || shape2 == "sleutel tot succes") {
+            console.log("dit klopt");
+            this.keuzeRight();
+        }
+        else {
+            console.log("dit klopt niet");
+            this.keuzeWrong();
+        }
+    };
+    Osiris.prototype.keuzeRight = function () {
+        var _this = this;
+        var game2 = document.getElementsByTagName("game2")[0];
+        var background = document.createElement("backgroundact2");
+        background.style.backgroundImage = "url(assets/osiris_5.png)";
+        game2.appendChild(background);
+        game2.appendChild(this.button4);
+        this.button4.style.width = "4vw";
+        this.button4.style.height = "3vh";
+        this.button4.style.transform = "translate(41.8vw, 37.8vh)";
+        this.button4.style.opacity = "0%";
+        this.button4.addEventListener("click", function () { return _this.keuzevak(); });
+    };
+    Osiris.prototype.keuzeWrong = function () {
+        var game2 = document.getElementsByTagName("game2")[0];
+        var background = document.createElement("backgroundact2");
+        background.style.backgroundImage = "url(assets/osiris_4.png)";
+        game2.appendChild(background);
+    };
+    Osiris.prototype.onderwijsAgain = function () {
+        var _this = this;
+        var game2 = document.getElementsByTagName("game2")[0];
+        var background = document.createElement("backgroundact2");
+        background.style.backgroundImage = "url(assets/osiris_3.png)";
+        game2.appendChild(background);
+        game2.appendChild(this.input2);
+        this.input2.style.width = "17.2vw";
+        this.input2.style.transform = "translate(13.9vw, 30.8vh)";
+        this.input2.style.fontSize = "17px";
+        this.input2.style.paddingLeft = "0.4vw";
+        this.input2.value = this.input2Save;
+        this.input2.id = "input2";
+        game2.appendChild(this.button3);
+        this.button3.style.width = "4vw";
+        this.button3.style.height = "2.5vh";
+        this.button3.style.transform = "translate(1vw, 86vh)";
+        this.button3.style.opacity = "0%";
+        this.button3.addEventListener("click", function () { return _this.keuzeCheck(); });
+    };
+    Osiris.prototype.keuzevak = function () {
+        var _this = this;
+        var game2 = document.getElementsByTagName("game2")[0];
+        var background = document.createElement("backgroundact2");
+        background.style.backgroundImage = "url(assets/osiris_6.png)";
+        game2.appendChild(background);
+        game2.removeChild(this.input2);
+        game2.removeChild(this.button4);
+        game2.appendChild(this.button5);
+        this.button5.style.width = "10.5vw";
+        this.button5.style.height = "2vh";
+        this.button5.style.transform = "translate(64.5vw, 18.8vh)";
+        this.button5.style.opacity = "0%";
+        this.button5.addEventListener("click", function () { return _this.signIn(); });
+    };
+    Osiris.prototype.signIn = function () {
+        var _this = this;
+        var game2 = document.getElementsByTagName("game2")[0];
+        var background = document.createElement("backgroundact2");
+        background.style.backgroundImage = "url(assets/osiris_7.png)";
+        game2.appendChild(background);
+        game2.removeChild(this.button5);
+        game2.appendChild(this.button6);
+        this.button6.style.width = "5vw";
+        this.button6.style.height = "2.5vh";
+        this.button6.style.transform = "translate(6.5vw, 63.6vh)";
+        this.button6.style.opacity = "0%";
+        this.button6.addEventListener("click", function () { return _this.definitief(); });
+    };
+    Osiris.prototype.definitief = function () {
+        var game2 = document.getElementsByTagName("game2")[0];
+        var background = document.createElement("backgroundact2");
+        background.style.backgroundImage = "url(assets/osiris_8.png)";
+        game2.appendChild(background);
+    };
+    return Osiris;
+}());
+window.addEventListener("load", function () { return new Osiris(); });
 var Pause = (function () {
     function Pause(act, next) {
         var _this = this;
