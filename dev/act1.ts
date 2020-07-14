@@ -113,34 +113,6 @@ class Act1 {
         }
     }
 
-    onlinePopup(title:string,message:string,open:string){
-        let popup = document.createElement('onlinePopup')
-
-        let popupTitle = document.createElement('popupTitle')
-        popupTitle.innerHTML = title
-
-        let popupMessage = document.createElement('popupMessage')
-        popupMessage.innerHTML = message
-
-        let doorgaan = document.createElement('button')
-        doorgaan.innerHTML = 'Doorgaan'
-
-        doorgaan.addEventListener('click',()=>{
-
-            if(open !== ''){
-                window.open(open, '_blank');
-            }
-            popup.remove()
-        })
-
-        popup.appendChild(doorgaan)
-        popup.appendChild(popupTitle)
-        popup.appendChild(popupMessage)
-
-        let game = document.getElementsByTagName("game")[0]
-        game.appendChild(popup) 
-    }
-
     searchOnline() {
         
         this.input1Save = (<HTMLInputElement>document.getElementById("input1")).value
@@ -157,7 +129,7 @@ class Act1 {
         game.appendChild(banner)
 
         if(this.popupSave == false){
-            this.onlinePopup('Welkom op jullie online plattegrond','Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel','')
+            new CenterPopup('Welkom op jullie online plattegrond','Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel','')
             this.popupSave = true;
         }
 
@@ -224,11 +196,11 @@ class Act1 {
     }
 
     rooster(){
-        this.onlinePopup('Rooster','Klik op doorgaan om je rooster te zien','https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/')
+        new CenterPopup('Rooster','Klik op doorgaan om je rooster te zien','https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/')
     }
 
     studentenServiceCenter(){
-        this.onlinePopup('Student Service Center','Mail het SSC met je persoonlijke studentenmail:ssc@hr.nl','')
+        new CenterPopup('Student Service Center','Mail het SSC met je persoonlijke studentenmail:ssc@hr.nl','')
     }
 
     studentenpas(){
@@ -263,7 +235,7 @@ class Act1 {
     }
 
     lms(){
-        this.onlinePopup('LMS','Verschillende vakken en informatie kun je vinden door op doorgaan te klikken','https://lms.hr.nl')
+        new CenterPopup('LMS','Verschillende vakken en informatie kun je vinden door op doorgaan te klikken','https://lms.hr.nl')
     }
 
     goBack(){

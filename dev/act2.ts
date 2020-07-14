@@ -205,6 +205,7 @@ class Act2{
         new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door",59,45,300,80)
         new popup("Solliciteren is soms een numbers game",82,45,250,60)
     }
+    
 
     codeEind(){
         let codeString = 
@@ -221,7 +222,9 @@ class Act2{
             this.input3.style.border = "thick solid #00FF00"
             this.input4.style.border = "thick solid #00FF00"
             this.input5.style.border = "thick solid #00FF00"
-            new popup("De puzzel is opgelost. Daar komt de peercoach",40,50,300,35)
+
+            new CenterPopup('De puzzel is opgelost','Daar komt de peercoach','')
+            
         }else{
             console.log("fout")
             this.input1.style.border = "thick solid #FF0000"

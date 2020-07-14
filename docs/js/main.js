@@ -102,26 +102,6 @@ var Act1 = (function () {
             }, 2000);
         }
     };
-    Act1.prototype.onlinePopup = function (title, message, open) {
-        var popup = document.createElement('onlinePopup');
-        var popupTitle = document.createElement('popupTitle');
-        popupTitle.innerHTML = title;
-        var popupMessage = document.createElement('popupMessage');
-        popupMessage.innerHTML = message;
-        var doorgaan = document.createElement('button');
-        doorgaan.innerHTML = 'Doorgaan';
-        doorgaan.addEventListener('click', function () {
-            if (open !== '') {
-                window.open(open, '_blank');
-            }
-            popup.remove();
-        });
-        popup.appendChild(doorgaan);
-        popup.appendChild(popupTitle);
-        popup.appendChild(popupMessage);
-        var game = document.getElementsByTagName("game")[0];
-        game.appendChild(popup);
-    };
     Act1.prototype.searchOnline = function () {
         var _this = this;
         this.input1Save = document.getElementById("input1").value;
@@ -134,7 +114,7 @@ var Act1 = (function () {
         var banner = document.createElement('banner');
         game.appendChild(banner);
         if (this.popupSave == false) {
-            this.onlinePopup('Welkom op jullie online plattegrond', 'Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel', '');
+            new CenterPopup('Welkom op jullie online plattegrond', 'Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel', '');
             this.popupSave = true;
         }
         var button1 = document.createElement("button");
@@ -188,10 +168,10 @@ var Act1 = (function () {
         console.log("osiris is aangeklikt");
     };
     Act1.prototype.rooster = function () {
-        this.onlinePopup('Rooster', 'Klik op doorgaan om je rooster te zien', 'https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/');
+        new CenterPopup('Rooster', 'Klik op doorgaan om je rooster te zien', 'https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/');
     };
     Act1.prototype.studentenServiceCenter = function () {
-        this.onlinePopup('Student Service Center', 'Mail het SSC met je persoonlijke studentenmail:ssc@hr.nl', '');
+        new CenterPopup('Student Service Center', 'Mail het SSC met je persoonlijke studentenmail:ssc@hr.nl', '');
     };
     Act1.prototype.studentenpas = function () {
         console.log("studentenpas is aangeklikt");
@@ -219,7 +199,7 @@ var Act1 = (function () {
         });
     };
     Act1.prototype.lms = function () {
-        this.onlinePopup('LMS', 'Verschillende vakken en informatie kun je vinden door op doorgaan te klikken', 'https://lms.hr.nl');
+        new CenterPopup('LMS', 'Verschillende vakken en informatie kun je vinden door op doorgaan te klikken', 'https://lms.hr.nl');
     };
     Act1.prototype.goBack = function () {
         console.log("terug naar invulscherm");
@@ -414,7 +394,7 @@ var Act2 = (function () {
             this.input3.style.border = "thick solid #00FF00";
             this.input4.style.border = "thick solid #00FF00";
             this.input5.style.border = "thick solid #00FF00";
-            new popup("De puzzel is opgelost. Daar komt de peercoach", 40, 50, 300, 35);
+            new CenterPopup('De puzzel is opgelost', 'Daar komt de peercoach', '');
         }
         else {
             console.log("fout");
@@ -1627,6 +1607,32 @@ var Act3 = (function () {
         }
     };
     return Act3;
+}());
+var CenterPopup = (function () {
+    function CenterPopup(title, message, open) {
+        var popup = document.createElement('onlinePopup');
+        var popupTitle = document.createElement('popupTitle');
+        popupTitle.innerHTML = title;
+        var popupMessage = document.createElement('popupMessage');
+        popupMessage.innerHTML = message;
+        var doorgaan = document.createElement('button');
+        doorgaan.innerHTML = 'Doorgaan';
+        doorgaan.addEventListener('click', function () {
+            if (open == '') {
+                new Pause(2, 'Act3');
+            }
+            else if (open !== '') {
+                window.open(open, '_blank');
+            }
+            popup.remove();
+        });
+        popup.appendChild(doorgaan);
+        popup.appendChild(popupTitle);
+        popup.appendChild(popupMessage);
+        var game = document.getElementsByTagName("game")[0];
+        game.appendChild(popup);
+    }
+    return CenterPopup;
 }());
 var EnterBuilding = (function () {
     function EnterBuilding() {
