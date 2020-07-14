@@ -41,6 +41,7 @@ class Act2{
         this.codeEind()
         this.doorNames()
         this.setHint()
+        new hint
 
 
     }

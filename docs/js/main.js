@@ -266,6 +266,7 @@ var Act2 = (function () {
         this.codeEind();
         this.doorNames();
         this.setHint();
+        new hint;
     }
     Act2.prototype.doorNames = function () {
         this.game.appendChild(this.doorName1);
@@ -1712,6 +1713,17 @@ var hint = (function () {
         this.hint1 = document.createElement("hinticon");
         this.hint2 = document.createElement("hinticon");
         this.hint3 = document.createElement("hinticon");
+        this.game.appendChild(this.hint1);
+        this.game.appendChild(this.hint2);
+        this.game.appendChild(this.hint3);
+        this.hint1.style.width = "7vw";
+        this.hint1.style.height = "7vh";
+        this.hint2.style.width = "7vw";
+        this.hint2.style.height = "7vh";
+        this.hint2.style.transform = "translateX(7.5vw)";
+        this.hint3.style.width = "7vw";
+        this.hint3.style.height = "7vh";
+        this.hint3.style.transform = "translateX(15vw)";
     }
     return hint;
 }());
