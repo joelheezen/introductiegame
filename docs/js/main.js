@@ -2047,8 +2047,6 @@ var StartScreem = (function () {
 window.addEventListener('load', function () { return new StartScreem(); });
 var Timer = (function () {
     function Timer() {
-<<<<<<< HEAD
-=======
         var _this = this;
         this.resetTimer();
         this.startTimer();
@@ -2068,7 +2066,6 @@ var Timer = (function () {
             _this.endTimer();
             _this.score();
         }, 10000);
->>>>>>> 54b00c14e17caa68c789320655b7beff572932d2
     }
     Timer.prototype.startTimer = function () {
         if (!localStorage.getItem('start')) {
