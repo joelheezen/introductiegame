@@ -12,56 +12,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Timer = (function () {
-    function Timer() {
-    }
-    Timer.prototype.startTimer = function () {
-        if (!localStorage.getItem('start')) {
-            localStorage.setItem('start', new Date().getTime().toString());
-        }
-        if (!localStorage.getItem('pause')) {
-            localStorage.setItem('pause', '0');
-        }
-        if (!localStorage.getItem('bonus')) {
-            localStorage.setItem('bonus', '0');
-        }
-    };
-    Timer.prototype.startPause = function () {
-        this.pauseStart = new Date().getTime();
-    };
-    Timer.prototype.endPause = function () {
-        this.pauseEnd = new Date().getTime();
-        var currentPause = parseInt(localStorage.getItem('pause'));
-        var thisPause = this.pauseEnd - this.pauseStart;
-        var newPause = thisPause + currentPause;
-        localStorage.setItem('pause', newPause.toString());
-    };
-    Timer.prototype.addBonus = function (point) {
-        var currentBonus = parseInt(localStorage.getItem('bonus'));
-        var newBonus = currentBonus + point;
-        localStorage.setItem('bonus', newBonus);
-    };
-    Timer.prototype.endTimer = function () {
-        if (!localStorage.getItem('end')) {
-            localStorage.setItem('end', new Date().getTime().toString());
-        }
-    };
-    Timer.prototype.score = function () {
-        var start = parseInt(localStorage.getItem('start'));
-        var end = parseInt(localStorage.getItem('end'));
-        var pause = parseInt(localStorage.getItem('pause'));
-        var bonus = parseInt(localStorage.getItem('bonus'));
-        var score = Math.floor((end - start - pause) / 1000) - bonus;
-        console.log(score);
-    };
-    Timer.prototype.resetTimer = function () {
-        localStorage.removeItem('start');
-        localStorage.removeItem('end');
-        localStorage.removeItem('pause');
-    };
-    return Timer;
-}());
-window.addEventListener('load', function () { return new Timer(); });
 var Act1 = (function () {
     function Act1() {
         this.input1 = document.createElement("input");
@@ -900,12 +850,16 @@ var Act3 = (function () {
             var button4 = document.createElement("button");
             var button5 = document.createElement("button");
             var button6 = document.createElement("button");
+            var button7 = document.createElement("button");
+            var button8 = document.createElement("button");
             game.appendChild(button1);
             game.appendChild(button2);
             game.appendChild(button3);
             game.appendChild(button4);
             game.appendChild(button5);
             game.appendChild(button6);
+            game.appendChild(button7);
+            game.appendChild(button8);
             button1.style.width = "7.2vw";
             button1.style.height = "14.4vh";
             button1.style.transform = "translate(31vw, 31.8vh)";
@@ -1214,7 +1168,7 @@ var Act3 = (function () {
                 mapArea.appendChild(char5);
                 char1.style.backgroundImage = "url(assets/Akte3/cees.png)";
                 char1.style.backgroundSize = "100% 100%";
-                char1.style.width = "5vw";
+                char1.style.width = "3.5vw";
                 char1.style.height = "10vh";
                 char1.style.position = "absolute";
                 char1.style.transform = "translate(42.5vw, 33vh)";
@@ -1233,7 +1187,7 @@ var Act3 = (function () {
                 });
                 char2.style.backgroundImage = "url(assets/Akte3/zoe.png)";
                 char2.style.backgroundSize = "100% 100%";
-                char2.style.width = "5vw";
+                char2.style.width = "3.5vw";
                 char2.style.height = "10vh";
                 char2.style.position = "absolute";
                 char2.style.transform = "translate(25.5vw, 42vh)";
@@ -1252,7 +1206,7 @@ var Act3 = (function () {
                 });
                 char3.style.backgroundImage = "url(assets/Akte3/loes.png)";
                 char3.style.backgroundSize = "100% 100%";
-                char3.style.width = "5vw";
+                char3.style.width = "3.5vw";
                 char3.style.height = "10vh";
                 char3.style.position = "absolute";
                 char3.style.transform = "translate(37.6vw, 42.3vh)";
@@ -1271,7 +1225,7 @@ var Act3 = (function () {
                 });
                 char4.style.backgroundImage = "url(assets/Akte3/donna.png)";
                 char4.style.backgroundSize = "100% 100%";
-                char4.style.width = "5vw";
+                char4.style.width = "3.5vw";
                 char4.style.height = "10vh";
                 char4.style.position = "absolute";
                 char4.style.transform = "translate(42.5vw, 42vh)";
@@ -1290,7 +1244,7 @@ var Act3 = (function () {
                 });
                 char5.style.backgroundImage = "url(assets/Akte3/werner.png)";
                 char5.style.backgroundSize = "100% 100%";
-                char5.style.width = "5vw";
+                char5.style.width = "3.5vw";
                 char5.style.height = "10vh";
                 char5.style.position = "absolute";
                 char5.style.transform = "translate(20.5vw, 42vh)";
@@ -1546,6 +1500,61 @@ var Act3 = (function () {
                 var win = window.open("http://www.rotterdamstaattespringen.nl/");
                 win.focus();
             });
+            button7.style.width = "14.3vw";
+            button7.style.height = "15vh";
+            button7.style.transform = "translate(15.2vw, 59vh)";
+            button7.style.opacity = "30%";
+            button7.addEventListener("click", function () {
+                var popup = document.createElement("popup");
+                var game = document.getElementsByTagName("game")[0];
+                var button = document.createElement("button");
+                game.appendChild(button);
+                game.appendChild(popup);
+                button.style.width = "100vw";
+                button.style.height = "100vh";
+                button.style.position = "absolute";
+                button.style.zIndex = "1";
+                button.style.opacity = "0%";
+                button.addEventListener("click", function () {
+                    button.remove();
+                    popup.remove();
+                });
+                var clicked = true;
+                popup.style.backgroundImage = "url(assets/Akte3/Rotterdampas.png)";
+                popup.style.backgroundSize = "100% 100%";
+                popup.style.width = "40vw";
+                popup.style.height = "30vh";
+                popup.style.transform = "translate(30vw, 35vh)";
+                popup.style.position = "absolute";
+                popup.style.zIndex = "2";
+                popup.addEventListener("click", function () {
+                    if (clicked == true) {
+                        popup.style.backgroundImage = "url(assets/Akte3/Binnenrotte.jpg)";
+                        clicked = false;
+                    }
+                    else {
+                        popup.style.backgroundImage = "url(assets/Akte3/Rotterdampas.png)";
+                        clicked = true;
+                    }
+                });
+            });
+            button8.style.width = "5.9vw";
+            button8.style.height = "9.4vw";
+            button8.style.transform = "translate(64.8vw, 34.1vh)";
+            button8.style.opacity = "30%";
+            button8.addEventListener("click", function () {
+                var game = document.getElementsByTagName("game")[0];
+                var audio = document.createElement("audio");
+                var audioCheck = document.getElementsByTagName("audio")[0];
+                if (audioCheck == null) {
+                    game.appendChild(audio);
+                    audio.src = "assets/Akte3/audio.mp3";
+                    audio.autoplay = true;
+                }
+                audio.onended = function () {
+                    audio.remove();
+                };
+            });
         };
     }
     Act3.prototype.togglePlay = function () {
@@ -1605,7 +1614,7 @@ var Game = (function () {
         game.appendChild(button4);
         button4.style.width = "10vw";
         button4.style.height = "10vh";
-        button4.style.transform = "translate(50vw, 50vh)";
+        button4.style.transform = "translate(80vw, 50vh)";
         button4.innerHTML = "luuk";
         button4.onclick = this.buttonPress4;
     }
@@ -1986,4 +1995,54 @@ var StartScreem = (function () {
     return StartScreem;
 }());
 window.addEventListener('load', function () { return new StartScreem(); });
+var Timer = (function () {
+    function Timer() {
+    }
+    Timer.prototype.startTimer = function () {
+        if (!localStorage.getItem('start')) {
+            localStorage.setItem('start', new Date().getTime().toString());
+        }
+        if (!localStorage.getItem('pause')) {
+            localStorage.setItem('pause', '0');
+        }
+        if (!localStorage.getItem('bonus')) {
+            localStorage.setItem('bonus', '0');
+        }
+    };
+    Timer.prototype.startPause = function () {
+        this.pauseStart = new Date().getTime();
+    };
+    Timer.prototype.endPause = function () {
+        this.pauseEnd = new Date().getTime();
+        var currentPause = parseInt(localStorage.getItem('pause'));
+        var thisPause = this.pauseEnd - this.pauseStart;
+        var newPause = thisPause + currentPause;
+        localStorage.setItem('pause', newPause.toString());
+    };
+    Timer.prototype.addBonus = function (point) {
+        var currentBonus = parseInt(localStorage.getItem('bonus'));
+        var newBonus = currentBonus + point;
+        localStorage.setItem('bonus', newBonus);
+    };
+    Timer.prototype.endTimer = function () {
+        if (!localStorage.getItem('end')) {
+            localStorage.setItem('end', new Date().getTime().toString());
+        }
+    };
+    Timer.prototype.score = function () {
+        var start = parseInt(localStorage.getItem('start'));
+        var end = parseInt(localStorage.getItem('end'));
+        var pause = parseInt(localStorage.getItem('pause'));
+        var bonus = parseInt(localStorage.getItem('bonus'));
+        var score = Math.floor((end - start - pause) / 1000) - bonus;
+        console.log(score);
+    };
+    Timer.prototype.resetTimer = function () {
+        localStorage.removeItem('start');
+        localStorage.removeItem('end');
+        localStorage.removeItem('pause');
+    };
+    return Timer;
+}());
+window.addEventListener('load', function () { return new Timer(); });
 //# sourceMappingURL=main.js.map
