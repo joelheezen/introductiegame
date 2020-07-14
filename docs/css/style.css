@@ -219,19 +219,20 @@ background {
 classroom {
     position: absolute;
 }
-openfolder, testbutton {
+openfolder {
     position: absolute;
-    z-index: 3;
+    z-index: 20;
     background-repeat: no-repeat;
     background-position: center;
 
 }
-folderitem, doorName {
+doorName, folderitem {
     position: absolute;
     z-index: 0;
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
+    
 }
 signin{
     position: absolute;
@@ -239,7 +240,12 @@ signin{
     background-repeat: no-repeat;
     background-size: 100% 100%;
     box-shadow: 5px 10px;
-
+}
+hinticon{
+    position: absolute;
+    z-index: 3;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 input:focus{
     outline:none;
@@ -248,7 +254,7 @@ input{
     position:absolute;
 }
 
-backgroundenter{
+backgroundenter, folderbackground{
     position: absolute;
     width:100vw; height:100vh;
     z-index: -1;
