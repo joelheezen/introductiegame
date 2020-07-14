@@ -23,7 +23,7 @@ class Game{
         game.appendChild(button4)
         button4.style.width = `10vw`
         button4.style.height = `10vh`
-        button4.style.transform = `translate(50vw, 50vh)`
+        button4.style.transform = `translate(80vw, 50vh)`
         button4.innerHTML = `luuk`
         button4.onclick = this.buttonPress4
     }
