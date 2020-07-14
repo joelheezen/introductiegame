@@ -63,7 +63,7 @@ class Act1 {
         button2.style.width = `18.5vw`
         button2.style.height = `4vh`
         button2.style.transform = `translate(25.25vw, 61vh)`
-        button2.style.opacity = `100%`
+        button2.style.opacity = `1`
         button2.innerHTML = 'Online zoeken naar vormen'
         button2.addEventListener("click" , () => this.searchOnline())
 
@@ -72,7 +72,7 @@ class Act1 {
         button3.style.width = `9vw`
         button3.style.height = `7.6vh`
         button3.style.transform = `translate(91vw, 0vh)`
-        button3.style.opacity = `0%`
+        button3.style.opacity = `0`
         button3.addEventListener("click" , () => this.searchOnline())
     }
 
@@ -151,43 +151,43 @@ class Act1 {
         button1.style.width = `15.6vw`
         button1.style.height = `60.9vh`
         button1.style.transform = `translate(14.5vw, 20.8vh)`
-        button1.style.opacity = `0%`
+        button1.style.opacity = `0`
         button1.addEventListener("click" , () => this.webmail())
 
         button2.style.width = `22vw`
         button2.style.height = `12.3vh`
         button2.style.transform = `translate(31.7vw, 69.8vh)`
-        button2.style.opacity = `0%`
+        button2.style.opacity = `0`
         button2.addEventListener("click" , () => this.rooster())
 
         button3.style.width = `10.7vw`
         button3.style.height = `27.3vh`
         button3.style.transform = `translate(55vw, 20.7vh)`
-        button3.style.opacity = `0%`
+        button3.style.opacity = `0`
         button3.addEventListener("click" , () => this.studentenServiceCenter())
 
         button4.style.width = `16.3vw`
         button4.style.height = `18vh`
         button4.style.transform = `translate(59vw, 63.8vh)`
-        button4.style.opacity = `0%`
+        button4.style.opacity = `0`
         button4.addEventListener("click" , () => this.studentenpas())
 
         button5.style.width = `10.2vw`
         button5.style.height = `61.3vh`
         button5.style.transform = `translate(77vw, 20.8vh)`
-        button5.style.opacity = `0%`
+        button5.style.opacity = `0`
         button5.addEventListener("click" , () => this.lms())
 
         button6.style.width = `9vw`
         button6.style.height = `7.6vh`
         button6.style.transform = `translate(91vw, 0vh)`
-        button6.style.opacity = `0%`
+        button6.style.opacity = `0`
         button6.addEventListener("click" , () => this.goBack())
 
         button7.style.width = `11vw`
         button7.style.height = `18vh`
         button7.style.transform = `translate(71vw, 20.8vh)`
-        button7.style.opacity = `0%`
+        button7.style.opacity = `0`
         button7.addEventListener("click" , () => this.osiris())
 
     }
@@ -233,7 +233,7 @@ class Act1 {
         button.style.width = `20.3vw`
         button.style.height = `18vh`
         button.style.transform = `translate(61.2vw, 63.8vh)`
-        button.style.opacity = `0%`
+        button.style.opacity = `0`
 
         button.addEventListener("click" , function(){
             button.style.display = `none`
