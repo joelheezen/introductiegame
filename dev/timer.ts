@@ -3,33 +3,6 @@ class Timer{
     pauseEnd: number
 
     constructor(){
-    
-        this.startTimer()
-
-
-        setTimeout(() => {
-            this.startPause()
-        }, 2000);
-
-        setTimeout(() => {
-            this.endPause()
-        }, 4000);
-
-        setTimeout(() => {
-            this.startPause()
-        }, 6000);
-
-        setTimeout(() => {
-            this.endPause()
-        }, 8000);
-
-        setTimeout(() => {
-            this.endTimer()
-
-            this.score()
-            this.resetTimer()
-        }, 12000);
-
         
     }
 

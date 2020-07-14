@@ -18,13 +18,6 @@ class Game{
         button2.innerHTML = `gert`
         button2.onclick = this.buttonPress2
 
-        let button3 = document.createElement("button")
-        game.appendChild(button3)
-        button3.style.width = `10vw`
-        button3.style.height = `10vh`
-        button3.style.transform = `translate(25vw, 50vh)`
-        button3.innerHTML = `tom`
-        button3.onclick = this.buttonPress3
 
         let button4 = document.createElement("button")
         game.appendChild(button4)
@@ -43,10 +36,6 @@ class Game{
     buttonPress2(){
         document.getElementsByTagName("game")[0].innerHTML = ""
         new Act1()
-    }
-    buttonPress3(){
-        document.getElementsByTagName("game")[0].innerHTML = ""
-        new LocatieSelectie()
     }
     buttonPress4(){
         document.getElementsByTagName("game")[0].innerHTML = ""
