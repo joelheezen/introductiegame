@@ -259,6 +259,10 @@ hinticon{
     background-size: 100% 100%;
     background-image: url(../assets/Akte2/envelope.png);
 }
+hintbox{
+    position: absolute;
+    z-index: 4;
+}
 input:focus{
     outline:none;
 }

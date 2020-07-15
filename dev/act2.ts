@@ -14,10 +14,6 @@ class Act2{
     folderItem5 : HTMLElement
     folderItem6 : HTMLElement
 
-    hint1 : HTMLElement = document.createElement("hinticon")
-    hint2 : HTMLElement = document.createElement("hinticon")
-    hint3 : HTMLElement = document.createElement("hinticon")
-
     doorName1 = document.createElement("doorName")
     doorName2 = document.createElement("doorName")
     doorName3 = document.createElement("doorName")
