@@ -14,18 +14,25 @@ class Ending{
         bg.style.height = `100vh`
         bg.style.position = `absolute`
 
-        let popup = document.createElement("pinPopup")
+        let popup = document.createElement("endPopup")
         game.appendChild(popup)
-        popup.style.transform = `translate(34vw, 20vh)`
-        popup.innerHTML += new Timer().score()
+
+        let title = document.createElement('youWon')
+        title.innerHTML = "Gefeliciteerd"
+        popup.appendChild(title)
+
+        let subTitle = document.createElement('subtitle')
+        subTitle.innerHTML = 'Dit is het einde van het spel<br>Jouw score is:<br>'
+        popup.appendChild(subTitle)
+
+        let score = document.createElement('finalScore')
+
+        score.innerHTML += new Timer().score()
+        popup.appendChild(score)
+        
         let button = document.createElement("button")
         popup.appendChild(button)
-        popup.style.boxShadow = `none`
 
-        button.style.position = `absolute`
-        button.style.width = `94%`
-        button.style.height = `20%`
-        button.style.transform = `translate(0%, 30%)`
         button.innerHTML += `klik hier voor een uitdraai van je score`
         button.addEventListener("click", function(){
             window.print()
