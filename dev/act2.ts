@@ -14,6 +14,10 @@ class Act2{
     folderItem5 : HTMLElement
     folderItem6 : HTMLElement
 
+    hint1 : HTMLElement = document.createElement("hinticon")
+    hint2 : HTMLElement = document.createElement("hinticon")
+    hint3 : HTMLElement = document.createElement("hinticon")
+
     doorName1 = document.createElement("doorName")
     doorName2 = document.createElement("doorName")
     doorName3 = document.createElement("doorName")
@@ -41,6 +45,7 @@ class Act2{
         this.codeEind()
         this.doorNames()
         this.setHint()
+
         new hint
 
 
@@ -199,13 +204,11 @@ class Act2{
         localStorage.setItem(this.number5, (<HTMLInputElement>document.getElementById("input5")).value)
     }
     setHint(){
-        new popup("Zoek je juiste kleur bij de juiste persoon.",5,87,10,8)
+        new popup("Zoek je juiste kleur bij de juiste persoon.",5,84,10)
         new popup("Hulp nodig? Blijf (er) niet (mee) rondlopen! Hier moet je zijn: Hulp bij studie. De hogeschool biedt allerlei vormen van een-op-een begeleiding en ondersteuning."+
-        " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!",64,80,30,15)
-        new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.",20,45,20,5)
-        new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door",59,45,20,7)
-        new popup("Solliciteren is soms een numbers game",82,45,15,5)
+        " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!",64,75,30)
     }
+
     
 
     codeEind(){
@@ -390,7 +393,8 @@ class Act2folder1 extends folders{
     constructor(){
         super()
         this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer1getallen.jpg)'
-        this.folder.style.backgroundSize = '50% 50%'
+        this.folder.style.height = "60vh"
+        this.folder.style.marginTop = "20vh"
     
     }
 }
@@ -399,7 +403,6 @@ class Act2folder2 extends folders{
     constructor(){
         super()
         this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer2HulpbijStudie.jpg)'
-        this.folder.style.backgroundSize = '40% 90%'
     }
 }
 class Act2folder3 extends folders{
@@ -407,7 +410,6 @@ class Act2folder3 extends folders{
     constructor(){
         super()
         this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer3WorkshopSolliciteren.jpg)'
-        this.folder.style.backgroundSize = '30% 90%'
     }
 }
 class Act2folder4 extends folders{
@@ -415,7 +417,6 @@ class Act2folder4 extends folders{
     constructor(){
         super()
         this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer4COIAinfo.png)'
-        this.folder.style.backgroundSize = '45% 80%'
     }
 }
 class Act2folder5 extends folders{
@@ -423,6 +424,8 @@ class Act2folder5 extends folders{
     constructor(){
         super()
         this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer5MorseCodeAlfabet.jpg)'
+        this.folder.style.height = "60vh"
+        this.folder.style.marginTop = "20vh"
     }
 }
 class Act2folder6 extends folders{

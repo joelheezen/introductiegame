@@ -19,7 +19,9 @@ class CenterPopup{
                 }else if(open !== ''){
                     window.open(open, '_blank');
                 }
-                popup.remove() 
+                
+                popup.remove()
+
             })
     
             popup.appendChild(doorgaan)
