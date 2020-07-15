@@ -32,8 +32,6 @@ class LocatieSelectie{
 
         this.educationSelect = document.createElement('select')
 
-        
-
         let allEducations = new Array()
 
         for (let index1 = 0; index1 < this.educations.length; index1++) {
