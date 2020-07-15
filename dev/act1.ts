@@ -3,7 +3,6 @@ class Act1 {
     private input1 = document.createElement("input")
     private input2 = document.createElement("input")
     private input3 = document.createElement("input")
-    private wrong_div = document.createElement("div")
 
     private button1 = document.createElement("button")
 
@@ -89,38 +88,7 @@ class Act1 {
             
         }
         else{
-            let game = document.getElementsByTagName("game")[0]
-            let background = document.createElement("backgroundact2")
-
-            game.appendChild(background)
-            game.removeChild(this.input1)
-            game.removeChild(this.input2)
-            game.removeChild(this.input3)
-
-            game.removeChild(this.button1)
-
-            background.style.backgroundImage = `url(/docs/assets/backgroundact1main2.png)`
             
-
-            game.appendChild(this.wrong_div)
-            this.wrong_div.style.width = `13.7vw`
-            this.wrong_div.style.height = `5.7vh`
-            this.wrong_div.style.position = `absolute`
-            this.wrong_div.style.transform = `translate(10vw, 39.2vh)`
-            this.wrong_div.style.borderRadius = `25px`
-            this.wrong_div.style.border = `none`
-            this.wrong_div.style.fontSize = `20px`
-            this.wrong_div.style.paddingLeft = `1vw`
-            this.wrong_div.style.textTransform = `uppercase`
-            this.wrong_div.style.zIndex = `9999`
-            this.wrong_div.id = "input1"
-
-            var myloc = new Image();  
-            myloc.useMap = "/docs/assets/fout_antwoord.png";  
-            var img = document.createElement('img')  
-            img.setAttribute('src', myloc.useMap);  
-            img.setAttribute('style', "height:25vh;width:30vw;transform:translate(35vw, 26.5vh);cursor:pointer;z-index:9999;");  
-            game.appendChild(img);
         }
     }
 
