@@ -1398,6 +1398,10 @@ var Act3 = (function () {
                     var note2 = document.getElementById("note2").value.toLowerCase();
                     var note3 = document.getElementById("note3").value.toLowerCase();
                     var note4 = document.getElementById("note4").value.toLowerCase();
+                    localStorage.setItem("note1Save", note1);
+                    localStorage.setItem("note2Save", note2);
+                    localStorage.setItem("note3Save", note3);
+                    localStorage.setItem("note4Save", note4);
                     if (note1 == "bibliotheek" && note2 == "5" && note3 == "word lid" && note4 == "24,20") {
                         game.innerHTML = "";
                         new Ending;
@@ -2332,6 +2336,7 @@ var Osiris = (function () {
         game2.appendChild(background);
         game2.appendChild(this.input1);
         this.input1.style.width = "17.1vw";
+        this.input1.style.height = "2.1vh";
         this.input1.style.transform = "translate(14.1vw, 20.7vh)";
         this.input1.style.fontSize = "17px";
         this.input1.style.paddingLeft = "0.4vw";

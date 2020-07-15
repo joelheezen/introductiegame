@@ -717,6 +717,11 @@ class Act3{
                     let note3 = (<HTMLInputElement>document.getElementById("note3")).value.toLowerCase()
                     let note4 = (<HTMLInputElement>document.getElementById("note4")).value.toLowerCase()
 
+                    localStorage.setItem(`note1Save`, note1)
+                    localStorage.setItem(`note2Save`, note2)
+                    localStorage.setItem(`note3Save`, note3)
+                    localStorage.setItem(`note4Save`, note4)
+
                     if(note1 == "bibliotheek" && note2 == "5" && note3 == "word lid" && note4 == "24,20"){
                         game.innerHTML = ""
                         new Ending
