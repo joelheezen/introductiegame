@@ -436,12 +436,31 @@ next{
     top:20vh;
     left:9.5vw;
     position: absolute;
-    cursor: pointer;
     background-color: #ffb911;
     border-radius: 15px;
     text-align: center;
     font-size:3vh;
     border: solid black 0.2vw;
+    filter: grayscale(100%);
+}
+
+locationTekst{
+    position:absolute;
+    text-align:center;
+    width:100vw;
+    top:10vh;
+}
+
+languagePicker{
+    width:40vw;
+    top:60%;
+    text-align:center;
+    position:absolute;
+}
+
+languagePicker button{
+    position:relative;
+    margin-top:0.5vh;
 }
 
 congratulations{

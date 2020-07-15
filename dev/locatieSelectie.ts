@@ -1,4 +1,3 @@
-
 class LocatieSelectie{
 
     background: HTMLElement = document.createElement('backgroundLocation')
@@ -12,11 +11,7 @@ class LocatieSelectie{
         this.background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/map.png"
         this.game.appendChild(this.background)
         this.educationSetter()
-
-        let back = document.createElement("button")
-        back.id = 'backToLocatie'
-        back.addEventListener('click',() => this.goBack())
-        this.game.appendChild(back)
+        this.language() 
     }
 
     goBack(){
@@ -24,11 +19,50 @@ class LocatieSelectie{
         new LocatieSelectie()
     }
 
+
+    language(){
+        let language = document.createElement('languagePicker')
+        language.innerHTML = new Languages()[localStorage.getItem('language')][2]
+
+        let dutch = document.createElement('button')
+        dutch.innerHTML = 'Nedelands'
+        language.appendChild(dutch)
+        let english = document.createElement('button')
+        english.innerHTML = 'English'
+        language.appendChild(english)
+
+        document.getElementsByTagName('educationsetter')[0].appendChild(language)
+
+        if(localStorage.getItem('language') == 'dutch'){
+            dutch.style.backgroundColor = '#ff9c23'
+        }
+
+        if(localStorage.getItem('language') == 'english'){
+            english.style.backgroundColor = '#ff9c23'
+        }
+
+        dutch.addEventListener('click',()=>{
+            localStorage.setItem('language','dutch')
+            dutch.style.backgroundColor = '#ff9c23'
+            english.style.backgroundColor = ''
+            this.goBack()
+        })
+
+        english.addEventListener('click',()=>{
+            localStorage.setItem('language','english')
+            english.style.backgroundColor = '#ff9c23'
+            dutch.style.backgroundColor = ''
+            this.goBack()
+        })
+
+
+    }
+
     educationSetter(){
         this.educationSet = document.createElement('educationsetter')
         this.game.appendChild(this.educationSet)
 
-        this.educationSet.innerHTML = "Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding."
+        this.educationSet.innerHTML = new Languages()[localStorage.getItem('language')][0]
 
         this.educationSelect = document.createElement('select')
 
@@ -56,7 +90,7 @@ class LocatieSelectie{
         this.educationSet.appendChild(this.educationSelect)
 
         let thisLocation = document.createElement('button')
-        thisLocation.innerHTML = 'Kies opleiding'
+        thisLocation.innerHTML = new Languages()[localStorage.getItem('language')][1]
         thisLocation.addEventListener('click',() => this.saveEducation())
 
         this.educationSet.appendChild(thisLocation)
@@ -69,12 +103,21 @@ class LocatieSelectie{
     }
 
     locationPicker(){
+        let back = document.createElement("button")
+        back.id = 'backToLocatie'
+        back.addEventListener('click',() => this.goBack())
+        this.game.appendChild(back)
+
         let map = document.createElement('map')
         this.game.appendChild(map)
 
-        this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.jpg)"
+        this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.png)"
         this.background.style.backgroundSize = "100% 100%"
         this.educationSet.remove()
+
+        let locationTekst = document.createElement('locationTekst')
+        locationTekst.innerHTML = new Languages()[localStorage.getItem('language')][3]
+        this.game.appendChild(locationTekst)
 
         this.locationMarker(34.3,67.9,'academieplein',0)
         this.locationMarker(46.3,57,'blaak',1)

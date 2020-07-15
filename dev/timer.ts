@@ -58,7 +58,7 @@ class Timer{
 
         
         let score = Math.floor((end - start - pause) / 1000) - bonus
-        console.log(score)
+        
         return score
     }
 

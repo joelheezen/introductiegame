@@ -1806,29 +1806,70 @@ var hint = (function () {
     }
     return hint;
 }());
+var Languages = (function () {
+    function Languages() {
+        this.english = ['In order to start, we need to know what course you are taking. Please select your course from this list',
+            'Choose education',
+            'Choose language',
+            'Now pick the location at which this course is taught',
+        ];
+        this.dutch = ['Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding',
+            'Kies opleiding',
+            'Kies taal',
+            'Kies nu de locatie waar deze opleiding wordt gegeven',
+        ];
+    }
+    return Languages;
+}());
 var LocatieSelectie = (function () {
     function LocatieSelectie() {
-        var _this = this;
         this.background = document.createElement('backgroundLocation');
         this.game = document.getElementsByTagName('game')[0];
         this.educations = new Locations().collective;
         this.background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/map.png";
         this.game.appendChild(this.background);
         this.educationSetter();
-        var back = document.createElement("button");
-        back.id = 'backToLocatie';
-        back.addEventListener('click', function () { return _this.goBack(); });
-        this.game.appendChild(back);
+        this.language();
     }
     LocatieSelectie.prototype.goBack = function () {
         this.game.innerHTML = "";
         new LocatieSelectie();
     };
+    LocatieSelectie.prototype.language = function () {
+        var _this = this;
+        var language = document.createElement('languagePicker');
+        language.innerHTML = new Languages()[localStorage.getItem('language')][2];
+        var dutch = document.createElement('button');
+        dutch.innerHTML = 'Nedelands';
+        language.appendChild(dutch);
+        var english = document.createElement('button');
+        english.innerHTML = 'English';
+        language.appendChild(english);
+        document.getElementsByTagName('educationsetter')[0].appendChild(language);
+        if (localStorage.getItem('language') == 'dutch') {
+            dutch.style.backgroundColor = '#ff9c23';
+        }
+        if (localStorage.getItem('language') == 'english') {
+            english.style.backgroundColor = '#ff9c23';
+        }
+        dutch.addEventListener('click', function () {
+            localStorage.setItem('language', 'dutch');
+            dutch.style.backgroundColor = '#ff9c23';
+            english.style.backgroundColor = '';
+            _this.goBack();
+        });
+        english.addEventListener('click', function () {
+            localStorage.setItem('language', 'english');
+            english.style.backgroundColor = '#ff9c23';
+            dutch.style.backgroundColor = '';
+            _this.goBack();
+        });
+    };
     LocatieSelectie.prototype.educationSetter = function () {
         var _this = this;
         this.educationSet = document.createElement('educationsetter');
         this.game.appendChild(this.educationSet);
-        this.educationSet.innerHTML = "Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding.";
+        this.educationSet.innerHTML = new Languages()[localStorage.getItem('language')][0];
         this.educationSelect = document.createElement('select');
         var allEducations = new Array();
         for (var index1 = 0; index1 < this.educations.length; index1++) {
@@ -1845,7 +1886,7 @@ var LocatieSelectie = (function () {
         }
         this.educationSet.appendChild(this.educationSelect);
         var thisLocation = document.createElement('button');
-        thisLocation.innerHTML = 'Kies opleiding';
+        thisLocation.innerHTML = new Languages()[localStorage.getItem('language')][1];
         thisLocation.addEventListener('click', function () { return _this.saveEducation(); });
         this.educationSet.appendChild(thisLocation);
     };
@@ -1855,11 +1896,19 @@ var LocatieSelectie = (function () {
         this.locationPicker();
     };
     LocatieSelectie.prototype.locationPicker = function () {
+        var _this = this;
+        var back = document.createElement("button");
+        back.id = 'backToLocatie';
+        back.addEventListener('click', function () { return _this.goBack(); });
+        this.game.appendChild(back);
         var map = document.createElement('map');
         this.game.appendChild(map);
-        this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.jpg)";
+        this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.png)";
         this.background.style.backgroundSize = "100% 100%";
         this.educationSet.remove();
+        var locationTekst = document.createElement('locationTekst');
+        locationTekst.innerHTML = new Languages()[localStorage.getItem('language')][3];
+        this.game.appendChild(locationTekst);
         this.locationMarker(34.3, 67.9, 'academieplein', 0);
         this.locationMarker(46.3, 57, 'blaak', 1);
         this.locationMarker(62.7, 61.5, 'kralingse_zoom', 2);
@@ -2321,11 +2370,15 @@ var Pause = (function () {
         title.appendChild(subTitle);
         this.game.appendChild(message);
         message.appendChild(nextButton);
-        nextButton.addEventListener('click', function () {
-            _this.pauseTimer.endPause();
-            _this.game.innerHTML = '';
-            eval("new " + next + "()");
-        });
+        setTimeout(function () {
+            nextButton.style.filter = "grayscale(0%)";
+            nextButton.style.cursor = "pointer";
+            nextButton.addEventListener('click', function () {
+                _this.pauseTimer.endPause();
+                _this.game.innerHTML = '';
+                eval("new " + next + "()");
+            });
+        }, 2000);
     }
     return Pause;
 }());
@@ -2358,6 +2411,9 @@ var StartScreem = (function () {
         var _this = this;
         this.game = document.getElementsByTagName('game')[0];
         this.background = document.createElement('background');
+        if (!localStorage.getItem('language')) {
+            localStorage.setItem('language', 'dutch');
+        }
         this.background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/startScherm.png)";
         this.game.appendChild(this.background);
         var start = document.createElement('startgame');
@@ -2411,7 +2467,6 @@ var Timer = (function () {
         var pause = parseInt(localStorage.getItem('pause'));
         var bonus = parseInt(localStorage.getItem('bonus'));
         var score = Math.floor((end - start - pause) / 1000) - bonus;
-        console.log(score);
         return score;
     };
     Timer.prototype.resetTimer = function () {
