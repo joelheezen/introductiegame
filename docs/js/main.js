@@ -2367,6 +2367,7 @@ var Osiris = (function () {
     };
     Osiris.prototype.definitief = function () {
         var game2 = document.getElementsByTagName("game2")[0];
+        game2.removeChild(this.button6);
         var background = document.createElement("backgroundact2");
         background.style.backgroundImage = "url(assets/osiris_8.png)";
         game2.appendChild(background);
