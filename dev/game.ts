@@ -26,6 +26,14 @@ class Game{
         button4.style.transform = `translate(80vw, 50vh)`
         button4.innerHTML = `luuk`
         button4.onclick = this.buttonPress4
+
+        let button5 = document.createElement("button")
+        game.appendChild(button5)
+        button5.style.width = `10vw`
+        button5.style.height = `10vh`
+        button5.style.transform = `translate(90vw, 50vh)`
+        button5.innerHTML = `luuk eind`
+        button5.onclick = this.buttonPress5
     }
 
     buttonPress1(){
@@ -41,6 +49,11 @@ class Game{
     buttonPress4(){
         document.getElementsByTagName("game")[0].innerHTML = ""
         new EnterBuilding()
+    }
+
+    buttonPress5(){
+        document.getElementsByTagName("game")[0].innerHTML = ""
+        new Ending()
     }
 
     
