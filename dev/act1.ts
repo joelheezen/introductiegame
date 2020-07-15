@@ -88,14 +88,14 @@ class Act1 {
             
         }
         else{
-            let game = document.getElementsByTagName("game")[0]
-            
+
+            let game = document.getElementsByTagName('game')[0]
             let inputs = document.getElementsByTagName('input')
 
             for (let index = 0; index < inputs.length; index++) {
                 inputs[index].style.border = 'solid 3px red'
             }
-            
+
             let wrong = document.createElement('wrong')
             wrong.innerHTML = 'Dit antwoord is onjuist. Probeer het nog een keer.'
 
@@ -107,10 +107,10 @@ class Act1 {
                     wrong.remove()
                 }
             }, 2000);
-
             
         }
     }
+
 
     searchOnline() {
         
@@ -184,9 +184,9 @@ class Act1 {
         button6.style.opacity = `0`
         button6.addEventListener("click" , () => this.goBack())
 
-        button7.style.width = `11vw`
+        button7.style.width = `8.5vw`
         button7.style.height = `18vh`
-        button7.style.transform = `translate(71vw, 20.8vh)`
+        button7.style.transform = `translate(67vw, 20.8vh)`
         button7.style.opacity = `0`
         button7.addEventListener("click" , () => this.osiris())
 

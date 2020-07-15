@@ -85,7 +85,7 @@ var Act1 = (function () {
             new Pause(1, 'EnterBuilding');
         }
         else {
-            var game = document.getElementsByTagName("game")[0];
+            var game = document.getElementsByTagName('game')[0];
             var inputs_1 = document.getElementsByTagName('input');
             for (var index = 0; index < inputs_1.length; index++) {
                 inputs_1[index].style.border = 'solid 3px red';
@@ -160,9 +160,9 @@ var Act1 = (function () {
         button6.style.transform = "translate(91vw, 0vh)";
         button6.style.opacity = "0";
         button6.addEventListener("click", function () { return _this.goBack(); });
-        button7.style.width = "11vw";
+        button7.style.width = "8.5vw";
         button7.style.height = "18vh";
-        button7.style.transform = "translate(71vw, 20.8vh)";
+        button7.style.transform = "translate(67vw, 20.8vh)";
         button7.style.opacity = "0";
         button7.addEventListener("click", function () { return _this.osiris(); });
     };
@@ -1702,6 +1702,7 @@ var Ending = (function () {
         button.addEventListener("click", function () {
             window.print();
         });
+        new Timer().resetTimer();
     }
     return Ending;
 }());
@@ -1815,14 +1816,18 @@ var LocatieSelectie = (function () {
         this.game.appendChild(this.educationSet);
         this.educationSet.innerHTML = "Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding.";
         this.educationSelect = document.createElement('select');
-        for (var index = 0; index < this.educations.length; index++) {
-            this.currentLocation = this.educations[index].opleidingen;
-            for (var education in this.currentLocation) {
-                var addToDrop = document.createElement('option');
-                addToDrop.value = this.currentLocation[education];
-                addToDrop.innerHTML = this.currentLocation[education];
-                this.educationSelect.appendChild(addToDrop);
+        var allEducations = new Array();
+        for (var index1 = 0; index1 < this.educations.length; index1++) {
+            for (var index2 = 0; index2 < this.educations[index1].opleidingen.length; index2++) {
+                allEducations.push(this.educations[index1].opleidingen[index2]);
             }
+        }
+        allEducations = allEducations.sort();
+        for (var education in allEducations) {
+            var addToDrop = document.createElement('option');
+            addToDrop.value = allEducations[education];
+            addToDrop.innerHTML = allEducations[education];
+            this.educationSelect.appendChild(addToDrop);
         }
         this.educationSet.appendChild(this.educationSelect);
         var thisLocation = document.createElement('button');

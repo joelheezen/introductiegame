@@ -30,5 +30,7 @@ class Ending{
         button.addEventListener("click", function(){
             window.print()
         })
+
+        new Timer().resetTimer()
     }
 }

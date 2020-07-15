@@ -3,7 +3,7 @@ class Timer{
     pauseEnd: number
 
     constructor(){
-        //this.resetTimer()
+       
     }
 
     startTimer(){

@@ -32,15 +32,25 @@ class LocatieSelectie{
 
         this.educationSelect = document.createElement('select')
 
-        for (let index = 0; index < this.educations.length; index++) {
+        
 
-            this.currentLocation = this.educations[index].opleidingen
-            for(let education in this.currentLocation){
-                let addToDrop = document.createElement('option')
-                addToDrop.value = this.currentLocation[education]
-                addToDrop.innerHTML = this.currentLocation[education]
-                this.educationSelect.appendChild(addToDrop)
+        let allEducations = new Array()
+
+        for (let index1 = 0; index1 < this.educations.length; index1++) {
+
+            for (let index2 = 0; index2 < this.educations[index1].opleidingen.length; index2++) {
+                allEducations.push(this.educations[index1].opleidingen[index2])
             }
+        
+        }
+
+        allEducations = allEducations.sort();
+
+        for(let education in allEducations){
+            let addToDrop = document.createElement('option')
+            addToDrop.value =  allEducations[education]
+            addToDrop.innerHTML =  allEducations[education]
+            this.educationSelect.appendChild(addToDrop)
         }
            
 
