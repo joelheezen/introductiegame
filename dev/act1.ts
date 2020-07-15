@@ -88,28 +88,14 @@ class Act1 {
             
         }
         else{
-            
-        }
-    }
 
-    onlinePopup(title:string,message:string,open:string){
-        let popup = document.createElement('onlinePopup')
+            let game = document.getElementsByTagName('game')[0]
+            let inputs = document.getElementsByTagName('input')
 
-        let popupTitle = document.createElement('popupTitle')
-        popupTitle.innerHTML = title
-
-        let popupMessage = document.createElement('popupMessage')
-        popupMessage.innerHTML = message
-
-        let doorgaan = document.createElement('button')
-        doorgaan.innerHTML = 'Doorgaan'
-
-        doorgaan.addEventListener('click',()=>{
-
-            if(open !== ''){
-                window.open(open, '_blank');
+            for (let index = 0; index < inputs.length; index++) {
+                inputs[index].style.border = 'solid 3px red'
             }
-            
+
             let wrong = document.createElement('wrong')
             wrong.innerHTML = 'Dit antwoord is onjuist. Probeer het nog een keer.'
 
@@ -121,10 +107,10 @@ class Act1 {
                     wrong.remove()
                 }
             }, 2000);
-
             
         }
     }
+
 
     searchOnline() {
         

@@ -85,19 +85,10 @@ var Act1 = (function () {
             new Pause(1, 'EnterBuilding');
         }
         else {
-        }
-    };
-    Act1.prototype.onlinePopup = function (title, message, open) {
-        var popup = document.createElement('onlinePopup');
-        var popupTitle = document.createElement('popupTitle');
-        popupTitle.innerHTML = title;
-        var popupMessage = document.createElement('popupMessage');
-        popupMessage.innerHTML = message;
-        var doorgaan = document.createElement('button');
-        doorgaan.innerHTML = 'Doorgaan';
-        doorgaan.addEventListener('click', function () {
-            if (open !== '') {
-                window.open(open, '_blank');
+            var game = document.getElementsByTagName('game')[0];
+            var inputs_1 = document.getElementsByTagName('input');
+            for (var index = 0; index < inputs_1.length; index++) {
+                inputs_1[index].style.border = 'solid 3px red';
             }
             var wrong_1 = document.createElement('wrong');
             wrong_1.innerHTML = 'Dit antwoord is onjuist. Probeer het nog een keer.';
