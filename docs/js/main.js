@@ -1674,6 +1674,17 @@ var Ending = (function () {
         var bg = document.createElement("backgroundEnd");
         var game = document.getElementsByTagName("game")[0];
         game.appendChild(bg);
+        window.addEventListener("beforeprint", function () {
+            title.style.fontSize = "7vh";
+            popup.style.position = 'absolute';
+            subTitle.style.fontSize = "1.1rem";
+            subTitle.innerHTML = 'stap 1: Selecteer het "Destination" menu en klik vervolgens op "save as PDF".<br>stap 2: Vink onder "More settings" / "Options" het "background graphics vinkje aan.<br>' +
+                'stap 3: klik op het "Save" knopje.<br>stap 4: lever het bestand in bij de docent.<br>Jouw score is:<br>';
+            button.remove();
+        });
+        window.addEventListener("afterprint", function () {
+            new Ending;
+        });
         bg.style.backgroundImage = "url(assets/Akte3/Binnenrotte.jpg)";
         bg.style.backgroundSize = "100% 100%";
         bg.style.backgroundRepeat = "no-repeat";
@@ -1751,6 +1762,13 @@ var Game = (function () {
         button4.style.transform = "translate(80vw, 50vh)";
         button4.innerHTML = "luuk";
         button4.onclick = this.buttonPress4;
+        var button5 = document.createElement("button");
+        game.appendChild(button5);
+        button5.style.width = "10vw";
+        button5.style.height = "10vh";
+        button5.style.transform = "translate(90vw, 50vh)";
+        button5.innerHTML = "luuk eind";
+        button5.onclick = this.buttonPress5;
     }
     Game.prototype.buttonPress1 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
@@ -1763,6 +1781,10 @@ var Game = (function () {
     Game.prototype.buttonPress4 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
         new EnterBuilding();
+    };
+    Game.prototype.buttonPress5 = function () {
+        document.getElementsByTagName("game")[0].innerHTML = "";
+        new Ending();
     };
     return Game;
 }());
