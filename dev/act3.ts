@@ -115,19 +115,21 @@ class Act3{
                 let url12 = "url(assets/Akte3/Blaaktoren.jpg)"
                 let url13 = "url(assets/Akte3/KunstwerkDeGestileerdeBloem.jpg)"
 
-                let text1 = `De Hofpleinfontein Midden in het verkeersplein Hofplein staat een grote fontein. Deze Hofpleinfontein werd in 1939 aan de stad Rotterdam geschonken door de rederij Van Ommeren die zijn honderjarige bestaan vierde. De fontein wordt in de volksmond ook wel de Flipspuit genoemd, verwijzend naar Philippus "Flip" van Ommeren. Door de centrale ligging, pal naast de Coolsingel, is het een plaats geworden waar grote successen worden gevierd van voetbalclub Feyenoord en het Nederlands voetbalelftal. Bij die overwinningen springen en feesten supporters in de fontein.`
-                let text2 = `Rotterdam Centraal Station Het huidige stationsgebouw, gelegen aan het Stationsplein, werd op 13 maart 2014 officieel geopend door koning Willem-Alexander. Het ontwerp verwierf meerdere internationale prijzen. Maar Rotterdammers hebben hun stationsgebouw zoals gewoonlijk een minder flatteuze bijnaam gegeven! `
-                let text3 = `Feyenoordstadion “Ga je mee naar het stadion, naar de club van Rood en Wit”. Dit stadion is beter bekend onder de naam ………. `
-                let text4 = `'De Belichaamde Eenheid' Dit kunstwerk stond ooit bij de ingang van een van de locaties van Hogeschool Rotterdam (Museumpark Hoogbouw); destijds het hoofdkantoor van Unilever. Bij de verhuizing naar de Weena is het kunstwerk meeverhuisd. `
-                let text5 = `Erasmusbrug De Erasmusbrug is een verhaal apart en heeft wel meer dan 20 bijnamen, waaronder ‘de Zwaan’, ‘de Harp’ en 'de Wipkip’. Toch is ‘de Zwaan’ de meest gebruikte bijnaam. `
-                let text6 = `Station Blaak De opdracht die de architect had bij het ontwerpen van het station was dat er voldoende oriëntatiepunten moesten zijn voor de reizigers. Dit is ook de reden dat de architect een opvallende constructie boven de grond maakte, zodat het station meteen opvalt en te herkennen is. Het ontwerp lijkt een beetje op een vliegende schotel. Veel mensen noemen het ook een verwelkte zonnebloem of fluitketel. Voor die laatste bijnaam moet je wel iets meer fantasie hebben.. `
-                let text7 = `Erasmus Medische Centrum Op 1 juni 2002 fuseerden het Dijkzigtziekenhuis, het Sophia Kinderziekenhuis, de Daniel den Hoedkliniek en de "Faculteit der Geneeskunde en Gezondheidswetenschappen" van de Erasmus Universiteit Rotterdam tot het huidige Erasmus MC. “Groot, wit, vierkant…. Ik begrijp het wel” zei een Rotterdammer over de bijnaam van dit gebouw. `
-                let text8 = `Binnenrotte Hier wordt op dinsdag en zaterdag markt gehouden. Daarnaast wordt het plein ook veelvuldig gebruikt voor evenementen. Opgravingen hebben aangetoond dat de vroegste nederzettingen aan de rivier de Rotte hier het begin van de stad Rotterdam hebben ingeluid. De Binnenrotte is een grote, open ruimte en daar is ook de bijnaam ‘Landingsbaan’ van afgeleid. `
-                let text9 = `Markthal Deze koophemel herbergt delicatessen, verse producten, allerlei eettentjes, een supermarkt en slijterij. Toch komen de meeste toeristen voor iets anders. Camera’s klikken onafgebroken en zijn allemaal gericht op het plafond van de iconische Markthal. Rotterdammers spreken trots over hun ‘Sixtijnse Kapel’. `
-                let text10 = `Centrale Bibliotheek Aan de opvallende gele buizen aan de buitenkant van dit gebouw dankt de bibliotheek haar bijnaam. Waar doet het jou aan denken? Net als meer gebouwen in Rotterdam, draagt de bibliotheek een citaat van een beroemde Rotterdammer op de gevel: “Heel de aarde is je vaderland” schreef niemand minder dan Desiderius Erasmus. Bezoek ook is de Erasmus Experience in de bibliotheek als je meer over deze grote denker wil leren. `
-                let text11 = `Beurstraverse Deze verdiepte winkelstraat loopt onder de Coolsingel door. De onhandige trappen ogen misschien mooi, maar lopen voor geen meter! Grote ketens hebben hier allemaal een plek. `
-                let text12 = `De Blaaktoren Woontoren. Voor Rotterdammers beter bekend als het ‘potlood’.  `
-                let text13 = `'De gestileerde bloem' Dit naamloze kunstwerk is een geschenk van de Bijenkorf aan de stad Rotterdam. Het heeft later de titel ‘de gestileerde bloem’ gekregen. Sommige Rotterdammers noemen het gewoonweg ‘het ding’. Anderen zien er een spoorwegongeluk in.  `
+                
+
+                let text1 = new Languages()[localStorage.getItem('language')][20]
+                let text2 = new Languages()[localStorage.getItem('language')][21]
+                let text3 = new Languages()[localStorage.getItem('language')][22]
+                let text4 = new Languages()[localStorage.getItem('language')][23]
+                let text5 = new Languages()[localStorage.getItem('language')][24]
+                let text6 = new Languages()[localStorage.getItem('language')][25]
+                let text7 = new Languages()[localStorage.getItem('language')][26]
+                let text8 = new Languages()[localStorage.getItem('language')][27]
+                let text9 = new Languages()[localStorage.getItem('language')][28]
+                let text10 = new Languages()[localStorage.getItem('language')][29]
+                let text11 = new Languages()[localStorage.getItem('language')][30]
+                let text12 = new Languages()[localStorage.getItem('language')][31]
+                let text13 = new Languages()[localStorage.getItem('language')][32]
                 
                 pin1.style.transform = `translate(30.5vw, 35.7vh)`
                 pin1.style.zIndex = `3`
@@ -399,7 +401,7 @@ class Act3{
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
                     pinPopup.style.transform = `translate(29.5vw, 15vh)`
-                    pinPopup.innerHTML += `Mijn naam is Cees Jansen. Bij een studentenvereniging maak je vrienden voor het leven. Elke vereniging heeft een eigen cultuur. Onze vereniging is de oudste van Rotterdam en bestaat al meer dan 100 jaar! `
+                    pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][33]
                     pinPopup.style.paddingTop = `1vh`
                     pinPopup.style.fontSize = `1.5vh`
                 })
@@ -419,7 +421,7 @@ class Act3{
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
                     pinPopup.style.transform = `translate(13vw, 23vh)`
-                    pinPopup.innerHTML += `Bij ons op de sociëteit organiseren we de mooiste feesten. Ook heb ik een hele leuke club waarmee ik samen studeer en allerlei dingen onderneem. Tijdens de introductie gaan verenigingen trouwens de hele stad door om zichzelf te promoten onder eerstejaars. Ik ga zo maar weer eens naar mijn eigen sociëteit 😉. Liefs, Zoë `
+                    pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][34]
                     pinPopup.style.paddingTop = `1vh`
                     pinPopup.style.fontSize = `1.5vh`
                 })
@@ -439,7 +441,7 @@ class Act3{
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
                     pinPopup.style.transform = `translate(25vw, 24vh)`
-                    pinPopup.innerHTML += `Hi, Ik ben Loes. Ik vind het leuk om samen op de vereniging te studeren. Natuurlijk kom ik er ook om te ontspannen, mensen te leren kennen, etc. Studeren en lid zijn gaat goed samen. Nou, ik ga maar weer eens. Op naar "Koinoonia". `
+                    pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][35]
                     pinPopup.style.paddingTop = `1vh`
                     pinPopup.style.fontSize = `1.5vh`
                 })
@@ -459,7 +461,7 @@ class Act3{
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
                     pinPopup.style.transform = `translate(30vw, 25vh)`
-                    pinPopup.innerHTML += `Hoi, ik ben Donna. Ook ik ben lid bij een vereniging. Als studentenvereniging zetten we ons ook in voor maatschappelijke projecten. En je leert veel door commissies en het organiseren van evenementen. Echt een goede aanvulling op mijn studententijd.  `
+                    pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][36]
                     pinPopup.style.paddingTop = `1vh`
                     pinPopup.style.fontSize = `1.5vh`
                 })
@@ -479,7 +481,7 @@ class Act3{
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
                     pinPopup.style.transform = `translate(8vw, 24vh)`
-                    pinPopup.innerHTML += `NSR is de grootste christelijke vereniging van Rotterdam. We zitten op het Eendrachtsplein. Van alle RKvV-verenigingen zijn we de jongste. Toch bestaan we al weer sinds 1987! We combineren vriendschap, verdieping en gezelligheid. Kom eens langs om kennis te maken! Groetjes, Werner`
+                    pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][37]
                     pinPopup.style.paddingTop = `1vh`
                     pinPopup.style.fontSize = `1.5vh`
                 })
@@ -567,7 +569,7 @@ class Act3{
                 text1.style.transform = `translate(12.3vw, 6vh)`
                 text1.style.fontSize = `2.5vh`
                 text1.style.position = `absolute`
-                text1.innerHTML = `Vraag 1: "Rotterdamse icoon"`
+                text1.innerHTML = new Languages()[localStorage.getItem('language')][38]
 
                 input1.style.width = `24.5vw`
                 input1.style.height = `3vh`
@@ -585,7 +587,7 @@ class Act3{
                 text2.style.transform = `translate(12.3vw, 22.5vh)`
                 text2.style.fontSize = `2.5vh`
                 text2.style.position = `absolute`
-                text2.innerHTML = `Vraag 2: "Tijd voor een feestje"`
+                text2.innerHTML = new Languages()[localStorage.getItem('language')][39]
 
                 input2.style.width = `24.5vw`
                 input2.style.height = `3vh`
@@ -603,7 +605,7 @@ class Act3{
                 text3.style.transform = `translate(12.3vw, 39.8vh)`
                 text3.style.fontSize = `2.5vh`
                 text3.style.position = `absolute`
-                text3.innerHTML = `Vraag 3: "RKVV"`
+                text3.innerHTML = new Languages()[localStorage.getItem('language')][40]
 
                 input3.style.width = `24.5vw`
                 input3.style.height = `3vh`
@@ -621,7 +623,7 @@ class Act3{
                 text4.style.transform = `translate(12.3vw, 57.2vh)`
                 text4.style.fontSize = `2.5vh`
                 text4.style.position = `absolute`
-                text4.innerHTML = `Vraag 4: "Rondje?"`
+                text4.innerHTML = new Languages()[localStorage.getItem('language')][41]
 
                 input4.style.width = `24.5vw`
                 input4.style.height = `3vh`
@@ -834,7 +836,7 @@ class Act3{
                 text.style.position = `absolute`
                 text.style.width = `35vw`
                 text.style.height = `10vh`
-                text.innerHTML = "Klik op de aansichtkaart om een stip te zetten, klik op de stip om deze weer weg te halen. Uiteindelijk komt er een uitkomst vul deze in in het notitieboekje!</br> Hint: het is alleen het eerste woord wat je krijgt nadat je alles in hebt gevuld."
+                text.innerHTML = new Languages()[localStorage.getItem('language')][42]
                 
                 popup.addEventListener("click", function(event){
                     let dot = document.createElement("dot")
@@ -936,10 +938,7 @@ class Act3{
 
                 popup.style.fontSize = `1.5vh`
 
-                popup.innerHTML += `Zin in een feestje? Maar heb ik daar wel tijd voor? Nu je student wordt zal je het razend druk gaat krijgen met je studie. Heb je eigenlijk nog wel tijd om iets leuks te doen? Je wil toch ook een beetje genieten van je studententijd? Hoe doen andere studenten dat eigenlijk?
-                </br>Stel: Je gaat om elf uur naar bed en je staat om zeven uur weer op om naar de hogeschool te gaan. In het weekend ga je vaak wat later naar bed, maar slaap je ook net zoveel uit. Je hebt 0:45 uur reistijd van huis naar school, een half uur om aan te kleden en te eten 's ochtend. Op school heb je van maandag t/m donderdag les van 8.30 uur tot 10:10 uur en je hebt les 12:10 tot 13.50 uur. Vrijdag heb je ook les, maar die volg je online via Teams. Naast je lessen heb je nog ongeveer 4 uur nodig voor je huiswerk. Dat doe je vaak efficiënt tussen de lessen door, hoef je minder 's avonds en in het weekend te doen. Je kookt je eigen eten, kost een half uurtje en tja, binnen 20 minuten heb je dat op. Per week werk je gemiddeld 14 uur in een leuk koffietentje in de stad. Je wilt het eigenlijk niet, maar aan social media ben je bijna anderhalf uur per dag kwijt. Oh ja, en je belt natuurlijk elke week een keer met je ouders (of oma/opa/tante) voor zo'n 30 min. 
-                </br></br>Hoeveel tijd hou jij over voor ontspanning?
-                </br></br>Gemiddeld ... uur per dag. `
+                popup.innerHTML += new Languages()[localStorage.getItem('language')][43]
 
             })
 
@@ -967,7 +966,7 @@ class Act3{
                 popup.style.zIndex = `2`
                 popup.style.paddingTop = `1vh`
                 popup.style.transform = `translate(35vw, 43vh)`
-                popup.innerHTML += `Hoeveel geld houd ik over voor een rondje?`
+                popup.innerHTML += new Languages()[localStorage.getItem('language')][44]
 
                 button.style.width = `100vw`
                 button.style.height = `100vh`

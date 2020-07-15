@@ -28,7 +28,7 @@ class Act1 {
         game.appendChild(banner)
 
         let act1Box = document.createElement('act1Box')
-        act1Box.innerHTML = 'Oh nee! De deur zit dicht en heeft een specifieke sleutel nodig om gepend te worden. Vul de juisten vormen van de sleutel in.'
+        act1Box.innerHTML = new Languages()[localStorage.getItem('language')][8]
         game.appendChild(act1Box)
         
         game.appendChild(this.input1)
@@ -53,18 +53,18 @@ class Act1 {
         this.button1.style.width = `15.1vw`
         this.button1.style.height = `7.5vh`
         this.button1.style.transform = `translate(42.4vw, 47.9vh)`
-        this.button1.innerHTML = "VERZENDEN"
+        this.button1.innerHTML = new Languages()[localStorage.getItem('language')][9]
         this.button1.classList.add('verzenden')
         this.button1.addEventListener("click" , () => this.shapeCheck())
 
         let button2 = document.createElement("button")
         game.appendChild(button2)
         button2.classList.add('search')
-        button2.style.width = `18.5vw`
         button2.style.height = `4vh`
-        button2.style.transform = `translate(25.25vw, 61vh)`
+        button2.style.textAlign = 'left'
+        button2.style.transform = `translate(25vw, 61vh)`
         button2.style.opacity = `1`
-        button2.innerHTML = 'Online zoeken naar vormen'
+        button2.innerHTML = new Languages()[localStorage.getItem('language')][10]
         button2.addEventListener("click" , () => this.searchOnline())
 
         let button3 = document.createElement("button")
@@ -97,7 +97,7 @@ class Act1 {
             }
 
             let wrong = document.createElement('wrong')
-            wrong.innerHTML = 'Dit antwoord is onjuist. Probeer het nog een keer.'
+            wrong.innerHTML = new Languages()[localStorage.getItem('language')][14]
 
             game.appendChild(wrong)
 
@@ -127,7 +127,7 @@ class Act1 {
         game.appendChild(banner)
 
         if(this.popupSave == false){
-            new CenterPopup('Welkom op jullie online plattegrond','Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel','')
+            new CenterPopup(new Languages()[localStorage.getItem('language')][12],new Languages()[localStorage.getItem('language')][13],'')
             this.popupSave = true;
         }
 
@@ -192,26 +192,22 @@ class Act1 {
     }
 
     webmail(){
-        console.log("webmail is aangeklikt")
-
         window.open('https://webmail.hr.nl', '_blank');
     }
 
     osiris(){
-        console.log("osiris is aangeklikt")
         window.open('osiris.html', '_blank');
     }
 
     rooster(){
-        new CenterPopup('Rooster','Klik op doorgaan om je rooster te zien','https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/')
+        new CenterPopup(new Languages()[localStorage.getItem('language')][15],new Languages()[localStorage.getItem('language')][16],'https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/')
     }
 
     studentenServiceCenter(){
-        new CenterPopup('Student Service Center','Mail het SSC met je persoonlijke studentenmail:ssc@hr.nl','')
+        new CenterPopup(new Languages()[localStorage.getItem('language')][17],new Languages()[localStorage.getItem('language')][18],'')
     }
 
     studentenpas(){
-        console.log("studentenpas is aangeklikt")
         let game = document.getElementsByTagName("game")[0]
         
         var img = document.createElement('img')  
@@ -242,11 +238,10 @@ class Act1 {
     }
 
     lms(){
-        new CenterPopup('LMS','Verschillende vakken en informatie kun je vinden door op doorgaan te klikken','https://lms.hr.nl')
+        new CenterPopup('LMS',new Languages()[localStorage.getItem('language')][19],'https://lms.hr.nl')
     }
 
     goBack(){
-        console.log("terug naar invulscherm")
         document.getElementsByTagName("game")[0].innerHTML = ""
         this.createAnswerScreen()
     }

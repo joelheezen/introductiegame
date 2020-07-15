@@ -18,13 +18,13 @@ class Pause{
         let message = document.createElement('pauseMessage')
         let nextButton = document.createElement('next')
 
-        title.innerHTML = `Gefeliciteerd`
+        title.innerHTML = new Languages()[localStorage.getItem('language')][60]
 
-        subTitle.innerHTML = `Je hebt akte ${act} gehaald`
+        subTitle.innerHTML = new Languages()[localStorage.getItem('language')][61]
 
-        message.innerHTML = `Je kunt nu even pauze nemen<br>Tijdens de pauze staat de tijd stil<br>Druk op de knop om te beginnen met akte ${act + 1}` 
+        message.innerHTML = new Languages()[localStorage.getItem('language')][62] + (act + 1) 
 
-        nextButton.innerHTML = `Begin akte ${act + 1}`
+        nextButton.innerHTML = new Languages()[localStorage.getItem('language')][63] + (act + 1)
 
         this.game.appendChild(title)
         title.appendChild(subTitle)

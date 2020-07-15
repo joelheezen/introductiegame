@@ -60,7 +60,7 @@ class Act2{
         this.doorName2.style.paddingTop = '1.5vh'
         this.doorName1.style.fontSize = `1vw`
         this.doorName1.style.pointerEvents = "none"
-        this.doorName1.innerHTML = "Vertrouwenspersoon"
+        this.doorName1.innerHTML = new Languages()[localStorage.getItem('language')][46]
 
         this.doorName2.style.width = '11.77vw'
         this.doorName2.style.height = '3.65vh'
@@ -87,7 +87,7 @@ class Act2{
         this.doorName4.style.paddingTop = '0.8vh'
         this.doorName4.style.fontSize = `1vw`
         this.doorName4.style.pointerEvents = "none"
-        this.doorName4.innerHTML = "Decaan"
+        this.doorName4.innerHTML = new Languages()[localStorage.getItem('language')][47]
 
         this.doorName5.style.width = '11.77vw'
         this.doorName5.style.height = '3.65vh'
@@ -200,9 +200,8 @@ class Act2{
         localStorage.setItem(this.number5, (<HTMLInputElement>document.getElementById("input5")).value)
     }
     setHint(){
-        new popup("Zoek je juiste kleur bij de juiste persoon.",5,84,10)
-        new popup("Hulp nodig? Blijf (er) niet (mee) rondlopen! Hier moet je zijn: Hulp bij studie. De hogeschool biedt allerlei vormen van een-op-een begeleiding en ondersteuning."+
-        " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!",64,75,30)
+        new popup(new Languages()[localStorage.getItem('language')][48],5,84,10)
+        new popup(new Languages()[localStorage.getItem('language')][49],64,75,30)
     }
 
     
@@ -214,7 +213,7 @@ class Act2{
         (<HTMLInputElement>document.getElementById("input3")).value + 
         (<HTMLInputElement>document.getElementById("input4")).value + 
         (<HTMLInputElement>document.getElementById("input5")).value
-        console.log(codeString)
+
         if(codeString.toLowerCase() =="dbnve"){
             console.log("goed ")
             this.input1.style.border = "thick solid #00FF00"
@@ -223,7 +222,7 @@ class Act2{
             this.input4.style.border = "thick solid #00FF00"
             this.input5.style.border = "thick solid #00FF00"
 
-            new CenterPopup('De puzzel is opgelost','Daar komt de peercoach','doorgaan')
+            new CenterPopup(new Languages()[localStorage.getItem('language')][50],new Languages()[localStorage.getItem('language')][51],new Languages()[localStorage.getItem('language')][52])
             
         }else{
             console.log("fout")

@@ -171,11 +171,11 @@ class LocatieSelectie{
         locationImage.style.backgroundImage = `url(assets/PRODUCTION/PRODUCTION/ASSETS/${location}.png)`
             
         if(awnser == 'correct'){
-            popupLocation.innerHTML += '<b>Correct!</b>Dit is de locatie van jouw opleiding.<br>'
-            popupLocation.innerHTML += `<p><a target='_blank' href='${info}'>Klik hier</a>voor meer informatie over deze locatie.</p>`
+            popupLocation.innerHTML +=  new Languages()[localStorage.getItem('language')][4]
+            popupLocation.innerHTML += `<p><a target='_blank' href='${info}'>` + new Languages()[localStorage.getItem('language')][5]
             let goto = document.createElement('button')
             popupLocation.appendChild(goto)
-            goto.innerHTML = "Loop naar binnen"
+            goto.innerHTML = new Languages()[localStorage.getItem('language')][7]
             
             goto.addEventListener('click', () =>{   
                 document.getElementsByTagName("game")[0].innerHTML = ""
@@ -184,11 +184,11 @@ class LocatieSelectie{
 
         }else{
             
-            popupLocation.innerHTML += '<b>Incorrect!</b>Dit is niet de locatie van jouw opleiding'
-            popupLocation.innerHTML += `<p><a target='_blank' href='${info}'>Klik hier</a>om te zien welke opleidingen hier wel gegeven worden.</p>`
+            popupLocation.innerHTML += new Languages()[localStorage.getItem('language')][59]
+            popupLocation.innerHTML += `<p><a target='_blank' href='${info}'>` + new Languages()[localStorage.getItem('language')][5]
             let goto = document.createElement('button')
             popupLocation.appendChild(goto)
-            goto.innerHTML = "Probeer opnieuw"  
+            goto.innerHTML = new Languages()[localStorage.getItem('language')][6]
 
             goto.addEventListener('click', () =>{ 
                 document.getElementsByTagName('popupLocation')[0].remove()

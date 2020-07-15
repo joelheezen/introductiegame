@@ -28,14 +28,14 @@ class hint{
 
         this.hint1.addEventListener("click",()=>{
             console.log("test test")
-            new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.",20,45,20)
+            new popup(new Languages()[localStorage.getItem('language')][53],20,45,20)
             this.hint1.remove()
             
         })
 
         
         this.hintbox1.addEventListener("click",()=>{
-            new popup("Weet je zeker dat je hint 1 wilt gebruiken? Deze hint helpt bij de puzzel van de 'Peercoach' deur, maar telt ook extra punten op bij je score. (minder punten is beter) \n \n deze pop-up komt maar 1 keer. De volgende keer dat je op de envelop klikt wordt de hint gebruikt.",0,7,20)
+            new popup(new Languages()[localStorage.getItem('language')][54],0,7,20)
             this.hintbox1.remove()
             this.hint1.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)'
             
@@ -51,12 +51,12 @@ class hint{
 
         this.hint2.addEventListener("click",()=>{
             console.log("hint2")
-            new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door.",59,45,20)
+            new popup(new Languages()[localStorage.getItem('language')][55],59,45,20)
             this.hint2.remove()
         })
 
         this.hintbox2.addEventListener("click",()=>{
-            new popup("Weet je zeker dat je hint 2 wilt gebruiken? Deze hint helpt bij de puzzel van de 'Decaan' deur, maar telt ook extra punten op bij je score. (minder punten is beter) \n \n deze pop-up komt maar 1 keer. De volgende keer dat je op de envelop klikt wordt de hint gebruikt.",7,7,20)
+            new popup(new Languages()[localStorage.getItem('language')][56],7,7,20)
             this.hintbox2.remove()
             this.hint2.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)'
             
@@ -72,12 +72,12 @@ class hint{
 
         this.hint3.addEventListener("click",()=>{
             console.log("hint3")
-            new popup("Solliciteren is soms een numbers game.",82,45,15)
+            new popup(new Languages()[localStorage.getItem('language')][57],82,45,15)
             this.hint3.remove()
         })
         
         this.hintbox3.addEventListener("click",()=>{
-            new popup("Weet je zeker dat je hint 3 wilt gebruiken? Deze hint helpt bij de puzzel van de 'Student aan zet' deur, maar telt ook extra punten op bij je score. (minder punten is beter) \n \n deze pop-up komt maar 1 keer. De volgende keer dat je op de envelop klikt wordt de hint gebruikt.",14,7,20)
+            new popup(new Languages()[localStorage.getItem('language')][58],14,7,20)
             this.hintbox3.remove()
             this.hint3.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)'
             

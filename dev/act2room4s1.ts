@@ -26,7 +26,7 @@ class Act2Room4s1{
         this.signin.style.textAlign = 'center'
         this.signin.style.paddingTop = '0.5vh'
         this.signin.style.cursor = "pointer"
-        this.signin.innerText = "Maak hier een afspraak"
+        this.signin.innerText = new Languages()[localStorage.getItem('language')][45]
         this.signin.addEventListener("click",()=>{
             this.openInNewTab("https://hint.hr.nl/nl/HR/Studie/hulp-bij-studie/Afspraak-maken-decaan-introgame/")
         })

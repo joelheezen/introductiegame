@@ -3,6 +3,8 @@ game *{
     font-family: Arial Black;
 }
 
+@page { size: landscape; }
+
 game *{
     display: block;
 }
