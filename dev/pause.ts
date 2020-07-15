@@ -31,11 +31,17 @@ class Pause{
         this.game.appendChild(message)
         message.appendChild(nextButton)
 
-        nextButton.addEventListener('click',() =>{
-            this.pauseTimer.endPause()
-            this.game.innerHTML = ''
-            eval(`new ${next}()`);
-        })
+        setTimeout(() => {
+            nextButton.style.filter = "grayscale(0%)"
+            nextButton.style.cursor= "pointer"
+            nextButton.addEventListener('click',() =>{
+                this.pauseTimer.endPause()
+                this.game.innerHTML = ''
+                eval(`new ${next}()`);
+            })
+        }, 2000);
+
+        
 
 
     }

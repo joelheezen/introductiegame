@@ -27,7 +27,7 @@ class Osiris {
 
         game2.appendChild(this.input1)
         this.input1.style.width = `17.1vw`
-        // this.input1.style.height = `5.7vh`
+        this.input1.style.height = `2.1vh`
         this.input1.style.transform = `translate(14.1vw, 20.7vh)`
         // this.input1.style.borderRadius = `25px`
         this.input1.style.fontSize = `17px`
@@ -218,6 +218,7 @@ class Osiris {
     definitief(){
         let game2 = document.getElementsByTagName("game2")[0]
 
+        game2.removeChild(this.button6)
         let background = document.createElement("backgroundact2")
         background.style.backgroundImage = `url(assets/osiris_8.png)`
         game2.appendChild(background)

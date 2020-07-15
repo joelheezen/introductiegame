@@ -4,6 +4,10 @@ class StartScreem{
     background = document.createElement('background')
 
     constructor(){
+        if(!localStorage.getItem('language')){
+            localStorage.setItem('language','dutch')
+        }
+
         this.background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/startScherm.png)"
         this.game.appendChild(this.background)
 

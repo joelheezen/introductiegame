@@ -218,9 +218,6 @@ var Act1 = (function () {
 var Act2 = (function () {
     function Act2() {
         this.game = document.getElementsByTagName("game")[0];
-        this.hint1 = document.createElement("hinticon");
-        this.hint2 = document.createElement("hinticon");
-        this.hint3 = document.createElement("hinticon");
         this.doorName1 = document.createElement("doorName");
         this.doorName2 = document.createElement("doorName");
         this.doorName3 = document.createElement("doorName");
@@ -1776,59 +1773,133 @@ var Game = (function () {
 window.addEventListener("load", function () { return new Game(); });
 var hint = (function () {
     function hint() {
+        var _this = this;
         this.game = document.getElementsByTagName('game')[0];
         this.hint1 = document.createElement("hinticon");
         this.hint2 = document.createElement("hinticon");
         this.hint3 = document.createElement("hinticon");
+        this.hintbox1 = document.createElement("hintbox");
+        this.hintbox2 = document.createElement("hintbox");
+        this.hintbox3 = document.createElement("hintbox");
         this.game.appendChild(this.hint1);
         this.game.appendChild(this.hint2);
         this.game.appendChild(this.hint3);
+        this.game.appendChild(this.hintbox1);
+        this.game.appendChild(this.hintbox2);
+        this.game.appendChild(this.hintbox3);
         this.hint1.style.width = "7vw";
         this.hint1.style.height = "7vh";
+        this.hintbox1.style.width = "7vw";
+        this.hintbox1.style.height = "7vh";
         this.hint1.addEventListener("click", function () {
             console.log("test test");
             new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.", 20, 45, 20);
+            _this.hint1.remove();
+        });
+        this.hintbox1.addEventListener("click", function () {
+            new popup("Weet je zeker dat je hint 1 wilt gebruiken? Deze hint helpt bij de puzzel van de 'Peercoach' deur, maar telt ook extra punten op bij je score. (minder punten is beter) \n \n deze pop-up komt maar 1 keer. De volgende keer dat je op de envelop klikt wordt de hint gebruikt.", 0, 7, 20);
+            _this.hintbox1.remove();
+            _this.hint1.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)';
         });
         this.hint2.style.width = "7vw";
         this.hint2.style.height = "7vh";
         this.hint2.style.transform = "translateX(7.5vw)";
+        this.hintbox2.style.width = "7vw";
+        this.hintbox2.style.height = "7vh";
+        this.hintbox2.style.transform = "translateX(7.5vw)";
         this.hint2.addEventListener("click", function () {
             console.log("hint2");
-            new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door", 59, 45, 20);
+            new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door.", 59, 45, 20);
+            _this.hint2.remove();
+        });
+        this.hintbox2.addEventListener("click", function () {
+            new popup("Weet je zeker dat je hint 2 wilt gebruiken? Deze hint helpt bij de puzzel van de 'Decaan' deur, maar telt ook extra punten op bij je score. (minder punten is beter) \n \n deze pop-up komt maar 1 keer. De volgende keer dat je op de envelop klikt wordt de hint gebruikt.", 7, 7, 20);
+            _this.hintbox2.remove();
+            _this.hint2.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)';
         });
         this.hint3.style.width = "7vw";
         this.hint3.style.height = "7vh";
         this.hint3.style.transform = "translateX(15vw)";
+        this.hintbox3.style.width = "7vw";
+        this.hintbox3.style.height = "7vh";
+        this.hintbox3.style.transform = "translateX(15vw)";
         this.hint3.addEventListener("click", function () {
             console.log("hint3");
-            new popup("Solliciteren is soms een numbers game", 82, 45, 15);
+            new popup("Solliciteren is soms een numbers game.", 82, 45, 15);
+            _this.hint3.remove();
+        });
+        this.hintbox3.addEventListener("click", function () {
+            new popup("Weet je zeker dat je hint 3 wilt gebruiken? Deze hint helpt bij de puzzel van de 'Student aan zet' deur, maar telt ook extra punten op bij je score. (minder punten is beter) \n \n deze pop-up komt maar 1 keer. De volgende keer dat je op de envelop klikt wordt de hint gebruikt.", 14, 7, 20);
+            _this.hintbox3.remove();
+            _this.hint3.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)';
         });
     }
     return hint;
 }());
+var Languages = (function () {
+    function Languages() {
+        this.english = ['In order to start, we need to know what course you are taking. Please select your course from this list',
+            'Choose education',
+            'Choose language',
+            'Now pick the location at which this course is taught',
+        ];
+        this.dutch = ['Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding',
+            'Kies opleiding',
+            'Kies taal',
+            'Kies nu de locatie waar deze opleiding wordt gegeven',
+        ];
+    }
+    return Languages;
+}());
 var LocatieSelectie = (function () {
     function LocatieSelectie() {
-        var _this = this;
         this.background = document.createElement('backgroundLocation');
         this.game = document.getElementsByTagName('game')[0];
         this.educations = new Locations().collective;
         this.background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/map.png";
         this.game.appendChild(this.background);
         this.educationSetter();
-        var back = document.createElement("button");
-        back.id = 'backToLocatie';
-        back.addEventListener('click', function () { return _this.goBack(); });
-        this.game.appendChild(back);
+        this.language();
     }
     LocatieSelectie.prototype.goBack = function () {
         this.game.innerHTML = "";
         new LocatieSelectie();
     };
+    LocatieSelectie.prototype.language = function () {
+        var _this = this;
+        var language = document.createElement('languagePicker');
+        language.innerHTML = new Languages()[localStorage.getItem('language')][2];
+        var dutch = document.createElement('button');
+        dutch.innerHTML = 'Nedelands';
+        language.appendChild(dutch);
+        var english = document.createElement('button');
+        english.innerHTML = 'English';
+        language.appendChild(english);
+        document.getElementsByTagName('educationsetter')[0].appendChild(language);
+        if (localStorage.getItem('language') == 'dutch') {
+            dutch.style.backgroundColor = '#ff9c23';
+        }
+        if (localStorage.getItem('language') == 'english') {
+            english.style.backgroundColor = '#ff9c23';
+        }
+        dutch.addEventListener('click', function () {
+            localStorage.setItem('language', 'dutch');
+            dutch.style.backgroundColor = '#ff9c23';
+            english.style.backgroundColor = '';
+            _this.goBack();
+        });
+        english.addEventListener('click', function () {
+            localStorage.setItem('language', 'english');
+            english.style.backgroundColor = '#ff9c23';
+            dutch.style.backgroundColor = '';
+            _this.goBack();
+        });
+    };
     LocatieSelectie.prototype.educationSetter = function () {
         var _this = this;
         this.educationSet = document.createElement('educationsetter');
         this.game.appendChild(this.educationSet);
-        this.educationSet.innerHTML = "Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding.";
+        this.educationSet.innerHTML = new Languages()[localStorage.getItem('language')][0];
         this.educationSelect = document.createElement('select');
         var allEducations = new Array();
         for (var index1 = 0; index1 < this.educations.length; index1++) {
@@ -1845,7 +1916,7 @@ var LocatieSelectie = (function () {
         }
         this.educationSet.appendChild(this.educationSelect);
         var thisLocation = document.createElement('button');
-        thisLocation.innerHTML = 'Kies opleiding';
+        thisLocation.innerHTML = new Languages()[localStorage.getItem('language')][1];
         thisLocation.addEventListener('click', function () { return _this.saveEducation(); });
         this.educationSet.appendChild(thisLocation);
     };
@@ -1855,11 +1926,19 @@ var LocatieSelectie = (function () {
         this.locationPicker();
     };
     LocatieSelectie.prototype.locationPicker = function () {
+        var _this = this;
+        var back = document.createElement("button");
+        back.id = 'backToLocatie';
+        back.addEventListener('click', function () { return _this.goBack(); });
+        this.game.appendChild(back);
         var map = document.createElement('map');
         this.game.appendChild(map);
-        this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.jpg)";
+        this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.png)";
         this.background.style.backgroundSize = "100% 100%";
         this.educationSet.remove();
+        var locationTekst = document.createElement('locationTekst');
+        locationTekst.innerHTML = new Languages()[localStorage.getItem('language')][3];
+        this.game.appendChild(locationTekst);
         this.locationMarker(34.3, 67.9, 'academieplein', 0);
         this.locationMarker(46.3, 57, 'blaak', 1);
         this.locationMarker(62.7, 61.5, 'kralingse_zoom', 2);
@@ -2144,6 +2223,7 @@ var Osiris = (function () {
         game2.appendChild(background);
         game2.appendChild(this.input1);
         this.input1.style.width = "17.1vw";
+        this.input1.style.height = "2.1vh";
         this.input1.style.transform = "translate(14.1vw, 20.7vh)";
         this.input1.style.fontSize = "17px";
         this.input1.style.paddingLeft = "0.4vw";
@@ -2292,6 +2372,7 @@ var Osiris = (function () {
     };
     Osiris.prototype.definitief = function () {
         var game2 = document.getElementsByTagName("game2")[0];
+        game2.removeChild(this.button6);
         var background = document.createElement("backgroundact2");
         background.style.backgroundImage = "url(assets/osiris_8.png)";
         game2.appendChild(background);
@@ -2321,11 +2402,15 @@ var Pause = (function () {
         title.appendChild(subTitle);
         this.game.appendChild(message);
         message.appendChild(nextButton);
-        nextButton.addEventListener('click', function () {
-            _this.pauseTimer.endPause();
-            _this.game.innerHTML = '';
-            eval("new " + next + "()");
-        });
+        setTimeout(function () {
+            nextButton.style.filter = "grayscale(0%)";
+            nextButton.style.cursor = "pointer";
+            nextButton.addEventListener('click', function () {
+                _this.pauseTimer.endPause();
+                _this.game.innerHTML = '';
+                eval("new " + next + "()");
+            });
+        }, 2000);
     }
     return Pause;
 }());
@@ -2358,6 +2443,9 @@ var StartScreem = (function () {
         var _this = this;
         this.game = document.getElementsByTagName('game')[0];
         this.background = document.createElement('background');
+        if (!localStorage.getItem('language')) {
+            localStorage.setItem('language', 'dutch');
+        }
         this.background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/startScherm.png)";
         this.game.appendChild(this.background);
         var start = document.createElement('startgame');
@@ -2411,7 +2499,6 @@ var Timer = (function () {
         var pause = parseInt(localStorage.getItem('pause'));
         var bonus = parseInt(localStorage.getItem('bonus'));
         var score = Math.floor((end - start - pause) / 1000) - bonus;
-        console.log(score);
         return score;
     };
     Timer.prototype.resetTimer = function () {
