@@ -1866,7 +1866,7 @@ var Languages = (function () {
             "Look online for shapes",
             "Continue",
             "Welcome to your online floorplan",
-            "Maybe it would be a good idea to mail the studen service centre about the key",
+            "Maybe it would be a good idea to mail the student service centre about the key",
             "This awnser is incorrect. Try again.",
             "Schedule",
             "Click continue to see the schedule",
@@ -2316,9 +2316,7 @@ var Locations = (function () {
         };
         this.wijnhaven_103 = {
             location: "wijnhaven_103",
-            opleidingen: [
-                ""
-            ],
+            opleidingen: [],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-103/"
         };
         this.wijnhaven_107 = {
