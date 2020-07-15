@@ -198,9 +198,9 @@ class Act1 {
         button6.style.opacity = `0`
         button6.addEventListener("click" , () => this.goBack())
 
-        button7.style.width = `11vw`
+        button7.style.width = `8.5vw`
         button7.style.height = `18vh`
-        button7.style.transform = `translate(71vw, 20.8vh)`
+        button7.style.transform = `translate(67vw, 20.8vh)`
         button7.style.opacity = `0`
         button7.addEventListener("click" , () => this.osiris())
 
@@ -214,7 +214,7 @@ class Act1 {
 
     osiris(){
         console.log("osiris is aangeklikt")
-        window.open('/docs/osiris.html', '_blank');
+        window.open('osiris.html', '_blank');
     }
 
     rooster(){

@@ -169,9 +169,9 @@ var Act1 = (function () {
         button6.style.transform = "translate(91vw, 0vh)";
         button6.style.opacity = "0";
         button6.addEventListener("click", function () { return _this.goBack(); });
-        button7.style.width = "11vw";
+        button7.style.width = "8.5vw";
         button7.style.height = "18vh";
-        button7.style.transform = "translate(71vw, 20.8vh)";
+        button7.style.transform = "translate(67vw, 20.8vh)";
         button7.style.opacity = "0";
         button7.addEventListener("click", function () { return _this.osiris(); });
     };
@@ -181,7 +181,7 @@ var Act1 = (function () {
     };
     Act1.prototype.osiris = function () {
         console.log("osiris is aangeklikt");
-        window.open('/docs/osiris.html', '_blank');
+        window.open('osiris.html', '_blank');
     };
     Act1.prototype.rooster = function () {
         new CenterPopup('Rooster', 'Klik op doorgaan om je rooster te zien', 'https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/');
@@ -2097,7 +2097,9 @@ var Locations = (function () {
         };
         this.wijnhaven_103 = {
             location: "wijnhaven_103",
-            opleidingen: [],
+            opleidingen: [
+                ""
+            ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-103/"
         };
         this.wijnhaven_107 = {

@@ -188,6 +188,7 @@ class Locations{
     wijnhaven_103 = {
         location: "wijnhaven_103",
         opleidingen:[
+            ""
         ],
         locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-103/"}
 
