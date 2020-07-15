@@ -1649,7 +1649,7 @@ var CenterPopup = (function () {
         var doorgaan = document.createElement('button');
         doorgaan.innerHTML = new Languages()[localStorage.getItem('language')][11];
         doorgaan.addEventListener('click', function () {
-            if (open == 'doorgaan') {
+            if (open == 'doorgaan' || open == 'Continue') {
                 new Pause(2, 'Act3');
             }
             else if (open !== '') {

@@ -14,7 +14,7 @@ class CenterPopup{
     
             doorgaan.addEventListener('click',()=>{
     
-                if(open == 'doorgaan'){
+                if(open == 'doorgaan' || open == 'Continue'){
                     new Pause(2,'Act3')
                 }else if(open !== ''){
                     window.open(open, '_blank');
