@@ -111,7 +111,6 @@ class Act1 {
         }
     }
 
-
     searchOnline() {
         
         this.input1Save = (<HTMLInputElement>document.getElementById("input1")).value

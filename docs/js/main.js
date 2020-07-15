@@ -1687,17 +1687,19 @@ var Ending = (function () {
         bg.style.width = "100vw";
         bg.style.height = "100vh";
         bg.style.position = "absolute";
-        var popup = document.createElement("pinPopup");
+        var popup = document.createElement("endPopup");
         game.appendChild(popup);
-        popup.style.transform = "translate(34vw, 20vh)";
-        popup.innerHTML += new Timer().score();
+        var title = document.createElement('youWon');
+        title.innerHTML = "Gefeliciteerd";
+        popup.appendChild(title);
+        var subTitle = document.createElement('subtitle');
+        subTitle.innerHTML = 'Dit is het einde van het spel<br>Jouw score is:<br>';
+        popup.appendChild(subTitle);
+        var score = document.createElement('finalScore');
+        score.innerHTML += new Timer().score();
+        popup.appendChild(score);
         var button = document.createElement("button");
         popup.appendChild(button);
-        popup.style.boxShadow = "none";
-        button.style.position = "absolute";
-        button.style.width = "94%";
-        button.style.height = "20%";
-        button.style.transform = "translate(0%, 30%)";
         button.innerHTML += "klik hier voor een uitdraai van je score";
         button.addEventListener("click", function () {
             window.print();
