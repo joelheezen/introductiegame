@@ -63,7 +63,7 @@ class Act1 {
         button2.style.width = `18.5vw`
         button2.style.height = `4vh`
         button2.style.transform = `translate(25.25vw, 61vh)`
-        button2.style.opacity = `100%`
+        button2.style.opacity = `1`
         button2.innerHTML = 'Online zoeken naar vormen'
         button2.addEventListener("click" , () => this.searchOnline())
 
@@ -72,7 +72,7 @@ class Act1 {
         button3.style.width = `9vw`
         button3.style.height = `7.6vh`
         button3.style.transform = `translate(91vw, 0vh)`
-        button3.style.opacity = `0%`
+        button3.style.opacity = `0`
         button3.addEventListener("click" , () => this.searchOnline())
     }
 
@@ -109,15 +109,21 @@ class Act1 {
             if(open !== ''){
                 window.open(open, '_blank');
             }
-            popup.remove()
-        })
+            
+            let wrong = document.createElement('wrong')
+            wrong.innerHTML = 'Dit antwoord is onjuist. Probeer het nog een keer.'
 
-        popup.appendChild(doorgaan)
-        popup.appendChild(popupTitle)
-        popup.appendChild(popupMessage)
+            game.appendChild(wrong)
 
-        let game = document.getElementsByTagName("game")[0]
-        game.appendChild(popup) 
+            setTimeout(() => {
+                for (let index = 0; index < inputs.length; index++) {
+                    inputs[index].style.border = ''
+                    wrong.remove()
+                }
+            }, 2000);
+
+            
+        }
     }
 
     searchOnline() {
@@ -136,7 +142,7 @@ class Act1 {
         game.appendChild(banner)
 
         if(this.popupSave == false){
-            this.onlinePopup('Welkom op jullie online plattegrond','Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel','')
+            new CenterPopup('Welkom op jullie online plattegrond','Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel','')
             this.popupSave = true;
         }
 
@@ -159,43 +165,43 @@ class Act1 {
         button1.style.width = `15.6vw`
         button1.style.height = `60.9vh`
         button1.style.transform = `translate(14.5vw, 20.8vh)`
-        button1.style.opacity = `0%`
+        button1.style.opacity = `0`
         button1.addEventListener("click" , () => this.webmail())
 
         button2.style.width = `22vw`
         button2.style.height = `12.3vh`
         button2.style.transform = `translate(31.7vw, 69.8vh)`
-        button2.style.opacity = `0%`
+        button2.style.opacity = `0`
         button2.addEventListener("click" , () => this.rooster())
 
         button3.style.width = `10.7vw`
         button3.style.height = `27.3vh`
         button3.style.transform = `translate(55vw, 20.7vh)`
-        button3.style.opacity = `0%`
+        button3.style.opacity = `0`
         button3.addEventListener("click" , () => this.studentenServiceCenter())
 
         button4.style.width = `16.3vw`
         button4.style.height = `18vh`
         button4.style.transform = `translate(59vw, 63.8vh)`
-        button4.style.opacity = `0%`
+        button4.style.opacity = `0`
         button4.addEventListener("click" , () => this.studentenpas())
 
         button5.style.width = `10.2vw`
         button5.style.height = `61.3vh`
         button5.style.transform = `translate(77vw, 20.8vh)`
-        button5.style.opacity = `0%`
+        button5.style.opacity = `0`
         button5.addEventListener("click" , () => this.lms())
 
         button6.style.width = `9vw`
         button6.style.height = `7.6vh`
         button6.style.transform = `translate(91vw, 0vh)`
-        button6.style.opacity = `0%`
+        button6.style.opacity = `0`
         button6.addEventListener("click" , () => this.goBack())
 
         button7.style.width = `11vw`
         button7.style.height = `18vh`
         button7.style.transform = `translate(71vw, 20.8vh)`
-        button7.style.opacity = `0%`
+        button7.style.opacity = `0`
         button7.addEventListener("click" , () => this.osiris())
 
     }
@@ -212,11 +218,11 @@ class Act1 {
     }
 
     rooster(){
-        this.onlinePopup('Rooster','Klik op doorgaan om je rooster te zien','https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/')
+        new CenterPopup('Rooster','Klik op doorgaan om je rooster te zien','https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/')
     }
 
     studentenServiceCenter(){
-        this.onlinePopup('Student Service Center','Mail het SSC met je persoonlijke studentenmail:ssc@hr.nl','')
+        new CenterPopup('Student Service Center','Mail het SSC met je persoonlijke studentenmail:ssc@hr.nl','')
     }
 
     studentenpas(){
@@ -241,7 +247,7 @@ class Act1 {
         button.style.width = `20.3vw`
         button.style.height = `18vh`
         button.style.transform = `translate(61.2vw, 63.8vh)`
-        button.style.opacity = `0%`
+        button.style.opacity = `0`
 
         button.addEventListener("click" , function(){
             button.style.display = `none`
@@ -251,7 +257,7 @@ class Act1 {
     }
 
     lms(){
-        this.onlinePopup('LMS','Verschillende vakken en informatie kun je vinden door op doorgaan te klikken','https://lms.hr.nl')
+        new CenterPopup('LMS','Verschillende vakken en informatie kun je vinden door op doorgaan te klikken','https://lms.hr.nl')
     }
 
     goBack(){

@@ -1,6 +1,8 @@
 class Ending{
 
     constructor(){
+        new Timer().endTimer()
+
         let bg = document.createElement("backgroundEnd")
         let game = document.getElementsByTagName("game")[0]
         game.appendChild(bg)
@@ -15,9 +17,10 @@ class Ending{
         let popup = document.createElement("pinPopup")
         game.appendChild(popup)
         popup.style.transform = `translate(34vw, 20vh)`
-        popup.innerHTML += `je score is te slecht om te laten zien`
+        popup.innerHTML += new Timer().score()
         let button = document.createElement("button")
         popup.appendChild(button)
+        popup.style.boxShadow = `none`
 
         button.style.position = `absolute`
         button.style.width = `94%`
@@ -27,5 +30,7 @@ class Ending{
         button.addEventListener("click", function(){
             window.print()
         })
+
+        new Timer().resetTimer()
     }
 }

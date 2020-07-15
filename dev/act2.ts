@@ -41,6 +41,7 @@ class Act2{
         this.codeEind()
         this.doorNames()
         this.setHint()
+        new hint
 
 
     }
@@ -189,6 +190,7 @@ class Act2{
             this.codeEind()
         })
     }
+    
     localStorageUpdate(){
         localStorage.setItem(this.number1, (<HTMLInputElement>document.getElementById("input1")).value)
         localStorage.setItem(this.number2, (<HTMLInputElement>document.getElementById("input2")).value)
@@ -196,15 +198,15 @@ class Act2{
         localStorage.setItem(this.number4, (<HTMLInputElement>document.getElementById("input4")).value)
         localStorage.setItem(this.number5, (<HTMLInputElement>document.getElementById("input5")).value)
     }
-
     setHint(){
-        new popup("Zoek je juiste kleur bij de juiste persoon.",5,93,340,20)
+        new popup("Zoek je juiste kleur bij de juiste persoon.",5,87,10,8)
         new popup("Hulp nodig? Blijf (er) niet (mee) rondlopen! Hier moet je zijn: Hulp bij studie. De hogeschool biedt allerlei vormen van een-op-een begeleiding en ondersteuning."+
-        " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!",64,75,300,200)
-        new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.",20,45,200,60)
-        new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door",59,45,300,80)
-        new popup("Solliciteren is soms een numbers game",82,45,250,60)
+        " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!",64,80,30,15)
+        new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.",20,45,20,5)
+        new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door",59,45,20,7)
+        new popup("Solliciteren is soms een numbers game",82,45,15,5)
     }
+    
 
     codeEind(){
         let codeString = 
@@ -221,7 +223,9 @@ class Act2{
             this.input3.style.border = "thick solid #00FF00"
             this.input4.style.border = "thick solid #00FF00"
             this.input5.style.border = "thick solid #00FF00"
-            new popup("De puzzel is opgelost. Daar komt de peercoach",40,50,300,35)
+
+            new CenterPopup('De puzzel is opgelost','Daar komt de peercoach','doorgaan')
+            
         }else{
             console.log("fout")
             this.input1.style.border = "thick solid #FF0000"
@@ -347,6 +351,7 @@ class Act2{
             this.game.appendChild(this.folderBackground)
             new Act2folder5
         })
+
         this.folderItem6.style.backgroundImage = 'url(assets/Akte2/Postervormen&kleuren.jpg)'
         this.folderItem6.style.transform = `translate(58.1vw,30vh)`
         this.folderItem6.style.width = '4.45vw'
@@ -357,8 +362,6 @@ class Act2{
             new Act2folder6
         })
         
-
-
     }
 }
 class folders{

@@ -21,7 +21,7 @@ class Act3{
 
         playButton.style.width = `100vw`
         playButton.style.height = `100vh`
-        playButton.style.opacity = `0%`
+        playButton.style.opacity = `0`
         playButton.addEventListener("click", () => this.togglePlay())
 
         this.video.src = 'assets/Akte3/startAct3.mp4'
@@ -55,7 +55,7 @@ class Act3{
             button1.style.width = `7.2vw`
             button1.style.height = `14.4vh`
             button1.style.transform = `translate(31vw, 31.8vh)`
-            button1.style.opacity = `0%`
+            button1.style.opacity = `0`
             button1.addEventListener("click" , function(){
                 let popup = document.createElement("popup")
                 let game = document.getElementsByTagName("game")[0]
@@ -372,7 +372,7 @@ class Act3{
                 game.appendChild(button)
                 button.style.width = `100vw`
                 button.style.height = `100vh`
-                button.style.opacity = `0%`
+                button.style.opacity = `0`
                 button.style.zIndex = `1`
                 button.style.position = `absolute`
                 button.addEventListener("click", function(){
@@ -504,7 +504,7 @@ class Act3{
             button2.style.width = `11.5vw`
             button2.style.height = `14.3vh`
             button2.style.transform = `translate(44.4vw, 37.6vh)`
-            button2.style.opacity = `0%`
+            button2.style.opacity = `0`
             button2.addEventListener("click" , function(){
                 let game = document.getElementsByTagName("game")[0]
                 let popup = document.createElement("popup")
@@ -523,7 +523,7 @@ class Act3{
                 game.appendChild(button)
                 button.style.width = `100vw`
                 button.style.height = `100vh`
-                button.style.opacity = `0%`
+                button.style.opacity = `0`
                 button.style.zIndex = `1`
                 button.style.position = `absolute`
                 button.addEventListener("click", function(){
@@ -732,16 +732,54 @@ class Act3{
             button3.style.width = `16.3vw`
             button3.style.height = `17.9vh`
             button3.style.transform = `translate(68.7vw, 54.4vh)`
-            button3.style.opacity = `0%`
+            button3.style.opacity = `0`
             button3.addEventListener("click" , function(){
+
+                var winNav = window.navigator;
+                var vendorName = winNav.vendor;
+                var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+                var isIOSChrome = winNav.userAgent.match("CriOS");
+
+                if (isIOSChrome) {
+                // is Google Chrome on IOS
+                } else if(                
+                vendorName === "Google Inc." &&
+                isIEedge === false
+                ) {
+                // is Google Chrome
+                let pdf = document.createElement("object")
+                game.appendChild(pdf)
+                pdf.data = `assets/Akte3/RKvVboekje2020.pdf`
+                pdf.type = `application/pdf`
+                pdf.width = `50%`
+                pdf.height = `75%`
+                pdf.style.zIndex = `1`
+                pdf.style.position = `absolute`
+                pdf.style.transform = `translate(25vw, 10vh)`
+                pdf.style.boxShadow = `rgba(0,0,0,0.5) 15px 15px`
+                let button = document.createElement("button")
+                game.appendChild(button)
+
+                button.style.width = `100vw`
+                button.style.height = `100vh`
+                button.style.position = `absolute`
+                button.style.zIndex = `0`
+                button.style.opacity = `0`
+                button.addEventListener("click", function(){
+                    button.remove()
+                    pdf.remove()
+                })
+                } else { 
+                // not Google Chrome 
                 let win = window.open("assets/Akte3/RKvVboekje2020.pdf")
                 win!.focus()
+                }
             })
 
             button4.style.width = `10.5vw`
             button4.style.height = `11vh`
             button4.style.transform = `translate(27.5vw, 65.9vh)`
-            button4.style.opacity = `0%`
+            button4.style.opacity = `0`
             button4.addEventListener("click" , function(){
                 let card = document.getElementById("card")
                 if (card){
@@ -752,7 +790,7 @@ class Act3{
                     button.style.zIndex = `1`
                     button.style.width = `100vw`
                     button.style.height = `100vh`
-                    button.style.opacity = `0%`
+                    button.style.opacity = `0`
                     button.style.position = `absolute`
                     button.addEventListener("click", function(){
                         let card = document.getElementById("card")
@@ -786,7 +824,7 @@ class Act3{
                 button.style.zIndex = `1`
                 button.style.width = `100vw`
                 button.style.height = `100vh`
-                button.style.opacity = `0%`
+                button.style.opacity = `0`
                 button.style.position = `absolute`
                 button.addEventListener("click", function(){
                     popup.style.display = `none`
@@ -820,7 +858,7 @@ class Act3{
                     dot.style.borderRadius = `50%`
                     dot.style.position = `absolute`
                     dot.style.zIndex = `3`
-                    dot.style.opacity = `30%`
+                    dot.style.opacity = `0.3`
 
                 })
                 }
@@ -829,7 +867,7 @@ class Act3{
             button5.style.width = `8vw`
             button5.style.height = `9.1vh`
             button5.style.transform = `translate(46.8vw, 56.8vh)`
-            button5.style.opacity = `0%`
+            button5.style.opacity = `0`
             button5.addEventListener("click" , function(){
                 let popup = document.createElement("popup")
                 let game = document.getElementsByTagName("game")[0]
@@ -849,7 +887,7 @@ class Act3{
                 button.style.width = `100vw`
                 button.style.height = `100vh`
                 button.style.position = `absolute`
-                button.style.opacity = `0%`
+                button.style.opacity = `0`
                 button.style.zIndex = `1`
                 button.addEventListener("click", function(){
                     button.remove()
@@ -860,7 +898,7 @@ class Act3{
             button6.style.width = `12.4vw`
             button6.style.height = `3.7vh`
             button6.style.transform = `translate(62.6vw, 72vh)`
-            button6.style.opacity = `0%`
+            button6.style.opacity = `0`
             button6.addEventListener("click" , function(){
                 let win = window.open("http://www.rotterdamstaattespringen.nl/")
                 win!.focus()
@@ -869,7 +907,7 @@ class Act3{
             button7.style.width = `14.3vw`
             button7.style.height = `15vh`
             button7.style.transform = `translate(15.2vw, 59vh)`
-            button7.style.opacity = `0%`
+            button7.style.opacity = `0`
             button7.addEventListener("click", function(){
                 let popup = document.createElement("popup")
                 let game = document.getElementsByTagName("game")[0]
@@ -882,7 +920,7 @@ class Act3{
                 button.style.height = `100vh`
                 button.style.position = `absolute`
                 button.style.zIndex = `1`
-                button.style.opacity = `0%`
+                button.style.opacity = `0`
                 button.addEventListener("click", function(){
                     button.remove()
                     popup.remove()
@@ -913,7 +951,7 @@ class Act3{
             button8.style.width = `5.9vw`
             button8.style.height = `11.7vh`
             button8.style.transform =  `translate(64.8vw, 34.1vh)`
-            button8.style.opacity = `0%`
+            button8.style.opacity = `0`
             button8.style.zIndex = `-1`
             button8.addEventListener("click", function(){
                 let game = document.getElementsByTagName("game")[0]
@@ -940,7 +978,7 @@ class Act3{
                 button.style.height = `100vh`
                 button.style.position = `absolute`
                 button.style.zIndex = `1`
-                button.style.opacity = `0%`
+                button.style.opacity = `0`
                 button.addEventListener("click", function(){
                     button.remove()
                     popup.remove()

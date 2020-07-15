@@ -107,6 +107,15 @@ onlinePopup{
     cursor:pointer;
 }
 
+wrong{
+    color:red;
+    text-align:center;
+    top:57vh;
+    position:absolute;
+    width:100vw;
+    text-align:center
+}
+
 onlinePopup *{
     width:100%;
     text-align: center;
@@ -125,7 +134,7 @@ onlinePopup button{
 }
 
 popupTitle{
-    font-size:4vh;  
+    font-size:4vh;
     padding-bottom: 3vh;
 }
 
@@ -246,6 +255,7 @@ hinticon{
     z-index: 3;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    background-image: url(../assets/Akte2/envelope.png);
 }
 input:focus{
     outline:none;
