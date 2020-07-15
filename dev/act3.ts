@@ -6,11 +6,6 @@ class Act3{
 
 
     constructor(){
-
-        localStorage.setItem(`note1Save`, ``)
-        localStorage.setItem(`note2Save`, ``)
-        localStorage.setItem(`note3Save`, ``)
-        localStorage.setItem(`note4Save`, ``)
         
         let playButton = document.createElement("button")
 
@@ -735,7 +730,7 @@ class Act3{
             button3.style.opacity = `0`
             button3.addEventListener("click" , function(){
 
-                let winNav = window.navigator;
+                var winNav = window.navigator;
                 let vendorName = winNav.vendor;
                 let isIEedge = winNav.userAgent.indexOf("Edge") > -1;
                 let isIOSChrome = winNav.userAgent.match("CriOS");

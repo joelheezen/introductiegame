@@ -780,10 +780,6 @@ var Act3 = (function () {
         this.game = document.getElementsByTagName("game")[0];
         this.bg = document.createElement("videoBackground");
         this.video = document.createElement("video");
-        localStorage.setItem("note1Save", "");
-        localStorage.setItem("note2Save", "");
-        localStorage.setItem("note3Save", "");
-        localStorage.setItem("note4Save", "");
         var playButton = document.createElement("button");
         this.bg.style.backgroundColor = "black";
         this.game.appendChild(this.bg);
