@@ -6,11 +6,6 @@ class Act3{
 
 
     constructor(){
-
-        localStorage.setItem(`note1Save`, ``)
-        localStorage.setItem(`note2Save`, ``)
-        localStorage.setItem(`note3Save`, ``)
-        localStorage.setItem(`note4Save`, ``)
         
         let playButton = document.createElement("button")
 
@@ -736,9 +731,9 @@ class Act3{
             button3.addEventListener("click" , function(){
 
                 var winNav = window.navigator;
-                var vendorName = winNav.vendor;
-                var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
-                var isIOSChrome = winNav.userAgent.match("CriOS");
+                let vendorName = winNav.vendor;
+                let isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+                let isIOSChrome = winNav.userAgent.match("CriOS");
 
                 if (isIOSChrome) {
                 // is Google Chrome on IOS
