@@ -218,6 +218,9 @@ var Act1 = (function () {
 var Act2 = (function () {
     function Act2() {
         this.game = document.getElementsByTagName("game")[0];
+        this.hint1 = document.createElement("hinticon");
+        this.hint2 = document.createElement("hinticon");
+        this.hint3 = document.createElement("hinticon");
         this.doorName1 = document.createElement("doorName");
         this.doorName2 = document.createElement("doorName");
         this.doorName3 = document.createElement("doorName");
@@ -381,12 +384,9 @@ var Act2 = (function () {
         localStorage.setItem(this.number5, document.getElementById("input5").value);
     };
     Act2.prototype.setHint = function () {
-        new popup("Zoek je juiste kleur bij de juiste persoon.", 5, 87, 10, 8);
+        new popup("Zoek je juiste kleur bij de juiste persoon.", 5, 84, 10);
         new popup("Hulp nodig? Blijf (er) niet (mee) rondlopen! Hier moet je zijn: Hulp bij studie. De hogeschool biedt allerlei vormen van een-op-een begeleiding en ondersteuning." +
-            " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!", 64, 80, 30, 15);
-        new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.", 20, 45, 20, 5);
-        new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door", 59, 45, 20, 7);
-        new popup("Solliciteren is soms een numbers game", 82, 45, 15, 5);
+            " Maar....alle deuren zitten op slot. Kraak de lettercode om alle deuren te openen, zodat je gebruik kunt maken van al onze begeleiding!", 64, 75, 30);
     };
     Act2.prototype.codeEind = function () {
         var codeString = document.getElementById("input1").value +
@@ -552,7 +552,8 @@ var Act2folder1 = (function (_super) {
     function Act2folder1() {
         var _this = _super.call(this) || this;
         _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer1getallen.jpg)';
-        _this.folder.style.backgroundSize = '50% 50%';
+        _this.folder.style.height = "60vh";
+        _this.folder.style.marginTop = "20vh";
         return _this;
     }
     return Act2folder1;
@@ -562,7 +563,6 @@ var Act2folder2 = (function (_super) {
     function Act2folder2() {
         var _this = _super.call(this) || this;
         _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer2HulpbijStudie.jpg)';
-        _this.folder.style.backgroundSize = '40% 90%';
         return _this;
     }
     return Act2folder2;
@@ -572,7 +572,6 @@ var Act2folder3 = (function (_super) {
     function Act2folder3() {
         var _this = _super.call(this) || this;
         _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer3WorkshopSolliciteren.jpg)';
-        _this.folder.style.backgroundSize = '30% 90%';
         return _this;
     }
     return Act2folder3;
@@ -582,7 +581,6 @@ var Act2folder4 = (function (_super) {
     function Act2folder4() {
         var _this = _super.call(this) || this;
         _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer4COIAinfo.png)';
-        _this.folder.style.backgroundSize = '45% 80%';
         return _this;
     }
     return Act2folder4;
@@ -592,6 +590,8 @@ var Act2folder5 = (function (_super) {
     function Act2folder5() {
         var _this = _super.call(this) || this;
         _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer5MorseCodeAlfabet.jpg)';
+        _this.folder.style.height = "60vh";
+        _this.folder.style.marginTop = "20vh";
         return _this;
     }
     return Act2folder5;
@@ -1785,12 +1785,24 @@ var hint = (function () {
         this.game.appendChild(this.hint3);
         this.hint1.style.width = "7vw";
         this.hint1.style.height = "7vh";
+        this.hint1.addEventListener("click", function () {
+            console.log("test test");
+            new popup("Soms gaat het niet om wat je hoort, maar om wat je ziet.", 20, 45, 20);
+        });
         this.hint2.style.width = "7vw";
         this.hint2.style.height = "7vh";
         this.hint2.style.transform = "translateX(7.5vw)";
+        this.hint2.addEventListener("click", function () {
+            console.log("hint2");
+            new popup("Lees de bevestiging mail van je telefonische afspraak met Sara Vonk nog eens zorgvuldig door", 59, 45, 20);
+        });
         this.hint3.style.width = "7vw";
         this.hint3.style.height = "7vh";
         this.hint3.style.transform = "translateX(15vw)";
+        this.hint3.addEventListener("click", function () {
+            console.log("hint3");
+            new popup("Solliciteren is soms een numbers game", 82, 45, 15);
+        });
     }
     return hint;
 }());
@@ -2318,22 +2330,23 @@ var Pause = (function () {
     return Pause;
 }());
 var popup = (function () {
-    function popup(text, posX, posY, width, height) {
+    function popup(text, posX, posY, width) {
         var _this = this;
         this.field = document.createElement('popup');
         this.game = document.getElementsByTagName('game')[0];
         this.game.appendChild(this.field);
         this.field.innerText = text;
         this.field.style.position = "absolute";
+        this.field.style.overflow = "hidden";
         this.field.style.transform = "translate(" + posX + "vw," + posY + "vh)";
         this.field.style.width = width.toString() + "vw";
-        this.field.style.height = height.toString() + "vh";
+        this.field.style.height = "auto";
         this.field.style.borderRadius = "20px";
         this.field.style.backgroundColor = "#ffb911";
         this.field.style.fontSize = "1vw";
         this.field.style.zIndex = "2";
-        this.field.style.padding = "10px";
-        this.field.style.boxShadow = "5px 10px";
+        this.field.style.padding = "0.5vw";
+        this.field.style.boxShadow = "0.3vw 1vh";
         this.field.addEventListener("click", function () {
             _this.field.remove();
         });
