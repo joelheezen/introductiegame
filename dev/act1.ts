@@ -200,7 +200,7 @@ class Act1 {
 
     osiris(){
         console.log("osiris is aangeklikt")
-        window.open('/docs/osiris.html', '_blank');
+        window.open('osiris.html', '_blank');
     }
 
     rooster(){

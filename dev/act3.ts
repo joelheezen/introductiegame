@@ -735,10 +735,10 @@ class Act3{
             button3.style.opacity = `0`
             button3.addEventListener("click" , function(){
 
-                var winNav = window.navigator;
-                var vendorName = winNav.vendor;
-                var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
-                var isIOSChrome = winNav.userAgent.match("CriOS");
+                let winNav = window.navigator;
+                let vendorName = winNav.vendor;
+                let isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+                let isIOSChrome = winNav.userAgent.match("CriOS");
 
                 if (isIOSChrome) {
                 // is Google Chrome on IOS

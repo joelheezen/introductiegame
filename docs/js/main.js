@@ -172,7 +172,7 @@ var Act1 = (function () {
     };
     Act1.prototype.osiris = function () {
         console.log("osiris is aangeklikt");
-        window.open('/docs/osiris.html', '_blank');
+        window.open('osiris.html', '_blank');
     };
     Act1.prototype.rooster = function () {
         new CenterPopup('Rooster', 'Klik op doorgaan om je rooster te zien', 'https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/');
