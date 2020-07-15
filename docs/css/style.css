@@ -10,6 +10,7 @@ game *{
 body{
     margin:0;
     padding:0;
+    overflow: hidden;
 }
 
 backgroundLocation{
@@ -233,6 +234,7 @@ openfolder {
     z-index: 20;
     background-repeat: no-repeat;
     background-position: center;
+    background-size:contain;
 
 }
 doorName, folderitem {
