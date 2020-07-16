@@ -879,7 +879,7 @@ class Act3{
                 popup.style.backgroundSize = `100% 100%`
                 popup.style.width = `30vw`
                 popup.style.height = `30vh`
-                popup.style.transform = `translate(40vw, 35vh)`
+                popup.style.transform = `translate(35vw, 35vh)`
                 popup.style.position = `absolute`
                 popup.style.zIndex = `2`
 
@@ -931,7 +931,7 @@ class Act3{
                 popup.style.backgroundImage = `url(assets/Akte3/vidiVici.png)`
                 popup.style.backgroundSize = `100% 100%`
                 popup.style.width = `25vw`
-                popup.style.height = `57vh`
+                popup.style.height = `auto`
                 popup.style.transform = `translate(37.5vw, 15vh)`
                 popup.style.position = `absolute`
                 popup.style.zIndex = `2`

@@ -6,7 +6,7 @@ class Game{
         game.appendChild(button1)
         button1.style.width = `10vw`
         button1.style.height = `10vh`
-        button1.style.transform = `translate(25vw, 25vh)`
+        button1.style.transform = `translate(90vw, 10vh)`
         button1.innerHTML = `joel`
         button1.onclick = this.buttonPress1
 
@@ -14,7 +14,7 @@ class Game{
         game.appendChild(button2)
         button2.style.width = `10vw`
         button2.style.height = `10vh`
-        button2.style.transform = `translate(50vw, 25vh)`
+        button2.style.transform = `translate(90vw, 25vh)`
         button2.innerHTML = `gert`
         button2.onclick = this.buttonPress2
 

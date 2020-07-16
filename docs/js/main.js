@@ -1535,7 +1535,7 @@ var Act3 = (function () {
                 popup.style.backgroundSize = "100% 100%";
                 popup.style.width = "30vw";
                 popup.style.height = "30vh";
-                popup.style.transform = "translate(40vw, 35vh)";
+                popup.style.transform = "translate(35vw, 35vh)";
                 popup.style.position = "absolute";
                 popup.style.zIndex = "2";
                 var button = document.createElement("button");
@@ -1580,7 +1580,7 @@ var Act3 = (function () {
                 popup.style.backgroundImage = "url(assets/Akte3/vidiVici.png)";
                 popup.style.backgroundSize = "100% 100%";
                 popup.style.width = "25vw";
-                popup.style.height = "57vh";
+                popup.style.height = "auto";
                 popup.style.transform = "translate(37.5vw, 15vh)";
                 popup.style.position = "absolute";
                 popup.style.zIndex = "2";
@@ -1705,7 +1705,6 @@ var Ending = (function () {
         button.addEventListener("click", function () {
             window.print();
         });
-        new Timer().resetTimer();
     }
     return Ending;
 }());
@@ -1742,14 +1741,14 @@ var Game = (function () {
         game.appendChild(button1);
         button1.style.width = "10vw";
         button1.style.height = "10vh";
-        button1.style.transform = "translate(25vw, 25vh)";
+        button1.style.transform = "translate(90vw, 10vh)";
         button1.innerHTML = "joel";
         button1.onclick = this.buttonPress1;
         var button2 = document.createElement("button");
         game.appendChild(button2);
         button2.style.width = "10vw";
         button2.style.height = "10vh";
-        button2.style.transform = "translate(50vw, 25vh)";
+        button2.style.transform = "translate(90vw, 25vh)";
         button2.innerHTML = "gert";
         button2.onclick = this.buttonPress2;
         var button4 = document.createElement("button");
@@ -1866,7 +1865,7 @@ var Languages = (function () {
             "Look online for shapes",
             "Continue",
             "Welcome to your online floorplan",
-            "Maybe it would be a good idea to mail the studen service centre about the key",
+            "Maybe it would be a good idea to mail the student service centre about the key",
             "This awnser is incorrect. Try again.",
             "Schedule",
             "Click continue to see the schedule",
@@ -2176,7 +2175,7 @@ var Locations = (function () {
         this.kralingse_zoom = {
             location: "krazingse_zoom",
             opleidingen: [
-                "Accountancy",
+                "Accountancy KZ",
                 "Bedrijfskunde",
                 "Business IT & Management",
                 "Commerciële Economie | Creative Marketing & Sales",
@@ -2213,7 +2212,7 @@ var Locations = (function () {
         this.museumpark_hoogbouw = {
             location: "museumpark_hoogbouw",
             opleidingen: [
-                "Accountancy",
+                "Accountancy MH",
                 "Crossmediale Communicatie",
                 "Engineering",
                 "ICT Service Management",
@@ -2316,9 +2315,7 @@ var Locations = (function () {
         };
         this.wijnhaven_103 = {
             location: "wijnhaven_103",
-            opleidingen: [
-                ""
-            ],
+            opleidingen: [],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-103/"
         };
         this.wijnhaven_107 = {
@@ -2358,7 +2355,7 @@ var Osiris = (function () {
         game2.appendChild(background);
         game2.appendChild(this.input1);
         this.input1.style.width = "17.1vw";
-        this.input1.style.height = "2.1vh";
+        this.input1.style.height = "1.6vh";
         this.input1.style.transform = "translate(14.1vw, 20.7vh)";
         this.input1.style.fontSize = "17px";
         this.input1.style.paddingLeft = "0.4vw";
@@ -2368,7 +2365,7 @@ var Osiris = (function () {
         this.button1.style.width = "6.6vw";
         this.button1.style.height = "3.3vh";
         this.button1.style.transform = "translate(14.1vw, 26.6vh)";
-        this.button1.style.opacity = "0%";
+        this.button1.style.opacity = "0";
         this.button1.addEventListener("click", function () { return _this.loginCheck(); });
     };
     Osiris.prototype.loginCheck = function () {
@@ -2394,7 +2391,7 @@ var Osiris = (function () {
         this.button2.style.width = "6.6vw";
         this.button2.style.height = "3.3vh";
         this.button2.style.transform = "translate(68.7vw, 8.4vh)";
-        this.button2.style.opacity = "0%";
+        this.button2.style.opacity = "0";
         this.button2.addEventListener("click", function () { return _this.onderwijs(); });
         var myloc = new Image();
         myloc.useMap = "/docs/assets/arrow.png";
@@ -2412,6 +2409,7 @@ var Osiris = (function () {
         game2.appendChild(background);
         game2.appendChild(this.input2);
         this.input2.style.width = "17.2vw";
+        this.input2.style.height = "2.1vh";
         this.input2.style.transform = "translate(13.9vw, 30.8vh)";
         this.input2.style.fontSize = "17px";
         this.input2.style.paddingLeft = "0.4vw";
@@ -2421,7 +2419,7 @@ var Osiris = (function () {
         this.button3.style.width = "4vw";
         this.button3.style.height = "2.5vh";
         this.button3.style.transform = "translate(1vw, 86vh)";
-        this.button3.style.opacity = "0%";
+        this.button3.style.opacity = "0";
         this.button3.addEventListener("click", function () { return _this.keuzeCheck(); });
     };
     Osiris.prototype.keuzeCheck = function () {
@@ -2447,7 +2445,7 @@ var Osiris = (function () {
         this.button4.style.width = "4vw";
         this.button4.style.height = "3vh";
         this.button4.style.transform = "translate(41.8vw, 37.8vh)";
-        this.button4.style.opacity = "0%";
+        this.button4.style.opacity = "0";
         this.button4.addEventListener("click", function () { return _this.keuzevak(); });
     };
     Osiris.prototype.keuzeWrong = function () {
@@ -2473,7 +2471,7 @@ var Osiris = (function () {
         this.button3.style.width = "4vw";
         this.button3.style.height = "2.5vh";
         this.button3.style.transform = "translate(1vw, 86vh)";
-        this.button3.style.opacity = "0%";
+        this.button3.style.opacity = "0";
         this.button3.addEventListener("click", function () { return _this.keuzeCheck(); });
     };
     Osiris.prototype.keuzevak = function () {
@@ -2488,7 +2486,7 @@ var Osiris = (function () {
         this.button5.style.width = "10.5vw";
         this.button5.style.height = "2vh";
         this.button5.style.transform = "translate(64.5vw, 18.8vh)";
-        this.button5.style.opacity = "0%";
+        this.button5.style.opacity = "0";
         this.button5.addEventListener("click", function () { return _this.signIn(); });
     };
     Osiris.prototype.signIn = function () {
@@ -2502,7 +2500,7 @@ var Osiris = (function () {
         this.button6.style.width = "5vw";
         this.button6.style.height = "2.5vh";
         this.button6.style.transform = "translate(6.5vw, 63.6vh)";
-        this.button6.style.opacity = "0%";
+        this.button6.style.opacity = "0";
         this.button6.addEventListener("click", function () { return _this.definitief(); });
     };
     Osiris.prototype.definitief = function () {
@@ -2640,7 +2638,7 @@ var Timer = (function () {
     Timer.prototype.addBonus = function (point) {
         var currentBonus = parseInt(localStorage.getItem('bonus'));
         var newBonus = currentBonus + point;
-        localStorage.setItem('bonus', newBonus);
+        localStorage.setItem('bonus', newBonus.toString());
     };
     Timer.prototype.endTimer = function () {
         if (!localStorage.getItem('end')) {
@@ -2653,6 +2651,9 @@ var Timer = (function () {
         var pause = parseInt(localStorage.getItem('pause'));
         var bonus = parseInt(localStorage.getItem('bonus'));
         var score = Math.floor((end - start - pause) / 1000) - bonus;
+        if (!localStorage.getItem('finalScore')) {
+            localStorage.setItem('finalScore', score.toString());
+        }
         return score;
     };
     Timer.prototype.resetTimer = function () {
