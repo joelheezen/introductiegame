@@ -79,7 +79,7 @@ var Act1 = (function () {
         var shape1 = document.getElementById("input1").value;
         var shape2 = document.getElementById("input2").value;
         var shape3 = document.getElementById("input3").value;
-        if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje") {
+        if (shape1 == "rond" && shape2 == "blok" && shape3 == "driehoek") {
             document.getElementsByTagName("game")[0].innerHTML = "";
             new Pause(1, 'EnterBuilding');
         }
