@@ -81,7 +81,7 @@ class Act1 {
         let shape1 = (<HTMLInputElement>document.getElementById("input1")).value
         let shape2 = (<HTMLInputElement>document.getElementById("input2")).value
         let shape3 = (<HTMLInputElement>document.getElementById("input3")).value
-        if (shape1 == "vierkant" && shape2 == "driehoek" && shape3 == "rondje"){
+        if (shape1 == "rond" && shape2 == "blok" && shape3 == "driehoek"){
 
             document.getElementsByTagName("game")[0].innerHTML = ""
             new Pause(1,'EnterBuilding')
