@@ -56,14 +56,13 @@ class Timer{
         let pause = parseInt(localStorage.getItem('pause')!)
         let bonus = parseInt(localStorage.getItem('bonus')!)
 
-        
         let score = Math.floor((end - start - pause) / 1000) - bonus
 
         if(!localStorage.getItem('finalScore')){
             localStorage.setItem('finalScore',score.toString())
         }
         
-        return score
+        return localStorage.getItem('finalScore')
     }
 
     resetTimer(){

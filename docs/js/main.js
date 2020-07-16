@@ -175,12 +175,12 @@ var Act1 = (function () {
         new CenterPopup(new Languages()[localStorage.getItem('language')][15], new Languages()[localStorage.getItem('language')][16], 'https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/');
     };
     Act1.prototype.studentenServiceCenter = function () {
-        new CenterPopup(new Languages()[localStorage.getItem('language')][17], new Languages()[localStorage.getItem('language')][18], '');
+        new CenterPopup(new Languages()[localStorage.getItem('language')][17], new Languages()[localStorage.getItem('language')][18], 'https://hint.hr.nl/nl/HR/Studie/Studenten-Service-Center/contact-intro-game/?ticket=ST-8256325-afrgd0alCe3y9MWc7In5PdmV1MXNE42FUsq-20');
     };
     Act1.prototype.studentenpas = function () {
         var game = document.getElementsByTagName("game")[0];
         var img = document.createElement('img');
-        img.src = "/docs/assets/studentenpas.png";
+        img.src = "assets/studentenpas.png";
         img.classList.add('studentenPas');
         game.appendChild(img);
         img.addEventListener("click", function () {
@@ -2351,7 +2351,7 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_1.png)";
+        background.style.backgroundImage = "url(assets/Osiris_1.png)";
         game2.appendChild(background);
         game2.appendChild(this.input1);
         this.input1.style.width = "17.1vw";
@@ -2385,7 +2385,7 @@ var Osiris = (function () {
         game2.removeChild(this.button1);
         game2.removeChild(this.input1);
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_2.png)";
+        background.style.backgroundImage = "url(assets/Osiris_2.png)";
         game2.appendChild(background);
         game2.appendChild(this.button2);
         this.button2.style.width = "6.6vw";
@@ -2405,7 +2405,7 @@ var Osiris = (function () {
         game2.removeChild(this.img);
         game2.removeChild(this.button2);
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_3.png)";
+        background.style.backgroundImage = "url(assets/Osiris_3.png)";
         game2.appendChild(background);
         game2.appendChild(this.input2);
         this.input2.style.width = "17.2vw";
@@ -2439,7 +2439,7 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_5.png)";
+        background.style.backgroundImage = "url(assets/Osiris_5.png)";
         game2.appendChild(background);
         game2.appendChild(this.button4);
         this.button4.style.width = "4vw";
@@ -2458,7 +2458,7 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_3.png)";
+        background.style.backgroundImage = "url(assets/Osiris_3.png)";
         game2.appendChild(background);
         game2.appendChild(this.input2);
         this.input2.style.width = "17.2vw";
@@ -2478,7 +2478,7 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_6.png)";
+        background.style.backgroundImage = "url(assets/Osiris_6.png)";
         game2.appendChild(background);
         game2.removeChild(this.input2);
         game2.removeChild(this.button4);
@@ -2493,7 +2493,7 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_7.png)";
+        background.style.backgroundImage = "url(assets/Osiris_7.png)";
         game2.appendChild(background);
         game2.removeChild(this.button5);
         game2.appendChild(this.button6);
@@ -2507,7 +2507,7 @@ var Osiris = (function () {
         var game2 = document.getElementsByTagName("game2")[0];
         game2.removeChild(this.button6);
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_8.png)";
+        background.style.backgroundImage = "url(assets/Osiris_8.png)";
         game2.appendChild(background);
     };
     return Osiris;
@@ -2635,7 +2635,7 @@ var Timer = (function () {
         if (!localStorage.getItem('finalScore')) {
             localStorage.setItem('finalScore', score.toString());
         }
-        return score;
+        return localStorage.getItem('finalScore');
     };
     Timer.prototype.resetTimer = function () {
         localStorage.removeItem('start');

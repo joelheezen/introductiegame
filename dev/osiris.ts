@@ -22,7 +22,7 @@ class Osiris {
         let game2 = document.getElementsByTagName("game2")[0]
 
         let background = document.createElement("backgroundact2")
-        background.style.backgroundImage = `url(assets/osiris_1.png)`
+        background.style.backgroundImage = `url(assets/Osiris_1.png)`
         game2.appendChild(background)
 
         game2.appendChild(this.input1)
@@ -68,7 +68,7 @@ class Osiris {
         game2.removeChild(this.input1)
 
         let background = document.createElement("backgroundact2")
-        background.style.backgroundImage = `url(assets/osiris_2.png)`
+        background.style.backgroundImage = `url(assets/Osiris_2.png)`
         game2.appendChild(background)
 
         game2.appendChild(this.button2)
@@ -92,7 +92,7 @@ class Osiris {
         game2.removeChild(this.button2);
 
         let background = document.createElement("backgroundact2")
-        background.style.backgroundImage = `url(assets/osiris_3.png)`
+        background.style.backgroundImage = `url(assets/Osiris_3.png)`
         game2.appendChild(background)
 
         game2.appendChild(this.input2)
@@ -131,7 +131,7 @@ class Osiris {
         let game2 = document.getElementsByTagName("game2")[0]
 
         let background = document.createElement("backgroundact2")
-        background.style.backgroundImage = `url(assets/osiris_5.png)`
+        background.style.backgroundImage = `url(assets/Osiris_5.png)`
         game2.appendChild(background)
 
         game2.appendChild(this.button4)
@@ -154,7 +154,7 @@ class Osiris {
         let game2 = document.getElementsByTagName("game2")[0]
 
         let background = document.createElement("backgroundact2")
-        background.style.backgroundImage = `url(assets/osiris_3.png)`
+        background.style.backgroundImage = `url(assets/Osiris_3.png)`
         game2.appendChild(background)
 
         game2.appendChild(this.input2)
@@ -181,7 +181,7 @@ class Osiris {
         let game2 = document.getElementsByTagName("game2")[0]
 
         let background = document.createElement("backgroundact2")
-        background.style.backgroundImage = `url(assets/osiris_6.png)`
+        background.style.backgroundImage = `url(assets/Osiris_6.png)`
         game2.appendChild(background)
 
         game2.removeChild(this.input2)
@@ -199,7 +199,7 @@ class Osiris {
         let game2 = document.getElementsByTagName("game2")[0]
 
         let background = document.createElement("backgroundact2")
-        background.style.backgroundImage = `url(assets/osiris_7.png)`
+        background.style.backgroundImage = `url(assets/Osiris_7.png)`
         game2.appendChild(background)
 
         game2.removeChild(this.button5)
@@ -217,7 +217,7 @@ class Osiris {
 
         game2.removeChild(this.button6)
         let background = document.createElement("backgroundact2")
-        background.style.backgroundImage = `url(assets/osiris_8.png)`
+        background.style.backgroundImage = `url(assets/Osiris_8.png)`
         game2.appendChild(background)
     }
 }
