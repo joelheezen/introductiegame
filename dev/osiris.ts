@@ -41,7 +41,7 @@ class Osiris {
         this.button1.style.width = `6.6vw`
         this.button1.style.height = `3.3vh`
         this.button1.style.transform = `translate(14.1vw, 26.6vh)`
-        this.button1.style.opacity = `0%`
+        this.button1.style.opacity = `0`
         this.button1.addEventListener("click" , () => this.loginCheck())
     }
 
@@ -75,7 +75,7 @@ class Osiris {
         this.button2.style.width = `6.6vw`
         this.button2.style.height = `3.3vh`
         this.button2.style.transform = `translate(68.7vw, 8.4vh)`
-        this.button2.style.opacity = `0%`
+        this.button2.style.opacity = `0`
         this.button2.addEventListener("click" , () => this.onderwijs())
 
         var myloc = new Image();  
@@ -108,7 +108,7 @@ class Osiris {
         this.button3.style.width = `4vw`
         this.button3.style.height = `2.5vh`
         this.button3.style.transform = `translate(1vw, 86vh)`
-        this.button3.style.opacity = `0%`
+        this.button3.style.opacity = `0`
         this.button3.addEventListener("click" , () => this.keuzeCheck())
     }
 
@@ -138,7 +138,7 @@ class Osiris {
         this.button4.style.width = `4vw`
         this.button4.style.height = `3vh`
         this.button4.style.transform = `translate(41.8vw, 37.8vh)`
-        this.button4.style.opacity = `0%`
+        this.button4.style.opacity = `0`
         this.button4.addEventListener("click" , () => this.keuzevak())
     }
 
@@ -173,7 +173,7 @@ class Osiris {
         this.button3.style.width = `4vw`
         this.button3.style.height = `2.5vh`
         this.button3.style.transform = `translate(1vw, 86vh)`
-        this.button3.style.opacity = `0%`
+        this.button3.style.opacity = `0`
         this.button3.addEventListener("click" , () => this.keuzeCheck())
     }
 
@@ -191,7 +191,7 @@ class Osiris {
         this.button5.style.width = `10.5vw`
         this.button5.style.height = `2vh`
         this.button5.style.transform = `translate(64.5vw, 18.8vh)`
-        this.button5.style.opacity = `0%`
+        this.button5.style.opacity = `0`
         this.button5.addEventListener("click" , () => this.signIn())
     }
 
@@ -208,7 +208,7 @@ class Osiris {
         this.button6.style.width = `5vw`
         this.button6.style.height = `2.5vh`
         this.button6.style.transform = `translate(6.5vw, 63.6vh)`
-        this.button6.style.opacity = `0%`
+        this.button6.style.opacity = `0`
         this.button6.addEventListener("click" , () => this.definitief())
     }
 
