@@ -698,7 +698,7 @@ class Act3{
                         }
                     }
                     else{
-                        if(note3 == `wtf moet hier`){
+                        if(note3 == `become a member`){
                             input3.style.color = `green`
                             input3.style.borderColor = `black`
                             correct3 = 1
