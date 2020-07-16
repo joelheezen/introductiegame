@@ -2551,7 +2551,8 @@ var Pause = (function () {
         extra.id = "extra";
         extra.addEventListener("keyup", function () {
             if (document.getElementById("extra").value == "escapade") {
-                console.log("hihihihihihihihihihihihihihihiihihhihihihihihihihihihihiihihihhiihihihihihihihihhihiihihhihihiihihihihihhihihihi");
+                new Timer().addBonus(300);
+                extra.remove();
             }
         });
         setTimeout(function () {

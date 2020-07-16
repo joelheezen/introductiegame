@@ -47,9 +47,8 @@ class Pause{
         extra.id = "extra"
         extra.addEventListener("keyup",()=>{
             if((<HTMLInputElement>document.getElementById("extra")).value == "escapade"){
-                //hier punten afhalen svp
-
-                console.log("hihihihihihihihihihihihihihihiihihhihihihihihihihihihihiihihihhiihihihihihihihihhihiihihhihihiihihihihihhihihihi")
+                new Timer().addBonus(300)
+                extra.remove()
             }
         })
         
