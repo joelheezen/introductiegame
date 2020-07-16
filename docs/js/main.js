@@ -1535,7 +1535,7 @@ var Act3 = (function () {
                 popup.style.backgroundSize = "100% 100%";
                 popup.style.width = "30vw";
                 popup.style.height = "30vh";
-                popup.style.transform = "translate(40vw, 35vh)";
+                popup.style.transform = "translate(35vw, 35vh)";
                 popup.style.position = "absolute";
                 popup.style.zIndex = "2";
                 var button = document.createElement("button");
@@ -1580,7 +1580,7 @@ var Act3 = (function () {
                 popup.style.backgroundImage = "url(assets/Akte3/vidiVici.png)";
                 popup.style.backgroundSize = "100% 100%";
                 popup.style.width = "25vw";
-                popup.style.height = "57vh";
+                popup.style.height = "auto";
                 popup.style.transform = "translate(37.5vw, 15vh)";
                 popup.style.position = "absolute";
                 popup.style.zIndex = "2";
@@ -2366,7 +2366,7 @@ var Osiris = (function () {
         this.button1.style.width = "6.6vw";
         this.button1.style.height = "3.3vh";
         this.button1.style.transform = "translate(14.1vw, 26.6vh)";
-        this.button1.style.opacity = "0%";
+        this.button1.style.opacity = "0";
         this.button1.addEventListener("click", function () { return _this.loginCheck(); });
     };
     Osiris.prototype.loginCheck = function () {
@@ -2392,7 +2392,7 @@ var Osiris = (function () {
         this.button2.style.width = "6.6vw";
         this.button2.style.height = "3.3vh";
         this.button2.style.transform = "translate(68.7vw, 8.4vh)";
-        this.button2.style.opacity = "0%";
+        this.button2.style.opacity = "0";
         this.button2.addEventListener("click", function () { return _this.onderwijs(); });
         var myloc = new Image();
         myloc.useMap = "/docs/assets/arrow.png";
@@ -2419,7 +2419,7 @@ var Osiris = (function () {
         this.button3.style.width = "4vw";
         this.button3.style.height = "2.5vh";
         this.button3.style.transform = "translate(1vw, 86vh)";
-        this.button3.style.opacity = "0%";
+        this.button3.style.opacity = "0";
         this.button3.addEventListener("click", function () { return _this.keuzeCheck(); });
     };
     Osiris.prototype.keuzeCheck = function () {
@@ -2445,7 +2445,7 @@ var Osiris = (function () {
         this.button4.style.width = "4vw";
         this.button4.style.height = "3vh";
         this.button4.style.transform = "translate(41.8vw, 37.8vh)";
-        this.button4.style.opacity = "0%";
+        this.button4.style.opacity = "0";
         this.button4.addEventListener("click", function () { return _this.keuzevak(); });
     };
     Osiris.prototype.keuzeWrong = function () {
@@ -2471,7 +2471,7 @@ var Osiris = (function () {
         this.button3.style.width = "4vw";
         this.button3.style.height = "2.5vh";
         this.button3.style.transform = "translate(1vw, 86vh)";
-        this.button3.style.opacity = "0%";
+        this.button3.style.opacity = "0";
         this.button3.addEventListener("click", function () { return _this.keuzeCheck(); });
     };
     Osiris.prototype.keuzevak = function () {
@@ -2486,7 +2486,7 @@ var Osiris = (function () {
         this.button5.style.width = "10.5vw";
         this.button5.style.height = "2vh";
         this.button5.style.transform = "translate(64.5vw, 18.8vh)";
-        this.button5.style.opacity = "0%";
+        this.button5.style.opacity = "0";
         this.button5.addEventListener("click", function () { return _this.signIn(); });
     };
     Osiris.prototype.signIn = function () {
@@ -2500,7 +2500,7 @@ var Osiris = (function () {
         this.button6.style.width = "5vw";
         this.button6.style.height = "2.5vh";
         this.button6.style.transform = "translate(6.5vw, 63.6vh)";
-        this.button6.style.opacity = "0%";
+        this.button6.style.opacity = "0";
         this.button6.addEventListener("click", function () { return _this.definitief(); });
     };
     Osiris.prototype.definitief = function () {
