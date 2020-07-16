@@ -51,6 +51,5 @@ class Ending{
             window.print()
         })
 
-        new Timer().resetTimer()
     }
 }

@@ -241,7 +241,7 @@ backgroundact3 {
     position: absolute;
     width: 100vw; height: 100vh;
     z-index:-1;
-    background-image: url(../assets/akte3/backgroundact3.png);
+    background-image: url(../assets/Akte3/backgroundact3.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     left:0; top:0;
@@ -333,10 +333,6 @@ videoBackground{
 button{
     position: absolute;
     cursor:pointer;
-}
-
-input {
-    position:absolute;
 }
 
 pinPopup {
@@ -437,15 +433,15 @@ startgame{
 
 next{
     width:15vw;
-    height:5.5vh;
+    height:3.5vw;
     padding-top: 1vh;
-    top:20vh;
+    top:11vw;
     left:9.5vw;
     position: absolute;
     background-color: #ffb911;
     border-radius: 15px;
     text-align: center;
-    font-size:3vh;
+    font-size:2.0vw;
     border: solid black 0.2vw;
     filter: grayscale(100%);
 }
@@ -492,7 +488,7 @@ pauseMessage{
     border-radius: 15px;
     width:30vw;
     left:33vw;
-    top:45vh;
-    height:30vh;
-    font-size: 2.7vh;
+    top:43vh;
+    height:20vw;
+    font-size: 1.4vw;
 }

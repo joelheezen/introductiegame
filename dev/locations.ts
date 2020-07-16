@@ -39,7 +39,7 @@ class Locations{
     kralingse_zoom = {
         location: "krazingse_zoom",
         opleidingen:[
-            "Accountancy",
+            "Accountancy KZ",
             "Bedrijfskunde",
             "Business IT & Management",
             "Commerciële Economie | Creative Marketing & Sales",
@@ -76,7 +76,7 @@ class Locations{
     museumpark_hoogbouw = {
         location: "museumpark_hoogbouw",
         opleidingen:[
-            "Accountancy",
+            "Accountancy MH",
             "Crossmediale Communicatie",
             "Engineering",
             "ICT Service Management",

@@ -175,12 +175,17 @@ var Act1 = (function () {
         new CenterPopup(new Languages()[localStorage.getItem('language')][15], new Languages()[localStorage.getItem('language')][16], 'https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/');
     };
     Act1.prototype.studentenServiceCenter = function () {
-        new CenterPopup(new Languages()[localStorage.getItem('language')][17], new Languages()[localStorage.getItem('language')][18], '');
+        if (localStorage.getItem('language') == 'dutch') {
+            new CenterPopup(new Languages()[localStorage.getItem('language')][17], new Languages()[localStorage.getItem('language')][18], 'https://hint.hr.nl/nl/HR/Studie/Studenten-Service-Center/contact-intro-game/?ticket=ST-8256325-afrgd0alCe3y9MWc7In5PdmV1MXNE42FUsq-20');
+        }
+        else if (localStorage.getItem('language') == 'english') {
+            new CenterPopup(new Languages()[localStorage.getItem('language')][17], new Languages()[localStorage.getItem('language')][18], 'https://hint.hr.nl/nl/HR/Studie/Studenten-Service-Center/contact-intro-game/ENG/');
+        }
     };
     Act1.prototype.studentenpas = function () {
         var game = document.getElementsByTagName("game")[0];
         var img = document.createElement('img');
-        img.src = "/docs/assets/studentenpas.png";
+        img.src = "assets/studentenpas.png";
         img.classList.add('studentenPas');
         game.appendChild(img);
         img.addEventListener("click", function () {
@@ -1705,7 +1710,6 @@ var Ending = (function () {
         button.addEventListener("click", function () {
             window.print();
         });
-        new Timer().resetTimer();
     }
     return Ending;
 }());
@@ -2176,7 +2180,7 @@ var Locations = (function () {
         this.kralingse_zoom = {
             location: "krazingse_zoom",
             opleidingen: [
-                "Accountancy",
+                "Accountancy KZ",
                 "Bedrijfskunde",
                 "Business IT & Management",
                 "Commerciële Economie | Creative Marketing & Sales",
@@ -2213,7 +2217,7 @@ var Locations = (function () {
         this.museumpark_hoogbouw = {
             location: "museumpark_hoogbouw",
             opleidingen: [
-                "Accountancy",
+                "Accountancy MH",
                 "Crossmediale Communicatie",
                 "Engineering",
                 "ICT Service Management",
@@ -2352,11 +2356,11 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_1.png)";
+        background.style.backgroundImage = "url(assets/Osiris_1.png)";
         game2.appendChild(background);
         game2.appendChild(this.input1);
         this.input1.style.width = "17.1vw";
-        this.input1.style.height = "2.1vh";
+        this.input1.style.height = "1.6vh";
         this.input1.style.transform = "translate(14.1vw, 20.7vh)";
         this.input1.style.fontSize = "17px";
         this.input1.style.paddingLeft = "0.4vw";
@@ -2386,7 +2390,7 @@ var Osiris = (function () {
         game2.removeChild(this.button1);
         game2.removeChild(this.input1);
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_2.png)";
+        background.style.backgroundImage = "url(assets/Osiris_2.png)";
         game2.appendChild(background);
         game2.appendChild(this.button2);
         this.button2.style.width = "6.6vw";
@@ -2406,10 +2410,11 @@ var Osiris = (function () {
         game2.removeChild(this.img);
         game2.removeChild(this.button2);
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_3.png)";
+        background.style.backgroundImage = "url(assets/Osiris_3.png)";
         game2.appendChild(background);
         game2.appendChild(this.input2);
         this.input2.style.width = "17.2vw";
+        this.input2.style.height = "2.1vh";
         this.input2.style.transform = "translate(13.9vw, 30.8vh)";
         this.input2.style.fontSize = "17px";
         this.input2.style.paddingLeft = "0.4vw";
@@ -2439,7 +2444,7 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_5.png)";
+        background.style.backgroundImage = "url(assets/Osiris_5.png)";
         game2.appendChild(background);
         game2.appendChild(this.button4);
         this.button4.style.width = "4vw";
@@ -2458,7 +2463,7 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_3.png)";
+        background.style.backgroundImage = "url(assets/Osiris_3.png)";
         game2.appendChild(background);
         game2.appendChild(this.input2);
         this.input2.style.width = "17.2vw";
@@ -2478,7 +2483,7 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_6.png)";
+        background.style.backgroundImage = "url(assets/Osiris_6.png)";
         game2.appendChild(background);
         game2.removeChild(this.input2);
         game2.removeChild(this.button4);
@@ -2493,7 +2498,7 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_7.png)";
+        background.style.backgroundImage = "url(assets/Osiris_7.png)";
         game2.appendChild(background);
         game2.removeChild(this.button5);
         game2.appendChild(this.button6);
@@ -2507,7 +2512,7 @@ var Osiris = (function () {
         var game2 = document.getElementsByTagName("game2")[0];
         game2.removeChild(this.button6);
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_8.png)";
+        background.style.backgroundImage = "url(assets/Osiris_8.png)";
         game2.appendChild(background);
     };
     return Osiris;
@@ -2527,6 +2532,7 @@ var Pause = (function () {
         var subTitle = document.createElement('akteGehaald');
         var message = document.createElement('pauseMessage');
         var nextButton = document.createElement('next');
+        var extra = document.createElement('input');
         title.innerHTML = new Languages()[localStorage.getItem('language')][60];
         subTitle.innerHTML = new Languages()[localStorage.getItem('language')][61];
         message.innerHTML = new Languages()[localStorage.getItem('language')][62] + (act + 1);
@@ -2535,6 +2541,25 @@ var Pause = (function () {
         title.appendChild(subTitle);
         this.game.appendChild(message);
         message.appendChild(nextButton);
+        message.appendChild(extra);
+        extra.style.width = "15vw";
+        extra.style.height = "3.5vw";
+        extra.style.paddingTop = "1vh";
+        extra.style.top = "17vw";
+        extra.style.left = "9.5vw";
+        extra.style.position = "absolute";
+        extra.style.backgroundColor = "#ffffff";
+        extra.style.fontSize = "1.5vw";
+        extra.placeholder = "extra opdracht";
+        extra.style.borderRadius = "15px";
+        extra.style.textAlign = "center";
+        extra.id = "extra";
+        extra.addEventListener("keyup", function () {
+            if (document.getElementById("extra").value == "escapade") {
+                new Timer().addBonus(300);
+                extra.remove();
+            }
+        });
         setTimeout(function () {
             nextButton.style.filter = "grayscale(0%)";
             nextButton.style.cursor = "pointer";
@@ -2619,7 +2644,7 @@ var Timer = (function () {
     Timer.prototype.addBonus = function (point) {
         var currentBonus = parseInt(localStorage.getItem('bonus'));
         var newBonus = currentBonus + point;
-        localStorage.setItem('bonus', newBonus);
+        localStorage.setItem('bonus', newBonus.toString());
     };
     Timer.prototype.endTimer = function () {
         if (!localStorage.getItem('end')) {
@@ -2632,7 +2657,10 @@ var Timer = (function () {
         var pause = parseInt(localStorage.getItem('pause'));
         var bonus = parseInt(localStorage.getItem('bonus'));
         var score = Math.floor((end - start - pause) / 1000) - bonus;
-        return score;
+        if (!localStorage.getItem('finalScore')) {
+            localStorage.setItem('finalScore', score.toString());
+        }
+        return localStorage.getItem('finalScore');
     };
     Timer.prototype.resetTimer = function () {
         localStorage.removeItem('start');
