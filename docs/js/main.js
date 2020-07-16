@@ -1376,14 +1376,27 @@ var Act3 = (function () {
                 });
                 input3.addEventListener("keyup", function () {
                     var note3 = document.getElementById("note3").value.toLowerCase();
-                    if (note3 == "word lid") {
-                        input3.style.color = "green";
-                        input3.style.borderColor = "black";
-                        correct3 = 1;
+                    if (localStorage.getItem("language") == "dutch") {
+                        if (note3 == "word lid") {
+                            input3.style.color = "green";
+                            input3.style.borderColor = "black";
+                            correct3 = 1;
+                        }
+                        else {
+                            input3.style.color = "black";
+                            correct3 = 0;
+                        }
                     }
                     else {
-                        input3.style.color = "black";
-                        correct3 = 0;
+                        if (note3 == "wtf moet hier") {
+                            input3.style.color = "green";
+                            input3.style.borderColor = "black";
+                            correct3 = 1;
+                        }
+                        else {
+                            input3.style.color = "black";
+                            correct3 = 0;
+                        }
                     }
                 });
                 input4.addEventListener("keyup", function () {
@@ -1407,9 +1420,17 @@ var Act3 = (function () {
                     localStorage.setItem("note2Save", note2);
                     localStorage.setItem("note3Save", note3);
                     localStorage.setItem("note4Save", note4);
-                    if (note1 == "bibliotheek" && note2 == "5" && note3 == "word lid" && note4 == "24,20") {
-                        game.innerHTML = "";
-                        new Ending;
+                    if (localStorage.getItem("language") == "dutch") {
+                        if (note1 == "bibliotheek" && note2 == "5" && note3 == "word lid" && note4 == "24,20") {
+                            game.innerHTML = "";
+                            new Ending;
+                        }
+                    }
+                    else {
+                        if (note1 == "bibliotheek" && note2 == "5" && note3 == "become a member" && note4 == "24,20") {
+                            game.innerHTML = "";
+                            new Ending;
+                        }
                     }
                 });
             });
