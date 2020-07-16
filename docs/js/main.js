@@ -2529,6 +2529,7 @@ var Pause = (function () {
         var subTitle = document.createElement('akteGehaald');
         var message = document.createElement('pauseMessage');
         var nextButton = document.createElement('next');
+        var extra = document.createElement('input');
         title.innerHTML = new Languages()[localStorage.getItem('language')][60];
         subTitle.innerHTML = new Languages()[localStorage.getItem('language')][61];
         message.innerHTML = new Languages()[localStorage.getItem('language')][62] + (act + 1);
@@ -2537,6 +2538,24 @@ var Pause = (function () {
         title.appendChild(subTitle);
         this.game.appendChild(message);
         message.appendChild(nextButton);
+        message.appendChild(extra);
+        extra.style.width = "15vw";
+        extra.style.height = "3.5vw";
+        extra.style.paddingTop = "1vh";
+        extra.style.top = "17vw";
+        extra.style.left = "9.5vw";
+        extra.style.position = "absolute";
+        extra.style.backgroundColor = "#ffffff";
+        extra.style.fontSize = "1.5vw";
+        extra.placeholder = "extra opdracht";
+        extra.style.borderRadius = "15px";
+        extra.style.textAlign = "center";
+        extra.id = "extra";
+        extra.addEventListener("keyup", function () {
+            if (document.getElementById("extra").value == "escapade") {
+                console.log("hihihihihihihihihihihihihihihiihihhihihihihihihihihihihiihihihhiihihihihihihihihhihiihihhihihiihihihihihhihihihi");
+            }
+        });
         setTimeout(function () {
             nextButton.style.filter = "grayscale(0%)";
             nextButton.style.cursor = "pointer";

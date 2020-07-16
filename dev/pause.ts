@@ -17,6 +17,7 @@ class Pause{
         let subTitle = document.createElement('akteGehaald')
         let message = document.createElement('pauseMessage')
         let nextButton = document.createElement('next')
+        let extra = document.createElement('input')
 
         title.innerHTML = new Languages()[localStorage.getItem('language')][60]
 
@@ -30,7 +31,28 @@ class Pause{
         title.appendChild(subTitle)
         this.game.appendChild(message)
         message.appendChild(nextButton)
+        message.appendChild(extra)
 
+        extra.style.width="15vw"
+        extra.style.height="3.5vw"
+        extra.style.paddingTop="1vh"
+        extra.style.top = "17vw"
+        extra.style.left = "9.5vw"
+        extra.style.position = "absolute"
+        extra.style.backgroundColor = "#ffffff"
+        extra.style.fontSize = "1.5vw"
+        extra.placeholder = "extra opdracht"
+        extra.style.borderRadius = "15px"
+        extra.style.textAlign = "center"
+        extra.id = "extra"
+        extra.addEventListener("keyup",()=>{
+            if((<HTMLInputElement>document.getElementById("extra")).value == "escapade"){
+                //hier punten afhalen svp
+
+                console.log("hihihihihihihihihihihihihihihiihihhihihihihihihihihihihiihihihhiihihihihihihihihhihiihihhihihiihihihihihhihihihi")
+            }
+        })
+        
         setTimeout(() => {
             nextButton.style.filter = "grayscale(0%)"
             nextButton.style.cursor= "pointer"
