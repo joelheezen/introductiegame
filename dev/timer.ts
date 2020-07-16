@@ -36,11 +36,11 @@ class Timer{
         localStorage.setItem('pause', newPause.toString())
     }
 
-    addBonus(point: string){
+    addBonus(point: number){
         let currentBonus = parseInt(localStorage.getItem('bonus')!)
         
         let newBonus = currentBonus + point
-        localStorage.setItem('bonus',newBonus)
+        localStorage.setItem('bonus',newBonus.toString())
         
     }
 
@@ -58,6 +58,10 @@ class Timer{
 
         
         let score = Math.floor((end - start - pause) / 1000) - bonus
+
+        if(!localStorage.getItem('finalScore')){
+            localStorage.setItem('finalScore',score.toString())
+        }
         
         return score
     }

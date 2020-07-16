@@ -27,7 +27,7 @@ class Osiris {
 
         game2.appendChild(this.input1)
         this.input1.style.width = `17.1vw`
-        this.input1.style.height = `2.1vh`
+        this.input1.style.height = `1.6vh`
         this.input1.style.transform = `translate(14.1vw, 20.7vh)`
         // this.input1.style.borderRadius = `25px`
         this.input1.style.fontSize = `17px`
@@ -97,13 +97,10 @@ class Osiris {
 
         game2.appendChild(this.input2)
         this.input2.style.width = `17.2vw`
-        // this.input1.style.height = `5.7vh`
+        this.input2.style.height = `2.1vh`
         this.input2.style.transform = `translate(13.9vw, 30.8vh)`
-        // this.input1.style.borderRadius = `25px`
         this.input2.style.fontSize = `17px`
         this.input2.style.paddingLeft = `0.4vw`
-        // this.input1.style.fontFamily = `Arial Black`
-        // this.input1.style.textTransform = `uppercase`
         this.input2.value = this.input2Save
         this.input2.id = "input2"
 

@@ -1705,7 +1705,6 @@ var Ending = (function () {
         button.addEventListener("click", function () {
             window.print();
         });
-        new Timer().resetTimer();
     }
     return Ending;
 }());
@@ -2176,7 +2175,7 @@ var Locations = (function () {
         this.kralingse_zoom = {
             location: "krazingse_zoom",
             opleidingen: [
-                "Accountancy",
+                "Accountancy KZ",
                 "Bedrijfskunde",
                 "Business IT & Management",
                 "Commerciële Economie | Creative Marketing & Sales",
@@ -2213,7 +2212,7 @@ var Locations = (function () {
         this.museumpark_hoogbouw = {
             location: "museumpark_hoogbouw",
             opleidingen: [
-                "Accountancy",
+                "Accountancy MH",
                 "Crossmediale Communicatie",
                 "Engineering",
                 "ICT Service Management",
@@ -2356,7 +2355,7 @@ var Osiris = (function () {
         game2.appendChild(background);
         game2.appendChild(this.input1);
         this.input1.style.width = "17.1vw";
-        this.input1.style.height = "2.1vh";
+        this.input1.style.height = "1.6vh";
         this.input1.style.transform = "translate(14.1vw, 20.7vh)";
         this.input1.style.fontSize = "17px";
         this.input1.style.paddingLeft = "0.4vw";
@@ -2410,6 +2409,7 @@ var Osiris = (function () {
         game2.appendChild(background);
         game2.appendChild(this.input2);
         this.input2.style.width = "17.2vw";
+        this.input2.style.height = "2.1vh";
         this.input2.style.transform = "translate(13.9vw, 30.8vh)";
         this.input2.style.fontSize = "17px";
         this.input2.style.paddingLeft = "0.4vw";
@@ -2619,7 +2619,7 @@ var Timer = (function () {
     Timer.prototype.addBonus = function (point) {
         var currentBonus = parseInt(localStorage.getItem('bonus'));
         var newBonus = currentBonus + point;
-        localStorage.setItem('bonus', newBonus);
+        localStorage.setItem('bonus', newBonus.toString());
     };
     Timer.prototype.endTimer = function () {
         if (!localStorage.getItem('end')) {
@@ -2632,6 +2632,9 @@ var Timer = (function () {
         var pause = parseInt(localStorage.getItem('pause'));
         var bonus = parseInt(localStorage.getItem('bonus'));
         var score = Math.floor((end - start - pause) / 1000) - bonus;
+        if (!localStorage.getItem('finalScore')) {
+            localStorage.setItem('finalScore', score.toString());
+        }
         return score;
     };
     Timer.prototype.resetTimer = function () {
