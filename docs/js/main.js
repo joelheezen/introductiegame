@@ -175,7 +175,12 @@ var Act1 = (function () {
         new CenterPopup(new Languages()[localStorage.getItem('language')][15], new Languages()[localStorage.getItem('language')][16], 'https://hint.hr.nl/nl/HR/Studie/roosters-en-cijfers/Lesrooster/');
     };
     Act1.prototype.studentenServiceCenter = function () {
-        new CenterPopup(new Languages()[localStorage.getItem('language')][17], new Languages()[localStorage.getItem('language')][18], 'https://hint.hr.nl/nl/HR/Studie/Studenten-Service-Center/contact-intro-game/?ticket=ST-8256325-afrgd0alCe3y9MWc7In5PdmV1MXNE42FUsq-20');
+        if (localStorage.getItem('language') == 'dutch') {
+            new CenterPopup(new Languages()[localStorage.getItem('language')][17], new Languages()[localStorage.getItem('language')][18], 'https://hint.hr.nl/nl/HR/Studie/Studenten-Service-Center/contact-intro-game/?ticket=ST-8256325-afrgd0alCe3y9MWc7In5PdmV1MXNE42FUsq-20');
+        }
+        else if (localStorage.getItem('language') == 'english') {
+            new CenterPopup(new Languages()[localStorage.getItem('language')][17], new Languages()[localStorage.getItem('language')][18], 'https://hint.hr.nl/nl/HR/Studie/Studenten-Service-Center/contact-intro-game/ENG/');
+        }
     };
     Act1.prototype.studentenpas = function () {
         var game = document.getElementsByTagName("game")[0];
