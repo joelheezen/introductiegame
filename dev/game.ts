@@ -59,4 +59,4 @@ class Game{
     
 }
 
-window.addEventListener("load", () => new Game())
+//window.addEventListener("load", () => new Game())

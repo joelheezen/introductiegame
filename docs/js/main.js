@@ -1789,7 +1789,6 @@ var Game = (function () {
     };
     return Game;
 }());
-window.addEventListener("load", function () { return new Game(); });
 var hint = (function () {
     function hint() {
         var _this = this;
