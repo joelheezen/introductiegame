@@ -7,7 +7,7 @@ class Game{
         button1.style.width = `10vw`
         button1.style.height = `10vh`
         button1.style.transform = `translate(90vw, 10vh)`
-        button1.innerHTML = `joel`
+        button1.innerHTML = `act2`
         button1.onclick = this.buttonPress1
 
         let button2 = document.createElement("button")
@@ -38,7 +38,7 @@ class Game{
 
     buttonPress1(){
         document.getElementsByTagName("game")[0].innerHTML = ""
-        new Act3()
+        new Act2()
         
     }
     buttonPress2(){
@@ -59,4 +59,4 @@ class Game{
     
 }
 
-//window.addEventListener("load", () => new Game())
+window.addEventListener("load", () => new Game())
