@@ -1768,7 +1768,7 @@ var Game = (function () {
         button1.style.width = "10vw";
         button1.style.height = "10vh";
         button1.style.transform = "translate(90vw, 10vh)";
-        button1.innerHTML = "joel";
+        button1.innerHTML = "act2";
         button1.onclick = this.buttonPress1;
         var button2 = document.createElement("button");
         game.appendChild(button2);
@@ -1794,7 +1794,7 @@ var Game = (function () {
     }
     Game.prototype.buttonPress1 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
-        new Act3();
+        new Act2();
     };
     Game.prototype.buttonPress2 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
@@ -1810,6 +1810,7 @@ var Game = (function () {
     };
     return Game;
 }());
+window.addEventListener("load", function () { return new Game(); });
 var hint = (function () {
     function hint() {
         var _this = this;
