@@ -17,7 +17,7 @@ class Act2Room4{
         this.video.controls = true
 
         this.signin.style.width = "15vw"
-        this.signin.style.height = "3.7vh"
+        this.signin.style.height = "auto"
         this.signin.style.transform = "translate(8vw,80vh)"
         this.signin.style.backgroundColor = "#ffb911"
         this.signin.style.borderRadius = "20px"
