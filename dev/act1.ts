@@ -5,7 +5,7 @@ class Act1 {
     private input3 = document.createElement("input")
 
     private button1 = document.createElement("button")
-
+    
     private input1Save :string = ""
     private input2Save :string = ""
     private input3Save :string = ""
@@ -36,18 +36,63 @@ class Act1 {
         this.input1.style.transform = `translate(26vw, 39.2vh)`
         this.input1.value = this.input1Save
         this.input1.id = "input1"
+        this.input1.style.display = `none`
 
         game.appendChild(this.input2)
         this.input2.classList.add('inputShape')
         this.input2.style.transform = `translate(42.7vw, 39.2vh)`
         this.input2.value = this.input2Save
         this.input2.id = "input2"
+        this.input2.style.display = `none`
 
         game.appendChild(this.input3)
         this.input3.classList.add('inputShape')
         this.input3.style.transform = `translate(59.2vw, 39.2vh)`
         this.input3.value = this.input3Save
         this.input3.id = "input3"
+        this.input3.style.display = `none`
+
+        var img1 = document.createElement('img')  
+        img1.src = "assets/Akte 1/vormen/klaver.png";
+        img1.classList.add('vorm1')  
+        img1.id = "img1"
+        game.appendChild(img1);
+
+        let images1 = ["assets/Akte 1/vormen/driehoek.png", "assets/Akte 1/vormen/hart.png", "assets/Akte 1/vormen/cirkel.png", "assets/Akte 1/vormen/kroon.png", "assets/Akte 1/vormen/maan.png", "assets/Akte 1/vormen/ruiten.png", "assets/Akte 1/vormen/schoppen.png", "assets/Akte 1/vormen/ster.png", "assets/Akte 1/vormen/vierkant.png", "assets/Akte 1/vormen/klaver.png"];
+        let index1 = 0;
+
+        img1.addEventListener("click", function() {
+            img1.src = images1[index1];
+            index1 = (index1 === images1.length - 1) ? 0 : index1 + 1;
+        });
+
+        var img2 = document.createElement('img')  
+        img2.src = "assets/Akte 1/vormen/driehoek.png";
+        img2.classList.add('vorm2')  
+        img2.id = "img2"
+        game.appendChild(img2);
+
+        let images2 = ["assets/Akte 1/vormen/cirkel.png", "assets/Akte 1/vormen/hart.png", "assets/Akte 1/vormen/klaver.png", "assets/Akte 1/vormen/kroon.png", "assets/Akte 1/vormen/maan.png", "assets/Akte 1/vormen/ruiten.png", "assets/Akte 1/vormen/schoppen.png", "assets/Akte 1/vormen/ster.png", "assets/Akte 1/vormen/vierkant.png", "assets/Akte 1/vormen/driehoek.png"];
+        let index2 = 0;
+
+        img2.addEventListener("click", function() {
+            img2.src = images2[index2];
+            index2 = (index2 === images2.length - 1) ? 0 : index2 + 1;
+        });
+
+        var img3 = document.createElement('img')  
+        img3.src = "assets/Akte 1/vormen/cirkel.png";
+        img3.classList.add('vorm3')  
+        img3.id = "img3"
+        game.appendChild(img3);
+
+        let images3 = ["assets/Akte 1/vormen/driehoek.png", "assets/Akte 1/vormen/hart.png", "assets/Akte 1/vormen/klaver.png", "assets/Akte 1/vormen/kroon.png", "assets/Akte 1/vormen/maan.png", "assets/Akte 1/vormen/ruiten.png", "assets/Akte 1/vormen/schoppen.png", "assets/Akte 1/vormen/ster.png", "assets/Akte 1/vormen/vierkant.png", "assets/Akte 1/vormen/cirkel.png"];
+        let index3 = 0;
+
+        img3.addEventListener("click", function() {
+            img3.src = images3[index3];
+            index3 = (index3 === images3.length - 1) ? 0 : index3 + 1;
+        });
 
         game.appendChild(this.button1)
         this.button1.style.width = `15.1vw`
@@ -78,10 +123,10 @@ class Act1 {
 
     shapeCheck() {
         console.log("button 1 is pressed")
-        let shape1 = (<HTMLInputElement>document.getElementById("input1")).value
-        let shape2 = (<HTMLInputElement>document.getElementById("input2")).value
-        let shape3 = (<HTMLInputElement>document.getElementById("input3")).value
-        if (shape1 == "rond" && shape2 == "blok" && shape3 == "driehoek"){
+        let shape1 = (<HTMLImageElement>document.getElementById("img1")).src
+        let shape2 = (<HTMLImageElement>document.getElementById("img2")).src
+        let shape3 = (<HTMLImageElement>document.getElementById("img3")).src
+        if (shape1 == "http://127.0.0.1:5500/docs/assets/Akte%201/vormen/cirkel.png" && shape2 == "http://127.0.0.1:5500/docs/assets/Akte%201/vormen/vierkant.png" && shape3 == "http://127.0.0.1:5500/docs/assets/Akte%201/vormen/driehoek.png"){
 
             document.getElementsByTagName("game")[0].innerHTML = ""
             new Pause(1,'EnterBuilding')
@@ -90,7 +135,7 @@ class Act1 {
         else{
 
             let game = document.getElementsByTagName('game')[0]
-            let inputs = document.getElementsByTagName('input')
+            let inputs = document.getElementsByTagName('img')
 
             for (let index = 0; index < inputs.length; index++) {
                 inputs[index].style.border = 'solid 3px red'

@@ -40,16 +40,52 @@ var Act1 = (function () {
         this.input1.style.transform = "translate(26vw, 39.2vh)";
         this.input1.value = this.input1Save;
         this.input1.id = "input1";
+        this.input1.style.display = "none";
         game.appendChild(this.input2);
         this.input2.classList.add('inputShape');
         this.input2.style.transform = "translate(42.7vw, 39.2vh)";
         this.input2.value = this.input2Save;
         this.input2.id = "input2";
+        this.input2.style.display = "none";
         game.appendChild(this.input3);
         this.input3.classList.add('inputShape');
         this.input3.style.transform = "translate(59.2vw, 39.2vh)";
         this.input3.value = this.input3Save;
         this.input3.id = "input3";
+        this.input3.style.display = "none";
+        var img1 = document.createElement('img');
+        img1.src = "assets/Akte 1/vormen/klaver.png";
+        img1.classList.add('vorm1');
+        img1.id = "img1";
+        game.appendChild(img1);
+        var images1 = ["assets/Akte 1/vormen/driehoek.png", "assets/Akte 1/vormen/hart.png", "assets/Akte 1/vormen/cirkel.png", "assets/Akte 1/vormen/kroon.png", "assets/Akte 1/vormen/maan.png", "assets/Akte 1/vormen/ruiten.png", "assets/Akte 1/vormen/schoppen.png", "assets/Akte 1/vormen/ster.png", "assets/Akte 1/vormen/vierkant.png", "assets/Akte 1/vormen/klaver.png"];
+        var index1 = 0;
+        img1.addEventListener("click", function () {
+            img1.src = images1[index1];
+            index1 = (index1 === images1.length - 1) ? 0 : index1 + 1;
+        });
+        var img2 = document.createElement('img');
+        img2.src = "assets/Akte 1/vormen/driehoek.png";
+        img2.classList.add('vorm2');
+        img2.id = "img2";
+        game.appendChild(img2);
+        var images2 = ["assets/Akte 1/vormen/cirkel.png", "assets/Akte 1/vormen/hart.png", "assets/Akte 1/vormen/klaver.png", "assets/Akte 1/vormen/kroon.png", "assets/Akte 1/vormen/maan.png", "assets/Akte 1/vormen/ruiten.png", "assets/Akte 1/vormen/schoppen.png", "assets/Akte 1/vormen/ster.png", "assets/Akte 1/vormen/vierkant.png", "assets/Akte 1/vormen/driehoek.png"];
+        var index2 = 0;
+        img2.addEventListener("click", function () {
+            img2.src = images2[index2];
+            index2 = (index2 === images2.length - 1) ? 0 : index2 + 1;
+        });
+        var img3 = document.createElement('img');
+        img3.src = "assets/Akte 1/vormen/cirkel.png";
+        img3.classList.add('vorm3');
+        img3.id = "img3";
+        game.appendChild(img3);
+        var images3 = ["assets/Akte 1/vormen/driehoek.png", "assets/Akte 1/vormen/hart.png", "assets/Akte 1/vormen/klaver.png", "assets/Akte 1/vormen/kroon.png", "assets/Akte 1/vormen/maan.png", "assets/Akte 1/vormen/ruiten.png", "assets/Akte 1/vormen/schoppen.png", "assets/Akte 1/vormen/ster.png", "assets/Akte 1/vormen/vierkant.png", "assets/Akte 1/vormen/cirkel.png"];
+        var index3 = 0;
+        img3.addEventListener("click", function () {
+            img3.src = images3[index3];
+            index3 = (index3 === images3.length - 1) ? 0 : index3 + 1;
+        });
         game.appendChild(this.button1);
         this.button1.style.width = "15.1vw";
         this.button1.style.height = "7.5vh";
@@ -76,16 +112,16 @@ var Act1 = (function () {
     };
     Act1.prototype.shapeCheck = function () {
         console.log("button 1 is pressed");
-        var shape1 = document.getElementById("input1").value;
-        var shape2 = document.getElementById("input2").value;
-        var shape3 = document.getElementById("input3").value;
-        if (shape1 == "rond" && shape2 == "blok" && shape3 == "driehoek") {
+        var shape1 = document.getElementById("img1").src;
+        var shape2 = document.getElementById("img2").src;
+        var shape3 = document.getElementById("img3").src;
+        if (shape1 == "http://127.0.0.1:5500/docs/assets/Akte%201/vormen/cirkel.png" && shape2 == "http://127.0.0.1:5500/docs/assets/Akte%201/vormen/vierkant.png" && shape3 == "http://127.0.0.1:5500/docs/assets/Akte%201/vormen/driehoek.png") {
             document.getElementsByTagName("game")[0].innerHTML = "";
             new Pause(1, 'EnterBuilding');
         }
         else {
             var game = document.getElementsByTagName('game')[0];
-            var inputs_1 = document.getElementsByTagName('input');
+            var inputs_1 = document.getElementsByTagName('img');
             for (var index = 0; index < inputs_1.length; index++) {
                 inputs_1[index].style.border = 'solid 3px red';
             }
