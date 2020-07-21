@@ -936,7 +936,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url1;
-                    pinPopup.style.transform = "translate(16vw, -2vh)";
+                    pinPopup.style.transform = "translate(21vw, -7vh)";
                     pinPopup.innerHTML += text1;
                 });
                 pin1.addEventListener("mouseout", function () {
@@ -952,7 +952,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url2;
-                    pinPopup.style.transform = "translate(11vw, 0.7vh)";
+                    pinPopup.style.transform = "translate(16vw, -5vh)";
                     pinPopup.innerHTML += text2;
                 });
                 pin2.addEventListener("mouseout", function () {
@@ -968,7 +968,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url3;
-                    pinPopup.style.transform = "translate(36vw, 42vh)";
+                    pinPopup.style.transform = "translate(41vw, 37vh)";
                     pinPopup.innerHTML += text3;
                 });
                 pin3.addEventListener("mouseout", function () {
@@ -984,7 +984,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url4;
-                    pinPopup.style.transform = "translate(14vw, 2vh)";
+                    pinPopup.style.transform = "translate(19vw, -3vh)";
                     pinPopup.innerHTML += text4;
                 });
                 pin4.addEventListener("mouseout", function () {
@@ -1000,7 +1000,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url5;
-                    pinPopup.style.transform = "translate(20vw, 23vh)";
+                    pinPopup.style.transform = "translate(25vw, 18vh)";
                     pinPopup.innerHTML += text5;
                 });
                 pin5.addEventListener("mouseout", function () {
@@ -1016,7 +1016,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url6;
-                    pinPopup.style.transform = "translate(21vw, 7.7vh)";
+                    pinPopup.style.transform = "translate(26vw, 2.7vh)";
                     pinPopup.innerHTML += text6;
                 });
                 pin6.addEventListener("mouseout", function () {
@@ -1032,7 +1032,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url7;
-                    pinPopup.style.transform = "translate(11.5vw, 21vh)";
+                    pinPopup.style.transform = "translate(16.5vw, 16vh)";
                     pinPopup.innerHTML += text7;
                 });
                 pin7.addEventListener("mouseout", function () {
@@ -1048,7 +1048,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url8;
-                    pinPopup.style.transform = "translate(20vw, 5.3vh)";
+                    pinPopup.style.transform = "translate(25vw, 0.3vh)";
                     pinPopup.innerHTML += text8;
                 });
                 pin8.addEventListener("mouseout", function () {
@@ -1064,7 +1064,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url9;
-                    pinPopup.style.transform = "translate(19.3vw, 5.2vh)";
+                    pinPopup.style.transform = "translate(24.3vw, 0.2vh)";
                     pinPopup.innerHTML += text9;
                 });
                 pin9.addEventListener("mouseout", function () {
@@ -1080,7 +1080,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url10;
-                    pinPopup.style.transform = "translate(22.9vw, 5.7vh)";
+                    pinPopup.style.transform = "translate(27.9vw, 0.7vh)";
                     pinPopup.innerHTML += text10;
                 });
                 pin10.addEventListener("mouseout", function () {
@@ -1096,7 +1096,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url11;
-                    pinPopup.style.transform = "translate(17vw, 10vh)";
+                    pinPopup.style.transform = "translate(22vw, 5vh)";
                     pinPopup.innerHTML += text11;
                 });
                 pin11.addEventListener("mouseout", function () {
@@ -1112,7 +1112,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url12;
-                    pinPopup.style.transform = "translate(20vw, 10vh)";
+                    pinPopup.style.transform = "translate(25vw, 5vh)";
                     pinPopup.innerHTML += text12;
                 });
                 pin12.addEventListener("mouseout", function () {
@@ -1128,7 +1128,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url13;
-                    pinPopup.style.transform = "translate(18vw, 11vh)";
+                    pinPopup.style.transform = "translate(23vw, 6vh)";
                     pinPopup.innerHTML += text13;
                 });
                 pin13.addEventListener("mouseout", function () {
@@ -1169,7 +1169,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(29.5vw, 15vh)";
+                    pinPopup.style.transform = "translate(33.5vw, 15vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][33];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
@@ -1188,7 +1188,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(15vw, 30vh)";
+                    pinPopup.style.transform = "translate(21vw, 30vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][37];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
@@ -1217,7 +1217,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(25vw, 22vh)";
+                    pinPopup.style.transform = "translate(29vw, 22vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][35];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
@@ -1236,7 +1236,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(27vw, 23vh)";
+                    pinPopup.style.transform = "translate(31vw, 23vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][36];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
@@ -1255,7 +1255,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(8vw, 24vh)";
+                    pinPopup.style.transform = "translate(12vw, 24vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][34];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
@@ -1412,7 +1412,7 @@ var Act3 = (function () {
                 input1.addEventListener("keyup", function () {
                     var note1 = document.getElementById("note1").value.toLowerCase();
                     if (localStorage.getItem("language") == "dutch") {
-                        if (note1 == "rotterdam staat te springen") {
+                        if (note1 == "rotterdam staat te springen" || note1 == "rotterdamstaattespringen") {
                             input1.style.color = "green";
                             input1.style.borderColor = "black";
                             correct1 = 1;
@@ -1423,7 +1423,7 @@ var Act3 = (function () {
                         }
                     }
                     else {
-                        if (note1 == "rotterdam make it happen") {
+                        if (note1 == "rotterdam your student city" || note1 == "rotterdamyourstudentcity" || note1 == "rotterdam your studentcity") {
                             input1.style.color = "green";
                             input1.style.borderColor = "black";
                             correct1 = 1;
@@ -1448,7 +1448,7 @@ var Act3 = (function () {
                 });
                 input3.addEventListener("keyup", function () {
                     var note3 = document.getElementById("note3").value.toLowerCase();
-                    if (note3 == "24,20") {
+                    if (note3 == "24,20" || note3 == "24.20") {
                         input3.style.color = "green";
                         input3.style.borderColor = "black";
                         correct3 = 1;
@@ -1461,7 +1461,7 @@ var Act3 = (function () {
                 input4.addEventListener("keyup", function () {
                     var note4 = document.getElementById("note4").value.toLowerCase();
                     if (localStorage.getItem("language") == "dutch") {
-                        if (note4 == "word lid") {
+                        if (note4 == "word lid" || note4 == "wordlid") {
                             input4.style.color = "green";
                             input4.style.borderColor = "black";
                             correct4 = 1;
@@ -1482,13 +1482,13 @@ var Act3 = (function () {
                     localStorage.setItem("note3Save", note3);
                     localStorage.setItem("note4Save", note4);
                     if (localStorage.getItem("language") == "dutch") {
-                        if (note1 == "rotterdam staat te springen" && note2 == "5" && note3 == "24,20" && note4 == "word lid") {
+                        if ((note1 == "rotterdam staat te springen" || note1 == "rotterdamstaattespringen") && note2 == "5" && (note3 == "24,20" || note3 == "24.20") && (note4 == "word lid" || note4 == "wordlid")) {
                             game.innerHTML = "";
                             new Ending;
                         }
                     }
                     else {
-                        if (note1 == "rotterdam make it happen" && note2 == "5" && note3 == "24,20") {
+                        if ((note1 == "rotterdam your student city" || note1 == "rotterdamyourstudentcity" || note1 == "rotterdam your studentcity") && note2 == "5" && (note3 == "24,20" || note3 == "24.20")) {
                             game.innerHTML = "";
                             new Ending;
                         }
@@ -1571,6 +1571,20 @@ var Act3 = (function () {
                     popup_1.style.borderRadius = "20px";
                     popup_1.style.boxShadow = "rgba(0,0,0,0.25) 20px 20px";
                     popup_1.id = "card";
+                    var words = document.createElement("words");
+                    popup_1.appendChild(words);
+                    if (localStorage.getItem("language") == "dutch") {
+                        words.style.backgroundImage = "url(assets/Akte3/wordsDutch.png)";
+                    }
+                    else {
+                        words.style.backgroundImage = "url(assets/Akte3/wordsEng.png)";
+                    }
+                    words.style.backgroundRepeat = "no-repeat";
+                    words.style.backgroundSize = "100% 100%";
+                    words.style.width = "42vw";
+                    words.style.height = "81vh";
+                    words.style.position = "absolute";
+                    words.style.transform = "translate(5vw, 4vh)";
                     var button_3 = document.createElement("button");
                     game_1.appendChild(button_3);
                     button_3.style.zIndex = "1";
@@ -2526,7 +2540,7 @@ var Osiris = (function () {
     Osiris.prototype.keuzeCheck = function () {
         console.log("button 1 is pressed");
         var shape1 = document.getElementById("input2").value;
-        if (shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot") {
+        if (shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot" || shape1 == "Sleutel succes" || shape1 == "sleutel succes") {
             console.log("dit klopt");
             this.keuzeRight();
         }
