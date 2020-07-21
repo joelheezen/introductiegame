@@ -148,7 +148,7 @@ onlinePopup{
     position:absolute;
     height:10vh;
     width:5vw;
-    transform:translate(30.9vw, 35vh);
+    transform:translate(30.9vw, 39vh);
     cursor:pointer;
     padding:5px;
 }
@@ -157,7 +157,7 @@ onlinePopup{
     position:absolute;
     height:10vh;
     width:5vw;
-    transform:translate(47.5vw, 35vh);
+    transform:translate(47.5vw, 39vh);
     cursor:pointer;
     padding:5px;
 }
@@ -166,7 +166,7 @@ onlinePopup{
     position:absolute;
     height:10vh;
     width:5vw;
-    transform:translate(63.8vw, 35vh);
+    transform:translate(63.8vw, 39vh);
     cursor:pointer;
     padding:5px;
 }

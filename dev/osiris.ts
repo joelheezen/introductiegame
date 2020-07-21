@@ -115,9 +115,8 @@ class Osiris {
     keuzeCheck() {
         console.log("button 1 is pressed")
         let shape1 = (<HTMLInputElement>document.getElementById("input2")).value
-        let shape2 = (<HTMLInputElement>document.getElementById("input2")).value
 
-        if (shape1 == "Sleutel tot succes" || shape2 == "sleutel tot succes"){
+        if (shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot"){
             console.log("dit klopt")
             this.keuzeRight()            
         }

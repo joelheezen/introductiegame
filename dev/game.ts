@@ -43,7 +43,7 @@ class Game{
     }
     buttonPress2(){
         document.getElementsByTagName("game")[0].innerHTML = ""
-        new Act1()
+        new tobuilding()
     }
 
     buttonPress4(){

@@ -89,7 +89,7 @@ var Act1 = (function () {
         game.appendChild(this.button1);
         this.button1.style.width = "15.1vw";
         this.button1.style.height = "7.5vh";
-        this.button1.style.transform = "translate(42.4vw, 47.9vh)";
+        this.button1.style.transform = "translate(42.4vw, 56vh)";
         this.button1.innerHTML = new Languages()[localStorage.getItem('language')][9];
         this.button1.classList.add('verzenden');
         this.button1.addEventListener("click", function () { return _this.shapeCheck(); });
@@ -1690,10 +1690,10 @@ var Act3 = (function () {
                 if (audioCheck == null) {
                     popup.appendChild(audio);
                     if (localStorage.getItem("language") == "dutch") {
-                        audio.src = "assets/Akte3/audio.mp3";
+                        audio.src = "assets/Akte3/Audio.mp3";
                     }
                     else {
-                        audio.src = "assets/Akte3/audio.mp3";
+                        audio.src = "assets/Akte3/Audio.mp3";
                     }
                     audio.autoplay = true;
                     audio.controls = true;
@@ -1859,7 +1859,7 @@ var Game = (function () {
     };
     Game.prototype.buttonPress2 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
-        new Act1();
+        new tobuilding();
     };
     Game.prototype.buttonPress4 = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
@@ -1947,7 +1947,7 @@ var Languages = (function () {
             "Click here</a>for more information about this location.</p>",
             "Try again",
             "Go inside",
-            "Oh no! The door is locked and needs a special key to open. Fill in the right shapes of the key.",
+            "You found the location. Unfortunately, the door is still locked. Fortunately, many things are arranged online at the university. Take a look around there first and maybe you will find there the 3 shapes that make up the key together.",
             "Send",
             "Look online for shapes",
             "Continue",
@@ -2002,7 +2002,9 @@ var Languages = (function () {
             "Congratulations",
             "You passed this act",
             "You can now take a break<br>Durig this break you will not be timed<br>Press the button to begin act ",
-            "Begin act "
+            "Begin act ",
+            "Click on the door to go inside.",
+            "Entrance"
         ];
         this.dutch = ["Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding",
             "Kies opleiding",
@@ -2012,7 +2014,7 @@ var Languages = (function () {
             "Klik hier</a>voor meer informatie over deze locattie</p>",
             "Probeer opnieuw",
             "Loop naar binnen",
-            "Oh nee! De deur zit dicht en heeft een specifieke sleutel nodig om gepend te worden. Vul de juisten vormen van de sleutel in.",
+            "Jullie hebben de locatie gevonden. Helaas blijkt de deur nog op slot te zitten... Dat schiet natuurlijk niet op! Gelukkig zijn veel zaken op de hogeschool online geregeld. Kijk daar eerst eens rond en misschien vinden jullie daar de 3 vormen die samen de sleutel maken.",
             "Verzenden",
             "Zoek online naar vormen",
             "Doorgaan",
@@ -2067,7 +2069,9 @@ var Languages = (function () {
             "Gefeliciteerd",
             "Je hebt deze akte gehaald",
             "Je kunt nu even pauze nemen<br>Tijdens de pauze staat de tijd stil<br>Druk op de knop om te beginnen met akte ",
-            "Begin akte "
+            "Begin akte ",
+            "Klik op de deur om naar binnen te gaan.",
+            "Ingang"
         ];
     }
     return Languages;
@@ -2209,7 +2213,7 @@ var LocatieSelectie = (function () {
             goto.innerHTML = new Languages()[localStorage.getItem('language')][7];
             goto.addEventListener('click', function () {
                 document.getElementsByTagName("game")[0].innerHTML = "";
-                new Act1;
+                new tobuilding;
             });
         }
         else {
@@ -2512,8 +2516,7 @@ var Osiris = (function () {
     Osiris.prototype.keuzeCheck = function () {
         console.log("button 1 is pressed");
         var shape1 = document.getElementById("input2").value;
-        var shape2 = document.getElementById("input2").value;
-        if (shape1 == "Sleutel tot succes" || shape2 == "sleutel tot succes") {
+        if (shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot") {
             console.log("dit klopt");
             this.keuzeRight();
         }
@@ -2753,4 +2756,35 @@ var Timer = (function () {
     return Timer;
 }());
 window.addEventListener('load', function () { return new Timer(); });
+var tobuilding = (function () {
+    function tobuilding() {
+        var _this = this;
+        this.game = document.getElementsByTagName('game')[0];
+        this.bge = document.createElement("backgroundenter");
+        this.i = 0;
+        this.button1 = document.createElement("button");
+        this.setBackground();
+        this.game.appendChild(this.bge);
+        this.game.appendChild(this.button1);
+        this.button1.style.width = "20vw";
+        this.button1.style.height = "26vh";
+        this.button1.style.transform = "translate(48vw, 32vh)";
+        this.button1.style.opacity = "0";
+        this.button1.addEventListener("click", function () { return _this.setBackground(); });
+        this.game.appendChild(this.bge);
+    }
+    tobuilding.prototype.setBackground = function () {
+        if (this.i == 0) {
+            this.bge.style.backgroundImage = 'url(assets/IMG_20200708_123510.jpg)';
+            new CenterPopup(new Languages()[localStorage.getItem('language')][65], new Languages()[localStorage.getItem('language')][64], '');
+        }
+        else if (this.i == 1) {
+            this.bge.remove();
+            this.button1.remove();
+            new Act1();
+        }
+        this.i++;
+    };
+    return tobuilding;
+}());
 //# sourceMappingURL=main.js.map
