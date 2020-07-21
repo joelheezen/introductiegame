@@ -936,7 +936,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url1;
-                    pinPopup.style.transform = "translate(16vw, -2vh)";
+                    pinPopup.style.transform = "translate(21vw, -7vh)";
                     pinPopup.innerHTML += text1;
                 });
                 pin1.addEventListener("mouseout", function () {
@@ -952,7 +952,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url2;
-                    pinPopup.style.transform = "translate(11vw, 0.7vh)";
+                    pinPopup.style.transform = "translate(16vw, -5vh)";
                     pinPopup.innerHTML += text2;
                 });
                 pin2.addEventListener("mouseout", function () {
@@ -968,7 +968,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url3;
-                    pinPopup.style.transform = "translate(36vw, 42vh)";
+                    pinPopup.style.transform = "translate(41vw, 37vh)";
                     pinPopup.innerHTML += text3;
                 });
                 pin3.addEventListener("mouseout", function () {
@@ -984,7 +984,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url4;
-                    pinPopup.style.transform = "translate(14vw, 2vh)";
+                    pinPopup.style.transform = "translate(19vw, -3vh)";
                     pinPopup.innerHTML += text4;
                 });
                 pin4.addEventListener("mouseout", function () {
@@ -1000,7 +1000,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url5;
-                    pinPopup.style.transform = "translate(20vw, 23vh)";
+                    pinPopup.style.transform = "translate(25vw, 18vh)";
                     pinPopup.innerHTML += text5;
                 });
                 pin5.addEventListener("mouseout", function () {
@@ -1016,7 +1016,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url6;
-                    pinPopup.style.transform = "translate(21vw, 7.7vh)";
+                    pinPopup.style.transform = "translate(26vw, 2.7vh)";
                     pinPopup.innerHTML += text6;
                 });
                 pin6.addEventListener("mouseout", function () {
@@ -1032,7 +1032,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url7;
-                    pinPopup.style.transform = "translate(11.5vw, 21vh)";
+                    pinPopup.style.transform = "translate(16.5vw, 16vh)";
                     pinPopup.innerHTML += text7;
                 });
                 pin7.addEventListener("mouseout", function () {
@@ -1048,7 +1048,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url8;
-                    pinPopup.style.transform = "translate(20vw, 5.3vh)";
+                    pinPopup.style.transform = "translate(25vw, 0.3vh)";
                     pinPopup.innerHTML += text8;
                 });
                 pin8.addEventListener("mouseout", function () {
@@ -1064,7 +1064,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url9;
-                    pinPopup.style.transform = "translate(19.3vw, 5.2vh)";
+                    pinPopup.style.transform = "translate(24.3vw, 0.2vh)";
                     pinPopup.innerHTML += text9;
                 });
                 pin9.addEventListener("mouseout", function () {
@@ -1080,7 +1080,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url10;
-                    pinPopup.style.transform = "translate(22.9vw, 5.7vh)";
+                    pinPopup.style.transform = "translate(27.9vw, 0.7vh)";
                     pinPopup.innerHTML += text10;
                 });
                 pin10.addEventListener("mouseout", function () {
@@ -1096,7 +1096,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url11;
-                    pinPopup.style.transform = "translate(17vw, 10vh)";
+                    pinPopup.style.transform = "translate(22vw, 5vh)";
                     pinPopup.innerHTML += text11;
                 });
                 pin11.addEventListener("mouseout", function () {
@@ -1112,7 +1112,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url12;
-                    pinPopup.style.transform = "translate(20vw, 10vh)";
+                    pinPopup.style.transform = "translate(25vw, 5vh)";
                     pinPopup.innerHTML += text12;
                 });
                 pin12.addEventListener("mouseout", function () {
@@ -1128,7 +1128,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url13;
-                    pinPopup.style.transform = "translate(18vw, 11vh)";
+                    pinPopup.style.transform = "translate(23vw, 6vh)";
                     pinPopup.innerHTML += text13;
                 });
                 pin13.addEventListener("mouseout", function () {
@@ -1169,7 +1169,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(29.5vw, 15vh)";
+                    pinPopup.style.transform = "translate(33.5vw, 15vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][33];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
@@ -1188,7 +1188,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(15vw, 30vh)";
+                    pinPopup.style.transform = "translate(21vw, 30vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][37];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
@@ -1217,7 +1217,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(25vw, 22vh)";
+                    pinPopup.style.transform = "translate(29vw, 22vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][35];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
@@ -1236,7 +1236,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(27vw, 23vh)";
+                    pinPopup.style.transform = "translate(31vw, 23vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][36];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
@@ -1255,7 +1255,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(8vw, 24vh)";
+                    pinPopup.style.transform = "translate(12vw, 24vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][34];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
@@ -1412,7 +1412,7 @@ var Act3 = (function () {
                 input1.addEventListener("keyup", function () {
                     var note1 = document.getElementById("note1").value.toLowerCase();
                     if (localStorage.getItem("language") == "dutch") {
-                        if (note1 == "rotterdam staat te springen") {
+                        if (note1 == "rotterdam staat te springen" || note1 == "rotterdamstaattespringen") {
                             input1.style.color = "green";
                             input1.style.borderColor = "black";
                             correct1 = 1;
@@ -1423,7 +1423,7 @@ var Act3 = (function () {
                         }
                     }
                     else {
-                        if (note1 == "rotterdam make it happen") {
+                        if (note1 == "rotterdam your student city" || note1 == "rotterdamyourstudentcity" || note1 == "rotterdam your studentcity") {
                             input1.style.color = "green";
                             input1.style.borderColor = "black";
                             correct1 = 1;
@@ -1448,7 +1448,7 @@ var Act3 = (function () {
                 });
                 input3.addEventListener("keyup", function () {
                     var note3 = document.getElementById("note3").value.toLowerCase();
-                    if (note3 == "24,20") {
+                    if (note3 == "24,20" || note3 == "24.20") {
                         input3.style.color = "green";
                         input3.style.borderColor = "black";
                         correct3 = 1;
@@ -1461,7 +1461,7 @@ var Act3 = (function () {
                 input4.addEventListener("keyup", function () {
                     var note4 = document.getElementById("note4").value.toLowerCase();
                     if (localStorage.getItem("language") == "dutch") {
-                        if (note4 == "word lid") {
+                        if (note4 == "word lid" || note4 == "wordlid") {
                             input4.style.color = "green";
                             input4.style.borderColor = "black";
                             correct4 = 1;
@@ -1482,13 +1482,13 @@ var Act3 = (function () {
                     localStorage.setItem("note3Save", note3);
                     localStorage.setItem("note4Save", note4);
                     if (localStorage.getItem("language") == "dutch") {
-                        if (note1 == "rotterdam staat te springen" && note2 == "5" && note3 == "24,20" && note4 == "word lid") {
+                        if ((note1 == "rotterdam staat te springen" || note1 == "rotterdamstaattespringen") && note2 == "5" && (note3 == "24,20" || note3 == "24.20") && (note4 == "word lid" || note4 == "wordlid")) {
                             game.innerHTML = "";
                             new Ending;
                         }
                     }
                     else {
-                        if (note1 == "rotterdam make it happen" && note2 == "5" && note3 == "24,20") {
+                        if ((note1 == "rotterdam your student city" || note1 == "rotterdamyourstudentcity" || note1 == "rotterdam your studentcity") && note2 == "5" && (note3 == "24,20" || note3 == "24.20")) {
                             game.innerHTML = "";
                             new Ending;
                         }
@@ -1571,6 +1571,20 @@ var Act3 = (function () {
                     popup_1.style.borderRadius = "20px";
                     popup_1.style.boxShadow = "rgba(0,0,0,0.25) 20px 20px";
                     popup_1.id = "card";
+                    var words = document.createElement("words");
+                    popup_1.appendChild(words);
+                    if (localStorage.getItem("language") == "dutch") {
+                        words.style.backgroundImage = "url(assets/Akte3/wordsDutch.png)";
+                    }
+                    else {
+                        words.style.backgroundImage = "url(assets/Akte3/wordsEng.png)";
+                    }
+                    words.style.backgroundRepeat = "no-repeat";
+                    words.style.backgroundSize = "100% 100%";
+                    words.style.width = "42vw";
+                    words.style.height = "81vh";
+                    words.style.position = "absolute";
+                    words.style.transform = "translate(5vw, 4vh)";
                     var button_3 = document.createElement("button");
                     game_1.appendChild(button_3);
                     button_3.style.zIndex = "1";
@@ -1949,11 +1963,11 @@ var hint = (function () {
 }());
 var Languages = (function () {
     function Languages() {
-        this.english = ["In order to start, we need to know what course you are taking. Please select your course from this list",
+        this.english = ["In order to start, we need to know what study program you are taking. Please select your study program from this list",
             "Choose education",
             "Choose language",
-            "Now pick the location at which this course is taught",
-            "<b>Correct!</b>This is the location of your course.<br>",
+            "Now pick the location at which this study program is taught",
+            "<b>Correct!</b>This is the location of your study program.<br>",
             "Click here</a>for more information about this location.</p>",
             "Try again",
             "Go inside",
@@ -1962,26 +1976,26 @@ var Languages = (function () {
             "Look online for shapes",
             "Continue",
             "Welcome to your online floorplan",
-            "Maybe it would be a good idea to mail the student service centre about the key",
-            "This awnser is incorrect. Try again.",
+            "Maybe it\u2019s a good idea to send an email to the Student Service Centre about the key",
+            "This answer is incorrect. Try again.",
             "Schedule",
             "Click continue to see the schedule",
             "Student Service Centre",
-            "Mail the SSC with your personal studenmail to:ssc@hr.nl",
-            "Different courses and information can be found bij clicking continue",
-            "De Hofpleinfontein </br>in the center of the roundabout Hofplein is a big fountain. This Hofpleinfontein was gifted to Rotterdam by the shipping company Van Ommeren who were celebrating their onehundred years of existence. The fountain is also know as the Flipspuit, after Philippus \"Flip\" van Ommeren. Because of the location, right next to the Coolsingel, it has become a place where great successes are celebrated by Feyenoord and the Dutch national team. At those celebrations the fans jump and party in the water near the fountain.",
-            "Rotterdam Centraal Station </br> The current station building, situated adjecent the Stationsplein, was officially opened by king Willem-Alexander on the 13th of march 2014. The design acquired multiple international commendations. But Rotterdam citizens have nicknamed their station building a little less flattering.",
-            "Feyenoordstadion</br> \"Ga je mee naar het stadion, naar de club van Rood en Wit.\" This stadion is better known under the name \u2026\u2026\u2026.",
-            "'De Belichaamde Eenheid'</br> this artwork was once situated near the entrance of one of the locations of Hogeschool Rotterdam (Museumpark Hoogbouw); the headquarters of Unilever a that time. The artwork moved together with them to Weena.",
-            "Erasmusbrug</br> The Erasmusbrug is a story on itself and has over 20 nicknames, including \u2018de Zwaan\u2019, \u2018de Harp\u2019 and 'de Wipkip\u2019. Although \u2018de Zwaan\u2019 is the most commonly used nickname.",
-            "Station Blaak</br> The task the architect had while designing the station was that there had to be enough landmarks for the  travellers. This is also the reason the architect made a notable construction above ground, so the station would be recognized in an instance. The design is reminiscent of a flying saucer. A lot of people also call it a withered sunflower or fluitketel. The last nickname requires a bit of fantasy though..",
-            "Erasmus Medische Centrum</br> On the 1st of june 2002 the Dijkzigtziekenhuis, the Sophia Kinderziekenhuis, de Daniel den Hoedkliniek and the \"Faculteit der Geneeskunde en Gezondheidswetenschappen\" of the Erasmus Universiteit Rotterdam fused into the current Erasmus MC. \"Big, white, square.. I get it\" said a local about the nickname for this building.",
-            "Binnenrotte</br> On tuesdays and saturdays a market is held here. Besides that the square is also widely used for events. Excavations showed that the first civilizations settled here near the river de Rotte, this started the city Rotterdam. The Binnenrotte is a big, open space where the name \"landingsbaan\" comes from.",
-            "Markthal</br> This buyers heaven accommodates delicacies, fresh produce, all kinds of diners, a supermarket and a liqour store. Although most tourists come for something else. Cameras snap pictures without pause and all of them aimed at the ceiling of the iconic Martkhal. Locals speak proudly about their 'sixtijnse kapel'.",
-            "Centrale Bibliotheek</br> The yellow tubes on the outside of this building made the library's nickname. What does it make you think of? Just like other buildings in Rotterdam, it carries a quote said by a famous Rotterdammer on its facade: \u201CHeel de aarde is je vaderland\u201D wrote noone less than Desiderius Erasmus. Visit the Erasmus Experience in the library if you want to learn more about this great thinker.",
-            "Beurstraverse</br> This deepened shopping discrict runs under the Coolsingel. The awkward staircase might look pretty, but they aren't very easy to traverse. Big brands all have a place here.",
-            "De Blaaktoren Woontoren.</br> Better known under the locals as the 'potlood'.",
-            "'De gestileerde bloem'</br> This nameless artwork is a gift to the city of Rotterdam by the Bijenkorf. It has received the title 'de gestileerde bloem' later on. Some locals just plainly call it 'het ding'. Others see a 'spoorwegongeluk'.",
+            "Mail the SSC with your personal studentmail to:ssc@hr.nl",
+            "Different study programs and information can be found by clicking continue",
+            "Hofplein Fountain</br> This fountain in the middle of traffic square \u2018Hofplein\u2019 was presented to the city by shipping company Van Ommeren when the company existed 100 years. The fountain is nicknamed FLIPSPUIT (Flip\u2019s fountainhead) after Philip (Flip) van Ommeren.</br>The fountain has become the place where the people of Rotterdam celebrate their big successes, like the championship of Feyenoord or a victorious game by the Dutch national soccerteam. Supporters tend to jump into the fountain to celebrate.",
+            "Central Station</br> The current station was officially opened on March 13 2014 by king Willem-Alexander. The design of the station won multiple international awards. The locals, however, gave is a less flattering name. It made them think of the aluminium tray in which they serve their infamous fast food invention: KAPSALON (dish with shawarma, fries and cheese).",
+            "Feyenoord Stadium</br> Not one, not two, but three professional soccer clubs represent the city of Rotterdam. Feyenoord Stadium is located on the south bank. Supporters lovingly call it the \u2018KUIP\u2019 (the tub), because that\u2019s what is looks like from a bird\u2019s eye view. ",
+            "Corporate Entity (sculpture)</br> This artwork used to adorn the entrance of one of the locations of the Rotterdam University of Applied Sciences (Location Museumpark), then headquarters of Unilever. When the multinational moved to a new building the sculpture, often referred to as SCHROOTHOOP (heap of scrap), moved with them.",
+            "Erasmus Bridge</br> The inhabitants of Rotterdam invented more than 20 nicknames for their beloved iconic bridge. The ZWAAN (the swan) is the most common one.",
+            "Blaak Station</br> The architect was asked to make sure travelers would easily find their way to entrance of the underground train and subway station. That resulted in a remarkable construction that shows some likeness with a flying saucer. Others recognize a withered sunflower or\u2026and you need some more imagination for this one: a FLUITKETEL (tea kettle).",
+            "Erasmus Medical Centre</br> Several smaller hospitals and clinics merged with the faculty of medicine of the Erasmus University to become the Erasmus Medical Centre. When you look at it from a distance it looks like a big, white, square tower. Some call it the refrigerator or KOELKAST.",
+            "Binnenrotte Square</br> A market with fresh produce is held every Tuesday and Saturday. This square also hosts many events during the year. Archeological excavations on this spot have found the earliest settlements on the riverside of the Rotte, the beginning of Rotterdam. The Binnenrotte is a big open space. That gave it its nickname LANDINGSBAAN (airport runway).",
+            "Market Hall</br> This paradise of fresh products, delicacies and food stands sees a lot of tourists, many of whom come to see one thing: the ceiling. The immense artwork gave the building its nickname SIXTIJNSE KAPEL (Sixteen Chapel) ",
+            "Central Library</br> The remarkeble yellow tubes on the outside of this building make people think more of a GASFABRIEK (gas factory) than a library. Like many other buildings in town the exterior of the building is decorated with a quote form a famous inhabitant, the humanist thinker Desiderius Erasmus: \u201CHeel de aarde is je vaderland\u201D (The whole world is your homeland). You can visit the Erasmus Experience to learn more about him. ",
+            "Beurstraverse</br> A shopping alley below streetlevel that crosses the Coolsingel. Nobody knows its real name. People just call it the KOOPGOOT (buying gutter)\u2026",
+            "Blaak Tower</br> Residential towel near Blaak Station. Do you understand why people call it the Pencil (POTLOOD)?",
+            "Stylized Flower (Sculpture)</br> This originally nameless artwork was a gift of the Bijenkorf (Mall) to the city. It was later given the title \u2018Stylized Flower\u2019. Some locals just call it the \u2018Thing\u2019 of, more original: the traincrash (SPOORWEGONGELUK) ",
             "My name is Cees Jansen. At a student association you'll make friends for life. Each association has their own culture. Our association is the oldest of Rotterdam and has existed for over a hundred years!",
             "We organise the best parties in our society. I also have a very fun club with which I study and do all kinds of things. During the introduction associations go through the entire city to promote themselves for first years. I will now head out to my own society \uD83D\uDE09. Love, Zo\u00EB",
             "Hi, I am Loes. I like studying together with an association. Of course I also have joined to relax, get to know people, etc. Studying en being a member go hand in hand. Well, I'm off to \"Koinoonia\"",
@@ -1991,16 +2005,16 @@ var Languages = (function () {
             "Question 2: \"Time for a party\"",
             "Question 4: \"RKVV\"",
             "Question 3: \"A round?\"",
-            "Click on the card to put a dot on the card, click on the dot to remove it. Eventually the outcome must be entered in the notebook!</br> Hint: It is only the first dutch word you see after you entered everything.",
-            "Fancy a party? But do I even have time? Now that you're a student you will be busy with learning. Do you have time to do something fun? You do want to enjoy your time as a student, right? How are other students doing this?\n                    </br>Imagine: You go to bed at eleven o'clock and wake at seven to go back to school. On the weekends you usually go to bed a little later, but you also sleep just as much as usual. You have 0:45 hours of traveltime from your home to school, half an hour to get dressed and eat breakfast. You have lessons on monday to thursday from 8:30 to 10:10 and you have another lesson from 12:10 to 13:50. On friday you also have the same lessons, but those are online throuhg Teams. Apart from your lessons you need about 4 hours for your homework. You usually do this efficiently between lessons, so you have less to do in the weekends and at night. You cook your own food, takes half an hour and you've eaten that in 20 minutes. Each week you work for 14 hours in a coffeebar in town. You don't want to, but you lose about one and a half hour each day to social media. Oh and you call your parents (or grandpa/grandma/aunts) for about 30 mins each week.\n                    </br></br>How much time do you have left for relaxation?\n                    </br></br>On avarage ... hours a day.",
+            "Click on the card to put a dot on the card, click on the dot to remove it. Eventually the outcome must be entered in the notebook!</br>",
+            "Fancy a party? Sure, but\u2026do you have the time?</br></br>Now that you're a student you will be busy studying. Do you even have time to do something fun?</br></br>Imagine: You go to bed at eleven o'clock and wake at seven to go back to school. On the weekends you usually go to bed a little later, but you're total sleep is as long as usual. You have 0:45 hours of travel time to school, and you need half an hour to get dressed and eat breakfast. You have classes from Monday to Thursday from 8:30 to 10:10 and you have another class from 12:10 to 13:50. On Friday you have the same lessons, but those are taught online through Microsoft Teams. Apart from your classes you need about 4 hours to study. You usually do this efficiently in between classes, so you have more free time at night and during the weekend. You make your own food: this takes half an hour and you finish dinner in 20 minutes. Each week you also work 14 hours in a coffee bar in town. You talk to your parents (or grandpa/grandma/aunts) on the phone for about 30 mins each week.\u202FOh, and you spend about one and a half hour each day on social media...</br></br>How much time do you have left to relax?</br></br>On avarage ... hours a day.",
             "How much money do I have left for a round?",
             "Make an appointment here",
             "Counselor",
             "Dean",
             "Put the right color with the right person.",
-            "Need help? Don't let it sit! You need to be here: Help with study. Hogeschool Rotterdam offers all kinds of one-on-one guidance and help. But....all doors are locked. Crack the lettercode to open all doors, so you can use all our guidance!",
+            "Need help? Talk to someone about it! You need to be here: Help with study. Hogeschool Rotterdam offers all kinds of one-on-one guidance and help. But....all doors are locked. Crack the lettercode to open all doors, so you can use all our guidance!",
             "The puzzle is solved",
-            "There is the peercoach",
+            "Here comes the peer coach!",
             "Continue",
             "sometimes it's not about what you can hear, but about what you can see",
             "Are you sure you want to use hint 1? This hint will help you with the puzzle for the 'Peercoach' door, but als gives minus points for your score. (less points is better) \n \n this pop-up will only show once. Next time you click on the envelop the hint will be used.",
@@ -2008,11 +2022,11 @@ var Languages = (function () {
             "Are you sure you want to use hint 2? This hint will help you with the puzzle for the 'Dean' door, but als gives minus points for your score. (less points is better) \n \n this pop-up will only show once. Next time you click on the envelop the hint will be used.",
             "Interviews are a numbers game sometimes.",
             "Are you sure you want to use hint 3? This hint will help you with the puzzle for the 'Student aan zet' door, but als gives minus points for your score. (less points is better) \n \n this pop-up will only show once. Next time you click on the envelop the hint will be used.",
-            "<b>Incorrect!</b>This is not the location of your course.<br>",
+            "<b>Incorrect!</b>This is not the location of your study program.<br>",
             "Congratulations",
-            "You passed this act",
-            "You can now take a break<br>Durig this break you will not be timed<br>Press the button to begin act ",
-            "Begin act "
+            "You passed this level",
+            "You can now take a break<br>Durig this break you will not be timed<br>Press the button to begin level ",
+            "Begin level "
         ];
         this.dutch = ["Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding",
             "Kies opleiding",
@@ -2056,7 +2070,7 @@ var Languages = (function () {
             "Vraag 2: \"Tijd voor een feestje\"",
             "Vraag 4: \"RKVV\"",
             "Vraag 3: \"Rondje?\"",
-            "Klik op de aansichtkaart om een stip te zetten, klik op de stip om deze weer weg te halen. Uiteindelijk komt er een uitkomst vul deze in in het notitieboekje!</br> Hint: het is alleen het eerste woord wat je krijgt nadat je alles in hebt gevuld.",
+            "Klik op de aansichtkaart om een stip te zetten, klik op de stip om deze weer weg te halen. Uiteindelijk komt er een uitkomst vul deze in in het notitieboekje!</br>",
             "Zin in een feestje? Maar heb ik daar wel tijd voor? Nu je student wordt zal je het razend druk gaat krijgen met je studie. Heb je eigenlijk nog wel tijd om iets leuks te doen? Je wil toch ook een beetje genieten van je studententijd? Hoe doen andere studenten dat eigenlijk?\n                    </br>Stel: Je gaat om elf uur naar bed en je staat om zeven uur weer op om naar de hogeschool te gaan. In het weekend ga je vaak wat later naar bed, maar slaap je ook net zoveel uit. Je hebt 0:45 uur reistijd van huis naar school, een half uur om aan te kleden en te eten 's ochtend. Op school heb je van maandag t/m donderdag les van 8.30 uur tot 10:10 uur en je hebt les 12:10 tot 13.50 uur. Vrijdag heb je ook les, maar die volg je online via Teams. Naast je lessen heb je nog ongeveer 4 uur nodig voor je huiswerk. Dat doe je vaak effici\u00EBnt tussen de lessen door, hoef je minder 's avonds en in het weekend te doen. Je kookt je eigen eten, kost een half uurtje en tja, binnen 20 minuten heb je dat op. Per week werk je gemiddeld 14 uur in een leuk koffietentje in de stad. Je wilt het eigenlijk niet, maar aan social media ben je bijna anderhalf uur per dag kwijt. Oh ja, en je belt natuurlijk elke week een keer met je ouders (of oma/opa/tante) voor zo'n 30 min. \n                    </br></br>Hoeveel tijd hou jij over voor ontspanning?\n                    </br></br>Gemiddeld ... uur per dag.",
             "Hoeveel geld houd ik over voor een rondje?",
             "Maak hier een afspraak",
@@ -2075,9 +2089,9 @@ var Languages = (function () {
             "Weet je zeker dat je hint 3 wilt gebruiken? Deze hint helpt bij de puzzel van de 'Student aan zet' deur, maar telt ook extra punten op bij je score. (minder punten is beter) \n \n deze pop-up komt maar 1 keer. De volgende keer dat je op de envelop klikt wordt de hint gebruikt.",
             "<b>Incorrect!</b>Dit is niet de locatie van jouw opleiding<br>",
             "Gefeliciteerd",
-            "Je hebt deze akte gehaald",
-            "Je kunt nu even pauze nemen<br>Tijdens de pauze staat de tijd stil<br>Druk op de knop om te beginnen met akte ",
-            "Begin akte "
+            "Je hebt deze level gehaald",
+            "Je kunt nu even pauze nemen<br>Tijdens de pauze staat de tijd stil<br>Druk op de knop om te beginnen met level ",
+            "Begin level "
         ];
     }
     return Languages;
