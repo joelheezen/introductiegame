@@ -38,7 +38,7 @@ class Game{
 
     buttonPress1(){
         document.getElementsByTagName("game")[0].innerHTML = ""
-        new Act2()
+        new Act3()
         
     }
     buttonPress2(){
