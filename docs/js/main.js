@@ -900,7 +900,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url1;
-                    pinPopup.style.transform = "translate(16vw, 1vh)";
+                    pinPopup.style.transform = "translate(16vw, -2vh)";
                     pinPopup.innerHTML += text1;
                 });
                 pin1.addEventListener("mouseout", function () {
@@ -1142,18 +1142,18 @@ var Act3 = (function () {
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
-                char2.style.backgroundImage = "url(assets/Akte3/zoe.png)";
+                char2.style.backgroundImage = "url(assets/Akte3/werner.png)";
                 char2.style.backgroundSize = "100% 100%";
                 char2.style.width = "3.5vw";
                 char2.style.height = "10vh";
                 char2.style.position = "absolute";
-                char2.style.transform = "translate(25.5vw, 42vh)";
+                char2.style.transform = "translate(29.5vw, 50vh)";
                 char2.addEventListener("mouseover", function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(13vw, 23vh)";
-                    pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][34];
+                    pinPopup.style.transform = "translate(15vw, 30vh)";
+                    pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][37];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
                 });
@@ -1161,17 +1161,27 @@ var Act3 = (function () {
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
+                var line1 = document.createElement("line");
+                var line2 = document.createElement("line");
+                mapArea.appendChild(line1);
+                mapArea.appendChild(line2);
+                line1.style.width = "6.5vw";
+                line1.style.transform = "translate(23vw, 45vh) rotate(10deg)";
+                line1.style.zIndex = "3";
+                line2.style.width = "2vw";
+                line2.style.transform = "translate(29.2vw, 48.7vh) rotate(43deg)";
+                line2.style.zIndex = "3";
                 char3.style.backgroundImage = "url(assets/Akte3/loes.png)";
                 char3.style.backgroundSize = "100% 100%";
                 char3.style.width = "3.5vw";
                 char3.style.height = "10vh";
                 char3.style.position = "absolute";
-                char3.style.transform = "translate(37.6vw, 42.3vh)";
+                char3.style.transform = "translate(37.6vw, 40.3vh)";
                 char3.addEventListener("mouseover", function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(25vw, 24vh)";
+                    pinPopup.style.transform = "translate(25vw, 22vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][35];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
@@ -1185,12 +1195,12 @@ var Act3 = (function () {
                 char4.style.width = "3.5vw";
                 char4.style.height = "10vh";
                 char4.style.position = "absolute";
-                char4.style.transform = "translate(42.5vw, 42vh)";
+                char4.style.transform = "translate(40.5vw, 39vh)";
                 char4.addEventListener("mouseover", function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(30vw, 25vh)";
+                    pinPopup.style.transform = "translate(27vw, 23vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][36];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
@@ -1199,7 +1209,7 @@ var Act3 = (function () {
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
                     pinPopup.remove();
                 });
-                char5.style.backgroundImage = "url(assets/Akte3/werner.png)";
+                char5.style.backgroundImage = "url(assets/Akte3/zoe.png)";
                 char5.style.backgroundSize = "100% 100%";
                 char5.style.width = "3.5vw";
                 char5.style.height = "10vh";
@@ -1210,7 +1220,7 @@ var Act3 = (function () {
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
                     pinPopup.style.transform = "translate(8vw, 24vh)";
-                    pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][37];
+                    pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][34];
                     pinPopup.style.paddingTop = "1vh";
                     pinPopup.style.fontSize = "1.5vh";
                 });
@@ -1654,10 +1664,10 @@ var Act3 = (function () {
                 if (audioCheck == null) {
                     popup.appendChild(audio);
                     if (localStorage.getItem("language") == "dutch") {
-                        audio.src = "assets/Akte3/audio.mp3";
+                        audio.src = "assets/Akte3/Audio.mp3";
                     }
                     else {
-                        audio.src = "assets/Akte3/audio.mp3";
+                        audio.src = "assets/Akte3/Audio.mp3";
                     }
                     audio.autoplay = true;
                     audio.controls = true;

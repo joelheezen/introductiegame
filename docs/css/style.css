@@ -224,7 +224,12 @@ act1Box{
     border: none;
 }
 
-
+line{
+    border: 1px solid red;
+    height: 1px;
+    background-color: red;
+    position: absolute;
+}
 
 backgroundact2, act2background{
     position: absolute;
