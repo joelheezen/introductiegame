@@ -8,7 +8,7 @@ class Languages{
                     `Click here</a>for more information about this location.</p>`,
                     `Try again`,
                     `Go inside`,
-                    `Oh no! The door is locked and needs a special key to open. Fill in the right shapes of the key.`,
+                    `You found the location. Unfortunately, the door is still locked. Fortunately, many things are arranged online at the university. Take a look around there first and maybe you will find there the 3 shapes that make up the key together.`,
                     `Send`,
                     `Look online for shapes`,
                     `Continue`,
@@ -62,8 +62,10 @@ class Languages{
                     `<b>Incorrect!</b>This is not the location of your study program.<br>`,
                     `Congratulations`,
                     `You passed this level`,
-                    `You can now take a break<br>Durig this break you will not be timed<br>Press the button to begin level `,
-                    `Begin level `
+                    `You can now take a break<br>Durig this break you will not be timed<br>Press the button to begin act `,
+                    `Begin level `,
+                    `Click on the door to go inside.`,
+                    `Entrance`
                 ]
 
     dutch =     [   `Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding`,
@@ -74,7 +76,7 @@ class Languages{
                     `Klik hier</a>voor meer informatie over deze locattie</p>`,
                     `Probeer opnieuw`,
                     `Loop naar binnen`,
-                    `Oh nee! De deur zit dicht en heeft een specifieke sleutel nodig om gepend te worden. Vul de juisten vormen van de sleutel in.`,
+                    `Jullie hebben de locatie gevonden. Helaas blijkt de deur nog op slot te zitten... Dat schiet natuurlijk niet op! Gelukkig zijn veel zaken op de hogeschool online geregeld. Kijk daar eerst eens rond en misschien vinden jullie daar de 3 vormen die samen de sleutel maken.`,
                     `Verzenden`,
                     `Zoek online naar vormen`,
                     `Doorgaan`,
@@ -130,8 +132,10 @@ class Languages{
                     `Weet je zeker dat je hint 3 wilt gebruiken? Deze hint helpt bij de puzzel van de 'Student aan zet' deur, maar telt ook extra punten op bij je score. (minder punten is beter) \n \n deze pop-up komt maar 1 keer. De volgende keer dat je op de envelop klikt wordt de hint gebruikt.`,
                     `<b>Incorrect!</b>Dit is niet de locatie van jouw opleiding<br>`,
                     `Gefeliciteerd`,
-                    `Je hebt deze level gehaald`,
-                    `Je kunt nu even pauze nemen<br>Tijdens de pauze staat de tijd stil<br>Druk op de knop om te beginnen met level `,
-                    `Begin level `
+                    `Je hebt dit level gehaald`,
+                    `Je kunt nu even pauze nemen<br>Tijdens de pauze staat de tijd stil<br>Druk op de knop om te beginnen met akte `,
+                    `Begin level `,
+                    `Klik op de deur om naar binnen te gaan.`,
+                    `Ingang`
                 ]
 }

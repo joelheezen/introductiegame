@@ -97,7 +97,7 @@ class Act1 {
         game.appendChild(this.button1)
         this.button1.style.width = `15.1vw`
         this.button1.style.height = `7.5vh`
-        this.button1.style.transform = `translate(42.4vw, 47.9vh)`
+        this.button1.style.transform = `translate(42.4vw, 56vh)`
         this.button1.innerHTML = new Languages()[localStorage.getItem('language')][9]
         this.button1.classList.add('verzenden')
         this.button1.addEventListener("click" , () => this.shapeCheck())
