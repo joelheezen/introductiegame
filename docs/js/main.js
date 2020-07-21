@@ -308,7 +308,7 @@ var Act2 = (function () {
         this.doorName3.style.paddingTop = '0.8vh';
         this.doorName3.style.fontSize = "1vw";
         this.doorName3.style.pointerEvents = "none";
-        this.doorName3.innerHTML = "SLC";
+        this.doorName3.innerHTML = "Studieloopbaancoach";
         this.doorName4.style.width = '11.77vw';
         this.doorName4.style.height = '3.65vh';
         this.doorName4.style.transform = "translate(64.26vw, 26.6vh)";
@@ -322,9 +322,9 @@ var Act2 = (function () {
         this.doorName5.style.transform = "translate(84vw, 26.1vh)";
         this.doorName5.style.textAlign = 'center';
         this.doorName5.style.paddingTop = '1.3vh';
-        this.doorName5.style.fontSize = "1vw";
+        this.doorName5.style.fontSize = "0.75vw";
         this.doorName5.style.pointerEvents = "none";
-        this.doorName5.innerHTML = "Student aan zet";
+        this.doorName5.innerHTML = "Studentenwelzijnsadviseur";
     };
     Act2.prototype.codeInput = function () {
         var _this = this;
@@ -719,7 +719,7 @@ var Act2Room4 = (function () {
         this.video.autoplay = true;
         this.video.controls = true;
         this.signin.style.width = "15vw";
-        this.signin.style.height = "3.7vh";
+        this.signin.style.height = "auto";
         this.signin.style.transform = "translate(8vw,80vh)";
         this.signin.style.backgroundColor = "#ffb911";
         this.signin.style.borderRadius = "20px";
@@ -829,6 +829,10 @@ var Act3 = (function () {
             game.innerHTML = "";
             var background = document.createElement("backgroundAct3");
             game.appendChild(background);
+            if (localStorage.getItem("language") == "english") {
+                background.style.backgroundImage = "url(assets/Akte3/Act3Eng.png)";
+            }
+            new popup("Jullie gaan de stad en het studentenleven verkennen. Wat weten jullie al over de belangrijkste Rotterdamse iconen? Waar kan je als student sporten? Heb je eigenlijk wel tijd voor een feestje of een leuke vereniging naast je studie? Hou je bevindingen bij in het notitieboekje!", 40, 10, 20);
             var button1 = document.createElement("button");
             var button2 = document.createElement("button");
             var button3 = document.createElement("button");
@@ -839,7 +843,9 @@ var Act3 = (function () {
             var button8 = document.createElement("button");
             game.appendChild(button1);
             game.appendChild(button2);
-            game.appendChild(button3);
+            if (localStorage.getItem("language") == "dutch") {
+                game.appendChild(button3);
+            }
             game.appendChild(button4);
             game.appendChild(button5);
             game.appendChild(button6);
@@ -1146,11 +1152,13 @@ var Act3 = (function () {
                 var char3 = document.createElement("char");
                 var char4 = document.createElement("char");
                 var char5 = document.createElement("char");
-                mapArea.appendChild(char1);
-                mapArea.appendChild(char2);
-                mapArea.appendChild(char3);
-                mapArea.appendChild(char4);
-                mapArea.appendChild(char5);
+                if (localStorage.getItem("language") == "dutch") {
+                    mapArea.appendChild(char1);
+                    mapArea.appendChild(char2);
+                    mapArea.appendChild(char3);
+                    mapArea.appendChild(char4);
+                    mapArea.appendChild(char5);
+                }
                 char1.style.backgroundImage = "url(assets/Akte3/cees.png)";
                 char1.style.backgroundSize = "100% 100%";
                 char1.style.width = "3.5vw";
@@ -1343,7 +1351,7 @@ var Act3 = (function () {
                 text3.style.transform = "translate(12.3vw, 39.8vh)";
                 text3.style.fontSize = "2.5vh";
                 text3.style.position = "absolute";
-                text3.innerHTML = new Languages()[localStorage.getItem('language')][40];
+                text3.innerHTML = new Languages()[localStorage.getItem('language')][41];
                 input3.style.width = "24.5vw";
                 input3.style.height = "3vh";
                 input3.style.transform = "translate(12.5vw, 45.8vh)";
@@ -1359,7 +1367,9 @@ var Act3 = (function () {
                 text4.style.transform = "translate(12.3vw, 57.2vh)";
                 text4.style.fontSize = "2.5vh";
                 text4.style.position = "absolute";
-                text4.innerHTML = new Languages()[localStorage.getItem('language')][41];
+                if (localStorage.getItem("language") == "dutch") {
+                    text4.innerHTML = new Languages()[localStorage.getItem('language')][40];
+                }
                 input4.style.width = "24.5vw";
                 input4.style.height = "3vh";
                 input4.style.transform = "translate(12.5vw, 63.2vh)";
@@ -1370,6 +1380,9 @@ var Act3 = (function () {
                 input4.style.backgroundColor = "transparent";
                 input4.value = input4Text;
                 input4.id = "note4";
+                if (localStorage.getItem("language") == "english") {
+                    input4.style.display = "none";
+                }
                 if (correct1 == 1) {
                     input1.style.color = "green";
                     input1.style.borderColor = "black";
@@ -1388,14 +1401,27 @@ var Act3 = (function () {
                 }
                 input1.addEventListener("keyup", function () {
                     var note1 = document.getElementById("note1").value.toLowerCase();
-                    if (note1 == "bibliotheek") {
-                        input1.style.color = "green";
-                        input1.style.borderColor = "black";
-                        correct1 = 1;
+                    if (localStorage.getItem("language") == "dutch") {
+                        if (note1 == "rotterdam staat te springen") {
+                            input1.style.color = "green";
+                            input1.style.borderColor = "black";
+                            correct1 = 1;
+                        }
+                        else {
+                            input1.style.color = "black";
+                            correct1 = 0;
+                        }
                     }
                     else {
-                        input1.style.color = "black";
-                        correct1 = 0;
+                        if (note1 == "rotterdam make it happen") {
+                            input1.style.color = "green";
+                            input1.style.borderColor = "black";
+                            correct1 = 1;
+                        }
+                        else {
+                            input1.style.color = "black";
+                            correct1 = 0;
+                        }
                     }
                 });
                 input2.addEventListener("keyup", function () {
@@ -1412,39 +1438,28 @@ var Act3 = (function () {
                 });
                 input3.addEventListener("keyup", function () {
                     var note3 = document.getElementById("note3").value.toLowerCase();
-                    if (localStorage.getItem("language") == "dutch") {
-                        if (note3 == "word lid") {
-                            input3.style.color = "green";
-                            input3.style.borderColor = "black";
-                            correct3 = 1;
-                        }
-                        else {
-                            input3.style.color = "black";
-                            correct3 = 0;
-                        }
+                    if (note3 == "24,20") {
+                        input3.style.color = "green";
+                        input3.style.borderColor = "black";
+                        correct3 = 1;
                     }
                     else {
-                        if (note3 == "become a member") {
-                            input3.style.color = "green";
-                            input3.style.borderColor = "black";
-                            correct3 = 1;
-                        }
-                        else {
-                            input3.style.color = "black";
-                            correct3 = 0;
-                        }
+                        input3.style.color = "black";
+                        correct3 = 0;
                     }
                 });
                 input4.addEventListener("keyup", function () {
                     var note4 = document.getElementById("note4").value.toLowerCase();
-                    if (note4 == "24,20") {
-                        input4.style.color = "green";
-                        input4.style.borderColor = "black";
-                        correct4 = 1;
-                    }
-                    else {
-                        input4.style.color = "black";
-                        correct4 = 0;
+                    if (localStorage.getItem("language") == "dutch") {
+                        if (note4 == "word lid") {
+                            input4.style.color = "green";
+                            input4.style.borderColor = "black";
+                            correct4 = 1;
+                        }
+                        else {
+                            input4.style.color = "black";
+                            correct4 = 0;
+                        }
                     }
                 });
                 popup.addEventListener("keyup", function () {
@@ -1457,13 +1472,13 @@ var Act3 = (function () {
                     localStorage.setItem("note3Save", note3);
                     localStorage.setItem("note4Save", note4);
                     if (localStorage.getItem("language") == "dutch") {
-                        if (note1 == "bibliotheek" && note2 == "5" && note3 == "word lid" && note4 == "24,20") {
+                        if (note1 == "rotterdam staat te springen" && note2 == "5" && note3 == "24,20" && note4 == "word lid") {
                             game.innerHTML = "";
                             new Ending;
                         }
                     }
                     else {
-                        if (note1 == "bibliotheek" && note2 == "5" && note3 == "become a member" && note4 == "24,20") {
+                        if (note1 == "rotterdam make it happen" && note2 == "5" && note3 == "24,20") {
                             game.innerHTML = "";
                             new Ending;
                         }
@@ -1639,7 +1654,12 @@ var Act3 = (function () {
                     button.remove();
                     popup.remove();
                 });
-                popup.style.backgroundImage = "url(assets/Akte3/vidiVici.png)";
+                if (localStorage.getItem("language") == "dutch") {
+                    popup.style.backgroundImage = "url(assets/Akte3/vidiVici.png)";
+                }
+                else {
+                    popup.style.backgroundImage = "url(assets/Akte3/risa.png)";
+                }
                 popup.style.backgroundSize = "100% 100%";
                 popup.style.width = "25vw";
                 popup.style.height = "auto";
@@ -1669,7 +1689,12 @@ var Act3 = (function () {
                 var audioCheck = document.getElementsByTagName("audio")[0];
                 if (audioCheck == null) {
                     popup.appendChild(audio);
-                    audio.src = "assets/Akte3/audio.mp3";
+                    if (localStorage.getItem("language") == "dutch") {
+                        audio.src = "assets/Akte3/audio.mp3";
+                    }
+                    else {
+                        audio.src = "assets/Akte3/audio.mp3";
+                    }
                     audio.autoplay = true;
                     audio.controls = true;
                     audio.style.width = "100%";
@@ -1804,7 +1829,7 @@ var Game = (function () {
         button1.style.width = "10vw";
         button1.style.height = "10vh";
         button1.style.transform = "translate(90vw, 10vh)";
-        button1.innerHTML = "joel";
+        button1.innerHTML = "act2";
         button1.onclick = this.buttonPress1;
         var button2 = document.createElement("button");
         game.appendChild(button2);
@@ -1943,10 +1968,10 @@ var Languages = (function () {
             "Erasmus Medische Centrum</br> On the 1st of june 2002 the Dijkzigtziekenhuis, the Sophia Kinderziekenhuis, de Daniel den Hoedkliniek and the \"Faculteit der Geneeskunde en Gezondheidswetenschappen\" of the Erasmus Universiteit Rotterdam fused into the current Erasmus MC. \"Big, white, square.. I get it\" said a local about the nickname for this building.",
             "Binnenrotte</br> On tuesdays and saturdays a market is held here. Besides that the square is also widely used for events. Excavations showed that the first civilizations settled here near the river de Rotte, this started the city Rotterdam. The Binnenrotte is a big, open space where the name \"landingsbaan\" comes from.",
             "Markthal</br> This buyers heaven accommodates delicacies, fresh produce, all kinds of diners, a supermarket and a liqour store. Although most tourists come for something else. Cameras snap pictures without pause and all of them aimed at the ceiling of the iconic Martkhal. Locals speak proudly about their 'sixtijnse kapel'.",
-            "Centrale Bibliotheek</br> Aan de opvallende gele buizen aan de buitenkant van dit gebouw dankt de bibliotheek haar bijnaam. Waar doet het jou aan denken? Net als meer gebouwen in Rotterdam, draagt de bibliotheek een citaat van een beroemde Rotterdammer op de gevel: \u201CHeel de aarde is je vaderland\u201D schreef niemand minder dan Desiderius Erasmus. Bezoek ook is de Erasmus Experience in de bibliotheek als je meer over deze grote denker wil leren.",
-            "Beurstraverse</br> Deze verdiepte winkelstraat loopt onder de Coolsingel door. De onhandige trappen ogen misschien mooi, maar lopen voor geen meter! Grote ketens hebben hier allemaal een plek.",
-            "De Blaaktoren Woontoren.</br> Voor Rotterdammers beter bekend als het 'potlood'.",
-            "'De gestileerde bloem'</br> Dit naamloze kunstwerk is een geschenk van de Bijenkorf aan de stad Rotterdam. Het heeft later de titel \u2018de gestileerde bloem\u2019 gekregen. Sommige Rotterdammers noemen het gewoonweg \u2018het ding\u2019. Anderen zien er een spoorwegongeluk in.",
+            "Centrale Bibliotheek</br> The yellow tubes on the outside of this building made the library's nickname. What does it make you think of? Just like other buildings in Rotterdam, it carries a quote said by a famous Rotterdammer on its facade: \u201CHeel de aarde is je vaderland\u201D wrote noone less than Desiderius Erasmus. Visit the Erasmus Experience in the library if you want to learn more about this great thinker.",
+            "Beurstraverse</br> This deepened shopping discrict runs under the Coolsingel. The awkward staircase might look pretty, but they aren't very easy to traverse. Big brands all have a place here.",
+            "De Blaaktoren Woontoren.</br> Better known under the locals as the 'potlood'.",
+            "'De gestileerde bloem'</br> This nameless artwork is a gift to the city of Rotterdam by the Bijenkorf. It has received the title 'de gestileerde bloem' later on. Some locals just plainly call it 'het ding'. Others see a 'spoorwegongeluk'.",
             "My name is Cees Jansen. At a student association you'll make friends for life. Each association has their own culture. Our association is the oldest of Rotterdam and has existed for over a hundred years!",
             "We organise the best parties in our society. I also have a very fun club with which I study and do all kinds of things. During the introduction associations go through the entire city to promote themselves for first years. I will now head out to my own society \uD83D\uDE09. Love, Zo\u00EB",
             "Hi, I am Loes. I like studying together with an association. Of course I also have joined to relax, get to know people, etc. Studying en being a member go hand in hand. Well, I'm off to \"Koinoonia\"",
@@ -1954,8 +1979,8 @@ var Languages = (function () {
             "NSR is the biggest christian association in Rotterdam. We are located on the Eendrachtsplein. Compared to all RKvV-associations we are the youngest. Yet we've existed since 1987! We combine friendship, insight and conviviality. Stop by to get to know us! Greetings, Werner",
             "Question 1: \"icon of Rotterdam\"",
             "Question 2: \"Time for a party\"",
-            "Question 3: \"RKVV\"",
-            "Question 4: \"A round?\"",
+            "Question 4: \"RKVV\"",
+            "Question 3: \"A round?\"",
             "Click on the card to put a dot on the card, click on the dot to remove it. Eventually the outcome must be entered in the notebook!</br> Hint: It is only the first dutch word you see after you entered everything.",
             "Fancy a party? But do I even have time? Now that you're a student you will be busy with learning. Do you have time to do something fun? You do want to enjoy your time as a student, right? How are other students doing this?\n                    </br>Imagine: You go to bed at eleven o'clock and wake at seven to go back to school. On the weekends you usually go to bed a little later, but you also sleep just as much as usual. You have 0:45 hours of traveltime from your home to school, half an hour to get dressed and eat breakfast. You have lessons on monday to thursday from 8:30 to 10:10 and you have another lesson from 12:10 to 13:50. On friday you also have the same lessons, but those are online throuhg Teams. Apart from your lessons you need about 4 hours for your homework. You usually do this efficiently between lessons, so you have less to do in the weekends and at night. You cook your own food, takes half an hour and you've eaten that in 20 minutes. Each week you work for 14 hours in a coffeebar in town. You don't want to, but you lose about one and a half hour each day to social media. Oh and you call your parents (or grandpa/grandma/aunts) for about 30 mins each week.\n                    </br></br>How much time do you have left for relaxation?\n                    </br></br>On avarage ... hours a day.",
             "How much money do I have left for a round?",
@@ -2006,12 +2031,12 @@ var Languages = (function () {
             "Erasmusbrug</br> De Erasmusbrug is een verhaal apart en heeft wel meer dan 20 bijnamen, waaronder \u2018de Zwaan\u2019, \u2018de Harp\u2019 en 'de Wipkip\u2019. Toch is \u2018de Zwaan\u2019 de meest gebruikte bijnaam.",
             "Station Blaak</br> De opdracht die de architect had bij het ontwerpen van het station was dat er voldoende ori\u00EBntatiepunten moesten zijn voor de reizigers. Dit is ook de reden dat de architect een opvallende constructie boven de grond maakte, zodat het station meteen opvalt en te herkennen is. Het ontwerp lijkt een beetje op een vliegende schotel. Veel mensen noemen het ook een verwelkte zonnebloem of fluitketel. Voor die laatste bijnaam moet je wel iets meer fantasie hebben.. ",
             "Erasmus Medische Centrum</br> Op 1 juni 2002 fuseerden het Dijkzigtziekenhuis, het Sophia Kinderziekenhuis, de Daniel den Hoedkliniek en de \"Faculteit der Geneeskunde en Gezondheidswetenschappen\" van de Erasmus Universiteit Rotterdam tot het huidige Erasmus MC. \u201CGroot, wit, vierkant\u2026. Ik begrijp het wel\u201D zei een Rotterdammer over de bijnaam van dit gebouw.",
-            "Binnenrotte</br> On tuesdays and saturdays a market is held here. Besides that the square is also widely used for events. Excavations showed that the first civilizations settled here near the river de Rotte, this started the city Rotterdam. The Binnenrotte is a big, open space where the name \"landingsbaan\" comes from.",
+            "Binnenrotte</br> Hier wordt op dinsdag en zaterdag markt gehouden. Daarnaast wordt het plein ook veelvuldig gebruikt voor evenementen. Opgravingen hebben aangetoond dat de vroegste nederzettingen aan de rivier de Rotte hier het begin van de stad Rotterdam hebben ingeluid. De Binnenrotte is een grote, open ruimte en daar is ook de bijnaam \u2018Landingsbaan\u2019 van afgeleid.",
             "Markthal</br> Deze koophemel herbergt delicatessen, verse producten, allerlei eettentjes, een supermarkt en slijterij. Toch komen de meeste toeristen voor iets anders. Camera\u2019s klikken onafgebroken en zijn allemaal gericht op het plafond van de iconische Markthal. Rotterdammers spreken trots over hun \u2018Sixtijnse Kapel\u2019.",
-            "Centrale Bibliotheek</br> The yellow tubes on the outside of this building made the library's nickname. What does it make you think of? Just like other buildings in Rotterdam, it carries a quote said by a famous Rotterdammer on its facade: \u201CHeel de aarde is je vaderland\u201D wrote noone less than Desiderius Erasmus. Visit the Erasmus Experience in the library if you want to learn more about this great thinker.",
-            "Beurstraverse</br> This deepened shopping discrict runs under the Coolsingel. The awkward staircase might look pretty, but they aren't very easy to traverse. Big brands all have a place here.",
-            "De Blaaktoren Woontoren.</br> Better known under the locals as the 'potlood'",
-            "'De gestileerde bloem'</br> This nameless artwork is a gift to the city of Rotterdam by the Bijenkorf. It has received the title 'de gestileerde bloem' later on. Some locals just plainly call it 'het ding'. Others see a 'spoorwegongeluk'.",
+            "Centrale Bibliotheek</br> Aan de opvallende gele buizen aan de buitenkant van dit gebouw dankt de bibliotheek haar bijnaam. Waar doet het jou aan denken? Net als meer gebouwen in Rotterdam, draagt de bibliotheek een citaat van een beroemde Rotterdammer op de gevel: \u201CHeel de aarde is je vaderland\u201D schreef niemand minder dan Desiderius Erasmus. Bezoek ook is de Erasmus Experience in de bibliotheek als je meer over deze grote denker wil leren.",
+            "Beurstraverse</br> Deze verdiepte winkelstraat loopt onder de Coolsingel door. De onhandige trappen ogen misschien mooi, maar lopen voor geen meter! Grote ketens hebben hier allemaal een plek.",
+            "De Blaaktoren Woontoren.</br> Voor Rotterdammers beter bekend als het 'potlood'.",
+            "'De gestileerde bloem'</br> Dit naamloze kunstwerk is een geschenk van de Bijenkorf aan de stad Rotterdam. Het heeft later de titel \u2018de gestileerde bloem\u2019 gekregen. Sommige Rotterdammers noemen het gewoonweg \u2018het ding\u2019. Anderen zien er een spoorwegongeluk in.",
             "Mijn naam is Cees Jansen. Bij een studentenvereniging maak je vrienden voor het leven. Elke vereniging heeft een eigen cultuur. Onze vereniging is de oudste van Rotterdam en bestaat al meer dan 100 jaar!",
             "Bij ons op de soci\u00EBteit organiseren we de mooiste feesten. Ook heb ik een hele leuke club waarmee ik samen studeer en allerlei dingen onderneem. Tijdens de introductie gaan verenigingen trouwens de hele stad door om zichzelf te promoten onder eerstejaars. Ik ga zo maar weer eens naar mijn eigen soci\u00EBteit \uD83D\uDE09. Liefs, Zo\u00EB ",
             "Hi, Ik ben Loes. Ik vind het leuk om samen op de vereniging te studeren. Natuurlijk kom ik er ook om te ontspannen, mensen te leren kennen, etc. Studeren en lid zijn gaat goed samen. Nou, ik ga maar weer eens. Op naar \"Koinoonia\".",
@@ -2019,8 +2044,8 @@ var Languages = (function () {
             "NSR is de grootste christelijke vereniging van Rotterdam. We zitten op het Eendrachtsplein. Van alle RKvV-verenigingen zijn we de jongste. Toch bestaan we al weer sinds 1987! We combineren vriendschap, verdieping en gezelligheid. Kom eens langs om kennis te maken! Groetjes, Werner",
             "Vraag 1: \"Rotterdamse icoon\"",
             "Vraag 2: \"Tijd voor een feestje\"",
-            "Vraag 3: \"RKVV\"",
-            "Vraag 4: \"Rondje?\"",
+            "Vraag 4: \"RKVV\"",
+            "Vraag 3: \"Rondje?\"",
             "Klik op de aansichtkaart om een stip te zetten, klik op de stip om deze weer weg te halen. Uiteindelijk komt er een uitkomst vul deze in in het notitieboekje!</br> Hint: het is alleen het eerste woord wat je krijgt nadat je alles in hebt gevuld.",
             "Zin in een feestje? Maar heb ik daar wel tijd voor? Nu je student wordt zal je het razend druk gaat krijgen met je studie. Heb je eigenlijk nog wel tijd om iets leuks te doen? Je wil toch ook een beetje genieten van je studententijd? Hoe doen andere studenten dat eigenlijk?\n                    </br>Stel: Je gaat om elf uur naar bed en je staat om zeven uur weer op om naar de hogeschool te gaan. In het weekend ga je vaak wat later naar bed, maar slaap je ook net zoveel uit. Je hebt 0:45 uur reistijd van huis naar school, een half uur om aan te kleden en te eten 's ochtend. Op school heb je van maandag t/m donderdag les van 8.30 uur tot 10:10 uur en je hebt les 12:10 tot 13.50 uur. Vrijdag heb je ook les, maar die volg je online via Teams. Naast je lessen heb je nog ongeveer 4 uur nodig voor je huiswerk. Dat doe je vaak effici\u00EBnt tussen de lessen door, hoef je minder 's avonds en in het weekend te doen. Je kookt je eigen eten, kost een half uurtje en tja, binnen 20 minuten heb je dat op. Per week werk je gemiddeld 14 uur in een leuk koffietentje in de stad. Je wilt het eigenlijk niet, maar aan social media ben je bijna anderhalf uur per dag kwijt. Oh ja, en je belt natuurlijk elke week een keer met je ouders (of oma/opa/tante) voor zo'n 30 min. \n                    </br></br>Hoeveel tijd hou jij over voor ontspanning?\n                    </br></br>Gemiddeld ... uur per dag.",
             "Hoeveel geld houd ik over voor een rondje?",

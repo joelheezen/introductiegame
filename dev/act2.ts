@@ -78,7 +78,7 @@ class Act2{
         this.doorName3.style.paddingTop = '0.8vh'
         this.doorName3.style.fontSize = `1vw`
         this.doorName3.style.pointerEvents = "none"
-        this.doorName3.innerHTML = "SLC"
+        this.doorName3.innerHTML = "Studieloopbaancoach"
 
         this.doorName4.style.width = '11.77vw'
         this.doorName4.style.height = '3.65vh'
@@ -94,9 +94,9 @@ class Act2{
         this.doorName5.style.transform = `translate(84vw, 26.1vh)`
         this.doorName5.style.textAlign = 'center'
         this.doorName5.style.paddingTop = '1.3vh'
-        this.doorName5.style.fontSize = `1vw`
+        this.doorName5.style.fontSize = `0.75vw`
         this.doorName5.style.pointerEvents = "none"
-        this.doorName5.innerHTML = "Student aan zet"
+        this.doorName5.innerHTML = "Studentenwelzijnsadviseur"
     }
     codeInput(){
 

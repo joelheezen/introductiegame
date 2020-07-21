@@ -28,6 +28,10 @@ class Act3{
             game.innerHTML = ""
             let background = document.createElement("backgroundAct3")
             game.appendChild(background)
+            if (localStorage.getItem("language") == "english"){
+                background.style.backgroundImage = `url(assets/Akte3/Act3Eng.png)`
+            }
+            new popup("Jullie gaan de stad en het studentenleven verkennen. Wat weten jullie al over de belangrijkste Rotterdamse iconen? Waar kan je als student sporten? Heb je eigenlijk wel tijd voor een feestje of een leuke vereniging naast je studie? Hou je bevindingen bij in het notitieboekje!" , 40, 10 , 20)
 
             let button1 = document.createElement("button")
             let button2 = document.createElement("button")
@@ -40,7 +44,9 @@ class Act3{
 
             game.appendChild(button1)
             game.appendChild(button2)
-            game.appendChild(button3)
+            if (localStorage.getItem("language") == "dutch"){
+                game.appendChild(button3)
+            }
             game.appendChild(button4)
             game.appendChild(button5)
             game.appendChild(button6)
@@ -383,13 +389,13 @@ class Act3{
                 let char3 = document.createElement("char")
                 let char4 = document.createElement("char")
                 let char5 = document.createElement("char")
-
-                mapArea.appendChild(char1)
-                mapArea.appendChild(char2)
-                mapArea.appendChild(char3)
-                mapArea.appendChild(char4)
-                mapArea.appendChild(char5)
-
+                if (localStorage.getItem("language") == "dutch"){
+                    mapArea.appendChild(char1)
+                    mapArea.appendChild(char2)
+                    mapArea.appendChild(char3)
+                    mapArea.appendChild(char4)
+                    mapArea.appendChild(char5)
+                }
                 char1.style.backgroundImage = `url(assets/Akte3/cees.png)`
                 char1.style.backgroundSize = `100% 100%`
                 char1.style.width = `3.5vw`
@@ -558,6 +564,8 @@ class Act3{
                 popup.appendChild(input2)
                 popup.appendChild(input3)
                 popup.appendChild(input4)
+               
+                
 
                 let input1Text = localStorage.getItem(`note1Save`)
                 let input2Text = localStorage.getItem(`note2Save`)
@@ -605,7 +613,7 @@ class Act3{
                 text3.style.transform = `translate(12.3vw, 39.8vh)`
                 text3.style.fontSize = `2.5vh`
                 text3.style.position = `absolute`
-                text3.innerHTML = new Languages()[localStorage.getItem('language')][40]
+                text3.innerHTML = new Languages()[localStorage.getItem('language')][41]
 
                 input3.style.width = `24.5vw`
                 input3.style.height = `3vh`
@@ -623,7 +631,9 @@ class Act3{
                 text4.style.transform = `translate(12.3vw, 57.2vh)`
                 text4.style.fontSize = `2.5vh`
                 text4.style.position = `absolute`
-                text4.innerHTML = new Languages()[localStorage.getItem('language')][41]
+                if (localStorage.getItem("language") == "dutch") {
+                    text4.innerHTML = new Languages()[localStorage.getItem('language')][40]
+                }
 
                 input4.style.width = `24.5vw`
                 input4.style.height = `3vh`
@@ -635,6 +645,9 @@ class Act3{
                 input4.style.backgroundColor = `transparent`
                 input4.value = input4Text!
                 input4.id = "note4"
+                if (localStorage.getItem("language") == "english") {
+                    input4.style.display = `none`
+                }
 
                 if (correct1 == 1){
                     input1.style.color = `green`
@@ -658,15 +671,27 @@ class Act3{
 
                 input1.addEventListener("keyup", function(){
                     let note1 = (<HTMLInputElement>document.getElementById("note1")).value.toLowerCase()
-
-                    if (note1 == `bibliotheek`){
-                        input1.style.color = `green`
-                        input1.style.borderColor = `black`
-                        correct1 = 1
+                    if (localStorage.getItem("language") == "dutch"){
+                        if (note1 == `rotterdam staat te springen`){
+                            input1.style.color = `green`
+                            input1.style.borderColor = `black`
+                            correct1 = 1
+                        }
+                        else{
+                            input1.style.color =`black`
+                            correct1 = 0
+                        }
                     }
                     else{
-                        input1.style.color =`black`
-                        correct1 = 0
+                        if (note1 == `rotterdam make it happen`){
+                            input1.style.color = `green`
+                            input1.style.borderColor = `black`
+                            correct1 = 1
+                        }
+                        else{
+                            input1.style.color =`black`
+                            correct1 = 0
+                        }
                     }
                 })
 
@@ -686,42 +711,31 @@ class Act3{
 
                 input3.addEventListener("keyup", function(){
                     let note3 = (<HTMLInputElement>document.getElementById("note3")).value.toLowerCase()
-                    if (localStorage.getItem("language") == "dutch"){
-                        if (note3 == `word lid`){
-                            input3.style.color = `green`
-                            input3.style.borderColor = `black`
-                            correct3 = 1
-                        }
-                        else{
-                            input3.style.color =`black`
-                            correct3 = 0
-                        }
+
+                    if (note3 == `24,20`){
+                        input3.style.color = `green`
+                        input3.style.borderColor = `black`
+                        correct3 = 1
                     }
                     else{
-                        if(note3 == `become a member`){
-                            input3.style.color = `green`
-                            input3.style.borderColor = `black`
-                            correct3 = 1
-                        }
-                        else{
-                            input3.style.color =`black`
-                            correct3 = 0
-                        }
+                        input3.style.color =`black`
+                        correct3 = 0
                     }
                     
                 })
 
                 input4.addEventListener("keyup", function(){
                     let note4 = (<HTMLInputElement>document.getElementById("note4")).value.toLowerCase()
-
-                    if (note4 == `24,20`){
-                        input4.style.color = `green`
-                        input4.style.borderColor = `black`
-                        correct4 = 1
-                    }
-                    else{
-                        input4.style.color =`black`
-                        correct4 = 0
+                    if (localStorage.getItem("language") == "dutch"){
+                        if (note4 == `word lid`){
+                            input4.style.color = `green`
+                            input4.style.borderColor = `black`
+                            correct4 = 1
+                        }
+                        else{
+                            input4.style.color =`black`
+                            correct4 = 0
+                        }
                     }
                 })
                 popup.addEventListener("keyup", function(){
@@ -736,13 +750,13 @@ class Act3{
                     localStorage.setItem(`note4Save`, note4)
 
                     if (localStorage.getItem("language") == "dutch"){
-                        if(note1 == "bibliotheek" && note2 == "5" && note3 == "word lid" && note4 == "24,20"){
+                        if(note1 == "rotterdam staat te springen" && note2 == "5" && note3 == "24,20" && note4 == "word lid"){
                             game.innerHTML = ""
                             new Ending
                         }
                     }
                     else{
-                        if(note1 == "bibliotheek" && note2 == "5" && note3 == "become a member" && note4 == "24,20"){
+                        if(note1 == "rotterdam make it happen" && note2 == "5" && note3 == "24,20" ){
                             game.innerHTML = ""
                             new Ending
                         }
@@ -949,7 +963,12 @@ class Act3{
                     popup.remove()
                 })
 
-                popup.style.backgroundImage = `url(assets/Akte3/vidiVici.png)`
+                if (localStorage.getItem("language") == "dutch"){
+                    popup.style.backgroundImage = `url(assets/Akte3/vidiVici.png)`
+                }
+                else{
+                    popup.style.backgroundImage = `url(assets/Akte3/risa.png)`
+                }
                 popup.style.backgroundSize = `100% 100%`
                 popup.style.width = `25vw`
                 popup.style.height = `auto`
@@ -983,7 +1002,14 @@ class Act3{
                 let audioCheck = document.getElementsByTagName("audio")[0]
                 if (audioCheck == null){
                     popup.appendChild(audio)
-                    audio.src = `assets/Akte3/audio.mp3`
+                    if (localStorage.getItem("language") == "dutch") {
+                        audio.src = `assets/Akte3/Audio.mp3`
+                    }
+                    else{
+                        audio.src = `assets/Akte3/Audio.mp3`
+                        //change to english version when we have it
+                        //also not working on github page idk why
+                    }
                     audio.autoplay = true
                     audio.controls = true
                     audio.style.width = `100%`
