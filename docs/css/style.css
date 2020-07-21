@@ -144,6 +144,32 @@ onlinePopup{
     transform:translate(31.7vw, 26.5vh);
     cursor:pointer;
 }
+.vorm1{
+    position:absolute;
+    height:10vh;
+    width:5vw;
+    transform:translate(30.9vw, 35vh);
+    cursor:pointer;
+    padding:5px;
+}
+
+.vorm2{
+    position:absolute;
+    height:10vh;
+    width:5vw;
+    transform:translate(47.5vw, 35vh);
+    cursor:pointer;
+    padding:5px;
+}
+
+.vorm3{
+    position:absolute;
+    height:10vh;
+    width:5vw;
+    transform:translate(63.8vw, 35vh);
+    cursor:pointer;
+    padding:5px;
+}
 
 wrong{
     color:red;
