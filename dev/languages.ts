@@ -136,6 +136,8 @@ class Languages{
                     `Je kunt nu even pauze nemen<br>Tijdens de pauze staat de tijd stil<br>Druk op de knop om te beginnen met akte `,
                     `Begin level `,
                     `Klik op de deur om naar binnen te gaan.`,
-                    `Ingang`
+                    `Ingang`,
+                    `Link het aantal hoeken van de vormen op de poster aan de flyer Hulp bij Studie.`,
+                    `Weet je zeker dat je hint 4 wilt gebruiken? Deze hint helpt bij de puzzel eind puzzel, maar telt ook extra punten op bij je score. (minder punten is beter) \n \n deze pop-up komt maar 1 keer. De volgende keer dat je op de envelop klikt wordt de hint gebruikt."`,
                 ]
 }

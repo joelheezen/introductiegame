@@ -418,7 +418,7 @@ var Act2 = (function () {
     };
     Act2.prototype.setHint = function () {
         new popup(new Languages()[localStorage.getItem('language')][48], 5, 84, 10);
-        new popup(new Languages()[localStorage.getItem('language')][49], 64, 75, 30);
+        new popup(new Languages()[localStorage.getItem('language')][49], 30, 40, 40);
     };
     Act2.prototype.codeEind = function () {
         var codeString = document.getElementById("input1").value +
@@ -1903,15 +1903,19 @@ var hint = (function () {
         this.hint1 = document.createElement("hinticon");
         this.hint2 = document.createElement("hinticon");
         this.hint3 = document.createElement("hinticon");
+        this.hint4 = document.createElement("hinticon");
         this.hintbox1 = document.createElement("hintbox");
         this.hintbox2 = document.createElement("hintbox");
         this.hintbox3 = document.createElement("hintbox");
+        this.hintbox4 = document.createElement("hintbox");
         this.game.appendChild(this.hint1);
         this.game.appendChild(this.hint2);
         this.game.appendChild(this.hint3);
+        this.game.appendChild(this.hint4);
         this.game.appendChild(this.hintbox1);
         this.game.appendChild(this.hintbox2);
         this.game.appendChild(this.hintbox3);
+        this.game.appendChild(this.hintbox4);
         this.hint1.style.width = "7vw";
         this.hint1.style.height = "7vh";
         this.hintbox1.style.width = "7vw";
@@ -1957,6 +1961,22 @@ var hint = (function () {
             new popup(new Languages()[localStorage.getItem('language')][58], 14, 7, 20);
             _this.hintbox3.remove();
             _this.hint3.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)';
+        });
+        this.hint4.style.width = "7vw";
+        this.hint4.style.height = "7vh";
+        this.hint4.style.transform = "translateX(22.5vw)";
+        this.hintbox4.style.width = "7vw";
+        this.hintbox4.style.height = "7vh";
+        this.hintbox4.style.transform = "translateX(22.5vw)";
+        this.hint4.addEventListener("click", function () {
+            console.log("hint4");
+            new popup(new Languages()[localStorage.getItem('language')][66], 28, 90, 44);
+            _this.hint4.remove();
+        });
+        this.hintbox4.addEventListener("click", function () {
+            new popup(new Languages()[localStorage.getItem('language')][67], 21, 7, 20);
+            _this.hintbox4.remove();
+            _this.hint4.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)';
         });
     }
     return hint;
@@ -2095,7 +2115,9 @@ var Languages = (function () {
             "Je kunt nu even pauze nemen<br>Tijdens de pauze staat de tijd stil<br>Druk op de knop om te beginnen met akte ",
             "Begin level ",
             "Klik op de deur om naar binnen te gaan.",
-            "Ingang"
+            "Ingang",
+            "Link het aantal hoeken van de vormen op de poster aan de flyer Hulp bij Studie.",
+            "Weet je zeker dat je hint 4 wilt gebruiken? Deze hint helpt bij de puzzel eind puzzel, maar telt ook extra punten op bij je score. (minder punten is beter) \n \n deze pop-up komt maar 1 keer. De volgende keer dat je op de envelop klikt wordt de hint gebruikt.\"",
         ];
     }
     return Languages;
@@ -2642,6 +2664,7 @@ var Pause = (function () {
         var message = document.createElement('pauseMessage');
         var nextButton = document.createElement('next');
         var extra = document.createElement('input');
+        var extraText = document.createElement('extraText');
         title.innerHTML = new Languages()[localStorage.getItem('language')][60];
         subTitle.innerHTML = new Languages()[localStorage.getItem('language')][61];
         message.innerHTML = new Languages()[localStorage.getItem('language')][62] + (act + 1);
@@ -2651,15 +2674,22 @@ var Pause = (function () {
         this.game.appendChild(message);
         message.appendChild(nextButton);
         message.appendChild(extra);
+        message.appendChild(extraText);
+        extraText.style.width = "auto";
+        extraText.style.height = "3.5vw";
+        extraText.style.paddingTop = "1vh";
+        extraText.style.top = "16vw";
+        extraText.style.position = "absolute";
+        extraText.innerHTML = "Oplossing Profielen Puzzel voor 20 minuten korting:";
         extra.style.width = "15vw";
         extra.style.height = "3.5vw";
         extra.style.paddingTop = "1vh";
-        extra.style.top = "17vw";
+        extra.style.top = "21.5vw";
         extra.style.left = "9.5vw";
         extra.style.position = "absolute";
         extra.style.backgroundColor = "#ffffff";
         extra.style.fontSize = "1.5vw";
-        extra.placeholder = "extra opdracht";
+        extra.placeholder = "Antwoord";
         extra.style.borderRadius = "15px";
         extra.style.textAlign = "center";
         extra.id = "extra";

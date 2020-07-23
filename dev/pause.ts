@@ -18,6 +18,7 @@ class Pause{
         let message = document.createElement('pauseMessage')
         let nextButton = document.createElement('next')
         let extra = document.createElement('input')
+        let extraText = document.createElement('extraText')
 
         title.innerHTML = new Languages()[localStorage.getItem('language')][60]
 
@@ -32,16 +33,24 @@ class Pause{
         this.game.appendChild(message)
         message.appendChild(nextButton)
         message.appendChild(extra)
+        message.appendChild(extraText)
+
+        extraText.style.width="auto"
+        extraText.style.height="3.5vw"
+        extraText.style.paddingTop="1vh"
+        extraText.style.top = "16vw"
+        extraText.style.position = "absolute"
+        extraText.innerHTML = "Oplossing Profielen Puzzel voor 20 minuten korting:"
 
         extra.style.width="15vw"
         extra.style.height="3.5vw"
         extra.style.paddingTop="1vh"
-        extra.style.top = "17vw"
+        extra.style.top = "21.5vw"
         extra.style.left = "9.5vw"
         extra.style.position = "absolute"
         extra.style.backgroundColor = "#ffffff"
         extra.style.fontSize = "1.5vw"
-        extra.placeholder = "extra opdracht"
+        extra.placeholder = "Antwoord"
         extra.style.borderRadius = "15px"
         extra.style.textAlign = "center"
         extra.id = "extra"

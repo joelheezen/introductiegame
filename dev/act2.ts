@@ -201,7 +201,7 @@ class Act2{
     }
     setHint(){
         new popup(new Languages()[localStorage.getItem('language')][48],5,84,10)
-        new popup(new Languages()[localStorage.getItem('language')][49],64,75,30)
+        new popup(new Languages()[localStorage.getItem('language')][49],30,40,40)
     }
 
     

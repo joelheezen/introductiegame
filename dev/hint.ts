@@ -4,27 +4,30 @@ class hint{
     hint1: HTMLElement = document.createElement("hinticon")
     hint2: HTMLElement = document.createElement("hinticon")
     hint3: HTMLElement = document.createElement("hinticon")
+    hint4: HTMLElement = document.createElement("hinticon")
     
     hintbox1 : HTMLElement = document.createElement("hintbox")
     hintbox2 : HTMLElement = document.createElement("hintbox")
     hintbox3 : HTMLElement = document.createElement("hintbox")
+    hintbox4 : HTMLElement = document.createElement("hintbox")
     
     constructor(){
         this.game.appendChild(this.hint1)
         this.game.appendChild(this.hint2)
         this.game.appendChild(this.hint3)
+        this.game.appendChild(this.hint4)
 
         this.game.appendChild(this.hintbox1)
         this.game.appendChild(this.hintbox2)
         this.game.appendChild(this.hintbox3)
+        this.game.appendChild(this.hintbox4)
+
 
         this.hint1.style.width = "7vw"
         this.hint1.style.height = "7vh"
 
         this.hintbox1.style.width = "7vw"
         this.hintbox1.style.height = "7vh"
-
-        //weet je het zeker toevoegen
 
         this.hint1.addEventListener("click",()=>{
             console.log("test test")
@@ -80,6 +83,27 @@ class hint{
             new popup(new Languages()[localStorage.getItem('language')][58],14,7,20)
             this.hintbox3.remove()
             this.hint3.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)'
+            
+        })
+
+        this.hint4.style.width = "7vw"
+        this.hint4.style.height = "7vh"
+        this.hint4.style.transform = "translateX(22.5vw)"
+
+        this.hintbox4.style.width = "7vw"
+        this.hintbox4.style.height = "7vh"
+        this.hintbox4.style.transform = "translateX(22.5vw)"
+
+        this.hint4.addEventListener("click",()=>{
+            console.log("hint4")
+            new popup(new Languages()[localStorage.getItem('language')][66],28,90,44)
+            this.hint4.remove()
+        })
+        
+        this.hintbox4.addEventListener("click",()=>{
+            new popup(new Languages()[localStorage.getItem('language')][67],21,7,20)
+            this.hintbox4.remove()
+            this.hint4.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)'
             
         })
         
