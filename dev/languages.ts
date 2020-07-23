@@ -108,7 +108,7 @@ class Languages{
                     `NSR is de grootste christelijke vereniging van Rotterdam. We zitten op het Eendrachtsplein. Van alle RKvV-verenigingen zijn we de jongste. Toch bestaan we al weer sinds 1987! We combineren vriendschap, verdieping en gezelligheid. Kom eens langs om kennis te maken! Groetjes, Werner`,
                     `Vraag 1: "Rotterdamse icoon"`,
                     `Vraag 2: "Tijd voor een feestje"`,
-                    `Vraag 4: "RKVV"`,
+                    `Vraag 4: "De leden van de </br>studentenverenigingen zeggen</br>samen:"`,
                     `Vraag 3: "Rondje?"`,
                     `Klik op de aansichtkaart om een stip te zetten, klik op de stip om deze weer weg te halen. Uiteindelijk komt er een uitkomst vul deze in in het notitieboekje!</br>`,
                     `Zin in een feestje? Maar heb ik daar wel tijd voor? Nu je student wordt zal je het razend druk gaat krijgen met je studie. Heb je eigenlijk nog wel tijd om iets leuks te doen? Je wil toch ook een beetje genieten van je studententijd? Hoe doen andere studenten dat eigenlijk?

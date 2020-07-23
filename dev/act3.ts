@@ -641,8 +641,9 @@ class Act3{
                 input3.id = "note3"
 
                 text4.style.width = `25vw`
-                text4.style.height = `2vh`
-                text4.style.transform = `translate(12.3vw, 57.2vh)`
+                text4.style.height = `auto`
+                text4.style.transform = `translate(12.3vw, 51.1vh)`
+                text4.style.lineHeight = `39pt`
                 text4.style.fontSize = `2.5vh`
                 text4.style.position = `absolute`
                 if (localStorage.getItem("language") == "dutch") {
@@ -651,7 +652,7 @@ class Act3{
 
                 input4.style.width = `24.5vw`
                 input4.style.height = `3vh`
-                input4.style.transform = `translate(12.5vw, 63.2vh)`
+                input4.style.transform = `translate(12.5vw, 68.8vh)`
                 input4.style.position = `absolute`
                 input4.style.border = `none`
                 input4.style.fontSize = `2.5vh`

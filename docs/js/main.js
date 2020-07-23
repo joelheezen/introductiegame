@@ -1373,8 +1373,9 @@ var Act3 = (function () {
                 input3.value = input3Text;
                 input3.id = "note3";
                 text4.style.width = "25vw";
-                text4.style.height = "2vh";
-                text4.style.transform = "translate(12.3vw, 57.2vh)";
+                text4.style.height = "auto";
+                text4.style.transform = "translate(12.3vw, 51.1vh)";
+                text4.style.lineHeight = "39pt";
                 text4.style.fontSize = "2.5vh";
                 text4.style.position = "absolute";
                 if (localStorage.getItem("language") == "dutch") {
@@ -1382,7 +1383,7 @@ var Act3 = (function () {
                 }
                 input4.style.width = "24.5vw";
                 input4.style.height = "3vh";
-                input4.style.transform = "translate(12.5vw, 63.2vh)";
+                input4.style.transform = "translate(12.5vw, 68.8vh)";
                 input4.style.position = "absolute";
                 input4.style.border = "none";
                 input4.style.fontSize = "2.5vh";
@@ -2070,7 +2071,7 @@ var Languages = (function () {
             "NSR is de grootste christelijke vereniging van Rotterdam. We zitten op het Eendrachtsplein. Van alle RKvV-verenigingen zijn we de jongste. Toch bestaan we al weer sinds 1987! We combineren vriendschap, verdieping en gezelligheid. Kom eens langs om kennis te maken! Groetjes, Werner",
             "Vraag 1: \"Rotterdamse icoon\"",
             "Vraag 2: \"Tijd voor een feestje\"",
-            "Vraag 4: \"RKVV\"",
+            "Vraag 4: \"De leden van de </br>studentenverenigingen zeggen</br>samen:\"",
             "Vraag 3: \"Rondje?\"",
             "Klik op de aansichtkaart om een stip te zetten, klik op de stip om deze weer weg te halen. Uiteindelijk komt er een uitkomst vul deze in in het notitieboekje!</br>",
             "Zin in een feestje? Maar heb ik daar wel tijd voor? Nu je student wordt zal je het razend druk gaat krijgen met je studie. Heb je eigenlijk nog wel tijd om iets leuks te doen? Je wil toch ook een beetje genieten van je studententijd? Hoe doen andere studenten dat eigenlijk?\n                    </br>Stel: Je gaat om elf uur naar bed en je staat om zeven uur weer op om naar de hogeschool te gaan. In het weekend ga je vaak wat later naar bed, maar slaap je ook net zoveel uit. Je hebt 0:45 uur reistijd van huis naar school, een half uur om aan te kleden en te eten 's ochtend. Op school heb je van maandag t/m donderdag les van 8.30 uur tot 10:10 uur en je hebt les 12:10 tot 13.50 uur. Vrijdag heb je ook les, maar die volg je online via Teams. Naast je lessen heb je nog ongeveer 4 uur nodig voor je huiswerk. Dat doe je vaak effici\u00EBnt tussen de lessen door, hoef je minder 's avonds en in het weekend te doen. Je kookt je eigen eten, kost een half uurtje en tja, binnen 20 minuten heb je dat op. Per week werk je gemiddeld 14 uur in een leuk koffietentje in de stad. Je wilt het eigenlijk niet, maar aan social media ben je bijna anderhalf uur per dag kwijt. Oh ja, en je belt natuurlijk elke week een keer met je ouders (of oma/opa/tante) voor zo'n 30 min. \n                    </br></br>Hoeveel tijd hou jij over voor ontspanning?\n                    </br></br>Gemiddeld ... uur per dag.",
