@@ -2540,7 +2540,7 @@ var Osiris = (function () {
     Osiris.prototype.keuzeCheck = function () {
         console.log("button 1 is pressed");
         var shape1 = document.getElementById("input2").value;
-        if (shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot") {
+        if (shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot" || shape1 == "Sleutel succes" || shape1 == "sleutel succes") {
             console.log("dit klopt");
             this.keuzeRight();
         }
