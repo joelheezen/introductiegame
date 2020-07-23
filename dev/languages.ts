@@ -65,7 +65,9 @@ class Languages{
                     `You can now take a break<br>Durig this break you will not be timed<br>Press the button to begin act `,
                     `Begin level `,
                     `Click on the door to go inside.`,
-                    `Entrance`
+                    `Entrance`,
+                    `Link the number of corners of the shapes on the poster to the flyer Study Help.`,
+                    `Are you sure you want to use hint 4? This hint helps with the final puzzle, but also adds extra points to your score. (less points is better) \n \n this pop-up comes only once. The hint will be used the next time you click on the envelope.`
                 ]
 
     dutch =     [   `Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding`,
@@ -138,6 +140,6 @@ class Languages{
                     `Klik op de deur om naar binnen te gaan.`,
                     `Ingang`,
                     `Link het aantal hoeken van de vormen op de poster aan de flyer Hulp bij Studie.`,
-                    `Weet je zeker dat je hint 4 wilt gebruiken? Deze hint helpt bij de puzzel eind puzzel, maar telt ook extra punten op bij je score. (minder punten is beter) \n \n deze pop-up komt maar 1 keer. De volgende keer dat je op de envelop klikt wordt de hint gebruikt."`,
+                    `Weet je zeker dat je hint 4 wilt gebruiken? Deze hint helpt bij de eind puzzel, maar telt ook extra punten op bij je score. (minder punten is beter) \n \n deze pop-up komt maar 1 keer. De volgende keer dat je op de envelop klikt wordt de hint gebruikt."`,
                 ]
 }
