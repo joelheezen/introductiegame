@@ -1162,7 +1162,7 @@ var Act3 = (function () {
                 char1.style.backgroundImage = "url(assets/Akte3/cees.png)";
                 char1.style.backgroundSize = "100% 100%";
                 char1.style.width = "3.5vw";
-                char1.style.height = "10vh";
+                char1.style.height = "14vh";
                 char1.style.position = "absolute";
                 char1.style.transform = "translate(42.5vw, 33vh)";
                 char1.addEventListener("mouseover", function () {
@@ -1181,7 +1181,7 @@ var Act3 = (function () {
                 char2.style.backgroundImage = "url(assets/Akte3/werner.png)";
                 char2.style.backgroundSize = "100% 100%";
                 char2.style.width = "3.5vw";
-                char2.style.height = "10vh";
+                char2.style.height = "14vh";
                 char2.style.position = "absolute";
                 char2.style.transform = "translate(29.5vw, 50vh)";
                 char2.addEventListener("mouseover", function () {
@@ -1210,7 +1210,7 @@ var Act3 = (function () {
                 char3.style.backgroundImage = "url(assets/Akte3/loes.png)";
                 char3.style.backgroundSize = "100% 100%";
                 char3.style.width = "3.5vw";
-                char3.style.height = "10vh";
+                char3.style.height = "14vh";
                 char3.style.position = "absolute";
                 char3.style.transform = "translate(37.6vw, 40.3vh)";
                 char3.addEventListener("mouseover", function () {
@@ -1229,7 +1229,7 @@ var Act3 = (function () {
                 char4.style.backgroundImage = "url(assets/Akte3/donna.png)";
                 char4.style.backgroundSize = "100% 100%";
                 char4.style.width = "3.5vw";
-                char4.style.height = "10vh";
+                char4.style.height = "14vh";
                 char4.style.position = "absolute";
                 char4.style.transform = "translate(40.5vw, 39vh)";
                 char4.addEventListener("mouseover", function () {
@@ -1248,7 +1248,7 @@ var Act3 = (function () {
                 char5.style.backgroundImage = "url(assets/Akte3/zoe.png)";
                 char5.style.backgroundSize = "100% 100%";
                 char5.style.width = "3.5vw";
-                char5.style.height = "10vh";
+                char5.style.height = "14vh";
                 char5.style.position = "absolute";
                 char5.style.transform = "translate(20.5vw, 42vh)";
                 char5.addEventListener("mouseover", function () {
