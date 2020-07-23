@@ -399,7 +399,7 @@ class Act3{
                 char1.style.backgroundImage = `url(assets/Akte3/cees.png)`
                 char1.style.backgroundSize = `100% 100%`
                 char1.style.width = `3.5vw`
-                char1.style.height = `10vh`
+                char1.style.height = `14vh`
                 char1.style.position = `absolute`
                 char1.style.transform = `translate(42.5vw, 33vh)`
                 char1.addEventListener("mouseover", function(){
@@ -419,7 +419,7 @@ class Act3{
                 char2.style.backgroundImage = `url(assets/Akte3/werner.png)`
                 char2.style.backgroundSize = `100% 100%`
                 char2.style.width = `3.5vw`
-                char2.style.height = `10vh`
+                char2.style.height = `14vh`
                 char2.style.position = `absolute`
                 char2.style.transform = `translate(29.5vw, 50vh)`
                 char2.addEventListener("mouseover", function(){
@@ -453,7 +453,7 @@ class Act3{
                 char3.style.backgroundImage = `url(assets/Akte3/loes.png)`
                 char3.style.backgroundSize = `100% 100%`
                 char3.style.width = `3.5vw`
-                char3.style.height = `10vh`
+                char3.style.height = `14vh`
                 char3.style.position = `absolute`
                 char3.style.transform = `translate(37.6vw, 40.3vh)`
                 char3.addEventListener("mouseover", function(){
@@ -473,7 +473,7 @@ class Act3{
                 char4.style.backgroundImage = `url(assets/Akte3/donna.png)`
                 char4.style.backgroundSize = `100% 100%`
                 char4.style.width = `3.5vw`
-                char4.style.height = `10vh`
+                char4.style.height = `14vh`
                 char4.style.position = `absolute`
                 char4.style.transform = `translate(40.5vw, 39vh)`
                 char4.addEventListener("mouseover", function(){
@@ -493,7 +493,7 @@ class Act3{
                 char5.style.backgroundImage = `url(assets/Akte3/zoe.png)`
                 char5.style.backgroundSize = `100% 100%`
                 char5.style.width = `3.5vw`
-                char5.style.height = `10vh`
+                char5.style.height = `14vh`
                 char5.style.position = `absolute`
                 char5.style.transform = `translate(20.5vw, 42vh)`
                 char5.addEventListener("mouseover", function(){
@@ -641,8 +641,9 @@ class Act3{
                 input3.id = "note3"
 
                 text4.style.width = `25vw`
-                text4.style.height = `2vh`
-                text4.style.transform = `translate(12.3vw, 57.2vh)`
+                text4.style.height = `auto`
+                text4.style.transform = `translate(12.3vw, 51.1vh)`
+                text4.style.lineHeight = `39pt`
                 text4.style.fontSize = `2.5vh`
                 text4.style.position = `absolute`
                 if (localStorage.getItem("language") == "dutch") {
@@ -651,7 +652,7 @@ class Act3{
 
                 input4.style.width = `24.5vw`
                 input4.style.height = `3vh`
-                input4.style.transform = `translate(12.5vw, 63.2vh)`
+                input4.style.transform = `translate(12.5vw, 68.8vh)`
                 input4.style.position = `absolute`
                 input4.style.border = `none`
                 input4.style.fontSize = `2.5vh`
