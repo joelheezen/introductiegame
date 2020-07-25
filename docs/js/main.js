@@ -22,12 +22,12 @@ var Act1 = (function () {
         this.input3Save = "";
         this.popupSave = false;
         this.createAnswerScreen();
-    }
-    Act1.prototype.createAnswerScreen = function () {
-        var _this = this;
         localStorage.setItem("index1", "0");
         localStorage.setItem("index2", "0");
         localStorage.setItem("index3", "0");
+    }
+    Act1.prototype.createAnswerScreen = function () {
+        var _this = this;
         var game = document.getElementsByTagName("game")[0];
         var background = document.createElement("backgroundact1");
         var location = localStorage.getItem('location');

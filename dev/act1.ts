@@ -14,12 +14,12 @@ class Act1 {
 
     constructor(){
         this.createAnswerScreen()
-    }
-
-    createAnswerScreen(){
         localStorage.setItem("index1", "0")
         localStorage.setItem("index2", "0")
         localStorage.setItem("index3", "0")
+    }
+
+    createAnswerScreen(){
         let game = document.getElementsByTagName("game")[0]
 
         let background = document.createElement("backgroundact1")
