@@ -25,6 +25,9 @@ var Act1 = (function () {
     }
     Act1.prototype.createAnswerScreen = function () {
         var _this = this;
+        localStorage.setItem("index1", "");
+        localStorage.setItem("index2", "");
+        localStorage.setItem("index3", "");
         var game = document.getElementsByTagName("game")[0];
         var background = document.createElement("backgroundact1");
         var location = localStorage.getItem('location');
@@ -63,6 +66,8 @@ var Act1 = (function () {
         img1.addEventListener("click", function () {
             img1.src = images1[index1];
             index1 = (index1 === images1.length - 1) ? 0 : index1 + 1;
+            var index1ToString = "" + index1;
+            localStorage.setItem("index1", index1ToString);
         });
         var img2 = document.createElement('img');
         img2.src = "assets/Akte 1/vormen/driehoek.png";
@@ -74,6 +79,8 @@ var Act1 = (function () {
         img2.addEventListener("click", function () {
             img2.src = images2[index2];
             index2 = (index2 === images2.length - 1) ? 0 : index2 + 1;
+            var index2ToString = "" + index2;
+            localStorage.setItem("index2", index2ToString);
         });
         var img3 = document.createElement('img');
         img3.src = "assets/Akte 1/vormen/cirkel.png";
@@ -85,6 +92,8 @@ var Act1 = (function () {
         img3.addEventListener("click", function () {
             img3.src = images3[index3];
             index3 = (index3 === images3.length - 1) ? 0 : index3 + 1;
+            var index3ToString = "" + index3;
+            localStorage.setItem("index3", index3ToString);
         });
         game.appendChild(this.button1);
         this.button1.style.width = "15.1vw";
@@ -111,11 +120,10 @@ var Act1 = (function () {
         button3.addEventListener("click", function () { return _this.searchOnline(); });
     };
     Act1.prototype.shapeCheck = function () {
-        console.log("button 1 is pressed");
-        var shape1 = document.getElementById("img1").src;
-        var shape2 = document.getElementById("img2").src;
-        var shape3 = document.getElementById("img3").src;
-        if (shape1 == "http://127.0.0.1:5500/docs/assets/Akte%201/vormen/cirkel.png" && shape2 == "http://127.0.0.1:5500/docs/assets/Akte%201/vormen/vierkant.png" && shape3 == "http://127.0.0.1:5500/docs/assets/Akte%201/vormen/driehoek.png") {
+        var shape1 = localStorage.getItem("index1");
+        var shape2 = localStorage.getItem("index2");
+        var shape3 = localStorage.getItem("index3");
+        if (shape1 == "3" && shape2 == "9" && shape3 == "1") {
             document.getElementsByTagName("game")[0].innerHTML = "";
             new Pause(1, 'EnterBuilding');
         }
