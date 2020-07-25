@@ -25,9 +25,9 @@ var Act1 = (function () {
     }
     Act1.prototype.createAnswerScreen = function () {
         var _this = this;
-        localStorage.setItem("index1", "");
-        localStorage.setItem("index2", "");
-        localStorage.setItem("index3", "");
+        localStorage.setItem("index1", "0");
+        localStorage.setItem("index2", "0");
+        localStorage.setItem("index3", "0");
         var game = document.getElementsByTagName("game")[0];
         var background = document.createElement("backgroundact1");
         var location = localStorage.getItem('location');
@@ -123,6 +123,9 @@ var Act1 = (function () {
         var shape1 = localStorage.getItem("index1");
         var shape2 = localStorage.getItem("index2");
         var shape3 = localStorage.getItem("index3");
+        console.log(shape1);
+        console.log(shape2);
+        console.log(shape3);
         if (shape1 == "3" && shape2 == "9" && shape3 == "1") {
             document.getElementsByTagName("game")[0].innerHTML = "";
             new Pause(1, 'EnterBuilding');

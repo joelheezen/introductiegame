@@ -17,9 +17,9 @@ class Act1 {
     }
 
     createAnswerScreen(){
-        localStorage.setItem("index1", "")
-        localStorage.setItem("index2", "")
-        localStorage.setItem("index3", "")
+        localStorage.setItem("index1", "0")
+        localStorage.setItem("index2", "0")
+        localStorage.setItem("index3", "0")
         let game = document.getElementsByTagName("game")[0]
 
         let background = document.createElement("backgroundact1")
@@ -134,6 +134,9 @@ class Act1 {
         let shape1 = localStorage.getItem("index1")
         let shape2 = localStorage.getItem("index2")
         let shape3 = localStorage.getItem("index3")
+        console.log(shape1)
+        console.log(shape2)
+        console.log(shape3)
         if (shape1 == "3" && shape2 == "9" && shape3 == "1"){
 
             document.getElementsByTagName("game")[0].innerHTML = ""
