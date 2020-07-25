@@ -14,9 +14,9 @@ class Act1 {
 
     constructor(){
         this.createAnswerScreen()
-        localStorage.setItem("index1", "0")
-        localStorage.setItem("index2", "0")
-        localStorage.setItem("index3", "0")
+        sessionStorage.setItem("index1", "0")
+        sessionStorage.setItem("index2", "0")
+        sessionStorage.setItem("index3", "0")
     }
 
     createAnswerScreen(){
@@ -68,7 +68,7 @@ class Act1 {
             img1.src = images1[index1];
             index1 = (index1 === images1.length - 1) ? 0 : index1 + 1;
             let index1ToString = `${index1}`
-            localStorage.setItem("index1", index1ToString)
+            sessionStorage.setItem("index1", index1ToString)
         });
 
         var img2 = document.createElement('img')  
@@ -84,7 +84,7 @@ class Act1 {
             img2.src = images2[index2];
             index2 = (index2 === images2.length - 1) ? 0 : index2 + 1;
             let index2ToString = `${index2}`
-            localStorage.setItem("index2", index2ToString)
+            sessionStorage.setItem("index2", index2ToString)
         });
 
         var img3 = document.createElement('img')  
@@ -100,7 +100,7 @@ class Act1 {
             img3.src = images3[index3];
             index3 = (index3 === images3.length - 1) ? 0 : index3 + 1;
             let index3ToString = `${index3}`
-            localStorage.setItem("index3", index3ToString)
+            sessionStorage.setItem("index3", index3ToString)
         });
 
         game.appendChild(this.button1)
@@ -131,9 +131,9 @@ class Act1 {
     }
 
     shapeCheck() {
-        let shape1 = localStorage.getItem("index1")
-        let shape2 = localStorage.getItem("index2")
-        let shape3 = localStorage.getItem("index3")
+        let shape1 = sessionStorage.getItem("index1")
+        let shape2 = sessionStorage.getItem("index2")
+        let shape3 = sessionStorage.getItem("index3")
         console.log(shape1)
         console.log(shape2)
         console.log(shape3)

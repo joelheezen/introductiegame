@@ -22,9 +22,9 @@ var Act1 = (function () {
         this.input3Save = "";
         this.popupSave = false;
         this.createAnswerScreen();
-        localStorage.setItem("index1", "0");
-        localStorage.setItem("index2", "0");
-        localStorage.setItem("index3", "0");
+        sessionStorage.setItem("index1", "0");
+        sessionStorage.setItem("index2", "0");
+        sessionStorage.setItem("index3", "0");
     }
     Act1.prototype.createAnswerScreen = function () {
         var _this = this;
@@ -67,7 +67,7 @@ var Act1 = (function () {
             img1.src = images1[index1];
             index1 = (index1 === images1.length - 1) ? 0 : index1 + 1;
             var index1ToString = "" + index1;
-            localStorage.setItem("index1", index1ToString);
+            sessionStorage.setItem("index1", index1ToString);
         });
         var img2 = document.createElement('img');
         img2.src = "assets/Akte 1/vormen/driehoek.png";
@@ -80,7 +80,7 @@ var Act1 = (function () {
             img2.src = images2[index2];
             index2 = (index2 === images2.length - 1) ? 0 : index2 + 1;
             var index2ToString = "" + index2;
-            localStorage.setItem("index2", index2ToString);
+            sessionStorage.setItem("index2", index2ToString);
         });
         var img3 = document.createElement('img');
         img3.src = "assets/Akte 1/vormen/cirkel.png";
@@ -93,7 +93,7 @@ var Act1 = (function () {
             img3.src = images3[index3];
             index3 = (index3 === images3.length - 1) ? 0 : index3 + 1;
             var index3ToString = "" + index3;
-            localStorage.setItem("index3", index3ToString);
+            sessionStorage.setItem("index3", index3ToString);
         });
         game.appendChild(this.button1);
         this.button1.style.width = "15.1vw";
@@ -120,9 +120,9 @@ var Act1 = (function () {
         button3.addEventListener("click", function () { return _this.searchOnline(); });
     };
     Act1.prototype.shapeCheck = function () {
-        var shape1 = localStorage.getItem("index1");
-        var shape2 = localStorage.getItem("index2");
-        var shape3 = localStorage.getItem("index3");
+        var shape1 = sessionStorage.getItem("index1");
+        var shape2 = sessionStorage.getItem("index2");
+        var shape3 = sessionStorage.getItem("index3");
         console.log(shape1);
         console.log(shape2);
         console.log(shape3);
