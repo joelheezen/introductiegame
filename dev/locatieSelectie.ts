@@ -12,6 +12,13 @@ class LocatieSelectie{
         this.game.appendChild(this.background)
         this.educationSetter()
         this.language() 
+
+        new CenterPopup(new Languages()[localStorage.getItem('language')][78],new Languages()[localStorage.getItem('language')][79],"")
+        let popup = <HTMLElement>document.getElementsByTagName("onlinePopup")[0]
+        console.log(popup)
+        popup.style.top = `5vh`
+        popup.style.width = `50vw`
+        popup.style.left = `25vw`
     }
 
     goBack(){

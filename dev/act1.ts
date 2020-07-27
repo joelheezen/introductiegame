@@ -139,8 +139,34 @@ class Act1 {
         console.log(shape3)
         if (shape1 == "3" && shape2 == "9" && shape3 == "1"){
 
-            document.getElementsByTagName("game")[0].innerHTML = ""
-            new Pause(1,'EnterBuilding')
+            let popup = document.createElement("onlinePopup")
+            let game = document.getElementsByTagName("game")[0]
+            game.appendChild(popup)
+            popup.innerHTML = new Languages()[localStorage.getItem('language')][69]
+
+            let input = document.createElement("input")
+            popup.appendChild(input)
+
+            let button = document.createElement("button")
+            popup.appendChild(button)
+
+            button.innerHTML = new Languages()[localStorage.getItem('language')][52]
+
+            input.style.width = `80%`
+            input.style.height = `3vh`
+            input.addEventListener("keyup", function(){
+                localStorage.setItem("teamName", input.value)
+            })
+
+            button.addEventListener("click", function(){
+                if (localStorage.getItem("teamName") == null){
+                    button.innerHTML = new Languages()[localStorage.getItem('language')][70]
+                }
+                else{
+                    document.getElementsByTagName("game")[0].innerHTML = ""
+                    new Pause(1,'EnterBuilding')
+                }
+            })
             
         }
         else{
@@ -299,7 +325,7 @@ class Act1 {
     }
 
     lms(){
-        new CenterPopup('LMS',new Languages()[localStorage.getItem('language')][19],'https://lms.hr.nl')
+        new CenterPopup('Cum laude',new Languages()[localStorage.getItem('language')][19],'https://lms.hr.nl')
     }
 
     goBack(){

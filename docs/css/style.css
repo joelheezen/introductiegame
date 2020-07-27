@@ -94,10 +94,10 @@ endPopup{
     padding-left:2vw;
     padding-right:2vw;
     padding-top:2vw;
-    width:40vw;
+    width:50vw;
     height:50vh;
     top:25vh;
-    left:29vw;
+    left:25vw;
     box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
     background-color: #ffb911;
     border-radius: 1vh;
@@ -128,10 +128,11 @@ onlinePopup{
     padding-left:2vw;
     padding-right:2vw;
     padding-top:2vw;
-    width:24vw;
-    height:40vh;
-    top:30vh;
-    left:36vw;
+    padding-bottom:15vh;
+    width:30vw;
+    height:auto;
+    top:20vh;
+    left:33vw;
     box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
     background-color: #ffb911;
     border-radius: 1vh;
@@ -139,9 +140,9 @@ onlinePopup{
 }
 
 .studentenPas{
-    height:25vh;
-    width:22vw;
-    transform:translate(31.7vw, 26.5vh);
+    height:38vh;
+    width:22.8vw;
+    transform:translate(31.3vw, 20vh);
     cursor:pointer;
 }
 .vorm1{
@@ -454,10 +455,10 @@ map{
 }
 
 startgame{
-    width:42.8vw;
-    height:31.5vh;
-    top:48.5vh;
-    left:32vw;
+    width:14.9vw;
+    height:9.8vh;
+    top:21.6vh;
+    left:31.6vw;
     position: absolute;
     cursor: pointer;
 }

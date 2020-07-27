@@ -31,7 +31,7 @@ class Act3{
             if (localStorage.getItem("language") == "english"){
                 background.style.backgroundImage = `url(assets/Akte3/Act3Eng.png)`
             }
-            new popup("Jullie gaan de stad en het studentenleven verkennen. Wat weten jullie al over de belangrijkste Rotterdamse iconen? Waar kan je als student sporten? Heb je eigenlijk wel tijd voor een feestje of een leuke vereniging naast je studie? Hou je bevindingen bij in het notitieboekje!" , 40, 10 , 20)
+            new popup(new Languages()[localStorage.getItem('language')][68] , 40, 10 , 20)
 
             let button1 = document.createElement("button")
             let button2 = document.createElement("button")
@@ -1037,9 +1037,7 @@ class Act3{
                         audio.src = `assets/Akte3/Audio.mp3`
                     }
                     else{
-                        audio.src = `assets/Akte3/Audio.mp3`
-                        //change to english version when we have it
-                        //also not working on github page idk why
+                        audio.src = `assets/Akte3/audioEng.mp3`
                     }
                     audio.autoplay = true
                     audio.controls = true

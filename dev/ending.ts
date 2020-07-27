@@ -11,8 +11,7 @@ class Ending{
             title.style.fontSize = "7vh"
             popup.style.position = 'absolute'
             subTitle.style.fontSize = "1.1rem"
-            subTitle.innerHTML = 'stap 1: Selecteer het "Destination" menu en klik vervolgens op "save as PDF".<br>stap 2: Vink onder "More settings" / "Options" het "background graphics vinkje aan.<br>'+
-            'stap 3: klik op het "Save" knopje.<br>stap 4: lever het bestand in bij de docent.<br>Jouw score is:<br>'
+            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][73]
             button.remove()
         })
 
@@ -31,22 +30,27 @@ class Ending{
         game.appendChild(popup)
 
         let title = document.createElement('youWon')
-        title.innerHTML = "Gefeliciteerd"
+        title.innerHTML = new Languages()[localStorage.getItem('language')][74]
         popup.appendChild(title)
 
         let subTitle = document.createElement('subtitle')
-        subTitle.innerHTML = 'Dit is het einde van het spel<br>Jouw score is:<br>'
+        subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75]
         popup.appendChild(subTitle)
 
         let score = document.createElement('finalScore')
 
-        score.innerHTML += new Timer().score()
+        let duration = parseInt(new Timer().score())
+        let hours = Math.floor(duration / 3600)
+        let minutes = Math.floor(duration % 3600 / 60)
+        let seconds = Math.floor(duration % 3600 % 60)
+        let scoreInMin = `${hours}:${minutes}:${seconds}`
+        score.innerHTML += scoreInMin
         popup.appendChild(score)
         
         let button = document.createElement("button")
         popup.appendChild(button)
 
-        button.innerHTML += `klik hier voor een uitdraai van je score`
+        button.innerHTML += new Languages()[localStorage.getItem('language')][76]
         button.addEventListener("click", function(){
             window.print()
         })

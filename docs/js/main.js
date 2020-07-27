@@ -127,8 +127,29 @@ var Act1 = (function () {
         console.log(shape2);
         console.log(shape3);
         if (shape1 == "3" && shape2 == "9" && shape3 == "1") {
-            document.getElementsByTagName("game")[0].innerHTML = "";
-            new Pause(1, 'EnterBuilding');
+            var popup_1 = document.createElement("onlinePopup");
+            var game = document.getElementsByTagName("game")[0];
+            game.appendChild(popup_1);
+            popup_1.innerHTML = new Languages()[localStorage.getItem('language')][69];
+            var input_1 = document.createElement("input");
+            popup_1.appendChild(input_1);
+            var button_1 = document.createElement("button");
+            popup_1.appendChild(button_1);
+            button_1.innerHTML = new Languages()[localStorage.getItem('language')][52];
+            input_1.style.width = "80%";
+            input_1.style.height = "3vh";
+            input_1.addEventListener("keyup", function () {
+                localStorage.setItem("teamName", input_1.value);
+            });
+            button_1.addEventListener("click", function () {
+                if (localStorage.getItem("teamName") == null) {
+                    button_1.innerHTML = new Languages()[localStorage.getItem('language')][70];
+                }
+                else {
+                    document.getElementsByTagName("game")[0].innerHTML = "";
+                    new Pause(1, 'EnterBuilding');
+                }
+            });
         }
         else {
             var game = document.getElementsByTagName('game')[0];
@@ -254,7 +275,7 @@ var Act1 = (function () {
         });
     };
     Act1.prototype.lms = function () {
-        new CenterPopup('LMS', new Languages()[localStorage.getItem('language')][19], 'https://lms.hr.nl');
+        new CenterPopup('Cum laude', new Languages()[localStorage.getItem('language')][19], 'https://lms.hr.nl');
     };
     Act1.prototype.goBack = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
@@ -843,7 +864,7 @@ var Act3 = (function () {
             if (localStorage.getItem("language") == "english") {
                 background.style.backgroundImage = "url(assets/Akte3/Act3Eng.png)";
             }
-            new popup("Jullie gaan de stad en het studentenleven verkennen. Wat weten jullie al over de belangrijkste Rotterdamse iconen? Waar kan je als student sporten? Heb je eigenlijk wel tijd voor een feestje of een leuke vereniging naast je studie? Hou je bevindingen bij in het notitieboekje!", 40, 10, 20);
+            new popup(new Languages()[localStorage.getItem('language')][68], 40, 10, 20);
             var button1 = document.createElement("button");
             var button2 = document.createElement("button");
             var button3 = document.createElement("button");
@@ -1530,15 +1551,15 @@ var Act3 = (function () {
                     pdf_1.style.position = "absolute";
                     pdf_1.style.transform = "translate(25vw, 10vh)";
                     pdf_1.style.boxShadow = "rgba(0,0,0,0.5) 15px 15px";
-                    var button_1 = document.createElement("button");
-                    game.appendChild(button_1);
-                    button_1.style.width = "100vw";
-                    button_1.style.height = "100vh";
-                    button_1.style.position = "absolute";
-                    button_1.style.zIndex = "0";
-                    button_1.style.opacity = "0";
-                    button_1.addEventListener("click", function () {
-                        button_1.remove();
+                    var button_2 = document.createElement("button");
+                    game.appendChild(button_2);
+                    button_2.style.width = "100vw";
+                    button_2.style.height = "100vh";
+                    button_2.style.position = "absolute";
+                    button_2.style.zIndex = "0";
+                    button_2.style.opacity = "0";
+                    button_2.addEventListener("click", function () {
+                        button_2.remove();
                         pdf_1.remove();
                     });
                 }
@@ -1555,36 +1576,36 @@ var Act3 = (function () {
                 var card = document.getElementById("card");
                 if (card) {
                     card.style.display = "block";
-                    var button_2 = document.createElement("button");
-                    game.appendChild(button_2);
-                    button_2.style.zIndex = "1";
-                    button_2.style.width = "100vw";
-                    button_2.style.height = "100vh";
-                    button_2.style.opacity = "0";
-                    button_2.style.position = "absolute";
-                    button_2.addEventListener("click", function () {
+                    var button_3 = document.createElement("button");
+                    game.appendChild(button_3);
+                    button_3.style.zIndex = "1";
+                    button_3.style.width = "100vw";
+                    button_3.style.height = "100vh";
+                    button_3.style.opacity = "0";
+                    button_3.style.position = "absolute";
+                    button_3.addEventListener("click", function () {
                         var card = document.getElementById("card");
                         card.style.display = "none";
-                        button_2.remove();
+                        button_3.remove();
                     });
                 }
                 else {
                     var game_1 = document.getElementsByTagName("game")[0];
-                    var popup_1 = document.createElement("popup");
-                    game_1.appendChild(popup_1);
-                    popup_1.style.backgroundImage = "url(assets/Akte3/woordzoeker.png)";
-                    popup_1.style.backgroundRepeat = "no-repeat";
-                    popup_1.style.backgroundSize = "100% 100%";
-                    popup_1.style.width = "90vw";
-                    popup_1.style.height = "90vh";
-                    popup_1.style.position = "absolute";
-                    popup_1.style.zIndex = "2";
-                    popup_1.style.transform = "translate(5vw, 5vh)";
-                    popup_1.style.borderRadius = "20px";
-                    popup_1.style.boxShadow = "rgba(0,0,0,0.25) 20px 20px";
-                    popup_1.id = "card";
+                    var popup_2 = document.createElement("popup");
+                    game_1.appendChild(popup_2);
+                    popup_2.style.backgroundImage = "url(assets/Akte3/woordzoeker.png)";
+                    popup_2.style.backgroundRepeat = "no-repeat";
+                    popup_2.style.backgroundSize = "100% 100%";
+                    popup_2.style.width = "90vw";
+                    popup_2.style.height = "90vh";
+                    popup_2.style.position = "absolute";
+                    popup_2.style.zIndex = "2";
+                    popup_2.style.transform = "translate(5vw, 5vh)";
+                    popup_2.style.borderRadius = "20px";
+                    popup_2.style.boxShadow = "rgba(0,0,0,0.25) 20px 20px";
+                    popup_2.id = "card";
                     var words = document.createElement("words");
-                    popup_1.appendChild(words);
+                    popup_2.appendChild(words);
                     if (localStorage.getItem("language") == "dutch") {
                         words.style.backgroundImage = "url(assets/Akte3/wordsDutch.png)";
                     }
@@ -1597,28 +1618,28 @@ var Act3 = (function () {
                     words.style.height = "81vh";
                     words.style.position = "absolute";
                     words.style.transform = "translate(5vw, 4vh)";
-                    var button_3 = document.createElement("button");
-                    game_1.appendChild(button_3);
-                    button_3.style.zIndex = "1";
-                    button_3.style.width = "100vw";
-                    button_3.style.height = "100vh";
-                    button_3.style.opacity = "0";
-                    button_3.style.position = "absolute";
-                    button_3.addEventListener("click", function () {
-                        popup_1.style.display = "none";
-                        button_3.remove();
+                    var button_4 = document.createElement("button");
+                    game_1.appendChild(button_4);
+                    button_4.style.zIndex = "1";
+                    button_4.style.width = "100vw";
+                    button_4.style.height = "100vh";
+                    button_4.style.opacity = "0";
+                    button_4.style.position = "absolute";
+                    button_4.addEventListener("click", function () {
+                        popup_2.style.display = "none";
+                        button_4.remove();
                     });
                     var text = document.createElement("text");
-                    popup_1.appendChild(text);
+                    popup_2.appendChild(text);
                     text.style.fontSize = "2.5vh";
                     text.style.transform = "translate(50.5vw, 13vh)";
                     text.style.position = "absolute";
                     text.style.width = "35vw";
                     text.style.height = "10vh";
                     text.innerHTML = new Languages()[localStorage.getItem('language')][42];
-                    popup_1.addEventListener("click", function (event) {
+                    popup_2.addEventListener("click", function (event) {
                         var dot = document.createElement("dot");
-                        popup_1.appendChild(dot);
+                        popup_2.appendChild(dot);
                         var x = ((event.clientX / innerWidth) * 100);
                         var y = ((event.clientY / innerHeight) * 100);
                         dot.addEventListener("click", function (event) {
@@ -1729,7 +1750,7 @@ var Act3 = (function () {
                         audio.src = "assets/Akte3/Audio.mp3";
                     }
                     else {
-                        audio.src = "assets/Akte3/Audio.mp3";
+                        audio.src = "assets/Akte3/audioEng.mp3";
                     }
                     audio.autoplay = true;
                     audio.controls = true;
@@ -1773,7 +1794,29 @@ var CenterPopup = (function () {
         doorgaan.innerHTML = new Languages()[localStorage.getItem('language')][11];
         doorgaan.addEventListener('click', function () {
             if (open == 'doorgaan' || open == 'Continue') {
-                new Pause(2, 'Act3');
+                var popup_3 = document.createElement("onlinePopup");
+                var game_2 = document.getElementsByTagName("game")[0];
+                game_2.appendChild(popup_3);
+                popup_3.innerHTML = new Languages()[localStorage.getItem('language')][71];
+                var input_2 = document.createElement("input");
+                popup_3.appendChild(input_2);
+                var button_5 = document.createElement("button");
+                popup_3.appendChild(button_5);
+                button_5.innerHTML = new Languages()[localStorage.getItem('language')][52];
+                input_2.style.width = "80%";
+                input_2.style.height = "3vh";
+                input_2.addEventListener("keyup", function () {
+                    localStorage.setItem("teamSlogan", input_2.value);
+                });
+                button_5.addEventListener("click", function () {
+                    if (localStorage.getItem("teamName") == null) {
+                        button_5.innerHTML = new Languages()[localStorage.getItem('language')][72];
+                    }
+                    else {
+                        document.getElementsByTagName("game")[0].innerHTML = "";
+                        new Pause(2, 'Act3');
+                    }
+                });
             }
             else if (open !== '') {
                 window.open(open, '_blank');
@@ -1798,8 +1841,7 @@ var Ending = (function () {
             title.style.fontSize = "7vh";
             popup.style.position = 'absolute';
             subTitle.style.fontSize = "1.1rem";
-            subTitle.innerHTML = 'stap 1: Selecteer het "Destination" menu en klik vervolgens op "save as PDF".<br>stap 2: Vink onder "More settings" / "Options" het "background graphics vinkje aan.<br>' +
-                'stap 3: klik op het "Save" knopje.<br>stap 4: lever het bestand in bij de docent.<br>Jouw score is:<br>';
+            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][73];
             button.remove();
         });
         window.addEventListener("afterprint", function () {
@@ -1814,17 +1856,22 @@ var Ending = (function () {
         var popup = document.createElement("endPopup");
         game.appendChild(popup);
         var title = document.createElement('youWon');
-        title.innerHTML = "Gefeliciteerd";
+        title.innerHTML = new Languages()[localStorage.getItem('language')][74];
         popup.appendChild(title);
         var subTitle = document.createElement('subtitle');
-        subTitle.innerHTML = 'Dit is het einde van het spel<br>Jouw score is:<br>';
+        subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75];
         popup.appendChild(subTitle);
         var score = document.createElement('finalScore');
-        score.innerHTML += new Timer().score();
+        var duration = parseInt(new Timer().score());
+        var hours = Math.floor(duration / 3600);
+        var minutes = Math.floor(duration % 3600 / 60);
+        var seconds = Math.floor(duration % 3600 % 60);
+        var scoreInMin = hours + ":" + minutes + ":" + seconds;
+        score.innerHTML += scoreInMin;
         popup.appendChild(score);
         var button = document.createElement("button");
         popup.appendChild(button);
-        button.innerHTML += "klik hier voor een uitdraai van je score";
+        button.innerHTML += new Languages()[localStorage.getItem('language')][76];
         button.addEventListener("click", function () {
             window.print();
         });
@@ -1998,7 +2045,7 @@ var Languages = (function () {
         this.english = ["In order to start, we need to know what study program you are taking. Please select your study program from this list",
             "Choose education",
             "Choose language",
-            "Now pick the location at which this study program is taught",
+            "Hogeschool Rotterdam is spread out over the city. More than 15 locations in North and South. Which location do you study at?",
             "<b>Correct!</b>This is the location of your study program.<br>",
             "Click here</a>for more information about this location.</p>",
             "Try again",
@@ -2013,8 +2060,8 @@ var Languages = (function () {
             "Schedule",
             "Click continue to see the schedule",
             "Student Service Centre",
-            "Mail the SSC with your personal studentmail to:ssc@hr.nl",
-            "Different study programs and information can be found by clicking continue",
+            "Access to RUAS starts with your enrolment. You probably have taken all the necessary steps for your admission, right? If you still have any questions about enrolment, tuition fees etc, please contact the Student Service Centre via HINT or visit their office at Rochussenstraat 198. They might be able to help you find the key you are looking for. Send them a message (and don't forget to check your student mail).",
+            "CumLaude Learning is the digital learning environment where you can find important information regarding your classes, and hand in your assignments for example. You log in with your studentnumber and password. You will be linked automatically to your classes, also when you enroll for a different study program. Are you not linked correctly? Contact your study programs institute.</br></br></br>*  Most study programs work with CumLaude Learning, but some work with other systems, like Canvas or Brightspace. In this game we will show you how CumLaude works. These systems work practically the same.",
             "Hofplein Fountain</br> This fountain in the middle of traffic square \u2018Hofplein\u2019 was presented to the city by shipping company Van Ommeren when the company existed 100 years. The fountain is nicknamed FLIPSPUIT (Flip\u2019s fountainhead) after Philip (Flip) van Ommeren.</br>The fountain has become the place where the people of Rotterdam celebrate their big successes, like the championship of Feyenoord or a victorious game by the Dutch national soccerteam. Supporters tend to jump into the fountain to celebrate.",
             "Central Station</br> The current station was officially opened on March 13 2014 by king Willem-Alexander. The design of the station won multiple international awards. The locals, however, gave is a less flattering name. It made them think of the aluminium tray in which they serve their infamous fast food invention: KAPSALON (dish with shawarma, fries and cheese).",
             "Feyenoord Stadium</br> Not one, not two, but three professional soccer clubs represent the city of Rotterdam. Feyenoord Stadium is located on the south bank. Supporters lovingly call it the \u2018KUIP\u2019 (the tub), because that\u2019s what is looks like from a bird\u2019s eye view. ",
@@ -2062,12 +2109,25 @@ var Languages = (function () {
             "Click on the door to go inside.",
             "Entrance",
             "Link the number of corners of the shapes on the poster to the flyer Study Help.",
-            "Are you sure you want to use hint 4? This hint helps with the final puzzle, but also adds extra points to your score. (less points is better) \n \n this pop-up comes only once. The hint will be used the next time you click on the envelope."
+            "Are you sure you want to use hint 4? This hint helps with the final puzzle, but also adds extra points to your score. (less points is better) \n \n this pop-up comes only once. The hint will be used the next time you click on the envelope.",
+            "You will explore the city and student life. What do you already know about the most important Rotterdam icons? Where can you exercise as a student? Do you actually have time for a party or a fun association besides your studies? Keep track of your findings in the notebook!",
+            "Wow, great job. You are starting to become a real team. Give your team a name to increase your teamspirit!",
+            "Enter a name",
+            "Wow " + localStorage.getItem("teamName") + ", jullie zijn nu echt al een heel eind. Wat maakt jullie team eigenlijk zo bijzonder? Verzin een toepasselijke teamslogan!",
+            "Enter a slogan",
+            "Step 1: select \"Destination\"in the menu and set it to \"save as PDF\".<br>Step 2: go to \"More settings\" / \"Options\" and tick the box \"background graphics\".<br>'+'Step 3: click on the \"Save\" button.<br>Step 4: hand in the document with your teacher.<br>Your score is:<br>",
+            "Congratulations",
+            "This is the end of the game</br> your score is:</br>",
+            "Click here to save your score",
+            "The key to your student experience",
+            "Attention! (klik op de knop onderaan om nederlands te kiezen)",
+            "Some tips beforehand:</br></br>The game revolves around speed, solving capabilities and creativity. The faster you complete the game, the better. But: pay attention to the information you are given... you could need that during the game(and of course during your study ;-) )</br></br>During the game you can use hints. These cost time though, so the less hints you use the better your score will be!</br></br>Work together. You should be in a group call via MS teams. Make sure you communicate. Share your ideas, suspicions and possible answers with eachother. This way you'll get the best result. In teams you can share your screen with the rest of your team. This way everyone will look at the same screen. You can also go to introgame.hr.nl seperately of course. In short, work together to tackle the assignments efficiently!</br></br>The game consists of 3 parts. Between the parts you can take a break, but dont close the game! During the breaks the time will not advance.</br></br>And now on to an amazing studentlife!</br>Have fun!",
+            "You are at the beginning of your study program at Hogeschool Rotterdam. The beginning goes hand in hand with a lot of new information, new people and maybe even a new city! In this game we will let you discover the start of how life is on Hogeschool Rotterdam. Where do you find your schedule for example? Who can help you if you have a problem? And did you know Rotterdam is a really fun studentcity?"
         ];
         this.dutch = ["Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding",
             "Kies opleiding",
             "Kies taal",
-            "Kies nu de locatie waar deze opleiding wordt gegeven",
+            "Hogeschool Rotterdam zit verspreid over de stad. Meer dan 15 locaties op zowel Noord als Zuid. Welke locatie is jullie thuishaven?",
             "<b>Correct!</b>Dit is de locatie van jouw opleiding.<br>",
             "Klik hier</a>voor meer informatie over deze locattie</p>",
             "Probeer opnieuw",
@@ -2082,8 +2142,8 @@ var Languages = (function () {
             "Rooster",
             "Klik op doorgaan om je rooster te zien",
             "Student Service Center",
-            "Mail het SSC met je persoonlijke studentenmail naar:ssc@hr.nl",
-            "Verschillende vakken en informatie kun je vinden door op doorgaan te klikken",
+            "Toegang tot de hogeschool begint natuurlijk bij je inschrijving. Als het goed is, hebben jullie dat allemaal geregeld. Heb je toch nog vragen over je inschrijving, collegegeld etc., neem dan contact op met het Studenten Service Center. Dat kan via HINT of bij hun balie op Rochussenstraat 198. Misschien dat ze je nu ook wel kunnen helpen met de zoektocht naar de sleutel. Stuur ze snel een berichtje (en hou je studentenmail in de gaten).",
+            "CumLaude Learning is de digitale leeromgeving waar je de belangrijkste informatie over je vakken vindt en bijvoorbeeld opdrachten kan inleveren. Je logt op CumLaude in met je eigen studentnummer en wachtwoord. Je wordt automatisch aan jouw vakken gekoppeld, eventueel na inschrijving voor een (keuze-) vak via Osiris. Kan je niet in een bepaald vak op CumLaude, neem dan contact op met de bedrijfsbureau van jouw opleiding.</br></br></br>*  De meeste opleidingen werken met CumLaude Learning, maar sommige opleidingen werken met andere systemen, zoals Canvas of Brightspace. In deze game laten we je zien hoe CumLaude werkt. In de praktijk werken die systemen bijna hetzelfde.",
             "De Hofpleinfontein</br> Midden in het verkeersplein Hofplein staat een grote fontein. Deze Hofpleinfontein werd in 1939 aan de stad Rotterdam geschonken door de\u202Frederij Van Ommeren\u202Fdie zijn honderjarige bestaan vierde. De fontein wordt in de volksmond ook wel de\u202FFlipspuit\u202Fgenoemd, verwijzend naar Philippus \"Flip\" van Ommeren. Door de centrale ligging, pal naast de Coolsingel, is het een plaats geworden waar grote successen worden gevierd van voetbalclub\u202FFeyenoord\u202Fen het\u202FNederlands voetbalelftal. Bij die overwinningen\u202Fspringen en feesten supporters in de fontein.",
             "Rotterdam Centraal Station</br> Het huidige stationsgebouw, gelegen aan het\u202FStationsplein, werd op 13 maart 2014 officieel geopend door koning\u202FWillem-Alexander.\u202FHet ontwerp verwierf meerdere internationale prijzen. Maar Rotterdammers hebben hun stationsgebouw zoals gewoonlijk een minder flatteuze bijnaam gegeven!",
             "Feyenoordstadion</br> \"Ga je mee naar het stadion, naar de club van Rood en Wit.\" Dit stadion is beter bekend onder de naam \u2026\u2026\u2026.",
@@ -2132,6 +2192,19 @@ var Languages = (function () {
             "Ingang",
             "Link het aantal hoeken van de vormen op de poster aan de flyer Hulp bij Studie.",
             "Weet je zeker dat je hint 4 wilt gebruiken? Deze hint helpt bij de eind puzzel, maar telt ook extra punten op bij je score. (minder punten is beter) \n \n deze pop-up komt maar 1 keer. De volgende keer dat je op de envelop klikt wordt de hint gebruikt.\"",
+            "Jullie gaan de stad en het studentenleven verkennen. Wat weten jullie al over de belangrijkste Rotterdamse iconen? Waar kan je als student sporten? Heb je eigenlijk wel tijd voor een feestje of een leuke vereniging naast je studie? Hou je bevindingen bij in het notitieboekje!",
+            "Wow, goed gedaan. Jullie beginnen al echt een team te worden. Verzin een naam voor jullie team om de teamspirit te vergroten!",
+            "Vul een naam in",
+            "Wow " + localStorage.getItem("teamName") + ", jullie zijn nu echt al een heel eind. Wat maakt jullie team eigenlijk zo bijzonder? Verzin een toepasselijke teamslogan!",
+            "Vul een slogan in",
+            "stap 1: Selecteer het \"Destination\" menu en klik vervolgens op \"save as PDF\".<br>stap 2: Vink onder \"More settings\" / \"Options\" het \"background graphics vinkje aan.<br>'+'stap 3: klik op het \"Save\" knopje.<br>stap 4: lever het bestand in bij de docent.<br>Jouw score is:<br>",
+            "Gefeliciteerd",
+            "Dit is het einde van het spel</br>Jouw score is:</br>",
+            "Klik hier voor een uitdraai van je score",
+            "De sleutel tot jouw studententijd",
+            "Let op! (click the button below for english)",
+            "Even wat tips vooraf</br></br>Het draait in het spel om snelheid, oplossend vermogen en creativiteit. Hoe sneller jullie het spel uitspelen, hoe beter. Maar: let wel goed op welke informatie je krijgt toegespeeld\u2026 je zou dat zomaar eens nodig kunnen hebben op een later moment in het spel (en natuurlijk tijdens je studie ;-) )</br></br>Tijdens het spel kan je gebruik maken van hints. Het gebruik van de hints kost je echter tijd. Hoe minder hints jullie nodig hebben, hoe beter!</br></br>Werk samen. Als het goed is zijn jullie inmiddels als groep een videogesprek gestart in MS Teams. Zorg dat je goed communiceert. Deel je idee\u00EBn, vermoedens en mogelijke antwoorden hardop met elkaar. Zo kom je samen tot het beste resultaat. In MS Teams kan je ervoor kiezen om je scherm te delen met de andere mensen in de groep. Dan kijkt iedereen naar hetzelfde scherm. Daarnaast is het natuurlijk ook mogelijk om allemaal individueel via de link https://introgame.hr.nl  het spel te doorlopen. Op die manier kan iedereen mee op zoek naar antwoorden. Kortom, bundel je krachten en verdeel de taken slim!</br></br>Het spel bestaat uit 3 delen. Tussen de delen kan je wel even pauzeren, maar sluit het spel niet af. Tijdens jullie pauze loopt de tijd niet verder door.</br></br>En nu op naar een geweldige studententijd!</br>Veel speelplezier!",
+            "Jullie staan aan het begin van jullie studie aan Hogeschool Rotterdam. En dat begin gaat gepaard met een heleboel nieuwe informatie, nieuwe mensen en misschien zelfs een nieuwe stad! In deze game laten we jullie vast een beetje ontdekken hoe het op de hogeschool geregeld is. Waar vind je bijvoorbeeld je rooster? Bij wie kan je terecht als je met een vraag of probleem zit? En wist je dat Rotterdam ook echt een leuke studentenstad is? Ook daar laten we je graag een beetje mee kennismaken. ",
         ];
     }
     return Languages;
@@ -2145,6 +2218,12 @@ var LocatieSelectie = (function () {
         this.game.appendChild(this.background);
         this.educationSetter();
         this.language();
+        new CenterPopup(new Languages()[localStorage.getItem('language')][78], new Languages()[localStorage.getItem('language')][79], "");
+        var popup = document.getElementsByTagName("onlinePopup")[0];
+        console.log(popup);
+        popup.style.top = "5vh";
+        popup.style.width = "50vw";
+        popup.style.left = "25vw";
     }
     LocatieSelectie.prototype.goBack = function () {
         this.game.innerHTML = "";
@@ -2502,12 +2581,19 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/Osiris_1.png)";
+        if (localStorage.getItem("language") == "english") {
+            background.style.backgroundImage = "url(assets/Osiris_1Eng.png)";
+        }
+        else {
+            background.style.backgroundImage = "url(assets/Osiris_1.png)";
+        }
         game2.appendChild(background);
         game2.appendChild(this.input1);
         this.input1.style.width = "17.1vw";
-        this.input1.style.height = "1.6vh";
-        this.input1.style.transform = "translate(14.1vw, 20.7vh)";
+        this.input1.style.height = "2vh";
+        this.input1.style.background = "transparent";
+        this.input1.style.border = "none";
+        this.input1.style.transform = "translate(14.1vw, 21.1vh)";
         this.input1.style.fontSize = "17px";
         this.input1.style.paddingLeft = "0.4vw";
         this.input1.value = this.input1Save;
@@ -2536,18 +2622,33 @@ var Osiris = (function () {
         game2.removeChild(this.button1);
         game2.removeChild(this.input1);
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/Osiris_2.png)";
+        if (localStorage.getItem("language") == "english") {
+            background.style.backgroundImage = "url(assets/Osiris_2Eng.png)";
+        }
+        else {
+            background.style.backgroundImage = "url(assets/Osiris_2.png)";
+        }
         game2.appendChild(background);
         game2.appendChild(this.button2);
         this.button2.style.width = "6.6vw";
         this.button2.style.height = "3.3vh";
-        this.button2.style.transform = "translate(68.7vw, 8.4vh)";
+        if (localStorage.getItem("language") == "english") {
+            this.button2.style.transform = "translate(71.2vw, 8.4vh)";
+        }
+        else {
+            this.button2.style.transform = "translate(68.7vw, 8.4vh)";
+        }
         this.button2.style.opacity = "0";
         this.button2.addEventListener("click", function () { return _this.onderwijs(); });
         var myloc = new Image();
         myloc.useMap = "/docs/assets/arrow.png";
         this.img.setAttribute('src', myloc.useMap);
-        this.img.setAttribute('style', "height:5vh;width:2vw;transform:translate(71vw, 13.5vh);");
+        if (localStorage.getItem("language") == "english") {
+            this.img.setAttribute('style', "height:5vh;width:2vw;transform:translate(73.5vw, 13.5vh);");
+        }
+        else {
+            this.img.setAttribute('style', "height:5vh;width:2vw;transform:translate(71vw, 13.5vh);");
+        }
         game2.appendChild(this.img);
     };
     Osiris.prototype.onderwijs = function () {
@@ -2556,14 +2657,26 @@ var Osiris = (function () {
         game2.removeChild(this.img);
         game2.removeChild(this.button2);
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/Osiris_3.png)";
+        if (localStorage.getItem("language") == "english") {
+            background.style.backgroundImage = "url(assets/Osiris_3Eng.png)";
+        }
+        else {
+            background.style.backgroundImage = "url(assets/Osiris_3.png)";
+        }
         game2.appendChild(background);
         game2.appendChild(this.input2);
         this.input2.style.width = "17.2vw";
         this.input2.style.height = "2.1vh";
-        this.input2.style.transform = "translate(13.9vw, 30.8vh)";
+        if (localStorage.getItem("language") == "english") {
+            this.input2.style.transform = "translate(14.5vw, 31.2vh)";
+        }
+        else {
+            this.input2.style.transform = "translate(13.9vw, 31.2vh)";
+        }
         this.input2.style.fontSize = "17px";
         this.input2.style.paddingLeft = "0.4vw";
+        this.input2.style.background = "transparent";
+        this.input2.style.border = "none";
         this.input2.value = this.input2Save;
         this.input2.id = "input2";
         game2.appendChild(this.button3);
@@ -2576,7 +2689,7 @@ var Osiris = (function () {
     Osiris.prototype.keuzeCheck = function () {
         console.log("button 1 is pressed");
         var shape1 = document.getElementById("input2").value;
-        if (shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot" || shape1 == "Sleutel succes" || shape1 == "sleutel succes") {
+        if (shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot" || shape1 == "Sleutel succes" || shape1 == "sleutel succes" || shape1 == "key to succes" || shape1 == "key succes" || shape1 == "Key To succes" || shape1 == "Key To Succes" || shape1 == "Key to Succes" || shape1 == "key" || shape1 == "Key" || shape1 == "key to" || shape1 == "Key to" || shape1 == "Key To" || shape1 == "key To") {
             console.log("dit klopt");
             this.keuzeRight();
         }
@@ -2589,7 +2702,12 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/Osiris_5.png)";
+        if (localStorage.getItem("language") == "english") {
+            background.style.backgroundImage = "url(assets/Osiris_5Eng.png)";
+        }
+        else {
+            background.style.backgroundImage = "url(assets/Osiris_5.png)";
+        }
         game2.appendChild(background);
         game2.appendChild(this.button4);
         this.button4.style.width = "4vw";
@@ -2601,14 +2719,24 @@ var Osiris = (function () {
     Osiris.prototype.keuzeWrong = function () {
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/osiris_4.png)";
+        if (localStorage.getItem("language") == "english") {
+            background.style.backgroundImage = "url(assets/Osiris_3Eng.png)";
+        }
+        else {
+            background.style.backgroundImage = "url(assets/Osiris_4.png)";
+        }
         game2.appendChild(background);
     };
     Osiris.prototype.onderwijsAgain = function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/Osiris_3.png)";
+        if (localStorage.getItem("language") == "english") {
+            background.style.backgroundImage = "url(assets/Osiris_3Eng.png)";
+        }
+        else {
+            background.style.backgroundImage = "url(assets/Osiris_3.png)";
+        }
         game2.appendChild(background);
         game2.appendChild(this.input2);
         this.input2.style.width = "17.2vw";
@@ -2628,14 +2756,25 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/Osiris_6.png)";
+        if (localStorage.getItem("language") == "english") {
+            background.style.backgroundImage = "url(assets/Osiris_6Eng.png)";
+        }
+        else {
+            background.style.backgroundImage = "url(assets/Osiris_6.png)";
+        }
         game2.appendChild(background);
         game2.removeChild(this.input2);
         game2.removeChild(this.button4);
         game2.appendChild(this.button5);
-        this.button5.style.width = "10.5vw";
+        if (localStorage.getItem("language") == "english") {
+            this.button5.style.width = "11.7vw";
+            this.button5.style.transform = "translate(63vw, 18.5vh)";
+        }
+        else {
+            this.button5.style.width = "10.5vw";
+            this.button5.style.transform = "translate(64.5vw, 18.8vh)";
+        }
         this.button5.style.height = "2vh";
-        this.button5.style.transform = "translate(64.5vw, 18.8vh)";
         this.button5.style.opacity = "0";
         this.button5.addEventListener("click", function () { return _this.signIn(); });
     };
@@ -2643,7 +2782,12 @@ var Osiris = (function () {
         var _this = this;
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/Osiris_7.png)";
+        if (localStorage.getItem("language") == "english") {
+            background.style.backgroundImage = "url(assets/Osiris_7Eng.png)";
+        }
+        else {
+            background.style.backgroundImage = "url(assets/Osiris_7.png)";
+        }
         game2.appendChild(background);
         game2.removeChild(this.button5);
         game2.appendChild(this.button6);
@@ -2657,7 +2801,12 @@ var Osiris = (function () {
         var game2 = document.getElementsByTagName("game2")[0];
         game2.removeChild(this.button6);
         var background = document.createElement("backgroundact2");
-        background.style.backgroundImage = "url(assets/Osiris_8.png)";
+        if (localStorage.getItem("language") == "english") {
+            background.style.backgroundImage = "url(assets/Osiris_8Eng.png)";
+        }
+        else {
+            background.style.backgroundImage = "url(assets/Osiris_8.png)";
+        }
         game2.appendChild(background);
     };
     return Osiris;
@@ -2757,10 +2906,30 @@ var StartScreem = (function () {
         if (!localStorage.getItem('language')) {
             localStorage.setItem('language', 'dutch');
         }
-        this.background.style.backgroundImage = "url(assets/PRODUCTION/PRODUCTION/ASSETS/startScherm.png)";
+        this.background.style.backgroundImage = "url(assets/startScreen.png)";
         this.game.appendChild(this.background);
         var start = document.createElement('startgame');
         this.game.appendChild(start);
+        var text = document.createElement("text");
+        this.game.appendChild(text);
+        text.innerHTML = "HR INTROGAME";
+        text.style.transform = "translate(35.7vw, 80vh)";
+        text.style.color = "white";
+        text.style.position = "absolute";
+        text.style.fontSize = "5vh";
+        var text2 = document.createElement("text");
+        this.game.appendChild(text2);
+        if (localStorage.getItem('language') == 'dutch') {
+            text2.style.transform = "translate(35.4vw, 85.5vh)";
+        }
+        else {
+            text2.style.transform = "translate(34vw, 85.5vh)";
+        }
+        text2.style.color = "white";
+        text2.style.position = "absolute";
+        text2.style.fontSize = "2.5vh";
+        text2.innerHTML = new Languages()[localStorage.getItem('language')][77];
+        new popup(new Languages()[localStorage.getItem('language')][80], 20, 20, 30);
         start.addEventListener('click', function () {
             _this.game.innerHTML = "";
             new LocatieSelectie();
