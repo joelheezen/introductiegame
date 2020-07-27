@@ -49,7 +49,7 @@ class Languages{
                     `Counselor`,
                     `Dean`,
                     `Put the right color with the right person.`,
-                    `Need help? Talk to someone about it! You need to be here: Help with study. Hogeschool Rotterdam offers all kinds of one-on-one guidance and help. But....all doors are locked. Crack the lettercode to open all doors, so you can use all our guidance!`,
+                    `Need help? Talk to someone about it! You need to be here: Help with study. Hogeschool Rotterdam offers all kinds of one-on-one guidance and help. But...all doors are locked. Crack the lettercode to open all doors, so you can use all our guidance!`,
                     `The puzzle is solved`,
                     `Here comes the peer coach!`,
                     `Continue`,
