@@ -2234,7 +2234,7 @@ var LocatieSelectie = (function () {
         var language = document.createElement('languagePicker');
         language.innerHTML = new Languages()[localStorage.getItem('language')][2];
         var dutch = document.createElement('button');
-        dutch.innerHTML = 'Nedelands';
+        dutch.innerHTML = 'Nederlands';
         language.appendChild(dutch);
         var english = document.createElement('button');
         english.innerHTML = 'English';

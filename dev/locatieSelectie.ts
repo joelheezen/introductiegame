@@ -32,7 +32,7 @@ class LocatieSelectie{
         language.innerHTML = new Languages()[localStorage.getItem('language')][2]
 
         let dutch = document.createElement('button')
-        dutch.innerHTML = 'Nedelands'
+        dutch.innerHTML = 'Nederlands'
         language.appendChild(dutch)
         let english = document.createElement('button')
         english.innerHTML = 'English'
