@@ -18,7 +18,7 @@ class LocatieSelectie{
         console.log(popup)
         popup.style.top = `5vh`
         popup.style.width = `50vw`
-        popup.style.left = `25vw`
+        popup.style.left = `22vw`
     }
 
     goBack(){
