@@ -2117,7 +2117,7 @@ var Languages = (function () {
             "Enter a slogan",
             "Step 1: select \"Destination\"in the menu and set it to \"save as PDF\".<br>Step 2: go to \"More settings\" / \"Options\" and tick the box \"background graphics\".<br>'+'Step 3: click on the \"Save\" button.<br>Step 4: hand in the document with your teacher.<br>" + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + "'s score is:<br>",
             "Congratulations",
-            "This is the end of the game</br>" + localStorage.getItem("teamSlogan") + "</br " + localStorage.getItem("teamName") + "'s score is:</br>",
+            "This is the end of the game</br>" + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + "'s score is:</br>",
             "Click here to save your score",
             "The key to your student experience",
             "Attention! (klik op de knop onderaan om nederlands te kiezen)",
@@ -2913,17 +2913,17 @@ var StartScreem = (function () {
         var text = document.createElement("text");
         this.game.appendChild(text);
         text.innerHTML = "HR INTROGAME";
-        text.style.transform = "translate(35.7vw, 80vh)";
+        text.style.transform = "translate(37.5vw, 80vh)";
         text.style.color = "white";
         text.style.position = "absolute";
         text.style.fontSize = "5vh";
         var text2 = document.createElement("text");
         this.game.appendChild(text2);
         if (localStorage.getItem('language') == 'dutch') {
-            text2.style.transform = "translate(35.4vw, 85.5vh)";
+            text2.style.transform = "translate(38.3vw, 85.5vh)";
         }
         else {
-            text2.style.transform = "translate(34vw, 85.5vh)";
+            text2.style.transform = "translate(37.3vw, 85.5vh)";
         }
         text2.style.color = "white";
         text2.style.position = "absolute";

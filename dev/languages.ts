@@ -75,7 +75,7 @@ class Languages{
                     `Enter a slogan`,
                     `Step 1: select "Destination"in the menu and set it to "save as PDF".<br>Step 2: go to "More settings" / "Options" and tick the box "background graphics".<br>'+'Step 3: click on the "Save" button.<br>Step 4: hand in the document with your teacher.<br>${localStorage.getItem("teamSlogan")}</br>${localStorage.getItem("teamName")}'s score is:<br>`,
                     `Congratulations`,
-                    `This is the end of the game</br>${localStorage.getItem("teamSlogan")}</br ${localStorage.getItem("teamName")}'s score is:</br>`,
+                    `This is the end of the game</br>${localStorage.getItem("teamSlogan")}</br>${localStorage.getItem("teamName")}'s score is:</br>`,
                     `Click here to save your score`,
                     `The key to your student experience`,
                     `Attention! (klik op de knop onderaan om nederlands te kiezen)`,

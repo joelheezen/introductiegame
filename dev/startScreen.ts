@@ -16,7 +16,7 @@ class StartScreem{
         let text = document.createElement("text")
         this.game.appendChild(text)
         text.innerHTML = "HR INTROGAME"
-        text.style.transform = `translate(35.7vw, 80vh)`
+        text.style.transform = `translate(37.5vw, 80vh)`
         text.style.color = `white`
         text.style.position = `absolute`
         text.style.fontSize = `5vh`
@@ -25,10 +25,10 @@ class StartScreem{
         this.game.appendChild(text2)
 
         if(localStorage.getItem('language') == 'dutch'){
-            text2.style.transform = `translate(35.4vw, 85.5vh)`
+            text2.style.transform = `translate(38.3vw, 85.5vh)`
         }
         else{
-            text2.style.transform = `translate(34vw, 85.5vh)`
+            text2.style.transform = `translate(37.3vw, 85.5vh)`
         }
         text2.style.color = `white`
         text2.style.position = `absolute`
