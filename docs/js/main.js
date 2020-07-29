@@ -327,7 +327,7 @@ var Act2 = (function () {
         this.doorName1.innerHTML = new Languages()[localStorage.getItem('language')][46];
         this.doorName2.style.width = '11.77vw';
         this.doorName2.style.height = '3.65vh';
-        this.doorName2.style.transform = "translate(24.67vw, 26.6vh)";
+        this.doorName2.style.transform = "translate(24.67vw, 27vh)";
         this.doorName2.style.textAlign = 'center';
         this.doorName2.style.paddingTop = '0.8vh';
         this.doorName2.style.fontSize = "1vw";
@@ -335,7 +335,7 @@ var Act2 = (function () {
         this.doorName2.innerHTML = "Peercoach";
         this.doorName3.style.width = '11.77vw';
         this.doorName3.style.height = '3.65vh';
-        this.doorName3.style.transform = "translate(44.36vw, 26.6vh)";
+        this.doorName3.style.transform = "translate(44.36vw, 27vh)";
         this.doorName3.style.textAlign = 'center';
         this.doorName3.style.paddingTop = '0.8vh';
         this.doorName3.style.fontSize = "1vw";
@@ -343,7 +343,7 @@ var Act2 = (function () {
         this.doorName3.innerHTML = "Studieloopbaancoach";
         this.doorName4.style.width = '11.77vw';
         this.doorName4.style.height = '3.65vh';
-        this.doorName4.style.transform = "translate(64.26vw, 26.6vh)";
+        this.doorName4.style.transform = "translate(64.26vw, 27vh)";
         this.doorName4.style.textAlign = 'center';
         this.doorName4.style.paddingTop = '0.8vh';
         this.doorName4.style.fontSize = "1vw";
@@ -351,10 +351,10 @@ var Act2 = (function () {
         this.doorName4.innerHTML = new Languages()[localStorage.getItem('language')][47];
         this.doorName5.style.width = '11.77vw';
         this.doorName5.style.height = '3.65vh';
-        this.doorName5.style.transform = "translate(84vw, 26.1vh)";
+        this.doorName5.style.transform = "translate(84vw, 26.7vh)";
         this.doorName5.style.textAlign = 'center';
         this.doorName5.style.paddingTop = '1.3vh';
-        this.doorName5.style.fontSize = "0.75vw";
+        this.doorName5.style.fontSize = "0.8vw";
         this.doorName5.style.pointerEvents = "none";
         this.doorName5.innerHTML = "Studentenwelzijnsadviseur";
     };
@@ -2219,7 +2219,7 @@ var Languages = (function () {
             "Enter a name",
             "Wow " + localStorage.getItem("teamName") + ", jullie zijn nu echt al een heel eind. Wat maakt jullie team eigenlijk zo bijzonder? Verzin een toepasselijke teamslogan!",
             "Enter a slogan",
-            "Step 1: select \"Destination\"in the menu and set it to \"save as PDF\".<br>Step 2: go to \"More settings\" / \"Options\" and tick the box \"background graphics\".<br>'+'Step 3: click on the \"Save\" button.<br>Step 4: hand in the document with your teacher.<br>" + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + "'s score is:<br>",
+            "Step 1: select \"Destination\"in the menu and set it to \"save as PDF\".<br>Step 2: go to \"More settings\" / \"Options\" and tick the box \"background graphics\".<br>Step 3: click on the \"Save\" button.<br>Step 4: Make a design for a sweater and hand it in to the teacher together with the PDF.<br>Slogan: " + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + ": Your score is:<br>",
             "Congratulations",
             "This is the end of the game</br>" + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + "'s score is:</br>",
             "Click here to save your score",
@@ -2301,7 +2301,7 @@ var Languages = (function () {
             "Vul een naam in",
             "Wow " + localStorage.getItem("teamName") + ", jullie zijn nu echt al een heel eind. Wat maakt jullie team eigenlijk zo bijzonder? Verzin een toepasselijke teamslogan!",
             "Vul een slogan in",
-            "stap 1: Selecteer het \"Destination\" menu en klik vervolgens op \"save as PDF\".<br>stap 2: Vink onder \"More settings\" / \"Options\" het \"background graphics vinkje aan.<br>'+'stap 3: klik op het \"Save\" knopje.<br>stap 4: lever het bestand in bij de docent.<br>" + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + "'s score is:<br>",
+            "stap 1: Selecteer het \"Destination\" menu en klik vervolgens op \"save as PDF\".<br>stap 2: Vink onder \"More settings\" / \"Options\" het \"background graphics vinkje aan.<br>stap 3: klik op het \"Save\" knopje.<br>stap 4: Maak een ontwerp voor een trui en lever deze samen met de PDF in bij de docent.<br>Slogan: " + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + ": jullie score is:<br>",
             "Gefeliciteerd",
             "Dit is het einde van het spel</br>" + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + "'s score is:</br>",
             "Klik hier voor een uitdraai van jullie score",

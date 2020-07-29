@@ -64,7 +64,7 @@ class Act2{
 
         this.doorName2.style.width = '11.77vw'
         this.doorName2.style.height = '3.65vh'
-        this.doorName2.style.transform = `translate(24.67vw, 26.6vh)`
+        this.doorName2.style.transform = `translate(24.67vw, 27vh)`
         this.doorName2.style.textAlign = 'center'
         this.doorName2.style.paddingTop = '0.8vh'
         this.doorName2.style.fontSize = `1vw`
@@ -73,7 +73,7 @@ class Act2{
 
         this.doorName3.style.width = '11.77vw'
         this.doorName3.style.height = '3.65vh'
-        this.doorName3.style.transform = `translate(44.36vw, 26.6vh)`
+        this.doorName3.style.transform = `translate(44.36vw, 27vh)`
         this.doorName3.style.textAlign = 'center'
         this.doorName3.style.paddingTop = '0.8vh'
         this.doorName3.style.fontSize = `1vw`
@@ -82,7 +82,7 @@ class Act2{
 
         this.doorName4.style.width = '11.77vw'
         this.doorName4.style.height = '3.65vh'
-        this.doorName4.style.transform = `translate(64.26vw, 26.6vh)`
+        this.doorName4.style.transform = `translate(64.26vw, 27vh)`
         this.doorName4.style.textAlign = 'center'
         this.doorName4.style.paddingTop = '0.8vh'
         this.doorName4.style.fontSize = `1vw`
@@ -91,10 +91,10 @@ class Act2{
 
         this.doorName5.style.width = '11.77vw'
         this.doorName5.style.height = '3.65vh'
-        this.doorName5.style.transform = `translate(84vw, 26.1vh)`
+        this.doorName5.style.transform = `translate(84vw, 26.7vh)`
         this.doorName5.style.textAlign = 'center'
         this.doorName5.style.paddingTop = '1.3vh'
-        this.doorName5.style.fontSize = `0.75vw`
+        this.doorName5.style.fontSize = `0.8vw`
         this.doorName5.style.pointerEvents = "none"
         this.doorName5.innerHTML = "Studentenwelzijnsadviseur"
     }
