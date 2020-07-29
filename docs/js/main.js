@@ -855,7 +855,7 @@ var Act3 = (function () {
         this.video.src = 'assets/Akte3/startAct3.mp4';
         this.video.autoplay = true;
         this.video.controls = false;
-        this.video.playbackRate = 16;
+        this.video.playbackRate = 1;
         this.video.onended = function () {
             var game = document.getElementsByTagName("game")[0];
             game.innerHTML = "";
@@ -2040,6 +2040,110 @@ var hint = (function () {
     }
     return hint;
 }());
+var Info = (function () {
+    function Info() {
+        this.makeTexts();
+        this.makeButtons();
+        this.makeBackground();
+    }
+    Info.prototype.makeBackground = function () {
+        var game = document.getElementsByTagName("game")[0];
+        var bg = document.createElement("bg");
+        game.appendChild(bg);
+        bg.style.backgroundImage = "url(assets/Akte3/Binnenrotte.jpg)";
+        bg.style.backgroundRepeat = "no-repeat";
+        bg.style.backgroundSize = "100% 100%";
+        bg.style.position = "absolute";
+        bg.style.width = "100vw";
+        bg.style.height = "100vh";
+        bg.style.zIndex = "-1";
+    };
+    Info.prototype.makeTexts = function () {
+        var game = document.getElementsByTagName("game")[0];
+        var text1 = document.createElement("text");
+        var text2 = document.createElement("text");
+        game.appendChild(text1);
+        game.appendChild(text2);
+        var heading1 = document.createElement("text");
+        var heading2 = document.createElement("text");
+        game.appendChild(heading1);
+        game.appendChild(heading2);
+        heading1.innerHTML = "Nederlands";
+        heading2.innerHTML = "English";
+        heading1.style.position = "absolute";
+        heading2.style.position = "absolute";
+        heading1.style.width = "auto";
+        heading2.style.width = "auto";
+        heading1.style.transform = "translate(20vw, 5vh)";
+        heading2.style.transform = "translate(69vw, 5vh)";
+        heading1.style.fontSize = "5vh";
+        heading2.style.fontSize = "5vh";
+        heading1.style.backgroundColor = "#ffb911";
+        heading2.style.backgroundColor = "#ffb911";
+        heading1.style.borderRadius = "20px";
+        heading2.style.borderRadius = "20px";
+        heading1.style.padding = "2vh 2vw 2vh 2vw";
+        heading2.style.padding = "2vh 2vw 2vh 2vw";
+        text1.innerHTML = new Languages()["dutch"][80];
+        text2.innerHTML = new Languages()["english"][80];
+        text1.style.position = "absolute";
+        text2.style.position = "absolute";
+        text1.style.width = "40vw";
+        text2.style.width = "40vw";
+        text1.style.height = "auto";
+        text2.style.height = "auto";
+        text1.style.fontSize = "3.5vh";
+        text2.style.fontSize = "3.5vh";
+        text1.style.transform = "translate(5vw, 15vh)";
+        text2.style.transform = "translate(53vw, 15vh)";
+        text1.style.backgroundColor = "#ffb911";
+        text2.style.backgroundColor = "#ffb911";
+        text1.style.borderRadius = "20px";
+        text2.style.borderRadius = "20px";
+        text1.style.padding = "2vh 2vw 2vh 2vw";
+        text2.style.padding = "2vh 2vw 2vh 2vw";
+    };
+    Info.prototype.makeButtons = function () {
+        var game = document.getElementsByTagName("game")[0];
+        var eng = document.createElement("button");
+        var dutch = document.createElement("button");
+        game.appendChild(eng);
+        game.appendChild(dutch);
+        eng.innerHTML = "Press this to play in English.";
+        dutch.innerHTML = "Klik hier om in Nederlands te spelen.";
+        eng.style.position = "absolute";
+        dutch.style.position = "absolute";
+        dutch.style.transform = "translate(17vw, 90vh)";
+        eng.style.transform = "translate(65vw, 90vh)";
+        dutch.style.backgroundColor = "#ffb911";
+        eng.style.backgroundColor = "#ffb911";
+        dutch.style.border = "solid black 3px";
+        eng.style.border = "solid black 3px";
+        dutch.style.fontWeight = "bolder";
+        eng.style.fontWeight = "bolder";
+        dutch.style.borderRadius = "3px";
+        eng.style.borderRadius = "3px";
+        dutch.style.cursor = "pointer";
+        eng.style.cursor = "pointer";
+        dutch.style.padding = "2vh 2vw 2vh 2vw";
+        eng.style.padding = "2vh 2vw 2vh 2vw";
+        dutch.style.fontSize = "2vh";
+        eng.style.fontSize = "2vh";
+        dutch.addEventListener("click", function () {
+            game.innerHTML = "";
+            localStorage.setItem('language', 'dutch');
+            new LocatieSelectie();
+            new Timer().startTimer();
+        });
+        eng.addEventListener("click", function () {
+            game.innerHTML = "";
+            localStorage.setItem('language', 'english');
+            new LocatieSelectie();
+            new Timer().startTimer();
+        });
+    };
+    return Info;
+}());
 var Languages = (function () {
     function Languages() {
         this.english = ["In order to start, we need to know what study program you are taking. Please select your study program from this list",
@@ -2120,7 +2224,7 @@ var Languages = (function () {
             "This is the end of the game</br>" + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + "'s score is:</br>",
             "Click here to save your score",
             "The key to your student experience",
-            "Attention! (klik op de knop onderaan om nederlands te kiezen)",
+            "Attention!",
             "Some tips beforehand:</br></br>The game revolves around speed, solving capabilities and creativity. The faster you complete the game, the better. But: pay attention to the information you are given... you could need that during the game(and of course during your study ;-) )</br></br>During the game you can use hints. These cost time though, so the less hints you use the better your score will be!</br></br>Work together. You should be in a group call via MS teams. Make sure you communicate. Share your ideas, suspicions and possible answers with eachother. This way you'll get the best result. In teams you can share your screen with the rest of your team. This way everyone will look at the same screen. You can also go to introgame.hr.nl seperately of course. In short, work together to tackle the assignments efficiently!</br></br>The game consists of 3 parts. Between the parts you can take a break, but dont close the game! During the breaks the time will not advance.</br></br>And now on to an amazing studentlife!</br>Have fun!",
             "You are at the beginning of your study program at Hogeschool Rotterdam. The beginning goes hand in hand with a lot of new information, new people and maybe even a new city! In this game we will let you discover the start of how life is on Hogeschool Rotterdam. Where do you find your schedule for example? Who can help you if you have a problem? And did you know Rotterdam is a really fun studentcity?"
         ];
@@ -2202,7 +2306,7 @@ var Languages = (function () {
             "Dit is het einde van het spel</br>" + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + "'s score is:</br>",
             "Klik hier voor een uitdraai van jullie score",
             "De sleutel tot jouw studententijd",
-            "Let op! (click the button below for english)",
+            "Let op!",
             "Even wat tips vooraf</br></br>Het draait in het spel om snelheid, oplossend vermogen en creativiteit. Hoe sneller jullie het spel uitspelen, hoe beter. Maar: let wel goed op welke informatie je krijgt toegespeeld\u2026 je zou dat zomaar eens nodig kunnen hebben op een later moment in het spel (en natuurlijk tijdens je studie ;-) )</br></br>Tijdens het spel kan je gebruik maken van hints. Het gebruik van de hints kost je echter tijd. Hoe minder hints jullie nodig hebben, hoe beter!</br></br>Werk samen. Als het goed is zijn jullie inmiddels als groep een videogesprek gestart in MS Teams. Zorg dat je goed communiceert. Deel je idee\u00EBn, vermoedens en mogelijke antwoorden hardop met elkaar. Zo kom je samen tot het beste resultaat. In MS Teams kan je ervoor kiezen om je scherm te delen met de andere mensen in de groep. Dan kijkt iedereen naar hetzelfde scherm. Daarnaast is het natuurlijk ook mogelijk om allemaal individueel via de link https://introgame.hr.nl  het spel te doorlopen. Op die manier kan iedereen mee op zoek naar antwoorden. Kortom, bundel je krachten en verdeel de taken slim!</br></br>Het spel bestaat uit 3 delen. Tussen de delen kan je wel even pauzeren, maar sluit het spel niet af. Tijdens jullie pauze loopt de tijd niet verder door.</br></br>En nu op naar een geweldige studententijd!</br>Veel speelplezier!",
             "Jullie staan aan het begin van jullie studie aan Hogeschool Rotterdam. En dat begin gaat gepaard met een heleboel nieuwe informatie, nieuwe mensen en misschien zelfs een nieuwe stad! In deze game laten we jullie vast een beetje ontdekken hoe het op de hogeschool geregeld is. Waar vind je bijvoorbeeld je rooster? Bij wie kan je terecht als je met een vraag of probleem zit? En wist je dat Rotterdam ook echt een leuke studentenstad is? Ook daar laten we je graag een beetje mee kennismaken. ",
         ];
@@ -2232,13 +2336,10 @@ var LocatieSelectie = (function () {
     LocatieSelectie.prototype.language = function () {
         var _this = this;
         var language = document.createElement('languagePicker');
-        language.innerHTML = new Languages()[localStorage.getItem('language')][2];
         var dutch = document.createElement('button');
         dutch.innerHTML = 'Nederlands';
-        language.appendChild(dutch);
         var english = document.createElement('button');
         english.innerHTML = 'English';
-        language.appendChild(english);
         document.getElementsByTagName('educationsetter')[0].appendChild(language);
         if (localStorage.getItem('language') == 'dutch') {
             dutch.style.backgroundColor = '#ff9c23';
@@ -2913,27 +3014,25 @@ var StartScreem = (function () {
         var text = document.createElement("text");
         this.game.appendChild(text);
         text.innerHTML = "HR INTROGAME";
-        text.style.transform = "translate(37.5vw, 80vh)";
+        text.style.transform = "translate(40vw, 80vh)";
         text.style.color = "white";
         text.style.position = "absolute";
-        text.style.fontSize = "5vh";
+        text.style.fontSize = "5vmin";
         var text2 = document.createElement("text");
         this.game.appendChild(text2);
         if (localStorage.getItem('language') == 'dutch') {
-            text2.style.transform = "translate(38.3vw, 85.5vh)";
+            text2.style.transform = "translate(41vw, 85.5vh)";
         }
         else {
-            text2.style.transform = "translate(37.3vw, 85.5vh)";
+            text2.style.transform = "translate(41vw, 85.5vh)";
         }
         text2.style.color = "white";
         text2.style.position = "absolute";
-        text2.style.fontSize = "2.5vh";
+        text2.style.fontSize = "2.5vmin";
         text2.innerHTML = new Languages()[localStorage.getItem('language')][77];
-        new popup(new Languages()[localStorage.getItem('language')][80], 20, 20, 30);
         start.addEventListener('click', function () {
             _this.game.innerHTML = "";
-            new LocatieSelectie();
-            new Timer().startTimer();
+            new Info();
         });
     }
     return StartScreem;

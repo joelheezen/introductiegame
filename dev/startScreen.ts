@@ -16,33 +16,31 @@ class StartScreem{
         let text = document.createElement("text")
         this.game.appendChild(text)
         text.innerHTML = "HR INTROGAME"
-        text.style.transform = `translate(37.5vw, 80vh)`
+        text.style.transform = `translate(40vw, 80vh)`
         text.style.color = `white`
         text.style.position = `absolute`
-        text.style.fontSize = `5vh`
+        text.style.fontSize = `5vmin`
 
         let text2 = document.createElement("text")
         this.game.appendChild(text2)
 
         if(localStorage.getItem('language') == 'dutch'){
-            text2.style.transform = `translate(38.3vw, 85.5vh)`
+            text2.style.transform = `translate(41vw, 85.5vh)`
         }
         else{
-            text2.style.transform = `translate(37.3vw, 85.5vh)`
+            text2.style.transform = `translate(41vw, 85.5vh)`
         }
         text2.style.color = `white`
         text2.style.position = `absolute`
-        text2.style.fontSize = `2.5vh`
+        text2.style.fontSize = `2.5vmin`
         text2.innerHTML = new Languages()[localStorage.getItem('language')][77]
 
-        new popup(new Languages()[localStorage.getItem('language')][80],20,20,30)
 
 
 
         start.addEventListener('click',()=>{
             this.game.innerHTML = ""
-            new LocatieSelectie()
-            new Timer().startTimer()
+            new Info()
         })
     }
 
