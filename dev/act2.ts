@@ -91,7 +91,7 @@ class Act2{
 
         this.doorName5.style.width = '11.77vw'
         this.doorName5.style.height = '3.65vh'
-        this.doorName5.style.transform = `translate(84vw, 26.7vh)`
+        this.doorName5.style.transform = `translate(84vw, 26.8vh)`
         this.doorName5.style.textAlign = 'center'
         this.doorName5.style.paddingTop = '1.3vh'
         this.doorName5.style.fontSize = `0.8vw`

@@ -19,6 +19,8 @@ class LocatieSelectie{
         popup.style.top = `5vh`
         popup.style.width = `50vw`
         popup.style.left = `22vw`
+        let button = <HTMLElement>document.getElementsByTagName("button")[1]
+        button.style.top = `50vh`
     }
 
     goBack(){

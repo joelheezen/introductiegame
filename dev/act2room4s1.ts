@@ -17,14 +17,14 @@ class Act2Room4s1{
         this.video.controls = true
 
         this.signin.style.width = "15vw"
-        this.signin.style.height = "3.7vh"
+        this.signin.style.height = "2.8"
         this.signin.style.transform = "translate(8vw,80vh)"
         this.signin.style.backgroundColor = "#ffb911"
         this.signin.style.borderRadius = "20px"
         this.signin.style.display = "table-cell"
         this.signin.style.fontSize = "18px"
         this.signin.style.textAlign = 'center'
-        this.signin.style.paddingTop = '0.5vh'
+        this.signin.style.padding = '1vh'
         this.signin.style.cursor = "pointer"
         this.signin.innerText = new Languages()[localStorage.getItem('language')][45]
         this.signin.addEventListener("click",()=>{
