@@ -274,7 +274,65 @@ var Act1 = (function () {
         });
     };
     Act1.prototype.lms = function () {
+        var _this = this;
+        document.getElementsByTagName("game")[0].innerHTML = "";
+        var background = document.createElement("backgroundOnline");
+        var game = document.getElementsByTagName("game")[0];
+        game.appendChild(background);
+        var banner = document.createElement('banner');
+        game.appendChild(banner);
+        var button1 = document.createElement("button");
+        var button2 = document.createElement("button");
+        var button3 = document.createElement("button");
+        var button4 = document.createElement("button");
+        var button5 = document.createElement("button");
+        var button6 = document.createElement("button");
+        var button7 = document.createElement("button");
+        game.appendChild(button1);
+        game.appendChild(button2);
+        game.appendChild(button3);
+        game.appendChild(button4);
+        game.appendChild(button5);
+        game.appendChild(button6);
+        game.appendChild(button7);
+        button1.style.width = "15.6vw";
+        button1.style.height = "60.9vh";
+        button1.style.transform = "translate(14.5vw, 20.8vh)";
+        button1.style.opacity = "0";
+        button1.addEventListener("click", function () { return _this.webmail(); });
+        button2.style.width = "22vw";
+        button2.style.height = "12.3vh";
+        button2.style.transform = "translate(31.7vw, 69.8vh)";
+        button2.style.opacity = "0";
+        button2.addEventListener("click", function () { return _this.rooster(); });
+        button3.style.width = "10.7vw";
+        button3.style.height = "27.3vh";
+        button3.style.transform = "translate(55vw, 20.7vh)";
+        button3.style.opacity = "0";
+        button3.addEventListener("click", function () { return _this.studentenServiceCenter(); });
+        button4.style.width = "16.3vw";
+        button4.style.height = "18vh";
+        button4.style.transform = "translate(59vw, 63.8vh)";
+        button4.style.opacity = "0";
+        button4.addEventListener("click", function () { return _this.studentenpas(); });
+        button5.style.width = "10.2vw";
+        button5.style.height = "61.3vh";
+        button5.style.transform = "translate(77vw, 20.8vh)";
+        button5.style.opacity = "0";
+        button5.addEventListener("click", function () { return _this.lms(); });
+        button6.style.width = "9vw";
+        button6.style.height = "7.6vh";
+        button6.style.transform = "translate(91vw, 0vh)";
+        button6.style.opacity = "0";
+        button6.addEventListener("click", function () { return _this.goBack(); });
+        button7.style.width = "8.5vw";
+        button7.style.height = "18vh";
+        button7.style.transform = "translate(67vw, 20.8vh)";
+        button7.style.opacity = "0";
+        button7.addEventListener("click", function () { return _this.osiris(); });
         new CenterPopup('Cum laude', new Languages()[localStorage.getItem('language')][19], 'https://lms.hr.nl');
+        var button = document.getElementsByClassName("popupButton")[0];
+        button.style.top = "85%";
     };
     Act1.prototype.goBack = function () {
         document.getElementsByTagName("game")[0].innerHTML = "";
@@ -854,7 +912,7 @@ var Act3 = (function () {
         this.video.src = 'assets/Akte3/startAct3.mp4';
         this.video.autoplay = true;
         this.video.controls = false;
-        this.video.playbackRate = 1;
+        this.video.playbackRate = 16;
         this.video.onended = function () {
             var game = document.getElementsByTagName("game")[0];
             game.innerHTML = "";
@@ -1203,7 +1261,6 @@ var Act3 = (function () {
                     pinPopup.style.transform = "translate(33.5vw, 15vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][33];
                     pinPopup.style.paddingTop = "1vh";
-                    pinPopup.style.fontSize = "1.5vh";
                 });
                 char1.addEventListener("mouseout", function () {
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
@@ -1222,7 +1279,6 @@ var Act3 = (function () {
                     pinPopup.style.transform = "translate(21vw, 30vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][37];
                     pinPopup.style.paddingTop = "1vh";
-                    pinPopup.style.fontSize = "1.5vh";
                 });
                 char2.addEventListener("mouseout", function () {
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
@@ -1230,8 +1286,10 @@ var Act3 = (function () {
                 });
                 var line1 = document.createElement("line");
                 var line2 = document.createElement("line");
-                mapArea.appendChild(line1);
-                mapArea.appendChild(line2);
+                if (localStorage.getItem("language") == "dutch") {
+                    mapArea.appendChild(line1);
+                    mapArea.appendChild(line2);
+                }
                 line1.style.width = "6.5vw";
                 line1.style.transform = "translate(23vw, 45vh) rotate(10deg)";
                 line1.style.zIndex = "3";
@@ -1251,7 +1309,6 @@ var Act3 = (function () {
                     pinPopup.style.transform = "translate(29vw, 22vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][35];
                     pinPopup.style.paddingTop = "1vh";
-                    pinPopup.style.fontSize = "1.5vh";
                 });
                 char3.addEventListener("mouseout", function () {
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
@@ -1270,7 +1327,6 @@ var Act3 = (function () {
                     pinPopup.style.transform = "translate(31vw, 23vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][36];
                     pinPopup.style.paddingTop = "1vh";
-                    pinPopup.style.fontSize = "1.5vh";
                 });
                 char4.addEventListener("mouseout", function () {
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
@@ -1289,7 +1345,6 @@ var Act3 = (function () {
                     pinPopup.style.transform = "translate(12vw, 24vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][34];
                     pinPopup.style.paddingTop = "1vh";
-                    pinPopup.style.fontSize = "1.5vh";
                 });
                 char5.addEventListener("mouseout", function () {
                     var pinPopup = document.getElementsByTagName("pinPopup")[0];
@@ -1727,7 +1782,7 @@ var Act3 = (function () {
                 popup.style.paddingLeft = "1vw";
                 popup.style.paddingRight = "1vw";
                 popup.style.boxShadow = "rgba(0, 0, 0, 0.5) 15px 15px";
-                popup.style.fontSize = "1.5vh";
+                popup.style.fontSize = "1.2rem";
                 popup.innerHTML += new Languages()[localStorage.getItem('language')][43];
             });
             button8.style.width = "5.9vw";
@@ -1790,6 +1845,7 @@ var CenterPopup = (function () {
         var popupMessage = document.createElement('popupMessage');
         popupMessage.innerHTML = message;
         var doorgaan = document.createElement('button');
+        doorgaan.classList.add("popupButton");
         doorgaan.innerHTML = new Languages()[localStorage.getItem('language')][11];
         doorgaan.addEventListener('click', function () {
             if (open == 'doorgaan' || open == 'Continue') {
@@ -2148,7 +2204,7 @@ var Languages = (function () {
         this.english = ["In order to start, we need to know what study program you are taking. Please select your study program from this list",
             "Choose education",
             "Choose language",
-            "Hogeschool Rotterdam is spread out over the city. More than 15 locations in North and South. Which location do you study at?",
+            "Hogeschool Rotterdam is spread out over the city. More than 15 locations. Which location do you study at?",
             "<b>Correct!</b>This is the location of your study program.<br>",
             "Click here</a>for more information about this location.</p>",
             "Try again",
@@ -2327,6 +2383,8 @@ var LocatieSelectie = (function () {
         popup.style.top = "5vh";
         popup.style.width = "50vw";
         popup.style.left = "22vw";
+        var button = document.getElementsByTagName("button")[1];
+        button.style.top = "50vh";
     }
     LocatieSelectie.prototype.goBack = function () {
         this.game.innerHTML = "";
@@ -2994,7 +3052,7 @@ var popup = (function () {
         this.field.style.height = "auto";
         this.field.style.borderRadius = "20px";
         this.field.style.backgroundColor = "#ffb911";
-        this.field.style.fontSize = "1vw";
+        this.field.style.fontSize = "1.2rem";
         this.field.style.zIndex = "2";
         this.field.style.padding = "0.5vw";
         this.field.style.boxShadow = "0.3vw 1vh";
