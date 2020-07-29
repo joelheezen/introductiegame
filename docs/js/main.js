@@ -2022,6 +2022,26 @@ var hint = (function () {
         this.hintbox2 = document.createElement("hintbox");
         this.hintbox3 = document.createElement("hintbox");
         this.hintbox4 = document.createElement("hintbox");
+        this.text1 = document.createElement("text");
+        this.text2 = document.createElement("text");
+        this.text3 = document.createElement("text");
+        this.text4 = document.createElement("text");
+        this.game.appendChild(this.text1);
+        this.game.appendChild(this.text2);
+        this.game.appendChild(this.text3);
+        this.game.appendChild(this.text4);
+        this.text1.style.position = "absolute";
+        this.text2.style.position = "absolute";
+        this.text3.style.position = "absolute";
+        this.text4.style.position = "absolute";
+        this.text1.innerHTML = "Hint1";
+        this.text2.innerHTML = "Hint2";
+        this.text3.innerHTML = "Hint3";
+        this.text4.innerHTML = "Hint4";
+        this.text1.style.transform = "translateX(2.5vw)";
+        this.text2.style.transform = "translateX(10vw)";
+        this.text3.style.transform = "translateX(17.5vw)";
+        this.text4.style.transform = "translateX(25vw)";
         this.game.appendChild(this.hint1);
         this.game.appendChild(this.hint2);
         this.game.appendChild(this.hint3);
@@ -2043,6 +2063,7 @@ var hint = (function () {
             new popup(new Languages()[localStorage.getItem('language')][54], 0, 7, 20);
             _this.hintbox1.remove();
             _this.hint1.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)';
+            _this.text1.remove();
         });
         this.hint2.style.width = "7vw";
         this.hint2.style.height = "7vh";
@@ -2059,6 +2080,7 @@ var hint = (function () {
             new popup(new Languages()[localStorage.getItem('language')][56], 7, 7, 20);
             _this.hintbox2.remove();
             _this.hint2.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)';
+            _this.text2.remove();
         });
         this.hint3.style.width = "7vw";
         this.hint3.style.height = "7vh";
@@ -2075,6 +2097,7 @@ var hint = (function () {
             new popup(new Languages()[localStorage.getItem('language')][58], 14, 7, 20);
             _this.hintbox3.remove();
             _this.hint3.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)';
+            _this.text3.remove();
         });
         this.hint4.style.width = "7vw";
         this.hint4.style.height = "7vh";
@@ -2091,6 +2114,7 @@ var hint = (function () {
             new popup(new Languages()[localStorage.getItem('language')][67], 21, 7, 20);
             _this.hintbox4.remove();
             _this.hint4.style.backgroundImage = 'url(assets/Akte2/envelope_open.png)';
+            _this.text4.remove();
         });
     }
     return hint;
