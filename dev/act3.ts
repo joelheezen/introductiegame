@@ -22,7 +22,7 @@ class Act3{
         this.video.src = 'assets/Akte3/startAct3.mp4'
         this.video.autoplay = true
         this.video.controls = false
-        this.video.playbackRate = 16
+        this.video.playbackRate = 1
         this.video.onended = function() {
             let game = document.getElementsByTagName("game")[0]
             game.innerHTML = ""

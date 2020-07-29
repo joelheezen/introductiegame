@@ -29,14 +29,14 @@ class LocatieSelectie{
 
     language(){
         let language = document.createElement('languagePicker')
-        language.innerHTML = new Languages()[localStorage.getItem('language')][2]
+        //language.innerHTML = new Languages()[localStorage.getItem('language')][2]
 
         let dutch = document.createElement('button')
         dutch.innerHTML = 'Nederlands'
-        language.appendChild(dutch)
+        //language.appendChild(dutch)
         let english = document.createElement('button')
         english.innerHTML = 'English'
-        language.appendChild(english)
+        //language.appendChild(english)
 
         document.getElementsByTagName('educationsetter')[0].appendChild(language)
 
