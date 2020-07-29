@@ -98,17 +98,16 @@ var Act1 = (function () {
         game.appendChild(this.button1);
         this.button1.style.width = "15.1vw";
         this.button1.style.height = "7.5vh";
-        this.button1.style.transform = "translate(42.4vw, 56vh)";
+        this.button1.style.transform = "translate(52.5vw, 56vh)";
         this.button1.innerHTML = new Languages()[localStorage.getItem('language')][9];
         this.button1.classList.add('verzenden');
         this.button1.addEventListener("click", function () { return _this.shapeCheck(); });
         var button2 = document.createElement("button");
         game.appendChild(button2);
-        button2.classList.add('search');
-        button2.style.height = "4vh";
-        button2.style.textAlign = 'left';
-        button2.style.transform = "translate(25vw, 61vh)";
-        button2.style.opacity = "1";
+        button2.style.height = "7.5vh";
+        button2.style.width = "15.1vw";
+        button2.style.transform = "translate(30vw, 56vh)";
+        button2.classList.add('verzenden');
         button2.innerHTML = new Languages()[localStorage.getItem('language')][10];
         button2.addEventListener("click", function () { return _this.searchOnline(); });
         var button3 = document.createElement("button");
@@ -2937,14 +2936,18 @@ var Pause = (function () {
         title.appendChild(subTitle);
         this.game.appendChild(message);
         message.appendChild(nextButton);
-        message.appendChild(extra);
+        if (localStorage.getItem("korting") == null) {
+            message.appendChild(extra);
+        }
         message.appendChild(extraText);
         extraText.style.width = "auto";
         extraText.style.height = "3.5vw";
         extraText.style.paddingTop = "1vh";
         extraText.style.top = "14.5vw";
         extraText.style.position = "absolute";
-        extraText.innerHTML = "Oplossing Profielen Puzzel voor 20 minuten korting:";
+        if (localStorage.getItem("korting") == null) {
+            extraText.innerHTML = "Oplossing Profielen Puzzel voor 20 minuten korting:";
+        }
         extra.style.width = "15vw";
         extra.style.height = "3.5vw";
         extra.style.paddingTop = "1vh";
@@ -2961,6 +2964,8 @@ var Pause = (function () {
             if (document.getElementById("extra").value == "escapade") {
                 new Timer().addBonus(300);
                 extra.remove();
+                localStorage.setItem("korting", "yes");
+                extraText.innerHTML = "";
             }
         });
         setTimeout(function () {

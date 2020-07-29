@@ -106,18 +106,17 @@ class Act1 {
         game.appendChild(this.button1)
         this.button1.style.width = `15.1vw`
         this.button1.style.height = `7.5vh`
-        this.button1.style.transform = `translate(42.4vw, 56vh)`
+        this.button1.style.transform = `translate(52.5vw, 56vh)`
         this.button1.innerHTML = new Languages()[localStorage.getItem('language')][9]
         this.button1.classList.add('verzenden')
         this.button1.addEventListener("click" , () => this.shapeCheck())
 
         let button2 = document.createElement("button")
         game.appendChild(button2)
-        button2.classList.add('search')
-        button2.style.height = `4vh`
-        button2.style.textAlign = 'left'
-        button2.style.transform = `translate(25vw, 61vh)`
-        button2.style.opacity = `1`
+        button2.style.height = `7.5vh`
+        button2.style.width = `15.1vw`
+        button2.style.transform = `translate(30vw, 56vh)`
+        button2.classList.add('verzenden')
         button2.innerHTML = new Languages()[localStorage.getItem('language')][10]
         button2.addEventListener("click" , () => this.searchOnline())
 
