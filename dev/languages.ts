@@ -3,7 +3,7 @@ class Languages{
     english =   [   `In order to start, we need to know what study program you are taking. Please select your study program from this list`,
                     `Choose education`,
                     `Choose language`,
-                    `Hogeschool Rotterdam is spread out over the city. More than 15 locations in North and South. Which location do you study at?`,
+                    `Hogeschool Rotterdam is spread out over the city. More than 15 locations. Which location do you study at?`,
                     `<b>Correct!</b>This is the location of your study program.<br>`,
                     `Click here</a>for more information about this location.</p>`,
                     `Try again`,

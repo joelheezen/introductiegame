@@ -10,6 +10,7 @@ class CenterPopup{
             popupMessage.innerHTML = message
     
             let doorgaan = document.createElement('button')
+            doorgaan.classList.add("popupButton")
             doorgaan.innerHTML = new Languages()[localStorage.getItem('language')][11]
     
             doorgaan.addEventListener('click',()=>{

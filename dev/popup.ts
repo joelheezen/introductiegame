@@ -12,7 +12,7 @@ class popup{
         this.field.style.height = "auto"
         this.field.style.borderRadius = "20px"
         this.field.style.backgroundColor = "#ffb911"
-        this.field.style.fontSize = "1vw"
+        this.field.style.fontSize = "1.2rem"
         this.field.style.zIndex = "2"
         this.field.style.padding = "0.5vw"
         this.field.style.boxShadow = "0.3vw 1vh"

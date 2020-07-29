@@ -22,7 +22,7 @@ class Act3{
         this.video.src = 'assets/Akte3/startAct3.mp4'
         this.video.autoplay = true
         this.video.controls = false
-        this.video.playbackRate = 1
+        this.video.playbackRate = 16
         this.video.onended = function() {
             let game = document.getElementsByTagName("game")[0]
             game.innerHTML = ""
@@ -409,7 +409,7 @@ class Act3{
                     pinPopup.style.transform = `translate(33.5vw, 15vh)`
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][33]
                     pinPopup.style.paddingTop = `1vh`
-                    pinPopup.style.fontSize = `1.5vh`
+                    
                 })
                 char1.addEventListener("mouseout", function(){
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
@@ -429,7 +429,7 @@ class Act3{
                     pinPopup.style.transform = `translate(21vw, 30vh)`
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][37]
                     pinPopup.style.paddingTop = `1vh`
-                    pinPopup.style.fontSize = `1.5vh`
+                    
                 })
                 char2.addEventListener("mouseout", function(){
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
@@ -439,9 +439,10 @@ class Act3{
                 let line1 = document.createElement("line")
                 let line2 = document.createElement("line")
 
-                mapArea.appendChild(line1)
-                mapArea.appendChild(line2)
-
+                if (localStorage.getItem("language") == "dutch"){
+                    mapArea.appendChild(line1)
+                    mapArea.appendChild(line2)
+                }
                 line1.style.width = `6.5vw`
                 line1.style.transform = `translate(23vw, 45vh) rotate(10deg)`
                 line1.style.zIndex = `3`
@@ -463,7 +464,7 @@ class Act3{
                     pinPopup.style.transform = `translate(29vw, 22vh)`
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][35]
                     pinPopup.style.paddingTop = `1vh`
-                    pinPopup.style.fontSize = `1.5vh`
+                    
                 })
                 char3.addEventListener("mouseout", function(){
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
@@ -483,7 +484,7 @@ class Act3{
                     pinPopup.style.transform = `translate(31vw, 23vh)`
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][36]
                     pinPopup.style.paddingTop = `1vh`
-                    pinPopup.style.fontSize = `1.5vh`
+                   
                 })
                 char4.addEventListener("mouseout", function(){
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
@@ -503,7 +504,7 @@ class Act3{
                     pinPopup.style.transform = `translate(12vw, 24vh)`
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][34]
                     pinPopup.style.paddingTop = `1vh`
-                    pinPopup.style.fontSize = `1.5vh`
+                    
                 })
                 char5.addEventListener("mouseout", function(){
                     let pinPopup = document.getElementsByTagName("pinPopup")[0]
@@ -1011,8 +1012,8 @@ class Act3{
                 popup.style.paddingLeft = `1vw`
                 popup.style.paddingRight = `1vw`
                 popup.style.boxShadow = `rgba(0, 0, 0, 0.5) 15px 15px`
+                popup.style.fontSize = `1.2rem`
 
-                popup.style.fontSize = `1.5vh`
 
                 popup.innerHTML += new Languages()[localStorage.getItem('language')][43]
 
