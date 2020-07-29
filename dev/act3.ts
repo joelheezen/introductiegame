@@ -31,7 +31,7 @@ class Act3{
             if (localStorage.getItem("language") == "english"){
                 background.style.backgroundImage = `url(assets/Akte3/Act3Eng.png)`
             }
-            new popup(new Languages()[localStorage.getItem('language')][68] , 40, 10 , 20)
+            new popupStory(new Languages()[localStorage.getItem('language')][68] , 25, 30 , 50)
 
             let button1 = document.createElement("button")
             let button2 = document.createElement("button")

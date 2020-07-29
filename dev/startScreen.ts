@@ -35,7 +35,7 @@ class StartScreem{
         text2.style.fontSize = `2.5vh`
         text2.innerHTML = new Languages()[localStorage.getItem('language')][77]
 
-        new popup(new Languages()[localStorage.getItem('language')][80],20,20,30)
+        new popupStory(new Languages()[localStorage.getItem('language')][80],20,20,60)
 
 
 

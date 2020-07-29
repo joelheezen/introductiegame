@@ -450,7 +450,7 @@ var Act2 = (function () {
     };
     Act2.prototype.setHint = function () {
         new popup(new Languages()[localStorage.getItem('language')][48], 5, 84, 10);
-        new popup(new Languages()[localStorage.getItem('language')][49], 30, 40, 40);
+        new popupStory(new Languages()[localStorage.getItem('language')][49], 30, 30, 40);
     };
     Act2.prototype.codeEind = function () {
         var codeString = document.getElementById("input1").value +
@@ -864,7 +864,7 @@ var Act3 = (function () {
             if (localStorage.getItem("language") == "english") {
                 background.style.backgroundImage = "url(assets/Akte3/Act3Eng.png)";
             }
-            new popup(new Languages()[localStorage.getItem('language')][68], 40, 10, 20);
+            new popupStory(new Languages()[localStorage.getItem('language')][68], 25, 30, 50);
             var button1 = document.createElement("button");
             var button2 = document.createElement("button");
             var button3 = document.createElement("button");
@@ -2841,13 +2841,13 @@ var Pause = (function () {
         extraText.style.width = "auto";
         extraText.style.height = "3.5vw";
         extraText.style.paddingTop = "1vh";
-        extraText.style.top = "16vw";
+        extraText.style.top = "14.5vw";
         extraText.style.position = "absolute";
         extraText.innerHTML = "Oplossing Profielen Puzzel voor 20 minuten korting:";
         extra.style.width = "15vw";
         extra.style.height = "3.5vw";
         extra.style.paddingTop = "1vh";
-        extra.style.top = "21.5vw";
+        extra.style.top = "20vw";
         extra.style.left = "9.5vw";
         extra.style.position = "absolute";
         extra.style.backgroundColor = "#ffffff";
@@ -2898,6 +2898,43 @@ var popup = (function () {
     }
     return popup;
 }());
+var popupStory = (function () {
+    function popupStory(text, posX, posY, width) {
+        var _this = this;
+        this.bg = document.createElement('popupbackground');
+        this.field = document.createElement('popup');
+        this.game = document.getElementsByTagName('game')[0];
+        this.game.appendChild(this.bg);
+        this.game.appendChild(this.field);
+        this.bg.style.position = "absolute";
+        this.bg.style.backgroundColor = "black";
+        this.bg.style.width = "100vw";
+        this.bg.style.height = "100vh";
+        this.bg.style.zIndex = "5";
+        this.bg.style.opacity = "0.7";
+        this.field.innerText = text;
+        this.field.style.position = "absolute";
+        this.field.style.overflow = "hidden";
+        this.field.style.transform = "translate(" + posX + "vw," + posY + "vh)";
+        this.field.style.width = width.toString() + "vw";
+        this.field.style.height = "auto";
+        this.field.style.borderRadius = "20px";
+        this.field.style.backgroundColor = "#ffb911";
+        this.field.style.fontSize = "2vw";
+        this.field.style.zIndex = "6";
+        this.field.style.padding = "0.5vw";
+        this.field.style.boxShadow = "0.3vw 1vh";
+        this.field.addEventListener("click", function () {
+            _this.field.remove();
+            _this.bg.remove();
+        });
+        this.bg.addEventListener("click", function () {
+            _this.field.remove();
+            _this.bg.remove();
+        });
+    }
+    return popupStory;
+}());
 var StartScreem = (function () {
     function StartScreem() {
         var _this = this;
@@ -2929,7 +2966,7 @@ var StartScreem = (function () {
         text2.style.position = "absolute";
         text2.style.fontSize = "2.5vh";
         text2.innerHTML = new Languages()[localStorage.getItem('language')][77];
-        new popup(new Languages()[localStorage.getItem('language')][80], 20, 20, 30);
+        new popupStory(new Languages()[localStorage.getItem('language')][80], 20, 20, 60);
         start.addEventListener('click', function () {
             _this.game.innerHTML = "";
             new LocatieSelectie();

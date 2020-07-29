@@ -194,7 +194,7 @@ onlinePopup button{
     width:40%;
     height:3vw;    
     left:30%;
-    top:80%;
+    top:65%;
     cursor: pointer;
 }
 
@@ -465,9 +465,9 @@ startgame{
 
 next{
     width:15vw;
-    height:3.5vw;
+    height:2.8vw;
     padding-top: 1vh;
-    top:11vw;
+    top:9vw;
     left:9.5vw;
     position: absolute;
     background-color: #ffb911;
@@ -520,7 +520,7 @@ pauseMessage{
     border-radius: 15px;
     width:30vw;
     left:33vw;
-    top:33vh;
-    height:23vw;
+    top:30vh;
+    height:22.5vw;
     font-size: 1.4vw;
 }
