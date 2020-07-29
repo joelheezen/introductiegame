@@ -32,7 +32,10 @@ class Pause{
         title.appendChild(subTitle)
         this.game.appendChild(message)
         message.appendChild(nextButton)
-        message.appendChild(extra)
+        if (localStorage.getItem("korting") == null){
+            message.appendChild(extra)
+        }
+        
         message.appendChild(extraText)
 
         extraText.style.width="auto"
@@ -40,8 +43,9 @@ class Pause{
         extraText.style.paddingTop="1vh"
         extraText.style.top = "16vw"
         extraText.style.position = "absolute"
+        if (localStorage.getItem("korting") == null){
         extraText.innerHTML = "Oplossing Profielen Puzzel voor 20 minuten korting:"
-
+        }
         extra.style.width="15vw"
         extra.style.height="3.5vw"
         extra.style.paddingTop="1vh"
@@ -58,6 +62,8 @@ class Pause{
             if((<HTMLInputElement>document.getElementById("extra")).value == "escapade"){
                 new Timer().addBonus(300)
                 extra.remove()
+                localStorage.setItem("korting", "yes")
+                extraText.innerHTML = ""
             }
         })
         

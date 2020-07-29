@@ -140,9 +140,9 @@ onlinePopup{
 }
 
 .studentenPas{
-    height:38vh;
-    width:22.8vw;
-    transform:translate(31.3vw, 20vh);
+    height:60vh;
+    width:auto;
+    transform:translate(22.3vw, 21vh);
     cursor:pointer;
 }
 .vorm1{

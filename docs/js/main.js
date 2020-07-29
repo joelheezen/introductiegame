@@ -2937,14 +2937,18 @@ var Pause = (function () {
         title.appendChild(subTitle);
         this.game.appendChild(message);
         message.appendChild(nextButton);
-        message.appendChild(extra);
+        if (localStorage.getItem("korting") == null) {
+            message.appendChild(extra);
+        }
         message.appendChild(extraText);
         extraText.style.width = "auto";
         extraText.style.height = "3.5vw";
         extraText.style.paddingTop = "1vh";
         extraText.style.top = "16vw";
         extraText.style.position = "absolute";
-        extraText.innerHTML = "Oplossing Profielen Puzzel voor 20 minuten korting:";
+        if (localStorage.getItem("korting") == null) {
+            extraText.innerHTML = "Oplossing Profielen Puzzel voor 20 minuten korting:";
+        }
         extra.style.width = "15vw";
         extra.style.height = "3.5vw";
         extra.style.paddingTop = "1vh";
@@ -2961,6 +2965,8 @@ var Pause = (function () {
             if (document.getElementById("extra").value == "escapade") {
                 new Timer().addBonus(300);
                 extra.remove();
+                localStorage.setItem("korting", "yes");
+                extraText.innerHTML = "";
             }
         });
         setTimeout(function () {
