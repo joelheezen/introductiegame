@@ -78,7 +78,7 @@ class Act2{
         this.doorName3.style.paddingTop = '0.8vh'
         this.doorName3.style.fontSize = `1vw`
         this.doorName3.style.pointerEvents = "none"
-        this.doorName3.innerHTML = "Studieloopbaancoach"
+        this.doorName3.innerHTML = new Languages()[localStorage.getItem('language')][85]
 
         this.doorName4.style.width = '11.77vw'
         this.doorName4.style.height = '3.65vh'
@@ -96,7 +96,7 @@ class Act2{
         this.doorName5.style.paddingTop = '1.3vh'
         this.doorName5.style.fontSize = `0.8vw`
         this.doorName5.style.pointerEvents = "none"
-        this.doorName5.innerHTML = "Studentenwelzijnsadviseur"
+        this.doorName5.innerHTML = new Languages()[localStorage.getItem('language')][86]
     }
     codeInput(){
 
@@ -214,8 +214,7 @@ class Act2{
         (<HTMLInputElement>document.getElementById("input4")).value + 
         (<HTMLInputElement>document.getElementById("input5")).value
 
-        if(codeString.toLowerCase() =="dbnve"){
-            console.log("goed ")
+        if(codeString.toLowerCase() =="dbnve" || codeString.toLowerCase() == "dbnkn"){
             this.input1.style.border = "thick solid #00FF00"
             this.input2.style.border = "thick solid #00FF00"
             this.input3.style.border = "thick solid #00FF00"
@@ -225,7 +224,6 @@ class Act2{
             new CenterPopup(new Languages()[localStorage.getItem('language')][50],new Languages()[localStorage.getItem('language')][51],new Languages()[localStorage.getItem('language')][52])
             
         }else{
-            console.log("fout")
             this.input1.style.border = "thick solid #FF0000"
             this.input2.style.border = "thick solid #FF0000"
             this.input3.style.border = "thick solid #FF0000"
@@ -250,7 +248,12 @@ class Act2{
         this.classroomIcon.addEventListener("click",()=>{
             console.log("room1")
             document.getElementsByTagName("game")[0].innerHTML = ""
-            new Act2Room1
+            if(localStorage.getItem('language') == 'english'){
+                new Act2Room1Eng
+            }
+            else{
+                new Act2Room1
+            }
         })
         this.makeLevelIcon(24,25,13,43)
         this.classroomIcon.addEventListener("click",()=>{
@@ -262,19 +265,34 @@ class Act2{
         this.classroomIcon.addEventListener("click",()=>{
             console.log("room3")
             document.getElementsByTagName("game")[0].innerHTML = ""
-            new Act2Room3
+            if(localStorage.getItem('language') == 'english'){
+                new Act2Room3Eng
+            }
+            else{
+                new Act2Room3
+            }
         })
         this.makeLevelIcon(63.8,25,13,43)
         this.classroomIcon.addEventListener("click",()=>{
             console.log("room4")
             document.getElementsByTagName("game")[0].innerHTML = ""
-            new Act2Room4
+            if(localStorage.getItem('language') == 'english'){
+                new Act2Room4Eng
+            }
+            else{
+                new Act2Room4
+            }
         })
         this.makeLevelIcon(83.5,25,13,43)
         this.classroomIcon.addEventListener("click",()=>{
             console.log("room5")
             document.getElementsByTagName("game")[0].innerHTML = ""
-            new Act2Room5
+            if(localStorage.getItem('language') == 'english'){
+                new Act2Room5Eng
+            }
+            else{
+                new Act2Room5
+            }
         })
     }
 
@@ -305,19 +323,23 @@ class Act2{
         this.folderItem1.style.width = '8.3vw'
         this.folderItem1.style.height = '8.3vh'
         this.folderItem1.addEventListener("click",()=>{
-            console.log("folder1")
             this.game.appendChild(this.folderBackground)
             new Act2folder1
         })
+
 
         this.folderItem2.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_studie.png)'
         this.folderItem2.style.transform = `translate(44vw,87vh)`
         this.folderItem2.style.width = '12vw'
         this.folderItem2.style.height = '12vh'
         this.folderItem2.addEventListener("click",()=>{
-            console.log("folder2")
             this.game.appendChild(this.folderBackground)
-            new Act2folder2
+            if(localStorage.getItem('language') == 'english'){
+                new Act2folder2Eng
+            }
+            else{
+                new Act2folder2
+            }
         })
 
         this.folderItem3.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_solliciteren.png)'
@@ -325,9 +347,13 @@ class Act2{
         this.folderItem3.style.width = '8vw'
         this.folderItem3.style.height = '8vh'
         this.folderItem3.addEventListener("click",()=>{
-            console.log("folder3")
             this.game.appendChild(this.folderBackground)
-            new Act2folder3
+            if(localStorage.getItem('language') == 'english'){
+                new Act2folder3Eng
+            }
+            else{
+                new Act2folder3
+            }
         })
 
         this.folderItem4.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_coia.png)'
@@ -335,7 +361,6 @@ class Act2{
         this.folderItem4.style.width = '10vw'
         this.folderItem4.style.height = '10vh'
         this.folderItem4.addEventListener("click",()=>{
-            console.log("folder4")
             this.game.appendChild(this.folderBackground)
             new Act2folder4
         })
@@ -345,7 +370,6 @@ class Act2{
         this.folderItem5.style.width = '10vw'
         this.folderItem5.style.height = '10vh'
         this.folderItem5.addEventListener("click",()=>{
-            console.log("folder5")
             this.game.appendChild(this.folderBackground)
             new Act2folder5
         })
@@ -355,7 +379,6 @@ class Act2{
         this.folderItem6.style.width = '4.45vw'
         this.folderItem6.style.height = '11.6vh'
         this.folderItem6.addEventListener("click",()=>{
-            console.log("folder6")
             this.game.appendChild(this.folderBackground)
             new Act2folder6
         })
@@ -375,7 +398,6 @@ class folders{
         this.game.appendChild(this.folder)
         this.folder.addEventListener("click",()=>{
             let folderBG = document.getElementsByTagName('folderbackground')[0]
-            console.log("folder removed")
             folderBG.remove()
             this.folder.remove()
         })
@@ -400,11 +422,25 @@ class Act2folder2 extends folders{
         this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer2HulpbijStudie.jpg)'
     }
 }
+class Act2folder2Eng extends folders{
+
+    constructor(){
+        super()
+        this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer2StudyHelpENG.jpg)'
+    }
+}
 class Act2folder3 extends folders{
 
     constructor(){
         super()
         this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer3WorkshopSolliciteren.jpg)'
+    }
+}
+class Act2folder3Eng extends folders{
+
+    constructor(){
+        super()
+        this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer3WorkshopJobinterviewENG.jpg)'
     }
 }
 class Act2folder4 extends folders{
