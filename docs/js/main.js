@@ -176,6 +176,9 @@ var Act1 = (function () {
         var background = document.createElement("backgroundOnline");
         var game = document.getElementsByTagName("game")[0];
         game.appendChild(background);
+        if (localStorage.getItem("language") == "english") {
+            background.style.backgroundImage = "url(assets/floormapEn.png)";
+        }
         var banner = document.createElement('banner');
         game.appendChild(banner);
         if (this.popupSave == false) {
@@ -189,6 +192,8 @@ var Act1 = (function () {
         var button5 = document.createElement("button");
         var button6 = document.createElement("button");
         var button7 = document.createElement("button");
+        var button8 = document.createElement("button");
+        var button9 = document.createElement("button");
         game.appendChild(button1);
         game.appendChild(button2);
         game.appendChild(button3);
@@ -196,41 +201,53 @@ var Act1 = (function () {
         game.appendChild(button5);
         game.appendChild(button6);
         game.appendChild(button7);
-        button1.style.width = "15.6vw";
-        button1.style.height = "60.9vh";
-        button1.style.transform = "translate(14.5vw, 20.8vh)";
+        game.appendChild(button8);
+        game.appendChild(button9);
+        button1.style.width = "16.6vw";
+        button1.style.height = "77.1vh";
+        button1.style.transform = "translate(11.2vw, 10.8vh)";
         button1.style.opacity = "0";
         button1.addEventListener("click", function () { return _this.webmail(); });
-        button2.style.width = "22vw";
-        button2.style.height = "12.3vh";
-        button2.style.transform = "translate(31.7vw, 69.8vh)";
+        button2.style.width = "23.4vw";
+        button2.style.height = "15.4vh";
+        button2.style.transform = "translate(29.6vw, 72.9vh)";
         button2.style.opacity = "0";
         button2.addEventListener("click", function () { return _this.rooster(); });
-        button3.style.width = "10.7vw";
-        button3.style.height = "27.3vh";
-        button3.style.transform = "translate(55vw, 20.7vh)";
+        button3.style.width = "11.2vw";
+        button3.style.height = "34.5vh";
+        button3.style.transform = "translate(54.6vw, 10.6vh)";
         button3.style.opacity = "0";
         button3.addEventListener("click", function () { return _this.studentenServiceCenter(); });
-        button4.style.width = "16.3vw";
-        button4.style.height = "18vh";
-        button4.style.transform = "translate(59vw, 63.8vh)";
+        button4.style.width = "17.3vw";
+        button4.style.height = "22.6vh";
+        button4.style.transform = "translate(58.8vw, 65.5vh)";
         button4.style.opacity = "0";
         button4.addEventListener("click", function () { return _this.studentenpas(); });
-        button5.style.width = "10.2vw";
-        button5.style.height = "61.3vh";
-        button5.style.transform = "translate(77vw, 20.8vh)";
+        button5.style.width = "10.9vw";
+        button5.style.height = "77.5vh";
+        button5.style.transform = "translate(78vw, 10.7vh)";
         button5.style.opacity = "0";
         button5.addEventListener("click", function () { return _this.lms(); });
         button6.style.width = "9vw";
-        button6.style.height = "7.6vh";
+        button6.style.height = "8.5vh";
         button6.style.transform = "translate(91vw, 0vh)";
         button6.style.opacity = "0";
         button6.addEventListener("click", function () { return _this.goBack(); });
-        button7.style.width = "8.5vw";
-        button7.style.height = "18vh";
-        button7.style.transform = "translate(67vw, 20.8vh)";
+        button7.style.width = "8.9vw";
+        button7.style.height = "22.7vh";
+        button7.style.transform = "translate(67.4vw, 10.7vh)";
         button7.style.opacity = "0";
         button7.addEventListener("click", function () { return _this.osiris(); });
+        button8.style.width = "10.9vw";
+        button8.style.height = "46vh";
+        button8.style.transform = "translate(42.1vw, 10.7vh)";
+        button8.style.opacity = "0";
+        button8.addEventListener("click", function () { return _this.library(); });
+        button9.style.width = "10.9vw";
+        button9.style.height = "46vh";
+        button9.style.transform = "translate(29.6vw, 10.7vh)";
+        button9.style.opacity = "0";
+        button9.addEventListener("click", function () { return _this.app(); });
     };
     Act1.prototype.webmail = function () {
         window.open('https://webmail.hr.nl', '_blank');
@@ -279,6 +296,9 @@ var Act1 = (function () {
         var background = document.createElement("backgroundOnline");
         var game = document.getElementsByTagName("game")[0];
         game.appendChild(background);
+        if (localStorage.getItem("language") == "english") {
+            background.style.backgroundImage = "url(assets/floormapEn.png)";
+        }
         var banner = document.createElement('banner');
         game.appendChild(banner);
         var button1 = document.createElement("button");
@@ -288,6 +308,8 @@ var Act1 = (function () {
         var button5 = document.createElement("button");
         var button6 = document.createElement("button");
         var button7 = document.createElement("button");
+        var button8 = document.createElement("button");
+        var button9 = document.createElement("button");
         game.appendChild(button1);
         game.appendChild(button2);
         game.appendChild(button3);
@@ -295,42 +317,135 @@ var Act1 = (function () {
         game.appendChild(button5);
         game.appendChild(button6);
         game.appendChild(button7);
-        button1.style.width = "15.6vw";
-        button1.style.height = "60.9vh";
-        button1.style.transform = "translate(14.5vw, 20.8vh)";
+        game.appendChild(button8);
+        game.appendChild(button9);
+        button1.style.width = "16.6vw";
+        button1.style.height = "77.1vh";
+        button1.style.transform = "translate(11.2vw, 10.8vh)";
         button1.style.opacity = "0";
         button1.addEventListener("click", function () { return _this.webmail(); });
-        button2.style.width = "22vw";
-        button2.style.height = "12.3vh";
-        button2.style.transform = "translate(31.7vw, 69.8vh)";
+        button2.style.width = "23.4vw";
+        button2.style.height = "15.4vh";
+        button2.style.transform = "translate(29.6vw, 72.9vh)";
         button2.style.opacity = "0";
         button2.addEventListener("click", function () { return _this.rooster(); });
-        button3.style.width = "10.7vw";
-        button3.style.height = "27.3vh";
-        button3.style.transform = "translate(55vw, 20.7vh)";
+        button3.style.width = "11.2vw";
+        button3.style.height = "34.5vh";
+        button3.style.transform = "translate(54.6vw, 10.6vh)";
         button3.style.opacity = "0";
         button3.addEventListener("click", function () { return _this.studentenServiceCenter(); });
-        button4.style.width = "16.3vw";
-        button4.style.height = "18vh";
-        button4.style.transform = "translate(59vw, 63.8vh)";
+        button4.style.width = "17.3vw";
+        button4.style.height = "22.6vh";
+        button4.style.transform = "translate(58.8vw, 65.5vh)";
         button4.style.opacity = "0";
         button4.addEventListener("click", function () { return _this.studentenpas(); });
-        button5.style.width = "10.2vw";
-        button5.style.height = "61.3vh";
-        button5.style.transform = "translate(77vw, 20.8vh)";
+        button5.style.width = "10.9vw";
+        button5.style.height = "77.5vh";
+        button5.style.transform = "translate(78vw, 10.7vh)";
         button5.style.opacity = "0";
         button5.addEventListener("click", function () { return _this.lms(); });
         button6.style.width = "9vw";
-        button6.style.height = "7.6vh";
+        button6.style.height = "8.5vh";
         button6.style.transform = "translate(91vw, 0vh)";
         button6.style.opacity = "0";
         button6.addEventListener("click", function () { return _this.goBack(); });
-        button7.style.width = "8.5vw";
-        button7.style.height = "18vh";
-        button7.style.transform = "translate(67vw, 20.8vh)";
+        button7.style.width = "8.9vw";
+        button7.style.height = "22.7vh";
+        button7.style.transform = "translate(67.4vw, 10.7vh)";
         button7.style.opacity = "0";
         button7.addEventListener("click", function () { return _this.osiris(); });
+        button8.style.width = "10.9vw";
+        button8.style.height = "46vh";
+        button8.style.transform = "translate(42.1vw, 10.7vh)";
+        button8.style.opacity = "0";
+        button8.addEventListener("click", function () { return _this.library(); });
+        button9.style.width = "10.9vw";
+        button9.style.height = "46vh";
+        button9.style.transform = "translate(29.6vw, 10.7vh)";
+        button9.style.opacity = "0";
+        button9.addEventListener("click", function () { return _this.app(); });
         new CenterPopup('Cum laude', new Languages()[localStorage.getItem('language')][19], 'https://lms.hr.nl');
+        var button = document.getElementsByClassName("popupButton")[0];
+        button.style.top = "85%";
+    };
+    Act1.prototype.library = function () {
+        new CenterPopup(new Languages()[localStorage.getItem('language')][81], new Languages()[localStorage.getItem('language')][82], 'https://www.hogeschoolrotterdam.nl/voorlichting/voorzieningen/mediatheek/newsitem/welkom-studenten/190679/');
+    };
+    Act1.prototype.app = function () {
+        var _this = this;
+        document.getElementsByTagName("game")[0].innerHTML = "";
+        var background = document.createElement("backgroundOnline");
+        var game = document.getElementsByTagName("game")[0];
+        game.appendChild(background);
+        if (localStorage.getItem("language") == "english") {
+            background.style.backgroundImage = "url(assets/floormapEn.png)";
+        }
+        var banner = document.createElement('banner');
+        game.appendChild(banner);
+        var button1 = document.createElement("button");
+        var button2 = document.createElement("button");
+        var button3 = document.createElement("button");
+        var button4 = document.createElement("button");
+        var button5 = document.createElement("button");
+        var button6 = document.createElement("button");
+        var button7 = document.createElement("button");
+        var button8 = document.createElement("button");
+        var button9 = document.createElement("button");
+        game.appendChild(button1);
+        game.appendChild(button2);
+        game.appendChild(button3);
+        game.appendChild(button4);
+        game.appendChild(button5);
+        game.appendChild(button6);
+        game.appendChild(button7);
+        game.appendChild(button8);
+        game.appendChild(button9);
+        button1.style.width = "16.6vw";
+        button1.style.height = "77.1vh";
+        button1.style.transform = "translate(11.2vw, 10.8vh)";
+        button1.style.opacity = "0";
+        button1.addEventListener("click", function () { return _this.webmail(); });
+        button2.style.width = "23.4vw";
+        button2.style.height = "15.4vh";
+        button2.style.transform = "translate(29.6vw, 72.9vh)";
+        button2.style.opacity = "0";
+        button2.addEventListener("click", function () { return _this.rooster(); });
+        button3.style.width = "11.2vw";
+        button3.style.height = "34.5vh";
+        button3.style.transform = "translate(54.6vw, 10.6vh)";
+        button3.style.opacity = "0";
+        button3.addEventListener("click", function () { return _this.studentenServiceCenter(); });
+        button4.style.width = "17.3vw";
+        button4.style.height = "22.6vh";
+        button4.style.transform = "translate(58.8vw, 65.5vh)";
+        button4.style.opacity = "0";
+        button4.addEventListener("click", function () { return _this.studentenpas(); });
+        button5.style.width = "10.9vw";
+        button5.style.height = "77.5vh";
+        button5.style.transform = "translate(78vw, 10.7vh)";
+        button5.style.opacity = "0";
+        button5.addEventListener("click", function () { return _this.lms(); });
+        button6.style.width = "9vw";
+        button6.style.height = "8.5vh";
+        button6.style.transform = "translate(91vw, 0vh)";
+        button6.style.opacity = "0";
+        button6.addEventListener("click", function () { return _this.goBack(); });
+        button7.style.width = "8.9vw";
+        button7.style.height = "22.7vh";
+        button7.style.transform = "translate(67.4vw, 10.7vh)";
+        button7.style.opacity = "0";
+        button7.addEventListener("click", function () { return _this.osiris(); });
+        button8.style.width = "10.9vw";
+        button8.style.height = "46vh";
+        button8.style.transform = "translate(42.1vw, 10.7vh)";
+        button8.style.opacity = "0";
+        button8.addEventListener("click", function () { return _this.library(); });
+        button9.style.width = "10.9vw";
+        button9.style.height = "46vh";
+        button9.style.transform = "translate(29.6vw, 10.7vh)";
+        button9.style.opacity = "0";
+        button9.addEventListener("click", function () { return _this.app(); });
+        new CenterPopup(new Languages()[localStorage.getItem('language')][83], new Languages()[localStorage.getItem('language')][84], 'https://www.hogeschoolrotterdam.nl/voorlichting/voorzieningen/mediatheek/newsitem/welkom-studenten/190679/');
         var button = document.getElementsByClassName("popupButton")[0];
         button.style.top = "85%";
     };
@@ -2305,7 +2420,11 @@ var Languages = (function () {
             "The key to your student experience",
             "Attention!",
             "Some tips beforehand:</br></br>The game revolves around speed, solving capabilities and creativity. The faster you complete the game, the better. But: pay attention to the information you are given... you could need that during the game(and of course during your study ;-) )</br></br>During the game you can use hints. These cost time though, so the less hints you use the better your score will be!</br></br>Work together. You should be in a group call via MS teams. Make sure you communicate. Share your ideas, suspicions and possible answers with eachother. This way you'll get the best result. In teams you can share your screen with the rest of your team. This way everyone will look at the same screen. You can also go to introgame.hr.nl seperately of course. In short, work together to tackle the assignments efficiently!</br></br>The game consists of 3 parts. Between the parts you can take a break, but dont close the game! During the breaks the time will not advance.</br></br>And now on to an amazing studentlife!</br>Have fun!",
-            "You are at the beginning of your study program at Hogeschool Rotterdam. The beginning goes hand in hand with a lot of new information, new people and maybe even a new city! In this game we will let you discover the start of how life is on Hogeschool Rotterdam. Where do you find your schedule for example? Who can help you if you have a problem? And did you know Rotterdam is a really fun studentcity?"
+            "You are at the beginning of your study program at Hogeschool Rotterdam. The beginning goes hand in hand with a lot of new information, new people and maybe even a new city! In this game we will let you discover the start of how life is on Hogeschool Rotterdam. Where do you find your schedule for example? Who can help you if you have a problem? And did you know Rotterdam is a really fun studentcity?",
+            "Library",
+            "The text for the library hasnt been given yet.",
+            "My RUAS is your personal assistant!",
+            "The \u2018My RUAS\u201D app will help you organise your studies better. Simply because you will have the most important information about your studies at your fingertips. It\u2019s so easy and will make your life more relaxed.</br></br>In My RUAS you\u2019ll find:</br>exam results</br>calendar</br>notifications, emails and Teams chats</br>teachers\u2019 contact details</br>progress</br>registrations for exams and courses</br>\u2026. and more to come!</br></br>Download the \u2018Rotterdam UAS\u2019 app on your device in your app store or check out the web application: https://my.rotterdamuas.com",
         ];
         this.dutch = ["Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding",
             "Kies opleiding",
@@ -2388,6 +2507,10 @@ var Languages = (function () {
             "Let op!",
             "Even wat tips vooraf</br></br>Het draait in het spel om snelheid, oplossend vermogen en creativiteit. Hoe sneller jullie het spel uitspelen, hoe beter. Maar: let wel goed op welke informatie je krijgt toegespeeld\u2026 je zou dat zomaar eens nodig kunnen hebben op een later moment in het spel (en natuurlijk tijdens je studie ;-) )</br></br>Tijdens het spel kan je gebruik maken van hints. Het gebruik van de hints kost je echter tijd. Hoe minder hints jullie nodig hebben, hoe beter!</br></br>Werk samen. Als het goed is zijn jullie inmiddels als groep een videogesprek gestart in MS Teams. Zorg dat je goed communiceert. Deel je idee\u00EBn, vermoedens en mogelijke antwoorden hardop met elkaar. Zo kom je samen tot het beste resultaat. In MS Teams kan je ervoor kiezen om je scherm te delen met de andere mensen in de groep. Dan kijkt iedereen naar hetzelfde scherm. Daarnaast is het natuurlijk ook mogelijk om allemaal individueel via de link https://introgame.hr.nl  het spel te doorlopen. Op die manier kan iedereen mee op zoek naar antwoorden. Kortom, bundel je krachten en verdeel de taken slim!</br></br>Het spel bestaat uit 3 delen. Tussen de delen kan je wel even pauzeren, maar sluit het spel niet af. Tijdens jullie pauze loopt de tijd niet verder door.</br></br>En nu op naar een geweldige studententijd!</br>Veel speelplezier!",
             "Jullie staan aan het begin van jullie studie aan Hogeschool Rotterdam. En dat begin gaat gepaard met een heleboel nieuwe informatie, nieuwe mensen en misschien zelfs een nieuwe stad! In deze game laten we jullie vast een beetje ontdekken hoe het op de hogeschool geregeld is. Waar vind je bijvoorbeeld je rooster? Bij wie kan je terecht als je met een vraag of probleem zit? En wist je dat Rotterdam ook echt een leuke studentenstad is? Ook daar laten we je graag een beetje mee kennismaken. ",
+            "Mediatheek",
+            "de tekst voor de mediatheek is nog niet gegeven.",
+            "Mijn HR is jouw personal assistant!",
+            "De \u2018Mijn HR\u2019 app helpt je om je studie slimmer te organiseren. Gewoon omdat je de belangrijkste informatie over jou en je studie voortaan altijd bij de hand hebt. Dat is erg makkelijk en je leven als student wordt er een stukje relaxter van.</br></br>In Mijn HR vind je jouw:</br>studieresultaten</br>agenda</br>mededelingen, mails en chats</br>contactgevens van docenten</br>voortgang</br>inschrijvingen</br>\u2026.. en steeds meer!</br></br>Download de Hogeschool Rotterdam app op je telefoon of ga naar mijn.hr.nl",
         ];
     }
     return Languages;
