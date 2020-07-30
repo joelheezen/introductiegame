@@ -78,7 +78,7 @@ class Act2{
         this.doorName3.style.paddingTop = '0.8vh'
         this.doorName3.style.fontSize = `1vw`
         this.doorName3.style.pointerEvents = "none"
-        this.doorName3.innerHTML = new Languages()[localStorage.getItem('language')][81]
+        this.doorName3.innerHTML = new Languages()[localStorage.getItem('language')][85]
 
         this.doorName4.style.width = '11.77vw'
         this.doorName4.style.height = '3.65vh'
@@ -96,7 +96,7 @@ class Act2{
         this.doorName5.style.paddingTop = '1.3vh'
         this.doorName5.style.fontSize = `0.8vw`
         this.doorName5.style.pointerEvents = "none"
-        this.doorName5.innerHTML = new Languages()[localStorage.getItem('language')][82]
+        this.doorName5.innerHTML = new Languages()[localStorage.getItem('language')][86]
     }
     codeInput(){
 
