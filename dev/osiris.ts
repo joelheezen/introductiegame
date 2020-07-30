@@ -9,6 +9,7 @@ class Osiris {
     private button4 = document.createElement("button")
     private button5 = document.createElement("button")
     private button6 = document.createElement("button")
+    private button7 = document.createElement("button")
 
     private img = document.createElement('img')
 
@@ -137,6 +138,13 @@ class Osiris {
         this.input2.style.border = `none`
         this.input2.value = this.input2Save
         this.input2.id = "input2"
+
+        game2.appendChild(this.button7)
+        this.button7.style.width = `4vw`
+        this.button7.style.height = `2.5vh`
+        this.button7.style.transform = `translate(1vw, 14vh)`
+        this.button7.style.opacity = `0`
+        this.button7.addEventListener("click" , () => this.keuzeCheck())
 
         game2.appendChild(this.button3)
         this.button3.style.width = `4vw`
