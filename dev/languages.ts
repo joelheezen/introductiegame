@@ -47,7 +47,7 @@ class Languages{
                     `How much money do I have left for a round?`,
                     `Make an appointment here`,
                     `Counselor`,
-                    `Dean`,
+                    `Student Counsellor`,
                     `Put the right color with the right person.`,
                     `Need help? Talk to someone about it! You need to be here: Help with study. Hogeschool Rotterdam offers all kinds of one-on-one guidance and help. But...all doors are locked. Crack the lettercode to open all doors, so you can use all our guidance!`,
                     `The puzzle is solved`,
@@ -71,7 +71,7 @@ class Languages{
                     `You will explore the city and student life. What do you already know about the most important Rotterdam icons? Where can you exercise as a student? Do you actually have time for a party or a fun association besides your studies? Keep track of your findings in the notebook!`,
                     `Wow, great job. You are starting to become a real team. Give your team a name to increase your teamspirit!`,
                     `Enter a name`,
-                    `Wow ${localStorage.getItem("teamName")}, jullie zijn nu echt al een heel eind. Wat maakt jullie team eigenlijk zo bijzonder? Verzin een toepasselijke teamslogan!`,
+                    `Wow ${localStorage.getItem("teamName")}, you have gotten really far already. What makes your team so special? Come up with an appropriate team slogan!`,
                     `Enter a slogan`,
                     `Step 1: select "Destination"in the menu and set it to "save as PDF".<br>Step 2: go to "More settings" / "Options" and tick the box "background graphics".<br>Step 3: click on the "Save" button.<br>Step 4: Make a design for a sweater and hand it in to the teacher together with the PDF.<br>Slogan: ${localStorage.getItem("teamSlogan")}</br>${localStorage.getItem("teamName")}: Your score is:<br>`,
                     `Congratulations`,
@@ -80,7 +80,9 @@ class Languages{
                     `The key to your student experience`,
                     `Attention!`,
                     `Some tips beforehand:</br></br>The game revolves around speed, solving capabilities and creativity. The faster you complete the game, the better. But: pay attention to the information you are given... you could need that during the game(and of course during your study ;-) )</br></br>During the game you can use hints. These cost time though, so the less hints you use the better your score will be!</br></br>Work together. You should be in a group call via MS teams. Make sure you communicate. Share your ideas, suspicions and possible answers with eachother. This way you'll get the best result. In teams you can share your screen with the rest of your team. This way everyone will look at the same screen. You can also go to introgame.hr.nl seperately of course. In short, work together to tackle the assignments efficiently!</br></br>The game consists of 3 parts. Between the parts you can take a break, but dont close the game! During the breaks the time will not advance.</br></br>And now on to an amazing studentlife!</br>Have fun!`,
-                    `You are at the beginning of your study program at Hogeschool Rotterdam. The beginning goes hand in hand with a lot of new information, new people and maybe even a new city! In this game we will let you discover the start of how life is on Hogeschool Rotterdam. Where do you find your schedule for example? Who can help you if you have a problem? And did you know Rotterdam is a really fun studentcity?`
+                    `You are at the beginning of your study program at Hogeschool Rotterdam. The beginning goes hand in hand with a lot of new information, new people and maybe even a new city! In this game we will let you discover the start of how life is on Hogeschool Rotterdam. Where do you find your schedule for example? Who can help you if you have a problem? And did you know Rotterdam is a really fun studentcity?`,
+                    `Study coach`,
+                    `Student welfare advisor`
                 ]
 
     dutch =     [   `Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding`,

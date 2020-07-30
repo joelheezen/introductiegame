@@ -397,7 +397,7 @@ var Act2 = (function () {
         this.doorName3.style.paddingTop = '0.8vh';
         this.doorName3.style.fontSize = "1vw";
         this.doorName3.style.pointerEvents = "none";
-        this.doorName3.innerHTML = "Studieloopbaancoach";
+        this.doorName3.innerHTML = new Languages()[localStorage.getItem('language')][81];
         this.doorName4.style.width = '11.77vw';
         this.doorName4.style.height = '3.65vh';
         this.doorName4.style.transform = "translate(64.26vw, 27vh)";
@@ -413,7 +413,7 @@ var Act2 = (function () {
         this.doorName5.style.paddingTop = '1.3vh';
         this.doorName5.style.fontSize = "0.8vw";
         this.doorName5.style.pointerEvents = "none";
-        this.doorName5.innerHTML = "Studentenwelzijnsadviseur";
+        this.doorName5.innerHTML = new Languages()[localStorage.getItem('language')][82];
     };
     Act2.prototype.codeInput = function () {
         var _this = this;
@@ -515,8 +515,7 @@ var Act2 = (function () {
             document.getElementById("input3").value +
             document.getElementById("input4").value +
             document.getElementById("input5").value;
-        if (codeString.toLowerCase() == "dbnve") {
-            console.log("goed ");
+        if (codeString.toLowerCase() == "dbnve" || codeString.toLowerCase() == "dbnkn") {
             this.input1.style.border = "thick solid #00FF00";
             this.input2.style.border = "thick solid #00FF00";
             this.input3.style.border = "thick solid #00FF00";
@@ -525,7 +524,6 @@ var Act2 = (function () {
             new CenterPopup(new Languages()[localStorage.getItem('language')][50], new Languages()[localStorage.getItem('language')][51], new Languages()[localStorage.getItem('language')][52]);
         }
         else {
-            console.log("fout");
             this.input1.style.border = "thick solid #FF0000";
             this.input2.style.border = "thick solid #FF0000";
             this.input3.style.border = "thick solid #FF0000";
@@ -545,7 +543,12 @@ var Act2 = (function () {
         this.classroomIcon.addEventListener("click", function () {
             console.log("room1");
             document.getElementsByTagName("game")[0].innerHTML = "";
-            new Act2Room1;
+            if (localStorage.getItem('language') == 'english') {
+                new Act2Room1Eng;
+            }
+            else {
+                new Act2Room1;
+            }
         });
         this.makeLevelIcon(24, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
@@ -557,19 +560,34 @@ var Act2 = (function () {
         this.classroomIcon.addEventListener("click", function () {
             console.log("room3");
             document.getElementsByTagName("game")[0].innerHTML = "";
-            new Act2Room3;
+            if (localStorage.getItem('language') == 'english') {
+                new Act2Room3Eng;
+            }
+            else {
+                new Act2Room3;
+            }
         });
         this.makeLevelIcon(63.8, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
             console.log("room4");
             document.getElementsByTagName("game")[0].innerHTML = "";
-            new Act2Room4;
+            if (localStorage.getItem('language') == 'english') {
+                new Act2Room4Eng;
+            }
+            else {
+                new Act2Room4;
+            }
         });
         this.makeLevelIcon(83.5, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
             console.log("room5");
             document.getElementsByTagName("game")[0].innerHTML = "";
-            new Act2Room5;
+            if (localStorage.getItem('language') == 'english') {
+                new Act2Room5Eng;
+            }
+            else {
+                new Act2Room5;
+            }
         });
     };
     Act2.prototype.createFolderItems = function () {
@@ -595,7 +613,6 @@ var Act2 = (function () {
         this.folderItem1.style.width = '8.3vw';
         this.folderItem1.style.height = '8.3vh';
         this.folderItem1.addEventListener("click", function () {
-            console.log("folder1");
             _this.game.appendChild(_this.folderBackground);
             new Act2folder1;
         });
@@ -604,25 +621,32 @@ var Act2 = (function () {
         this.folderItem2.style.width = '12vw';
         this.folderItem2.style.height = '12vh';
         this.folderItem2.addEventListener("click", function () {
-            console.log("folder2");
             _this.game.appendChild(_this.folderBackground);
-            new Act2folder2;
+            if (localStorage.getItem('language') == 'english') {
+                new Act2folder2Eng;
+            }
+            else {
+                new Act2folder2;
+            }
         });
         this.folderItem3.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_solliciteren.png)';
         this.folderItem3.style.transform = "translate(60vw,70vh)";
         this.folderItem3.style.width = '8vw';
         this.folderItem3.style.height = '8vh';
         this.folderItem3.addEventListener("click", function () {
-            console.log("folder3");
             _this.game.appendChild(_this.folderBackground);
-            new Act2folder3;
+            if (localStorage.getItem('language') == 'english') {
+                new Act2folder3Eng;
+            }
+            else {
+                new Act2folder3;
+            }
         });
         this.folderItem4.style.backgroundImage = 'url(assets/PRODUCTION/PRODUCTION/ASSETS/flyer_coia.png)';
         this.folderItem4.style.transform = "translate(3vw,83vh)";
         this.folderItem4.style.width = '10vw';
         this.folderItem4.style.height = '10vh';
         this.folderItem4.addEventListener("click", function () {
-            console.log("folder4");
             _this.game.appendChild(_this.folderBackground);
             new Act2folder4;
         });
@@ -631,7 +655,6 @@ var Act2 = (function () {
         this.folderItem5.style.width = '10vw';
         this.folderItem5.style.height = '10vh';
         this.folderItem5.addEventListener("click", function () {
-            console.log("folder5");
             _this.game.appendChild(_this.folderBackground);
             new Act2folder5;
         });
@@ -640,7 +663,6 @@ var Act2 = (function () {
         this.folderItem6.style.width = '4.45vw';
         this.folderItem6.style.height = '11.6vh';
         this.folderItem6.addEventListener("click", function () {
-            console.log("folder6");
             _this.game.appendChild(_this.folderBackground);
             new Act2folder6;
         });
@@ -660,7 +682,6 @@ var folders = (function () {
         this.game.appendChild(this.folder);
         this.folder.addEventListener("click", function () {
             var folderBG = document.getElementsByTagName('folderbackground')[0];
-            console.log("folder removed");
             folderBG.remove();
             _this.folder.remove();
         });
@@ -687,6 +708,15 @@ var Act2folder2 = (function (_super) {
     }
     return Act2folder2;
 }(folders));
+var Act2folder2Eng = (function (_super) {
+    __extends(Act2folder2Eng, _super);
+    function Act2folder2Eng() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer2StudyHelpENG.jpg)';
+        return _this;
+    }
+    return Act2folder2Eng;
+}(folders));
 var Act2folder3 = (function (_super) {
     __extends(Act2folder3, _super);
     function Act2folder3() {
@@ -695,6 +725,15 @@ var Act2folder3 = (function (_super) {
         return _this;
     }
     return Act2folder3;
+}(folders));
+var Act2folder3Eng = (function (_super) {
+    __extends(Act2folder3Eng, _super);
+    function Act2folder3Eng() {
+        var _this = _super.call(this) || this;
+        _this.folder.style.backgroundImage = 'url(assets/Akte2/Flyer3WorkshopJobinterviewENG.jpg)';
+        return _this;
+    }
+    return Act2folder3Eng;
 }(folders));
 var Act2folder4 = (function (_super) {
     __extends(Act2folder4, _super);
@@ -737,6 +776,19 @@ var Act2Room1 = (function () {
         win.focus();
     };
     return Act2Room1;
+}());
+var Act2Room1Eng = (function () {
+    function Act2Room1Eng() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("act2background");
+        this.openInNewTab("https://hint.hr.nl/nl/HR/english/study-information/study-help/Confidential-counsellor-introgame/?ticket=ST-25825-0rpbSWBnN9PAyE0xqiqmpyoN4HiTB01bV0s-20");
+        new Act2;
+    }
+    Act2Room1Eng.prototype.openInNewTab = function (url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    };
+    return Act2Room1Eng;
 }());
 var Act2Room2 = (function () {
     function Act2Room2() {
@@ -793,6 +845,19 @@ var Act2Room3 = (function () {
     };
     return Act2Room3;
 }());
+var Act2Room3Eng = (function () {
+    function Act2Room3Eng() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("act2background");
+        this.openInNewTab("https://hint.hr.nl/nl/HR/english/study-information/study-help/study-coach-introgame");
+        new Act2;
+    }
+    Act2Room3Eng.prototype.openInNewTab = function (url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    };
+    return Act2Room3Eng;
+}());
 var Act2Room4 = (function () {
     function Act2Room4() {
         var _this = this;
@@ -836,6 +901,19 @@ var Act2Room4 = (function () {
         win.focus();
     };
     return Act2Room4;
+}());
+var Act2Room4Eng = (function () {
+    function Act2Room4Eng() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("act2background");
+        this.openInNewTab("https://hint.hr.nl/nl/HR/english/study-information/study-help/Appointment-student-counsellor-introgame");
+        new Act2;
+    }
+    Act2Room4Eng.prototype.openInNewTab = function (url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    };
+    return Act2Room4Eng;
 }());
 var Act2Room4s1 = (function () {
     function Act2Room4s1() {
@@ -893,6 +971,19 @@ var Act2Room5 = (function () {
         win.focus();
     };
     return Act2Room5;
+}());
+var Act2Room5Eng = (function () {
+    function Act2Room5Eng() {
+        this.game = document.getElementsByTagName('game')[0];
+        this.bg = document.createElement("act2background");
+        this.openInNewTab("https://hint.hr.nl/nl/HR/english/study-information/study-help/Student-Welfare-Advisors-Introgame/");
+        new Act2;
+    }
+    Act2Room5Eng.prototype.openInNewTab = function (url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    };
+    return Act2Room5Eng;
 }());
 var Act3 = (function () {
     function Act3() {
@@ -2272,7 +2363,7 @@ var Languages = (function () {
             "How much money do I have left for a round?",
             "Make an appointment here",
             "Counselor",
-            "Dean",
+            "Student Counsellor",
             "Put the right color with the right person.",
             "Need help? Talk to someone about it! You need to be here: Help with study. Hogeschool Rotterdam offers all kinds of one-on-one guidance and help. But...all doors are locked. Crack the lettercode to open all doors, so you can use all our guidance!",
             "The puzzle is solved",
@@ -2296,7 +2387,7 @@ var Languages = (function () {
             "You will explore the city and student life. What do you already know about the most important Rotterdam icons? Where can you exercise as a student? Do you actually have time for a party or a fun association besides your studies? Keep track of your findings in the notebook!",
             "Wow, great job. You are starting to become a real team. Give your team a name to increase your teamspirit!",
             "Enter a name",
-            "Wow " + localStorage.getItem("teamName") + ", jullie zijn nu echt al een heel eind. Wat maakt jullie team eigenlijk zo bijzonder? Verzin een toepasselijke teamslogan!",
+            "Wow " + localStorage.getItem("teamName") + ", you have gotten really far already. What makes your team so special? Come up with an appropriate team slogan!",
             "Enter a slogan",
             "Step 1: select \"Destination\"in the menu and set it to \"save as PDF\".<br>Step 2: go to \"More settings\" / \"Options\" and tick the box \"background graphics\".<br>Step 3: click on the \"Save\" button.<br>Step 4: Make a design for a sweater and hand it in to the teacher together with the PDF.<br>Slogan: " + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + ": Your score is:<br>",
             "Congratulations",
@@ -2305,7 +2396,9 @@ var Languages = (function () {
             "The key to your student experience",
             "Attention!",
             "Some tips beforehand:</br></br>The game revolves around speed, solving capabilities and creativity. The faster you complete the game, the better. But: pay attention to the information you are given... you could need that during the game(and of course during your study ;-) )</br></br>During the game you can use hints. These cost time though, so the less hints you use the better your score will be!</br></br>Work together. You should be in a group call via MS teams. Make sure you communicate. Share your ideas, suspicions and possible answers with eachother. This way you'll get the best result. In teams you can share your screen with the rest of your team. This way everyone will look at the same screen. You can also go to introgame.hr.nl seperately of course. In short, work together to tackle the assignments efficiently!</br></br>The game consists of 3 parts. Between the parts you can take a break, but dont close the game! During the breaks the time will not advance.</br></br>And now on to an amazing studentlife!</br>Have fun!",
-            "You are at the beginning of your study program at Hogeschool Rotterdam. The beginning goes hand in hand with a lot of new information, new people and maybe even a new city! In this game we will let you discover the start of how life is on Hogeschool Rotterdam. Where do you find your schedule for example? Who can help you if you have a problem? And did you know Rotterdam is a really fun studentcity?"
+            "You are at the beginning of your study program at Hogeschool Rotterdam. The beginning goes hand in hand with a lot of new information, new people and maybe even a new city! In this game we will let you discover the start of how life is on Hogeschool Rotterdam. Where do you find your schedule for example? Who can help you if you have a problem? And did you know Rotterdam is a really fun studentcity?",
+            "Study coach",
+            "Student welfare advisor"
         ];
         this.dutch = ["Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding",
             "Kies opleiding",
