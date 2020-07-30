@@ -437,7 +437,7 @@ class Act1 {
     }
 
     library(){
-        new CenterPopup(new Languages()[localStorage.getItem('language')][81],new Languages()[localStorage.getItem('language')][82],'https://www.hogeschoolrotterdam.nl/voorlichting/voorzieningen/mediatheek/newsitem/welkom-studenten/190679/')
+        window.open('https://www.hogeschoolrotterdam.nl/voorlichting/voorzieningen/mediatheek/newsitem/welkom-studenten/190679/', '_blank')
 
     }
 
@@ -529,7 +529,7 @@ class Act1 {
         button9.style.opacity = `0`
         button9.addEventListener("click" , () => this.app())
 
-        new CenterPopup(new Languages()[localStorage.getItem('language')][83],new Languages()[localStorage.getItem('language')][84],'https://www.hogeschoolrotterdam.nl/voorlichting/voorzieningen/mediatheek/newsitem/welkom-studenten/190679/')
+        new CenterPopup(new Languages()[localStorage.getItem('language')][83],new Languages()[localStorage.getItem('language')][84],'')
         let button = <HTMLElement>document.getElementsByClassName("popupButton")[0]
         button.style.top = `85%`
     }

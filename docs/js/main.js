@@ -369,7 +369,7 @@ var Act1 = (function () {
         button.style.top = "85%";
     };
     Act1.prototype.library = function () {
-        new CenterPopup(new Languages()[localStorage.getItem('language')][81], new Languages()[localStorage.getItem('language')][82], 'https://www.hogeschoolrotterdam.nl/voorlichting/voorzieningen/mediatheek/newsitem/welkom-studenten/190679/');
+        window.open('https://www.hogeschoolrotterdam.nl/voorlichting/voorzieningen/mediatheek/newsitem/welkom-studenten/190679/', '_blank');
     };
     Act1.prototype.app = function () {
         var _this = this;
@@ -445,7 +445,7 @@ var Act1 = (function () {
         button9.style.transform = "translate(29.6vw, 10.7vh)";
         button9.style.opacity = "0";
         button9.addEventListener("click", function () { return _this.app(); });
-        new CenterPopup(new Languages()[localStorage.getItem('language')][83], new Languages()[localStorage.getItem('language')][84], 'https://www.hogeschoolrotterdam.nl/voorlichting/voorzieningen/mediatheek/newsitem/welkom-studenten/190679/');
+        new CenterPopup(new Languages()[localStorage.getItem('language')][83], new Languages()[localStorage.getItem('language')][84], '');
         var button = document.getElementsByClassName("popupButton")[0];
         button.style.top = "85%";
     };
@@ -1959,6 +1959,7 @@ var CenterPopup = (function () {
         popupTitle.innerHTML = title;
         var popupMessage = document.createElement('popupMessage');
         popupMessage.innerHTML = message;
+        popupMessage.style.textAlign = "left";
         var doorgaan = document.createElement('button');
         doorgaan.classList.add("popupButton");
         doorgaan.innerHTML = new Languages()[localStorage.getItem('language')][11];

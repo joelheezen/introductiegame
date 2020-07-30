@@ -8,6 +8,7 @@ class CenterPopup{
     
             let popupMessage = document.createElement('popupMessage')
             popupMessage.innerHTML = message
+            popupMessage.style.textAlign = `left`
     
             let doorgaan = document.createElement('button')
             doorgaan.classList.add("popupButton")
