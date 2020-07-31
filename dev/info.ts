@@ -32,8 +32,8 @@ class Info{
         game.appendChild(heading1)
         game.appendChild(heading2)
 
-        heading1.innerHTML = `Nederlands`
-        heading2.innerHTML = `English`
+        heading1.innerHTML = `Welkom`
+        heading2.innerHTML = `Welcome`
 
         heading1.style.position = `absolute`
         heading2.style.position = `absolute`
