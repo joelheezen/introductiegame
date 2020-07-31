@@ -1,4 +1,6 @@
 class Ending{
+    
+    makeSweater = true
 
     constructor(){
         new Timer().endTimer()
@@ -34,7 +36,14 @@ class Ending{
         popup.appendChild(title)
 
         let subTitle = document.createElement('subtitle')
-        subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75]
+
+        //Hier de if-statement aanpassen voor alle opleidingen die NIET mee doen.
+        if(localStorage.getItem('education')== 'Academische pabo'){
+            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][87]
+        }
+        else{
+            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75]
+        }
         popup.appendChild(subTitle)
 
         let score = document.createElement('finalScore')

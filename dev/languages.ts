@@ -86,7 +86,8 @@ class Languages{
                     `My RUAS is your personal assistant!`,
                     `The ‘My RUAS” app will help you organise your studies better. Simply because you will have the most important information about your studies at your fingertips. It’s so easy and will make your life more relaxed.</br></br>In My RUAS you’ll find:</br>exam results</br>calendar</br>notifications, emails and Teams chats</br>teachers’ contact details</br>progress</br>registrations for exams and courses</br>…. and more to come!</br></br>Download the ‘Rotterdam UAS’ app on your device in your app store or check out the web application: https://my.rotterdamuas.com`,
                     `Study coach`,
-                    `Student welfare advisor`
+                    `Student welfare advisor`,
+                    `Step 1: select "Destination"in the menu and set it to "save as PDF".<br>Step 2: go to "More settings" / "Options" and tick the box "background graphics".<br>Step 3: click on the "Save" button.<br>Step 4: Hand in the PDF to your teacher.<br>Slogan: ${localStorage.getItem("teamSlogan")}</br>${localStorage.getItem("teamName")}, your score is:<br>`
                 ]
 
     dutch =     [   `Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding`,
@@ -178,6 +179,7 @@ class Languages{
                     `Mijn HR is jouw personal assistant!`,
                     `De ‘Mijn HR’ app helpt je om je studie slimmer te organiseren. Gewoon omdat je de belangrijkste informatie over jou en je studie voortaan altijd bij de hand hebt. Dat is erg makkelijk en je leven als student wordt er een stukje relaxter van.</br></br>In Mijn HR vind je jouw:</br>studieresultaten</br>agenda</br>mededelingen, mails en chats</br>contactgevens van docenten</br>voortgang</br>inschrijvingen</br>….. en steeds meer!</br></br>Download de Hogeschool Rotterdam app op je telefoon of ga naar mijn.hr.nl`,
                     `Studieloopbaancoach`,
-                    `studententenwelzijnsadviseurs`
+                    `studententenwelzijnsadviseurs`,
+                    `stap 1: Selecteer het "Destination" menu en klik vervolgens op "save as PDF".<br>stap 2: Vink onder "More settings" / "Options" het "background graphics vinkje aan.<br>stap 3: klik op het "Save" knopje.<br>stap 4: Lever de PDF in bij de docent.<br>Slogan: ${localStorage.getItem("teamSlogan")}</br>${localStorage.getItem("teamName")}, jullie score is:<br>`
                 ]
 }
