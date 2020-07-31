@@ -114,7 +114,8 @@ class LocatieSelectie{
         this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.png)"
         this.background.style.backgroundSize = "100% 100%"
 
-        if (localStorage.getItem("education") == "Academische pabo"){
+        // deze code is om de opleiding automatisch naar engels te zetten als dat nodig is.
+        if (localStorage.getItem("education") == "International Business for Asia"||localStorage.getItem("education") == "International Business & Languages"||localStorage.getItem("education") == "International Business & Management"||localStorage.getItem("education") == "International Business & Supply Chain Management"){
             localStorage.setItem("language", "english")
         }
 
@@ -142,7 +143,7 @@ class LocatieSelectie{
         this.locationMarker(38,63,'museumpark_laagbouw',6)
         this.locationMarker(33,72.5,'pieter_de_hoogweg',7)
         this.locationMarker(49,73,'posthumalaan',8)
-        this.locationMarker(15.7,82,'rmd_rotterdam',9)
+        this.locationMarker(15.7,82,'rdm_rotterdam',9)
         this.locationMarker(35,67,'rochussenstraat',10)
         this.locationMarker(46,58,'wijnhaven_61',11)
         this.locationMarker(45,58.4,'wijnhaven_99',12)

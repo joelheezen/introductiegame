@@ -2688,7 +2688,7 @@ var LocatieSelectie = (function () {
         this.game.appendChild(map);
         this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.png)";
         this.background.style.backgroundSize = "100% 100%";
-        if (localStorage.getItem("education") == "Academische pabo") {
+        if (localStorage.getItem("education") == "International Business for Asia" || localStorage.getItem("education") == "International Business & Languages" || localStorage.getItem("education") == "International Business & Management" || localStorage.getItem("education") == "International Business & Supply Chain Management") {
             localStorage.setItem("language", "english");
         }
         new CenterPopup(new Languages()[localStorage.getItem('language')][78], new Languages()[localStorage.getItem('language')][79], "");
@@ -2711,7 +2711,7 @@ var LocatieSelectie = (function () {
         this.locationMarker(38, 63, 'museumpark_laagbouw', 6);
         this.locationMarker(33, 72.5, 'pieter_de_hoogweg', 7);
         this.locationMarker(49, 73, 'posthumalaan', 8);
-        this.locationMarker(15.7, 82, 'rmd_rotterdam', 9);
+        this.locationMarker(15.7, 82, 'rdm_rotterdam', 9);
         this.locationMarker(35, 67, 'rochussenstraat', 10);
         this.locationMarker(46, 58, 'wijnhaven_61', 11);
         this.locationMarker(45, 58.4, 'wijnhaven_99', 12);
@@ -2789,8 +2789,8 @@ var Locations = (function () {
                 "Civiele Techniek",
                 "Elektrotechniek",
                 "Facility Management",
-                "Logistics Management",
-                "Ruimtelijke Ontwikkeling | Ruimtelijke Ordening en Planologie",
+                "Logistics Management (bachelor)",
+                "Ruimtelijke Ontwikkeling - ROP",
                 "Technische Bedrijfskunde",
                 "Vastgoed en Makelaardij",
                 "Watermanagement",
@@ -2801,81 +2801,64 @@ var Locations = (function () {
         };
         this.blaak = {
             location: "blaak",
-            opleidingen: [
-                "Arts & Crafts",
-                "Autonome Beeldende Kunst",
-                "Docent Beeldende Kunst en Vormgeving",
-                "Vormgeving",
-                "Interior Architecture: Research + Design",
-                "Master of Arts in Fine Art and Design | Media Design",
-                "Design",
-                "Education in Arts"
-            ],
+            opleidingen: [],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/blaak/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/blaak/"
         };
         this.kralingse_zoom = {
-            location: "krazingse_zoom",
+            location: "kralingse_zoom",
             opleidingen: [
-                "Accountancy KZ",
+                "CE: Commerciële Economie",
+                "CE: Creative Marketing & Sales",
+                "CE: Global Marketing & Sales",
+                "CE: Marketing of Social Business",
+                "CE: Sportmarketing & Management",
+                "Ondernemerschap & Retail Management (Bachelor)",
                 "Bedrijfskunde",
                 "Business IT & Management",
-                "Commerciële Economie | Creative Marketing & Sales",
-                "Commerciële Economie | Global Marketing & Sales",
-                "Commerciële Economie | Marketing of Social Business",
+                "Human Resource Management",
+                "Accountancy (Bachelor)",
                 "Finance & Control",
                 "Finance, Tax and Advice",
-                "Human Resource Management",
-                "Ondernemerschap & Retail Management",
-                "Master in Consultancy and Entrepreneurship",
-                "Master in Finance and Accounting",
-                "Master in International Supply Chain Management",
-                "Commerciële Economie"
+                "Deeltijd - Bedrijfskunde",
+                "Deeltijd - Business IT & Management",
+                "Deeltijd - Commerciële Economie",
+                "Deeltijd - Finance & Control",
+                "Deeltijd - Human Resource Management",
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/kralingse-zoom/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/kralingse-zoom/"
         };
         this.lloyd_straat = {
             location: "lloyd_straat",
-            opleidingen: [
-                "Chemische Technologie",
-                "Logistics Engineering",
-                "Maritiem Officier",
-                "Maritieme Techniek"
-            ],
+            opleidingen: [],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/lloydstraat/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/lloydstraat/"
         };
         this.max_euwelaan = {
             location: "max_euwelaan",
-            opleidingen: [
-                "Commerciële Economie | SportMarketing & Management"
-            ],
+            opleidingen: [],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/max-euwelaan/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/max-euwelaan/"
         };
         this.museumpark_hoogbouw = {
             location: "museumpark_hoogbouw",
             opleidingen: [
-                "Accountancy MH",
+                "Accountancy (Associate Degree)",
+                "Arts & Crafts",
                 "Crossmediale Communicatie",
                 "Engineering",
                 "ICT Service Management",
                 "ICT Internet of Things",
                 "Integraal Bouwmanagement",
-                "Logistiek Management",
+                "Logistiek Management (Associate Degree)",
                 "Maintenance & Mechanics",
                 "Management in de Zorg",
                 "Management",
-                "Onderwijsondersteuner Technisch beroepsonderwijs",
+                "Ondernemen (Associate Degree)",
                 "Pedagogisch Educatief Professional",
                 "Sales & Accountmanagement",
                 "Sociaal Financiële Dienstverlening",
-                "Begeleidingskunde",
-                "Leren en Innoveren",
-                "Management en Innovatie in maatschappelijke organisaties",
-                "Pedagogiek",
-                "Ondernemen"
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/mp-hoogbouw/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/museumpark/"
@@ -2883,21 +2866,18 @@ var Locations = (function () {
         this.museumpark_laagbouw = {
             location: "museumpark_laagbouw",
             opleidingen: [
-                "Academische pabo",
-                "Lerarenopleiding Basisonderwijs (pabo)",
-                "Lerarenopleiding VO/BVE Aardrijkskunde",
-                "Lerarenopleiding VO/BVE Algemene Economie",
-                "Lerarenopleiding VO/BVE Bedrijfseconomie",
-                "Lerarenopleiding VO/BVE Biologie",
-                "Lerarenopleiding VO/BVE Duits",
-                "Lerarenopleiding VO/BVE Engels",
-                "Lerarenopleiding VO/BVE Frans",
-                "Lerarenopleiding VO/BVE Geschiedenis",
-                "Lerarenopleiding VO/BVE Maatschappijleer",
-                "Lerarenopleiding VO/BVE Natuurkunde",
-                "Lerarenopleiding VO/BVE Nederlands",
-                "Lerarenopleiding VO/BVE Technisch beroepsonderwijs",
-                "Lerarenopleiding VO/BVE Wiskunde",
+                "Lerarenopleiding Aardrijkskunde",
+                "Lerarenopleiding Algemene Economie en bedrijfseconomie",
+                "Lerarenopleiding Biologie",
+                "Lerarenopleiding Duits",
+                "Lerarenopleiding Engels",
+                "Lerarenopleiding Frans",
+                "Lerarenopleiding Geschiedenis",
+                "Lerarenopleiding Maatschappijleer",
+                "Lerarenopleiding Natuurkunde",
+                "Lerarenopleiding Nederlands",
+                "Lerarenopleiding Technisch beroepsonderwijs",
+                "Lerarenopleiding Wiskunde",
                 "Social Work"
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/museumpark-laagbouw/",
@@ -2907,7 +2887,7 @@ var Locations = (function () {
             location: "pieter_de_hoogbouw",
             opleidingen: [
                 "Industrieel Product Ontwerpen",
-                "Mens en Techniek | Gezondheidszorg Technologie"
+                "Gezondheidszorg Technologie"
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/pieter-de-hoochweg/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/pieter-de-hoochweg/"
@@ -2915,46 +2895,31 @@ var Locations = (function () {
         this.posthumalaan = {
             location: "posthumalaan",
             opleidingen: [
-                "International Business"
+                "International Business for Asia",
+                "International Business & Languages",
+                "International Business & Management",
+                "International Business & Supply Chain Management",
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/posthumalaan/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/posthumalaan/"
         };
-        this.rmd_rotterdam = {
-            location: "rmd_rotterdam",
+        this.rdm_rotterdam = {
+            location: "rdm_rotterdam",
             opleidingen: [
                 "Automotive",
-                "River Delta Development"
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rdm-campus/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/rdm-campus/"
         };
         this.rochussenstraat = {
             location: "rochussenstraat",
-            opleidingen: [
-                "Ergotherapie",
-                "Fysiotherapie",
-                "Logopedie",
-                "Medische Hulpverlening",
-                "Verloskunde",
-                "Verpleegkunde",
-                "Onderwijsondersteuner Gezondheidszorg en Welzijn",
-                "Leraar Gezondheidszorg en Welzijn",
-                "Kinderfysiotherapie",
-                "Manuele Therapie",
-                "Sportfysiotherapie",
-                "Advanced Nursing Practice",
-                "Physician Assistant (algemeen)",
-                "Physician Assistant (Klinisch Verloskundige)"
-            ],
+            opleidingen: [],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rochussenstraat/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/rochussenstraat/"
         };
         this.wijnhaven_61 = {
             location: "wijnhaven_61",
-            opleidingen: [
-                "Leisure & Events Management"
-            ],
+            opleidingen: [],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-61/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/wijnhaven-61/"
         };
@@ -2983,7 +2948,7 @@ var Locations = (function () {
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-107/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/wijnhaven-107/"
         };
-        this.collective = [this.academieplein, this.blaak, this.kralingse_zoom, this.lloyd_straat, this.max_euwelaan, this.museumpark_hoogbouw, this.museumpark_laagbouw, this.pieter_de_hoogweg, this.posthumalaan, this.rmd_rotterdam, this.rochussenstraat, this.wijnhaven_61, this.wijnhaven_99, this.wijnhaven_103, this.wijnhaven_107];
+        this.collective = [this.academieplein, this.blaak, this.kralingse_zoom, this.lloyd_straat, this.max_euwelaan, this.museumpark_hoogbouw, this.museumpark_laagbouw, this.pieter_de_hoogweg, this.posthumalaan, this.rdm_rotterdam, this.rochussenstraat, this.wijnhaven_61, this.wijnhaven_99, this.wijnhaven_103, this.wijnhaven_107];
     }
     return Locations;
 }());
