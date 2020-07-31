@@ -12,15 +12,6 @@ class LocatieSelectie{
         this.game.appendChild(this.background)
         this.educationSetter()
         this.language() 
-
-        new CenterPopup(new Languages()[localStorage.getItem('language')][78],new Languages()[localStorage.getItem('language')][79],"")
-        let popup = <HTMLElement>document.getElementsByTagName("onlinePopup")[0]
-        console.log(popup)
-        popup.style.top = `5vh`
-        popup.style.width = `50vw`
-        popup.style.left = `22vw`
-        let button = <HTMLElement>document.getElementsByTagName("button")[1]
-        button.style.top = `50vh`
     }
 
     goBack(){
@@ -122,6 +113,21 @@ class LocatieSelectie{
 
         this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.png)"
         this.background.style.backgroundSize = "100% 100%"
+
+        // deze code is om de opleiding automatisch naar engels te zetten als dat nodig is.
+        if (localStorage.getItem("education") == "International Business for Asia"||localStorage.getItem("education") == "International Business & Languages"||localStorage.getItem("education") == "International Business & Management"||localStorage.getItem("education") == "International Business & Supply Chain Management"){
+            localStorage.setItem("language", "english")
+        }
+
+        new CenterPopup(new Languages()[localStorage.getItem('language')][78],new Languages()[localStorage.getItem('language')][79],"")
+        let popup = <HTMLElement>document.getElementsByTagName("onlinePopup")[0]
+       
+        popup.style.top = `5vh`
+        popup.style.width = `50vw`
+        popup.style.left = `22vw`
+        let button = <HTMLElement>document.getElementsByClassName("popupButton")[0]
+        button.style.top = `85%`
+
         this.educationSet.remove()
 
         let locationTekst = document.createElement('locationTekst')
@@ -137,7 +143,7 @@ class LocatieSelectie{
         this.locationMarker(38,63,'museumpark_laagbouw',6)
         this.locationMarker(33,72.5,'pieter_de_hoogweg',7)
         this.locationMarker(49,73,'posthumalaan',8)
-        this.locationMarker(15.7,82,'rmd_rotterdam',9)
+        this.locationMarker(15.7,82,'rdm_rotterdam',9)
         this.locationMarker(35,67,'rochussenstraat',10)
         this.locationMarker(46,58,'wijnhaven_61',11)
         this.locationMarker(45,58.4,'wijnhaven_99',12)
@@ -155,13 +161,22 @@ class LocatieSelectie{
 
             let yourEducation = localStorage.getItem('education')!
 
-
-            if(this.educations[index].opleidingen.indexOf(yourEducation) > -1){
+            if (localStorage.getItem("language") == "dutch"){
+                if(this.educations[index].opleidingen.indexOf(yourEducation) > -1){
+                        localStorage.setItem('location',this.educations[index].location)
+                        this.popupLoc('correct',location,this.educations[index].locatieInfo)
+                }else{
+                        this.popupLoc('incorrect',location,this.educations[index].locatieInfo)
+                } 
+            }
+            else{
+                if(this.educations[index].opleidingen.indexOf(yourEducation) > -1){
                     localStorage.setItem('location',this.educations[index].location)
-                    this.popupLoc('correct',location,this.educations[index].locatieInfo)
+                    this.popupLoc('correct',location,this.educations[index].locatieInfoEng)
             }else{
-                    this.popupLoc('incorrect',location,this.educations[index].locatieInfo)
+                    this.popupLoc('incorrect',location,this.educations[index].locatieInfoEng)
             } 
+            }
         })
     }
 

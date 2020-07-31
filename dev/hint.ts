@@ -55,7 +55,7 @@ class hint{
         this.hintbox1.style.height = "7vh"
 
         this.hint1.addEventListener("click",()=>{
-            console.log("test test")
+           
             new popup(new Languages()[localStorage.getItem('language')][53],20,45,20)
             this.hint1.remove()            
         })
@@ -77,7 +77,7 @@ class hint{
         this.hintbox2.style.transform = "translateX(7.5vw)"
 
         this.hint2.addEventListener("click",()=>{
-            console.log("hint2")
+           
             new popup(new Languages()[localStorage.getItem('language')][55],59,45,20)
             this.hint2.remove()
         })
@@ -98,7 +98,7 @@ class hint{
         this.hintbox3.style.transform = "translateX(15vw)"
 
         this.hint3.addEventListener("click",()=>{
-            console.log("hint3")
+           
             new popup(new Languages()[localStorage.getItem('language')][57],82,45,15)
             this.hint3.remove()
         })
@@ -119,7 +119,7 @@ class hint{
         this.hintbox4.style.transform = "translateX(22.5vw)"
 
         this.hint4.addEventListener("click",()=>{
-            console.log("hint4")
+            
             new popup(new Languages()[localStorage.getItem('language')][66],28,90,44)
             this.hint4.remove()
         })

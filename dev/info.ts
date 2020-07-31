@@ -32,18 +32,23 @@ class Info{
         game.appendChild(heading1)
         game.appendChild(heading2)
 
-        heading1.innerHTML = `Nederlands`
-        heading2.innerHTML = `English`
+        heading1.innerHTML = `Welkom`
+        heading2.innerHTML = `Welcome`
 
         heading1.style.position = `absolute`
         heading2.style.position = `absolute`
         heading1.style.width = `auto`
         heading2.style.width = `auto`
-        heading1.style.transform = `translate(20vw, 5vh)`
-        heading2.style.transform = `translate(69vw, 5vh)`
+        heading1.style.transform = `translate(8vw, 5vh)`
+        heading2.style.transform = `translate(58vw, 5vh)`
 
         heading1.style.fontSize = `5vh`
         heading2.style.fontSize = `5vh`
+
+        heading1.style.width = `30vw`
+        heading2.style.width = `30vw`
+        heading1.style.textAlign = `center`
+        heading2.style.textAlign = `center`
 
         heading1.style.backgroundColor = `#ffb911`
         heading2.style.backgroundColor = `#ffb911`
@@ -68,8 +73,8 @@ class Info{
         text1.style.fontSize = `3.5vh`
         text2.style.fontSize = `3.5vh`
 
-        text1.style.transform = `translate(5vw, 15vh)`
-        text2.style.transform = `translate(53vw, 15vh)`
+        text1.style.transform = `translate(3vw, 16vh)`
+        text2.style.transform = `translate(53vw, 16vh)`
 
         text1.style.backgroundColor = `#ffb911`
         text2.style.backgroundColor = `#ffb911`
@@ -83,45 +88,27 @@ class Info{
 
     makeButtons(){
         let game = document.getElementsByTagName("game")[0]
-        let eng = document.createElement("button")
         let dutch = document.createElement("button")
-        game.appendChild(eng)
         game.appendChild(dutch)
+        dutch.innerHTML = `Play`
 
-        eng.innerHTML = `Press this to play in English.`
-        dutch.innerHTML = `Klik hier om in Nederlands te spelen.`
-
-        eng.style.position = `absolute`
         dutch.style.position = `absolute`
 
-        dutch.style.transform = `translate(17vw, 90vh)`
-        eng.style.transform = `translate(65vw, 90vh)`
+        dutch.style.transform = `translate(42vw, 85vh)`
 
         dutch.style.backgroundColor = `#ffb911`
-        eng.style.backgroundColor = `#ffb911`
         dutch.style.border = `solid black 3px`
-        eng.style.border = `solid black 3px`
         dutch.style.fontWeight = `bolder`
-        eng.style.fontWeight = `bolder`
         dutch.style.borderRadius = `3px`
-        eng.style.borderRadius = `3px`
         dutch.style.cursor = `pointer`
-        eng.style.cursor = `pointer`
         dutch.style.padding = `2vh 2vw 2vh 2vw`
-        eng.style.padding = `2vh 2vw 2vh 2vw`
-        dutch.style.fontSize = `2vh`
-        eng.style.fontSize = `2vh`
+        dutch.style.fontSize = `2rem`
+        dutch.style.width = `16vw`
+        dutch.style.height = `10vh`
 
         dutch.addEventListener("click", function(){
             game.innerHTML = ""
             localStorage.setItem('language','dutch')
-            new LocatieSelectie()
-            new Timer().startTimer()
-        })
-
-        eng.addEventListener("click", function(){
-            game.innerHTML = ""
-            localStorage.setItem('language','english')
             new LocatieSelectie()
             new Timer().startTimer()
         })

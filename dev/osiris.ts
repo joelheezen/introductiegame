@@ -54,18 +54,18 @@ class Osiris {
     }
 
     loginCheck() {
-        console.log("button 1 is pressed")
+    
         let shape1 = (<HTMLInputElement>document.getElementById("input1")).value
 
         if (shape1 == "0200798"){
-            console.log("dit klopt")
+          
             this.login()
             // document.getElementsByTagName("game")[0].innerHTML = ""
             // new Pause(1,'EnterBuilding')
             
         }
         else{
-            console.log("dit klopt niet")
+       
         }
     }
 
@@ -155,15 +155,15 @@ class Osiris {
     }
 
     keuzeCheck() {
-        console.log("button 1 is pressed")
+        
         let shape1 = (<HTMLInputElement>document.getElementById("input2")).value
 
         if (shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot" || shape1 == "Sleutel succes" || shape1 == "sleutel succes" || shape1 == "key to succes" || shape1 == "key succes" || shape1 == "Key To succes" || shape1 == "Key To Succes" || shape1 == "Key to Succes" || shape1 == "key" || shape1 == "Key" || shape1 == "key to" || shape1 == "Key to" || shape1 == "Key To" || shape1 == "key To"){
-            console.log("dit klopt")
+            
             this.keuzeRight()            
         }
         else{
-            console.log("dit klopt niet")
+            
             this.keuzeWrong()
         }
     }
