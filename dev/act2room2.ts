@@ -9,7 +9,7 @@ class Act2Room2{
         this.game.appendChild(this.bg)
         this.game.appendChild(this.video)
 
-        this.video.src = 'assets/Akte2/peer1.mp4'
+        this.video.src = 'assets/Akte2/peerfull-720.mp4'
         this.video.autoplay = true
         this.video.controls = true
         this.video.onended = function() {
@@ -17,7 +17,7 @@ class Act2Room2{
                 let bg = document.getElementsByTagName("videoBackground")[0]
                 vid.remove()
                 bg.remove()
-                new Act2Room2s1
+                new Act2
             };
     }
 }

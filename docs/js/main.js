@@ -913,28 +913,7 @@ var Act2Room2 = (function () {
         this.bg.style.backgroundColor = "black";
         this.game.appendChild(this.bg);
         this.game.appendChild(this.video);
-        this.video.src = 'assets/Akte2/peer1.mp4';
-        this.video.autoplay = true;
-        this.video.controls = true;
-        this.video.onended = function () {
-            var vid = document.getElementsByTagName("video")[0];
-            var bg = document.getElementsByTagName("videoBackground")[0];
-            vid.remove();
-            bg.remove();
-            new Act2Room2s1;
-        };
-    }
-    return Act2Room2;
-}());
-var Act2Room2s1 = (function () {
-    function Act2Room2s1() {
-        this.game = document.getElementsByTagName('game')[0];
-        this.bg = document.createElement("videoBackground");
-        this.video = document.createElement("video");
-        this.bg.style.backgroundColor = "black";
-        this.game.appendChild(this.bg);
-        this.game.appendChild(this.video);
-        this.video.src = 'assets/Akte2/peer2.mp4';
+        this.video.src = 'assets/Akte2/peerfull-720.mp4';
         this.video.autoplay = true;
         this.video.controls = true;
         this.video.onended = function () {
@@ -945,7 +924,7 @@ var Act2Room2s1 = (function () {
             new Act2;
         };
     }
-    return Act2Room2s1;
+    return Act2Room2;
 }());
 var Act2Room3 = (function () {
     function Act2Room3() {
@@ -984,7 +963,7 @@ var Act2Room4 = (function () {
         this.game.appendChild(this.bg);
         this.game.appendChild(this.video);
         this.game.appendChild(this.signin);
-        this.video.src = 'assets/Akte2/decaan1.mp4';
+        this.video.src = 'assets/Akte2/decaanfull-720.mp4';
         this.video.autoplay = true;
         this.video.controls = true;
         this.signin.style.width = "15vw";
@@ -1008,7 +987,7 @@ var Act2Room4 = (function () {
             vid.remove();
             bg.remove();
             signin.remove();
-            new Act2Room4s1;
+            new Act2;
         };
     }
     Act2Room4.prototype.openInNewTab = function (url) {
@@ -1019,10 +998,41 @@ var Act2Room4 = (function () {
 }());
 var Act2Room4Eng = (function () {
     function Act2Room4Eng() {
+        var _this = this;
         this.game = document.getElementsByTagName('game')[0];
-        this.bg = document.createElement("act2background");
-        this.openInNewTab("https://hint.hr.nl/nl/HR/english/study-information/study-help/Appointment-student-counsellor-introgame");
-        new Act2;
+        this.bg = document.createElement("videoBackground");
+        this.video = document.createElement("video");
+        this.signin = document.createElement("signin");
+        this.bg.style.backgroundColor = "black";
+        this.game.appendChild(this.bg);
+        this.game.appendChild(this.video);
+        this.game.appendChild(this.signin);
+        this.video.src = 'assets/Akte2/decaanfull-720.mp4';
+        this.video.autoplay = true;
+        this.video.controls = true;
+        this.signin.style.width = "15vw";
+        this.signin.style.height = "auto";
+        this.signin.style.transform = "translate(8vw,80vh)";
+        this.signin.style.backgroundColor = "#ffb911";
+        this.signin.style.borderRadius = "20px";
+        this.signin.style.display = "table-cell";
+        this.signin.style.fontSize = "18px";
+        this.signin.style.textAlign = 'center';
+        this.signin.style.paddingTop = '0.5vh';
+        this.signin.style.cursor = "pointer";
+        this.signin.innerText = new Languages()[localStorage.getItem('language')][45];
+        this.signin.addEventListener("click", function () {
+            _this.openInNewTab("https://hint.hr.nl/nl/HR/english/study-information/study-help/Appointment-student-counsellor-introgame");
+        });
+        this.video.onended = function () {
+            var vid = document.getElementsByTagName("video")[0];
+            var bg = document.getElementsByTagName("videoBackground")[0];
+            var signin = document.getElementsByTagName("signin")[0];
+            vid.remove();
+            bg.remove();
+            signin.remove();
+            new Act2;
+        };
     }
     Act2Room4Eng.prototype.openInNewTab = function (url) {
         var win = window.open(url, '_blank');
