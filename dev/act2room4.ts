@@ -12,7 +12,7 @@ class Act2Room4{
         this.game.appendChild(this.video)
         this.game.appendChild(this.signin)
 
-        this.video.src = 'assets/Akte2/decaan1.mp4'
+        this.video.src = 'assets/Akte2/decaanfull-720.mp4'
         this.video.autoplay = true
         this.video.controls = true
 
@@ -40,8 +40,7 @@ class Act2Room4{
              vid.remove()
              bg.remove()
              signin.remove()
-             
-             new Act2Room4s1
+             new Act2
           };
     }
     openInNewTab(url:string) {
