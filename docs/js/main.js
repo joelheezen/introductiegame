@@ -122,9 +122,6 @@ var Act1 = (function () {
         var shape1 = sessionStorage.getItem("index1");
         var shape2 = sessionStorage.getItem("index2");
         var shape3 = sessionStorage.getItem("index3");
-        console.log(shape1);
-        console.log(shape2);
-        console.log(shape3);
         if (shape1 == "3" && shape2 == "9" && shape3 == "1") {
             var popup_1 = document.createElement("onlinePopup");
             var game = document.getElementsByTagName("game")[0];
@@ -369,7 +366,12 @@ var Act1 = (function () {
         button.style.top = "85%";
     };
     Act1.prototype.library = function () {
-        window.open('https://www.hogeschoolrotterdam.nl/voorlichting/voorzieningen/mediatheek/newsitem/welkom-studenten/190679/', '_blank');
+        if (localStorage.getItem("language") == "dutch") {
+            window.open('https://www.hogeschoolrotterdam.nl/voorlichting/voorzieningen/mediatheek/newsitem/welkom-studenten/190679/', '_blank');
+        }
+        else {
+            window.open("https://www.rotterdamuas.com/study-information/practical-information/facilities/library/", "_blank");
+        }
     };
     Act1.prototype.app = function () {
         var _this = this;
@@ -2262,7 +2264,6 @@ var hint = (function () {
         this.hintbox1.style.width = "7vw";
         this.hintbox1.style.height = "7vh";
         this.hint1.addEventListener("click", function () {
-            console.log("test test");
             new popup(new Languages()[localStorage.getItem('language')][53], 20, 45, 20);
             _this.hint1.remove();
         });
@@ -2279,7 +2280,6 @@ var hint = (function () {
         this.hintbox2.style.height = "7vh";
         this.hintbox2.style.transform = "translateX(7.5vw)";
         this.hint2.addEventListener("click", function () {
-            console.log("hint2");
             new popup(new Languages()[localStorage.getItem('language')][55], 59, 45, 20);
             _this.hint2.remove();
         });
@@ -2296,7 +2296,6 @@ var hint = (function () {
         this.hintbox3.style.height = "7vh";
         this.hintbox3.style.transform = "translateX(15vw)";
         this.hint3.addEventListener("click", function () {
-            console.log("hint3");
             new popup(new Languages()[localStorage.getItem('language')][57], 82, 45, 15);
             _this.hint3.remove();
         });
@@ -2313,7 +2312,6 @@ var hint = (function () {
         this.hintbox4.style.height = "7vh";
         this.hintbox4.style.transform = "translateX(22.5vw)";
         this.hint4.addEventListener("click", function () {
-            console.log("hint4");
             new popup(new Languages()[localStorage.getItem('language')][66], 28, 90, 44);
             _this.hint4.remove();
         });
@@ -2360,10 +2358,14 @@ var Info = (function () {
         heading2.style.position = "absolute";
         heading1.style.width = "auto";
         heading2.style.width = "auto";
-        heading1.style.transform = "translate(20vw, 5vh)";
-        heading2.style.transform = "translate(69vw, 5vh)";
+        heading1.style.transform = "translate(8vw, 5vh)";
+        heading2.style.transform = "translate(58vw, 5vh)";
         heading1.style.fontSize = "5vh";
         heading2.style.fontSize = "5vh";
+        heading1.style.width = "30vw";
+        heading2.style.width = "30vw";
+        heading1.style.textAlign = "center";
+        heading2.style.textAlign = "center";
         heading1.style.backgroundColor = "#ffb911";
         heading2.style.backgroundColor = "#ffb911";
         heading1.style.borderRadius = "20px";
@@ -2380,8 +2382,8 @@ var Info = (function () {
         text2.style.height = "auto";
         text1.style.fontSize = "3.5vh";
         text2.style.fontSize = "3.5vh";
-        text1.style.transform = "translate(5vw, 15vh)";
-        text2.style.transform = "translate(53vw, 15vh)";
+        text1.style.transform = "translate(3vw, 16vh)";
+        text2.style.transform = "translate(53vw, 16vh)";
         text1.style.backgroundColor = "#ffb911";
         text2.style.backgroundColor = "#ffb911";
         text1.style.borderRadius = "20px";
@@ -2391,39 +2393,23 @@ var Info = (function () {
     };
     Info.prototype.makeButtons = function () {
         var game = document.getElementsByTagName("game")[0];
-        var eng = document.createElement("button");
         var dutch = document.createElement("button");
-        game.appendChild(eng);
         game.appendChild(dutch);
-        eng.innerHTML = "Press this to play in English.";
-        dutch.innerHTML = "Klik hier om in Nederlands te spelen.";
-        eng.style.position = "absolute";
+        dutch.innerHTML = "Play";
         dutch.style.position = "absolute";
-        dutch.style.transform = "translate(17vw, 90vh)";
-        eng.style.transform = "translate(65vw, 90vh)";
+        dutch.style.transform = "translate(42vw, 85vh)";
         dutch.style.backgroundColor = "#ffb911";
-        eng.style.backgroundColor = "#ffb911";
         dutch.style.border = "solid black 3px";
-        eng.style.border = "solid black 3px";
         dutch.style.fontWeight = "bolder";
-        eng.style.fontWeight = "bolder";
         dutch.style.borderRadius = "3px";
-        eng.style.borderRadius = "3px";
         dutch.style.cursor = "pointer";
-        eng.style.cursor = "pointer";
         dutch.style.padding = "2vh 2vw 2vh 2vw";
-        eng.style.padding = "2vh 2vw 2vh 2vw";
-        dutch.style.fontSize = "2vh";
-        eng.style.fontSize = "2vh";
+        dutch.style.fontSize = "2rem";
+        dutch.style.width = "16vw";
+        dutch.style.height = "10vh";
         dutch.addEventListener("click", function () {
             game.innerHTML = "";
             localStorage.setItem('language', 'dutch');
-            new LocatieSelectie();
-            new Timer().startTimer();
-        });
-        eng.addEventListener("click", function () {
-            game.innerHTML = "";
-            localStorage.setItem('language', 'english');
             new LocatieSelectie();
             new Timer().startTimer();
         });
@@ -2435,7 +2421,7 @@ var Languages = (function () {
         this.english = ["In order to start, we need to know what study program you are taking. Please select your study program from this list",
             "Choose education",
             "Choose language",
-            "Hogeschool Rotterdam is spread out over the city. More than 15 locations. Which location do you study at?",
+            "Hogeschool Rotterdam is spread out over the city. More than 15 locations. Can you find the location for your study program?",
             "<b>Correct!</b>This is the location of your study program.<br>",
             "Click here</a>for more information about this location.</p>",
             "Try again",
@@ -2510,8 +2496,8 @@ var Languages = (function () {
             "This is the end of the game</br>" + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + "'s score is:</br>",
             "Click here to save your score",
             "The key to your student experience",
-            "Attention!",
-            "Some tips beforehand:</br></br>The game revolves around speed, solving capabilities and creativity. The faster you complete the game, the better. But: pay attention to the information you are given... you could need that during the game(and of course during your study ;-) )</br></br>During the game you can use hints. These cost time though, so the less hints you use the better your score will be!</br></br>Work together. You should be in a group call via MS teams. Make sure you communicate. Share your ideas, suspicions and possible answers with eachother. This way you'll get the best result. In teams you can share your screen with the rest of your team. This way everyone will look at the same screen. You can also go to introgame.hr.nl seperately of course. In short, work together to tackle the assignments efficiently!</br></br>The game consists of 3 parts. Between the parts you can take a break, but dont close the game! During the breaks the time will not advance.</br></br>And now on to an amazing studentlife!</br>Have fun!",
+            "Welcome",
+            "You\u2019re about to start your studies at Rotterdam University of Applied Sciences. As a new student you will get loads of new information, you\u2019ll get to know a lot of new people and maybe even have to explore a new city. In this game we would like to introduce you to some basic aspects of studying at RUAS. Things like where to find your schedule and who to turn to when you have a question or need some help. Also, did you know that Rotterdam is a great city for students? We will show you!</br></br>Tips & tricks:</br>\u2022 This game is about speed, problem-solving abilities and creativity. The faster you complete the game, the better. But: do pay attention to the information given to you. You might need it later in the game (or during your studies, of course).</br></br>\u2022 In the game you\u2019ll find extra clues to help you. They look like little envelopes. Using them will add 5 minutes to your time, though. So think wisely before you open them.</br></br>\u2022 Work together. By now you probably started a videocall on MS Teams. If not, start one now and invite your team members. It\u2019s important to communicate. Share your ideas, intuitions and possible answers with the team. This way you'll get the best result. In MS Teams you can use \u2018screen share\u2019 so everybody can look at the same screen. But maybe all members want to go to introgame.hr.nl separately so they can all have a look simultaniously. Find out what works for your team! In short: work together to tackle the assignments efficiently!</br></br>\u2022 The game has three parts. Between each part you can pause for a break. Make sure you don\u2019t close the game! During breaks the time will also be paused.</br></br>Enjoy the Introgame and have a great time at RUAS!",
             "You are at the beginning of your study program at Hogeschool Rotterdam. The beginning goes hand in hand with a lot of new information, new people and maybe even a new city! In this game we will let you discover the start of how life is on Hogeschool Rotterdam. Where do you find your schedule for example? Who can help you if you have a problem? And did you know Rotterdam is a really fun studentcity?",
             "Library",
             "The text for the library hasnt been given yet.",
@@ -2520,8 +2506,8 @@ var Languages = (function () {
             "Study coach",
             "Student welfare advisor"
         ];
-        this.dutch = ["Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding",
-            "Kies opleiding",
+        this.dutch = ["Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding </br></br>In order to start, we need to know what study program you are taking. Please select your study program from this list",
+            "Kies opleiding / Choose education",
             "Kies taal",
             "Hogeschool Rotterdam zit verspreid over de stad. Meer dan 15 locaties op zowel Noord als Zuid. Welke locatie is jullie thuishaven?",
             "<b>Correct!</b>Dit is de locatie van jouw opleiding.<br>",
@@ -2598,8 +2584,8 @@ var Languages = (function () {
             "Dit is het einde van het spel</br>" + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + "'s score is:</br>",
             "Klik hier voor een uitdraai van jullie score",
             "De sleutel tot jouw studententijd",
-            "Let op!",
-            "Even wat tips vooraf</br></br>Het draait in het spel om snelheid, oplossend vermogen en creativiteit. Hoe sneller jullie het spel uitspelen, hoe beter. Maar: let wel goed op welke informatie je krijgt toegespeeld\u2026 je zou dat zomaar eens nodig kunnen hebben op een later moment in het spel (en natuurlijk tijdens je studie ;-) )</br></br>Tijdens het spel kan je gebruik maken van hints. Het gebruik van de hints kost je echter tijd. Hoe minder hints jullie nodig hebben, hoe beter!</br></br>Werk samen. Als het goed is zijn jullie inmiddels als groep een videogesprek gestart in MS Teams. Zorg dat je goed communiceert. Deel je idee\u00EBn, vermoedens en mogelijke antwoorden hardop met elkaar. Zo kom je samen tot het beste resultaat. In MS Teams kan je ervoor kiezen om je scherm te delen met de andere mensen in de groep. Dan kijkt iedereen naar hetzelfde scherm. Daarnaast is het natuurlijk ook mogelijk om allemaal individueel via de link https://introgame.hr.nl  het spel te doorlopen. Op die manier kan iedereen mee op zoek naar antwoorden. Kortom, bundel je krachten en verdeel de taken slim!</br></br>Het spel bestaat uit 3 delen. Tussen de delen kan je wel even pauzeren, maar sluit het spel niet af. Tijdens jullie pauze loopt de tijd niet verder door.</br></br>En nu op naar een geweldige studententijd!</br>Veel speelplezier!",
+            "Welkom",
+            "Even wat tips vooraf</br></br>\u2022 Het draait in het spel om snelheid, oplossend vermogen en creativiteit. Hoe sneller jullie het spel uitspelen, hoe beter. Maar: let wel goed op welke informatie je krijgt toegespeeld\u2026 je zou dat zomaar eens nodig kunnen hebben op een later moment in het spel (en natuurlijk tijdens je studie ;-) )</br></br>\u2022 Tijdens het spel kan je gebruik maken van hints. Het gebruik van de hints kost je echter tijd. Hoe minder hints jullie nodig hebben, hoe beter!</br></br>\u2022 Werk samen. Als het goed is zijn jullie inmiddels als groep een videogesprek gestart in MS Teams. Zorg dat je goed communiceert. Deel je idee\u00EBn, vermoedens en mogelijke antwoorden hardop met elkaar. Zo kom je samen tot het beste resultaat. In MS Teams kan je ervoor kiezen om je scherm te delen met de andere mensen in de groep. Dan kijkt iedereen naar hetzelfde scherm. Daarnaast is het natuurlijk ook mogelijk om allemaal individueel via de link https://introgame.hr.nl  het spel te doorlopen. Op die manier kan iedereen mee op zoek naar antwoorden. Kortom, bundel je krachten en verdeel de taken slim!</br></br>\u2022 Het spel bestaat uit 3 delen. Tussen de delen kan je wel even pauzeren, maar sluit het spel niet af. Tijdens jullie pauze loopt de tijd niet verder door.</br></br>En nu op naar een geweldige studententijd!</br>Veel speelplezier!",
             "Jullie staan aan het begin van jullie studie aan Hogeschool Rotterdam. En dat begin gaat gepaard met een heleboel nieuwe informatie, nieuwe mensen en misschien zelfs een nieuwe stad! In deze game laten we jullie vast een beetje ontdekken hoe het op de hogeschool geregeld is. Waar vind je bijvoorbeeld je rooster? Bij wie kan je terecht als je met een vraag of probleem zit? En wist je dat Rotterdam ook echt een leuke studentenstad is? Ook daar laten we je graag een beetje mee kennismaken. ",
             "Mediatheek",
             "de tekst voor de mediatheek is nog niet gegeven.",
@@ -2620,14 +2606,6 @@ var LocatieSelectie = (function () {
         this.game.appendChild(this.background);
         this.educationSetter();
         this.language();
-        new CenterPopup(new Languages()[localStorage.getItem('language')][78], new Languages()[localStorage.getItem('language')][79], "");
-        var popup = document.getElementsByTagName("onlinePopup")[0];
-        console.log(popup);
-        popup.style.top = "5vh";
-        popup.style.width = "50vw";
-        popup.style.left = "22vw";
-        var button = document.getElementsByTagName("button")[1];
-        button.style.top = "50vh";
     }
     LocatieSelectie.prototype.goBack = function () {
         this.game.innerHTML = "";
@@ -2700,6 +2678,13 @@ var LocatieSelectie = (function () {
         this.game.appendChild(map);
         this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.png)";
         this.background.style.backgroundSize = "100% 100%";
+        new CenterPopup(new Languages()[localStorage.getItem('language')][78], new Languages()[localStorage.getItem('language')][79], "");
+        var popup = document.getElementsByTagName("onlinePopup")[0];
+        popup.style.top = "5vh";
+        popup.style.width = "50vw";
+        popup.style.left = "22vw";
+        var button = document.getElementsByClassName("popupButton")[0];
+        button.style.top = "85%";
         this.educationSet.remove();
         var locationTekst = document.createElement('locationTekst');
         locationTekst.innerHTML = new Languages()[localStorage.getItem('language')][3];
@@ -2727,12 +2712,23 @@ var LocatieSelectie = (function () {
         marker.style.transform = "translate(" + x + "vw," + y + "vh)";
         marker.addEventListener('click', function () {
             var yourEducation = localStorage.getItem('education');
-            if (_this.educations[index].opleidingen.indexOf(yourEducation) > -1) {
-                localStorage.setItem('location', _this.educations[index].location);
-                _this.popupLoc('correct', location, _this.educations[index].locatieInfo);
+            if (localStorage.getItem("language") == "dutch") {
+                if (_this.educations[index].opleidingen.indexOf(yourEducation) > -1) {
+                    localStorage.setItem('location', _this.educations[index].location);
+                    _this.popupLoc('correct', location, _this.educations[index].locatieInfo);
+                }
+                else {
+                    _this.popupLoc('incorrect', location, _this.educations[index].locatieInfo);
+                }
             }
             else {
-                _this.popupLoc('incorrect', location, _this.educations[index].locatieInfo);
+                if (_this.educations[index].opleidingen.indexOf(yourEducation) > -1) {
+                    localStorage.setItem('location', _this.educations[index].location);
+                    _this.popupLoc('correct', location, _this.educations[index].locatieInfoEng);
+                }
+                else {
+                    _this.popupLoc('incorrect', location, _this.educations[index].locatieInfoEng);
+                }
             }
         });
     };
@@ -2787,7 +2783,8 @@ var Locations = (function () {
                 "Watermanagement",
                 "Werktuigbouwkunde"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/academieplein/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/academieplein/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/academieplein/"
         };
         this.blaak = {
             location: "blaak",
@@ -2801,7 +2798,8 @@ var Locations = (function () {
                 "Design",
                 "Education in Arts"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/blaak/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/blaak/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/blaak/"
         };
         this.kralingse_zoom = {
             location: "krazingse_zoom",
@@ -2821,7 +2819,8 @@ var Locations = (function () {
                 "Master in International Supply Chain Management",
                 "Commerciële Economie"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/kralingse-zoom/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/kralingse-zoom/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/kralingse-zoom/"
         };
         this.lloyd_straat = {
             location: "lloyd_straat",
@@ -2831,14 +2830,16 @@ var Locations = (function () {
                 "Maritiem Officier",
                 "Maritieme Techniek"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/lloydstraat/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/lloydstraat/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/lloydstraat/"
         };
         this.max_euwelaan = {
             location: "max_euwelaan",
             opleidingen: [
                 "Commerciële Economie | SportMarketing & Management"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/max-euwelaan/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/max-euwelaan/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/max-euwelaan/"
         };
         this.museumpark_hoogbouw = {
             location: "museumpark_hoogbouw",
@@ -2863,7 +2864,8 @@ var Locations = (function () {
                 "Pedagogiek",
                 "Ondernemen"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/museumpark-laagbouw/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/mp-hoogbouw/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/museumpark/"
         };
         this.museumpark_laagbouw = {
             location: "museumpark_laagbouw",
@@ -2885,7 +2887,8 @@ var Locations = (function () {
                 "Lerarenopleiding VO/BVE Wiskunde",
                 "Social Work"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/mp-hoogbouw/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/museumpark-laagbouw/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/museumpark/"
         };
         this.pieter_de_hoogweg = {
             location: "pieter_de_hoogbouw",
@@ -2893,14 +2896,16 @@ var Locations = (function () {
                 "Industrieel Product Ontwerpen",
                 "Mens en Techniek | Gezondheidszorg Technologie"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/pieter-de-hoochweg/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/pieter-de-hoochweg/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/pieter-de-hoochweg/"
         };
         this.posthumalaan = {
             location: "posthumalaan",
             opleidingen: [
                 "International Business"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/posthumalaan/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/posthumalaan/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/posthumalaan/"
         };
         this.rmd_rotterdam = {
             location: "rmd_rotterdam",
@@ -2908,7 +2913,8 @@ var Locations = (function () {
                 "Automotive",
                 "River Delta Development"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rdm-campus/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rdm-campus/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/rdm-campus/"
         };
         this.rochussenstraat = {
             location: "rochussenstraat",
@@ -2928,26 +2934,30 @@ var Locations = (function () {
                 "Physician Assistant (algemeen)",
                 "Physician Assistant (Klinisch Verloskundige)"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rochussenstraat/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rochussenstraat/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/rochussenstraat/"
         };
         this.wijnhaven_61 = {
             location: "wijnhaven_61",
             opleidingen: [
                 "Leisure & Events Management"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-61/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-61/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/wijnhaven-61/"
         };
         this.wijnhaven_99 = {
             location: "wijnhaven_99",
             opleidingen: [
                 "Creative Media and Game Technologies"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-99/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-99/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/wijnhaven-99/"
         };
         this.wijnhaven_103 = {
             location: "wijnhaven_103",
             opleidingen: [],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-103/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-103/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/wijnhaven-103/"
         };
         this.wijnhaven_107 = {
             location: "wijnhaven_107",
@@ -2957,7 +2967,8 @@ var Locations = (function () {
                 "Informatica",
                 "Technische Informatica"
             ],
-            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-107/"
+            locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-107/",
+            locatieInfoEng: "https://www.rotterdamuas.com/about/locations/wijnhaven-107/"
         };
         this.collective = [this.academieplein, this.blaak, this.kralingse_zoom, this.lloyd_straat, this.max_euwelaan, this.museumpark_hoogbouw, this.museumpark_laagbouw, this.pieter_de_hoogweg, this.posthumalaan, this.rmd_rotterdam, this.rochussenstraat, this.wijnhaven_61, this.wijnhaven_99, this.wijnhaven_103, this.wijnhaven_107];
     }
@@ -3008,14 +3019,11 @@ var Osiris = (function () {
         this.button1.addEventListener("click", function () { return _this.loginCheck(); });
     };
     Osiris.prototype.loginCheck = function () {
-        console.log("button 1 is pressed");
         var shape1 = document.getElementById("input1").value;
         if (shape1 == "0200798") {
-            console.log("dit klopt");
             this.login();
         }
         else {
-            console.log("dit klopt niet");
         }
     };
     Osiris.prototype.login = function () {
@@ -3095,14 +3103,11 @@ var Osiris = (function () {
         this.button3.addEventListener("click", function () { return _this.keuzeCheck(); });
     };
     Osiris.prototype.keuzeCheck = function () {
-        console.log("button 1 is pressed");
         var shape1 = document.getElementById("input2").value;
         if (shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot" || shape1 == "Sleutel succes" || shape1 == "sleutel succes" || shape1 == "key to succes" || shape1 == "key succes" || shape1 == "Key To succes" || shape1 == "Key To Succes" || shape1 == "Key to Succes" || shape1 == "key" || shape1 == "Key" || shape1 == "key to" || shape1 == "Key to" || shape1 == "Key To" || shape1 == "key To") {
-            console.log("dit klopt");
             this.keuzeRight();
         }
         else {
-            console.log("dit klopt niet");
             this.keuzeWrong();
         }
     };

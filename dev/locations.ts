@@ -20,7 +20,8 @@ class Locations{
             "Watermanagement",
             "Werktuigbouwkunde"
         ],
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/academieplein/" }
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/academieplein/" ,
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/academieplein/"}
 
     blaak = {
         location: "blaak",
@@ -34,7 +35,8 @@ class Locations{
             "Design",
             "Education in Arts"
         ],
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/blaak/"}
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/blaak/",
+        locatieInfoEng:"https://www.rotterdamuas.com/about/locations/blaak/"}
 
     kralingse_zoom = {
         location: "krazingse_zoom",
@@ -54,7 +56,8 @@ class Locations{
             "Master in International Supply Chain Management",
             "Commerciële Economie"
         ],
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/kralingse-zoom/" }
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/kralingse-zoom/",
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/kralingse-zoom/"}
 
     lloyd_straat = {
         location: "lloyd_straat",
@@ -64,14 +67,16 @@ class Locations{
             "Maritiem Officier",
             "Maritieme Techniek"
         ],
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/lloydstraat/"}
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/lloydstraat/",
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/lloydstraat/"}
 
     max_euwelaan = {
         location: "max_euwelaan",
         opleidingen:[
             "Commerciële Economie | SportMarketing & Management"
         ],
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/max-euwelaan/"}
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/max-euwelaan/",
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/max-euwelaan/"}
 
     museumpark_hoogbouw = {
         location: "museumpark_hoogbouw",
@@ -96,7 +101,8 @@ class Locations{
             "Pedagogiek",
             "Ondernemen"
         ],
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/museumpark-laagbouw/"
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/mp-hoogbouw/",
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/museumpark/"
     }
 
     museumpark_laagbouw = {
@@ -119,7 +125,8 @@ class Locations{
             "Lerarenopleiding VO/BVE Wiskunde",
             "Social Work"
         ], 
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/mp-hoogbouw/"
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/museumpark-laagbouw/",
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/museumpark/"
     }
 
     pieter_de_hoogweg = {
@@ -128,7 +135,8 @@ class Locations{
             "Industrieel Product Ontwerpen",
             "Mens en Techniek | Gezondheidszorg Technologie"
         ],
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/pieter-de-hoochweg/"
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/pieter-de-hoochweg/",
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/pieter-de-hoochweg/"
     } 
 
     posthumalaan = {
@@ -136,7 +144,8 @@ class Locations{
         opleidingen:[
             "International Business"
         ],
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/posthumalaan/"
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/posthumalaan/",
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/posthumalaan/"
     } 
 
     rmd_rotterdam = {
@@ -145,7 +154,8 @@ class Locations{
             "Automotive",
             "River Delta Development"
         ], 
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rdm-campus/"
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rdm-campus/",
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/rdm-campus/"
     }
 
     rochussenstraat = {
@@ -166,7 +176,8 @@ class Locations{
             "Physician Assistant (algemeen)",
             "Physician Assistant (Klinisch Verloskundige)"
         ],
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rochussenstraat/"
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/rochussenstraat/",
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/rochussenstraat/"
     } 
 
     wijnhaven_61 = {
@@ -174,7 +185,8 @@ class Locations{
         opleidingen:[
             "Leisure & Events Management"
         ], 
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-61/"
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-61/",
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/wijnhaven-61/"
     }
 
     wijnhaven_99 = {
@@ -182,14 +194,16 @@ class Locations{
         opleidingen:[
             "Creative Media and Game Technologies"
         ],
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-99/"
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-99/",
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/wijnhaven-99/"
     }
 
     wijnhaven_103 = {
         location: "wijnhaven_103",
         opleidingen:[
         ],
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-103/"}
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-103/",
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/wijnhaven-103/"}
 
     wijnhaven_107 = {
         location: "wijnhaven_107",
@@ -199,7 +213,8 @@ class Locations{
             "Informatica",
             "Technische Informatica"
         ],
-        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-107/" }  
+        locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/wijnhaven-107/",
+        locatieInfoEng: "https://www.rotterdamuas.com/about/locations/wijnhaven-107/" }  
 
     collective = [this.academieplein,this.blaak,this.kralingse_zoom,this.lloyd_straat,this.max_euwelaan,this.museumpark_hoogbouw,this.museumpark_laagbouw,this.pieter_de_hoogweg,this.posthumalaan,this.rmd_rotterdam,this.rochussenstraat,this.wijnhaven_61,this.wijnhaven_99,this.wijnhaven_103,this.wijnhaven_107]
     

@@ -133,9 +133,6 @@ class Act1 {
         let shape1 = sessionStorage.getItem("index1")
         let shape2 = sessionStorage.getItem("index2")
         let shape3 = sessionStorage.getItem("index3")
-        console.log(shape1)
-        console.log(shape2)
-        console.log(shape3)
         if (shape1 == "3" && shape2 == "9" && shape3 == "1"){
 
             let popup = document.createElement("onlinePopup")
@@ -437,8 +434,12 @@ class Act1 {
     }
 
     library(){
-        window.open('https://www.hogeschoolrotterdam.nl/voorlichting/voorzieningen/mediatheek/newsitem/welkom-studenten/190679/', '_blank')
-
+        if (localStorage.getItem("language") == "dutch"){
+            window.open('https://www.hogeschoolrotterdam.nl/voorlichting/voorzieningen/mediatheek/newsitem/welkom-studenten/190679/', '_blank')
+        }
+        else{
+            window.open(`https://www.rotterdamuas.com/study-information/practical-information/facilities/library/`, `_blank`)
+        }
     }
 
     app(){
