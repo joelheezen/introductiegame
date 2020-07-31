@@ -2688,6 +2688,9 @@ var LocatieSelectie = (function () {
         this.game.appendChild(map);
         this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.png)";
         this.background.style.backgroundSize = "100% 100%";
+        if (localStorage.getItem("education") == "Academische pabo") {
+            localStorage.setItem("language", "english");
+        }
         new CenterPopup(new Languages()[localStorage.getItem('language')][78], new Languages()[localStorage.getItem('language')][79], "");
         var popup = document.getElementsByTagName("onlinePopup")[0];
         popup.style.top = "5vh";

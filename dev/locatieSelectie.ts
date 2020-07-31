@@ -114,6 +114,10 @@ class LocatieSelectie{
         this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.png)"
         this.background.style.backgroundSize = "100% 100%"
 
+        if (localStorage.getItem("education") == "Academische pabo"){
+            localStorage.setItem("language", "english")
+        }
+
         new CenterPopup(new Languages()[localStorage.getItem('language')][78],new Languages()[localStorage.getItem('language')][79],"")
         let popup = <HTMLElement>document.getElementsByTagName("onlinePopup")[0]
        
