@@ -95,8 +95,8 @@ endPopup{
     padding-right:2vw;
     padding-top:2vw;
     width:50vw;
-    height:50vh;
-    top:25vh;
+    height:70vh;
+    top:15vh;
     left:25vw;
     box-shadow: rgba(0, 0, 0, 0.5) 15px 15px;
     background-color: #ffb911;
@@ -109,7 +109,8 @@ youWon{
 }
 
 subTitle{
-    font-size: 3.5vh;
+    font-size: 1.1rem;
+    text-align: left;
 }
 
 finalScore{

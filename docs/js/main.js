@@ -2116,7 +2116,12 @@ var Ending = (function () {
             title.style.fontSize = "7vh";
             popup.style.position = 'absolute';
             subTitle.style.fontSize = "1.1rem";
-            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][73];
+            if (localStorage.getItem('education') == 'Accountancy (Associate Degree)' || localStorage.getItem('education') == 'International Business & Languages') {
+                subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75];
+            }
+            else {
+                subTitle.innerHTML = new Languages()[localStorage.getItem('language')][73];
+            }
             button.remove();
         });
         window.addEventListener("afterprint", function () {
@@ -2134,11 +2139,11 @@ var Ending = (function () {
         title.innerHTML = new Languages()[localStorage.getItem('language')][74];
         popup.appendChild(title);
         var subTitle = document.createElement('subtitle');
-        if (localStorage.getItem('education') == 'Academische pabo') {
+        if (localStorage.getItem('education') == 'Accountancy (Associate Degree)' || localStorage.getItem('education') == 'International Business & Languages') {
             subTitle.innerHTML = new Languages()[localStorage.getItem('language')][87];
         }
         else {
-            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75];
+            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][88];
         }
         popup.appendChild(subTitle);
         var score = document.createElement('finalScore');
@@ -2507,9 +2512,9 @@ var Languages = (function () {
             "Enter a name",
             "Wow " + localStorage.getItem("teamName") + ", you have gotten really far already. What makes your team so special? Come up with an appropriate team slogan!",
             "Enter a slogan",
-            "Step 1: select \"Destination\"in the menu and set it to \"save as PDF\".<br>Step 2: go to \"More settings\" / \"Options\" and tick the box \"background graphics\".<br>Step 3: click on the \"Save\" button.<br>Step 4: Make a design for a sweater and hand it in to the teacher together with the PDF.<br>Slogan: " + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + ": Your score is:<br>",
-            "Congratulations",
-            "This is the end of the game</br>" + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + "'s score is:</br>",
+            "Step 1: select \"Destination\"in the menu and set it to \"save as PDF\".<br>Step 2: go to \"More settings\" / \"Options\" and tick the box \"background graphics\".<br>Step 3: click on the \"Save\" button.<br>Step 4: Make a design for a sweater and hand it in to cumLaude together with the screenshot.<br>Slogan: " + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + ": Your score is:<br>",
+            "Congratulations " + localStorage.getItem("teamName") + "!",
+            "Step 1: select \"Destination\"in the menu and set it to \"save as PDF\".<br>Step 2: go to \"More settings\" / \"Options\" and tick the box \"background graphics\".<br>Step 3: click on the \"Save\" button.<br>Step 4: hand in the screenshot in cumLaude.<br>Slogan: " + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + ": Your score is:<br>",
             "Click here to save your score",
             "The key to your student experience",
             "Tips & tricks",
@@ -2521,7 +2526,8 @@ var Languages = (function () {
             "The \u2018My RUAS\u201D app will help you organise your studies better. Simply because you will have the most important information about your studies at your fingertips. It\u2019s so easy and will make your life more relaxed.</br></br>In My RUAS you\u2019ll find:</br>exam results</br>calendar</br>notifications, emails and Teams chats</br>teachers\u2019 contact details</br>progress</br>registrations for exams and courses</br>\u2026. and more to come!</br></br>Download the \u2018Rotterdam UAS\u2019 app on your device in your app store or check out the web application: https://my.rotterdamuas.com",
             "Study coach",
             "Student welfare advisor",
-            "Step 1: select \"Destination\"in the menu and set it to \"save as PDF\".<br>Step 2: go to \"More settings\" / \"Options\" and tick the box \"background graphics\".<br>Step 3: click on the \"Save\" button.<br>Step 4: Hand in the PDF to your teacher.<br>Slogan: " + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + ", your score is:<br>"
+            "You solved all the puzzles. You demonstrated you really deserve your slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D.</br></br>Save this page as PDF using the button below. Hand it in through CumLaude in the elective course \u2018Key to Succes\u2019. NB: Only your teamcaptain will be able to login. Upload the file in the assignment you find in the course.</br>your score is:</br>",
+            "You solved all the puzzles. You demonstrated you really deserve your slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D. It\u2019s now time for the very last assignments:</br>Save this page as PDF using the button below;</br>Make a design for a team sweater that shows your team name and slogan (you may still adjust it if you prefer). You only have to design a printed logo (size A4). Choose whatever program or application you like. Make sure to save it as a PDF file. (Tip: don\u2019t make the design too complicated)</br></br>On the basis of these two assignments the staff of your introduction program will decide on the winner. The winning team will receive their self-designed sweaters. The design will be printed on red hooded sweaters.</br></br>Hand in both the screenshot and the design for your sweaters through CumLaude in the elective course \u2018Key to Succes\u2019. Only your teamcaptain will be able te login. Upload both documents in the assignment you find in the course.</br>Your score is:"
         ];
         this.dutch = ["Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding </br></br>In order to start, we need to know what study program you are taking. Please select your study program from this list",
             "Kies opleiding / Choose education",
@@ -2596,9 +2602,9 @@ var Languages = (function () {
             "Vul een naam in",
             "Wow " + localStorage.getItem("teamName") + ", jullie zijn nu echt al een heel eind. Wat maakt jullie team eigenlijk zo bijzonder? Verzin een toepasselijke teamslogan!",
             "Vul een slogan in",
-            "stap 1: Selecteer het \"Destination\" menu en klik vervolgens op \"save as PDF\".<br>stap 2: Vink onder \"More settings\" / \"Options\" het \"background graphics vinkje aan.<br>stap 3: klik op het \"Save\" knopje.<br>stap 4: Maak een ontwerp voor een trui en lever deze samen met de PDF in bij de docent.<br>Slogan: " + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + ": jullie score is:<br>",
-            "Gefeliciteerd",
-            "Dit is het einde van het spel</br>" + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + "'s score is:</br>",
+            "stap 1: Selecteer het \"Destination\" menu en klik vervolgens op \"save as PDF\".<br>stap 2: Vink onder \"More settings\" / \"Options\" het \"background graphics vinkje aan.<br>stap 3: klik op het \"Save\" knopje.<br>stap 4: Maak een ontwerp voor een trui en lever deze samen met de screenshot in op cumLaude.<br>Slogan: " + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + ": jullie score is:<br>",
+            "Gefeliciteerd " + localStorage.getItem("teamName") + "!",
+            "stap 1: Selecteer het \"Destination\" menu en klik vervolgens op \"save as PDF\".<br>stap 2: Vink onder \"More settings\" / \"Options\" het \"background graphics vinkje aan.<br>stap 3: klik op het \"Save\" knopje.<br>stap 4: Lever deze screenshot in via cumLaude.<br>Slogan: " + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + ": jullie score is:<br>",
             "Klik hier voor een uitdraai van jullie score",
             "De sleutel tot jouw studententijd",
             "Tips & tricks",
@@ -2610,7 +2616,8 @@ var Languages = (function () {
             "De \u2018Mijn HR\u2019 app helpt je om je studie slimmer te organiseren. Gewoon omdat je de belangrijkste informatie over jou en je studie voortaan altijd bij de hand hebt. Dat is erg makkelijk en je leven als student wordt er een stukje relaxter van.</br></br>In Mijn HR vind je jouw:</br>studieresultaten</br>agenda</br>mededelingen, mails en chats</br>contactgevens van docenten</br>voortgang</br>inschrijvingen</br>\u2026.. en steeds meer!</br></br>Download de Hogeschool Rotterdam app op je telefoon of ga naar mijn.hr.nl",
             "Studieloopbaancoach",
             "studententenwelzijnsadviseurs",
-            "stap 1: Selecteer het \"Destination\" menu en klik vervolgens op \"save as PDF\".<br>stap 2: Vink onder \"More settings\" / \"Options\" het \"background graphics vinkje aan.<br>stap 3: klik op het \"Save\" knopje.<br>stap 4: Lever de PDF in bij de docent.<br>Slogan: " + localStorage.getItem("teamSlogan") + "</br>" + localStorage.getItem("teamName") + ", jullie score is:<br>"
+            "Jullie hebben alle puzzels opgelost. Jullie hebben jullie slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D echt eer aan gedaan.</br></br>Sla deze pagina op als PDF via de knop hieronder en lever deze in via CumLaude in het keuzevak \u2018Sleutel van Succes\u2019. Let op: alleen jullie teamcaptain kan erin. Upload het bestand via de \u2018inleveropdracht\u2019.</br> jullie score is:</br>",
+            "Jullie hebben alle puzzels opgelost. Jullie hebben jullie slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D echt eer aan gedaan. Tijd voor de allerlaatste opdrachten:</br>Sla deze pagina op als PDF via de knop hieronder;</br>Maak een ontwerp voor een teamtrui met daarin jullie teamnaam en slogan. Je hoeft alleen de opdruk (A4-formaat) te ontwerpen. Je mag zelf kiezen met welk programma je hiervoor aan de slag gaat. Sla dit bestand op als PDF. (Tip: maak het ontwerp niet t\u00E9 ingewikkeld!)</br></br>Op basis van deze twee opdrachten zal de opleiding een winnaar bekend maken. Dit team ontvangt hun eigen ontworpen teamtrui! Het ontwerp wordt gedrukt op een rode capuchontrui.</br></br>Lever het screenshot en het ontwerp voor de trui in via CumLaude in het keuzevak \u2018Sleutel van Succes\u2019. Let op: alleen jullie teamcaptain kan daarin. Upload de bestanden via de \u2018inleveropdracht\u2019.</br> Jullie score is:</br>"
         ];
     }
     return Languages;

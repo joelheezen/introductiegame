@@ -13,7 +13,13 @@ class Ending{
             title.style.fontSize = "7vh"
             popup.style.position = 'absolute'
             subTitle.style.fontSize = "1.1rem"
-            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][73]
+            //hier de if-statement voor de opleidingen die NIET meedoen met de trui.
+            if(localStorage.getItem('education') == 'Accountancy (Associate Degree)'|| localStorage.getItem('education') == 'International Business & Languages'){
+                subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75]
+            }
+            else{
+                subTitle.innerHTML = new Languages()[localStorage.getItem('language')][73]
+            }
             button.remove()
         })
 
@@ -31,19 +37,22 @@ class Ending{
         let popup = document.createElement("endPopup")
         game.appendChild(popup)
 
+        
+
         let title = document.createElement('youWon')
         title.innerHTML = new Languages()[localStorage.getItem('language')][74]
         popup.appendChild(title)
 
         let subTitle = document.createElement('subtitle')
 
-        //Hier de if-statement aanpassen voor alle opleidingen die NIET mee doen.
-        if(localStorage.getItem('education')== 'Academische pabo'){
+        //hier de if-statement voor de opleidingen die NIET meedoen met de trui.
+        if(localStorage.getItem('education') == 'Accountancy (Associate Degree)'|| localStorage.getItem('education') == 'International Business & Languages'){
             subTitle.innerHTML = new Languages()[localStorage.getItem('language')][87]
         }
         else{
-            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75]
+            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][88]
         }
+
         popup.appendChild(subTitle)
 
         let score = document.createElement('finalScore')
