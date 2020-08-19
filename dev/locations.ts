@@ -50,6 +50,9 @@ class Locations{
             "Deeltijd - Commerciële Economie",
             "Deeltijd - Finance & Control",
             "Deeltijd - Human Resource Management", 
+            "Master Consultancy and Entrepeneurship",
+            "Master in Supply Chain Management",
+            "Foundation Programme"
         ],
         locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/kralingse-zoom/",
         locatieInfoEng: "https://www.rotterdamuas.com/about/locations/kralingse-zoom/"}
@@ -129,6 +132,7 @@ class Locations{
             "International Business & Languages",
             "International Business & Management",
             "International Business & Supply Chain Management", 
+            "International Business"
         ],
         locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/posthumalaan/",
         locatieInfoEng: "https://www.rotterdamuas.com/about/locations/posthumalaan/"

@@ -2703,7 +2703,7 @@ var LocatieSelectie = (function () {
         this.game.appendChild(map);
         this.background.style.backgroundImage = "url(assets/akte_1_map@0.75x.png)";
         this.background.style.backgroundSize = "100% 100%";
-        if (localStorage.getItem("education") == "International Business for Asia" || localStorage.getItem("education") == "International Business & Languages" || localStorage.getItem("education") == "International Business & Management" || localStorage.getItem("education") == "International Business & Supply Chain Management") {
+        if (localStorage.getItem("education") == "International Business for Asia" || localStorage.getItem("education") == "International Business & Languages" || localStorage.getItem("education") == "International Business & Management" || localStorage.getItem("education") == "International Business & Supply Chain Management" || localStorage.getItem("education") == "Master Consultancy and Entrepeneurship" || localStorage.getItem("education") == "Master in Supply Chain Management" || localStorage.getItem("education") == "Foundation Programme" || localStorage.getItem("education") == "International Business") {
             localStorage.setItem("language", "english");
         }
         new CenterPopup(new Languages()[localStorage.getItem('language')][78], new Languages()[localStorage.getItem('language')][79], "");
@@ -2840,6 +2840,9 @@ var Locations = (function () {
                 "Deeltijd - Commerciële Economie",
                 "Deeltijd - Finance & Control",
                 "Deeltijd - Human Resource Management",
+                "Master Consultancy and Entrepeneurship",
+                "Master in Supply Chain Management",
+                "Foundation Programme"
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/kralingse-zoom/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/kralingse-zoom/"
@@ -2914,6 +2917,7 @@ var Locations = (function () {
                 "International Business & Languages",
                 "International Business & Management",
                 "International Business & Supply Chain Management",
+                "International Business"
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/posthumalaan/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/posthumalaan/"

@@ -115,7 +115,7 @@ class LocatieSelectie{
         this.background.style.backgroundSize = "100% 100%"
 
         // deze code is om de opleiding automatisch naar engels te zetten als dat nodig is.
-        if (localStorage.getItem("education") == "International Business for Asia"||localStorage.getItem("education") == "International Business & Languages"||localStorage.getItem("education") == "International Business & Management"||localStorage.getItem("education") == "International Business & Supply Chain Management"){
+        if (localStorage.getItem("education") == "International Business for Asia"||localStorage.getItem("education") == "International Business & Languages"||localStorage.getItem("education") == "International Business & Management"||localStorage.getItem("education") == "International Business & Supply Chain Management" || localStorage.getItem("education") == "Master Consultancy and Entrepeneurship" || localStorage.getItem("education") == "Master in Supply Chain Management" || localStorage.getItem("education") == "Foundation Programme" || localStorage.getItem("education") == "International Business"){
             localStorage.setItem("language", "english")
         }
 
