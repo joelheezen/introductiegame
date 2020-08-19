@@ -2116,7 +2116,7 @@ var Ending = (function () {
             title.style.fontSize = "7vh";
             popup.style.position = 'absolute';
             subTitle.style.fontSize = "1.1rem";
-            if (localStorage.getItem('education') == 'Accountancy (Associate Degree)' || localStorage.getItem('education') == 'International Business & Languages') {
+            if (localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Logistiek Management (Associate Degree)') {
                 subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75];
             }
             else {
@@ -2139,7 +2139,7 @@ var Ending = (function () {
         title.innerHTML = new Languages()[localStorage.getItem('language')][74];
         popup.appendChild(title);
         var subTitle = document.createElement('subtitle');
-        if (localStorage.getItem('education') == 'Accountancy (Associate Degree)' || localStorage.getItem('education') == 'International Business & Languages') {
+        if (localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Logistiek Management (Associate Degree)') {
             subTitle.innerHTML = new Languages()[localStorage.getItem('language')][87];
         }
         else {

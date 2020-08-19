@@ -14,7 +14,7 @@ class Ending{
             popup.style.position = 'absolute'
             subTitle.style.fontSize = "1.1rem"
             //hier de if-statement voor de opleidingen die NIET meedoen met de trui.
-            if(localStorage.getItem('education') == 'Accountancy (Associate Degree)'|| localStorage.getItem('education') == 'International Business & Languages'){
+            if(localStorage.getItem('education') == 'Logistics Management (bachelor)'|| localStorage.getItem('education') == 'Logistiek Management (Associate Degree)'){
                 subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75]
             }
             else{
@@ -46,7 +46,7 @@ class Ending{
         let subTitle = document.createElement('subtitle')
 
         //hier de if-statement voor de opleidingen die NIET meedoen met de trui.
-        if(localStorage.getItem('education') == 'Accountancy (Associate Degree)'|| localStorage.getItem('education') == 'International Business & Languages'){
+        if(localStorage.getItem('education') == 'Logistics Management (bachelor)'|| localStorage.getItem('education') == 'Logistiek Management (Associate Degree)'){
             subTitle.innerHTML = new Languages()[localStorage.getItem('language')][87]
         }
         else{
