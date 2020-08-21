@@ -3099,6 +3099,8 @@ var Osiris = (function () {
         var background = document.createElement("backgroundact2");
         if (localStorage.getItem("language") == "english") {
             background.style.backgroundImage = "url(assets/Osiris_5Eng.png)";
+            this.input2.style.transform = "translate(14.5vw, 31.2vh)";
+            this.button3.style.transform = "translate(1vw, 86vh)";
         }
         else {
             background.style.backgroundImage = "url(assets/Osiris_5.png)";
@@ -3115,7 +3117,9 @@ var Osiris = (function () {
         var game2 = document.getElementsByTagName("game2")[0];
         var background = document.createElement("backgroundact2");
         if (localStorage.getItem("language") == "english") {
-            background.style.backgroundImage = "url(assets/Osiris_3Eng.png)";
+            background.style.backgroundImage = "url(assets/Osiris_4Eng.png)";
+            this.button3.style.transform = "translate(1vw, 77.9vh)";
+            this.input2.style.transform = "translate(14.5vw, 36.5vh)";
         }
         else {
             background.style.backgroundImage = "url(assets/Osiris_4.png)";
