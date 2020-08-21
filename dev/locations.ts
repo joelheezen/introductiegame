@@ -128,10 +128,6 @@ class Locations{
     posthumalaan = {
         location: "posthumalaan",
         opleidingen:[
-            "International Business for Asia",
-            "International Business & Languages",
-            "International Business & Management",
-            "International Business & Supply Chain Management", 
             "International Business"
         ],
         locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/posthumalaan/",

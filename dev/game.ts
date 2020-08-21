@@ -1,9 +1,9 @@
 class Game{
 
     constructor(){
-        let game = document.getElementsByTagName("game")[0]
+        //let game = document.getElementsByTagName("game")[0]
         let button1 = document.createElement("button")
-        game.appendChild(button1)
+        //game.appendChild(button1)
         button1.style.width = `10vw`
         button1.style.height = `10vh`
         button1.style.transform = `translate(90vw, 10vh)`
@@ -11,7 +11,7 @@ class Game{
         button1.onclick = this.buttonPress1
 
         let button2 = document.createElement("button")
-        game.appendChild(button2)
+        //game.appendChild(button2)
         button2.style.width = `10vw`
         button2.style.height = `10vh`
         button2.style.transform = `translate(90vw, 25vh)`
@@ -20,7 +20,7 @@ class Game{
 
 
         let button4 = document.createElement("button")
-        game.appendChild(button4)
+        //game.appendChild(button4)
         button4.style.width = `10vw`
         button4.style.height = `10vh`
         button4.style.transform = `translate(80vw, 50vh)`
@@ -28,7 +28,7 @@ class Game{
         button4.onclick = this.buttonPress4
 
         let button5 = document.createElement("button")
-        game.appendChild(button5)
+        //game.appendChild(button5)
         button5.style.width = `10vw`
         button5.style.height = `10vh`
         button5.style.transform = `translate(90vw, 50vh)`

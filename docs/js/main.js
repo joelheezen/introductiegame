@@ -658,7 +658,6 @@ var Act2 = (function () {
     Act2.prototype.levelSelect = function () {
         this.makeLevelIcon(4, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
-            console.log("room1");
             document.getElementsByTagName("game")[0].innerHTML = "";
             if (localStorage.getItem('language') == 'english') {
                 new Act2Room1Eng;
@@ -669,13 +668,11 @@ var Act2 = (function () {
         });
         this.makeLevelIcon(24, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
-            console.log("room2");
             document.getElementsByTagName("game")[0].innerHTML = "";
             new Act2Room2;
         });
         this.makeLevelIcon(43.5, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
-            console.log("room3");
             document.getElementsByTagName("game")[0].innerHTML = "";
             if (localStorage.getItem('language') == 'english') {
                 new Act2Room3Eng;
@@ -686,7 +683,6 @@ var Act2 = (function () {
         });
         this.makeLevelIcon(63.8, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
-            console.log("room4");
             document.getElementsByTagName("game")[0].innerHTML = "";
             if (localStorage.getItem('language') == 'english') {
                 new Act2Room4Eng;
@@ -697,7 +693,6 @@ var Act2 = (function () {
         });
         this.makeLevelIcon(83.5, 25, 13, 43);
         this.classroomIcon.addEventListener("click", function () {
-            console.log("room5");
             document.getElementsByTagName("game")[0].innerHTML = "";
             if (localStorage.getItem('language') == 'english') {
                 new Act2Room5Eng;
@@ -1130,7 +1125,6 @@ var Act3 = (function () {
         this.video.src = 'assets/Akte3/startAct3.mp4';
         this.video.autoplay = true;
         this.video.controls = false;
-        this.video.playbackRate = 16;
         this.video.onended = function () {
             var game = document.getElementsByTagName("game")[0];
             game.innerHTML = "";
@@ -1243,7 +1237,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url1;
-                    pinPopup.style.transform = "translate(21vw, -7vh)";
+                    pinPopup.style.transform = "translate(6vw, -7vh)";
                     pinPopup.innerHTML += text1;
                 });
                 pin1.addEventListener("mouseout", function () {
@@ -1259,7 +1253,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url2;
-                    pinPopup.style.transform = "translate(16vw, -5vh)";
+                    pinPopup.style.transform = "translate(1vw, -5vh)";
                     pinPopup.innerHTML += text2;
                 });
                 pin2.addEventListener("mouseout", function () {
@@ -1275,7 +1269,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url3;
-                    pinPopup.style.transform = "translate(41vw, 37vh)";
+                    pinPopup.style.transform = "translate(20vw, 37vh)";
                     pinPopup.innerHTML += text3;
                 });
                 pin3.addEventListener("mouseout", function () {
@@ -1291,7 +1285,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url4;
-                    pinPopup.style.transform = "translate(19vw, -3vh)";
+                    pinPopup.style.transform = "translate(4vw, -3vh)";
                     pinPopup.innerHTML += text4;
                 });
                 pin4.addEventListener("mouseout", function () {
@@ -1307,7 +1301,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url5;
-                    pinPopup.style.transform = "translate(25vw, 18vh)";
+                    pinPopup.style.transform = "translate(10vw, 18vh)";
                     pinPopup.innerHTML += text5;
                 });
                 pin5.addEventListener("mouseout", function () {
@@ -1323,7 +1317,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url6;
-                    pinPopup.style.transform = "translate(26vw, 2.7vh)";
+                    pinPopup.style.transform = "translate(11vw, 2.7vh)";
                     pinPopup.innerHTML += text6;
                 });
                 pin6.addEventListener("mouseout", function () {
@@ -1339,7 +1333,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url7;
-                    pinPopup.style.transform = "translate(16.5vw, 16vh)";
+                    pinPopup.style.transform = "translate(1vw, 16vh)";
                     pinPopup.innerHTML += text7;
                 });
                 pin7.addEventListener("mouseout", function () {
@@ -1355,7 +1349,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url8;
-                    pinPopup.style.transform = "translate(25vw, 0.3vh)";
+                    pinPopup.style.transform = "translate(10vw, 0.3vh)";
                     pinPopup.innerHTML += text8;
                 });
                 pin8.addEventListener("mouseout", function () {
@@ -1371,7 +1365,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url9;
-                    pinPopup.style.transform = "translate(24.3vw, 0.2vh)";
+                    pinPopup.style.transform = "translate(15vw, 0.2vh)";
                     pinPopup.innerHTML += text9;
                 });
                 pin9.addEventListener("mouseout", function () {
@@ -1387,7 +1381,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url10;
-                    pinPopup.style.transform = "translate(27.9vw, 0.7vh)";
+                    pinPopup.style.transform = "translate(15vw, 0.7vh)";
                     pinPopup.innerHTML += text10;
                 });
                 pin10.addEventListener("mouseout", function () {
@@ -1403,7 +1397,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url11;
-                    pinPopup.style.transform = "translate(22vw, 5vh)";
+                    pinPopup.style.transform = "translate(7vw, 5vh)";
                     pinPopup.innerHTML += text11;
                 });
                 pin11.addEventListener("mouseout", function () {
@@ -1419,7 +1413,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url12;
-                    pinPopup.style.transform = "translate(25vw, 5vh)";
+                    pinPopup.style.transform = "translate(10vw, 5vh)";
                     pinPopup.innerHTML += text12;
                 });
                 pin12.addEventListener("mouseout", function () {
@@ -1435,7 +1429,7 @@ var Act3 = (function () {
                     var pinPopupImage = document.createElement("pinPopupImage");
                     pinPopup.appendChild(pinPopupImage);
                     pinPopupImage.style.backgroundImage = "" + url13;
-                    pinPopup.style.transform = "translate(23vw, 6vh)";
+                    pinPopup.style.transform = "translate(8vw, 6vh)";
                     pinPopup.innerHTML += text13;
                 });
                 pin13.addEventListener("mouseout", function () {
@@ -1476,7 +1470,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(33.5vw, 15vh)";
+                    pinPopup.style.transform = "translate(15vw, 15vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][33];
                     pinPopup.style.paddingTop = "1vh";
                 });
@@ -1494,7 +1488,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(21vw, 30vh)";
+                    pinPopup.style.transform = "translate(6vw, 30vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][37];
                     pinPopup.style.paddingTop = "1vh";
                 });
@@ -1524,7 +1518,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(29vw, 22vh)";
+                    pinPopup.style.transform = "translate(14vw, 22vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][35];
                     pinPopup.style.paddingTop = "1vh";
                 });
@@ -1542,7 +1536,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(31vw, 23vh)";
+                    pinPopup.style.transform = "translate(16vw, 23vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][36];
                     pinPopup.style.paddingTop = "1vh";
                 });
@@ -1560,7 +1554,7 @@ var Act3 = (function () {
                     var pinPopup = document.createElement("pinPopup");
                     var mapArea = document.getElementsByTagName("mapArea")[0];
                     mapArea.appendChild(pinPopup);
-                    pinPopup.style.transform = "translate(12vw, 24vh)";
+                    pinPopup.style.transform = "translate(0vw, 24vh)";
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][34];
                     pinPopup.style.paddingTop = "1vh";
                 });
@@ -1990,9 +1984,9 @@ var Act3 = (function () {
                     popup.style.backgroundImage = "url(assets/Akte3/risa.png)";
                 }
                 popup.style.backgroundSize = "100% 100%";
-                popup.style.width = "25vw";
+                popup.style.width = "50vw";
                 popup.style.height = "auto";
-                popup.style.transform = "translate(37.5vw, 15vh)";
+                popup.style.transform = "translate(25vw, 10vh)";
                 popup.style.position = "absolute";
                 popup.style.zIndex = "2";
                 popup.style.paddingTop = "8vh";
@@ -2191,30 +2185,25 @@ var EnterBuilding = (function () {
 }());
 var Game = (function () {
     function Game() {
-        var game = document.getElementsByTagName("game")[0];
         var button1 = document.createElement("button");
-        game.appendChild(button1);
         button1.style.width = "10vw";
         button1.style.height = "10vh";
         button1.style.transform = "translate(90vw, 10vh)";
         button1.innerHTML = "act2";
         button1.onclick = this.buttonPress1;
         var button2 = document.createElement("button");
-        game.appendChild(button2);
         button2.style.width = "10vw";
         button2.style.height = "10vh";
         button2.style.transform = "translate(90vw, 25vh)";
         button2.innerHTML = "gert";
         button2.onclick = this.buttonPress2;
         var button4 = document.createElement("button");
-        game.appendChild(button4);
         button4.style.width = "10vw";
         button4.style.height = "10vh";
         button4.style.transform = "translate(80vw, 50vh)";
         button4.innerHTML = "luuk";
         button4.onclick = this.buttonPress4;
         var button5 = document.createElement("button");
-        game.appendChild(button5);
         button5.style.width = "10vw";
         button5.style.height = "10vh";
         button5.style.transform = "translate(90vw, 50vh)";
@@ -2913,10 +2902,6 @@ var Locations = (function () {
         this.posthumalaan = {
             location: "posthumalaan",
             opleidingen: [
-                "International Business for Asia",
-                "International Business & Languages",
-                "International Business & Management",
-                "International Business & Supply Chain Management",
                 "International Business"
             ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/posthumalaan/",

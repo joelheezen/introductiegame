@@ -246,7 +246,6 @@ class Act2{
 
         this.makeLevelIcon(4,25,13,43)
         this.classroomIcon.addEventListener("click",()=>{
-            console.log("room1")
             document.getElementsByTagName("game")[0].innerHTML = ""
             if(localStorage.getItem('language') == 'english'){
                 new Act2Room1Eng
@@ -257,13 +256,11 @@ class Act2{
         })
         this.makeLevelIcon(24,25,13,43)
         this.classroomIcon.addEventListener("click",()=>{
-            console.log("room2")
             document.getElementsByTagName("game")[0].innerHTML = ""
             new Act2Room2
         })
         this.makeLevelIcon(43.5,25,13,43)
         this.classroomIcon.addEventListener("click",()=>{
-            console.log("room3")
             document.getElementsByTagName("game")[0].innerHTML = ""
             if(localStorage.getItem('language') == 'english'){
                 new Act2Room3Eng
@@ -274,7 +271,6 @@ class Act2{
         })
         this.makeLevelIcon(63.8,25,13,43)
         this.classroomIcon.addEventListener("click",()=>{
-            console.log("room4")
             document.getElementsByTagName("game")[0].innerHTML = ""
             if(localStorage.getItem('language') == 'english'){
                 new Act2Room4Eng
@@ -285,7 +281,6 @@ class Act2{
         })
         this.makeLevelIcon(83.5,25,13,43)
         this.classroomIcon.addEventListener("click",()=>{
-            console.log("room5")
             document.getElementsByTagName("game")[0].innerHTML = ""
             if(localStorage.getItem('language') == 'english'){
                 new Act2Room5Eng

@@ -22,7 +22,7 @@ class Act3{
         this.video.src = 'assets/Akte3/startAct3.mp4'
         this.video.autoplay = true
         this.video.controls = false
-        this.video.playbackRate = 16
+        //this.video.playbackRate = 16
         this.video.onended = function() {
             let game = document.getElementsByTagName("game")[0]
             game.innerHTML = ""
@@ -147,7 +147,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url1}`
 
-                    pinPopup.style.transform = `translate(21vw, -7vh)`
+                    pinPopup.style.transform = `translate(6vw, -7vh)`
                     pinPopup.innerHTML += text1
                 })
                 pin1.addEventListener("mouseout", function(){
@@ -165,7 +165,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url2}`
 
-                    pinPopup.style.transform = `translate(16vw, -5vh)`
+                    pinPopup.style.transform = `translate(1vw, -5vh)`
                     pinPopup.innerHTML += text2
                 })
                 pin2.addEventListener("mouseout", function(){
@@ -183,7 +183,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url3}`
 
-                    pinPopup.style.transform = `translate(41vw, 37vh)`
+                    pinPopup.style.transform = `translate(20vw, 37vh)`
                     pinPopup.innerHTML += text3
                 })
                 pin3.addEventListener("mouseout", function(){
@@ -201,7 +201,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url4}`
 
-                    pinPopup.style.transform = `translate(19vw, -3vh)`
+                    pinPopup.style.transform = `translate(4vw, -3vh)`
                     pinPopup.innerHTML += text4
                 })
                 pin4.addEventListener("mouseout", function(){
@@ -219,7 +219,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url5}`
 
-                    pinPopup.style.transform = `translate(25vw, 18vh)`
+                    pinPopup.style.transform = `translate(10vw, 18vh)`
                     pinPopup.innerHTML += text5
                 })
                 pin5.addEventListener("mouseout", function(){
@@ -237,7 +237,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url6}`
 
-                    pinPopup.style.transform = `translate(26vw, 2.7vh)`
+                    pinPopup.style.transform = `translate(11vw, 2.7vh)`
                     pinPopup.innerHTML += text6
                 })
                 pin6.addEventListener("mouseout", function(){
@@ -255,7 +255,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url7}`
 
-                    pinPopup.style.transform = `translate(16.5vw, 16vh)`
+                    pinPopup.style.transform = `translate(1vw, 16vh)`
                     pinPopup.innerHTML += text7
                 })
                 pin7.addEventListener("mouseout", function(){
@@ -273,7 +273,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url8}`
 
-                    pinPopup.style.transform = `translate(25vw, 0.3vh)`
+                    pinPopup.style.transform = `translate(10vw, 0.3vh)`
                     pinPopup.innerHTML += text8
                 })
                 pin8.addEventListener("mouseout", function(){
@@ -291,7 +291,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url9}`
 
-                    pinPopup.style.transform = `translate(24.3vw, 0.2vh)`
+                    pinPopup.style.transform = `translate(15vw, 0.2vh)`
                     pinPopup.innerHTML += text9
                 })
                 pin9.addEventListener("mouseout", function(){
@@ -309,7 +309,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url10}`
 
-                    pinPopup.style.transform = `translate(27.9vw, 0.7vh)`
+                    pinPopup.style.transform = `translate(15vw, 0.7vh)`
                     pinPopup.innerHTML += text10
                 })
                 pin10.addEventListener("mouseout", function(){
@@ -327,7 +327,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url11}`
 
-                    pinPopup.style.transform = `translate(22vw, 5vh)`
+                    pinPopup.style.transform = `translate(7vw, 5vh)`
                     pinPopup.innerHTML += text11
                 })
                 pin11.addEventListener("mouseout", function(){
@@ -345,7 +345,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url12}`
 
-                    pinPopup.style.transform = `translate(25vw, 5vh)`
+                    pinPopup.style.transform = `translate(10vw, 5vh)`
                     pinPopup.innerHTML += text12
                 })
                 pin12.addEventListener("mouseout", function(){
@@ -363,7 +363,7 @@ class Act3{
                     pinPopup.appendChild(pinPopupImage)
                     pinPopupImage.style.backgroundImage = `${url13}`
 
-                    pinPopup.style.transform = `translate(23vw, 6vh)`
+                    pinPopup.style.transform = `translate(8vw, 6vh)`
                     pinPopup.innerHTML += text13
                 })
                 pin13.addEventListener("mouseout", function(){
@@ -406,7 +406,7 @@ class Act3{
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
-                    pinPopup.style.transform = `translate(33.5vw, 15vh)`
+                    pinPopup.style.transform = `translate(15vw, 15vh)`
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][33]
                     pinPopup.style.paddingTop = `1vh`
                     
@@ -426,7 +426,7 @@ class Act3{
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
-                    pinPopup.style.transform = `translate(21vw, 30vh)`
+                    pinPopup.style.transform = `translate(6vw, 30vh)`
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][37]
                     pinPopup.style.paddingTop = `1vh`
                     
@@ -461,7 +461,7 @@ class Act3{
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
-                    pinPopup.style.transform = `translate(29vw, 22vh)`
+                    pinPopup.style.transform = `translate(14vw, 22vh)`
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][35]
                     pinPopup.style.paddingTop = `1vh`
                     
@@ -481,7 +481,7 @@ class Act3{
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
-                    pinPopup.style.transform = `translate(31vw, 23vh)`
+                    pinPopup.style.transform = `translate(16vw, 23vh)`
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][36]
                     pinPopup.style.paddingTop = `1vh`
                    
@@ -501,7 +501,7 @@ class Act3{
                     let pinPopup = document.createElement("pinPopup")
                     let mapArea = document.getElementsByTagName("mapArea")[0]
                     mapArea.appendChild(pinPopup)
-                    pinPopup.style.transform = `translate(12vw, 24vh)`
+                    pinPopup.style.transform = `translate(0vw, 24vh)`
                     pinPopup.innerHTML += new Languages()[localStorage.getItem('language')][34]
                     pinPopup.style.paddingTop = `1vh`
                     
@@ -1002,9 +1002,9 @@ class Act3{
                     popup.style.backgroundImage = `url(assets/Akte3/risa.png)`
                 }
                 popup.style.backgroundSize = `100% 100%`
-                popup.style.width = `25vw`
+                popup.style.width = `50vw`
                 popup.style.height = `auto`
-                popup.style.transform = `translate(37.5vw, 15vh)`
+                popup.style.transform = `translate(25vw, 10vh)`
                 popup.style.position = `absolute`
                 popup.style.zIndex = `2`
                 popup.style.paddingTop = `8vh`
