@@ -1961,7 +1961,7 @@ var Act3 = (function () {
                     game_2.appendChild(iframe_1);
                     iframe_1.style.width = "560px";
                     iframe_1.style.height = "315px";
-                    iframe_1.style.left = "30vw";
+                    iframe_1.style.left = "35vw";
                     iframe_1.style.top = "30vh";
                     iframe_1.style.position = "absolute";
                     iframe_1.style.zIndex = "3";

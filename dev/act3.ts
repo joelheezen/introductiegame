@@ -977,7 +977,7 @@ class Act3{
                     game.appendChild(iframe)
                     iframe.style.width = `560px`
                     iframe.style.height = `315px`
-                    iframe.style.left = `30vw`
+                    iframe.style.left = `35vw`
                     iframe.style.top = `30vh`
                     iframe.style.position = `absolute`
                     iframe.style.zIndex = `3`
