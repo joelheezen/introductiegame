@@ -969,8 +969,38 @@ class Act3{
             button6.style.transform = `translate(62.6vw, 72vh)`
             button6.style.opacity = `0`
             button6.addEventListener("click" , function(){
-                let win = window.open("http://www.rotterdamstaattespringen.nl/")
-                win!.focus()
+                if (localStorage.getItem('language') == 'dutch'){
+                    //let win = window.open("https://www.youtube.com/watch?v=MN_YVac75Yc&feature=emb_logo")
+                    //win!.focus()
+                    let game = document.getElementsByTagName("game")[0]
+                    let iframe = document.createElement("iframe")
+                    game.appendChild(iframe)
+                    iframe.style.width = `560px`
+                    iframe.style.height = `315px`
+                    iframe.style.left = `30vw`
+                    iframe.style.top = `30vh`
+                    iframe.style.position = `absolute`
+                    iframe.style.zIndex = `3`
+                    iframe.src = `https://www.youtube.com/embed/MN_YVac75Yc`
+
+                    let button = document.createElement("button")
+                    game.appendChild(button)
+                    button.style.width = `100vw`
+                    button.style.height = `100vh`
+                    button.style.position = `absolute`
+                    button.style.zIndex = `2`
+                    button.style.opacity = `0`
+
+                    button.addEventListener("click", function(){
+                        iframe.remove()
+                        button.remove()
+                    })
+                    }
+
+                else {
+                    let win = window.open("https://rotterdamstaatomjoutespringen.nl/english/")
+                    win!.focus()
+                }
             })
 
             button7.style.width = `14.3vw`

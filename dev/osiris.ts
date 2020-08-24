@@ -97,7 +97,7 @@ class Osiris {
         this.button2.addEventListener("click" , () => this.onderwijs())
 
         var myloc = new Image();  
-        myloc.useMap = "/docs/assets/arrow.png";    
+        myloc.useMap = "/assets/arrow.png";    
         this.img.setAttribute('src', myloc.useMap);  
         if (localStorage.getItem("language") == "english"){
             this.img.setAttribute('style', "height:5vh;width:2vw;transform:translate(73.5vw, 13.5vh);");

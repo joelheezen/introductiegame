@@ -1955,8 +1955,33 @@ var Act3 = (function () {
             button6.style.transform = "translate(62.6vw, 72vh)";
             button6.style.opacity = "0";
             button6.addEventListener("click", function () {
-                var win = window.open("http://www.rotterdamstaattespringen.nl/");
-                win.focus();
+                if (localStorage.getItem('language') == 'dutch') {
+                    var game_2 = document.getElementsByTagName("game")[0];
+                    var iframe_1 = document.createElement("iframe");
+                    game_2.appendChild(iframe_1);
+                    iframe_1.style.width = "560px";
+                    iframe_1.style.height = "315px";
+                    iframe_1.style.left = "30vw";
+                    iframe_1.style.top = "30vh";
+                    iframe_1.style.position = "absolute";
+                    iframe_1.style.zIndex = "3";
+                    iframe_1.src = "https://www.youtube.com/embed/MN_YVac75Yc";
+                    var button_5 = document.createElement("button");
+                    game_2.appendChild(button_5);
+                    button_5.style.width = "100vw";
+                    button_5.style.height = "100vh";
+                    button_5.style.position = "absolute";
+                    button_5.style.zIndex = "2";
+                    button_5.style.opacity = "0";
+                    button_5.addEventListener("click", function () {
+                        iframe_1.remove();
+                        button_5.remove();
+                    });
+                }
+                else {
+                    var win = window.open("https://rotterdamstaatomjoutespringen.nl/english/");
+                    win.focus();
+                }
             });
             button7.style.width = "14.3vw";
             button7.style.height = "15vh";
@@ -2063,22 +2088,22 @@ var CenterPopup = (function () {
         doorgaan.addEventListener('click', function () {
             if (open == 'doorgaan' || open == 'Continue') {
                 var popup_3 = document.createElement("onlinePopup");
-                var game_2 = document.getElementsByTagName("game")[0];
-                game_2.appendChild(popup_3);
+                var game_3 = document.getElementsByTagName("game")[0];
+                game_3.appendChild(popup_3);
                 popup_3.innerHTML = new Languages()[localStorage.getItem('language')][71];
                 var input_2 = document.createElement("input");
                 popup_3.appendChild(input_2);
-                var button_5 = document.createElement("button");
-                popup_3.appendChild(button_5);
-                button_5.innerHTML = new Languages()[localStorage.getItem('language')][52];
+                var button_6 = document.createElement("button");
+                popup_3.appendChild(button_6);
+                button_6.innerHTML = new Languages()[localStorage.getItem('language')][52];
                 input_2.style.width = "80%";
                 input_2.style.height = "3vh";
                 input_2.addEventListener("keyup", function () {
                     localStorage.setItem("teamSlogan", input_2.value);
                 });
-                button_5.addEventListener("click", function () {
+                button_6.addEventListener("click", function () {
                     if (localStorage.getItem("teamName") == null) {
-                        button_5.innerHTML = new Languages()[localStorage.getItem('language')][72];
+                        button_6.innerHTML = new Languages()[localStorage.getItem('language')][72];
                     }
                     else {
                         document.getElementsByTagName("game")[0].innerHTML = "";
@@ -2110,7 +2135,7 @@ var Ending = (function () {
             title.style.fontSize = "7vh";
             popup.style.position = 'absolute';
             subTitle.style.fontSize = "1.1rem";
-            if (localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Logistiek Management (Associate Degree)') {
+            if (localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Logistiek Management (Associate Degree)' || localStorage.getItem('education') == 'Bouwkunde' || localStorage.getItem('education') == 'Communicatie') {
                 subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75];
             }
             else {
@@ -2133,7 +2158,7 @@ var Ending = (function () {
         title.innerHTML = new Languages()[localStorage.getItem('language')][74];
         popup.appendChild(title);
         var subTitle = document.createElement('subtitle');
-        if (localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Logistiek Management (Associate Degree)') {
+        if (localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Logistiek Management (Associate Degree)' || localStorage.getItem('education') == 'Bouwkunde' || localStorage.getItem('education') == 'Communicatie') {
             subTitle.innerHTML = new Languages()[localStorage.getItem('language')][87];
         }
         else {
@@ -2838,7 +2863,9 @@ var Locations = (function () {
         };
         this.lloyd_straat = {
             location: "lloyd_straat",
-            opleidingen: [],
+            opleidingen: [
+                "Chemische Technologie"
+            ],
             locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/lloydstraat/",
             locatieInfoEng: "https://www.rotterdamuas.com/about/locations/lloydstraat/"
         };
@@ -3033,7 +3060,7 @@ var Osiris = (function () {
         this.button2.style.opacity = "0";
         this.button2.addEventListener("click", function () { return _this.onderwijs(); });
         var myloc = new Image();
-        myloc.useMap = "/docs/assets/arrow.png";
+        myloc.useMap = "/assets/arrow.png";
         this.img.setAttribute('src', myloc.useMap);
         if (localStorage.getItem("language") == "english") {
             this.img.setAttribute('style', "height:5vh;width:2vw;transform:translate(73.5vw, 13.5vh);");
