@@ -10,6 +10,7 @@ class Osiris {
     private button5 = document.createElement("button")
     private button6 = document.createElement("button")
     private button7 = document.createElement("button")
+    private extraButton = document.createElement("button")
 
     private img = document.createElement('img')
 
@@ -158,7 +159,7 @@ class Osiris {
         
         let shape1 = (<HTMLInputElement>document.getElementById("input2")).value
 
-        if (shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot" || shape1 == "Sleutel succes" || shape1 == "sleutel succes" || shape1 == "key to succes" || shape1 == "key succes" || shape1 == "Key To succes" || shape1 == "Key To Succes" || shape1 == "Key to Succes" || shape1 == "key" || shape1 == "Key" || shape1 == "key to" || shape1 == "Key to" || shape1 == "Key To" || shape1 == "key To"){
+        if (shape1 == "The Key to Succes" ||shape1 == "The key to succes" ||shape1 == "the key to succes" ||shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot" || shape1 == "Sleutel succes" || shape1 == "sleutel succes" || shape1 == "key to succes" || shape1 == "key succes" || shape1 == "Key To succes" || shape1 == "Key To Succes" || shape1 == "Key to Succes" || shape1 == "key" || shape1 == "Key" || shape1 == "key to" || shape1 == "Key to" || shape1 == "Key To" || shape1 == "key To"){
             
             this.keuzeRight()            
         }
@@ -255,6 +256,8 @@ class Osiris {
 
         game2.removeChild(this.input2)
         game2.removeChild(this.button4)
+        game2.removeChild(this.button7)
+        game2.removeChild(this.button3)
 
         game2.appendChild(this.button5)
 
@@ -283,6 +286,13 @@ class Osiris {
             background.style.backgroundImage = `url(assets/Osiris_7.png)`
         }
         game2.appendChild(background)
+        game2.appendChild(this.extraButton)
+
+        this.extraButton.style.width = `5vw`
+        this.extraButton.style.height = `2.5vh`
+        this.extraButton.style.transform = `translate(6.5vw, 13.9vh)`
+        this.extraButton.style.opacity = `0`
+        this.extraButton.addEventListener("click" , () => this.definitief())
 
         game2.removeChild(this.button5)
 
@@ -298,6 +308,7 @@ class Osiris {
         let game2 = document.getElementsByTagName("game2")[0]
 
         game2.removeChild(this.button6)
+        game2.removeChild(this.extraButton)
         let background = document.createElement("backgroundact2")
         if (localStorage.getItem("language") == "english"){
             background.style.backgroundImage = `url(assets/Osiris_8Eng.png)`

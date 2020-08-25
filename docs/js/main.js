@@ -1131,7 +1131,7 @@ var Act3 = (function () {
             var background = document.createElement("backgroundAct3");
             game.appendChild(background);
             if (localStorage.getItem("language") == "english") {
-                background.style.backgroundImage = "url(assets/Akte3/Act3Eng.png)";
+                background.style.backgroundImage = "url(assets/Akte3/act3Eng.png)";
             }
             new popupStory(new Languages()[localStorage.getItem('language')][68], 25, 30, 50);
             var button1 = document.createElement("button");
@@ -2466,7 +2466,7 @@ var Languages = (function () {
             "Look online for shapes",
             "Continue",
             "Welcome to your online floorplan",
-            "Maybe it\u2019s a good idea to send an email to the Student Service Centre about the key",
+            "Maybe it\u2019s a good idea to send an email to the Student Service Centre about the key. Make sure to look for clues on shapes along the way.",
             "This answer is incorrect. Try again.",
             "Schedule",
             "Click continue to see the schedule",
@@ -2516,7 +2516,7 @@ var Languages = (function () {
             "Congratulations",
             "You passed this level",
             "You can now take a break<br>Durig this break you will not be timed<br>Press the button to begin act ",
-            "Begin level ",
+            "Start level ",
             "Click on the door to go inside.",
             "Entrance",
             "Link the number of corners of the shapes on the poster to the flyer Study Help.",
@@ -2533,15 +2533,15 @@ var Languages = (function () {
             "The key to your student experience",
             "Tips & tricks",
             "\u2022 This game is about speed, problem-solving abilities and creativity. The faster you complete the game, the better. But: do pay attention to the information given to you. You might need it later in the game (or during your studies, of course).</br></br>\u2022 In the game you\u2019ll find extra clues to help you. They look like little envelopes. Using them will add 5 minutes to your time, though. So think wisely before you open them.</br></br>\u2022 Work together. By now you probably started a videocall on MS Teams. If not, start one now and invite your team members. It\u2019s important to communicate. Share your ideas, intuitions and possible answers with the team. This way you'll get the best result. In MS Teams you can use \u2018screen share\u2019 so everybody can look at the same screen. But maybe all members want to go to introgame.hr.nl separately so they can all have a look simultaniously. Find out what works for your team! In short: work together to tackle the assignments efficiently!</br></br>\u2022 The game has three parts. Between each part you can pause for a break. Make sure you don\u2019t close the game! During breaks the time will also be paused.</br></br>Enjoy the Introgame and have a great time at RUAS!",
-            "You\u2019re about to start your studies at Rotterdam University of Applied Sciences. As a new student you will get loads of new information, you\u2019ll get to know a lot of new people and maybe even have to explore a new city. In this game we would like to introduce you to some basic aspects of studying at RUAS. Things like where to find your schedule and who to turn to when you have a question or need some help. Also, did you know that Rotterdam is a great city for students? We will show you!",
+            "You\u2019re about to start your studies at Rotterdam University of Applied Sciences. As a new student you will get loads of new information, you\u2019ll get to know a lot of new people and maybe even have to explore a new city. In this game we would like to introduce you to some basic aspects of studying at RUAS. Things like where to find your schedule and who to turn to when you have a question or need some help. Also, did you know that Rotterdam is a great city for students? We will show you!</br></br> Do not use the resfresh (or BACK) button of your browser or you willl have to start from the beginning!",
             "Library",
             "The text for the library hasnt been given yet.",
             "My RUAS is your personal assistant!",
             "The \u2018My RUAS\u201D app will help you organise your studies better. Simply because you will have the most important information about your studies at your fingertips. It\u2019s so easy and will make your life more relaxed.</br></br>In My RUAS you\u2019ll find:</br>exam results</br>calendar</br>notifications, emails and Teams chats</br>teachers\u2019 contact details</br>progress</br>registrations for exams and courses</br>\u2026. and more to come!</br></br>Download the \u2018Rotterdam UAS\u2019 app on your device in your app store or check out the web application: https://my.rotterdamuas.com",
             "Study coach",
             "Student welfare advisor",
-            "You solved all the puzzles. You demonstrated you really deserve your slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D.</br></br>Save this page as PDF using the button below. Hand it in through CumLaude in the elective course \u2018Key to Succes\u2019. NB: Only your teamcaptain will be able to login. Upload the file in the assignment you find in the course.</br>your score is:</br>",
-            "You solved all the puzzles. You demonstrated you really deserve your slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D. It\u2019s now time for the very last assignments:</br>Save this page as PDF using the button below;</br>Make a design for a team sweater that shows your team name and slogan (you may still adjust it if you prefer). You only have to design a printed logo (size A4). Choose whatever program or application you like. Make sure to save it as a PDF file. (Tip: don\u2019t make the design too complicated)</br></br>On the basis of these two assignments the staff of your introduction program will decide on the winner. The winning team will receive their self-designed sweaters. The design will be printed on red hooded sweaters.</br></br>Hand in both the screenshot and the design for your sweaters through CumLaude in the elective course \u2018Key to Succes\u2019. Only your teamcaptain will be able te login. Upload both documents in the assignment you find in the course.</br>Your score is:"
+            "You solved all the puzzles. You demonstrated you really deserve your slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D.</br></br>Save this page as PDF using the button below. Hand it in through <a href=\"http://lms.hr.nl\" target=\"_blank\" style=\"display: inline\">CumLaude</a> in the elective course \u2018Key to Succes\u2019. NB: Only your teamcaptain will be able to login. Upload the file in the assignment you find in the course.</br>your score is:</br>",
+            "You solved all the puzzles. You demonstrated you really deserve your slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D. It\u2019s now time for the very last assignments:</br>Save this page as PDF using the button below;</br>Make a design for a team sweater that shows your team name and slogan (you may still adjust it if you prefer). You only have to design a printed logo (size A4). Choose whatever program or application you like. Make sure to save it as a PDF file. (Tip: don\u2019t make the design too complicated)</br></br>On the basis of these two assignments the staff of your introduction program will decide on the winner. The winning team will receive their self-designed sweaters. The design will be printed on red hooded sweaters.</br></br>Hand in both the screenshot and the design for your sweaters through <a href=\"http://lms.hr.nl\" target=\"_blank\" style=\"display: inline\">CumLaude</a> in the elective course \u2018Key to Succes\u2019. Only your teamcaptain will be able te login. Upload both documents in the assignment you find in the course.</br>Your score is:"
         ];
         this.dutch = ["Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding </br></br>In order to start, we need to know what study program you are taking. Please select your study program from this list",
             "Kies opleiding / Choose education",
@@ -2556,7 +2556,7 @@ var Languages = (function () {
             "Zoek online naar vormen",
             "Doorgaan",
             "Welkom op jullie online plattegrond",
-            "Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel",
+            "Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel. Zorg dat je gaandeweg de hints in de gaten houdt over mogelijke vormen.",
             "Dit antwoord is onjuist. Probeer het nog een keer.",
             "Rooster",
             "Klik op doorgaan om je rooster te zien",
@@ -2623,15 +2623,15 @@ var Languages = (function () {
             "De sleutel tot jouw studententijd",
             "Tips & tricks",
             "\u2022 Het draait in het spel om snelheid, oplossend vermogen en creativiteit. Hoe sneller jullie het spel uitspelen, hoe beter. Maar: let wel goed op welke informatie je krijgt toegespeeld\u2026 je zou dat zomaar eens nodig kunnen hebben op een later moment in het spel (en natuurlijk tijdens je studie ;-) )</br></br>\u2022 Tijdens het spel kan je gebruik maken van hints. Het gebruik van de hints kost je echter tijd. Hoe minder hints jullie nodig hebben, hoe beter!</br></br>\u2022 Werk samen. Als het goed is zijn jullie inmiddels als groep een videogesprek gestart in MS Teams. Zorg dat je goed communiceert. Deel je idee\u00EBn, vermoedens en mogelijke antwoorden hardop met elkaar. Zo kom je samen tot het beste resultaat. In MS Teams kan je ervoor kiezen om je scherm te delen met de andere mensen in de groep. Dan kijkt iedereen naar hetzelfde scherm. Daarnaast is het natuurlijk ook mogelijk om allemaal individueel via de link https://introgame.hr.nl  het spel te doorlopen. Op die manier kan iedereen mee op zoek naar antwoorden. Kortom, bundel je krachten en verdeel de taken slim!</br></br>\u2022 Het spel bestaat uit 3 delen. Tussen de delen kan je wel even pauzeren, maar sluit het spel niet af. Tijdens jullie pauze loopt de tijd niet verder door.</br></br>En nu op naar een geweldige studententijd!</br>Veel speelplezier!",
-            "Jullie staan aan het begin van jullie studie aan Hogeschool Rotterdam. En dat begin gaat gepaard met een heleboel nieuwe informatie, nieuwe mensen en misschien zelfs een nieuwe stad! In deze game laten we jullie vast een beetje ontdekken hoe het op de hogeschool geregeld is. Waar vind je bijvoorbeeld je rooster? Bij wie kan je terecht als je met een vraag of probleem zit? En wist je dat Rotterdam ook echt een leuke studentenstad is? Ook daar laten we je graag een beetje mee kennismaken. ",
+            "Jullie staan aan het begin van jullie studie aan Hogeschool Rotterdam. En dat begin gaat gepaard met een heleboel nieuwe informatie, nieuwe mensen en misschien zelfs een nieuwe stad! In deze game laten we jullie vast een beetje ontdekken hoe het op de hogeschool geregeld is. Waar vind je bijvoorbeeld je rooster? Bij wie kan je terecht als je met een vraag of probleem zit? En wist je dat Rotterdam ook echt een leuke studentenstad is? Ook daar laten we je graag een beetje mee kennismaken.</br></br> Gebruik niet de resfresh- of terugknop van je browser. Dan moet je helemaal terug naar het begin! ",
             "Mediatheek",
             "de tekst voor de mediatheek is nog niet gegeven.",
             "Mijn HR is jouw personal assistant!",
             "De \u2018Mijn HR\u2019 app helpt je om je studie slimmer te organiseren. Gewoon omdat je de belangrijkste informatie over jou en je studie voortaan altijd bij de hand hebt. Dat is erg makkelijk en je leven als student wordt er een stukje relaxter van.</br></br>In Mijn HR vind je jouw:</br>studieresultaten</br>agenda</br>mededelingen, mails en chats</br>contactgevens van docenten</br>voortgang</br>inschrijvingen</br>\u2026.. en steeds meer!</br></br>Download de Hogeschool Rotterdam app op je telefoon of ga naar mijn.hr.nl",
             "Studieloopbaancoach",
             "studententenwelzijnsadviseurs",
-            "Jullie hebben alle puzzels opgelost. Jullie hebben jullie slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D echt eer aan gedaan.</br></br>Sla deze pagina op als PDF via de knop hieronder en lever deze in via CumLaude in het keuzevak \u2018Sleutel van Succes\u2019. Let op: alleen jullie teamcaptain kan erin. Upload het bestand via de \u2018inleveropdracht\u2019.</br> jullie score is:</br>",
-            "Jullie hebben alle puzzels opgelost. Jullie hebben jullie slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D echt eer aan gedaan. Tijd voor de allerlaatste opdrachten:</br>Sla deze pagina op als PDF via de knop hieronder;</br>Maak een ontwerp voor een teamtrui met daarin jullie teamnaam en slogan. Je hoeft alleen de opdruk (A4-formaat) te ontwerpen. Je mag zelf kiezen met welk programma je hiervoor aan de slag gaat. Sla dit bestand op als PDF. (Tip: maak het ontwerp niet t\u00E9 ingewikkeld!)</br></br>Op basis van deze twee opdrachten zal de opleiding een winnaar bekend maken. Dit team ontvangt hun eigen ontworpen teamtrui! Het ontwerp wordt gedrukt op een rode capuchontrui.</br></br>Lever het screenshot en het ontwerp voor de trui in via CumLaude in het keuzevak \u2018Sleutel van Succes\u2019. Let op: alleen jullie teamcaptain kan daarin. Upload de bestanden via de \u2018inleveropdracht\u2019.</br> Jullie score is:</br>"
+            "Jullie hebben alle puzzels opgelost. Jullie hebben jullie slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D echt eer aan gedaan.</br></br>Sla deze pagina op als PDF via de knop hieronder en lever deze in via <a href=\"http://lms.hr.nl\" target=\"_blank\" style=\"display: inline\">CumLaude</a> in het keuzevak \u2018Sleutel van Succes\u2019. Let op: alleen jullie teamcaptain kan erin. Upload het bestand via de \u2018inleveropdracht\u2019.</br> jullie score is:</br>",
+            "Jullie hebben alle puzzels opgelost. Jullie hebben jullie slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D echt eer aan gedaan.</br></br>Tijd voor de allerlaatste opdrachten:</br>\u2022Sla deze pagina op als PDF via de knop hieronder;</br><b>\u2022Maak een ontwerp voor een teamtrui met daarin jullie teamnaam en slogan.</b> Je hoeft alleen de opdruk (A4-formaat) te ontwerpen. Je mag zelf kiezen met welk programma je hiervoor aan de slag gaat. Sla dit bestand op als PDF. (Tip: maak het ontwerp niet t\u00E9 ingewikkeld!)</br></br>Op basis van deze twee opdrachten zal de opleiding een winnaar bekend maken. Dit team ontvangt hun eigen ontworpen teamtrui! Het ontwerp wordt gedrukt op een rode capuchontrui.</br></br>Lever het screenshot en het ontwerp voor de trui in via <a href=\"http://lms.hr.nl\" target=\"_blank\" style=\"display: inline\">CumLaude</a> in het keuzevak \u2018Sleutel van Succes\u2019. Let op: alleen jullie teamcaptain kan daarin. Upload de bestanden via de \u2018inleveropdracht\u2019.</br> Jullie score is:</br>"
         ];
     }
     return Languages;
@@ -2994,6 +2994,7 @@ var Osiris = (function () {
         this.button5 = document.createElement("button");
         this.button6 = document.createElement("button");
         this.button7 = document.createElement("button");
+        this.extraButton = document.createElement("button");
         this.img = document.createElement('img');
         this.input2 = document.createElement("input");
         this.input2Save = "";
@@ -3113,7 +3114,7 @@ var Osiris = (function () {
     };
     Osiris.prototype.keuzeCheck = function () {
         var shape1 = document.getElementById("input2").value;
-        if (shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot" || shape1 == "Sleutel succes" || shape1 == "sleutel succes" || shape1 == "key to succes" || shape1 == "key succes" || shape1 == "Key To succes" || shape1 == "Key To Succes" || shape1 == "Key to Succes" || shape1 == "key" || shape1 == "Key" || shape1 == "key to" || shape1 == "Key to" || shape1 == "Key To" || shape1 == "key To") {
+        if (shape1 == "The Key to Succes" || shape1 == "The key to succes" || shape1 == "the key to succes" || shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot" || shape1 == "Sleutel succes" || shape1 == "sleutel succes" || shape1 == "key to succes" || shape1 == "key succes" || shape1 == "Key To succes" || shape1 == "Key To Succes" || shape1 == "Key to Succes" || shape1 == "key" || shape1 == "Key" || shape1 == "key to" || shape1 == "Key to" || shape1 == "Key To" || shape1 == "key To") {
             this.keuzeRight();
         }
         else {
@@ -3191,6 +3192,8 @@ var Osiris = (function () {
         game2.appendChild(background);
         game2.removeChild(this.input2);
         game2.removeChild(this.button4);
+        game2.removeChild(this.button7);
+        game2.removeChild(this.button3);
         game2.appendChild(this.button5);
         if (localStorage.getItem("language") == "english") {
             this.button5.style.width = "11.7vw";
@@ -3215,6 +3218,12 @@ var Osiris = (function () {
             background.style.backgroundImage = "url(assets/Osiris_7.png)";
         }
         game2.appendChild(background);
+        game2.appendChild(this.extraButton);
+        this.extraButton.style.width = "5vw";
+        this.extraButton.style.height = "2.5vh";
+        this.extraButton.style.transform = "translate(6.5vw, 13.9vh)";
+        this.extraButton.style.opacity = "0";
+        this.extraButton.addEventListener("click", function () { return _this.definitief(); });
         game2.removeChild(this.button5);
         game2.appendChild(this.button6);
         this.button6.style.width = "5vw";
@@ -3226,6 +3235,7 @@ var Osiris = (function () {
     Osiris.prototype.definitief = function () {
         var game2 = document.getElementsByTagName("game2")[0];
         game2.removeChild(this.button6);
+        game2.removeChild(this.extraButton);
         var background = document.createElement("backgroundact2");
         if (localStorage.getItem("language") == "english") {
             background.style.backgroundImage = "url(assets/Osiris_8Eng.png)";
@@ -3263,7 +3273,9 @@ var Pause = (function () {
         this.game.appendChild(message);
         message.appendChild(nextButton);
         if (localStorage.getItem("korting") == null) {
-            message.appendChild(extra);
+            if (localStorage.getItem('language') == 'dutch') {
+                message.appendChild(extra);
+            }
         }
         message.appendChild(extraText);
         extraText.style.width = "auto";
@@ -3272,7 +3284,7 @@ var Pause = (function () {
         extraText.style.top = "14.5vw";
         extraText.style.position = "absolute";
         if (localStorage.getItem("korting") == null) {
-            extraText.innerHTML = "Oplossing Profielen Puzzel voor 20 minuten korting:";
+            extraText.innerHTML = "In het blad van Profielen zat een puzzel. Als je hier de oplossing invult krijgen jullie 20 minuten tijdwinst.";
         }
         extra.style.width = "15vw";
         extra.style.height = "3.5vw";

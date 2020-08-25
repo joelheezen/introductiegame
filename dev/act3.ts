@@ -29,7 +29,7 @@ class Act3{
             let background = document.createElement("backgroundAct3")
             game.appendChild(background)
             if (localStorage.getItem("language") == "english"){
-                background.style.backgroundImage = `url(assets/Akte3/Act3Eng.png)`
+                background.style.backgroundImage = `url(assets/Akte3/act3Eng.png)`
             }
             new popupStory(new Languages()[localStorage.getItem('language')][68] , 25, 30 , 50)
 

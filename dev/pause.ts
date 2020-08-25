@@ -33,7 +33,9 @@ class Pause{
         this.game.appendChild(message)
         message.appendChild(nextButton)
         if (localStorage.getItem("korting") == null){
-            message.appendChild(extra)
+            if (localStorage.getItem('language') == 'dutch'){
+                message.appendChild(extra)
+            }
         }
         
         message.appendChild(extraText)
@@ -44,7 +46,7 @@ class Pause{
         extraText.style.top = "14.5vw"
         extraText.style.position = "absolute"
         if (localStorage.getItem("korting") == null){
-        extraText.innerHTML = "Oplossing Profielen Puzzel voor 20 minuten korting:"
+            extraText.innerHTML = "In het blad van Profielen zat een puzzel. Als je hier de oplossing invult krijgen jullie 20 minuten tijdwinst."
         }
         extra.style.width="15vw"
         extra.style.height="3.5vw"
