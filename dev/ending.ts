@@ -46,6 +46,7 @@ class Ending{
         let subTitle = document.createElement('subtitle')
 
         //hier de if-statement voor de opleidingen die WEL meedoen met de trui.
+        //dit wilden ze toch weer andersom
         if(localStorage.getItem('education') == 'International Business' || localStorage.getItem('education') == 'Master Consultancy and Entrepeneurship' || localStorage.getItem('education') == 'Master in Supply Chain Management' || localStorage.getItem('education') == 'Foundation Programme' || localStorage.getItem('education') == 'Chemie' || localStorage.getItem('education') == 'Chemische Technologie' || localStorage.getItem('education') == 'Creative Media and Game Technologies' || localStorage.getItem('education') == 'Informatica' || localStorage.getItem('education') == 'Civiele Techniek' || localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Logistiek Management (Associate Degree)'){
             subTitle.innerHTML = new Languages()[localStorage.getItem('language')][88]
         }
