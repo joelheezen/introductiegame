@@ -60,7 +60,8 @@ class Locations{
     lloyd_straat = {
         location: "lloyd_straat",
         opleidingen:[
-            "Chemische Technologie"
+            "Chemische Technologie",
+            "Logistics Engineering"
         ],
         locatieInfo: "https://www.hogeschoolrotterdam.nl/hogeschool/locaties/lloydstraat/",
         locatieInfoEng: "https://www.rotterdamuas.com/about/locations/lloydstraat/"}
