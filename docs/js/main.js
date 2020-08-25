@@ -2135,11 +2135,11 @@ var Ending = (function () {
             title.style.fontSize = "7vh";
             popup.style.position = 'absolute';
             subTitle.style.fontSize = "1.1rem";
-            if (localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Logistiek Management (Associate Degree)' || localStorage.getItem('education') == 'Bouwkunde' || localStorage.getItem('education') == 'Communicatie') {
-                subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75];
+            if (localStorage.getItem('education') == 'International Business' || localStorage.getItem('education') == 'Master Consultancy and Entrepeneurship' || localStorage.getItem('education') == 'Master in Supply Chain Management' || localStorage.getItem('education') == 'Foundation Programme' || localStorage.getItem('education') == 'Chemie' || localStorage.getItem('education') == 'Chemische Technologie' || localStorage.getItem('education') == 'Creative Media and Game Technologies' || localStorage.getItem('education') == 'Informatica' || localStorage.getItem('education') == 'Civiele Techniek' || localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Logistiek Management (Associate Degree)') {
+                subTitle.innerHTML = new Languages()[localStorage.getItem('language')][73];
             }
             else {
-                subTitle.innerHTML = new Languages()[localStorage.getItem('language')][73];
+                subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75];
             }
             button.remove();
         });
@@ -2158,11 +2158,11 @@ var Ending = (function () {
         title.innerHTML = new Languages()[localStorage.getItem('language')][74];
         popup.appendChild(title);
         var subTitle = document.createElement('subtitle');
-        if (localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Logistiek Management (Associate Degree)' || localStorage.getItem('education') == 'Bouwkunde' || localStorage.getItem('education') == 'Communicatie') {
-            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][87];
+        if (localStorage.getItem('education') == 'International Business' || localStorage.getItem('education') == 'Master Consultancy and Entrepeneurship' || localStorage.getItem('education') == 'Master in Supply Chain Management' || localStorage.getItem('education') == 'Foundation Programme' || localStorage.getItem('education') == 'Chemie' || localStorage.getItem('education') == 'Chemische Technologie' || localStorage.getItem('education') == 'Creative Media and Game Technologies' || localStorage.getItem('education') == 'Informatica' || localStorage.getItem('education') == 'Civiele Techniek' || localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Logistiek Management (Associate Degree)') {
+            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][88];
         }
         else {
-            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][88];
+            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][87];
         }
         popup.appendChild(subTitle);
         var score = document.createElement('finalScore');
@@ -2210,25 +2210,30 @@ var EnterBuilding = (function () {
 }());
 var Game = (function () {
     function Game() {
+        var game = document.getElementsByTagName("game")[0];
         var button1 = document.createElement("button");
+        game.appendChild(button1);
         button1.style.width = "10vw";
         button1.style.height = "10vh";
         button1.style.transform = "translate(90vw, 10vh)";
         button1.innerHTML = "act2";
         button1.onclick = this.buttonPress1;
         var button2 = document.createElement("button");
+        game.appendChild(button2);
         button2.style.width = "10vw";
         button2.style.height = "10vh";
         button2.style.transform = "translate(90vw, 25vh)";
         button2.innerHTML = "gert";
         button2.onclick = this.buttonPress2;
         var button4 = document.createElement("button");
+        game.appendChild(button4);
         button4.style.width = "10vw";
         button4.style.height = "10vh";
         button4.style.transform = "translate(80vw, 50vh)";
         button4.innerHTML = "luuk";
         button4.onclick = this.buttonPress4;
         var button5 = document.createElement("button");
+        game.appendChild(button5);
         button5.style.width = "10vw";
         button5.style.height = "10vh";
         button5.style.transform = "translate(90vw, 50vh)";
@@ -2253,7 +2258,6 @@ var Game = (function () {
     };
     return Game;
 }());
-window.addEventListener("load", function () { return new Game(); });
 var hint = (function () {
     function hint() {
         var _this = this;
@@ -2496,7 +2500,7 @@ var Languages = (function () {
             "Question 4: \"RKVV\"",
             "Question 3: \"A round?\"",
             "Click on the card to put a dot on the card, click on the dot to remove it. Eventually the outcome must be entered in the notebook!</br>",
-            "Fancy a party? Sure, but\u2026do you have the time?</br></br>Now that you're a student you will be busy studying. Do you even have time to do something fun?</br></br>Imagine: You go to bed at eleven o'clock and wake at seven to go back to school. On the weekends you usually go to bed a little later, but you're total sleep is as long as usual. You have 0:45 hours of travel time to school, and you need half an hour to get dressed and eat breakfast. You have classes from Monday to Thursday from 8:30 to 10:10 and you have another class from 12:10 to 13:50. On Friday you have the same lessons, but those are taught online through Microsoft Teams. Apart from your classes you need about 4 hours to study. You usually do this efficiently in between classes, so you have more free time at night and during the weekend. You make your own food: this takes half an hour and you finish dinner in 20 minutes. Each week you also work 14 hours in a coffee bar in town. You talk to your parents (or grandpa/grandma/aunts) on the phone for about 30 mins each week.\u202FOh, and you spend about one and a half hour each day on social media...</br></br>How much time do you have left to relax?</br></br>On avarage ... hours a day.",
+            "Fancy a party? Sure, but\u2026do you have the time?</br></br>Now that you're a student you will be busy studying. Do you even have time to do something fun?</br></br>Imagine: You go to bed at eleven o'clock and wake at seven to go back to school. On the weekends you usually go to bed a little later, but you're total sleep is as long as usual. You have 0:45 hours of travel time to school, and you need half an hour to get dressed and eat breakfast. You have classes from Monday to Thursday from 8:30 to 10:10 and you have another class from 12:10 to 13:50. On Friday you have the same lessons, but those are taught online through Microsoft Teams. Apart from your classes you spend 4 hours per schoolday to study. You usually do this efficiently in between classes, so you have more free time at night and during the weekend. You make your own food: this takes half an hour and you finish dinner in 20 minutes. Each week you also work 14 hours in a coffee bar in town. You talk to your parents (or grandpa/grandma/aunts) on the phone for about 30 mins each week.\u202FOh, and you spend about one and a half hour each day on social media...</br></br>How much time do you have left to relax?</br></br>On avarage ... hours a day.",
             "How much money do I have left for a round?",
             "Make an appointment here",
             "Counselor",
@@ -2541,7 +2545,7 @@ var Languages = (function () {
             "Study coach",
             "Student welfare advisor",
             "You solved all the puzzles. You demonstrated you really deserve your slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D.</br></br>Save this page as PDF using the button below. Hand it in through <a href=\"http://lms.hr.nl\" target=\"_blank\" style=\"display: inline\">CumLaude</a> in the elective course \u2018Key to Succes\u2019. NB: Only your teamcaptain will be able to login. Upload the file in the assignment you find in the course.</br>your score is:</br>",
-            "You solved all the puzzles. You demonstrated you really deserve your slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D. It\u2019s now time for the very last assignments:</br>Save this page as PDF using the button below;</br>Make a design for a team sweater that shows your team name and slogan (you may still adjust it if you prefer). You only have to design a printed logo (size A4). Choose whatever program or application you like. Make sure to save it as a PDF file. (Tip: don\u2019t make the design too complicated)</br></br>On the basis of these two assignments the staff of your introduction program will decide on the winner. The winning team will receive their self-designed sweaters. The design will be printed on red hooded sweaters.</br></br>Hand in both the screenshot and the design for your sweaters through <a href=\"http://lms.hr.nl\" target=\"_blank\" style=\"display: inline\">CumLaude</a> in the elective course \u2018Key to Succes\u2019. Only your teamcaptain will be able te login. Upload both documents in the assignment you find in the course.</br>Your score is:"
+            "You solved all the puzzles. You demonstrated you really deserve your slogan \u201C" + localStorage.getItem("teamSlogan") + "\u201D.</br> It\u2019s now time for the very last assignments:</br>\u2022Save this page as PDF using the button below</br>\u2022Make a design for a team sweater that shows your team name and slogan (you may still adjust it if you prefer). You only have to design a printed logo (size A4). Choose whatever program or application you like. Make sure to save it as a PDF file. (Tip: don\u2019t make the design too complicated)</br></br>On the basis of these two assignments the staff of your introduction program will decide on the winner. The winning team will receive their self-designed sweaters. The design will be printed on red hooded sweaters.</br></br>Hand in both the screenshot and the design for your sweaters through <a href=\"http://lms.hr.nl\" target=\"_blank\" style=\"display: inline\">CumLaude</a> in the elective course \u2018Key to Succes\u2019. Only your teamcaptain will be able te login. Upload both documents in the assignment you find in the course.</br>Your score is:"
         ];
         this.dutch = ["Om van start te gaan moeten we weten aan welke opleiding jij deel neemt. Kies uit deze lijst jouw opleiding </br></br>In order to start, we need to know what study program you are taking. Please select your study program from this list",
             "Kies opleiding / Choose education",
@@ -2586,7 +2590,7 @@ var Languages = (function () {
             "Vraag 4: \"De leden van de </br>studentenverenigingen zeggen</br>samen:\"",
             "Vraag 3: \"Rondje?\"",
             "Klik op de aansichtkaart om een stip te zetten, klik op de stip om deze weer weg te halen. Uiteindelijk komt er een uitkomst vul deze in in het notitieboekje!</br>",
-            "Zin in een feestje? Maar heb ik daar wel tijd voor? Nu je student wordt zal je het razend druk gaat krijgen met je studie. Heb je eigenlijk nog wel tijd om iets leuks te doen? Je wil toch ook een beetje genieten van je studententijd? Hoe doen andere studenten dat eigenlijk?\n                    </br>Stel: Je gaat om elf uur naar bed en je staat om zeven uur weer op om naar de hogeschool te gaan. In het weekend ga je vaak wat later naar bed, maar slaap je ook net zoveel uit. Je hebt 0:45 uur reistijd van huis naar school, een half uur om aan te kleden en te eten 's ochtend. Op school heb je van maandag t/m donderdag les van 8.30 uur tot 10:10 uur en je hebt les 12:10 tot 13.50 uur. Vrijdag heb je ook les, maar die volg je online via Teams. Naast je lessen heb je nog ongeveer 4 uur nodig voor je huiswerk. Dat doe je vaak effici\u00EBnt tussen de lessen door, hoef je minder 's avonds en in het weekend te doen. Je kookt je eigen eten, kost een half uurtje en tja, binnen 20 minuten heb je dat op. Per week werk je gemiddeld 14 uur in een leuk koffietentje in de stad. Je wilt het eigenlijk niet, maar aan social media ben je bijna anderhalf uur per dag kwijt. Oh ja, en je belt natuurlijk elke week een keer met je ouders (of oma/opa/tante) voor zo'n 30 min. \n                    </br></br>Hoeveel tijd hou jij over voor ontspanning?\n                    </br></br>Gemiddeld ... uur per dag.",
+            "Zin in een feestje? Maar heb ik daar wel tijd voor? Nu je student wordt zal je het razend druk gaat krijgen met je studie. Heb je eigenlijk nog wel tijd om iets leuks te doen? Je wil toch ook een beetje genieten van je studententijd? Hoe doen andere studenten dat eigenlijk?\n                    </br>Stel: Je gaat om elf uur naar bed en je staat om zeven uur weer op om naar de hogeschool te gaan. In het weekend ga je vaak wat later naar bed, maar slaap je ook net zoveel uit. Je hebt 0:45 uur reistijd van huis naar school, een half uur om aan te kleden en te eten 's ochtend. Op school heb je van maandag t/m donderdag les van 8.30 uur tot 10:10 uur en je hebt les 12:10 tot 13.50 uur. Vrijdag heb je ook les, maar die volg je online via Teams. Naast je lessen besteed je nog 4 uur per dag aan huiswerk. Dat doe je vaak effici\u00EBnt tussen de lessen door, hoef je minder 's avonds en in het weekend te doen. Je kookt je eigen eten, kost een half uurtje en tja, binnen 20 minuten heb je dat op. Per week werk je gemiddeld 14 uur in een leuk koffietentje in de stad. Je wilt het eigenlijk niet, maar aan social media ben je bijna anderhalf uur per dag kwijt. Oh ja, en je belt natuurlijk elke week een keer met je ouders (of oma/opa/tante) voor zo'n 30 min. \n                    </br></br>Hoeveel tijd hou jij over voor ontspanning?\n                    </br></br>Gemiddeld ... uur per dag.",
             "Hoeveel geld houd ik over voor een rondje?",
             "Maak hier een afspraak",
             "Vertrouwenspersoon",

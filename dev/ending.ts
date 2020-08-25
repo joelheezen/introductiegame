@@ -13,12 +13,12 @@ class Ending{
             title.style.fontSize = "7vh"
             popup.style.position = 'absolute'
             subTitle.style.fontSize = "1.1rem"
-            //hier de if-statement voor de opleidingen die NIET meedoen met de trui.
-            if(localStorage.getItem('education') == 'Logistics Management (bachelor)'|| localStorage.getItem('education') == 'Logistiek Management (Associate Degree)' || localStorage.getItem('education') == 'Bouwkunde' || localStorage.getItem('education') == 'Communicatie'){
-                subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75]
+            //hier de if-statement voor de opleidingen die WEL meedoen met de trui.
+            if(localStorage.getItem('education') == 'International Business' || localStorage.getItem('education') == 'Master Consultancy and Entrepeneurship' || localStorage.getItem('education') == 'Master in Supply Chain Management' || localStorage.getItem('education') == 'Foundation Programme' || localStorage.getItem('education') == 'Chemie' || localStorage.getItem('education') == 'Chemische Technologie' || localStorage.getItem('education') == 'Creative Media and Game Technologies' || localStorage.getItem('education') == 'Informatica' || localStorage.getItem('education') == 'Civiele Techniek' || localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Logistiek Management (Associate Degree)'){
+                subTitle.innerHTML = new Languages()[localStorage.getItem('language')][73]
             }
             else{
-                subTitle.innerHTML = new Languages()[localStorage.getItem('language')][73]
+                subTitle.innerHTML = new Languages()[localStorage.getItem('language')][75]
             }
             button.remove()
         })
@@ -45,12 +45,12 @@ class Ending{
 
         let subTitle = document.createElement('subtitle')
 
-        //hier de if-statement voor de opleidingen die NIET meedoen met de trui.
-        if(localStorage.getItem('education') == 'Logistics Management (bachelor)'|| localStorage.getItem('education') == 'Logistiek Management (Associate Degree)' || localStorage.getItem('education') == 'Bouwkunde' || localStorage.getItem('education') == 'Communicatie'){
-            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][87]
+        //hier de if-statement voor de opleidingen die WEL meedoen met de trui.
+        if(localStorage.getItem('education') == 'International Business' || localStorage.getItem('education') == 'Master Consultancy and Entrepeneurship' || localStorage.getItem('education') == 'Master in Supply Chain Management' || localStorage.getItem('education') == 'Foundation Programme' || localStorage.getItem('education') == 'Chemie' || localStorage.getItem('education') == 'Chemische Technologie' || localStorage.getItem('education') == 'Creative Media and Game Technologies' || localStorage.getItem('education') == 'Informatica' || localStorage.getItem('education') == 'Civiele Techniek' || localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Logistiek Management (Associate Degree)'){
+            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][88]
         }
         else{
-            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][88]
+            subTitle.innerHTML = new Languages()[localStorage.getItem('language')][87]
         }
 
         popup.appendChild(subTitle)
