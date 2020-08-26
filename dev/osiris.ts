@@ -159,7 +159,7 @@ class Osiris {
         
         let shape1 = (<HTMLInputElement>document.getElementById("input2")).value.toLowerCase()
 
-        if (shape1 == "The Key to Succes" ||shape1 == "The key to succes" ||shape1 == "the key to succes" ||shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot" || shape1 == "Sleutel succes" || shape1 == "sleutel succes" || shape1 == "key to succes" || shape1 == "key succes" || shape1 == "Key To succes" || shape1 == "Key To Succes" || shape1 == "Key to Succes" || shape1 == "key" || shape1 == "Key" || shape1 == "key to" || shape1 == "Key to" || shape1 == "Key To" || shape1 == "key To"){
+        if (shape1 == "The Key to Success" ||shape1 == "The key to success" ||shape1 == "the key to success" ||shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "success" || shape1 == "sleutel tot" || shape1 == "Sleutel tot" || shape1 == "Sleutel succes" || shape1 == "sleutel succes" || shape1 == "key to success" || shape1 == "key success" || shape1 == "Key To success" || shape1 == "Key To Success" || shape1 == "Key to Success" || shape1 == "key" || shape1 == "Key" || shape1 == "key to" || shape1 == "Key to" || shape1 == "Key To" || shape1 == "key To"){
             
             this.keuzeRight()            
         }
