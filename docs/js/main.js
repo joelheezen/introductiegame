@@ -2135,7 +2135,7 @@ var Ending = (function () {
             title.style.fontSize = "7vh";
             popup.style.position = 'absolute';
             subTitle.style.fontSize = "1.1rem";
-            if (localStorage.getItem('education') == 'International Business' || localStorage.getItem('education') == 'Master Consultancy and Entrepeneurship' || localStorage.getItem('education') == 'Master in Supply Chain Management' || localStorage.getItem('education') == 'Foundation Programme' || localStorage.getItem('education') == 'Chemie' || localStorage.getItem('education') == 'Chemische Technologie' || localStorage.getItem('education') == 'Creative Media and Game Technologies' || localStorage.getItem('education') == 'Informatica' || localStorage.getItem('education') == 'Civiele Techniek' || localStorage.getItem('education') == 'Logistics Management (bachelor)') {
+            if (localStorage.getItem('education') == 'International Business' || localStorage.getItem('education') == 'Master Consultancy and Entrepeneurship' || localStorage.getItem('education') == 'Master in Supply Chain Management' || localStorage.getItem('education') == 'Foundation Programme' || localStorage.getItem('education') == 'Chemie' || localStorage.getItem('education') == 'Chemische Technologie' || localStorage.getItem('education') == 'Creative Media and Game Technologies' || localStorage.getItem('education') == 'Informatica' || localStorage.getItem('education') == 'Civiele Techniek' || localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Finance & Control' || localStorage.getItem('education') == 'Deeltijd - Finance & Control') {
                 subTitle.innerHTML = new Languages()[localStorage.getItem('language')][73];
             }
             else {
@@ -2158,7 +2158,7 @@ var Ending = (function () {
         title.innerHTML = new Languages()[localStorage.getItem('language')][74];
         popup.appendChild(title);
         var subTitle = document.createElement('subtitle');
-        if (localStorage.getItem('education') == 'International Business' || localStorage.getItem('education') == 'Master Consultancy and Entrepeneurship' || localStorage.getItem('education') == 'Master in Supply Chain Management' || localStorage.getItem('education') == 'Foundation Programme' || localStorage.getItem('education') == 'Chemie' || localStorage.getItem('education') == 'Chemische Technologie' || localStorage.getItem('education') == 'Creative Media and Game Technologies' || localStorage.getItem('education') == 'Informatica' || localStorage.getItem('education') == 'Civiele Techniek' || localStorage.getItem('education') == 'Logistics Management (bachelor)') {
+        if (localStorage.getItem('education') == 'International Business' || localStorage.getItem('education') == 'Master Consultancy and Entrepeneurship' || localStorage.getItem('education') == 'Master in Supply Chain Management' || localStorage.getItem('education') == 'Foundation Programme' || localStorage.getItem('education') == 'Chemie' || localStorage.getItem('education') == 'Chemische Technologie' || localStorage.getItem('education') == 'Creative Media and Game Technologies' || localStorage.getItem('education') == 'Informatica' || localStorage.getItem('education') == 'Civiele Techniek' || localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Finance & Control' || localStorage.getItem('education') == 'Deeltijd - Finance & Control') {
             subTitle.innerHTML = new Languages()[localStorage.getItem('language')][88];
         }
         else {
@@ -2470,7 +2470,7 @@ var Languages = (function () {
             "Look online for shapes",
             "Continue",
             "Welcome to your online floorplan",
-            "Maybe it\u2019s a good idea to send an email to the Student Service Centre about the key. Make sure to look for clues on shapes along the way.",
+            "Maybe it\u2019s a good idea to send an email to the Student Service Centre (check the online floorplan to find the webform) about the key. Make sure to look for clues on shapes along the way.",
             "This answer is incorrect. Try again.",
             "Schedule",
             "Click continue to see the schedule",
@@ -2560,7 +2560,7 @@ var Languages = (function () {
             "Zoek online naar vormen",
             "Doorgaan",
             "Welkom op jullie online plattegrond",
-            "Misschien is het handig om even een mailtje te sturen naar het studenten service center over de sleutel. Zorg dat je gaandeweg de hints in de gaten houdt over mogelijke vormen.",
+            "Misschien is het handig om even een mailtje te sturen naar het studenten service center (zie de plattegrond om bij het webform te komen) over de sleutel. Zorg dat je gaandeweg de hints in de gaten houdt over mogelijke vormen.",
             "Dit antwoord is onjuist. Probeer het nog een keer.",
             "Rooster",
             "Klik op doorgaan om je rooster te zien",
@@ -3118,7 +3118,7 @@ var Osiris = (function () {
         this.button3.addEventListener("click", function () { return _this.keuzeCheck(); });
     };
     Osiris.prototype.keuzeCheck = function () {
-        var shape1 = document.getElementById("input2").value;
+        var shape1 = document.getElementById("input2").value.toLowerCase();
         if (shape1 == "The Key to Succes" || shape1 == "The key to succes" || shape1 == "the key to succes" || shape1 == "Sleutel tot succes" || shape1 == "sleutel tot succes" || shape1 == "sleutel" || shape1 == "Sleutel" || shape1 == "succes" || shape1 == "Succes" || shape1 == "sleutel tot" || shape1 == "Sleutel tot" || shape1 == "Sleutel succes" || shape1 == "sleutel succes" || shape1 == "key to succes" || shape1 == "key succes" || shape1 == "Key To succes" || shape1 == "Key To Succes" || shape1 == "Key to Succes" || shape1 == "key" || shape1 == "Key" || shape1 == "key to" || shape1 == "Key to" || shape1 == "Key To" || shape1 == "key To") {
             this.keuzeRight();
         }
