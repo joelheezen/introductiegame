@@ -2135,7 +2135,7 @@ var Ending = (function () {
             title.style.fontSize = "7vh";
             popup.style.position = 'absolute';
             subTitle.style.fontSize = "1.1rem";
-            if (localStorage.getItem('education') == 'International Business' || localStorage.getItem('education') == 'Master Consultancy and Entrepeneurship' || localStorage.getItem('education') == 'Master in Supply Chain Management' || localStorage.getItem('education') == 'Foundation Programme' || localStorage.getItem('education') == 'Chemie' || localStorage.getItem('education') == 'Chemische Technologie' || localStorage.getItem('education') == 'Creative Media and Game Technologies' || localStorage.getItem('education') == 'Informatica' || localStorage.getItem('education') == 'Civiele Techniek' || localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Finance & Control' || localStorage.getItem('education') == 'Deeltijd - Finance & Control') {
+            if (localStorage.getItem('education') == 'International Business' || localStorage.getItem('education') == 'Master Consultancy and Entrepeneurship' || localStorage.getItem('education') == 'Master in Supply Chain Management' || localStorage.getItem('education') == 'Foundation Programme' || localStorage.getItem('education') == 'Chemie' || localStorage.getItem('education') == 'Chemische Technologie' || localStorage.getItem('education') == 'Creative Media and Game Technologies' || localStorage.getItem('education') == 'Informatica' || localStorage.getItem('education') == 'Civiele Techniek' || localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Finance & Control' || localStorage.getItem('education') == 'Deeltijd - Finance & Control' || localStorage.getItem('education') == 'Ruimtelijke Ordening en Planologie') {
                 subTitle.innerHTML = new Languages()[localStorage.getItem('language')][73];
             }
             else {
@@ -2158,7 +2158,7 @@ var Ending = (function () {
         title.innerHTML = new Languages()[localStorage.getItem('language')][74];
         popup.appendChild(title);
         var subTitle = document.createElement('subtitle');
-        if (localStorage.getItem('education') == 'International Business' || localStorage.getItem('education') == 'Master Consultancy and Entrepeneurship' || localStorage.getItem('education') == 'Master in Supply Chain Management' || localStorage.getItem('education') == 'Foundation Programme' || localStorage.getItem('education') == 'Chemie' || localStorage.getItem('education') == 'Chemische Technologie' || localStorage.getItem('education') == 'Creative Media and Game Technologies' || localStorage.getItem('education') == 'Informatica' || localStorage.getItem('education') == 'Civiele Techniek' || localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Finance & Control' || localStorage.getItem('education') == 'Deeltijd - Finance & Control') {
+        if (localStorage.getItem('education') == 'International Business' || localStorage.getItem('education') == 'Master Consultancy and Entrepeneurship' || localStorage.getItem('education') == 'Master in Supply Chain Management' || localStorage.getItem('education') == 'Foundation Programme' || localStorage.getItem('education') == 'Chemie' || localStorage.getItem('education') == 'Chemische Technologie' || localStorage.getItem('education') == 'Creative Media and Game Technologies' || localStorage.getItem('education') == 'Informatica' || localStorage.getItem('education') == 'Civiele Techniek' || localStorage.getItem('education') == 'Logistics Management (bachelor)' || localStorage.getItem('education') == 'Finance & Control' || localStorage.getItem('education') == 'Deeltijd - Finance & Control' || localStorage.getItem('education') == 'Ruimtelijke Ordening en Planologie') {
             subTitle.innerHTML = new Languages()[localStorage.getItem('language')][88];
         }
         else {
@@ -2824,6 +2824,7 @@ var Locations = (function () {
                 "Facility Management",
                 "Logistics Management (bachelor)",
                 "Ruimtelijke Ontwikkeling - ROP",
+                "Ruimtelijke Ordening en Planologie",
                 "Technische Bedrijfskunde",
                 "Vastgoed en Makelaardij",
                 "Watermanagement",

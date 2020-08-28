@@ -15,6 +15,7 @@ class Locations{
             "Facility Management",
             "Logistics Management (bachelor)",
             "Ruimtelijke Ontwikkeling - ROP",
+            "Ruimtelijke Ordening en Planologie",
             "Technische Bedrijfskunde",
             "Vastgoed en Makelaardij",
             "Watermanagement",
